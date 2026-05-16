@@ -1,0 +1,33 @@
+name: Link check
+
+# Monthly liveness check. Flags dead provider URLs so the list stays trustworthy
+# and the repo shows continuous maintenance activity.
+
+on:
+  schedule:
+    - cron: "0 3 1 * *" # 03:00 UTC on the 1st of each month
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "README.md"
+      - "README.zh-TW.md"
+      - "README.zh-CN.md"
+      - "docs/**"
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check markdown links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-concurrency 4
+            --accept 200,201,202,203,204,206,301,302,307,308,403,429
+            README.md README.zh-TW.md README.zh-CN.md docs/*.md
+          fail: false
+      - name: Summary
+        if: always()
+        run: echo "Link check finished. Review the lychee report above; open an issue for dead provider URLs."

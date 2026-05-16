@@ -1,0 +1,141 @@
+# Structured data source for awesome-ai-api-proxy.
+# READMEs are generated from this file. Edit here, not in the README tables.
+# Schema: see data/schema.md. Add a provider via Pull Request (see CONTRIBUTING.md).
+#
+# type:
+#   official-relay  - forwards official keys (most trustworthy)
+#   mixed           - blends official + other channels
+#   reverse         - reverse-engineered from web clients (cheapest, least stable)
+#   aggregator      - routes across multiple upstream relays
+#   gateway-oss     - self-hostable open-source gateway
+#   observability   - gateway with logging/analytics focus
+# status: active | unverified | inactive
+# Prices are indicative only and change frequently. Always verify on the site.
+
+schema_version: 1
+last_reviewed: "2026-05-16"
+
+# ---------------------------------------------------------------------------
+# China / Asia relay stations (中轉站)
+# ---------------------------------------------------------------------------
+china_relays:
+  - name: 云雾 API (YUNWU)
+    url: https://yunwu.ai
+    type: mixed
+    status: active
+    payment: [alipay, wechat]
+    models: [openai, anthropic, gemini, deepseek, midjourney]
+    notes: "Marketed on speed/stability; widely cited as a top-tier station."
+
+  - name: 柏拉图 AI (bltcy)
+    url: https://api.bltcy.ai
+    type: mixed
+    status: active
+    payment: [alipay, wechat]
+    models: [openai, anthropic, midjourney, suno, luma]
+    notes: "Azure-backed channel; positions as lowest-price."
+
+  - name: No.1-API
+    url: https://api.rcouyi.com
+    type: aggregator
+    status: active
+    payment: [alipay, wechat]
+    models: [openai, anthropic, gemini, qwen, hunyuan]
+    notes: "One-stop aggregation + relay platform."
+
+  - name: UiUiAPI
+    url: https://uiuiapi.com
+    type: official-relay
+    status: active
+    payment: [alipay, wechat]
+    models: [openai, anthropic, gemini]
+    model_count: 300
+    provider_count: 30
+    discount_vs_official: "~49% cheaper (claimed)"
+    notes: "Claims official channels + official multipliers; rare quantified discount."
+
+  - name: DMXAPI
+    url: https://dmxapi.cn
+    type: mixed
+    status: unverified
+    payment: [alipay, wechat]
+    models: [openai, anthropic, gemini]
+    notes: "Listed in community sources; homepage not independently verified."
+
+  - name: MKEAI
+    url: https://mkeai.com
+    type: mixed
+    status: unverified
+    payment: [alipay, wechat]
+    models: [openai, deepseek]
+    notes: "Community-forum + relay hybrid; pushes DeepSeek heavily."
+
+  - name: GPTGOD
+    url: https://gptgod.online
+    type: reverse
+    status: unverified
+    payment: [alipay]
+    models: [openai, anthropic]
+    notes: "Reverse-engineered; among cheapest, stability not guaranteed."
+
+  - name: CloseAI
+    url: https://www.closeai-asia.com
+    type: official-relay
+    status: active
+    payment: [alipay, wechat, enterprise-invoice]
+    models: [openai, anthropic, gemini]
+    notes: "Self-describes as largest enterprise-grade relay in Asia."
+
+# ---------------------------------------------------------------------------
+# Comparison / monitoring tools (中轉站對比工具)
+# ---------------------------------------------------------------------------
+comparison_tools:
+  - name: 中轉站競技場 (AI API PK)
+    url: https://www.aiapipk.com
+    type: comparison
+    status: active
+    notes: "Price wall across OpenAI / Reverse / Claude / DeepSeek for ~40 stations."
+
+  - name: awesome-ai-proxy (mn-api, unmaintained)
+    url: https://github.com/mn-api/awesome-ai-proxy
+    type: list
+    status: inactive
+    notes: "Original list (~31 stations); no longer maintained as of 2026."
+
+# ---------------------------------------------------------------------------
+# Global gateways / aggregators (海外對比方案)
+# ---------------------------------------------------------------------------
+global_gateways:
+  - name: OpenRouter
+    url: https://openrouter.ai
+    type: aggregator
+    status: active
+    payment: [card, crypto]
+    models: [openai, anthropic, google, meta, mistral]
+    model_count: 400
+    provider_count: 60
+    notes: "Official-authorized routing, ~5% markup. ARR reportedly $5M (2025-05) to ~$50M (early 2026)."
+
+  - name: LiteLLM
+    url: https://litellm.ai
+    type: gateway-oss
+    status: active
+    models: [openai, anthropic, google, azure, bedrock]
+    provider_count: 100
+    notes: "Open-source gateway + enterprise tier. Self-hosted; not retail."
+
+  - name: Helicone
+    url: https://helicone.ai
+    type: observability
+    status: active
+    models: [openai, anthropic]
+    notes: "LLM observability gateway; logging/analytics focus."
+
+  - name: AIMLAPI
+    url: https://aimlapi.com
+    type: aggregator
+    status: active
+    payment: [card, crypto]
+    models: [openai, anthropic, google, meta]
+    model_count: 400
+    notes: "Prepaid from $20; crypto support implies payment-friction workaround."

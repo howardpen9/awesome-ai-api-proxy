@@ -21,11 +21,17 @@ Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md)
 - [How to choose one safely](#how-to-choose-one-safely)
 - [Risks (read this)](#risks-read-this)
 - [Market context](#market-context)
+- [FAQ](#faq)
 - [Contributing](#contributing)
 
 ---
 
 ## What is an AI API relay?
+
+> **An AI API relay (中轉站) is a forwarding endpoint that sits between your
+> code and official LLM APIs.** You point `base_url` at the relay and use its
+> key to call OpenAI / Claude / Gemini and dozens more models — one key, local
+> payment (Alipay/WeChat), lower latency, typically 30–90% cheaper.
 
 An **AI API relay** (Chinese: *API 中轉站*; also "AI API proxy" / "relay
 station") is a middleman endpoint. Instead of calling OpenAI, Anthropic,
@@ -124,6 +130,68 @@ Full breakdown with sources and mitigations: **[docs/risks.md](docs/risks.md)**.
   that *unified, multi-vendor LLM access* is a durable market, not a hack.
 - Conclusion: relay stations are a **global response to blocking + payment
   friction**. China's ecosystem is the deepest because both pains peak there.
+
+## FAQ
+
+### What is an AI API relay (中轉站)?
+
+An AI API relay is a forwarding endpoint between your code and official LLM
+APIs (OpenAI, Anthropic, Google). You change `base_url` to the relay and use
+its key; it forwards upstream and returns the result, usually with full
+OpenAI-compatible formatting. One key gives access to dozens–hundreds of
+models across vendors.
+
+### Is an API relay safe? Can they steal my key or read my prompts?
+
+Treat every relay as an untrusted intermediary. It can see every prompt,
+response, and any data you send — a hostile operator can log, modify, or
+exfiltrate it. An audit of 428 stations found 9 injecting malicious code and 1
+stealing funds. Never send secrets or regulated data through a relay; for
+sensitive workloads use the official API or a self-hosted gateway.
+
+### Why are relays so much cheaper than official APIs?
+
+Three reasons: wholesale upstream pricing, mixed channels (e.g. Azure quotas),
+and — for the cheapest tier — reverse-engineered access to vendors' web
+clients. Prices 1/10 to 1/50 of official usually mean a `reverse` channel or
+silent model downgrade, not a genuine bargain.
+
+### What's the difference between 官轉 (official-relay), 混合 (mixed) and 逆向 (reverse)?
+
+`official-relay` forwards real official keys (purest, most stable, safest for
+production). `mixed` blends official with other channels. `reverse` is
+reverse-engineered from web clients (cheapest, least stable, highest ToS
+risk). Trust order: official-relay > mixed > aggregator > reverse.
+
+### How do I detect a relay silently swapping the model (降智)?
+
+Run a canary test: keep 3–5 known-hard prompts, record the official API's
+baseline, then run them against the relay weekly and compare reasoning depth
+and format adherence. A study of 28 relays found 45.83% of endpoints served a
+model that didn't match the request — degradation often appears *after* you
+top up.
+
+### Relay vs OpenRouter vs official API — which should I use?
+
+Official API: most reliable, needs a foreign card. OpenRouter and similar
+global aggregators: officially authorized, ~5% markup, card/crypto — the
+"clean" choice if you can pay. China/Asia relays: cheapest and accept
+Alipay/WeChat, but variable quality and operator risk. Use official or a
+self-hosted gateway for production or sensitive data.
+
+### What's the difference between a relay (中轉站) and a mirror site (镜像站)?
+
+A mirror site is a proxied chat web UI for end users (a re-hosted ChatGPT-like
+page). A relay is a programmatic API endpoint for developers and
+applications. This list only covers relays and gateways.
+
+### Which countries need API relays? Is this only a China thing?
+
+No. Relays appear wherever there is **access blocking + payment friction**.
+China has the deepest ecosystem; Russia/Belarus/Iran face hard blocks (even
+VPNs are detected) and sanctioned-card rejection; APAC including Taiwan mostly
+has access but hits card rejection and billing friction. It is a global
+response, not a China-only phenomenon.
 
 ## Contributing
 

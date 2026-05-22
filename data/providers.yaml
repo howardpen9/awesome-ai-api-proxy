@@ -16,10 +16,10 @@ schema_version: 1
 last_reviewed: "2026-05-16"
 
 # ---------------------------------------------------------------------------
-# China / Asia relay stations (中轉站)
+# China / Asia relay stations (涓綁绔?
 # ---------------------------------------------------------------------------
 china_relays:
-  - name: 云雾 API (YUNWU)
+  - name: 浜戦浘 API (YUNWU)
     url: https://yunwu.ai
     type: mixed
     status: active
@@ -27,7 +27,7 @@ china_relays:
     models: [openai, anthropic, gemini, deepseek, midjourney]
     notes: "Marketed on speed/stability; widely cited as a top-tier station."
 
-  - name: 柏拉图 AI (bltcy)
+  - name: 鏌忔媺鍥?AI (bltcy)
     url: https://api.bltcy.ai
     type: mixed
     status: active
@@ -85,12 +85,20 @@ china_relays:
     payment: [alipay, wechat, enterprise-invoice]
     models: [openai, anthropic, gemini]
     notes: "Self-describes as largest enterprise-grade relay in Asia."
+  - name: NEXUS AI
+    url: https://nexus-xi.com
+    type: mixed
+    status: active
+    payment: [alipay, wechat]
+    models: [deepseek, kimi]
+    notes: "Hong Kong relay; near-cost DeepSeek pricing (cn/1M tokens). OpenAI-compatible. Self-service topup with instant credit."
+
 
 # ---------------------------------------------------------------------------
-# Comparison / monitoring tools (中轉站對比工具)
+# Comparison / monitoring tools (涓綁绔欏皪姣斿伐鍏?
 # ---------------------------------------------------------------------------
 comparison_tools:
-  - name: 中轉站競技場 (AI API PK)
+  - name: 涓綁绔欑鎶€鍫?(AI API PK)
     url: https://www.aiapipk.com
     type: comparison
     status: active
@@ -103,7 +111,7 @@ comparison_tools:
     notes: "Original list (~31 stations); no longer maintained as of 2026."
 
 # ---------------------------------------------------------------------------
-# Global gateways / aggregators (海外對比方案)
+# Global gateways / aggregators (娴峰灏嶆瘮鏂规)
 # ---------------------------------------------------------------------------
 global_gateways:
   - name: OpenRouter

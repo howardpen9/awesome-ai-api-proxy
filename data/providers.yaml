@@ -11,9 +11,19 @@
 #   observability   - gateway with logging/analytics focus
 # status: active | unverified | inactive
 # Prices are indicative only and change frequently. Always verify on the site.
+#
+# Per-entry fields (all optional unless noted):
+#   last_verified       - YYYY-MM-DD the maintainer last visited the site / ran a canary.
+#                         Omit (or leave null) when the entry has not been independently confirmed.
+#   verified_by         - "maintainer" | "community" | "third-party-report".
+#   entity_registered   - true | false | unknown. Whether a registered company / ICP
+#                         filing is publicly visible. Most operators are individuals
+#                         with no recourse if they vanish.
+#   supports_stream     - true | false | unknown. SSE / streaming responses available.
+#   supports_tools      - true | false | unknown. Function calling / tools API compatibility.
 
-schema_version: 1
-last_reviewed: "2026-05-16"
+schema_version: 2
+last_reviewed: "2026-05-26"
 
 # ---------------------------------------------------------------------------
 # China / Asia relay stations (中轉站)
@@ -25,6 +35,11 @@ china_relays:
     status: active
     payment: [alipay, wechat]
     models: [openai, anthropic, gemini, deepseek, midjourney]
+    last_verified: "2026-05-26"
+    verified_by: maintainer
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: unknown
     notes: "Marketed on speed/stability; widely cited as a top-tier station."
 
   - name: 柏拉图 AI (bltcy)
@@ -33,6 +48,11 @@ china_relays:
     status: active
     payment: [alipay, wechat]
     models: [openai, anthropic, midjourney, suno, luma]
+    last_verified: "2026-05-26"
+    verified_by: maintainer
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: unknown
     notes: "Azure-backed channel; positions as lowest-price."
 
   - name: No.1-API
@@ -41,6 +61,11 @@ china_relays:
     status: active
     payment: [alipay, wechat]
     models: [openai, anthropic, gemini, qwen, hunyuan]
+    last_verified: "2026-05-26"
+    verified_by: maintainer
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: unknown
     notes: "One-stop aggregation + relay platform."
 
   - name: UiUiAPI
@@ -52,6 +77,11 @@ china_relays:
     model_count: 300
     provider_count: 30
     discount_vs_official: "~49% cheaper (claimed)"
+    last_verified: "2026-05-26"
+    verified_by: maintainer
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
     notes: "Claims official channels + official multipliers; rare quantified discount."
 
   - name: DMXAPI
@@ -60,6 +90,11 @@ china_relays:
     status: unverified
     payment: [alipay, wechat]
     models: [openai, anthropic, gemini]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
     notes: "Listed in community sources; homepage not independently verified."
 
   - name: MKEAI
@@ -68,6 +103,11 @@ china_relays:
     status: unverified
     payment: [alipay, wechat]
     models: [openai, deepseek]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
     notes: "Community-forum + relay hybrid; pushes DeepSeek heavily."
 
   - name: GPTGOD
@@ -76,6 +116,11 @@ china_relays:
     status: unverified
     payment: [alipay]
     models: [openai, anthropic]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
     notes: "Reverse-engineered; among cheapest, stability not guaranteed."
 
   - name: CloseAI
@@ -84,7 +129,12 @@ china_relays:
     status: active
     payment: [alipay, wechat, enterprise-invoice]
     models: [openai, anthropic, gemini]
-    notes: "Self-describes as largest enterprise-grade relay in Asia."
+    last_verified: "2026-05-26"
+    verified_by: maintainer
+    entity_registered: true
+    supports_stream: true
+    supports_tools: true
+    notes: "Issues enterprise invoices; self-describes as largest enterprise-grade relay in Asia."
 
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
@@ -94,12 +144,16 @@ comparison_tools:
     url: https://www.aiapipk.com
     type: comparison
     status: active
+    last_verified: "2026-05-26"
+    verified_by: maintainer
     notes: "Price wall across OpenAI / Reverse / Claude / DeepSeek for ~40 stations."
 
   - name: awesome-ai-proxy (mn-api, unmaintained)
     url: https://github.com/mn-api/awesome-ai-proxy
     type: list
     status: inactive
+    last_verified: "2026-05-26"
+    verified_by: maintainer
     notes: "Original list (~31 stations); no longer maintained as of 2026."
 
 # ---------------------------------------------------------------------------
@@ -114,6 +168,11 @@ global_gateways:
     models: [openai, anthropic, google, meta, mistral]
     model_count: 400
     provider_count: 60
+    last_verified: "2026-05-26"
+    verified_by: maintainer
+    entity_registered: true
+    supports_stream: true
+    supports_tools: true
     notes: "Official-authorized routing, ~5% markup. ARR reportedly $5M (2025-05) to ~$50M (early 2026)."
 
   - name: LiteLLM
@@ -122,6 +181,11 @@ global_gateways:
     status: active
     models: [openai, anthropic, google, azure, bedrock]
     provider_count: 100
+    last_verified: "2026-05-26"
+    verified_by: maintainer
+    entity_registered: true
+    supports_stream: true
+    supports_tools: true
     notes: "Open-source gateway + enterprise tier. Self-hosted; not retail."
 
   - name: Helicone
@@ -129,6 +193,11 @@ global_gateways:
     type: observability
     status: active
     models: [openai, anthropic]
+    last_verified: "2026-05-26"
+    verified_by: maintainer
+    entity_registered: true
+    supports_stream: true
+    supports_tools: true
     notes: "LLM observability gateway; logging/analytics focus."
 
   - name: AIMLAPI
@@ -138,4 +207,35 @@ global_gateways:
     payment: [card, crypto]
     models: [openai, anthropic, google, meta]
     model_count: 400
+    last_verified: "2026-05-26"
+    verified_by: maintainer
+    entity_registered: true
+    supports_stream: true
+    supports_tools: unknown
     notes: "Prepaid from $20; crypto support implies payment-friction workaround."
+
+# ---------------------------------------------------------------------------
+# Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
+# ---------------------------------------------------------------------------
+self_hosted_alternatives:
+  - name: One-API
+    url: https://github.com/songquanpeng/one-api
+    type: gateway-oss
+    status: active
+    last_verified: "2026-05-26"
+    verified_by: maintainer
+    entity_registered: false
+    supports_stream: true
+    supports_tools: true
+    notes: "Popular Go-based self-hosted multi-vendor gateway; the de-facto OSS template behind many relay stations."
+
+  - name: new-api
+    url: https://github.com/Calcium-Ion/new-api
+    type: gateway-oss
+    status: active
+    last_verified: "2026-05-26"
+    verified_by: maintainer
+    entity_registered: false
+    supports_stream: true
+    supports_tools: true
+    notes: "Fork of One-API with extra channel types; same self-hosted model — you supply keys."

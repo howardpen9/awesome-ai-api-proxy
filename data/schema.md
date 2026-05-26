@@ -14,6 +14,11 @@ Unverifiable claims must be marked with `(claimed)` or `status: unverified`.
 | `model_count` | no | Integer. Provider's claimed number of models. |
 | `provider_count` | no | Integer. Number of upstream vendors. |
 | `discount_vs_official` | no | String. e.g. `"~49% cheaper (claimed)"`. |
+| `last_verified` | no | `YYYY-MM-DD` the maintainer last visited the site or ran a canary. Use `null` when not independently confirmed. |
+| `verified_by` | no | `maintainer`, `community`, or `third-party-report`. Identifies who supplied `last_verified`. |
+| `entity_registered` | no | `true`, `false`, or `unknown`. Is a registered company / ICP filing publicly visible. |
+| `supports_stream` | no | `true`, `false`, or `unknown`. SSE / streaming responses available. |
+| `supports_tools` | no | `true`, `false`, or `unknown`. Function-calling / tools API compatibility. |
 | `notes` | no | One sentence. Factual. No marketing language. |
 
 ## `type` definitions

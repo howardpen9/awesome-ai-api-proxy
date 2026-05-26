@@ -5,7 +5,7 @@
 
 **語言：** [English](README.md) · 繁體中文 · [简体中文](README.zh-CN.md)
 
-最後審閱：**2026-05-16** · 維護者 [@howardpen9](https://github.com/howardpen9) ·
+最後審閱：**2026-05-26** · 維護者 [@howardpen9](https://github.com/howardpen9) ·
 歡迎貢獻 —— 見 [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
@@ -16,8 +16,10 @@
 - [為什麼會出現（全球視角）](#為什麼會出現全球視角)
 - [中國 / 亞洲中轉站](#中國--亞洲中轉站)
 - [海外閘道與聚合平台](#海外閘道與聚合平台)
+- [自架替代方案](#自架替代方案)
 - [對比與監控工具](#對比與監控工具)
 - [如何安全地挑選](#如何安全地挑選)
+- [Canary 驗證 prompt（偵測偷偷降智）](#canary-驗證-prompt偵測偷偷降智)
 - [風險（務必閱讀）](#風險務必閱讀)
 - [市場背景](#市場背景)
 - [常見問題 FAQ](#常見問題-faq)
@@ -60,18 +62,19 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 ## 中國 / 亞洲中轉站
 
 > 狀態：`active` = 可獨立存取；`unverified` = 社群來源，未獨立確認。
+> **最後驗證**＝維護者最後一次造訪該站的日期；unverified 條目沒有此欄位。
 > 價格變動極快，請以官網為準。資料生成自 [`data/providers.yaml`](data/providers.yaml)。
 
-| 中轉站 | 類型 | 支付 | 狀態 | 備註 |
-|---|---|---|---|---|
-| [云雾 API (YUNWU)](https://yunwu.ai) | mixed | 支付寶/微信 | active | 主打高速穩定；社群常列為頭部站。 |
-| [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | 支付寶/微信 | active | Azure 通道；主打最低價。 |
-| [No.1-API](https://api.rcouyi.com) | aggregator | 支付寶/微信 | active | 一站式聚合 + 中轉平台。 |
-| [UiUiAPI](https://uiuiapi.com) | official-relay | 支付寶/微信 | active | 宣稱官方渠道 + 官方倍率；約便宜 49%（宣稱），300+ 模型。 |
-| [DMXAPI](https://dmxapi.cn) | mixed | 支付寶/微信 | unverified | 社群收錄；官網未獨立核實。 |
-| [MKEAI](https://mkeai.com) | mixed | 支付寶/微信 | unverified | 社群論壇 + 中轉混合；主推 DeepSeek。 |
-| [GPTGOD](https://gptgod.online) | reverse | 支付寶 | unverified | 逆向；便宜，穩定性無保證。 |
-| [CloseAI](https://www.closeai-asia.com) | official-relay | 支付寶/微信/對公 | active | 自稱亞洲最大企業級中轉。 |
+| 中轉站 | 類型 | 支付 | 狀態 | 最後驗證 | 公司主體 | 備註 |
+|---|---|---|---|---|---|---|
+| [云雾 API (YUNWU)](https://yunwu.ai) | mixed | 支付寶/微信 | active | 2026-05-26 | 未知 | 主打高速穩定；社群常列為頭部站。 |
+| [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | 支付寶/微信 | active | 2026-05-26 | 未知 | Azure 通道；主打最低價。 |
+| [No.1-API](https://api.rcouyi.com) | aggregator | 支付寶/微信 | active | 2026-05-26 | 未知 | 一站式聚合 + 中轉平台。 |
+| [UiUiAPI](https://uiuiapi.com) | official-relay | 支付寶/微信 | active | 2026-05-26 | 未知 | 宣稱官方渠道 + 官方倍率；約便宜 49%（宣稱），300+ 模型。 |
+| [DMXAPI](https://dmxapi.cn) | mixed | 支付寶/微信 | unverified | — | 未知 | 社群收錄；官網未獨立核實。 |
+| [MKEAI](https://mkeai.com) | mixed | 支付寶/微信 | unverified | — | 未知 | 社群論壇 + 中轉混合；主推 DeepSeek。 |
+| [GPTGOD](https://gptgod.online) | reverse | 支付寶 | unverified | — | 未知 | 逆向；便宜，穩定性無保證。 |
+| [CloseAI](https://www.closeai-asia.com) | official-relay | 支付寶/微信/對公 | active | 2026-05-26 | 已註冊 | 提供對公發票；自稱亞洲最大企業級中轉。 |
 
 > **收錄 ≠ 推薦。** 收錄是為了記錄市場。打款或傳資料前請先走
 > [評估清單](docs/evaluation.md)。
@@ -85,6 +88,21 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 | [Helicone](https://helicone.ai) | observability | — | LLM 可觀測性閘道；日誌/成本分析。 |
 | [AIMLAPI](https://aimlapi.com) | aggregator | 卡/加密貨幣 | 400+ 模型，$20 起預付；支援加密貨幣暗示繞支付障礙。 |
 
+## 自架替代方案
+
+這些不是中轉站，而是**自架閘道**——當你不希望第三方夾在請求路徑中時的可信選項。
+你自帶上游官方 key（或自負風險使用中轉站 key）、跑在自己的機器上、資料留在自己手中。
+大部分中國中轉站本身就是用這些開源專案搭起來的。
+
+| 專案 | 類型 | 備註 |
+|---|---|---|
+| [One-API](https://github.com/songquanpeng/one-api) | gateway-oss | 流行的 Go 多廠商閘道；多數中轉站的底層 OSS 模板。 |
+| [new-api](https://github.com/Calcium-Ion/new-api) | gateway-oss | One-API 的 fork，多了幾種通道類型；同樣自架、自帶 key。 |
+| [LiteLLM](https://litellm.ai) | gateway-oss | 上面列過，Python 為主、100+ 供應商、企業常用。 |
+
+**什麼時候該自架而非用中轉站**：合規/敏感資料、production 工作負載、你已經能用國外卡付款、
+或需要可審計的日誌。代價是失去支付寶/微信的便利，並承擔運維成本。
+
 ## 對比與監控工具
 
 | 工具 | 備註 |
@@ -97,9 +115,18 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 完整框架見 **[docs/evaluation.md](docs/evaluation.md)**。速覽：
 
 1. **先看通道類型** —— `official-relay` > `mixed` > `aggregator` > `reverse`。
-2. **做 canary 測試** —— 用已知難題，官方 vs 中轉，每週比對，識別偷偷降智。
+2. **做 canary 測試** —— 用已知難題，官方 vs 中轉，每週比對，識別偷偷降智。可直接複製的 prompt 集：**[docs/canary-prompts.md](docs/canary-prompts.md)**。
 3. **小額充值** —— 中轉站基本都是預付，絕不大額預存。
 4. **按場景匹配** —— 敏感/合規資料走官方 API 或自架 `gateway-oss`，絕不用 `reverse`。
+
+## Canary 驗證 prompt（偵測偷偷降智）
+
+對抗「中轉站偷偷換成便宜模型」最有效的方法，就是一組固定、可重現的 **canary
+prompt**，每週對官方 API 與中轉站都跑一次，比對結果。
+
+完整 prompt 集、每個模型族（GPT-4 級、Claude Opus 級、Gemini 2.5 Pro 級）的
+預期基準行為與 pass/fail 評分準則，全部在 **[docs/canary-prompts.md](docs/canary-prompts.md)**。
+拿來直接用、或 fork 一份自己版本都可以。
 
 ## 風險（務必閱讀）
 
@@ -176,6 +203,53 @@ API 或自架閘道。
 不是。中轉站出現在任何**存取封鎖 + 支付障礙**並存的地方。中國生態最深；俄羅斯/
 白俄/伊朗面臨硬封鎖（連 VPN 都被偵測）+ 受制裁銀行卡被拒；亞太含台灣多半能連
 但卡在信用卡被拒與帳單麻煩。它是全球性回應，不是中國獨有。
+
+### Claude API（Sonnet / Opus）哪家中轉站最推薦？
+
+**沒有單一一家可以安全推薦**——Anthropic 條款比 OpenAI 嚴、Claude key 被輪換和
+封鎖得更積極，今天看起來穩的站可能一夜之間崩。實務建議：
+
+- production 跑 Claude：用官方 Anthropic API，或註冊有公司主體的全球聚合（如
+  [OpenRouter](https://openrouter.ai)，官方授權、加價約 5%、支援 Claude）。
+- 實驗用途：優先挑上方表格中 `official-relay` 類型的站，**充值前**先跑
+  **[docs/canary-prompts.md](docs/canary-prompts.md)** 確認真的有回傳真實模型。
+- 任何宣稱「Claude Opus 一折」的站，預設當成 `reverse` 通道——這個價格只可能來自
+  網頁版逆向工程或偷偷降智。
+
+### 怎麼判斷一家中轉站快跑路了？
+
+實證來看，跑路有共同模式。紅旗按嚴重度排序：
+
+1. **沒有註冊公司／沒有 ICP 備案**——17 家頭部站中 15 家無備案。
+2. **大力推預付贈送**（「儲 100 送 50」），先吸大量餘額再消失。
+3. **價格低於物理成本**（官方 1/10 ～ 1/50）——錢一定從某處節省下來。
+4. **Canary 開始退步**——以前能通過的題目開始不行（約 70% 跑路案例的前兆）。
+5. **客服變慢／消失、帳單頁面壞掉、ICP 過期、社群帳號靜默。**
+
+緩解：只小額儲值、絕不大額預存；訂閱中轉站追蹤頻道（V2EX、[risks.md](docs/risks.md)）。
+
+### 我該用中轉站還是自架 One-API／LiteLLM？
+
+只要符合以下任一條件，就用**自架閘道**：受規管或客戶資料、production 工作負載、
+你已經能用國外卡付款、需要可審計日誌。Key 放在自己機房，沒有不可追責的第三方
+經手。
+
+中轉站只適合：低風險實驗、學習、副業專案、或你真的拿不到國外卡。傳過去的任何
+東西都當成公開資料看待。詳見[自架替代方案](#自架替代方案)。
+
+### 台灣 / 香港 / 東南亞用中轉站划算嗎？
+
+**邊際效益不高。** 網路存取本來就 OK，所以真正的好處只剩 (a) 支付寶/微信付款
+免國外卡、(b) 一個 key 打通多廠商。代價是 prompt 經過一個中國法域、沒有合約
+約束的第三方——這個交換比通常不划算。
+
+對多數台/港/東南亞開發者，更好的組合是：
+1. 拿得到卡的廠商就用官方 API，
+2. 想要多廠商便利就用 [OpenRouter](https://openrouter.ai)，
+3. 真的需要統一 key 就自架一份 [One-API](https://github.com/songquanpeng/one-api) 或
+   [LiteLLM](https://litellm.ai)。
+
+中轉站主要適合：完全拿不到國外卡的情況。
 
 ## 參與貢獻
 

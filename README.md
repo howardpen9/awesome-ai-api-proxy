@@ -6,7 +6,7 @@
 
 **Languages:** English · [繁體中文](README.zh-TW.md) · [简体中文](README.zh-CN.md)
 
-Last reviewed: **2026-05-16** · Maintained by [@howardpen9](https://github.com/howardpen9) ·
+Last reviewed: **2026-05-26** · Maintained by [@howardpen9](https://github.com/howardpen9) ·
 Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
@@ -17,8 +17,10 @@ Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md)
 - [Why this exists (globally)](#why-this-exists-globally)
 - [China / Asia relay stations](#china--asia-relay-stations)
 - [Global gateways & aggregators](#global-gateways--aggregators)
+- [Self-hosted alternatives](#self-hosted-alternatives)
 - [Comparison & monitoring tools](#comparison--monitoring-tools)
 - [How to choose one safely](#how-to-choose-one-safely)
+- [Canary prompts (detect silent downgrade)](#canary-prompts-detect-silent-downgrade)
 - [Risks (read this)](#risks-read-this)
 - [Market context](#market-context)
 - [FAQ](#faq)
@@ -66,19 +68,20 @@ market, not a workaround niche.
 ## China / Asia relay stations
 
 > Status: `active` = independently reachable · `unverified` = community-sourced,
-> not independently confirmed. Prices change constantly — verify on-site.
-> Generated from [`data/providers.yaml`](data/providers.yaml).
+> not independently confirmed. **Last verified** = date the maintainer last
+> visited the site; absent on unverified entries. Prices change constantly —
+> verify on-site. Generated from [`data/providers.yaml`](data/providers.yaml).
 
-| Station | Type | Payment | Status | Notes |
-|---|---|---|---|---|
-| [云雾 API (YUNWU)](https://yunwu.ai) | mixed | Alipay/WeChat | active | Marketed on speed/stability; widely cited top-tier station. |
-| [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | Alipay/WeChat | active | Azure-backed channel; positions as lowest-price. |
-| [No.1-API](https://api.rcouyi.com) | aggregator | Alipay/WeChat | active | One-stop aggregation + relay platform. |
-| [UiUiAPI](https://uiuiapi.com) | official-relay | Alipay/WeChat | active | Claims official channels + official multipliers; ~49% cheaper (claimed), 300+ models. |
-| [DMXAPI](https://dmxapi.cn) | mixed | Alipay/WeChat | unverified | Community-listed; homepage not independently verified. |
-| [MKEAI](https://mkeai.com) | mixed | Alipay/WeChat | unverified | Community-forum + relay hybrid; pushes DeepSeek. |
-| [GPTGOD](https://gptgod.online) | reverse | Alipay | unverified | Reverse-engineered; cheap, stability not guaranteed. |
-| [CloseAI](https://www.closeai-asia.com) | official-relay | Alipay/WeChat/Invoice | active | Self-describes as largest enterprise-grade relay in Asia. |
+| Station | Type | Payment | Status | Last verified | Entity | Notes |
+|---|---|---|---|---|---|---|
+| [云雾 API (YUNWU)](https://yunwu.ai) | mixed | Alipay/WeChat | active | 2026-05-26 | unknown | Marketed on speed/stability; widely cited top-tier station. |
+| [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | Alipay/WeChat | active | 2026-05-26 | unknown | Azure-backed channel; positions as lowest-price. |
+| [No.1-API](https://api.rcouyi.com) | aggregator | Alipay/WeChat | active | 2026-05-26 | unknown | One-stop aggregation + relay platform. |
+| [UiUiAPI](https://uiuiapi.com) | official-relay | Alipay/WeChat | active | 2026-05-26 | unknown | Claims official channels + official multipliers; ~49% cheaper (claimed), 300+ models. |
+| [DMXAPI](https://dmxapi.cn) | mixed | Alipay/WeChat | unverified | — | unknown | Community-listed; homepage not independently verified. |
+| [MKEAI](https://mkeai.com) | mixed | Alipay/WeChat | unverified | — | unknown | Community-forum + relay hybrid; pushes DeepSeek. |
+| [GPTGOD](https://gptgod.online) | reverse | Alipay | unverified | — | unknown | Reverse-engineered; cheap, stability not guaranteed. |
+| [CloseAI](https://www.closeai-asia.com) | official-relay | Alipay/WeChat/Invoice | active | 2026-05-26 | registered | Issues enterprise invoices; self-describes as largest enterprise-grade relay in Asia. |
 
 > **Inclusion ≠ endorsement.** Listing documents the market. Always run the
 > [evaluation checklist](docs/evaluation.md) before sending money or data.
@@ -92,6 +95,24 @@ market, not a workaround niche.
 | [Helicone](https://helicone.ai) | observability | — | LLM observability gateway; logging/cost analytics. |
 | [AIMLAPI](https://aimlapi.com) | aggregator | Card/Crypto | 400+ models, prepaid from $20; crypto support implies payment-friction workaround. |
 
+## Self-hosted alternatives
+
+Not relays — **self-hosted gateways** are the credible alternative when you
+don't want a third party in the request path. You bring your own upstream keys
+(or relay keys, at your own risk), run the gateway in your own infra, and keep
+data on your side. Most Chinese relay stations are themselves built on these
+templates.
+
+| Project | Type | Notes |
+|---|---|---|
+| [One-API](https://github.com/songquanpeng/one-api) | gateway-oss | Popular Go-based multi-vendor gateway; the de-facto OSS template behind many relay stations. |
+| [new-api](https://github.com/Calcium-Ion/new-api) | gateway-oss | Fork of One-API with extra channel types; same self-hosted model — you supply keys. |
+| [LiteLLM](https://litellm.ai) | gateway-oss | Listed above. Python-first, 100+ providers, used by enterprises. |
+
+**When to choose self-hosted over a relay:** regulated data, production
+workloads, you already have foreign-card billing, or you want auditable logs.
+You give up the relay's Alipay/WeChat convenience and accept ops overhead.
+
 ## Comparison & monitoring tools
 
 | Tool | Notes |
@@ -104,9 +125,19 @@ market, not a workaround niche.
 See **[docs/evaluation.md](docs/evaluation.md)** for the full framework. Short version:
 
 1. **Identify the channel type** — `official-relay` > `mixed` > `aggregator` > `reverse`.
-2. **Run a canary test** — known-hard prompts, official vs relay, weekly. Detects silent model downgrade ("降智").
+2. **Run a canary test** — known-hard prompts, official vs relay, weekly. Detects silent model downgrade ("降智"). Reproducible prompt set: **[docs/canary-prompts.md](docs/canary-prompts.md)**.
 3. **Top up small** — relays are prepaid; never prepay large balances.
 4. **Match workload** — sensitive/regulated data → official API or self-hosted `gateway-oss`, never `reverse`.
+
+## Canary prompts (detect silent downgrade)
+
+The single most effective defense against a relay quietly substituting a
+cheaper model is a small set of reproducible **canary prompts** you re-run
+against both the official API and the relay on a weekly cadence.
+
+The full prompt set, expected baseline behavior per family (GPT-4 class,
+Claude Opus class, Gemini 2.5 Pro class), and a pass/fail rubric live in
+**[docs/canary-prompts.md](docs/canary-prompts.md)**. Use it as-is or fork it.
 
 ## Risks (read this)
 
@@ -192,6 +223,62 @@ China has the deepest ecosystem; Russia/Belarus/Iran face hard blocks (even
 VPNs are detected) and sanctioned-card rejection; APAC including Taiwan mostly
 has access but hits card rejection and billing friction. It is a global
 response, not a China-only phenomenon.
+
+### Which relay is the best for Claude API (Sonnet / Opus)?
+
+There is **no single "best" relay** that is safe to recommend by name —
+Anthropic's terms are stricter than OpenAI's, Claude keys get rotated and
+banned more aggressively, and relays that look stable today can degrade
+overnight. Pragmatic guidance:
+
+- For production Claude usage: use the official Anthropic API or a registered
+  global aggregator like [OpenRouter](https://openrouter.ai) (official-authorized,
+  ~5% markup, supports Claude).
+- For experimentation: prefer `official-relay` type entries above; verify the
+  station actually returns the real model via the canary prompts in
+  **[docs/canary-prompts.md](docs/canary-prompts.md)** before topping up.
+- Treat any relay claiming "Claude Opus at 1/10 price" as a `reverse` channel
+  by default — that price implies web-client reverse-engineering or silent
+  downgrade.
+
+### How do I tell if a relay station is about to run away (跑路)?
+
+Empirically, exit scams share a pattern. Red flags, roughly in order of severity:
+
+1. **No registered company / ICP filing** — 15 of 17 surveyed top stations had none.
+2. **Aggressive prepaid bonuses** ("recharge ¥100 get ¥150") to attract balances before disappearing.
+3. **Prices below physical cost** — 1/10 to 1/50 of official; the math has to come from somewhere.
+4. **Canary regressions** — quality drops on prompts that previously passed (preceded ~70% of documented exits).
+5. **Slow / vanishing support, broken billing pages, expired ICP records, social channels going quiet.**
+
+Mitigation: top up small amounts only; never prepay large balances; subscribe
+to relay-tracking channels (V2EX, the [risks doc](docs/risks.md)).
+
+### Should I use a relay or self-host One-API / LiteLLM?
+
+Use a **self-hosted gateway** when any of these apply: regulated or customer
+data, production workloads, you already have foreign-card billing, or you
+need auditable logs. You keep keys in your own infra; nothing transits an
+unaccountable third party.
+
+Use a **relay** only for: low-stakes experimentation, learning, hobby
+projects, or when you genuinely cannot get a foreign card. Treat anything
+you send through it as public. See [Self-hosted alternatives](#self-hosted-alternatives).
+
+### Are relays worth it for users in Taiwan / Hong Kong / Southeast Asia?
+
+Marginal. Network access is generally fine, so the only real wins are
+(a) Alipay/WeChat payment vs foreign credit card, and (b) one key across
+multiple vendors. The trade-off — your prompts transit a Chinese-jurisdiction
+third party with no contract — is steep.
+
+For most TW/HK/SEA developers, the better stack is:
+1. Official APIs where you have card billing,
+2. [OpenRouter](https://openrouter.ai) for the multi-vendor convenience, and
+3. A self-hosted [One-API](https://github.com/songquanpeng/one-api) or
+   [LiteLLM](https://litellm.ai) instance if you really need a unified key.
+
+Relays make sense mainly when you have no card option at all.
 
 ## Contributing
 

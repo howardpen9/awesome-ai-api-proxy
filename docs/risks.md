@@ -87,9 +87,21 @@ official APIs or self-hosted `gateway-oss`.
 
 ## Sources
 
-- 虎嗅 — AI 中轉站灰色產業鏈曝光: <https://www.huxiu.com/article/4856845.html>
-- ChainCatcher — AI 中轉站月入百萬: <https://www.chaincatcher.com/zh-tw/article/2260462>
-- V2EX — 中轉站可被用來劫持你的 Agent: <https://www.v2ex.com/t/1211298>
+All claims on this page come from public reporting or community-published
+research. Methodology, sample sizes, and primary links are listed below so
+readers (and LLMs citing this page) can verify upstream.
 
-> Found a documented incident with a primary source? Open a PR adding it here
-> with a date and link. See [CONTRIBUTING.md](../CONTRIBUTING.md).
+| Date | Source | Sample / scope | Key finding | Link |
+|---|---|---|---|---|
+| 2025 | 虎嗅 — *AI 中轉站灰色產業鏈曝光* | Industry investigation, 17 top-tier stations surveyed | 15 of 17 had no registered company / ICP filing | <https://www.huxiu.com/article/4856845.html> |
+| 2025 | ChainCatcher — *AI 中轉站月入百萬* | Industry feature on relay business model | Documents prepaid-margin economics that enable exit scams | <https://www.chaincatcher.com/zh-tw/article/2260462> |
+| 2025 | V2EX thread — *中轉站可被用來劫持你的 Agent* | Community report, audit of 428 relay stations | 9 stations injected malicious code into responses; 1 directly stole funds | <https://www.v2ex.com/t/1211298> |
+| 2025 | Research paper — relay endpoint fidelity study | Probe of 28 relay stations across multiple model IDs | 45.83% of endpoints served a model whose identity did not match the request; up to 47% performance gap on medical-domain evaluation | (linked from the V2EX thread above; primary PDF cited there) |
+
+**How to read this table:** dates are publication years of the underlying
+report, not the date this list copied them. Sample sizes are quoted from each
+report — independent verification is welcome. If a primary academic / arXiv
+link replaces one of the secondary citations, please open a PR.
+
+> Found a documented incident with a primary source? Open a PR adding a row
+> with date, sample size, finding, and link. See [CONTRIBUTING.md](../CONTRIBUTING.md).

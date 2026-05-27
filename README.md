@@ -1,5 +1,8 @@
 # Awesome AI API Proxy [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
+![Awesome AI API Proxy — a curated map of AI API relay stations (中轉站), LLM gateways, and OpenAI / Anthropic Claude / Google Gemini / Meta Llama proxy services for developers in China, Taiwan, Southeast Asia, Russia, and the Middle East](assets/ai-api-relay-proxy-banner.jpg)
+
+> **One key. Every model. Anywhere.**
 > A curated, **actively maintained** list of AI API relay / proxy stations
 > ("中轉站"), global LLM gateways, and the tools to evaluate them — with an
 > evidence-based look at why this market exists and where it's risky.

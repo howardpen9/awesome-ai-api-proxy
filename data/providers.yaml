@@ -136,6 +136,19 @@ china_relays:
     supports_tools: true
     notes: "Issues enterprise invoices; self-describes as largest enterprise-grade relay in Asia."
 
+  - name: 1API (ctoai.xyz)
+    url: https://ctoai.xyz
+    type: mixed
+    status: active
+    payment: [alipay, wechat]
+    models: [openai, anthropic, gemini, deepseek, qwen]
+    last_verified: "2026-05-29"
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    notes: "Aggregated multi-channel relay; OpenAI-compatible base_url; one-key access to GPT/Claude/Gemini/DeepSeek/Qwen; supports Cherry Studio, Lobe Chat, OpenCat; free tier for new users."
+
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
 # ---------------------------------------------------------------------------

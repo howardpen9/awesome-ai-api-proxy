@@ -239,3 +239,15 @@ self_hosted_alternatives:
     supports_stream: true
     supports_tools: true
     notes: "Fork of One-API with extra channel types; same self-hosted model — you supply keys."
+
+  - name: AI Model Gateway
+    url: https://github.com/SSC-STUDIO/Ai-Model-Gateway
+    type: gateway-oss
+    status: active
+    models: [openai, anthropic]
+    last_verified: "2026-05-30"
+    verified_by: community
+    entity_registered: false
+    supports_stream: true
+    supports_tools: unknown
+    notes: "Self-hosted LLM operations gateway with provider routing, fallback, telemetry, config publishing, and rollback."

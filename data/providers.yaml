@@ -239,3 +239,17 @@ self_hosted_alternatives:
     supports_stream: true
     supports_tools: true
     notes: "Fork of One-API with extra channel types; same self-hosted model — you supply keys."
+
+  - name: aifast.club
+    url: https://www.aifast.club
+    type: mixed
+    status: unverified
+    payment: [alipay, wechat]
+    models: [openai, anthropic, gemini, deepseek]
+    model_count: 572
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    notes: "Direct-connect relay for 572+ models; one API key for ChatGPT/Claude/DeepSeek, no proxy required."

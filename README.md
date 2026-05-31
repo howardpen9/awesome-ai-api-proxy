@@ -111,6 +111,7 @@ templates.
 | [One-API](https://github.com/songquanpeng/one-api) | gateway-oss | Popular Go-based multi-vendor gateway; the de-facto OSS template behind many relay stations. |
 | [new-api](https://github.com/Calcium-Ion/new-api) | gateway-oss | Fork of One-API with extra channel types; same self-hosted model — you supply keys. |
 | [LiteLLM](https://litellm.ai) | gateway-oss | Listed above. Python-first, 100+ providers, used by enterprises. |
+| [Relay Server Pro](https://github.com/18296023612/relay-server-pro) | gateway-oss | Go-based multi-vendor gateway with token-accurate billing, health checks, auto-recovery watchdog, and Docker support. |
 
 **When to choose self-hosted over a relay:** regulated data, production
 workloads, you already have foreign-card billing, or you want auditable logs.
@@ -122,6 +123,8 @@ You give up the relay's Alipay/WeChat convenience and accept ops overhead.
 |---|---|
 | [中轉站競技場 (AI API PK)](https://www.aiapipk.com) | Price wall across OpenAI / Reverse / Claude / DeepSeek for ~40 stations. |
 | [awesome-ai-proxy (mn-api)](https://github.com/mn-api/awesome-ai-proxy) | The original list (~31 stations). **Unmaintained as of 2026** — this repo aims to continue the effort. |
+| [API Validator](https://github.com/18296023612/api-validator) | CLI config validator for One-API / new-api / relay-server configs — catches missing fields and env vars before deployment. |
+| [Provider Ping](https://github.com/18296023612/provider-ping) | CLI connectivity tester — pings DeepSeek / VolcEngine / Qwen / GLM / Baidu / OpenAI / Anthropic and reports latency. |
 
 ## How to choose one safely
 

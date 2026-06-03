@@ -214,6 +214,19 @@ global_gateways:
     supports_tools: unknown
     notes: "Prepaid from $20; crypto support implies payment-friction workaround."
 
+  - name: FerryAPI
+    url: https://www.ferryapi.io/
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [deepseek, qwen, kimi, mimo]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    notes: "OpenAI-compatible gateway with prepaid balance and customer API key management; community-submitted, not independently verified."
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

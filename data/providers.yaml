@@ -157,6 +157,15 @@ comparison_tools:
     notes: "Original list (~31 stations); no longer maintained as of 2026."
 
 # ---------------------------------------------------------------------------
+  - name: CoderPlan
+    url: https://coderplan.ai
+    type: aggregator
+    status: unverified
+    payment: [alipay, wechat]
+    models: [openai, anthropic, gemini, deepseek]
+    model_count: 50
+    notes: Pay-per-use LLM API gateway with OpenAI-compatible endpoint. ¥10 min topup.
+
 # Global gateways / aggregators (海外對比方案)
 # ---------------------------------------------------------------------------
 global_gateways:

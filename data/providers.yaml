@@ -188,6 +188,19 @@ global_gateways:
     supports_tools: true
     notes: "Open-source gateway + enterprise tier. Self-hosted; not retail."
 
+  - name: FerryAPI
+    url: https://www.ferryapi.io
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [openai, anthropic, google, deepseek, qwen]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    notes: "OpenAI-compatible global gateway with prepaid USD balance and customer API-key management; submitted by an affiliated contributor."
+
   - name: Helicone
     url: https://helicone.ai
     type: observability

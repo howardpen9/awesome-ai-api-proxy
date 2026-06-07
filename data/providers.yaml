@@ -354,3 +354,16 @@ self_hosted_alternatives:
       en: "Fork of One-API with extra channel types; same self-hosted model — you supply keys."
       zh-TW: "One-API 的 fork，多了幾種通道類型；同樣自架、自帶 key。"
       zh-CN: "One-API 的 fork，多了几种通道类型；同样自托管、自带 key。"
+
+  - name: A3M Router
+    url: https://github.com/Das-rebel/a3m-router
+    type: gateway-oss
+    status: unverified
+    provider_count: 47
+    last_verified: null
+    verified_by: community
+    entity_registered: false
+    supports_stream: true
+    supports_tools: true
+    notes:
+      en: "TypeScript self-hosted router with parallel ensemble orchestration across 47+ providers, Shapley-value credit allocation, semantic cache, circuit breaker, and guardrails. 15K+ npm downloads (package: adaptive-memory-multi-model-router). OpenAI-compatible."

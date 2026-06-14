@@ -108,7 +108,8 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 | 服務 | 類型 | 支付 | 備註 |
 |---|---|---|---|
 | 🟢 [OpenRouter](https://openrouter.ai) | aggregator | 卡/加密貨幣 | 官方授權路由，加價約 5%；400+ 模型、60+ 供應商。ARR 據報約 $5M（2025-05）→ 約 $50M（2026 初）。公開 `/api/v1/models` JSON。 |
-| 🟢 [Atlas Cloud](https://www.atlascloud.ai) | aggregator | 卡 | 多模態聚合平台；影像/影片模型多（Grok Imagine、Kling、ByteDance、Vidu）。公開 OpenAI 相容 `/v1/models` 含 cache-read 計價。 |
+| 🟢 [xAI (official)](https://x.ai) | official-relay | 卡 | xAI 官方 Grok 定價(文字 + Grok Imagine 影像/影片),作為中轉站(如 Atlas Cloud)轉售的官方基準抓取。非中轉站,僅作為價格參考。 |
+| 🟢 [Atlas Cloud](https://www.atlascloud.ai) | aggregator | 卡 | 多模態聚合平台；影像/影片模型多（Grok Imagine、Kling、ByteDance、Vidu）。`/v1/models` JSON 只列約 120 個文字模型且單一價；定價頁 RSC 才有全部 300+ 模型與原價/折後價,fetcher 改抓該頁。 |
 | 🟢 [Relaydance](https://relaydance.com) | mixed | 支付寶/微信/卡 | 基於 new-api 的中文介面海外站，主打 xAI Grok + 字節跳動 Doubao。`/api/pricing` 公開倍率計價（model_ratio × $2/1M tokens）。 |
 | 🟢 [LiteLLM](https://litellm.ai) | gateway-oss | — | 開源閘道（100+ 供應商）+ 企業版。自架，自帶 Key。 |
 | 🟢 [Helicone](https://helicone.ai) | observability | — | LLM 可觀測性閘道；日誌/成本分析。 |
@@ -217,7 +218,7 @@ schema 見 [CONTRIBUTING.md](CONTRIBUTING.md)；
 > 機器可讀資料：[`data/prices.latest.json`](data/prices.latest.json)。
 
 <!-- prices:start -->
-_Snapshot date: **2026-06-07**. 3026 price records across 5 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting._
+_Snapshot date: **2026-06-14**. 3086 price records across 6 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting._
 
 #### Six indicator models, six providers, one snapshot
 
@@ -237,34 +238,37 @@ _Output-token equivalents and the full-matrix heatmap: [`assets/charts/`](assets
 
 ### Tier 1 — cheapest viable (routine, batch summaries) — USD per 1M input tokens
 
-| Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
-|---|---|---|---|---|---|
-| `deepseek-v3` | $0.200 | $0.216 | — | $2.000 | $2.000 |
-| `deepseek-r1` | $0.700 | $0.550 | — | $4.000 | $4.000 |
+| Model | OpenRouter (ref) | xAI (official) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
+|---|---|---|---|---|---|---|
+| `deepseek-v3` | $0.200 | — | $0.216 | — | $2.000 | $2.000 |
+| `deepseek-r1` | $0.700 | — | $0.550 | — | $4.000 | $4.000 |
 
 ### Tier 2 — daily driver (agent, coding) — USD per 1M input tokens
 
-| Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
-|---|---|---|---|---|---|
-| `gemini-3-flash` | $1.500 | $1.500 | — | — | — |
-| `gpt-5.4` | $2.500 | $2.500 | — | $2.500 | $2.500 |
-| `claude-sonnet-4.6` | $3.000 | $3.000 | — | $3.000 | $3.000 |
+| Model | OpenRouter (ref) | xAI (official) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
+|---|---|---|---|---|---|---|
+| `gemini-3-flash` | $1.500 | — | $1.500 | — | — | — |
+| `gpt-5.4` | $2.500 | — | $2.500 | — | $2.500 | $2.500 |
+| `claude-sonnet-4.6` | $3.000 | — | $3.000 | — | $3.000 | $3.000 |
 
 ### Tier 3 — top frontier (hardest problems) — USD per 1M input tokens
 
-| Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
-|---|---|---|---|---|---|
-| `grok-4.3` | $1.250 | $1.250 | $1.125 | — | — |
-| `claude-opus-4.8` | $5.000 | $5.000 | — | — | — |
-| `gpt-5.5-pro` | $30.00 | — | — | — | — |
+| Model | OpenRouter (ref) | xAI (official) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
+|---|---|---|---|---|---|---|
+| `grok-4.3` | $1.250 | $1.250 | $1.250 | $1.125 | $3.000 | — |
+| `claude-opus-4.8` | $5.000 | — | $5.000 | — | — | — |
+| `gpt-5.5-pro` | $30.00 | — | — | — | — | — |
 
 ### Tier 4 — multimodal (different units, can't compare to text)
 
-| Model | Unit | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
-|---|---|---|---|---|---|---|
-| `grok-imagine-video-1.5` | USD per 1M input tokens | — | — | $2.083 | — | — |
-| `grok-imagine-video-1.5` | USD per 1M output tokens | — | — | $2.083 | — | — |
-| `grok-imagine-video-1.5` | USD per second | — | — | — | — | — |
+| Model | Unit | OpenRouter (ref) | xAI (official) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
+|---|---|---|---|---|---|---|---|
+| `grok-imagine-image-quality` | USD per image | — | $0.040 | $0.050 | $0.045 | — | — |
+| `grok-imagine-image` | USD per image | — | $0.020 | $0.020 | $0.018 | — | — |
+| `grok-imagine-video-1.5` | USD per 1M input tokens | — | — | — | $2.083 | — | — |
+| `grok-imagine-video-1.5` | USD per 1M output tokens | — | — | — | $2.083 | — | — |
+| `grok-imagine-video-1.5` | USD per request | — | — | $0.050 | — | — | — |
+| `grok-imagine-video-1.5` | USD per second | — | $0.080 | — | — | — | $1.000 |
 
 _Full per-model breakdown (including non-canonical models): [`docs/prices.md`](docs/prices.md). Raw snapshots: [`data/snapshots/`](data/snapshots/). Machine-readable: [`data/prices.latest.json`](data/prices.latest.json)._
 

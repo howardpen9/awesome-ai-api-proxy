@@ -245,27 +245,46 @@ global_gateways:
       zh-TW: "官方授權路由，加價約 5%；400+ 模型、60+ 供應商。ARR 據報約 $5M（2025-05）→ 約 $50M（2026 初）。公開 `/api/v1/models` JSON。"
       zh-CN: "官方授权路由，加价约 5%；400+ 模型、60+ 供应商。ARR 据报约 $5M（2025-05）→ 约 $50M（2026 初）。公开 `/api/v1/models` JSON。"
 
+  - name: xAI (official)
+    url: https://x.ai
+    type: official-relay
+    status: active
+    payment: [card]
+    models: [grok]
+    last_verified: "2026-06-14"
+    verified_by: maintainer
+    entity_registered: true
+    supports_stream: true
+    supports_tools: true
+    pricing:
+      pricing_url: https://docs.x.ai/developers/pricing
+      fetcher: xai_official
+      pricing_currency: USD
+    notes:
+      en: "Vendor's own list price for Grok (text + Grok Imagine image/video), scraped as the official baseline that relays like Atlas Cloud resell. Not a relay station — included only as a price reference."
+      zh-TW: "xAI 官方 Grok 定價(文字 + Grok Imagine 影像/影片),作為中轉站(如 Atlas Cloud)轉售的官方基準抓取。非中轉站,僅作為價格參考。"
+      zh-CN: "xAI 官方 Grok 定价(文字 + Grok Imagine 图像/视频),作为中转站(如 Atlas Cloud)转售的官方基准抓取。非中转站,仅作为价格参考。"
+
   - name: Atlas Cloud
     url: https://www.atlascloud.ai
     type: aggregator
     status: active
     payment: [card]
     models: [deepseek, qwen, moonshot, anthropic, grok, kling, minimax, bytedance, vidu, openai, google]
-    model_count: 118
-    last_verified: "2026-06-07"
+    model_count: 312
+    last_verified: "2026-06-14"
     verified_by: maintainer
     entity_registered: unknown
     supports_stream: true
     supports_tools: true
     pricing:
-      pricing_url: https://www.atlascloud.ai/models
-      api_url: https://api.atlascloud.ai/v1/models
+      pricing_url: https://www.atlascloud.ai/pricing/models
       fetcher: atlascloud
       pricing_currency: USD
     notes:
-      en: "Multi-modal aggregator; image/video heavy (Grok Imagine, Kling, ByteDance, Vidu). Public OpenAI-compatible /v1/models endpoint exposes per-token pricing including cache-read."
-      zh-TW: "多模態聚合平台；影像/影片模型多（Grok Imagine、Kling、ByteDance、Vidu）。公開 OpenAI 相容 `/v1/models` 含 cache-read 計價。"
-      zh-CN: "多模态聚合平台；图像/视频模型多（Grok Imagine、Kling、ByteDance、Vidu）。公开 OpenAI 兼容 `/v1/models` 含 cache-read 计价。"
+      en: "Multi-modal aggregator; image/video heavy (Grok Imagine, Kling, ByteDance, Vidu). The /v1/models JSON only lists ~120 text LLMs at a single price; the pricing page RSC exposes all 300+ models with list-vs-discounted prices, so the fetcher reads that instead."
+      zh-TW: "多模態聚合平台；影像/影片模型多（Grok Imagine、Kling、ByteDance、Vidu）。`/v1/models` JSON 只列約 120 個文字模型且單一價；定價頁 RSC 才有全部 300+ 模型與原價/折後價,fetcher 改抓該頁。"
+      zh-CN: "多模态聚合平台；图像/视频模型多（Grok Imagine、Kling、ByteDance、Vidu）。`/v1/models` JSON 只列约 120 个文字模型且单一价；定价页 RSC 才有全部 300+ 模型与原价/折后价,fetcher 改抓该页。"
 
   - name: Relaydance
     url: https://relaydance.com

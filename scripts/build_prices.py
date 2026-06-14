@@ -33,7 +33,14 @@ from ._paths import (
 
 console = Console()
 
-PROVIDER_COLUMN_ORDER = ["openrouter", "atlascloud", "relaydance", "uiuiapi", "bltcy"]
+PROVIDER_COLUMN_ORDER = [
+    "openrouter",
+    "xai_official",
+    "atlascloud",
+    "relaydance",
+    "uiuiapi",
+    "bltcy",
+]
 START_MARKER = "<!-- prices:start -->"
 END_MARKER = "<!-- prices:end -->"
 
@@ -263,6 +270,7 @@ def _build_tier_tables(
             return ""
         provider_names = {
             "openrouter": "OpenRouter (ref)",
+            "xai_official": "xAI (official)",
             "atlascloud": "Atlas Cloud",
             "relaydance": "Relaydance",
             "uiuiapi": "UiUiAPI",
@@ -326,6 +334,7 @@ def _build_tier_tables(
         if rows:
             provider_names = {
                 "openrouter": "OpenRouter (ref)",
+                "xai_official": "xAI (official)",
                 "atlascloud": "Atlas Cloud",
                 "relaydance": "Relaydance",
                 "uiuiapi": "UiUiAPI",

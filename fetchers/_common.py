@@ -8,9 +8,10 @@ See docs/agent-citation.md.
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Literal
+from typing import Iterator, Literal
 
 import httpx
 from pydantic import BaseModel, Field
@@ -41,6 +42,11 @@ class PriceRecord(BaseModel):
     channel_type: ChannelType = "unknown"
     unit: Unit
     price_usd: float
+    # When a provider advertises a discount, price_usd is the discounted (paid) price,
+    # origin_price_usd is the pre-discount list price, and discount_pct is how much off
+    # (e.g. 35.0 means -35%). All None when the provider has no discount concept.
+    origin_price_usd: float | None = None
+    discount_pct: float | None = None
     source_url: str
     captured_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     confidence: Confidence = "high"
@@ -71,8 +77,70 @@ def http_client(*, timeout: float = 20.0) -> httpx.Client:
 
 
 def per_token_to_per_1m(price_per_token: float | str) -> float:
-    """OpenRouter / atlascloud express prices as $/token. Convert to $/1M tokens."""
+    """OpenRouter expresses prices as $/token. Convert to $/1M tokens."""
     return float(price_per_token) * 1_000_000
+
+
+_NEXT_F_RE = re.compile(r'self\.__next_f\.push\(\[1,"(.*?)"\]\)', re.S)
+
+
+def next_f_blob(html: str) -> str:
+    """Reassemble a Next.js RSC payload from its self.__next_f.push() chunks.
+
+    Atlas Cloud and docs.x.ai both server-render their pricing tables into this
+    stream instead of a public JSON API, so we concatenate the chunks and undo
+    the JS string escaping to get one searchable blob of embedded JSON.
+    """
+    blob = "".join(_NEXT_F_RE.findall(html))
+    return blob.encode().decode("unicode_escape", errors="ignore")
+
+
+def iter_objects_containing(blob: str, needle: str) -> Iterator[dict]:
+    """Yield each JSON object in `blob` whose text contains `needle`.
+
+    Walks back from every `needle` hit to the enclosing object's opening brace,
+    then forward to its matching close, and json.loads the slice. Objects that
+    fail to parse (truncated/nested oddly) are skipped silently.
+    """
+    for m in re.finditer(re.escape(needle), blob):
+        start = _enclosing_brace(blob, m.start())
+        if start is None:
+            continue
+        raw = _balanced_object(blob, start)
+        if raw is None:
+            continue
+        try:
+            yield json.loads(raw)
+        except json.JSONDecodeError:
+            continue
+
+
+def _enclosing_brace(s: str, pos: int) -> int | None:
+    depth = 0
+    i = pos
+    while i > 0:
+        c = s[i]
+        if c == "}":
+            depth += 1
+        elif c == "{":
+            if depth == 0:
+                return i
+            depth -= 1
+        i -= 1
+    return None
+
+
+def _balanced_object(s: str, start: int) -> str | None:
+    depth = 0
+    for j in range(start, len(s)):
+        c = s[j]
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return s[start : j + 1]
+    return None
 
 
 def write_snapshot(result: FetchResult, snapshots_dir: Path) -> Path:

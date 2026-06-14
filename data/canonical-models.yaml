@@ -13,9 +13,14 @@
 #                Add new aliases here whenever a new fetcher surfaces a name we haven't seen.
 #
 # We don't store static "official prices" — they go stale fast. OpenRouter's
-# observed price (an officially-authorized aggregator, ~5% markup) is used as the
+# observed price (an officially-authorized aggregator, ~5% markup) is the default
 # reference baseline at build time. The ⚠ marker triggers when a relay quotes
 # <50% of OpenRouter — a classic signal of reverse / mixed channel.
+#
+# Where a vendor publishes its own list prices for media (image/video) that
+# OpenRouter doesn't carry, we scrape them via a dedicated fetcher (e.g.
+# xai_official from docs.x.ai) rather than hand-copying numbers. Same rule still
+# holds — nothing static; every price is dated + snapshot-backed.
 #
 # Models NOT in this list still appear in data/snapshots/ and docs/prices.md,
 # but won't show in the README headline table.
@@ -128,6 +133,31 @@ canonical_models:
       - x-ai/grok-4.3
 
   # ---------- Tier 4: multimodal (different units, can't compare to text) ----------
+  # Image generation compares cleanly across providers (both bill per output
+  # image). Atlas resells Grok Imagine; xai_official is the vendor list price.
+  - canonical: grok-imagine-image-quality
+    family: grok
+    tier: 4
+    task: text-to-image
+    unit: per_image
+    aliases:
+      - grok-imagine-image-quality
+      - xai/grok-imagine-image-quality/text-to-image
+      - xai/grok-imagine-image-quality/edit
+
+  - canonical: grok-imagine-image
+    family: grok
+    tier: 4
+    task: text-to-image
+    unit: per_image
+    aliases:
+      - grok-imagine-image
+      - xai/grok-imagine-image/text-to-image
+      - xai/grok-imagine-image/edit
+
+  # Video: xai_official bills per second; Atlas's RSC exposes only a per-generation
+  # base_price (no duration), so the two land in different unit rows on purpose —
+  # we don't fabricate a per-second figure for Atlas.
   - canonical: grok-imagine-video-1.5
     family: grok
     tier: 4
@@ -138,3 +168,5 @@ canonical_models:
       - grok-imagine-video-1.5
       - grok-imagine-video-1.5-preview
       - xai/grok-imagine-video-1.5
+      - xai/grok-imagine-video/text-to-video
+      - xai/grok-imagine-video/image-to-video

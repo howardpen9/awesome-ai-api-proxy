@@ -47,12 +47,13 @@ CHARTS_DIR.mkdir(parents=True, exist_ok=True)
 # ---------------------------------------------------------------------------
 
 PROVIDERS = [
-    ("openrouter",  "OpenRouter (ref)", "#7c3aed"),
-    ("atlascloud",  "Atlas Cloud",      "#0ea5e9"),
-    ("unorouter",   "UnoRouter",        "#f59e0b"),
-    ("relaydance",  "Relaydance",       "#10b981"),
-    ("uiuiapi",     "UiUiAPI",          "#ec4899"),
-    ("bltcy",       "bltcy",            "#ef4444"),
+    ("openrouter",   "OpenRouter (ref)", "#7c3aed"),
+    ("xai_official", "xAI (official)",   "#64748b"),
+    ("atlascloud",   "Atlas Cloud",      "#0ea5e9"),
+    ("unorouter",    "UnoRouter",        "#f59e0b"),
+    ("relaydance",   "Relaydance",       "#10b981"),
+    ("uiuiapi",      "UiUiAPI",          "#ec4899"),
+    ("bltcy",        "bltcy",            "#ef4444"),
 ]
 PROVIDER_COLORS = {pid: color for pid, _, color in PROVIDERS}
 PROVIDER_LABELS = {pid: label for pid, label, _ in PROVIDERS}

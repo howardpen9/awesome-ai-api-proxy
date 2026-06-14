@@ -15,6 +15,7 @@ from typing import Callable
 REGISTRY: dict[str, str] = {
     "openrouter": "fetchers.openrouter",
     "atlascloud": "fetchers.atlascloud",
+    "xai_official": "fetchers.xai_official",
     "relaydance": "fetchers.relaydance",
     "uiuiapi": "fetchers.uiuiapi",
     "bltcy": "fetchers.bltcy",

@@ -106,6 +106,21 @@ china_relays:
       zh-TW: "宣稱官方渠道 + 官方倍率；約便宜 49%（宣稱），311 模型。new-api `/api/pricing` 公開於 api1 子網域。"
       zh-CN: "宣称官方渠道 + 官方倍率；约便宜 49%（宣称），311 模型。new-api `/api/pricing` 公开于 api1 子域名。"
 
+  - name: Prism API (棱镜API)
+    url: https://sub2api.558686.xyz
+    type: mixed
+    status: unverified
+    payment: [crypto]
+    models: [openai]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, no_entity]
+    notes:
+      en: "Operator-submitted OpenAI-focused relay; crypto top-up via BEpusdt/EasyPay and Google signup grants are shown on the public site."
+
   - name: DMXAPI
     url: https://dmxapi.cn
     type: mixed

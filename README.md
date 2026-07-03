@@ -120,6 +120,7 @@ market, not a workaround niche.
 | 🟢 [LiteLLM](https://litellm.ai) | gateway-oss | — | Open-source gateway + enterprise tier. Self-hosted; not retail. |
 | 🟢 [Helicone](https://helicone.ai) | observability | — | LLM observability gateway; logging/analytics focus. |
 | 🟢 [AIMLAPI](https://aimlapi.com) | aggregator | Card/Crypto | Prepaid from $20; crypto support implies payment-friction workaround. |
+| 🟢 [RouteScope](https://www.routescope.ai/?utm_source=GitHub&campaignid=c23f775c214147aca67e2c8030d0a08f&utm_term=github) | aggregator | Card/Crypto | Unified AI model aggregation & distribution gateway. Cross-format conversion of 100+ LLMs into OpenAI/Claude/Gemini-compatible interfaces. Single API key, centralized dashboard, no monthly commitment — pay-as-you-go credits apply to all models. Plans start at $5. |
 | 🟡 [UnoRouter](https://unorouter.ai) | aggregator | Card | Built on the new-api gateway. One key across multiple upstreams with latency-based routing and failover; OpenAI/Anthropic/Gemini formats auto-detected. Pay-as-you-go credits plus a free model tier. Also targets roleplay clients (SillyTavern, Janitor.AI, RisuAI, Chub). Public pricing JSON at /api/pricing. |
 <!-- providers:global_gateways:end -->
 

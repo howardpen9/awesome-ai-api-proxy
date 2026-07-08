@@ -173,6 +173,20 @@ china_relays:
       zh-TW: "提供對公發票；自稱亞洲最大企業級中轉。"
       zh-CN: "提供对公发票；自称亚洲最大企业级中转。"
 
+  - name: cocodot
+    url: https://cocodot.co
+    type: official-relay
+    status: active
+    payment: [alipay, card]
+    models: [openai, anthropic, gemini, deepseek]
+    entity_registered: true
+    supports_stream: true
+    supports_tools: true
+    notes:
+      en: "Alipay top-up, per-token billing capped at official prices; Anthropic-compatible endpoint so Claude Code can connect directly (beta); ships open-source LLMprobe for model-downgrade self-testing."
+      zh-TW: "支付寶充值、按量計費、封頂不超官網價；另有 Anthropic 相容端點，Claude Code 可直連（beta）；開源 LLMprobe 可自測降智。"
+      zh-CN: "支付宝充值、按量计费、封顶不超官网价；另有 Anthropic 兼容端点，Claude Code 可直连（beta）；开源 LLMprobe 可自测降智。"
+
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
 # ---------------------------------------------------------------------------

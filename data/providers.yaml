@@ -361,6 +361,24 @@ global_gateways:
       zh-TW: "建於 new-api 閘道之上。單一金鑰跨多上游，依延遲路由並具故障轉移；自動辨識 OpenAI／Anthropic／Gemini 格式。按量計費並提供免費模型層；亦支援角色扮演用戶端（SillyTavern、Janitor.AI、RisuAI、Chub）。"
       zh-CN: "建于 new-api 网关之上。单一密钥跨多上游，按延迟路由并具故障转移；自动识别 OpenAI／Anthropic／Gemini 格式。按量计费并提供免费模型层；亦支持角色扮演客户端（SillyTavern、Janitor.AI、RisuAI、Chub）。"
 
+
+  - name: Kevoryn
+    url: https://kevoryn.com
+    type: aggregator
+    status: unverified
+    payment: [alipay, wechat]
+    models: [openai, anthropic, gemini, deepseek]
+    model_count: 88
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "88-model aggregator relay. Covers GPT-5.6, Claude Opus/Sonnet 4, Gemini 2.5 Pro, DeepSeek-V3/R1. Pay-as-you-go from 15% of official pricing. China-direct connectivity, no VPN required. Docs at kevoryn.com/docs."
+      zh-CN: "88款AI模型一站式API中转平台。覆盖GPT-5.6、Claude Opus 4/Sonnet 4、Gemini 2.5 Pro、DeepSeek-V3/R1。按量计费，15%官方价起。国内直连，无需VPN。文档：kevoryn.com/docs。"
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

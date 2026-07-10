@@ -289,6 +289,23 @@ global_gateways:
       zh-TW: "基於 new-api 的中文介面海外站，主打 xAI Grok + 字節跳動 Doubao。`/api/pricing` 公開倍率計價（model_ratio × $2/1M tokens）。"
       zh-CN: "基于 new-api 的中文界面海外站，主打 xAI Grok + 字节跳动 Doubao。`/api/pricing` 公开倍率计价（model_ratio × $2/1M tokens）。"
 
+  - name: AI Router
+    url: https://ai-router.dev
+    type: mixed
+    status: unverified
+    payment: [alipay, wechat, card, crypto]
+    models: [openai]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible ChatGPT API relay for developers. User API keys, usage visibility, daily/weekly plans, and staged 20U new-user credit (5U signup + 15U after top-up)."
+      zh-TW: "面向開發者的 OpenAI 相容 ChatGPT API 中轉。提供使用者 API Key、用量可視化、日/週方案，以及分段 20U 新人額度（註冊 5U + 充值後解鎖 15U）。"
+      zh-CN: "面向开发者的 OpenAI 兼容 ChatGPT API 中转。提供用户 API Key、用量可视化、日/周方案，以及分段 20U 新人额度（注册 5U + 充值后解锁 15U）。"
+
   - name: LiteLLM
     url: https://litellm.ai
     type: gateway-oss

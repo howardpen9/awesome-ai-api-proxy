@@ -323,6 +323,22 @@ global_gateways:
       zh-TW: "400+ 模型，$20 起預付；支援加密貨幣暗示繞支付障礙。"
       zh-CN: "400+ 模型，$20 起预付；支持加密货币暗示绕支付障碍。"
 
+  - name: A3M Router
+    url: https://github.com/Das-rebel/a3m-router
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [openai, anthropic, google, deepseek, groq, mistral, xai, cohere]
+    model_count: 47
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "TypeScript router with parallel ensemble execution across 47+ providers; npm 20K+ downloads; MIT open-source."
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

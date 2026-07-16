@@ -6,6 +6,17 @@ went stale; the goal here is to stay current.
 
 繁中 / 简中贡献者：可以用中文开 issue / PR，维护者会处理。
 
+## For AI agents (read this first)
+
+If you are Claude Code / Cursor / Codex / any coding agent opening a PR on
+behalf of a user, **start here**:
+
+> **[`docs/agent-contribute.md`](docs/agent-contribute.md)** — decision tree,
+> hard CI rules, copy-paste YAML, Path A/B/C/D recipes.
+
+Also indexable via [`llms.txt`](llms.txt). Manual README edits and marketing
+PRs are closed without merge; re-submit via the agent playbook.
+
 ## What we accept
 
 - **New stations** with a working URL and an honest channel `type`.

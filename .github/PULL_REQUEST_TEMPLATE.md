@@ -4,6 +4,11 @@
        status: GPTGOD → inactive
        feat: add UiUiAPI fetcher
 -->
+<!--
+  AI agents: follow docs/agent-contribute.md before opening this PR.
+  Edit data/providers.yaml only. Never hand-edit README tables.
+  Run: python -m scripts.validate
+-->
 
 ## What this changes
 

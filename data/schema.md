@@ -108,10 +108,13 @@ official-relay  >  mixed  >  aggregator  >  reverse
 
 ## Editorial rules
 
-1. No referral links. Plain URLs only.
-2. No "best / cheapest / #1" superlatives in `notes` unless attributed and dated.
-3. A station that has run away (`跑路`) → set `status: inactive`, keep the entry, add a dated note. We do not delete history.
-4. **Two pricing schemas coexist (schema v3+):**
+1. No referral links. Plain **HTTPS** URLs only — no `utm_*`, `ref=`, `campaignid`, `gclid`, etc. Enforced by `scripts/validate.py`.
+2. No marketing / superlative phrasing in `notes` (`#1`, `the best …`, 强烈推荐, 不降智, …). One factual sentence per language, ≤ 360 characters.
+3. `status: active` requires `verified_by: maintainer` and a `last_verified` date. Community / operator submissions use `status: unverified`.
+4. `risk_flags: [operator_submitted]` implies `status: unverified` (never `active`).
+5. Do not hand-edit README provider tables — they are generated from this file. CI rejects hand-edits of those marker blocks.
+6. A station that has run away (`跑路`) → set `status: inactive`, keep the entry, add a dated note. We do not delete history.
+7. **Two pricing schemas coexist (schema v3+):**
    - Providers with `pricing.fetcher` → objective, dated, snapshot-backed absolute prices live in `data/snapshots/` + `data/prices.latest.json`. The README's price table is generated from these. No `(claimed)` tag.
    - Providers without `pricing.fetcher` → continue using `discount_vs_official: "... (claimed)"` for narrative context. Prices decay fast so they remain marked `(claimed)`.
-5. Every record in `data/prices.latest.json` carries `source_url` + `captured_at` + `method`. This is the citation envelope LLM agents quote — don't drop those fields when adding a fetcher.
+8. Every record in `data/prices.latest.json` carries `source_url` + `captured_at` + `method`. This is the citation envelope LLM agents quote — don't drop those fields when adding a fetcher.

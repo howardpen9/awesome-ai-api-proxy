@@ -4,6 +4,11 @@
        status: GPTGOD → inactive
        feat: add UiUiAPI fetcher
 -->
+<!--
+  AI agents: follow docs/agent-contribute.md before opening this PR.
+  Edit data/providers.yaml only. Never hand-edit README tables.
+  Run: python -m scripts.validate
+-->
 
 ## What this changes
 
@@ -11,11 +16,12 @@
 
 ## Checklist
 
-- [ ] Edited `data/providers.yaml` only (not the README tables — they auto-regenerate)
+- [ ] Edited `data/providers.yaml` only (not the README tables — they auto-regenerate; CI rejects hand-edits)
 - [ ] Followed [`data/schema.md`](../data/schema.md)
-- [ ] `status: unverified` if I cannot independently verify (self-submissions default to this)
-- [ ] No referral / affiliate links, no marketing copy
-- [ ] `notes` is one factual sentence
+- [ ] `status: unverified` if I cannot independently verify (self-submissions **must** use this)
+- [ ] Self-submission: `risk_flags: [operator_submitted]`
+- [ ] Plain `https://` URL only — no `utm_*` / `ref=` / affiliate params
+- [ ] No marketing copy / superlatives in `notes` (one factual sentence, ≤ 360 chars)
 - [ ] Claims have a dated source where non-obvious
 - [ ] If adding a price fetcher: created `fetchers/<id>.py`, registered in `fetchers/__init__.REGISTRY`, added aliases to `data/canonical-models.yaml`
 

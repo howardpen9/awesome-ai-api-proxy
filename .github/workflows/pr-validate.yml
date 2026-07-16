@@ -1,7 +1,9 @@
 name: Validate PR
 
-# Runs scripts/validate.py on every PR touching the data layer or tooling.
-# Catches typos / invalid schema / bad units before a human maintainer sees the PR.
+# Runs schema/editorial validation + README table hygiene on every PR that
+# touches the data layer, generated READMEs, or tooling.
+# Catches typos / invalid schema / UTM links / hand-edited tables before a
+# human maintainer sees the PR.
 
 on:
   pull_request:
@@ -10,6 +12,10 @@ on:
       - "fetchers/**"
       - "scripts/**"
       - "pyproject.toml"
+      - "README.md"
+      - "README.zh-TW.md"
+      - "README.zh-CN.md"
+      - ".github/workflows/pr-validate.yml"
   workflow_dispatch:
 
 jobs:
@@ -17,6 +23,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Need full history so --check-pr can diff against the PR base.
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -28,5 +37,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
 
-      - name: Validate schemas
+      - name: Validate schemas + editorial rules
         run: python -m scripts.validate
+
+      - name: README provider-table hygiene
+        env:
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python -m scripts.build_provider_tables --check-pr

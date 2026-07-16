@@ -337,6 +337,24 @@ global_gateways:
       zh-TW: "400+ 模型，$20 起預付；支援加密貨幣暗示繞支付障礙。"
       zh-CN: "400+ 模型，$20 起预付；支持加密货币暗示绕支付障碍。"
 
+  # Canonicalized after PR #25 hand-edited README with a UTM URL.
+  - name: RouteScope
+    url: https://www.routescope.ai
+    type: aggregator
+    status: unverified
+    payment: [card, crypto]
+    models: [openai, anthropic, gemini]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Unified gateway mapping 100+ models to OpenAI/Claude/Gemini-compatible APIs; pay-as-you-go credits."
+      zh-TW: "統一閘道，將 100+ 模型轉成 OpenAI／Claude／Gemini 相容 API；按量預付額度。"
+      zh-CN: "统一网关，将 100+ 模型转成 OpenAI／Claude／Gemini 兼容 API；按量预付额度。"
+
   - name: UnoRouter
     url: https://unorouter.ai
     type: aggregator

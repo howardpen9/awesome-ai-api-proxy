@@ -113,6 +113,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中转站
 | 🟢 [LiteLLM](https://litellm.ai) | gateway-oss | — | 开源网关（100+ 供应商）+ 企业版。自托管，自带 Key。 |
 | 🟢 [Helicone](https://helicone.ai) | observability | — | LLM 可观测性网关；日志/成本分析。 |
 | 🟢 [AIMLAPI](https://aimlapi.com) | aggregator | 卡/加密货币 | 400+ 模型，$20 起预付；支持加密货币暗示绕支付障碍。 |
+| 🟡 [RouteScope](https://www.routescope.ai) | aggregator | 卡/加密货币 | 统一网关，将 100+ 模型转成 OpenAI／Claude／Gemini 兼容 API；按量预付额度。 |
 | 🟡 [UnoRouter](https://unorouter.ai) | aggregator | 卡 | 建于 new-api 网关之上。单一密钥跨多上游，按延迟路由并具故障转移；自动识别 OpenAI／Anthropic／Gemini 格式。按量计费并提供免费模型层；亦支持角色扮演客户端（SillyTavern、Janitor.AI、RisuAI、Chub）。 |
 <!-- providers:global_gateways:end -->
 

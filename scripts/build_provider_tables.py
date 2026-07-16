@@ -15,9 +15,20 @@ in each README. Sections supported: china_relays, global_gateways,
 self_hosted_alternatives, comparison_tools.
 
 Run after editing providers.yaml. Idempotent.
+
+CLI:
+  python -m scripts.build_provider_tables           # write READMEs
+  python -m scripts.build_provider_tables --check   # fail if READMEs drift
+  python -m scripts.build_provider_tables --check-pr
+      # PR-aware: reject hand-edited provider tables; allow yaml-only PRs
 """
 
 from __future__ import annotations
+
+import argparse
+import os
+import subprocess
+import sys
 
 import yaml
 from rich.console import Console
@@ -227,9 +238,34 @@ def _update_markers(readme_text: str, section: str, body: str) -> tuple[str, boo
     return new_text, True
 
 
-def main() -> int:
-    doc = yaml.safe_load(PROVIDERS_YAML.read_text(encoding="utf-8"))
-    sections_present = [s for s in SECTION_HEADERS if s in doc]
+def _extract_section(readme_text: str, section: str) -> str | None:
+    start_marker = f"<!-- providers:{section}:start -->"
+    end_marker = f"<!-- providers:{section}:end -->"
+    if start_marker not in readme_text or end_marker not in readme_text:
+        return None
+    start = readme_text.index(start_marker) + len(start_marker)
+    end = readme_text.index(end_marker)
+    return readme_text[start:end].strip("\n")
+
+
+def _load_doc() -> dict:
+    return yaml.safe_load(PROVIDERS_YAML.read_text(encoding="utf-8"))
+
+
+def _sections_present(doc: dict) -> list[str]:
+    return [s for s in SECTION_HEADERS if s in doc]
+
+
+def _expected_body(doc: dict, section: str, lang: str) -> str | None:
+    entries = doc.get(section) or []
+    if not entries:
+        return None
+    return _render_section(section, entries, lang)
+
+
+def write_tables(doc: dict | None = None) -> int:
+    doc = doc or _load_doc()
+    sections_present = _sections_present(doc)
     console.print(f"sections to render: {sections_present}")
 
     updates = 0
@@ -240,10 +276,9 @@ def main() -> int:
         text = readme_path.read_text(encoding="utf-8")
         original = text
         for section in sections_present:
-            entries = doc.get(section) or []
-            if not entries:
+            body = _expected_body(doc, section, lang)
+            if body is None:
                 continue
-            body = _render_section(section, entries, lang)
             text, updated = _update_markers(text, section, body)
             if updated:
                 updates += 1
@@ -251,10 +286,204 @@ def main() -> int:
             readme_path.write_text(text, encoding="utf-8")
             console.print(f"[green]updated[/green] {readme_path.relative_to(REPO_ROOT)}")
         else:
-            console.print(f"[yellow]no markers found in[/yellow] {readme_path.relative_to(REPO_ROOT)}")
+            console.print(f"[dim]unchanged[/dim] {readme_path.relative_to(REPO_ROOT)}")
     console.rule()
     console.print(f"[bold green]Done.[/bold green] {updates} section block(s) updated across READMEs.")
     return 0
+
+
+def check_tables(doc: dict | None = None) -> int:
+    """Fail if any README provider section differs from data/providers.yaml."""
+    doc = doc or _load_doc()
+    problems: list[str] = []
+    for readme_path in READMES:
+        lang = LANGS_BY_FILE.get(readme_path.name)
+        if not lang or not readme_path.exists():
+            continue
+        rel = str(readme_path.relative_to(REPO_ROOT))
+        text = readme_path.read_text(encoding="utf-8")
+        for section in _sections_present(doc):
+            expected = _expected_body(doc, section, lang)
+            if expected is None:
+                continue
+            actual = _extract_section(text, section)
+            if actual is None:
+                problems.append(f"{rel}: missing markers for providers:{section}")
+                continue
+            if actual.strip() != expected.strip():
+                problems.append(
+                    f"{rel}: providers:{section} out of sync with data/providers.yaml "
+                    f"— run `python -m scripts.build_provider_tables`"
+                )
+    if problems:
+        for p in problems:
+            console.print(f"[red]✗[/red] {p}")
+        console.print(f"[red]{len(problems)} README sync problem(s).[/red]")
+        return 1
+    console.print("[bold green]README provider tables match providers.yaml.[/bold green]")
+    return 0
+
+
+def _git_changed_files(base: str) -> set[str]:
+    result = subprocess.run(
+        ["git", "diff", "--name-only", f"{base}...HEAD"],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        # Fallback: three-dot may fail on shallow clones; try two-dot.
+        result = subprocess.run(
+            ["git", "diff", "--name-only", base, "HEAD"],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    if result.returncode != 0:
+        console.print(f"[red]git diff failed:[/red] {result.stderr.strip()}")
+        return set()
+    return {line.strip() for line in result.stdout.splitlines() if line.strip()}
+
+
+def _git_show(base: str, rel_path: str) -> str | None:
+    result = subprocess.run(
+        ["git", "show", f"{base}:{rel_path}"],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        return None
+    return result.stdout
+
+
+def _resolve_pr_base() -> str | None:
+    """Prefer explicit env (CI), else upstream main/master merge-base."""
+    for key in ("PR_BASE_SHA", "GITHUB_BASE_SHA"):
+        val = os.environ.get(key)
+        if val:
+            return val
+    # Local convenience: merge-base with origin/main or main.
+    for ref in ("origin/main", "main", "origin/master", "master"):
+        result = subprocess.run(
+            ["git", "merge-base", "HEAD", ref],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            return result.stdout.strip()
+    return None
+
+
+def check_pr(base: str | None = None) -> int:
+    """PR hygiene for generated README tables.
+
+    Policy:
+      - Hand-editing provider table blocks without touching providers.yaml → fail
+      - Touching both yaml + README tables but leaving them out of sync → fail
+      - Yaml-only PRs (preferred) → pass even if tables lag until maintainer regen
+      - README edits outside provider markers → pass
+    """
+    base = base or _resolve_pr_base()
+    if not base:
+        console.print(
+            "[yellow]![/yellow] No PR base ref found; falling back to full --check"
+        )
+        return check_tables()
+
+    changed = _git_changed_files(base)
+    if not changed:
+        console.print("[dim]No changed files vs base — skip README PR check.[/dim]")
+        return 0
+
+    yaml_changed = "data/providers.yaml" in changed
+    doc = _load_doc()
+    problems: list[str] = []
+
+    for readme_path in READMES:
+        lang = LANGS_BY_FILE.get(readme_path.name)
+        if not lang or not readme_path.exists():
+            continue
+        rel = str(readme_path.relative_to(REPO_ROOT))
+        readme_changed = rel in changed
+        text = readme_path.read_text(encoding="utf-8")
+        base_text = _git_show(base, rel) if readme_changed else None
+
+        for section in _sections_present(doc):
+            expected = _expected_body(doc, section, lang)
+            if expected is None:
+                continue
+            actual = _extract_section(text, section)
+            if actual is None:
+                continue
+            in_sync = actual.strip() == expected.strip()
+            if in_sync:
+                continue
+
+            base_section = (
+                _extract_section(base_text, section) if base_text is not None else None
+            )
+            section_edited = (
+                base_section is not None
+                and base_section.strip() != actual.strip()
+            )
+
+            if not yaml_changed and section_edited:
+                problems.append(
+                    f"{rel}: providers:{section} was hand-edited without changing "
+                    f"data/providers.yaml — edit the YAML only; tables auto-regenerate"
+                )
+            elif yaml_changed and readme_changed and section_edited:
+                problems.append(
+                    f"{rel}: providers:{section} was edited but does not match "
+                    f"data/providers.yaml — run `python -m scripts.build_provider_tables` "
+                    f"or leave the README tables untouched"
+                )
+
+    if problems:
+        for p in problems:
+            console.print(f"[red]✗[/red] {p}")
+        console.print(f"[red]{len(problems)} PR README hygiene problem(s).[/red]")
+        return 1
+    console.print(
+        f"[bold green]PR README check passed[/bold green] "
+        f"(base={base[:12]}…, yaml_changed={yaml_changed})"
+    )
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Fail if README provider tables drift from providers.yaml",
+    )
+    parser.add_argument(
+        "--check-pr",
+        action="store_true",
+        help="PR-aware check: block hand-edited tables; allow yaml-only PRs",
+    )
+    parser.add_argument(
+        "--base",
+        default=None,
+        help="Git base SHA/ref for --check-pr (default: env or origin/main merge-base)",
+    )
+    args = parser.parse_args(argv)
+
+    if args.check and args.check_pr:
+        console.print("[red]Use only one of --check / --check-pr[/red]")
+        return 2
+    if args.check:
+        return check_tables()
+    if args.check_pr:
+        return check_pr(base=args.base)
+    return write_tables()
 
 
 if __name__ == "__main__":

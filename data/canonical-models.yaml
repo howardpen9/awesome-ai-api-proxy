@@ -21,7 +21,7 @@
 # but won't show in the README headline table.
 
 schema_version: 2
-last_reviewed: "2026-06-09"
+last_reviewed: "2026-07-12"
 
 # Quality references — readers (humans + agents) wanting to combine our price
 # data with a model's quality should consult these benchmarks. We deliberately

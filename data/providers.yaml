@@ -23,7 +23,7 @@
 #   supports_tools      - true | false | unknown. Function calling / tools API compatibility.
 
 schema_version: 2
-last_reviewed: "2026-05-26"
+last_reviewed: "2026-07-12"
 
 # ---------------------------------------------------------------------------
 # China / Asia relay stations (中轉站)

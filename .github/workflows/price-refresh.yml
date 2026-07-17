@@ -72,10 +72,18 @@ jobs:
       #   - Read and write permissions
       #   - Allow GitHub Actions to create and approve pull requests
       # Without both, this step pushes a branch but fails to open the PR.
+      #
+      # Optional secret PRICE_REFRESH_TOKEN (classic PAT with `repo` scope, or
+      # fine-grained PAT with contents+PRs write). When set, the opened PR is
+      # authored as that user so required `pull_request` checks actually run.
+      # Default GITHUB_TOKEN cannot trigger further workflows (GitHub recursion
+      # guard) — without the PAT, close+reopen the PR once or merge after
+      # reviewing the workflow-run validation above.
       - name: Open PR
         if: steps.diff.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
+          token: ${{ secrets.PRICE_REFRESH_TOKEN || secrets.GITHUB_TOKEN }}
           # Fixed branch name so re-runs update one PR instead of orphaning
           # chore/price-refresh-N branches every week.
           branch: chore/price-refresh
@@ -96,3 +104,8 @@ jobs:
 
             If any fetcher wrote a `*.error.json`, investigate (the underlying
             site likely changed their API shape) and fix that fetcher before merging.
+
+            > Note: if required PR checks never start, the PR was opened with
+            > `GITHUB_TOKEN` (cannot re-trigger workflows). Close+reopen once,
+            > or add repo secret `PRICE_REFRESH_TOKEN` so future runs open PRs
+            > as a real user.

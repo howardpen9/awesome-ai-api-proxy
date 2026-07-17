@@ -234,7 +234,7 @@ from operators — one factual sentence in `notes`, no superlatives.
 > Machine-readable source: [`data/prices.latest.json`](data/prices.latest.json).
 
 <!-- prices:start -->
-_Snapshot date: **2026-07-12**. 2962 price records across 4 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting._
+_Snapshot date: **2026-07-17**. 3023 price records across 4 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting._
 
 #### Six indicator models, six providers, one snapshot
 
@@ -264,7 +264,7 @@ _Output-token equivalents and the full-matrix heatmap: [`assets/charts/`](assets
 | Model | OpenRouter (ref) | Atlas Cloud | UiUiAPI | bltcy |
 |---|---|---|---|---|
 | `gemini-3-flash` | $1.500 | $1.500 | $1.500 | — |
-| `gpt-5.4` | $2.500 | $2.500 | $2.500 | $2.500 |
+| `gpt-5.4` | $2.500 | $2.500 | — | $2.500 |
 | `claude-sonnet-4.6` | $3.000 | $3.000 | $3.000 | $3.000 |
 
 ### Tier 3 — top frontier (hardest problems) — USD per 1M input tokens

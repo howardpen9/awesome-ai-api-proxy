@@ -128,6 +128,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 |---|---|---|
 | 🟢 [One-API](https://github.com/songquanpeng/one-api) | gateway-oss | 流行的 Go 多廠商閘道；多數中轉站的底層 OSS 模板。 |
 | 🟢 [new-api](https://github.com/Calcium-Ion/new-api) | gateway-oss | One-API 的 fork，多了幾種通道類型；同樣自架、自帶 key。 |
+| 🟡 [A3M Router](https://github.com/Das-rebel/a3m-router) | gateway-oss | MIT TypeScript OpenAI-compatible multi-provider router (parallel ensemble); self-hosted — you supply keys. npm: adaptive-memory-multi-model-router. |
 <!-- providers:self_hosted_alternatives:end -->
 
 > [LiteLLM](https://litellm.ai)（在上面海外閘道表格內）同樣是自架方案（Python 為主、100+ 供應商、企業常用）。

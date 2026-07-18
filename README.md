@@ -137,6 +137,7 @@ templates.
 |---|---|---|
 | 🟢 [One-API](https://github.com/songquanpeng/one-api) | gateway-oss | Popular Go-based self-hosted multi-vendor gateway; the de-facto OSS template behind many relay stations. |
 | 🟢 [new-api](https://github.com/Calcium-Ion/new-api) | gateway-oss | Fork of One-API with extra channel types; same self-hosted model — you supply keys. |
+| 🟡 [A3M Router](https://github.com/Das-rebel/a3m-router) | gateway-oss | MIT TypeScript OpenAI-compatible multi-provider router (parallel ensemble); self-hosted — you supply keys. npm: adaptive-memory-multi-model-router. |
 <!-- providers:self_hosted_alternatives:end -->
 
 > [LiteLLM](https://litellm.ai) (in the global table above) is also self-hosted (Python, 100+ providers, used by enterprises).

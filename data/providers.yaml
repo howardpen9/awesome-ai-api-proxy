@@ -410,3 +410,20 @@ self_hosted_alternatives:
       en: "Fork of One-API with extra channel types; same self-hosted model — you supply keys."
       zh-TW: "One-API 的 fork，多了幾種通道類型；同樣自架、自帶 key。"
       zh-CN: "One-API 的 fork，多了几种通道类型；同样自托管、自带 key。"
+
+  # Landed from PR #38 (Das-rebel) after reclassifying as self-hosted BYOK
+  # gateway-oss (not a retail hosted aggregator).
+  - name: A3M Router
+    url: https://github.com/Das-rebel/a3m-router
+    type: gateway-oss
+    status: unverified
+    models: [openai, anthropic, google, deepseek, groq, mistral, xai, cohere]
+    provider_count: 47
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "MIT TypeScript OpenAI-compatible multi-provider router (parallel ensemble); self-hosted — you supply keys. npm: adaptive-memory-multi-model-router."

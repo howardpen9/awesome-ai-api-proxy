@@ -379,6 +379,23 @@ global_gateways:
       zh-TW: "建於 new-api 閘道之上。單一金鑰跨多上游，依延遲路由並具故障轉移；自動辨識 OpenAI／Anthropic／Gemini 格式。按量計費並提供免費模型層；亦支援角色扮演用戶端（SillyTavern、Janitor.AI、RisuAI、Chub）。"
       zh-CN: "建于 new-api 网关之上。单一密钥跨多上游，按延迟路由并具故障转移；自动识别 OpenAI／Anthropic／Gemini 格式。按量计费并提供免费模型层；亦支持角色扮演客户端（SillyTavern、Janitor.AI、RisuAI、Chub）。"
 
+  - name: QuickSilver Pro
+    url: https://quicksilverpro.io
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [openai, anthropic, gemini, deepseek, qwen, moonshotai, zhipuai, minimax, meta, xai]
+    model_count: 35
+    discount_vs_official: "~20% below OpenRouter on comparable models (claimed)"
+    last_verified: null
+    verified_by: community
+    entity_registered: true
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible gateway; one key for frontier and open models (Claude, GPT, Gemini, DeepSeek, Qwen, Kimi, GLM). Pay-as-you-go, no subscription. Public pricing JSON at /pricing.json. Operated by MachineFi Labs."
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

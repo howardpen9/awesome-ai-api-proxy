@@ -115,6 +115,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中转站
 | 🟢 [AIMLAPI](https://aimlapi.com) | aggregator | 卡/加密货币 | 400+ 模型，$20 起预付；支持加密货币暗示绕支付障碍。 |
 | 🟡 [RouteScope](https://www.routescope.ai) | aggregator | 卡/加密货币 | 统一网关，将 100+ 模型转成 OpenAI／Claude／Gemini 兼容 API；按量预付额度。 |
 | 🟡 [UnoRouter](https://unorouter.ai) | aggregator | 卡 | 建于 new-api 网关之上。单一密钥跨多上游，按延迟路由并具故障转移；自动识别 OpenAI／Anthropic／Gemini 格式。按量计费并提供免费模型层；亦支持角色扮演客户端（SillyTavern、Janitor.AI、RisuAI、Chub）。 |
+| 🟡 [QuickSilver Pro](https://quicksilverpro.io) | aggregator | 卡 | OpenAI-compatible gateway; one key for frontier and open models (Claude, GPT, Gemini, DeepSeek, Qwen, Kimi, GLM). Pay-as-you-go, no subscription. Public pricing JSON at /pricing.json. Operated by MachineFi Labs. |
 <!-- providers:global_gateways:end -->
 
 ## 自托管替代方案

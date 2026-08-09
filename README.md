@@ -122,6 +122,7 @@ market, not a workaround niche.
 | 🟢 [AIMLAPI](https://aimlapi.com) | aggregator | Card/Crypto | Prepaid from $20; crypto support implies payment-friction workaround. |
 | 🟡 [RouteScope](https://www.routescope.ai) | aggregator | Card/Crypto | Unified gateway mapping 100+ models to OpenAI/Claude/Gemini-compatible APIs; pay-as-you-go credits. |
 | 🟡 [UnoRouter](https://unorouter.ai) | aggregator | Card | Built on the new-api gateway. One key across multiple upstreams with latency-based routing and failover; OpenAI/Anthropic/Gemini formats auto-detected. Pay-as-you-go credits plus a free model tier. Also targets roleplay clients (SillyTavern, Janitor.AI, RisuAI, Chub). Public pricing JSON at /api/pricing. |
+| 🟡 [QuickSilver Pro](https://quicksilverpro.io) | aggregator | Card | OpenAI-compatible gateway; one key for frontier and open models (Claude, GPT, Gemini, DeepSeek, Qwen, Kimi, GLM). Pay-as-you-go, no subscription. Public pricing JSON at /pricing.json. Operated by MachineFi Labs. |
 <!-- providers:global_gateways:end -->
 
 ## Self-hosted alternatives

@@ -199,6 +199,17 @@ comparison_tools:
       zh-TW: "最早的清單（約 31 家）。**2026 年起已停更** —— 本倉庫延續這項工作。"
       zh-CN: "最早的清单（约 31 家）。**2026 年起已停更** —— 本仓库延续这一工作。"
 
+  - name: China AI Arbitrage
+    url: https://www.china-ai-arbitrage.xyz/
+    type: comparison
+    status: unverified
+    last_verified: null
+    verified_by: community
+    notes:
+      en: "Price & quota comparison of 60+ Chinese AI platforms, ranked 95 LLM API relays, daily-updated free-tier tracking."
+      zh-TW: "60+ 中國 AI 平台的價格與額度比價、95 個 LLM API 中轉站排名、每日更新的免費額度追蹤。"
+      zh-CN: "60+ 中国 AI 平台的价格与额度比价、95 个 LLM API 中转站排名、每日更新的免费额度追踪。"
+
 # ---------------------------------------------------------------------------
 # Global gateways / aggregators (海外對比方案)
 # ---------------------------------------------------------------------------

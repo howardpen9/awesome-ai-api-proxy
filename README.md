@@ -153,6 +153,7 @@ You give up the relay's Alipay/WeChat convenience and accept ops overhead.
 |---|---|
 | 🟢 [中轉站競技場 (AI API PK)](https://www.aiapipk.com) | Price wall across OpenAI / Reverse / Claude / DeepSeek for ~40 stations. |
 | 🔴 [awesome-ai-proxy (mn-api, unmaintained)](https://github.com/mn-api/awesome-ai-proxy) | Original list (~31 stations); no longer maintained as of 2026. |
+| 🟡 [China AI Arbitrage](https://www.china-ai-arbitrage.xyz/) | Price & quota comparison of 60+ Chinese AI platforms, ranked 95 LLM API relays, daily-updated free-tier tracking. |
 | 🟡 [CoderPlan](https://coderplan.ai) | Community-submitted; claims 50+ models incl. OpenAI/Anthropic/Google/DeepSeek/xAI. |
 <!-- providers:comparison_tools:end -->
 

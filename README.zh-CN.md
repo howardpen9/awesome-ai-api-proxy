@@ -143,6 +143,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中转站
 |---|---|
 | 🟢 [中轉站競技場 (AI API PK)](https://www.aiapipk.com) | 约 40 家站点的 OpenAI / 逆向 / Claude / DeepSeek 报价墙。 |
 | 🔴 [awesome-ai-proxy (mn-api, unmaintained)](https://github.com/mn-api/awesome-ai-proxy) | 最早的清单（约 31 家）。**2026 年起已停更** —— 本仓库延续这一工作。 |
+| 🟡 [China AI Arbitrage](https://www.china-ai-arbitrage.xyz/) | 60+ 中国 AI 平台的价格与额度比价、95 个 LLM API 中转站排名、每日更新的免费额度追踪。 |
 | 🟡 [CoderPlan](https://coderplan.ai) | 社区投稿；宣称 50+ 模型，含 OpenAI/Anthropic/Google/DeepSeek/xAI。 |
 <!-- providers:comparison_tools:end -->
 

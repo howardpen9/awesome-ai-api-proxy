@@ -32,10 +32,10 @@ Hand-edited READMEs, marketing copy, affiliate/UTM links, or `status: active` se
 - Local check: `python -m scripts.validate` must exit 0.
 
 **Operator / 运营方:** prefer Issue  
-https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.md
+https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.yml
 
 **Prices only:**  
-https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=submit-prices.md
+https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=submit-prices.yml
 
 ---
 
@@ -71,5 +71,6 @@ https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=submit-pr
 | `section` | Wrong YAML section / corrupted unrelated entries | 放错 section 或破坏了其他条目 |
 | `operator` | Operator self-submission without disclosure flags | 运营方自提未标注 `operator_submitted` |
 | `encoding` | Diff corrupts existing Unicode / unrelated rows | diff 破坏既有中文或其他条目 |
+| `blank` | Blank / free-form issue — did not use a required form | 空白或自由发挥 issue，未使用必填表单 |
 
 Replace `{{REASON}}` / `{{REASON_ZH}}` with one or more lines from the table.

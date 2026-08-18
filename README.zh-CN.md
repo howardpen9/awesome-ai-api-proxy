@@ -168,7 +168,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中转站
 
 ### Tier A — 只想先有条目（不含价格）
 
-[**开新中转站 issue**](https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.md)
+[**开新中转站 issue**](https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.yml)
 —— 填表单、维护者会加入。在维护者亲自跑一次 canary 之前，状态保持
 `unverified`。
 
@@ -197,7 +197,7 @@ Sniffer 目前识别三种形状（**new-api fork**、**OpenRouter 风格**、
 
 ### Tier C — 没有公开 JSON，但有截图
 
-使用[**submit-prices issue 模板**](https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=submit-prices.md)
+使用[**submit-prices issue 表单**](https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=submit-prices.yml)
 —— 粘贴一张价格表 + 对应日的价格页截图。维护者每周对着截图核对后写入
 `submitted_prices`。
 
@@ -460,7 +460,7 @@ API 中转站是夹在你的代码和官方 LLM API（OpenAI、Anthropic、Googl
 
 - 阅读 [CONTRIBUTING.md](CONTRIBUTING.md) 与[字段规范](data/schema.md)。
 - 编辑 [`data/providers.yaml`](data/providers.yaml)，**不要**直接改 README 表格。
-- 用 [provider 模板](.github/ISSUE_TEMPLATE) 开 issue 提交新增。
+- 用 [provider 表单](https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.yml) 开 issue 提交新增。空白 issue 会被关闭。
 
 **不接受**推广链接或营销文案。只收事实、带日期、有来源的条目。
 

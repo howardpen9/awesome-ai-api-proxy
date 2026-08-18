@@ -1,0 +1,119 @@
+name: New provider / 新增中轉站
+description: Add a relay, gateway, or comparison tool. Operators must use this form — blank issues are closed.
+title: "add: "
+labels: [new-provider]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English or 中文 both fine.
+
+        **Agents:** Path C in [docs/agent-contribute.md](https://github.com/howardpen9/awesome-ai-api-proxy/blob/main/docs/agent-contribute.md).
+        Fill every required field. Do not open a blank issue. Do not claim `status: active`.
+        Operators claiming `official-relay` without independent evidence will be reclassified to `mixed` / `aggregator`.
+
+  - type: input
+    id: name
+    attributes:
+      label: Name / 名稱
+      description: Display name. Include the Chinese name in parentheses if it has one.
+      placeholder: 玄枢API (XuanShu API)
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Plain HTTPS homepage only — no utm_, ref=, affiliate, or Gumroad checkout links.
+      placeholder: https://
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type / 類型
+      description: Be honest. official-relay is the highest-trust type and needs evidence you forward official vendor keys.
+      options:
+        - mixed
+        - aggregator
+        - official-relay
+        - reverse
+        - gateway-oss
+        - observability
+        - comparison
+        - list
+    validations:
+      required: true
+
+  - type: dropdown
+    id: payment
+    attributes:
+      label: Payment / 支付
+      description: Leave empty if not public. Only tick rails you can point at on a public page.
+      multiple: true
+      options:
+        - alipay
+        - wechat
+        - card
+        - crypto
+        - enterprise-invoice
+
+  - type: input
+    id: models
+    attributes:
+      label: Models / 模型
+      description: Upstream families, comma-separated.
+      placeholder: openai, anthropic, gemini, deepseek
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operator
+    attributes:
+      label: Are you the operator / affiliated? / 是否運營方或關聯方？
+      options:
+        - "yes"
+        - "no"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: verified
+    attributes:
+      label: Did you personally verify it works? / 你親自驗證過嗎？
+      options:
+        - "yes"
+        - "no"
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: One factual sentence for notes / 一句事實備註
+      description: No marketing. No 强烈推荐 / 不降智 / #1 / “fast & stable”. ≤ 360 characters. One sentence.
+      placeholder: OpenAI-compatible /v1 endpoint; Alipay and WeChat; public /api/pricing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source / 來源
+      description: Required if you make a non-obvious claim (pricing, official-relay, entity). Homepage, docs, or pricing URL.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: No referral / affiliate / UTM links / 無推廣連結
+          required: true
+        - label: Not marketing copy / 非行銷文案
+          required: true
+        - label: I read docs/agent-contribute.md and CONTRIBUTING.md
+          required: true
+        - label: I understand new entries land as status unverified (maintainer promotes to active)
+          required: true

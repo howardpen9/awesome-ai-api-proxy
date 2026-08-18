@@ -1,0 +1,75 @@
+name: Require issue template
+
+# Blank issues are disabled in the UI (ISSUE_TEMPLATE/config.yml).
+# Agents that `gh issue create` without a form still land unlabeled —
+# close those so the queue stays reviewable.
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const assoc = issue.author_association;
+            if (["OWNER", "MEMBER", "COLLABORATOR"].includes(assoc)) {
+              return;
+            }
+
+            const allowed = new Set([
+              "new-provider",
+              "pending-price-review",
+              "correction",
+            ]);
+            const labels = (issue.labels || []).map((l) => l.name);
+            if (labels.some((n) => allowed.has(n))) {
+              return;
+            }
+
+            const body = issue.body || "";
+            // Form rendered even if the label failed to apply.
+            const formHeading = /^### (Name \/ 名稱|Station name|Station \/ 站點)\b/m;
+            if (formHeading.test(body)) {
+              return;
+            }
+
+            const comment = [
+              "Thanks for the submission — closing this one as **out of spec** so the queue stays reviewable.",
+              "",
+              "### Why",
+              "- Blank issues are disabled. Use one of the three forms — do not paste a free-form pitch.",
+              "",
+              "Pick one:",
+              "1. New station: https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.yml",
+              "2. Prices only: https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=submit-prices.yml",
+              "3. Correction / 跑路: https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=report-issue.yml",
+              "",
+              "Playbook: https://github.com/howardpen9/awesome-ai-api-proxy/blob/main/docs/agent-contribute.md",
+              "",
+              "---",
+              "",
+              "感谢提交。空白 issue 已关闭。请用上面三个表单之一重提，不要自由发挥。",
+            ].join("\n");
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: comment,
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              state: "closed",
+              state_reason: "not_planned",
+            });

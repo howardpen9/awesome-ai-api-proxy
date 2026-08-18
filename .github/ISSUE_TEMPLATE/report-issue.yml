@@ -1,0 +1,62 @@
+name: Correction / status change / 糾錯·狀態變更
+description: Price change, ran-away (跑路), dead URL, or other factual error.
+title: "fix: "
+labels: [correction]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Unsourced accusations against a specific operator are rejected. A date and a primary source are required for 跑路 / ran-away reports.
+
+  - type: input
+    id: station
+    attributes:
+      label: Station / 站點
+      description: Name as it appears in the README / data/providers.yaml.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: what
+    attributes:
+      label: What is wrong / 哪裡有誤
+      options:
+        - ran away / 跑路
+        - dead URL
+        - price changed
+        - ownership / entity changed
+        - type is wrong
+        - other factual error
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct
+    attributes:
+      label: Correct information / 正確資訊
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date observed / 觀察日期
+      placeholder: "2026-08-18"
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source / 來源
+      description: Screenshot, forum thread, or primary link. Required for ran-away reports.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: This is factual, not an unsourced accusation / 有據可查，非無來源指控
+          required: true

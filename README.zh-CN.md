@@ -97,6 +97,10 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中转站
 | 🟡 [MKEAI](https://mkeai.com) | mixed | 支付宝/微信 | unverified · ⚠ 无主体 | 社区论坛 + 中转混合；主推 DeepSeek。 |
 | 🟡 [GPTGOD](https://gptgod.online) | reverse | 支付宝 | unverified · ⚠ 逆向, 无主体 | 逆向；便宜，稳定性无保证。 |
 | 🟢 [CloseAI](https://www.closeai-asia.com) | official-relay | 支付宝/微信/对公 | active · 2026-05-26 · 已注册 | 提供对公发票；自称亚洲最大企业级中转。 |
+| 🟡 [玄枢API (XuanShu API)](https://www.xuanshuapi.com) | mixed | 对公 | unverified · ⚠ 自荐 | 根路径提供 Anthropic Messages 与 Gemini v1beta，/v1 下提供 OpenAI Responses 与 Chat Completions；模型可见性与价格按 Key 和分组在控制台配置。 |
+| 🟡 [TeamoRouter](https://teamorouter.com) | mixed | 支付宝/微信 | unverified · ⚠ 自荐 | 兼容 OpenAI／Anthropic／Gemini 的网关；支付宝与微信支付；运营方宣称多上游路由，并有 Claude Code／Codex 配置教程。 |
+| 🟡 [wawazz.xyz](https://wawazz.xyz) | mixed | 微信 | unverified · ⚠ 自荐, 价过低 | OpenAI 兼容 `/v1`；微信支付；运营方宣称 GPT 可低至官方价 0.07 倍。 |
+| 🟡 [Wappkit API](https://api.wappkit.com) | mixed | — | unverified · ⚠ 自荐 | new-api OpenAI 兼容网关，公开 `/api/pricing`；分组为 Codex／Claude-Code 号池（无扁平 default 组）。 |
 <!-- providers:china_relays:end -->
 
 > **收录 ≠ 推荐。** 收录是为了记录市场。打款或传数据前请先走
@@ -115,6 +119,12 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中转站
 | 🟢 [AIMLAPI](https://aimlapi.com) | aggregator | 卡/加密货币 | 400+ 模型，$20 起预付；支持加密货币暗示绕支付障碍。 |
 | 🟡 [RouteScope](https://www.routescope.ai) | aggregator | 卡/加密货币 | 统一网关，将 100+ 模型转成 OpenAI／Claude／Gemini 兼容 API；按量预付额度。 |
 | 🟡 [UnoRouter](https://unorouter.ai) | aggregator | 卡 | 建于 new-api 网关之上。单一密钥跨多上游，按延迟路由并具故障转移；自动识别 OpenAI／Anthropic／Gemini 格式。按量计费并提供免费模型层；亦支持角色扮演客户端（SillyTavern、Janitor.AI、RisuAI、Chub）。 |
+| 🟡 [QuickSilver Pro](https://quicksilverpro.io) | aggregator | 卡 | OpenAI 兼容网关；单一密钥涵盖前沿与开源模型（Claude、GPT、Gemini、DeepSeek、Qwen、Kimi、GLM）。按量计费。公开 `/pricing.json`。运营方自称 MachineFi Labs。 |
+| 🟡 [NovAI](https://aiapi-pro.com) | aggregator | 卡/加密货币 | OpenAI 兼容聚合网关，整合中国前沿模型（DeepSeek、Qwen、GLM、Kimi、MiniMax、Doubao、Hunyuan），同一 `/v1` 端点另含图像与视频生成；`/v1/models` 公开模型清单，定价页列每 token 价格。 |
+| 🟡 [SandBase](https://sandbase.ai) | aggregator | 卡 | 统一 API，OpenAI 兼容端点涵盖多家模型供应商，另有 tool API 与托管 agent。运营方未亲自验证线上 API。 |
+| 🟡 [AllRouter](https://allrouter.ai) | aggregator | 支付宝/微信 | 兼容 OpenAI 与 Anthropic 的聚合网关；支持支付宝与微信支付；运营方宣称 Kimi K3 为 Moonshot 官方牌价。 |
+| 🟡 [AI Router](https://ai-router.dev) | mixed | 卡/加密货币/支付宝/微信 | OpenAI 兼容 ChatGPT API 中转（`api.ai-router.dev/v1`）；控制台密钥与用量追踪、日／周套餐；英／中／俄／波斯语页面。 |
+| 🟡 [Tokens Forge](https://tokens-forge.com) | aggregator | 卡/微信 | OpenAI 兼容多模型 API 网关；GPT／Claude／Gemini 类模型分官方额度与路由钱包余额。 |
 <!-- providers:global_gateways:end -->
 
 ## 自托管替代方案
@@ -143,6 +153,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中转站
 |---|---|
 | 🟢 [中轉站競技場 (AI API PK)](https://www.aiapipk.com) | 约 40 家站点的 OpenAI / 逆向 / Claude / DeepSeek 报价墙。 |
 | 🔴 [awesome-ai-proxy (mn-api, unmaintained)](https://github.com/mn-api/awesome-ai-proxy) | 最早的清单（约 31 家）。**2026 年起已停更** —— 本仓库延续这一工作。 |
+| 🟡 [China AI Arbitrage](https://www.china-ai-arbitrage.xyz) | 60+ 中国 AI 平台的价格与额度比价、LLM API 中转站排名、每日更新的免费额度追踪。 |
 | 🟡 [CoderPlan](https://coderplan.ai) | 社区投稿；宣称 50+ 模型，含 OpenAI/Anthropic/Google/DeepSeek/xAI。 |
 <!-- providers:comparison_tools:end -->
 

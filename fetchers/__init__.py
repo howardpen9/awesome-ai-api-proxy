@@ -19,6 +19,8 @@ REGISTRY: dict[str, str] = {
     "uiuiapi": "fetchers.uiuiapi",
     "bltcy": "fetchers.bltcy",
     "unorouter": "fetchers.unorouter",
+    "quicksilverpro": "fetchers.quicksilverpro",
+    "wappkit": "fetchers.wappkit",
 }
 
 

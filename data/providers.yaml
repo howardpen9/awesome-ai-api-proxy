@@ -173,6 +173,82 @@ china_relays:
       zh-TW: "提供對公發票；自稱亞洲最大企業級中轉。"
       zh-CN: "提供对公发票；自称亚洲最大企业级中转。"
 
+  # Landed from issue #49 (JV-X), Path C operator filing.
+  - name: 玄枢API (XuanShu API)
+    url: https://www.xuanshuapi.com
+    type: mixed
+    status: unverified
+    payment: [enterprise-invoice]
+    models: [openai, anthropic, gemini]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Serves Anthropic Messages and Gemini v1beta at the root host and OpenAI Responses and Chat Completions under /v1; model visibility and pricing are per-key and per-group, set in the console."
+      zh-TW: "根路徑提供 Anthropic Messages 與 Gemini v1beta，/v1 下提供 OpenAI Responses 與 Chat Completions；模型可見性與價格依 Key 與分組在控制台設定。"
+      zh-CN: "根路径提供 Anthropic Messages 与 Gemini v1beta，/v1 下提供 OpenAI Responses 与 Chat Completions；模型可见性与价格按 Key 和分组在控制台配置。"
+
+  # Landed from issue #45 (kwu18-png). Marketing copy stripped; type mixed.
+  - name: TeamoRouter
+    url: https://teamorouter.com
+    type: mixed
+    status: unverified
+    payment: [alipay, wechat]
+    models: [openai, anthropic, gemini, deepseek]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI / Anthropic / Gemini-compatible gateway; Alipay and WeChat; operator-claimed multi-upstream routing and Claude Code / Codex setup guides."
+      zh-TW: "相容 OpenAI／Anthropic／Gemini 的閘道；支付寶與微信支付；運營方宣稱多上游路由，並有 Claude Code／Codex 設定教學。"
+      zh-CN: "兼容 OpenAI／Anthropic／Gemini 的网关；支付宝与微信支付；运营方宣称多上游路由，并有 Claude Code／Codex 配置教程。"
+
+  # Landed from issue #28 (LRZ1918). 0.07x claim is a cheap-trap signal, not a selling point.
+  - name: wawazz.xyz
+    url: https://wawazz.xyz
+    type: mixed
+    status: unverified
+    payment: [wechat]
+    models: [openai, anthropic]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, prices_too_cheap]
+    notes:
+      en: "OpenAI-compatible API at /v1; WeChat pay; operator-claimed GPT pricing as low as 0.07x official."
+      zh-TW: "OpenAI 相容 `/v1`；微信支付；運營方宣稱 GPT 可低至官方價 0.07 倍。"
+      zh-CN: "OpenAI 兼容 `/v1`；微信支付；运营方宣称 GPT 可低至官方价 0.07 倍。"
+
+  # Landed from issue #22 (alicekellings). Public new-api /api/pricing (GPT groups).
+  - name: Wappkit API
+    url: https://api.wappkit.com
+    type: mixed
+    status: unverified
+    models: [openai, anthropic]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    pricing:
+      pricing_url: https://api.wappkit.com
+      api_url: https://api.wappkit.com/api/pricing
+      fetcher: wappkit
+      pricing_currency: USD
+    notes:
+      en: "new-api OpenAI-compatible gateway with public /api/pricing; listed groups are Codex/Claude-Code pools (no flat default group)."
+      zh-TW: "new-api OpenAI 相容閘道，公開 `/api/pricing`；分組為 Codex／Claude-Code 號池（無扁平 default 組）。"
+      zh-CN: "new-api OpenAI 兼容网关，公开 `/api/pricing`；分组为 Codex／Claude-Code 号池（无扁平 default 组）。"
+
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
 # ---------------------------------------------------------------------------
@@ -198,6 +274,19 @@ comparison_tools:
       en: "Original list (~31 stations); no longer maintained as of 2026."
       zh-TW: "最早的清單（約 31 家）。**2026 年起已停更** —— 本倉庫延續這項工作。"
       zh-CN: "最早的清单（约 31 家）。**2026 年起已停更** —— 本仓库延续这一工作。"
+
+  # Landed from PR #53 (the-beating-light-of-the-nail). Operator self-submission.
+  - name: China AI Arbitrage
+    url: https://www.china-ai-arbitrage.xyz
+    type: comparison
+    status: unverified
+    last_verified: null
+    verified_by: community
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Price and quota comparison of 60+ Chinese AI platforms, ranked LLM API relays, and daily-updated free-tier tracking."
+      zh-TW: "60+ 中國 AI 平台的價格與額度比價、LLM API 中轉站排名、每日更新的免費額度追蹤。"
+      zh-CN: "60+ 中国 AI 平台的价格与额度比价、LLM API 中转站排名、每日更新的免费额度追踪。"
 
 # ---------------------------------------------------------------------------
 # Global gateways / aggregators (海外對比方案)
@@ -378,6 +467,122 @@ global_gateways:
       en: "Built on the new-api gateway. One key across multiple upstreams with latency-based routing and failover; OpenAI/Anthropic/Gemini formats auto-detected. Pay-as-you-go credits plus a free model tier. Also targets roleplay clients (SillyTavern, Janitor.AI, RisuAI, Chub). Public pricing JSON at /api/pricing."
       zh-TW: "建於 new-api 閘道之上。單一金鑰跨多上游，依延遲路由並具故障轉移；自動辨識 OpenAI／Anthropic／Gemini 格式。按量計費並提供免費模型層；亦支援角色扮演用戶端（SillyTavern、Janitor.AI、RisuAI、Chub）。"
       zh-CN: "建于 new-api 网关之上。单一密钥跨多上游，按延迟路由并具故障转移；自动识别 OpenAI／Anthropic／Gemini 格式。按量计费并提供免费模型层；亦支持角色扮演客户端（SillyTavern、Janitor.AI、RisuAI、Chub）。"
+
+  # Landed from PR #52 (raullenchai). Public /pricing.json → fetcher.
+  - name: QuickSilver Pro
+    url: https://quicksilverpro.io
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [openai, anthropic, gemini, deepseek, qwen, moonshotai, zhipuai, minimax, meta, xai]
+    model_count: 39
+    discount_vs_official: "~20% below OpenRouter on comparable models (claimed)"
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    pricing:
+      pricing_url: https://quicksilverpro.io
+      api_url: https://quicksilverpro.io/pricing.json
+      fetcher: quicksilverpro
+      pricing_currency: USD
+    notes:
+      en: "OpenAI-compatible gateway; one key for frontier and open models (Claude, GPT, Gemini, DeepSeek, Qwen, Kimi, GLM). Pay-as-you-go. Public pricing JSON at /pricing.json. Operated by MachineFi Labs (claimed)."
+      zh-TW: "OpenAI 相容閘道；單一金鑰涵蓋前沿與開源模型（Claude、GPT、Gemini、DeepSeek、Qwen、Kimi、GLM）。按量計費。公開 `/pricing.json`。運營方自稱 MachineFi Labs。"
+      zh-CN: "OpenAI 兼容网关；单一密钥涵盖前沿与开源模型（Claude、GPT、Gemini、DeepSeek、Qwen、Kimi、GLM）。按量计费。公开 `/pricing.json`。运营方自称 MachineFi Labs。"
+
+  # Landed from issues #47 / #44 (vvvvking). #47 aggregator is the honest type.
+  - name: NovAI
+    url: https://aiapi-pro.com
+    type: aggregator
+    status: unverified
+    payment: [card, crypto]
+    models: [deepseek, qwen, moonshot, zhipu, doubao, minimax, hunyuan, seedance]
+    model_count: 38
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible aggregator for Chinese frontier models (DeepSeek, Qwen, GLM, Kimi, MiniMax, Doubao, Hunyuan) plus image and video generation on one /v1 endpoint; public model list at /v1/models, per-token prices on the pricing page."
+      zh-TW: "OpenAI 相容聚合閘道，整合中國前沿模型（DeepSeek、Qwen、GLM、Kimi、MiniMax、Doubao、Hunyuan），同一 `/v1` 端點另含圖像與影片生成；`/v1/models` 公開模型清單，定價頁列每 token 價格。"
+      zh-CN: "OpenAI 兼容聚合网关，整合中国前沿模型（DeepSeek、Qwen、GLM、Kimi、MiniMax、Doubao、Hunyuan），同一 `/v1` 端点另含图像与视频生成；`/v1/models` 公开模型清单，定价页列每 token 价格。"
+
+  # Landed from issue #54 (denial123789). docs.sandbase.ai did not resolve at triage.
+  - name: SandBase
+    url: https://sandbase.ai
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [openai, anthropic, gemini, deepseek, qwen, meta, mistral]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Unified API with OpenAI-compatible endpoints for multiple model providers, plus tool APIs and managed agents. Operator did not personally verify the live API."
+      zh-TW: "統一 API，OpenAI 相容端點涵蓋多家模型供應商，另有 tool API 與託管 agent。運營方未親自驗證線上 API。"
+      zh-CN: "统一 API，OpenAI 兼容端点涵盖多家模型供应商，另有 tool API 与托管 agent。运营方未亲自验证线上 API。"
+
+  # Landed from issue #50 (toptok369-jpg). Marketing claims stripped.
+  - name: AllRouter
+    url: https://allrouter.ai
+    type: aggregator
+    status: unverified
+    payment: [alipay, wechat]
+    models: [openai, anthropic, moonshot, zhipu, gemma, deepseek]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI and Anthropic-compatible aggregator; Alipay and WeChat accepted; operator-claimed Kimi K3 at official Moonshot list price."
+      zh-TW: "相容 OpenAI 與 Anthropic 的聚合閘道；支援支付寶與微信支付；運營方宣稱 Kimi K3 為 Moonshot 官方牌價。"
+      zh-CN: "兼容 OpenAI 与 Anthropic 的聚合网关；支持支付宝与微信支付；运营方宣称 Kimi K3 为 Moonshot 官方牌价。"
+
+  # Landed from issue #32 (airouter-dev).
+  - name: AI Router
+    url: https://ai-router.dev
+    type: mixed
+    status: unverified
+    payment: [card, crypto, alipay, wechat]
+    models: [openai]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible ChatGPT API relay at api.ai-router.dev/v1 with dashboard API keys, usage tracking, daily/weekly packages, and localized English/Chinese/Russian/Persian pages."
+      zh-TW: "OpenAI 相容 ChatGPT API 中轉（`api.ai-router.dev/v1`）；控制台金鑰與用量追蹤、日／週套餐；英／中／俄／波斯語頁面。"
+      zh-CN: "OpenAI 兼容 ChatGPT API 中转（`api.ai-router.dev/v1`）；控制台密钥与用量追踪、日／周套餐；英／中／俄／波斯语页面。"
+
+  # Landed from issue #26 (ryisegg).
+  - name: Tokens Forge
+    url: https://tokens-forge.com
+    type: aggregator
+    status: unverified
+    payment: [card, wechat]
+    models: [openai, anthropic, gemini]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible multi-model API gateway with separate official credit and routed wallet balances for GPT, Claude, and Gemini-style models."
+      zh-TW: "OpenAI 相容多模型 API 閘道；GPT／Claude／Gemini 類模型分官方額度與路由錢包餘額。"
+      zh-CN: "OpenAI 兼容多模型 API 网关；GPT／Claude／Gemini 类模型分官方额度与路由钱包余额。"
 
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)

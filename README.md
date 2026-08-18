@@ -104,6 +104,10 @@ market, not a workaround niche.
 | 🟡 [MKEAI](https://mkeai.com) | mixed | Alipay/WeChat | unverified · ⚠ no-entity | Community-forum + relay hybrid; pushes DeepSeek heavily. |
 | 🟡 [GPTGOD](https://gptgod.online) | reverse | Alipay | unverified · ⚠ reverse, no-entity | Reverse-engineered; among cheapest, stability not guaranteed. |
 | 🟢 [CloseAI](https://www.closeai-asia.com) | official-relay | Alipay/WeChat/Invoice | active · 2026-05-26 · registered | Issues enterprise invoices; self-describes as largest enterprise-grade relay in Asia. |
+| 🟡 [玄枢API (XuanShu API)](https://www.xuanshuapi.com) | mixed | Invoice | unverified · ⚠ operator-self | Serves Anthropic Messages and Gemini v1beta at the root host and OpenAI Responses and Chat Completions under /v1; model visibility and pricing are per-key and per-group, set in the console. |
+| 🟡 [TeamoRouter](https://teamorouter.com) | mixed | Alipay/WeChat | unverified · ⚠ operator-self | OpenAI / Anthropic / Gemini-compatible gateway; Alipay and WeChat; operator-claimed multi-upstream routing and Claude Code / Codex setup guides. |
+| 🟡 [wawazz.xyz](https://wawazz.xyz) | mixed | WeChat | unverified · ⚠ operator-self, cheap-trap | OpenAI-compatible API at /v1; WeChat pay; operator-claimed GPT pricing as low as 0.07x official. |
+| 🟡 [Wappkit API](https://api.wappkit.com) | mixed | — | unverified · ⚠ operator-self | new-api OpenAI-compatible gateway with public /api/pricing; listed groups are Codex/Claude-Code pools (no flat default group). |
 <!-- providers:china_relays:end -->
 
 > **Inclusion ≠ endorsement.** Listing documents the market. Always run the
@@ -122,6 +126,12 @@ market, not a workaround niche.
 | 🟢 [AIMLAPI](https://aimlapi.com) | aggregator | Card/Crypto | Prepaid from $20; crypto support implies payment-friction workaround. |
 | 🟡 [RouteScope](https://www.routescope.ai) | aggregator | Card/Crypto | Unified gateway mapping 100+ models to OpenAI/Claude/Gemini-compatible APIs; pay-as-you-go credits. |
 | 🟡 [UnoRouter](https://unorouter.ai) | aggregator | Card | Built on the new-api gateway. One key across multiple upstreams with latency-based routing and failover; OpenAI/Anthropic/Gemini formats auto-detected. Pay-as-you-go credits plus a free model tier. Also targets roleplay clients (SillyTavern, Janitor.AI, RisuAI, Chub). Public pricing JSON at /api/pricing. |
+| 🟡 [QuickSilver Pro](https://quicksilverpro.io) | aggregator | Card | OpenAI-compatible gateway; one key for frontier and open models (Claude, GPT, Gemini, DeepSeek, Qwen, Kimi, GLM). Pay-as-you-go. Public pricing JSON at /pricing.json. Operated by MachineFi Labs (claimed). |
+| 🟡 [NovAI](https://aiapi-pro.com) | aggregator | Card/Crypto | OpenAI-compatible aggregator for Chinese frontier models (DeepSeek, Qwen, GLM, Kimi, MiniMax, Doubao, Hunyuan) plus image and video generation on one /v1 endpoint; public model list at /v1/models, per-token prices on the pricing page. |
+| 🟡 [SandBase](https://sandbase.ai) | aggregator | Card | Unified API with OpenAI-compatible endpoints for multiple model providers, plus tool APIs and managed agents. Operator did not personally verify the live API. |
+| 🟡 [AllRouter](https://allrouter.ai) | aggregator | Alipay/WeChat | OpenAI and Anthropic-compatible aggregator; Alipay and WeChat accepted; operator-claimed Kimi K3 at official Moonshot list price. |
+| 🟡 [AI Router](https://ai-router.dev) | mixed | Card/Crypto/Alipay/WeChat | OpenAI-compatible ChatGPT API relay at api.ai-router.dev/v1 with dashboard API keys, usage tracking, daily/weekly packages, and localized English/Chinese/Russian/Persian pages. |
+| 🟡 [Tokens Forge](https://tokens-forge.com) | aggregator | Card/WeChat | OpenAI-compatible multi-model API gateway with separate official credit and routed wallet balances for GPT, Claude, and Gemini-style models. |
 <!-- providers:global_gateways:end -->
 
 ## Self-hosted alternatives
@@ -153,6 +163,7 @@ You give up the relay's Alipay/WeChat convenience and accept ops overhead.
 |---|---|
 | 🟢 [中轉站競技場 (AI API PK)](https://www.aiapipk.com) | Price wall across OpenAI / Reverse / Claude / DeepSeek for ~40 stations. |
 | 🔴 [awesome-ai-proxy (mn-api, unmaintained)](https://github.com/mn-api/awesome-ai-proxy) | Original list (~31 stations); no longer maintained as of 2026. |
+| 🟡 [China AI Arbitrage](https://www.china-ai-arbitrage.xyz) | Price and quota comparison of 60+ Chinese AI platforms, ranked LLM API relays, and daily-updated free-tier tracking. |
 | 🟡 [CoderPlan](https://coderplan.ai) | Community-submitted; claims 50+ models incl. OpenAI/Anthropic/Google/DeepSeek/xAI. |
 <!-- providers:comparison_tools:end -->
 

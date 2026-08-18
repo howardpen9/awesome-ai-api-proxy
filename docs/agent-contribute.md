@@ -61,11 +61,11 @@ CI rejects hand-edits. Tables are built by
 
 ## Path C — Operator / affiliated (preferred: Issue, not PR)
 
-Open a GitHub Issue with the form:
+Open a GitHub Issue with the **required form** (blank issues are auto-closed):
 
-https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.md
+https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.yml
 
-Fill every field. Maintainer converts to YAML. Do **not** open a PR claiming
+Every field is required. Maintainer converts to YAML. Do **not** open a PR claiming
 `status: active` or `type: official-relay` without independent evidence.
 
 ---
@@ -151,7 +151,7 @@ Details: [CONTRIBUTING.md § Adding a price fetcher](../CONTRIBUTING.md#adding-a
 
 ## Path B — Manual prices (no JSON API)
 
-https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=submit-prices.md
+https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=submit-prices.yml
 
 Include a markdown price table + screenshot of the live pricing page.
 
@@ -191,6 +191,7 @@ Common failures we auto-close:
 | Marketing `notes` / superlatives | One factual sentence |
 | Duplicate of open PR / existing entry | Search yaml first |
 | Encoding corruption / bulk rewrite of unrelated names | Touch only your new block |
+| Blank / free-form issue | Use the `new-provider.yml` form — required fields, or it is auto-closed |
 
 Re-open by following Path C or D above. Schema CI will tell you the exact field if something is still wrong.
 

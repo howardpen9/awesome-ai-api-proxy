@@ -1,0 +1,85 @@
+name: Submit relay prices / 提交中轉站價格
+description: Submit current prices for a listed station. Operators welcome — disclose below.
+title: "prices: "
+labels: [pending-price-review]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English or 中文 both fine.
+
+        Use canonical model names from [`data/canonical-models.yaml`](https://github.com/howardpen9/awesome-ai-api-proxy/blob/main/data/canonical-models.yaml).
+
+        Valid units: `per_1m_input_tokens`, `per_1m_output_tokens`, `per_1m_input_cache_read_tokens`, `per_image`, `per_second`, `per_request`.
+
+  - type: input
+    id: station
+    attributes:
+      label: Station name / 站點名稱
+      description: Must match an existing entry in data/providers.yaml (e.g. UiUiAPI, 云雾 API).
+      placeholder: UiUiAPI
+    validations:
+      required: true
+
+  - type: input
+    id: pricing_url
+    attributes:
+      label: Pricing page URL / 價格頁面 URL
+      description: Plain HTTPS — no utm_ / ref= / affiliate.
+      placeholder: https://
+    validations:
+      required: true
+
+  - type: input
+    id: snapshot_date
+    attributes:
+      label: Snapshot date / 截圖日期
+      description: The date the live page matched these prices.
+      placeholder: "2026-08-18"
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot of pricing page / 價格頁面截圖
+      description: Drag the image into this box. Required — maintainer will cross-check the live page.
+    validations:
+      required: true
+
+  - type: textarea
+    id: prices
+    attributes:
+      label: Prices
+      description: Keep the header row. One row per model × unit.
+      value: |
+        | canonical_model | unit | price_usd |
+        |---|---|---|
+        | claude-sonnet-4.6 | per_1m_input_tokens | 1.50 |
+        | claude-sonnet-4.6 | per_1m_output_tokens | 7.50 |
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operator
+    attributes:
+      label: Are you the station operator? / 你是站點營運者嗎？
+      options:
+        - "no"
+        - "yes"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Screenshot included / 已附截圖
+          required: true
+        - label: Prices match the live page on the snapshot date / 價格與當天頁面一致
+          required: true
+        - label: No referral / affiliate links in the URL / URL 無推廣連結
+          required: true
+        - label: If operator — this submission is disclosed as self-promotion / 若為營運者，已揭露
+          required: true

@@ -62,7 +62,7 @@ weekly via the `price-refresh` workflow.
 
 For providers without a public JSON pricing API (e.g. Yunwu, CloseAI) the relay
 operator or community members can submit prices via the
-[`submit-prices` issue template](../.github/ISSUE_TEMPLATE/submit-prices.md).
+[`submit-prices` issue form](../.github/ISSUE_TEMPLATE/submit-prices.yml).
 Howard reviews these weekly via `python -m scripts.review_submissions` and on
 accept appends entries here.
 

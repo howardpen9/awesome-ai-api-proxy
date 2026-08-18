@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Agent playbook / 给 AI agent 的投稿指南
+    url: https://github.com/howardpen9/awesome-ai-api-proxy/blob/main/docs/agent-contribute.md
+    about: Read this first if you are Claude / Cursor / Codex / any coding agent.
+  - name: Field schema
+    url: https://github.com/howardpen9/awesome-ai-api-proxy/blob/main/data/schema.md
+    about: Required YAML fields, risk_flags, and type definitions.

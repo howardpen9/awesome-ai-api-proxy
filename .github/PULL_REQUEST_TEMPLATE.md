@@ -8,6 +8,8 @@
   AI agents: follow docs/agent-contribute.md before opening this PR.
   Edit data/providers.yaml only. Never hand-edit README tables.
   Run: python -m scripts.validate
+  Operators / affiliates: do NOT open a PR. Use the issue form:
+  https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.yml
 -->
 
 ## What this changes
@@ -29,9 +31,11 @@
 
 <!-- How did you verify? Link or short description. -->
 
-## Are you the operator of this station? (Optional)
+## Are you the operator of this station?
 
-<!-- Self-submissions are welcome. Disclose for transparency; it doesn't change acceptance. -->
+<!-- yes / no. If yes, stop and file the issue form instead:
+     https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.yml
+     A self-PR is accepted only with risk_flags: [operator_submitted] and status: unverified. -->
 
 ---
 

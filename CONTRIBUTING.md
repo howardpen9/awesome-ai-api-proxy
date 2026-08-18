@@ -62,8 +62,8 @@ PRs are closed without merge; re-submit via the agent playbook.
 > fail before a human reviews. Scroll the action log, fix, push; CI re-runs.
 
 Not comfortable with a PR? Open an issue with the
-[provider template](.github/ISSUE_TEMPLATE/new-provider.md) and a maintainer
-will add it.
+[provider form](https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.yml)
+(blank issues are closed) and a maintainer will add it.
 
 ## Review bar
 

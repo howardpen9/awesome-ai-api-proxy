@@ -181,7 +181,7 @@ to verify, so prices land in the weekly snapshot faster.
 
 ### Tier A — just get the entry in (no pricing)
 
-[**Open a new-provider issue**](https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.md)
+[**Open a new-provider issue**](https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.yml)
 — fill the form, a maintainer adds it. Status will be `unverified` until a
 maintainer canaries the station.
 
@@ -211,7 +211,7 @@ for the long form.
 
 ### Tier C — no public JSON, but you have screenshots
 
-Use the [**submit-prices issue template**](https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=submit-prices.md)
+Use the [**submit-prices issue form**](https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=submit-prices.yml)
 — paste a price table + a screenshot of the live pricing page. Maintainer
 verifies against the screenshot weekly and appends to `submitted_prices`.
 
@@ -532,7 +532,7 @@ station, flag one that ran away, or contribute a documented risk case:
 
 - Read [CONTRIBUTING.md](CONTRIBUTING.md) and the [field schema](data/schema.md).
 - Edit [`data/providers.yaml`](data/providers.yaml) — not the README tables directly.
-- Open an issue with the [provider template](.github/ISSUE_TEMPLATE) for additions.
+- Open an issue with the [provider form](https://github.com/howardpen9/awesome-ai-api-proxy/issues/new?template=new-provider.yml) for additions. Blank issues are closed.
 
 We do **not** accept referral links or marketing copy. Factual, dated,
 source-backed entries only.

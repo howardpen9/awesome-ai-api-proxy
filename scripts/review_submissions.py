@@ -79,18 +79,44 @@ def gh_close(issue_number: int) -> None:
     )
 
 
+_EMPTY_FORM_VALUES = {"", "_no response_", "n/a", "none", "-", "_"}
+
+
+def _issue_field(body: str, needle: str) -> str | None:
+    """Read a GitHub issue-form heading or a legacy **bold** markdown label."""
+    form = re.search(
+        rf"^###[^\n]*{re.escape(needle)}[^\n]*\n+(.+)",
+        body,
+        flags=re.IGNORECASE | re.MULTILINE,
+    )
+    if form:
+        line = form.group(1).splitlines()[0].strip()
+        if line.lower() not in _EMPTY_FORM_VALUES:
+            return line
+    bold = re.search(
+        rf"\*\*[^*]*{re.escape(needle)}[^*]*\*\*[:：]?\s*(.+)",
+        body,
+        flags=re.IGNORECASE,
+    )
+    if bold:
+        line = bold.group(1).strip()
+        if line.lower() not in _EMPTY_FORM_VALUES:
+            return line
+    return None
+
+
 def parse_prices_from_body(body: str) -> tuple[str | None, str | None, list[dict]]:
     """Extract station name, screenshot/source url, and price rows from issue body.
 
-    Expected layout matches `.github/ISSUE_TEMPLATE/submit-prices.md`.
+    Accepts GitHub issue-form output (``### Station name``) and the legacy
+    ``**Station name:**`` markdown template.
     Returns (station, source_url, rows). rows is a list of
     {canonical_model, unit, price_usd}.
     """
-    station_match = re.search(r"\*\*Station name[^*]*\*\*[:：]?\s*(.+)", body)
-    station = station_match.group(1).strip() if station_match else None
-
-    src_match = re.search(r"\*\*Pricing page URL[^*]*\*\*[:：]?\s*(https?://\S+)", body)
-    source_url = src_match.group(1).strip() if src_match else None
+    station = _issue_field(body, "Station name")
+    raw_src = _issue_field(body, "Pricing page URL")
+    src_match = re.search(r"https?://\S+", raw_src or "")
+    source_url = src_match.group(0).rstrip(").,]") if src_match else None
 
     rows: list[dict] = []
     # Look for any markdown table where columns include canonical_model / unit / price_usd.

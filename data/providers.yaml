@@ -632,3 +632,16 @@ self_hosted_alternatives:
     risk_flags: [operator_submitted]
     notes:
       en: "MIT TypeScript OpenAI-compatible multi-provider router (parallel ensemble); self-hosted — you supply keys. npm: adaptive-memory-multi-model-router."
+
+  - name: Bifrost
+    url: https://github.com/maximhq/bifrost
+    type: gateway-oss
+    status: unverified
+    models: [openai, anthropic, google, azure, bedrock, groq, mistral]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    notes:
+      en: "Go-based self-hosted AI gateway with an OpenAI-compatible API, multi-provider routing, fallbacks, load balancing, and observability; users supply their own provider keys."

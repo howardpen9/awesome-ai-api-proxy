@@ -643,5 +643,6 @@ self_hosted_alternatives:
     entity_registered: unknown
     supports_stream: true
     supports_tools: true
+    risk_flags: [operator_submitted]
     notes:
       en: "Go-based self-hosted AI gateway with an OpenAI-compatible API, multi-provider routing, fallbacks, load balancing, and observability; users supply their own provider keys."

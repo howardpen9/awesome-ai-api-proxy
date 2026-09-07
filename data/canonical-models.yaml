@@ -108,6 +108,7 @@ canonical_models:
       - claude-opus-4.8
       - anthropic/claude-opus-4.8
       - claude-4.8-opus
+      - claude opus 4.8
 
   - canonical: gpt-5.5-pro
     family: openai

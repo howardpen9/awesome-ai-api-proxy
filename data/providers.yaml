@@ -588,6 +588,23 @@ global_gateways:
       zh-TW: "OpenAI 相容多模型 API 閘道；GPT／Claude／Gemini 類模型分官方額度與路由錢包餘額。"
       zh-CN: "OpenAI 兼容多模型 API 网关；GPT／Claude／Gemini 类模型分官方额度与路由钱包余额。"
 
+  # Operator self-submission; public pages checked, no authenticated canary run.
+  - name: XiuRouter
+    url: https://router.xiu.ai
+    type: aggregator
+    status: unverified
+    models: [openai, anthropic, gemini]
+    last_verified: null
+    verified_by: community
+    entity_registered: true
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Hosted usage-based gateway exposing OpenAI Chat Completions and Responses, Anthropic Messages, and Gemini GenerateContent, with scoped API keys and per-request usage and cost records."
+      zh-TW: "託管的按量計費閘道，提供 OpenAI Chat Completions 與 Responses、Anthropic Messages 和 Gemini GenerateContent，並支援受限 API Key 及逐請求用量與費用記錄。"
+      zh-CN: "托管的按量计费网关，提供 OpenAI Chat Completions 与 Responses、Anthropic Messages 和 Gemini GenerateContent，并支持受限 API Key 及逐请求用量与费用记录。"
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

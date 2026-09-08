@@ -204,10 +204,14 @@ china_relays:
     supports_stream: unknown
     supports_tools: unknown
     risk_flags: [operator_submitted]
+    pricing:
+      pricing_url: https://teamorouter.com/pricing
+      fetcher: teamorouter
+      pricing_currency: USD
     notes:
-      en: "OpenAI / Anthropic / Gemini-compatible gateway; Alipay and WeChat; operator-claimed multi-upstream routing and Claude Code / Codex setup guides."
-      zh-TW: "相容 OpenAI／Anthropic／Gemini 的閘道；支付寶與微信支付；運營方宣稱多上游路由，並有 Claude Code／Codex 設定教學。"
-      zh-CN: "兼容 OpenAI／Anthropic／Gemini 的网关；支付宝与微信支付；运营方宣称多上游路由，并有 Claude Code／Codex 配置教程。"
+      en: "OpenAI / Anthropic / Gemini-compatible gateway; Alipay and WeChat; operator-claimed multi-upstream routing with Claude Code / Codex setup guides and gpt-6-astra support."
+      zh-TW: "相容 OpenAI／Anthropic／Gemini 的閘道；支付寶與微信支付；運營方宣稱多上游路由，並有 Claude Code／Codex 設定教學與 gpt-6-astra 支援。"
+      zh-CN: "兼容 OpenAI／Anthropic／Gemini 的网关；支付宝与微信支付；运营方宣称多上游路由，并有 Claude Code／Codex 配置教程与 gpt-6-astra 支持。"
 
   # Landed from issue #28 (LRZ1918). 0.07x claim is a cheap-trap signal, not a selling point.
   - name: wawazz.xyz

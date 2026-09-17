@@ -22,6 +22,7 @@ REGISTRY: dict[str, str] = {
     "quicksilverpro": "fetchers.quicksilverpro",
     "wappkit": "fetchers.wappkit",
     "teamorouter": "fetchers.teamorouter",
+    "lanbuff": "fetchers.lanbuff",
 }
 
 

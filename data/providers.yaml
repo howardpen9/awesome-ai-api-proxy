@@ -253,6 +253,29 @@ china_relays:
       zh-TW: "new-api OpenAI 相容閘道，公開 `/api/pricing`；分組為 Codex／Claude-Code 號池（無扁平 default 組）。"
       zh-CN: "new-api OpenAI 兼容网关，公开 `/api/pricing`；分组为 Codex／Claude-Code 号池（无扁平 default 组）。"
 
+  - name: 灵栈中转站 (LingZhan)
+    url: https://lingzhanai.top
+    type: mixed
+    status: unverified
+    payment: [alipay]
+    models: [openai, anthropic, gemini, deepseek, grok, qwen, glm, moonshot, bytedance, minimax]
+    model_count: 91
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    pricing:
+      pricing_url: https://lingzhanai.top
+      api_url: https://lingzhanai.top/api/pricing
+      fetcher: lingzhan
+      pricing_currency: USD
+    notes:
+      en: "Self-built (not new-api) OpenAI/Anthropic-compatible relay; public /api/pricing exposes per-group multipliers and absolute per-model prices; billing formula published on the homepage."
+      zh-TW: "自研（非 new-api）的 OpenAI／Anthropic 相容中轉；公開 `/api/pricing` 提供分組倍率與模型絕對價；首頁公示計費公式。"
+      zh-CN: "自研（非 new-api）的 OpenAI/Anthropic 兼容中转；公开 /api/pricing 提供分组倍率与模型绝对价；首页公示计费公式。"
+
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
 # ---------------------------------------------------------------------------

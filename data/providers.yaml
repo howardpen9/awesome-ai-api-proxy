@@ -636,3 +636,18 @@ self_hosted_alternatives:
     risk_flags: [operator_submitted]
     notes:
       en: "MIT TypeScript OpenAI-compatible multi-provider router (parallel ensemble); self-hosted — you supply keys. npm: adaptive-memory-multi-model-router."
+  # x402 exact-scheme Nano (XNO) settlement layer for a self-hosted gateway
+  # (community-contributed, added 2026-09-25). Live public facilitator verified:
+  #   GET https://facilitator.pursekeeper.dev/supported -> network nano:mainnet, XNO, work required
+  - name: Nano x402 settlement (exact)
+    url: https://github.com/x402nano/exact
+    type: gateway-oss
+    status: unverified
+    payment: [crypto]
+    last_verified: "2026-09-25"
+    verified_by: community
+    entity_registered: false
+    supports_stream: true
+    supports_tools: true
+    notes:
+      en: "Adds an HTTP 402 pay-per-token settlement rail in Nano (XNO) to a self-hosted gateway; exact-scheme facilitator with a live public node at facilitator.pursekeeper.dev/supported (nano:mainnet, XNO, work required)."

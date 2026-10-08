@@ -253,6 +253,23 @@ china_relays:
       zh-TW: "new-api OpenAI 相容閘道，公開 `/api/pricing`；分組為 Codex／Claude-Code 號池（無扁平 default 組）。"
       zh-CN: "new-api OpenAI 兼容网关，公开 `/api/pricing`；分组为 Codex／Claude-Code 号池（无扁平 default 组）。"
 
+  - name: TokenDos
+    url: https://www.tokendos.com
+    type: aggregator
+    status: unverified
+    payment: [alipay, crypto]
+    models: [openai, anthropic, grok, deepseek, qwen, kimi, glm]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "AI API sharing marketplace aggregating 10+ upstream vendors (ycy, UM-Claude, IceMo, TJG, etc.) with user-switchable routing. Pay-per-token with Claude from 0.03x and GPT from 0.06x. Low-latency direct access (~330ms), native support for Claude Code CLI, Cursor, and Codex."
+      zh-TW: "多上游供應商聚合市場，接入 ycy / UM-Claude / IceMo / TJG 等十餘家管道，支援使用者自由切換。按量計費，Claude 最低 0.03x、GPT 最低 0.06x。免翻直連（~330ms延遲），原生支援 Claude Code CLI、Cursor 與 Codex。"
+      zh-CN: "多上游供应商聚合市场，接入 ycy / UM-Claude / IceMo / TJG 等十余家渠道，支持用户自由切换。按量计费，Claude 最低 0.03x、GPT 最低 0.06x。免翻直连（~330ms延迟），原生支持 Claude Code CLI、Cursor 与 Codex。"
+
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
 # ---------------------------------------------------------------------------

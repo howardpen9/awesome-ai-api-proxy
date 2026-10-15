@@ -588,6 +588,28 @@ global_gateways:
       zh-TW: "OpenAI 相容多模型 API 閘道；GPT／Claude／Gemini 類模型分官方額度與路由錢包餘額。"
       zh-CN: "OpenAI 兼容多模型 API 网关；GPT／Claude／Gemini 类模型分官方额度与路由钱包余额。"
 
+
+  # Operator self-submit with public /api/pricing (new-api).
+  - name: BetterToken
+    url: https://bettertoken.ai
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [openai, anthropic, deepseek, moonshot, zhipu, minimax, qwen]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    pricing:
+      pricing_url: https://bettertoken.ai
+      api_url: https://bettertoken.ai/api/pricing
+      fetcher: bettertoken
+      pricing_currency: USD
+    notes:
+      en: "OpenAI- and Anthropic-compatible gateway (chat/completions, responses, messages) for Claude, GPT, DeepSeek, Kimi, GLM, MiniMax and Qwen; prepaid pay-as-you-go; public pricing JSON at /api/pricing."
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

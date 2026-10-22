@@ -588,6 +588,23 @@ global_gateways:
       zh-TW: "OpenAI 相容多模型 API 閘道；GPT／Claude／Gemini 類模型分官方額度與路由錢包餘額。"
       zh-CN: "OpenAI 兼容多模型 API 网关；GPT／Claude／Gemini 类模型分官方额度与路由钱包余额。"
 
+  - name: OurToken
+    url: https://ourtoken.ai
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [openai, anthropic, gemini, zhipu, minimax, deepseek, moonshot, hunyuan]
+    last_verified: null
+    verified_by: community
+    entity_registered: true
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible gateway aggregating OpenAI, Anthropic Claude, Gemini, DeepSeek, MiniMax, GLM, Kimi and Tencent Hunyuan models behind a single API key and billing account."
+      zh-CN: "OpenAI 兼容网关，统一聚合 OpenAI、Anthropic Claude、Gemini、DeepSeek、MiniMax、GLM、Kimi 与腾讯混元模型，一个 API key 与一个计费账户。"
+      zh-TW: "OpenAI 相容閘道，統一聚合 OpenAI、Anthropic Claude、Gemini、DeepSeek、MiniMax、GLM、Kimi 與騰訊混元模型，單一 API key 與單一計費帳戶。"
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

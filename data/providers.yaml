@@ -196,7 +196,7 @@ china_relays:
     url: https://teamorouter.com
     type: mixed
     status: unverified
-    payment: [alipay, wechat]
+    payment: [alipay, wechat, card, crypto]
     models: [openai, anthropic, gemini, deepseek]
     last_verified: null
     verified_by: community
@@ -209,9 +209,9 @@ china_relays:
       fetcher: teamorouter
       pricing_currency: USD
     notes:
-      en: "OpenAI / Anthropic / Gemini-compatible gateway; Alipay and WeChat; operator-claimed multi-upstream routing with Claude Code / Codex setup guides and gpt-6-astra support."
-      zh-TW: "相容 OpenAI／Anthropic／Gemini 的閘道；支付寶與微信支付；運營方宣稱多上游路由，並有 Claude Code／Codex 設定教學與 gpt-6-astra 支援。"
-      zh-CN: "兼容 OpenAI／Anthropic／Gemini 的网关；支付宝与微信支付；运营方宣称多上游路由，并有 Claude Code／Codex 配置教程与 gpt-6-astra 支持。"
+      en: "OpenAI / Anthropic / Gemini-compatible gateway; Alipay, WeChat, card and USDT (BEP20 / TRC20 / ERC20); image models on /v1/images/generations with the same key; operator-claimed multi-upstream routing with Claude Code / Codex setup guides and gpt-6-astra support."
+      zh-TW: "相容 OpenAI／Anthropic／Gemini 的閘道；支付寶、微信支付、信用卡與 USDT（BEP20／TRC20／ERC20）；同一個 key 可用 /v1/images/generations 呼叫 GPT Image 2／2.5 與 Gemini 生圖模型；運營方宣稱多上游路由，並有 Claude Code／Codex 設定教學與 gpt-6-astra 支援。"
+      zh-CN: "兼容 OpenAI／Anthropic／Gemini 的网关；支付宝、微信支付、信用卡与 USDT（BEP20／TRC20／ERC20）；同一个 key 可用 /v1/images/generations 调用 GPT Image 2／2.5 与 Gemini 生图模型；运营方宣称多上游路由，并有 Claude Code／Codex 配置教程与 gpt-6-astra 支持。"
 
   # Landed from issue #28 (LRZ1918). 0.07x claim is a cheap-trap signal, not a selling point.
   - name: wawazz.xyz
@@ -253,6 +253,43 @@ china_relays:
       zh-TW: "new-api OpenAI 相容閘道，公開 `/api/pricing`；分組為 Codex／Claude-Code 號池（無扁平 default 組）。"
       zh-CN: "new-api OpenAI 兼容网关，公开 `/api/pricing`；分组为 Codex／Claude-Code 号池（无扁平 default 组）。"
 
+  # Landed from PR #127 (codefarmer4GDP) / issue #84. Public pages describe a
+  # supplier-node marketplace, not a mixed official relay. Payment methods are
+  # not stated on the public site, so the field is omitted.
+  - name: TokenDos
+    url: https://www.tokendos.com
+    type: aggregator
+    status: unverified
+    models: [openai, anthropic, gemini, deepseek, qwen, kimi, glm, grok]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Token-sharing marketplace routing across multiple supplier nodes; OpenAI /v1 and Anthropic endpoints with a public pricing and availability page."
+      zh-TW: "連接供應節點與呼叫方的 Token 共享市場；提供 OpenAI /v1 與 Anthropic 端點，以及公開查價與可用率頁面。"
+      zh-CN: "连接供应节点与调用方的 Token 共享市场；提供 OpenAI /v1 与 Anthropic 端点，以及公开查价与可用率页面。"
+
+  # Landed from PR #100 (1261398983) / issue #103.
+  - name: DSH API
+    url: https://api.dshapi.icu
+    type: mixed
+    status: unverified
+    payment: [alipay, wechat]
+    models: [openai, anthropic, google, xai]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: unknown
+    risk_flags: [operator_submitted, no_entity]
+    notes:
+      en: "OpenAI- and Anthropic-compatible gateway; QQ-mail registration, Alipay/WeChat payment, per-token billing."
+      zh-TW: "OpenAI 與 Anthropic 雙協議相容閘道；QQ 信箱註冊、支付寶/微信支付、按量計費。"
+      zh-CN: "OpenAI 与 Anthropic 双协议兼容网关；QQ 邮箱注册、支付宝/微信支付、按量计费。"
+
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
 # ---------------------------------------------------------------------------
@@ -291,6 +328,19 @@ comparison_tools:
       en: "Price and quota comparison of 60+ Chinese AI platforms, ranked LLM API relays, and daily-updated free-tier tracking."
       zh-TW: "60+ 中國 AI 平台的價格與額度比價、LLM API 中轉站排名、每日更新的免費額度追蹤。"
       zh-CN: "60+ 中国 AI 平台的价格与额度比价、LLM API 中转站排名、每日更新的免费额度追踪。"
+
+  # Landed from PR #140 (happy520ai). Operator of the CLI, not of a relay.
+  - name: gateway-price-check (CLI)
+    url: https://github.com/happy520ai/gateway-price-check
+    type: comparison
+    status: unverified
+    last_verified: null
+    verified_by: community
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Zero-dependency CLI: one unauthenticated GET /v1/models per endpoint, five-way verdict (YES/NO/AUTH/ERR/UNKNOWN) that keeps 'no prices published' separate from 'I could not read it'; CI re-runs it over 11 gateways daily and archives the raw readings."
+      zh-TW: "零依賴 CLI：對每個端點發一次免驗證的 GET /v1/models，五檔判定（YES/NO/AUTH/ERR/UNKNOWN）把「沒有公布價格」與「我讀不到」分開；CI 每日量 11 家並歸檔原始讀數。"
+      zh-CN: "零依赖 CLI：对每个端点发一次免验证的 GET /v1/models，五档判定（YES/NO/AUTH/ERR/UNKNOWN）把「没有公布价格」与「我读不到」分开；CI 每日量 11 家并归档原始读数。"
 
 # ---------------------------------------------------------------------------
 # Global gateways / aggregators (海外對比方案)
@@ -588,6 +638,81 @@ global_gateways:
       zh-TW: "OpenAI 相容多模型 API 閘道；GPT／Claude／Gemini 類模型分官方額度與路由錢包餘額。"
       zh-CN: "OpenAI 兼容多模型 API 网关；GPT／Claude／Gemini 类模型分官方额度与路由钱包余额。"
 
+  # Landed from PR #119 (Jess-yaozu). Terms name DIGITAL MIND LIMITED (HK).
+  - name: OurToken
+    url: https://ourtoken.ai
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [openai, anthropic, gemini, zhipu, minimax, deepseek, moonshot, hunyuan]
+    last_verified: null
+    verified_by: community
+    entity_registered: true
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible gateway aggregating OpenAI, Anthropic Claude, Gemini, DeepSeek, MiniMax, GLM, Kimi and Tencent Hunyuan models behind a single API key and billing account."
+      zh-CN: "OpenAI 兼容网关，统一聚合 OpenAI、Anthropic Claude、Gemini、DeepSeek、MiniMax、GLM、Kimi 与腾讯混元模型，一个 API key 与一个计费账户。"
+      zh-TW: "OpenAI 相容閘道，統一聚合 OpenAI、Anthropic Claude、Gemini、DeepSeek、MiniMax、GLM、Kimi 與騰訊混元模型，單一 API key 與單一計費帳戶。"
+
+  # Landed from PR #64 (MuduiClaw). Public /api/pricing exists but groups are
+  # not a flat default, so no fetcher is registered with this entry.
+  - name: XiuRouter
+    url: https://router.xiu.ai
+    type: aggregator
+    status: unverified
+    models: [openai, anthropic, gemini]
+    last_verified: null
+    verified_by: community
+    entity_registered: true
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Hosted usage-based gateway exposing OpenAI Chat Completions and Responses, Anthropic Messages, and Gemini GenerateContent, with scoped API keys and per-request usage and cost records."
+      zh-TW: "託管的按量計費閘道，提供 OpenAI Chat Completions 與 Responses、Anthropic Messages 和 Gemini GenerateContent，並支援受限 API Key 及逐請求用量與費用記錄。"
+      zh-CN: "托管的按量计费网关，提供 OpenAI Chat Completions 与 Responses、Anthropic Messages 和 Gemini GenerateContent，并支持受限 API Key 及逐请求用量与费用记录。"
+
+  # Landed from PR #135 (weibin0516). Snapshot is not committed; the weekly
+  # refresh writes it. Prices use each model's access-group ratio.
+  - name: BetterToken
+    url: https://bettertoken.ai
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [openai, anthropic, gemini, deepseek, moonshot, zhipu, minimax, qwen]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    pricing:
+      pricing_url: https://bettertoken.ai/pricing
+      api_url: https://bettertoken.ai/api/pricing
+      fetcher: bettertoken
+      pricing_currency: USD
+    notes:
+      en: "OpenAI- and Anthropic-compatible gateway (chat/completions, responses, messages) for Claude, GPT, Gemini, DeepSeek, Kimi, GLM, MiniMax and Qwen; prepaid pay-as-you-go; public pricing JSON at /api/pricing, with each model's access-group ratio applied."
+
+  # Landed from PR #96 (ankita37105). Live site bills paid plans in crypto,
+  # not by card. Price and free-trial figures stay out of notes.
+  - name: APIClaw
+    url: https://apiclaw.biz
+    type: aggregator
+    status: unverified
+    payment: [crypto]
+    models: [openai, anthropic, gemini, deepseek, mistral, meta, cohere, xai]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto."
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------
@@ -636,3 +761,18 @@ self_hosted_alternatives:
     risk_flags: [operator_submitted]
     notes:
       en: "MIT TypeScript OpenAI-compatible multi-provider router (parallel ensemble); self-hosted — you supply keys. npm: adaptive-memory-multi-model-router."
+
+  # Landed from PR #68 (Swpn0neel) / issue #87.
+  - name: Bifrost
+    url: https://github.com/maximhq/bifrost
+    type: gateway-oss
+    status: unverified
+    models: [openai, anthropic, google, azure, bedrock, groq, mistral]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Go-based self-hosted AI gateway with an OpenAI-compatible API, multi-provider routing, fallbacks, load balancing, and observability; users supply their own provider keys."

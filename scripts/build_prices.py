@@ -27,15 +27,49 @@ from ._paths import (
     PRICES_DOC,
     PRICES_HISTORY,
     PRICES_LATEST,
+    PROVIDERS_YAML,
     READMES,
     SNAPSHOTS_DIR,
 )
 
 console = Console()
 
-PROVIDER_COLUMN_ORDER = ["openrouter", "atlascloud", "relaydance", "uiuiapi", "bltcy"]
+# Priority only. Every provider present in the snapshot is rendered;
+# names not in this list are appended alphabetically.
+PREFERRED_PROVIDER_ORDER = ["openrouter", "atlascloud", "relaydance", "uiuiapi", "bltcy"]
 START_MARKER = "<!-- prices:start -->"
 END_MARKER = "<!-- prices:end -->"
+
+
+def _provider_column_order(matrix: dict) -> list[str]:
+    seen = {k[2] for k in matrix}
+    ordered = [p for p in PREFERRED_PROVIDER_ORDER if p in seen]
+    ordered += sorted(seen - set(ordered))
+    return ordered
+
+
+def _load_provider_display_names() -> dict[str, str]:
+    """Map provider_id -> the name already used in the price tables.
+
+    Display names come from providers.yaml (`pricing.fetcher`). Two legacy
+    headers are pinned so a regen does not rename columns that predate the
+    yaml display name: OpenRouter stays "OpenRouter (ref)", bltcy stays "bltcy".
+    """
+    doc = yaml.safe_load(PROVIDERS_YAML.read_text(encoding="utf-8"))
+    names: dict[str, str] = {}
+    for _section, entries in doc.items():
+        if not isinstance(entries, list):
+            continue
+        for entry in entries:
+            if not isinstance(entry, dict):
+                continue
+            pricing = entry.get("pricing") or {}
+            provider_id = pricing.get("fetcher") or _slug(entry.get("name", ""))
+            if provider_id and entry.get("name"):
+                names[provider_id] = entry["name"]
+    names["openrouter"] = "OpenRouter (ref)"
+    names["bltcy"] = "bltcy"
+    return names
 
 
 def _latest_snapshot_dir() -> Path:
@@ -73,9 +107,6 @@ def _load_snapshots(snapshot_dir: Path) -> list[dict]:
 
 def _load_submitted_prices() -> list[dict]:
     """Read each provider's pricing.submitted_prices and convert to PriceRecord-shaped dicts."""
-    import yaml
-
-    from ._paths import PROVIDERS_YAML
     doc = yaml.safe_load(PROVIDERS_YAML.read_text(encoding="utf-8"))
     out: list[dict] = []
     for section, entries in doc.items():
@@ -221,7 +252,8 @@ def _build_tier_tables(
         if prev is None or (prev[1] == "manual" and method != "manual"):
             matrix[key] = (rec["price_usd"], method)
 
-    providers_in_use = [p for p in PROVIDER_COLUMN_ORDER if any(p == k[2] for k in matrix)]
+    providers_in_use = _provider_column_order(matrix)
+    provider_names = _load_provider_display_names()
     has_manual = any(m == "manual" for (_, m) in matrix.values())
 
     def render_row(model: dict, unit: str) -> str:
@@ -261,13 +293,6 @@ def _build_tier_tables(
         rows = [render_row(model, unit) for model in models_in_tier]
         if not rows:
             return ""
-        provider_names = {
-            "openrouter": "OpenRouter (ref)",
-            "atlascloud": "Atlas Cloud",
-            "relaydance": "Relaydance",
-            "uiuiapi": "UiUiAPI",
-            "bltcy": "bltcy",
-        }
         header = (
             "| Model | "
             + " | ".join(provider_names.get(p, p) for p in providers_in_use)
@@ -324,13 +349,6 @@ def _build_tier_tables(
                         cells.append(cell)
                 rows.append("| " + " | ".join(cells) + " |")
         if rows:
-            provider_names = {
-                "openrouter": "OpenRouter (ref)",
-                "atlascloud": "Atlas Cloud",
-                "relaydance": "Relaydance",
-                "uiuiapi": "UiUiAPI",
-                "bltcy": "bltcy",
-            }
             header = (
                 "| Model | Unit | "
                 + " | ".join(provider_names.get(p, p) for p in providers_in_use)
@@ -358,7 +376,7 @@ def _build_tier_tables(
         f"(officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. "
         f"⚠ = relay quotes <50% of OpenRouter — verify with "
         f"[canary prompts](docs/canary-prompts.md) before trusting.{manual_note}_\n\n"
-        f"#### Six indicator models, six providers, one snapshot\n\n"
+        f"#### Six indicator models, {len(providers_in_use)} providers, one snapshot\n\n"
         f"**Absolute prices — tier ladder (input)** · ▼ marks the cheapest provider per model\n\n"
         f"![Tier-ladder input pricing](assets/charts/tier-ladder-input.svg)\n\n"
         f"**Price spread per model (input)** · how much variance exists between providers\n\n"

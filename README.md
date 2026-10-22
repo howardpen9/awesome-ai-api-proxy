@@ -105,7 +105,7 @@ market, not a workaround niche.
 | 🟡 [GPTGOD](https://gptgod.online) | reverse | Alipay | unverified · ⚠ reverse, no-entity | Reverse-engineered; among cheapest, stability not guaranteed. |
 | 🟢 [CloseAI](https://www.closeai-asia.com) | official-relay | Alipay/WeChat/Invoice | active · 2026-05-26 · registered | Issues enterprise invoices; self-describes as largest enterprise-grade relay in Asia. |
 | 🟡 [玄枢API (XuanShu API)](https://www.xuanshuapi.com) | mixed | Invoice | unverified · ⚠ operator-self | Serves Anthropic Messages and Gemini v1beta at the root host and OpenAI Responses and Chat Completions under /v1; model visibility and pricing are per-key and per-group, set in the console. |
-| 🟡 [TeamoRouter](https://teamorouter.com) | mixed | Alipay/WeChat | unverified · ⚠ operator-self | OpenAI / Anthropic / Gemini-compatible gateway; Alipay and WeChat; operator-claimed multi-upstream routing and Claude Code / Codex setup guides. |
+| 🟡 [TeamoRouter](https://teamorouter.com) | mixed | Alipay/WeChat | unverified · ⚠ operator-self | OpenAI / Anthropic / Gemini-compatible gateway; Alipay and WeChat; operator-claimed multi-upstream routing with Claude Code / Codex setup guides and gpt-6-astra support. |
 | 🟡 [wawazz.xyz](https://wawazz.xyz) | mixed | WeChat | unverified · ⚠ operator-self, cheap-trap | OpenAI-compatible API at /v1; WeChat pay; operator-claimed GPT pricing as low as 0.07x official. |
 | 🟡 [Wappkit API](https://api.wappkit.com) | mixed | — | unverified · ⚠ operator-self | new-api OpenAI-compatible gateway with public /api/pricing; listed groups are Codex/Claude-Code pools (no flat default group). |
 <!-- providers:china_relays:end -->
@@ -246,7 +246,7 @@ from operators — one factual sentence in `notes`, no superlatives.
 > Machine-readable source: [`data/prices.latest.json`](data/prices.latest.json).
 
 <!-- prices:start -->
-_Snapshot date: **2026-08-16**. 3464 price records across 5 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting._
+_Snapshot date: **2026-10-22**. 3956 price records across 5 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting._
 
 #### Six indicator models, six providers, one snapshot
 
@@ -268,22 +268,22 @@ _Output-token equivalents and the full-matrix heatmap: [`assets/charts/`](assets
 
 | Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|
-| `deepseek-v3` | $0.257 | — | — | $2.000 | $2.000 |
-| `deepseek-r1` | $0.700 | — | — | $4.000 | $4.000 |
+| `deepseek-v3` | $0.257 | — | — | — | $2.000 |
+| `deepseek-r1` | — | — | — | — | $4.000 |
 
 ### Tier 2 — daily driver (agent, coding) — USD per 1M input tokens
 
 | Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|
-| `gemini-3-flash` | $1.500 | $1.500 | — | $1.500 | — |
-| `gpt-5.4` | $2.500 | $2.500 | — | — | $2.500 |
+| `gemini-3-flash` | $1.500 | $1.500 | — | $1.500 | $1.500 |
+| `gpt-5.4` | $2.500 | $2.500 | — | $75.00 | $2.500 |
 | `claude-sonnet-4.6` | $3.000 | $3.000 | $3.750 | $3.000 | $3.000 |
 
 ### Tier 3 — top frontier (hardest problems) — USD per 1M input tokens
 
 | Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|
-| `grok-4.3` | $1.250 | $1.250 | — | $1.250 | — |
+| `grok-4.3` | $1.250 | $1.250 | — | — | — |
 | `claude-opus-4.8` | $5.000 | $5.000 | — | — | — |
 | `gpt-5.5-pro` | $30.00 | — | — | — | — |
 
@@ -291,7 +291,7 @@ _Output-token equivalents and the full-matrix heatmap: [`assets/charts/`](assets
 
 | Model | Unit | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|---|
-| `grok-imagine-video-1.5` | USD per second | — | — | — | — | $1.300 |
+| `grok-imagine-video-1.5` | USD per second | — | — | — | — | $1.000 |
 
 _Full per-model breakdown (including non-canonical models): [`docs/prices.md`](docs/prices.md). Raw snapshots: [`data/snapshots/`](data/snapshots/). Machine-readable: [`data/prices.latest.json`](data/prices.latest.json)._
 

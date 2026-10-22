@@ -9,7 +9,7 @@ authors = [{ name = "Howard Peng", email = "howard.peng.tw@gmail.com" }]
 
 dependencies = [
   "httpx>=0.27",
-  "selectolax>=0.3.21",
+  "selectolax>=1.0",
   "pyyaml>=6.0",
   "pydantic>=2.7",
   "rich>=13.7",

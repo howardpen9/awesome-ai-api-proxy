@@ -98,7 +98,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中转站
 | 🟡 [GPTGOD](https://gptgod.online) | reverse | 支付宝 | unverified · ⚠ 逆向, 无主体 | 逆向；便宜，稳定性无保证。 |
 | 🟢 [CloseAI](https://www.closeai-asia.com) | official-relay | 支付宝/微信/对公 | active · 2026-05-26 · 已注册 | 提供对公发票；自称亚洲最大企业级中转。 |
 | 🟡 [玄枢API (XuanShu API)](https://www.xuanshuapi.com) | mixed | 对公 | unverified · ⚠ 自荐 | 根路径提供 Anthropic Messages 与 Gemini v1beta，/v1 下提供 OpenAI Responses 与 Chat Completions；模型可见性与价格按 Key 和分组在控制台配置。 |
-| 🟡 [TeamoRouter](https://teamorouter.com) | mixed | 支付宝/微信 | unverified · ⚠ 自荐 | 兼容 OpenAI／Anthropic／Gemini 的网关；支付宝与微信支付；运营方宣称多上游路由，并有 Claude Code／Codex 配置教程。 |
+| 🟡 [TeamoRouter](https://teamorouter.com) | mixed | 支付宝/微信 | unverified · ⚠ 自荐 | 兼容 OpenAI／Anthropic／Gemini 的网关；支付宝与微信支付；运营方宣称多上游路由，并有 Claude Code／Codex 配置教程与 gpt-6-astra 支持。 |
 | 🟡 [wawazz.xyz](https://wawazz.xyz) | mixed | 微信 | unverified · ⚠ 自荐, 价过低 | OpenAI 兼容 `/v1`；微信支付；运营方宣称 GPT 可低至官方价 0.07 倍。 |
 | 🟡 [Wappkit API](https://api.wappkit.com) | mixed | — | unverified · ⚠ 自荐 | new-api OpenAI 兼容网关，公开 `/api/pricing`；分组为 Codex／Claude-Code 号池（无扁平 default 组）。 |
 <!-- providers:china_relays:end -->
@@ -230,7 +230,7 @@ schema 见 [CONTRIBUTING.md](CONTRIBUTING.md)；
 > 机器可读资料：[`data/prices.latest.json`](data/prices.latest.json)。
 
 <!-- prices:start -->
-_Snapshot date: **2026-08-16**. 3464 price records across 5 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting._
+_Snapshot date: **2026-10-22**. 3956 price records across 5 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting._
 
 #### Six indicator models, six providers, one snapshot
 
@@ -252,22 +252,22 @@ _Output-token equivalents and the full-matrix heatmap: [`assets/charts/`](assets
 
 | Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|
-| `deepseek-v3` | $0.257 | — | — | $2.000 | $2.000 |
-| `deepseek-r1` | $0.700 | — | — | $4.000 | $4.000 |
+| `deepseek-v3` | $0.257 | — | — | — | $2.000 |
+| `deepseek-r1` | — | — | — | — | $4.000 |
 
 ### Tier 2 — daily driver (agent, coding) — USD per 1M input tokens
 
 | Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|
-| `gemini-3-flash` | $1.500 | $1.500 | — | $1.500 | — |
-| `gpt-5.4` | $2.500 | $2.500 | — | — | $2.500 |
+| `gemini-3-flash` | $1.500 | $1.500 | — | $1.500 | $1.500 |
+| `gpt-5.4` | $2.500 | $2.500 | — | $75.00 | $2.500 |
 | `claude-sonnet-4.6` | $3.000 | $3.000 | $3.750 | $3.000 | $3.000 |
 
 ### Tier 3 — top frontier (hardest problems) — USD per 1M input tokens
 
 | Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|
-| `grok-4.3` | $1.250 | $1.250 | — | $1.250 | — |
+| `grok-4.3` | $1.250 | $1.250 | — | — | — |
 | `claude-opus-4.8` | $5.000 | $5.000 | — | — | — |
 | `gpt-5.5-pro` | $30.00 | — | — | — | — |
 
@@ -275,7 +275,7 @@ _Output-token equivalents and the full-matrix heatmap: [`assets/charts/`](assets
 
 | Model | Unit | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|---|
-| `grok-imagine-video-1.5` | USD per second | — | — | — | — | $1.300 |
+| `grok-imagine-video-1.5` | USD per second | — | — | — | — | $1.000 |
 
 _Full per-model breakdown (including non-canonical models): [`docs/prices.md`](docs/prices.md). Raw snapshots: [`data/snapshots/`](data/snapshots/). Machine-readable: [`data/prices.latest.json`](data/prices.latest.json)._
 

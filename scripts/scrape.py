@@ -8,6 +8,7 @@ Usage:
 
 from __future__ import annotations
 
+import os
 import sys
 import traceback
 
@@ -40,26 +41,28 @@ def discover_fetchers() -> dict[str, str]:
 
 
 def run_fetcher(fetcher_id: str, display_name: str) -> bool:
+    """Run one fetcher. Any exception is logged and skipped.
+
+    Import failures (a missing module, or a dependency that raises at import
+    time) must be caught here. They happen inside get_fetcher(), before fetch()
+    runs, and previously aborted the whole scrape.
+    """
     console.rule(f"[bold]{display_name} ({fetcher_id})")
     try:
         fn = get_fetcher(fetcher_id)
-    except KeyError as e:
-        console.print(f"[red]skip[/red]: {e}")
-        return False
-    try:
         result = fn()
-        snapshot_path = write_snapshot(result, SNAPSHOTS_DIR)
-        console.print(
-            f"[green]ok[/green] {len(result.records)} records "
-            f"(from {result.raw_model_count} raw models) → {snapshot_path.relative_to(SNAPSHOTS_DIR.parent.parent)}"
-        )
-        return True
     except Exception as exc:
         err_path = write_error(fetcher_id, exc, SNAPSHOTS_DIR)
         console.print(f"[red]fail[/red] {type(exc).__name__}: {exc}")
         console.print(f"       error log → {err_path.relative_to(SNAPSHOTS_DIR.parent.parent)}")
-        console.print(traceback.format_exc(limit=3))
+        console.print(traceback.format_exc())
         return False
+    snapshot_path = write_snapshot(result, SNAPSHOTS_DIR)
+    console.print(
+        f"[green]ok[/green] {len(result.records)} records "
+        f"(from {result.raw_model_count} raw models) → {snapshot_path.relative_to(SNAPSHOTS_DIR.parent.parent)}"
+    )
+    return True
 
 
 def main(argv: list[str]) -> int:
@@ -79,14 +82,46 @@ def main(argv: list[str]) -> int:
     else:
         to_run = sorted(available.items())
 
-    failures = 0
+    failed: list[str] = []
     for fid, name in to_run:
         if not run_fetcher(fid, name):
-            failures += 1
+            failed.append(fid)
 
+    succeeded = len(to_run) - len(failed)
     console.rule()
-    console.print(f"Done. {len(to_run) - failures}/{len(to_run)} fetchers succeeded.")
-    return 0 if failures == 0 else 3
+    console.print(f"Done. {succeeded}/{len(to_run)} fetchers succeeded.")
+    if failed:
+        console.print("[red]Failed fetchers:[/red] " + ", ".join(failed))
+        # Visible on the Actions run without failing the step. The weekly
+        # workflow reads *.error.json and puts the same names in the PR body.
+        if os.environ.get("GITHUB_ACTIONS"):
+            print(f"::warning::Failed fetchers: {', '.join(failed)}", flush=True)
+    _write_github_summary(succeeded, len(to_run), failed)
+    # One broken fetcher must not abort the refresh. Exit non-zero only when
+    # nothing succeeded, so we don't publish an empty price file.
+    if succeeded == 0:
+        return 3
+    return 0
+
+
+def _write_github_summary(succeeded: int, total: int, failed: list[str]) -> None:
+    path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if not path:
+        return
+    failed_text = ", ".join(f"`{fid}`" for fid in failed) if failed else "(none)"
+    with open(path, "a", encoding="utf-8") as fh:
+        fh.write(
+            "\n".join(
+                [
+                    "### Scrape",
+                    "",
+                    f"Succeeded: {succeeded}/{total}",
+                    "",
+                    f"Failed fetchers: {failed_text}",
+                    "",
+                ]
+            )
+        )
 
 
 if __name__ == "__main__":

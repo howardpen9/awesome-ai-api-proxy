@@ -253,6 +253,23 @@ china_relays:
       zh-TW: "new-api OpenAI 相容閘道，公開 `/api/pricing`；分組為 Codex／Claude-Code 號池（無扁平 default 組）。"
       zh-CN: "new-api OpenAI 兼容网关，公开 `/api/pricing`；分组为 Codex／Claude-Code 号池（无扁平 default 组）。"
 
+  - name: DSH API
+    url: https://api.dshapi.icu
+    type: mixed
+    status: unverified
+    payment: [alipay, wechat]
+    models: [openai, anthropic, google, xai]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: unknown
+    risk_flags: [operator_submitted, no_entity]
+    notes:
+      en: "OpenAI- and Anthropic-compatible gateway; QQ-mail registration, Alipay/WeChat payment, per-token billing."
+      zh-TW: "OpenAI 與 Anthropic 雙協議相容閘道；QQ 信箱註冊、支付寶/微信支付、按量計費。"
+      zh-CN: "OpenAI 与 Anthropic 双协议兼容网关；QQ 邮箱注册、支付宝/微信支付、按量计费。"
+
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
 # ---------------------------------------------------------------------------

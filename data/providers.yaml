@@ -292,6 +292,20 @@ comparison_tools:
       zh-TW: "60+ 中國 AI 平台的價格與額度比價、LLM API 中轉站排名、每日更新的免費額度追蹤。"
       zh-CN: "60+ 中国 AI 平台的价格与额度比价、LLM API 中转站排名、每日更新的免费额度追踪。"
 
+  # Third-party price-disclosure prober. I wrote it, so it carries
+  # risk_flags: [operator_submitted] and status: unverified per rule 4.
+  - name: gateway-price-check (CLI)
+    url: https://github.com/happy520ai/gateway-price-check
+    type: comparison
+    status: unverified
+    last_verified: null
+    verified_by: community
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Zero-dependency CLI: one unauthenticated GET /v1/models per endpoint, five-way verdict (YES/NO/AUTH/ERR/UNKNOWN) that keeps 'no prices published' separate from 'I could not read it'; CI re-runs it over 11 gateways daily and archives the raw readings."
+      zh-TW: "零依賴 CLI：對每個端點發一次免驗證的 GET /v1/models，五檔判定（YES/NO/AUTH/ERR/UNKNOWN）把「沒有公布價格」與「我讀不到」分開；CI 每日量 11 家並歸檔原始讀數。"
+      zh-CN: "零依赖 CLI：对每个端点发一次免验证的 GET /v1/models，五档判定（YES/NO/AUTH/ERR/UNKNOWN）把「没有公布价格」与「我读不到」分开；CI 每日量 11 家并归档原始读数。"
+
 # ---------------------------------------------------------------------------
 # Global gateways / aggregators (海外對比方案)
 # ---------------------------------------------------------------------------

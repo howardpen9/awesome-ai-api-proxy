@@ -256,6 +256,25 @@ china_relays:
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
 # ---------------------------------------------------------------------------
+  - name: 蓝博API (Lanbuff)
+    url: https://lanbuff.app
+    type: mixed
+    status: unverified
+    verified_by: community
+    risk_flags: [operator_submitted]
+    models: [openai, anthropic, gemini, deepseek, qwen, kling]
+    model_count: 405
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    notes:
+      en: "OpenAI/Anthropic/Gemini-compatible relay with 405 models; public pricing JSON at /api/pricing."
+      zh-CN: "OpenAI/Anthropic/Gemini 兼容中转，405 个模型；公开定价接口 /api/pricing。"
+    pricing:
+      pricing_url: https://lanbuff.app/pricing
+      api_url: https://lanbuff.app/api/pricing
+      fetcher: lanbuff
+      pricing_currency: USD
 comparison_tools:
   - name: 中轉站競技場 (AI API PK)
     url: https://www.aiapipk.com

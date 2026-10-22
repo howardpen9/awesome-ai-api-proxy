@@ -253,6 +253,27 @@ china_relays:
       zh-TW: "new-api OpenAI 相容閘道，公開 `/api/pricing`；分組為 Codex／Claude-Code 號池（無扁平 default 組）。"
       zh-CN: "new-api OpenAI 兼容网关，公开 `/api/pricing`；分组为 Codex／Claude-Code 号池（无扁平 default 组）。"
 
+
+  - name: 珂艾 (Keai)
+    url: https://www.keai.yun
+    type: official-relay
+    status: unverified
+    payment: [alipay, wechat]
+    models: [openai, anthropic, gemini, deepseek, qwen, grok]
+    model_count: 370
+    risk_flags: [operator_submitted, no_entity]
+    entity_registered: false
+    supports_stream: true
+    supports_tools: true
+    pricing:
+      pricing_url: https://api.keai.yun/pricing
+      api_url: https://api.keai.yun/api/pricing
+      fetcher: keai
+      pricing_currency: USD
+    notes:
+      en: "Overseas-operated relay (no ICP filing); official channels only (Azure OpenAI / AWS Bedrock / Google AI Studio upstreams); public /api/pricing JSON and per-channel uptime status page."
+      zh-TW: "海外營運（無 ICP）；官轉通道（Azure OpenAI / AWS Bedrock / Google AI Studio 上游）；公開 /api/pricing JSON 與逐通道可用率狀態頁。"
+      zh-CN: "海外运营（无 ICP）；官转通道（Azure OpenAI / AWS Bedrock / Google AI Studio 上游）；公开 /api/pricing JSON 与逐通道可用率状态页。"
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
 # ---------------------------------------------------------------------------

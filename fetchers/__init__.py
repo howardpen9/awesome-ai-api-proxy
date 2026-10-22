@@ -18,6 +18,7 @@ REGISTRY: dict[str, str] = {
     "relaydance": "fetchers.relaydance",
     "uiuiapi": "fetchers.uiuiapi",
     "bltcy": "fetchers.bltcy",
+    "keai": "fetchers.keai",
     "unorouter": "fetchers.unorouter",
     "quicksilverpro": "fetchers.quicksilverpro",
     "wappkit": "fetchers.wappkit",

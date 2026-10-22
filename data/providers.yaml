@@ -253,6 +253,24 @@ china_relays:
       zh-TW: "new-api OpenAI 相容閘道，公開 `/api/pricing`；分組為 Codex／Claude-Code 號池（無扁平 default 組）。"
       zh-CN: "new-api OpenAI 兼容网关，公开 `/api/pricing`；分组为 Codex／Claude-Code 号池（无扁平 default 组）。"
 
+  # Landed from issue #84. Multi-provider relay marketplace with public availability.
+  - name: TokenDos
+    url: https://www.tokendos.com
+    type: mixed
+    status: unverified
+    payment: [alipay, wechat]
+    models: [openai, anthropic, gemini, deepseek, qwen, kimi]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Relay marketplace aggregating multiple official provider pools; OpenAI /v1 and Anthropic endpoints with login-free pricing and availability page."
+      zh-TW: "聚合多供應節點的中轉市場；支援 OpenAI /v1 與 Anthropic 雙端點，提供免登查價與近 7 日可用率頁面。"
+      zh-CN: "聚合多供应节点的中转市场；支持 OpenAI /v1 与 Anthropic 双端点，提供免登查价与近 7 日可用率页面。"
+
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
 # ---------------------------------------------------------------------------

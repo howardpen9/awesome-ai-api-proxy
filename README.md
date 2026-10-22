@@ -305,6 +305,7 @@ This repo tracks **price** with full provenance. For **quality / intelligence**,
 - **[Kilo Code Leaderboard](https://kilo.ai/leaderboard)** — real developer-token-usage ranking + a cost-per-attempt × completion-% scatter. Already plots the Pareto frontier you'd otherwise build yourself.
 - **[lmarena ELO](https://arena.ai/leaderboard)** — ELO from blind pairwise human preference votes. Best for chat workloads.
 
+- [ModelBenchmark](https://modelbenchmark.io) — Independent rankings of 202 AI models from 16 public benchmarks, with prices and context windows.
 Routing rule of thumb: **pick the cheapest provider here for a model in your quality budget on those benchmarks**. The full benchmark list is also in [`data/canonical-models.yaml`](data/canonical-models.yaml#benchmark_references) so agents calling the MCP server can quote them.
 
 ## For AI agents & programmatic use

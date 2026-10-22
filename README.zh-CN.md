@@ -101,6 +101,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中转站
 | 🟡 [TeamoRouter](https://teamorouter.com) | mixed | 支付宝/微信 | unverified · ⚠ 自荐 | 兼容 OpenAI／Anthropic／Gemini 的网关；支付宝与微信支付；运营方宣称多上游路由，并有 Claude Code／Codex 配置教程与 gpt-6-astra 支持。 |
 | 🟡 [wawazz.xyz](https://wawazz.xyz) | mixed | 微信 | unverified · ⚠ 自荐, 价过低 | OpenAI 兼容 `/v1`；微信支付；运营方宣称 GPT 可低至官方价 0.07 倍。 |
 | 🟡 [Wappkit API](https://api.wappkit.com) | mixed | — | unverified · ⚠ 自荐 | new-api OpenAI 兼容网关，公开 `/api/pricing`；分组为 Codex／Claude-Code 号池（无扁平 default 组）。 |
+| 🟡 [TokenDos](https://www.tokendos.com) | aggregator | 支付宝/加密货币 | unverified · ⚠ 自荐 | 多上游供应商聚合市场，接入 ycy / UM-Claude / IceMo / TJG 等十余家渠道，支持用户自由切换。按量计费，Claude 最低 0.03x、GPT 最低 0.06x。免翻直连（~330ms延迟），原生支持 Claude Code CLI、Cursor 与 Codex。 |
 <!-- providers:china_relays:end -->
 
 > **收录 ≠ 推荐。** 收录是为了记录市场。打款或传数据前请先走

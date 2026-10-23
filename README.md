@@ -97,7 +97,7 @@ market, not a workaround niche.
 | Station | Type | Payment | Trust | Notes |
 |---|---|---|---|---|
 | 🟢 [云雾 API (YUNWU)](https://yunwu.ai) | mixed | Alipay/WeChat | active · 2026-05-26 | Marketed on speed/stability; widely cited as a top-tier station. |
-| 🟢 [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | Alipay/WeChat | active · 2026-06-07 | Azure-backed channel; positions as lowest-price. new-api fork with 1000+ models across 25+ access groups; public /api/pricing exposes default-group ratios. |
+| 🔴 [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | Alipay/WeChat | inactive | Inactive (2026-10-23): own announcement (api.bltcy.ai/api/status, published 2026-04-24T16:00Z) stopped sign-ups and top-ups and ended all API service 2026-05-01; refunds via account, after-sales until 2026-12-31. Was an Azure-backed new-api fork with 1000+ models. |
 | 🟢 [No.1-API](https://api.rcouyi.com) | aggregator | Alipay/WeChat | active · 2026-05-26 | One-stop aggregation + relay platform. |
 | 🟢 [UiUiAPI](https://uiuiapi.com) | official-relay | Alipay/WeChat | active · 2026-06-07 | Claims official channels + official multipliers; rare quantified discount. Public new-api /api/pricing on api1 subdomain. |
 | 🟡 [DMXAPI](https://dmxapi.cn) | mixed | Alipay/WeChat | unverified · ⚠ no-entity | Listed in community sources; homepage not independently verified. |

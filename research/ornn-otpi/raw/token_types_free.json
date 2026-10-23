@@ -1,0 +1,28 @@
+{
+ "url": "https://api.ornnai.com/api/token-types-free",
+ "fetched_at_utc": "2026-10-23T10:27:19Z",
+ "fetched_at_utc8": "2026-10-23T18:27:19+08:00",
+ "http_status": 200,
+ "body": {
+  "success": true,
+  "access": "free-tier",
+  "data": [
+   {
+    "lab": "anthropic",
+    "label": "Anthropic"
+   },
+   {
+    "lab": "openai",
+    "label": "OpenAI"
+   },
+   {
+    "lab": "google",
+    "label": "Google"
+   },
+   {
+    "lab": "deepseek",
+    "label": "DeepSeek"
+   }
+  ]
+ }
+}

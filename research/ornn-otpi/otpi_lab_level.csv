@@ -1,0 +1,5 @@
+lab,otpi,otpi_date,otpi_computed_at,median_ratio_listed,median_ratio_topup_adj,implied_relay_index_listed,implied_relay_index_topup_adj,spread_vs_otpi_pct_listed,spread_vs_otpi_pct_topup_adj,models
+anthropic,0.7972,2026-10-21,2026-10-22T12:01:23.113Z,1.125,1.0,0.8969,0.7972,12.5,0.0,claude-opus-5;claude-sonnet-5;claude-fable-5
+openai,0.4392,2026-10-21,2026-10-22T12:01:23.113Z,0.53,0.53,0.2328,0.233,-47.0,-47.0,gpt-5.6-sol;gpt-5.6-terra;gpt-5.6-luna;gpt-5.5;gpt-5.4
+google,0.6054,2026-10-21,2026-10-22T12:01:23.113Z,1.0,0.684,0.6054,0.4139,0.0,-31.6,gemini-3.1-pro-preview;gemini-3.8-flash;gemini-3.5-flash
+deepseek,0.043,2026-10-21,2026-10-22T12:01:23.113Z,1.538,1.538,0.0662,0.0662,53.8,53.8,deepseek-v4-pro;deepseek-v4-flash;deepseek-v3.2

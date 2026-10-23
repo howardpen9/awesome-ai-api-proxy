@@ -1,0 +1,27 @@
+{
+ "url": "https://api.ornnai.com/api/otpi/weight-class",
+ "fetched_at_utc": "2026-10-23T10:27:19Z",
+ "fetched_at_utc8": "2026-10-23T18:27:19+08:00",
+ "http_status": 200,
+ "body": {
+  "success": true,
+  "access": "public-3mo",
+  "startDate": "2026-10-21",
+  "endDate": "2026-10-21",
+  "count": 2,
+  "data": [
+   {
+    "date": "2026-10-21",
+    "class": "closed",
+    "indexPerMtok": 0.6287184507670497,
+    "labsPriced": 3
+   },
+   {
+    "date": "2026-10-21",
+    "class": "open",
+    "indexPerMtok": 0.07977524382552169,
+    "labsPriced": 8
+   }
+  ]
+ }
+}

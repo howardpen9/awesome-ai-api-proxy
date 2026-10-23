@@ -1,0 +1,38 @@
+{
+ "url": "https://api.ornnai.com/api/otpi",
+ "fetched_at_utc": "2026-10-23T10:27:17Z",
+ "fetched_at_utc8": "2026-10-23T18:27:17+08:00",
+ "http_status": 200,
+ "body": {
+  "success": true,
+  "access": "public-3mo",
+  "date": "2026-10-21",
+  "count": 4,
+  "data": [
+   {
+    "date": "2026-10-21",
+    "lab": "anthropic",
+    "indexPerMtok": 0.7972084608520682,
+    "computedAt": "2026-10-22T12:01:23.113Z"
+   },
+   {
+    "date": "2026-10-21",
+    "lab": "openai",
+    "indexPerMtok": 0.4392170736716698,
+    "computedAt": "2026-10-22T12:01:23.113Z"
+   },
+   {
+    "date": "2026-10-21",
+    "lab": "google",
+    "indexPerMtok": 0.6053877895484309,
+    "computedAt": "2026-10-22T12:01:23.113Z"
+   },
+   {
+    "date": "2026-10-21",
+    "lab": "deepseek",
+    "indexPerMtok": 0.043025394277692794,
+    "computedAt": "2026-10-22T12:01:23.113Z"
+   }
+  ]
+ }
+}

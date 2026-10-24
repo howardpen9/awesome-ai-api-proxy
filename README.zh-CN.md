@@ -90,7 +90,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中转站
 | 中转站 | 类型 | 支付 | 信任 | 备注 |
 |---|---|---|---|---|
 | 🟢 [云雾 API (YUNWU)](https://yunwu.ai) | mixed | 支付宝/微信 | active · 2026-05-26 | 主打高速稳定；社区常列为头部站。 |
-| 🟢 [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | 支付宝/微信 | active · 2026-06-07 | Azure 通道；主打最低价。new-api fork，1000+ 模型横跨 25+ 分组；`/api/pricing` 公开 default 分组倍率。 |
+| 🔴 [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | 支付宝/微信 | inactive | 已停止服务（2026-10-23 标记）：官方公告（api.bltcy.ai/api/status，2026-04-24T16:00Z 发布）停止注册与充值，2026-05-01 起全部 API 停止服务；退款走账户内入口，售后保留至 2026-12-31。原为 Azure 通道 new-api fork，1000+ 模型。 |
 | 🟢 [No.1-API](https://api.rcouyi.com) | aggregator | 支付宝/微信 | active · 2026-05-26 | 一站式聚合 + 中转平台。 |
 | 🟢 [UiUiAPI](https://uiuiapi.com) | official-relay | 支付宝/微信 | active · 2026-06-07 | 宣称官方渠道 + 官方倍率；约便宜 49%（宣称），311 模型。new-api `/api/pricing` 公开于 api1 子域名。 |
 | 🟡 [DMXAPI](https://dmxapi.cn) | mixed | 支付宝/微信 | unverified · ⚠ 无主体 | 社区收录；官网未独立核实。 |

@@ -48,7 +48,7 @@ china_relays:
   - name: 柏拉图 AI (bltcy)
     url: https://api.bltcy.ai
     type: mixed
-    status: active
+    status: inactive
     payment: [alipay, wechat]
     models: [openai, anthropic, midjourney, suno, luma, deepseek, grok, gemini, qwen]
     model_count: 1043
@@ -63,9 +63,9 @@ china_relays:
       fetcher: bltcy
       pricing_currency: USD
     notes:
-      en: "Azure-backed channel; positions as lowest-price. new-api fork with 1000+ models across 25+ access groups; public /api/pricing exposes default-group ratios."
-      zh-TW: "Azure 通道；主打最低價。new-api fork，1000+ 模型橫跨 25+ 分組；`/api/pricing` 公開 default 分組倍率。"
-      zh-CN: "Azure 通道；主打最低价。new-api fork，1000+ 模型横跨 25+ 分组；`/api/pricing` 公开 default 分组倍率。"
+      en: "Inactive (2026-10-23): own announcement (api.bltcy.ai/api/status, published 2026-04-24T16:00Z) stopped sign-ups and top-ups and ended all API service 2026-05-01; refunds via account, after-sales until 2026-12-31. Was an Azure-backed new-api fork with 1000+ models."
+      zh-TW: "已停止服務（2026-10-23 標記）：官方公告（api.bltcy.ai/api/status，2026-04-24T16:00Z 發布）停止註冊與充值，2026-05-01 起全部 API 停止服務；退款走帳戶內入口，售後保留至 2026-12-31。原為 Azure 通道 new-api fork，1000+ 模型。"
+      zh-CN: "已停止服务（2026-10-23 标记）：官方公告（api.bltcy.ai/api/status，2026-04-24T16:00Z 发布）停止注册与充值，2026-05-01 起全部 API 停止服务；退款走账户内入口，售后保留至 2026-12-31。原为 Azure 通道 new-api fork，1000+ 模型。"
 
   - name: No.1-API
     url: https://api.rcouyi.com

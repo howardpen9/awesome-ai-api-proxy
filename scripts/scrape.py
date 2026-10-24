@@ -24,7 +24,10 @@ console = Console()
 
 
 def discover_fetchers() -> dict[str, str]:
-    """Walk providers.yaml and return {fetcher_id: provider_name}."""
+    """Walk providers.yaml and return {fetcher_id: provider_name}.
+
+    Providers with `status: inactive` are skipped.
+    """
     raw = yaml.safe_load(PROVIDERS_YAML.read_text(encoding="utf-8"))
     found: dict[str, str] = {}
     for section, entries in raw.items():
@@ -35,8 +38,16 @@ def discover_fetchers() -> dict[str, str]:
                 continue
             pricing = entry.get("pricing") or {}
             fetcher = pricing.get("fetcher")
-            if fetcher:
-                found[fetcher] = entry.get("name", fetcher)
+            if not fetcher:
+                continue
+            # Inactive (shut down / ran away) providers keep their entry and
+            # history, but are no longer scraped: their pricing endpoints can
+            # keep answering after service ends, and those prices are not
+            # purchasable.
+            if entry.get("status") == "inactive":
+                console.print(f"[dim]skip {fetcher}: status inactive[/dim]")
+                continue
+            found[fetcher] = entry.get("name", fetcher)
     return found
 
 

@@ -23,6 +23,7 @@ REGISTRY: dict[str, str] = {
     "wappkit": "fetchers.wappkit",
     "teamorouter": "fetchers.teamorouter",
     "bettertoken": "fetchers.bettertoken",
+    "ycsg": "fetchers.ycsg",
 }
 
 

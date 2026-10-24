@@ -1,5 +1,7 @@
 # awesome-ai-api-proxy-mcp
 
+<!-- mcp-name: io.github.howardpen9/awesome-ai-api-proxy -->
+
 MCP server exposing the weekly **AI API relay price observatory** at
 [howardpen9/awesome-ai-api-proxy](https://github.com/howardpen9/awesome-ai-api-proxy)
 as agent-callable tools.
@@ -27,7 +29,10 @@ Plus an MCP resource: `data://prices/latest` returns the full
 `prices.latest.json` document.
 
 Every record carries `source_url` + `captured_at` + `method` so an agent can
-quote the price with provenance — and the user can verify.
+quote the price with provenance — and the user can verify. `price_usd` is
+quota USD after the public group ratio. `effective_price_usd` is cash USD
+when that provider has a checked top-up rate; the key is absent otherwise.
+See [docs/methodology.md](../docs/methodology.md).
 
 ## Install
 

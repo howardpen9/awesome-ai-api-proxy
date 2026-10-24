@@ -121,7 +121,7 @@ def render_new_api(url: str, info: dict, slug: str, name: str, display_url: str)
     per_model = info["group_mode"] == "per_model"
     group_arg = "        group=None,\n" if per_model else ""
     note = (
-        " (per-model channel groups detected — using group=None)"
+        " (per-model channel groups — group=None uses each model's public ratio, not 1)"
         if per_model
         else " (flat 'default' group detected)"
     )

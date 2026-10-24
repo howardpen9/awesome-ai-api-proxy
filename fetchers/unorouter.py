@@ -1,7 +1,10 @@
 """UnoRouter — new-api fork. Thin wrapper over fetchers._new_api.
 
-Aggregator with 212 models across 31 upstreams; one key, latency-based routing.
-Public `/api/pricing` exposes default-group ratios with the standard new-api shape.
+Aggregator; one key, latency-based routing. Public `/api/pricing` has no flat
+`default` group — ratios hang off per-channel enable groups (often well below
+1, plus ratio-0 free pools). `group=None` records each model's default group,
+else its only group, else the cheapest positive ratio. The full `group_ratio`
+map is stored on the snapshot.
 """
 
 from __future__ import annotations

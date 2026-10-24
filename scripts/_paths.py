@@ -13,6 +13,9 @@ PRICES_LATEST = DATA_DIR / "prices.latest.json"
 PRICES_HISTORY = DATA_DIR / "prices.history.jsonl"
 DOCS_DIR = REPO_ROOT / "docs"
 PRICES_DOC = DOCS_DIR / "prices.md"
+LLMS_TXT = REPO_ROOT / "llms.txt"
+DOCS_LLMS_TXT = DOCS_DIR / "llms.txt"
+PRICES_INDEX = DOCS_DIR / "prices-index.json"
 READMES = [
     REPO_ROOT / "README.md",
     REPO_ROOT / "README.zh-TW.md",

@@ -135,8 +135,12 @@ The shared `fetch_new_api()` handles two pricing conventions:
   inferred from the model name (`per_image` / `per_second` / `per_request`).
 
 If the fork **doesn't expose a flat `default` group** — e.g. UnoRouter, where
-each model has its own per-channel groups like `default-yun-doubao-seedream-5`
-— pass `group=None` to skip the filter; the sniffer detects this automatically.
+each model has its own per-channel groups — pass `group=None`. The shared
+fetcher then uses that model's `default` group when it has one, otherwise its
+only enabled group, otherwise the cheapest positive group ratio. It does
+**not** record ratio 1 in that case. A ratio of 1 is only used when the
+chosen group's published ratio is 1, or when the payload has no group metadata.
+See [`docs/methodology.md`](docs/methodology.md).
 
 ## Conduct
 

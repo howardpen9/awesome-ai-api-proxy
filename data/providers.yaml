@@ -101,6 +101,15 @@ china_relays:
       api_url: https://api1.uiuiapi.com/api/pricing
       fetcher: uiuiapi
       pricing_currency: USD
+      # new-api /api/status on 2026-10-24: price=3.37 (local currency per $1 of quota),
+      # usd_exchange_rate=6.79. Symbol in the payload was the unset placeholder; CNY
+      # follows Alipay/WeChat payment plus a CNY-scale site FX. See docs/methodology.md.
+      topup_rate:
+        amount: 3.37
+        currency: CNY
+        fx_per_usd: 6.79
+        source_url: https://api1.uiuiapi.com/api/status
+        checked: "2026-10-24"
     notes:
       en: "Claims official channels + official multipliers; rare quantified discount. Public new-api /api/pricing on api1 subdomain."
       zh-TW: "宣稱官方渠道 + 官方倍率；約便宜 49%（宣稱），311 模型。new-api `/api/pricing` 公開於 api1 子網域。"
@@ -248,6 +257,14 @@ china_relays:
       api_url: https://api.wappkit.com/api/pricing
       fetcher: wappkit
       pricing_currency: USD
+      # /api/status 2026-10-24: price=6.8, usd_exchange_rate=6.8, quota_display_type=CNY.
+      # Multiplier is 1 (top-up matches the site FX). CNY as for UiUiAPI.
+      topup_rate:
+        amount: 6.8
+        currency: CNY
+        fx_per_usd: 6.8
+        source_url: https://api.wappkit.com/api/status
+        checked: "2026-10-24"
     notes:
       en: "new-api OpenAI-compatible gateway with public /api/pricing; listed groups are Codex/Claude-Code pools (no flat default group)."
       zh-TW: "new-api OpenAI 相容閘道，公開 `/api/pricing`；分組為 Codex／Claude-Code 號池（無扁平 default 組）。"
@@ -427,6 +444,13 @@ global_gateways:
       api_url: https://relaydance.com/api/pricing
       fetcher: relaydance
       pricing_currency: USD
+      # /api/status 2026-10-24: price=6.8, usd_exchange_rate=6.8. Multiplier is 1.
+      topup_rate:
+        amount: 6.8
+        currency: CNY
+        fx_per_usd: 6.8
+        source_url: https://relaydance.com/api/status
+        checked: "2026-10-24"
     notes:
       en: "新-API (Calcium-Ion fork) operator focused on xAI Grok + ByteDance Doubao. Public /api/pricing returns ratio-based pricing (model_ratio × $2 / 1M tokens)."
       zh-TW: "基於 new-api 的中文介面海外站，主打 xAI Grok + 字節跳動 Doubao。`/api/pricing` 公開倍率計價（model_ratio × $2/1M tokens）。"
@@ -517,6 +541,14 @@ global_gateways:
       api_url: https://api.unorouter.ai/api/pricing
       fetcher: unorouter
       pricing_currency: USD
+      # /api/status 2026-10-24: price=1, usd_exchange_rate=1, quota displayed in USD.
+      # $1 paid buys $1 of quota. No CNY discount to apply.
+      topup_rate:
+        amount: 1
+        currency: USD
+        fx_per_usd: 1
+        source_url: https://api.unorouter.ai/api/status
+        checked: "2026-10-24"
     notes:
       en: "Built on the new-api gateway. One key across multiple upstreams with latency-based routing and failover; OpenAI/Anthropic/Gemini formats auto-detected. Pay-as-you-go credits plus a free model tier. Also targets roleplay clients (SillyTavern, Janitor.AI, RisuAI, Chub). Public pricing JSON at /api/pricing."
       zh-TW: "建於 new-api 閘道之上。單一金鑰跨多上游，依延遲路由並具故障轉移；自動辨識 OpenAI／Anthropic／Gemini 格式。按量計費並提供免費模型層；亦支援角色扮演用戶端（SillyTavern、Janitor.AI、RisuAI、Chub）。"
@@ -693,6 +725,13 @@ global_gateways:
       api_url: https://bettertoken.ai/api/pricing
       fetcher: bettertoken
       pricing_currency: USD
+      # /api/status 2026-10-24: price=1, usd_exchange_rate=1, quota displayed in USD.
+      topup_rate:
+        amount: 1
+        currency: USD
+        fx_per_usd: 1
+        source_url: https://bettertoken.ai/api/status
+        checked: "2026-10-24"
     notes:
       en: "OpenAI- and Anthropic-compatible gateway (chat/completions, responses, messages) for Claude, GPT, Gemini, DeepSeek, Kimi, GLM, MiniMax and Qwen; prepaid pay-as-you-go; public pricing JSON at /api/pricing, with each model's access-group ratio applied."
 

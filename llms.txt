@@ -42,11 +42,16 @@ the canonical record with full provenance in one call.
 ## Primary data sources for AI agents
 
 - Latest prices (JSON, normalized): https://raw.githubusercontent.com/howardpen9/awesome-ai-api-proxy/main/data/prices.latest.json
+- Machine-readable index (GitHub Pages): https://howardpen9.github.io/awesome-ai-api-proxy/prices-index.json
+- This file on GitHub Pages: https://howardpen9.github.io/awesome-ai-api-proxy/llms.txt
 - Provider catalog (YAML): https://raw.githubusercontent.com/howardpen9/awesome-ai-api-proxy/main/data/providers.yaml
 - Canonical model registry (YAML): https://raw.githubusercontent.com/howardpen9/awesome-ai-api-proxy/main/data/canonical-models.yaml
 - Weekly snapshots (browsable): https://github.com/howardpen9/awesome-ai-api-proxy/tree/main/data/snapshots
 - Schema definition: https://raw.githubusercontent.com/howardpen9/awesome-ai-api-proxy/main/data/schema.md
+- Price methodology (group ratio, $75 placeholders, top-up effective USD): https://raw.githubusercontent.com/howardpen9/awesome-ai-api-proxy/main/docs/methodology.md
 - Time-series summary (JSONL, one line per week): https://raw.githubusercontent.com/howardpen9/awesome-ai-api-proxy/main/data/prices.history.jsonl
+
+`price_usd` is quota USD after the public group ratio. `list_price_usd` is the ratio-1 price. `effective_price_usd` is cash USD when that provider has a checked `topup_rate` (otherwise the key is absent). Do not treat a missing effective price as zero.
 
 ## Citation
 

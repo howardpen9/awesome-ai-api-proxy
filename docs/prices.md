@@ -1,4026 +1,3516 @@
 # Full price snapshot
 
-_Generated from `data/snapshots/2026-10-22/` by `scripts/build_prices.py`._  
-_Snapshot date: **2026-10-22**. Machine-readable source: [`data/prices.latest.json`](../data/prices.latest.json)._
+_Generated from `data/snapshots/2026-10-24/` by `scripts/build_prices.py`._  
+_Snapshot date: **2026-10-24**. Machine-readable source: [`data/prices.latest.json`](../data/prices.latest.json)._
 
-For the curated tier-ladder comparison, see the README. This page is the full dump — every model surface, no curation.
+For the curated tier-ladder comparison, see the README. This page is the full dump of published prices. Unset placeholder rows (new-api `model_ratio` 37.5 with no billing expression) are excluded. How group ratios, billing expressions, and top-up rates are applied: [`methodology.md`](methodology.md).
+
+Excluded placeholder prices: **588**.
+
+Top-up multipliers (quota USD → effective USD), from `providers.yaml` `topup_rate`:
+
+- `bettertoken`: ×1.000 (1 USD per $1 of quota, site FX 1, checked 2026-10-24, <https://bettertoken.ai/api/status>)
+- `relaydance`: ×1.000 (6.8 CNY per $1 of quota, site FX 6.8, checked 2026-10-24, <https://relaydance.com/api/status>)
+- `uiuiapi`: ×0.496 (3.37 CNY per $1 of quota, site FX 6.79, checked 2026-10-24, <https://api1.uiuiapi.com/api/status>)
+- `unorouter`: ×1.000 (1 USD per $1 of quota, site FX 1, checked 2026-10-24, <https://api.unorouter.ai/api/status>)
+- `wappkit`: ×1.000 (6.8 CNY per $1 of quota, site FX 6.8, checked 2026-10-24, <https://api.wappkit.com/api/status>)
 
 ## Atlas Cloud — `atlascloud`
 
-Source: <https://www.atlascloud.ai/models> · Records: 374
+Source: <https://www.atlascloud.ai/models> · Records: 356
 
-| Model | Canonical | Unit | Price (USD) |
-|---|---|---|---|
-| `anthropic/claude-haiku-4.5-20251001` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `anthropic/claude-haiku-4.5-20251001` | — | per_1m_input_tokens | $1.000 |
-| `anthropic/claude-haiku-4.5-20251001` | — | per_1m_output_tokens | $5.000 |
-| `anthropic/claude-haiku-4.5-20251001-aws` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `anthropic/claude-haiku-4.5-20251001-aws` | — | per_1m_input_tokens | $1.000 |
-| `anthropic/claude-haiku-4.5-20251001-aws` | — | per_1m_output_tokens | $5.000 |
-| `anthropic/claude-haiku-4.5-20251001-coding` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `anthropic/claude-haiku-4.5-20251001-coding` | — | per_1m_input_tokens | $1.000 |
-| `anthropic/claude-haiku-4.5-20251001-coding` | — | per_1m_output_tokens | $5.000 |
-| `anthropic/claude-haiku-5.5-ccmax` | — | per_1m_input_cache_read_tokens | $0.010 |
-| `anthropic/claude-haiku-5.5-ccmax` | — | per_1m_input_tokens | $0.100 |
-| `anthropic/claude-haiku-5.5-ccmax` | — | per_1m_output_tokens | $0.500 |
-| `anthropic/claude-opus-4-20250514` | — | per_1m_input_cache_read_tokens | $1.500 |
-| `anthropic/claude-opus-4-20250514` | — | per_1m_input_tokens | $15.00 |
-| `anthropic/claude-opus-4-20250514` | — | per_1m_output_tokens | $75.00 |
-| `anthropic/claude-opus-4-20250514-coding` | — | per_1m_input_cache_read_tokens | $1.500 |
-| `anthropic/claude-opus-4-20250514-coding` | — | per_1m_input_tokens | $15.00 |
-| `anthropic/claude-opus-4-20250514-coding` | — | per_1m_output_tokens | $75.00 |
-| `anthropic/claude-opus-4.1-20250805` | — | per_1m_input_cache_read_tokens | $1.500 |
-| `anthropic/claude-opus-4.1-20250805` | — | per_1m_input_tokens | $15.00 |
-| `anthropic/claude-opus-4.1-20250805` | — | per_1m_output_tokens | $75.00 |
-| `anthropic/claude-opus-4.1-20250805-coding` | — | per_1m_input_cache_read_tokens | $1.500 |
-| `anthropic/claude-opus-4.1-20250805-coding` | — | per_1m_input_tokens | $15.00 |
-| `anthropic/claude-opus-4.1-20250805-coding` | — | per_1m_output_tokens | $75.00 |
-| `anthropic/claude-opus-4.5-20251101` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-4.5-20251101` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.5-20251101` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.5-20251101-coding` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-4.5-20251101-coding` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.5-20251101-coding` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.6` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-4.6` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.6` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.6-aws` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-4.6-aws` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.6-aws` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.6-coding` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-4.6-coding` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.6-coding` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.7` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-4.7` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.7` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.7-aws` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-4.7-aws` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.7-aws` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.7-coding` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-4.7-coding` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.7-coding` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.8` | `claude-opus-4.8` | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-4.8` | `claude-opus-4.8` | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.8` | `claude-opus-4.8` | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.8-aws` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-4.8-aws` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.8-aws` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.8-coding` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-4.8-coding` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.8-coding` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-5` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-5` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-5` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-5-aws` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `anthropic/claude-opus-5-aws` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-5-aws` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-5.5` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `anthropic/claude-opus-5.5` | — | per_1m_input_tokens | $4.000 |
-| `anthropic/claude-opus-5.5` | — | per_1m_output_tokens | $20.00 |
-| `anthropic/claude-sonnet-4-20250514-coding` | — | per_1m_input_cache_read_tokens | $0.300 |
-| `anthropic/claude-sonnet-4-20250514-coding` | — | per_1m_input_tokens | $3.000 |
-| `anthropic/claude-sonnet-4-20250514-coding` | — | per_1m_output_tokens | $15.00 |
-| `anthropic/claude-sonnet-4.5-20250929` | — | per_1m_input_cache_read_tokens | $0.300 |
-| `anthropic/claude-sonnet-4.5-20250929` | — | per_1m_input_tokens | $3.000 |
-| `anthropic/claude-sonnet-4.5-20250929` | — | per_1m_output_tokens | $15.00 |
-| `anthropic/claude-sonnet-4.5-20250929-ccmax` | — | per_1m_input_cache_read_tokens | $0.300 |
-| `anthropic/claude-sonnet-4.5-20250929-ccmax` | — | per_1m_input_tokens | $3.000 |
-| `anthropic/claude-sonnet-4.5-20250929-ccmax` | — | per_1m_output_tokens | $15.00 |
-| `anthropic/claude-sonnet-4.5-20250929-coding` | — | per_1m_input_cache_read_tokens | $0.300 |
-| `anthropic/claude-sonnet-4.5-20250929-coding` | — | per_1m_input_tokens | $3.000 |
-| `anthropic/claude-sonnet-4.5-20250929-coding` | — | per_1m_output_tokens | $15.00 |
-| `anthropic/claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_input_cache_read_tokens | $0.300 |
-| `anthropic/claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.000 |
-| `anthropic/claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_output_tokens | $15.00 |
-| `anthropic/claude-sonnet-4.6-aws` | — | per_1m_input_cache_read_tokens | $0.300 |
-| `anthropic/claude-sonnet-4.6-aws` | — | per_1m_input_tokens | $3.000 |
-| `anthropic/claude-sonnet-4.6-aws` | — | per_1m_output_tokens | $15.00 |
-| `anthropic/claude-sonnet-4.6-coding` | `claude-sonnet-4.6` | per_1m_input_cache_read_tokens | $0.300 |
-| `anthropic/claude-sonnet-4.6-coding` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.000 |
-| `anthropic/claude-sonnet-4.6-coding` | `claude-sonnet-4.6` | per_1m_output_tokens | $15.00 |
-| `anthropic/claude-sonnet-5` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `anthropic/claude-sonnet-5` | — | per_1m_input_tokens | $2.000 |
-| `anthropic/claude-sonnet-5` | — | per_1m_output_tokens | $10.00 |
-| `anthropic/claude-sonnet-5-aws` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `anthropic/claude-sonnet-5-aws` | — | per_1m_input_tokens | $2.000 |
-| `anthropic/claude-sonnet-5-aws` | — | per_1m_output_tokens | $10.00 |
-| `anthropic/claude-sonnet-5.5-ccmax` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `anthropic/claude-sonnet-5.5-ccmax` | — | per_1m_input_tokens | $2.000 |
-| `anthropic/claude-sonnet-5.5-ccmax` | — | per_1m_output_tokens | $10.00 |
-| `bytedance/doubao-seed-1.6-251015` | — | per_1m_input_cache_read_tokens | $0.050 |
-| `bytedance/doubao-seed-1.6-251015` | — | per_1m_input_tokens | $0.250 |
-| `bytedance/doubao-seed-1.6-251015` | — | per_1m_output_tokens | $2.000 |
-| `bytedance/doubao-seed-1.6-flash-250828` | — | per_1m_input_cache_read_tokens | $0.015 |
-| `bytedance/doubao-seed-1.6-flash-250828` | — | per_1m_input_tokens | $0.075 |
-| `bytedance/doubao-seed-1.6-flash-250828` | — | per_1m_output_tokens | $0.300 |
-| `bytedance/doubao-seed-1.8-251228` | — | per_1m_input_cache_read_tokens | $0.050 |
-| `bytedance/doubao-seed-1.8-251228` | — | per_1m_input_tokens | $0.250 |
-| `bytedance/doubao-seed-1.8-251228` | — | per_1m_output_tokens | $2.000 |
-| `bytedance/doubao-seed-2.0-code-preview-260215` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `bytedance/doubao-seed-2.0-code-preview-260215` | — | per_1m_input_tokens | $0.500 |
-| `bytedance/doubao-seed-2.0-code-preview-260215` | — | per_1m_output_tokens | $3.000 |
-| `bytedance/doubao-seed-2.0-lite-260428` | — | per_1m_input_cache_read_tokens | $0.050 |
-| `bytedance/doubao-seed-2.0-lite-260428` | — | per_1m_input_tokens | $0.250 |
-| `bytedance/doubao-seed-2.0-lite-260428` | — | per_1m_output_tokens | $2.000 |
-| `bytedance/doubao-seed-2.0-mini-260428` | — | per_1m_input_cache_read_tokens | $0.020 |
-| `bytedance/doubao-seed-2.0-mini-260428` | — | per_1m_input_tokens | $0.100 |
-| `bytedance/doubao-seed-2.0-mini-260428` | — | per_1m_output_tokens | $0.400 |
-| `bytedance/doubao-seed-2.0-pro-260215` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `bytedance/doubao-seed-2.0-pro-260215` | — | per_1m_input_tokens | $0.500 |
-| `bytedance/doubao-seed-2.0-pro-260215` | — | per_1m_output_tokens | $3.000 |
-| `bytedance/doubao-seed-2.1-pro-260628` | — | per_1m_input_cache_read_tokens | $0.180 |
-| `bytedance/doubao-seed-2.1-pro-260628` | — | per_1m_input_tokens | $0.900 |
-| `bytedance/doubao-seed-2.1-pro-260628` | — | per_1m_output_tokens | $4.500 |
-| `bytedance/doubao-seed-2.1-turbo-260628` | — | per_1m_input_cache_read_tokens | $0.090 |
-| `bytedance/doubao-seed-2.1-turbo-260628` | — | per_1m_input_tokens | $0.450 |
-| `bytedance/doubao-seed-2.1-turbo-260628` | — | per_1m_output_tokens | $2.250 |
-| `bytedance/doubao-seed-character-260628` | — | per_1m_input_cache_read_tokens | $0.040 |
-| `bytedance/doubao-seed-character-260628` | — | per_1m_input_tokens | $0.200 |
-| `bytedance/doubao-seed-character-260628` | — | per_1m_output_tokens | $0.800 |
-| `bytedance/doubao-seed-evolving` | — | per_1m_input_cache_read_tokens | $0.180 |
-| `bytedance/doubao-seed-evolving` | — | per_1m_input_tokens | $0.900 |
-| `bytedance/doubao-seed-evolving` | — | per_1m_output_tokens | $4.500 |
-| `deepseek-ai/DeepSeek-V3.2-Exp` | — | per_1m_input_cache_read_tokens | $0.130 |
-| `deepseek-ai/DeepSeek-V3.2-Exp` | — | per_1m_input_tokens | $0.260 |
-| `deepseek-ai/DeepSeek-V3.2-Exp` | — | per_1m_output_tokens | $0.380 |
-| `deepseek-ai/deepseek-ocr` | — | per_1m_input_cache_read_tokens | $0.040 |
-| `deepseek-ai/deepseek-ocr` | — | per_1m_input_tokens | $0.040 |
-| `deepseek-ai/deepseek-ocr` | — | per_1m_output_tokens | $0.080 |
-| `deepseek-ai/deepseek-v3.2` | — | per_1m_input_cache_read_tokens | $0.130 |
-| `deepseek-ai/deepseek-v3.2` | — | per_1m_input_tokens | $0.260 |
-| `deepseek-ai/deepseek-v3.2` | — | per_1m_output_tokens | $0.380 |
-| `deepseek-ai/deepseek-v4-flash` | — | per_1m_input_cache_read_tokens | $0.028 |
-| `deepseek-ai/deepseek-v4-flash` | — | per_1m_input_tokens | $0.140 |
-| `deepseek-ai/deepseek-v4-flash` | — | per_1m_output_tokens | $0.280 |
-| `deepseek-ai/deepseek-v4-flash-0731` | — | per_1m_input_cache_read_tokens | $0.028 |
-| `deepseek-ai/deepseek-v4-flash-0731` | — | per_1m_input_tokens | $0.440 |
-| `deepseek-ai/deepseek-v4-flash-0731` | — | per_1m_output_tokens | $1.320 |
-| `deepseek-ai/deepseek-v4-pro` | — | per_1m_input_cache_read_tokens | $0.130 |
-| `deepseek-ai/deepseek-v4-pro` | — | per_1m_input_tokens | $1.680 |
-| `deepseek-ai/deepseek-v4-pro` | — | per_1m_output_tokens | $3.380 |
-| `deepseek-ai/deepseek-v4-pro-0813` | — | per_1m_input_cache_read_tokens | $0.132 |
-| `deepseek-ai/deepseek-v4-pro-0813` | — | per_1m_input_tokens | $1.320 |
-| `deepseek-ai/deepseek-v4-pro-0813` | — | per_1m_output_tokens | $3.960 |
-| `deepseek-ai/deepseek-v4.1-flash` | — | per_1m_input_cache_read_tokens | $0.030 |
-| `deepseek-ai/deepseek-v4.1-flash` | — | per_1m_input_tokens | $0.300 |
-| `deepseek-ai/deepseek-v4.1-flash` | — | per_1m_output_tokens | $1.200 |
-| `deepseek-ai/deepseek-v4.1-flash-1017` | — | per_1m_input_cache_read_tokens | $0.0060 |
-| `deepseek-ai/deepseek-v4.1-flash-1017` | — | per_1m_input_tokens | $0.300 |
-| `deepseek-ai/deepseek-v4.1-flash-1017` | — | per_1m_output_tokens | $1.200 |
-| `google/gemini-2.5-flash` | — | per_1m_input_cache_read_tokens | $0.030 |
-| `google/gemini-2.5-flash` | — | per_1m_input_tokens | $0.300 |
-| `google/gemini-2.5-flash` | — | per_1m_output_tokens | $2.500 |
-| `google/gemini-2.5-flash-image` | — | per_1m_input_cache_read_tokens | $0.300 |
-| `google/gemini-2.5-flash-image` | — | per_1m_input_tokens | $0.300 |
-| `google/gemini-2.5-flash-image` | — | per_1m_output_tokens | $2.500 |
-| `google/gemini-2.5-flash-lite` | — | per_1m_input_cache_read_tokens | $0.010 |
-| `google/gemini-2.5-flash-lite` | — | per_1m_input_tokens | $0.100 |
-| `google/gemini-2.5-flash-lite` | — | per_1m_output_tokens | $0.400 |
-| `google/gemini-2.5-pro` | — | per_1m_input_cache_read_tokens | $0.125 |
-| `google/gemini-2.5-pro` | — | per_1m_input_tokens | $1.250 |
-| `google/gemini-2.5-pro` | — | per_1m_output_tokens | $10.00 |
-| `google/gemini-3-flash-preview` | — | per_1m_input_cache_read_tokens | $0.050 |
-| `google/gemini-3-flash-preview` | — | per_1m_input_tokens | $0.500 |
-| `google/gemini-3-flash-preview` | — | per_1m_output_tokens | $3.000 |
-| `google/gemini-3-flash-preview-developer` | — | per_1m_input_cache_read_tokens | $0.050 |
-| `google/gemini-3-flash-preview-developer` | — | per_1m_input_tokens | $0.500 |
-| `google/gemini-3-flash-preview-developer` | — | per_1m_output_tokens | $3.000 |
-| `google/gemini-3-pro-image` | — | per_1m_input_cache_read_tokens | $2.000 |
-| `google/gemini-3-pro-image` | — | per_1m_input_tokens | $2.000 |
-| `google/gemini-3-pro-image` | — | per_1m_output_tokens | $12.00 |
-| `google/gemini-3.1-flash-image` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `google/gemini-3.1-flash-image` | — | per_1m_input_tokens | $0.500 |
-| `google/gemini-3.1-flash-image` | — | per_1m_output_tokens | $3.000 |
-| `google/gemini-3.1-flash-lite` | — | per_1m_input_cache_read_tokens | $0.025 |
-| `google/gemini-3.1-flash-lite` | — | per_1m_input_tokens | $0.250 |
-| `google/gemini-3.1-flash-lite` | — | per_1m_output_tokens | $1.500 |
-| `google/gemini-3.1-pro-preview` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `google/gemini-3.1-pro-preview` | — | per_1m_input_tokens | $2.000 |
-| `google/gemini-3.1-pro-preview` | — | per_1m_output_tokens | $12.00 |
-| `google/gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_cache_read_tokens | $0.150 |
-| `google/gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_tokens | $1.500 |
-| `google/gemini-3.5-flash` | `gemini-3-flash` | per_1m_output_tokens | $9.000 |
-| `google/gemini-3.8-flash` | — | per_1m_input_cache_read_tokens | $0.075 |
-| `google/gemini-3.8-flash` | — | per_1m_input_tokens | $0.750 |
-| `google/gemini-3.8-flash` | — | per_1m_output_tokens | $3.750 |
-| `google/gemini-3.8-flash-developer` | — | per_1m_input_cache_read_tokens | $0.075 |
-| `google/gemini-3.8-flash-developer` | — | per_1m_input_tokens | $0.750 |
-| `google/gemini-3.8-flash-developer` | — | per_1m_output_tokens | $3.750 |
-| `google/gemini-4-argon` | — | per_1m_input_cache_read_tokens | $0.080 |
-| `google/gemini-4-argon` | — | per_1m_input_tokens | $1.600 |
-| `google/gemini-4-argon` | — | per_1m_output_tokens | $8.000 |
-| `google/gemini-4-argon-developer` | — | per_1m_input_cache_read_tokens | $0.060 |
-| `google/gemini-4-argon-developer` | — | per_1m_input_tokens | $1.200 |
-| `google/gemini-4-argon-developer` | — | per_1m_output_tokens | $6.000 |
-| `kwaipilot/kat-coder-air-v2.5` | — | per_1m_input_cache_read_tokens | $0.030 |
-| `kwaipilot/kat-coder-air-v2.5` | — | per_1m_input_tokens | $0.150 |
-| `kwaipilot/kat-coder-air-v2.5` | — | per_1m_output_tokens | $0.600 |
-| `meituan-longcat/longcat-2.0` | — | per_1m_input_cache_read_tokens | $0.015 |
-| `meituan-longcat/longcat-2.0` | — | per_1m_input_tokens | $0.750 |
-| `meituan-longcat/longcat-2.0` | — | per_1m_output_tokens | $3.000 |
-| `minimaxai/minimax-m2.5` | — | per_1m_input_cache_read_tokens | $0.060 |
-| `minimaxai/minimax-m2.5` | — | per_1m_input_tokens | $0.295 |
-| `minimaxai/minimax-m2.5` | — | per_1m_output_tokens | $1.200 |
-| `minimaxai/minimax-m2.7` | — | per_1m_input_cache_read_tokens | $0.060 |
-| `minimaxai/minimax-m2.7` | — | per_1m_input_tokens | $0.300 |
-| `minimaxai/minimax-m2.7` | — | per_1m_output_tokens | $1.200 |
-| `minimaxai/minimax-m3` | — | per_1m_input_cache_read_tokens | $0.060 |
-| `minimaxai/minimax-m3` | — | per_1m_input_tokens | $0.300 |
-| `minimaxai/minimax-m3` | — | per_1m_output_tokens | $1.200 |
-| `moonshotai/kimi-k2.5` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `moonshotai/kimi-k2.5` | — | per_1m_input_tokens | $0.490 |
-| `moonshotai/kimi-k2.5` | — | per_1m_output_tokens | $2.500 |
-| `moonshotai/kimi-k2.6` | — | per_1m_input_cache_read_tokens | $0.160 |
-| `moonshotai/kimi-k2.6` | — | per_1m_input_tokens | $0.950 |
-| `moonshotai/kimi-k2.6` | — | per_1m_output_tokens | $4.000 |
-| `moonshotai/kimi-k2.7-code` | — | per_1m_input_cache_read_tokens | $0.160 |
-| `moonshotai/kimi-k2.7-code` | — | per_1m_input_tokens | $0.950 |
-| `moonshotai/kimi-k2.7-code` | — | per_1m_output_tokens | $4.000 |
-| `moonshotai/kimi-k3` | — | per_1m_input_cache_read_tokens | $0.300 |
-| `moonshotai/kimi-k3` | — | per_1m_input_tokens | $3.000 |
-| `moonshotai/kimi-k3` | — | per_1m_output_tokens | $15.00 |
-| `openai/gpt-4.1-mini` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `openai/gpt-4.1-mini` | — | per_1m_input_tokens | $0.400 |
-| `openai/gpt-4.1-mini` | — | per_1m_output_tokens | $1.600 |
-| `openai/gpt-5.2-codex` | — | per_1m_input_cache_read_tokens | $0.175 |
-| `openai/gpt-5.2-codex` | — | per_1m_input_tokens | $1.750 |
-| `openai/gpt-5.2-codex` | — | per_1m_output_tokens | $14.00 |
-| `openai/gpt-5.3-codex` | — | per_1m_input_cache_read_tokens | $0.175 |
-| `openai/gpt-5.3-codex` | — | per_1m_input_tokens | $1.750 |
-| `openai/gpt-5.3-codex` | — | per_1m_output_tokens | $14.00 |
-| `openai/gpt-5.4` | `gpt-5.4` | per_1m_input_cache_read_tokens | $0.250 |
-| `openai/gpt-5.4` | `gpt-5.4` | per_1m_input_tokens | $2.500 |
-| `openai/gpt-5.4` | `gpt-5.4` | per_1m_output_tokens | $15.00 |
-| `openai/gpt-5.4-mini` | — | per_1m_input_cache_read_tokens | $0.075 |
-| `openai/gpt-5.4-mini` | — | per_1m_input_tokens | $0.750 |
-| `openai/gpt-5.4-mini` | — | per_1m_output_tokens | $4.500 |
-| `openai/gpt-5.4-nano` | — | per_1m_input_cache_read_tokens | $0.020 |
-| `openai/gpt-5.4-nano` | — | per_1m_input_tokens | $0.200 |
-| `openai/gpt-5.4-nano` | — | per_1m_output_tokens | $1.250 |
-| `openai/gpt-5.5` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `openai/gpt-5.5` | — | per_1m_input_tokens | $5.000 |
-| `openai/gpt-5.5` | — | per_1m_output_tokens | $30.00 |
-| `openai/gpt-5.6-luna` | — | per_1m_input_cache_read_tokens | $0.020 |
-| `openai/gpt-5.6-luna` | — | per_1m_input_tokens | $0.200 |
-| `openai/gpt-5.6-luna` | — | per_1m_output_tokens | $1.200 |
-| `openai/gpt-5.6-luna-az` | — | per_1m_input_cache_read_tokens | $0.020 |
-| `openai/gpt-5.6-luna-az` | — | per_1m_input_tokens | $0.200 |
-| `openai/gpt-5.6-luna-az` | — | per_1m_output_tokens | $1.200 |
-| `openai/gpt-5.6-sol` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `openai/gpt-5.6-sol` | — | per_1m_input_tokens | $5.000 |
-| `openai/gpt-5.6-sol` | — | per_1m_output_tokens | $30.00 |
-| `openai/gpt-5.6-sol-az` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `openai/gpt-5.6-sol-az` | — | per_1m_input_tokens | $5.000 |
-| `openai/gpt-5.6-sol-az` | — | per_1m_output_tokens | $30.00 |
-| `openai/gpt-5.6-sol-codex` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `openai/gpt-5.6-sol-codex` | — | per_1m_input_tokens | $5.000 |
-| `openai/gpt-5.6-sol-codex` | — | per_1m_output_tokens | $30.00 |
-| `openai/gpt-5.6-terra` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `openai/gpt-5.6-terra` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-5.6-terra` | — | per_1m_output_tokens | $12.00 |
-| `openai/gpt-5.6-terra-az` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `openai/gpt-5.6-terra-az` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-5.6-terra-az` | — | per_1m_output_tokens | $12.00 |
-| `openai/gpt-6-astra` | — | per_1m_input_cache_read_tokens | $1.000 |
-| `openai/gpt-6-astra` | — | per_1m_input_tokens | $10.00 |
-| `openai/gpt-6-astra` | — | per_1m_output_tokens | $50.00 |
-| `openai/gpt-6-astra-codex` | — | per_1m_input_cache_read_tokens | $1.000 |
-| `openai/gpt-6-astra-codex` | — | per_1m_input_tokens | $10.00 |
-| `openai/gpt-6-astra-codex` | — | per_1m_output_tokens | $50.00 |
-| `openai/gpt-6-luna` | — | per_1m_input_cache_read_tokens | $0.010 |
-| `openai/gpt-6-luna` | — | per_1m_input_tokens | $0.100 |
-| `openai/gpt-6-luna` | — | per_1m_output_tokens | $0.500 |
-| `openai/gpt-6-luna-codex` | — | per_1m_input_cache_read_tokens | $0.010 |
-| `openai/gpt-6-luna-codex` | — | per_1m_input_tokens | $0.100 |
-| `openai/gpt-6-luna-codex` | — | per_1m_output_tokens | $0.500 |
-| `openai/gpt-6-sol` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `openai/gpt-6-sol` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-6-sol` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-6-sol-codex` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `openai/gpt-6-sol-codex` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-6-sol-codex` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-6.1-sol` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `openai/gpt-6.1-sol` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-6.1-sol` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-6.1-sol-codex` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `openai/gpt-6.1-sol-codex` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-6.1-sol-codex` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-image-2` | — | per_1m_input_cache_read_tokens | $1.250 |
-| `openai/gpt-image-2` | — | per_1m_input_tokens | $5.000 |
-| `qwen/qwen3.5-122b-a10b` | — | per_1m_input_cache_read_tokens | $0.300 |
-| `qwen/qwen3.5-122b-a10b` | — | per_1m_input_tokens | $0.300 |
-| `qwen/qwen3.5-122b-a10b` | — | per_1m_output_tokens | $2.400 |
-| `qwen/qwen3.5-27b` | — | per_1m_input_cache_read_tokens | $0.270 |
-| `qwen/qwen3.5-27b` | — | per_1m_input_tokens | $0.270 |
-| `qwen/qwen3.5-27b` | — | per_1m_output_tokens | $2.160 |
-| `qwen/qwen3.5-35b-a3b` | — | per_1m_input_cache_read_tokens | $0.225 |
-| `qwen/qwen3.5-35b-a3b` | — | per_1m_input_tokens | $0.225 |
-| `qwen/qwen3.5-35b-a3b` | — | per_1m_output_tokens | $1.800 |
-| `qwen/qwen3.5-397b-a17b` | — | per_1m_input_cache_read_tokens | $0.550 |
-| `qwen/qwen3.5-397b-a17b` | — | per_1m_input_tokens | $0.550 |
-| `qwen/qwen3.5-397b-a17b` | — | per_1m_output_tokens | $3.500 |
-| `qwen/qwen3.5-flash` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `qwen/qwen3.5-flash` | — | per_1m_input_tokens | $0.100 |
-| `qwen/qwen3.5-flash` | — | per_1m_output_tokens | $0.400 |
-| `qwen/qwen3.5-plus` | — | per_1m_input_cache_read_tokens | $0.040 |
-| `qwen/qwen3.5-plus` | — | per_1m_input_tokens | $0.400 |
-| `qwen/qwen3.5-plus` | — | per_1m_output_tokens | $2.400 |
-| `qwen/qwen3.6-35b-a3b` | — | per_1m_input_cache_read_tokens | $0.186 |
-| `qwen/qwen3.6-35b-a3b` | — | per_1m_input_tokens | $0.186 |
-| `qwen/qwen3.6-35b-a3b` | — | per_1m_output_tokens | $1.114 |
-| `qwen/qwen3.6-plus` | — | per_1m_input_cache_read_tokens | $0.033 |
-| `qwen/qwen3.6-plus` | — | per_1m_input_tokens | $0.325 |
-| `qwen/qwen3.6-plus` | — | per_1m_output_tokens | $1.950 |
-| `qwen/qwen3.7-max` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `qwen/qwen3.7-max` | — | per_1m_input_tokens | $2.500 |
-| `qwen/qwen3.7-max` | — | per_1m_output_tokens | $7.500 |
-| `qwen/qwen3.7-plus` | — | per_1m_input_cache_read_tokens | $0.080 |
-| `qwen/qwen3.7-plus` | — | per_1m_input_tokens | $0.400 |
-| `qwen/qwen3.7-plus` | — | per_1m_output_tokens | $1.600 |
-| `qwen/qwen3.8-27b` | — | per_1m_input_cache_read_tokens | $0.050 |
-| `qwen/qwen3.8-27b` | — | per_1m_input_tokens | $0.500 |
-| `qwen/qwen3.8-27b` | — | per_1m_output_tokens | $3.000 |
-| `qwen/qwen3.8-max` | — | per_1m_input_cache_read_tokens | $0.250 |
-| `qwen/qwen3.8-max` | — | per_1m_input_tokens | $2.000 |
-| `qwen/qwen3.8-max` | — | per_1m_output_tokens | $6.000 |
-| `tencent/hy3` | — | per_1m_input_cache_read_tokens | $0.050 |
-| `tencent/hy3` | — | per_1m_input_tokens | $0.200 |
-| `tencent/hy3` | — | per_1m_output_tokens | $0.800 |
-| `xai/grok-4.3` | `grok-4.3` | per_1m_input_cache_read_tokens | $0.200 |
-| `xai/grok-4.3` | `grok-4.3` | per_1m_input_tokens | $1.250 |
-| `xai/grok-4.3` | `grok-4.3` | per_1m_output_tokens | $2.500 |
-| `xai/grok-4.5` | — | per_1m_input_cache_read_tokens | $0.300 |
-| `xai/grok-4.5` | — | per_1m_input_tokens | $2.000 |
-| `xai/grok-4.5` | — | per_1m_output_tokens | $6.000 |
-| `xai/grok-4.6` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `xai/grok-4.6` | — | per_1m_input_tokens | $2.000 |
-| `xai/grok-4.6` | — | per_1m_output_tokens | $6.000 |
-| `xai/grok-4.7` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `xai/grok-4.7` | — | per_1m_input_tokens | $2.000 |
-| `xai/grok-4.7` | — | per_1m_output_tokens | $6.000 |
-| `xai/grok-build-0.1` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `xai/grok-build-0.1` | — | per_1m_input_tokens | $1.000 |
-| `xai/grok-build-0.1` | — | per_1m_output_tokens | $2.000 |
-| `xiaomi/mimo-v2.5` | — | per_1m_input_cache_read_tokens | $0.0028 |
-| `xiaomi/mimo-v2.5` | — | per_1m_input_tokens | $0.140 |
-| `xiaomi/mimo-v2.5` | — | per_1m_output_tokens | $0.280 |
-| `xiaomi/mimo-v2.5-pro` | — | per_1m_input_cache_read_tokens | $0.0036 |
-| `xiaomi/mimo-v2.5-pro` | — | per_1m_input_tokens | $0.435 |
-| `xiaomi/mimo-v2.5-pro` | — | per_1m_output_tokens | $0.870 |
-| `zai-org/glm-5` | — | per_1m_input_cache_read_tokens | $0.190 |
-| `zai-org/glm-5` | — | per_1m_input_tokens | $0.950 |
-| `zai-org/glm-5` | — | per_1m_output_tokens | $3.150 |
-| `zai-org/glm-5.1` | — | per_1m_input_cache_read_tokens | $0.234 |
-| `zai-org/glm-5.1` | — | per_1m_input_tokens | $1.260 |
-| `zai-org/glm-5.1` | — | per_1m_output_tokens | $3.960 |
-| `zai-org/glm-5.2` | — | per_1m_input_cache_read_tokens | $0.260 |
-| `zai-org/glm-5.2` | — | per_1m_input_tokens | $1.400 |
-| `zai-org/glm-5.2` | — | per_1m_output_tokens | $4.400 |
-| `zai-org/glm-5.3` | — | per_1m_input_cache_read_tokens | $0.260 |
-| `zai-org/glm-5.3` | — | per_1m_input_tokens | $1.400 |
-| `zai-org/glm-5.3` | — | per_1m_output_tokens | $4.400 |
-| `zai-org/glm-5.3-flash` | — | per_1m_input_cache_read_tokens | $0.030 |
-| `zai-org/glm-5.3-flash` | — | per_1m_input_tokens | $0.150 |
-| `zai-org/glm-5.3-flash` | — | per_1m_output_tokens | $0.500 |
-| `zai-org/glm-5v-turbo` | — | per_1m_input_cache_read_tokens | $0.240 |
-| `zai-org/glm-5v-turbo` | — | per_1m_input_tokens | $1.200 |
-| `zai-org/glm-5v-turbo` | — | per_1m_output_tokens | $4.000 |
+| Model | Canonical | Unit | Price (USD) | List (USD) | Group | Ratio | Effective (USD) |
+|---|---|---|---|---|---|---|---|
+| `anthropic/claude-haiku-4.5-20251001` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `anthropic/claude-haiku-4.5-20251001` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `anthropic/claude-haiku-4.5-20251001` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-haiku-4.5-20251001-aws` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `anthropic/claude-haiku-4.5-20251001-aws` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `anthropic/claude-haiku-4.5-20251001-aws` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-haiku-4.5-20251001-coding` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `anthropic/claude-haiku-4.5-20251001-coding` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `anthropic/claude-haiku-4.5-20251001-coding` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-haiku-5.5-ccmax` | — | per_1m_input_cache_read_tokens | $0.010 | — | — | — | — |
+| `anthropic/claude-haiku-5.5-ccmax` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `anthropic/claude-haiku-5.5-ccmax` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-4-20250514` | — | per_1m_input_cache_read_tokens | $1.500 | — | — | — | — |
+| `anthropic/claude-opus-4-20250514` | — | per_1m_input_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-opus-4-20250514` | — | per_1m_output_tokens | $75.00 | — | — | — | — |
+| `anthropic/claude-opus-4-20250514-coding` | — | per_1m_input_cache_read_tokens | $1.500 | — | — | — | — |
+| `anthropic/claude-opus-4-20250514-coding` | — | per_1m_input_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-opus-4-20250514-coding` | — | per_1m_output_tokens | $75.00 | — | — | — | — |
+| `anthropic/claude-opus-4.1-20250805` | — | per_1m_input_cache_read_tokens | $1.500 | — | — | — | — |
+| `anthropic/claude-opus-4.1-20250805` | — | per_1m_input_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-opus-4.1-20250805` | — | per_1m_output_tokens | $75.00 | — | — | — | — |
+| `anthropic/claude-opus-4.1-20250805-coding` | — | per_1m_input_cache_read_tokens | $1.500 | — | — | — | — |
+| `anthropic/claude-opus-4.1-20250805-coding` | — | per_1m_input_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-opus-4.1-20250805-coding` | — | per_1m_output_tokens | $75.00 | — | — | — | — |
+| `anthropic/claude-opus-4.5-20251101` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-4.5-20251101` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.5-20251101` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.5-20251101-coding` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-4.5-20251101-coding` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.5-20251101-coding` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.6` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-4.6` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.6` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.6-aws` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-4.6-aws` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.6-aws` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.6-coding` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-4.6-coding` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.6-coding` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.7` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-4.7` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.7` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.7-aws` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-4.7-aws` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.7-aws` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.7-coding` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-4.7-coding` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.7-coding` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.8` | `claude-opus-4.8` | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-4.8` | `claude-opus-4.8` | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.8` | `claude-opus-4.8` | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.8-aws` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-4.8-aws` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.8-aws` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.8-coding` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-4.8-coding` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.8-coding` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-5` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-5` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-5` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-5-aws` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-opus-5-aws` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-5-aws` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-5.5` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `anthropic/claude-opus-5.5` | — | per_1m_input_tokens | $4.000 | — | — | — | — |
+| `anthropic/claude-opus-5.5` | — | per_1m_output_tokens | $20.00 | — | — | — | — |
+| `anthropic/claude-sonnet-4-20250514-coding` | — | per_1m_input_cache_read_tokens | $0.300 | — | — | — | — |
+| `anthropic/claude-sonnet-4-20250514-coding` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `anthropic/claude-sonnet-4-20250514-coding` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5-20250929` | — | per_1m_input_cache_read_tokens | $0.300 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5-20250929` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5-20250929` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5-20250929-ccmax` | — | per_1m_input_cache_read_tokens | $0.300 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5-20250929-ccmax` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5-20250929-ccmax` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5-20250929-coding` | — | per_1m_input_cache_read_tokens | $0.300 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5-20250929-coding` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5-20250929-coding` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_input_cache_read_tokens | $0.300 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6-aws` | — | per_1m_input_cache_read_tokens | $0.300 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6-aws` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6-aws` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6-coding` | `claude-sonnet-4.6` | per_1m_input_cache_read_tokens | $0.300 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6-coding` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6-coding` | `claude-sonnet-4.6` | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-sonnet-5` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `anthropic/claude-sonnet-5` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `anthropic/claude-sonnet-5` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `anthropic/claude-sonnet-5-aws` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `anthropic/claude-sonnet-5-aws` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `anthropic/claude-sonnet-5-aws` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `anthropic/claude-sonnet-5.5-ccmax` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `anthropic/claude-sonnet-5.5-ccmax` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `anthropic/claude-sonnet-5.5-ccmax` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `bytedance/doubao-seed-1.6-251015` | — | per_1m_input_cache_read_tokens | $0.050 | — | — | — | — |
+| `bytedance/doubao-seed-1.6-251015` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `bytedance/doubao-seed-1.6-251015` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `bytedance/doubao-seed-1.6-flash-250828` | — | per_1m_input_cache_read_tokens | $0.015 | — | — | — | — |
+| `bytedance/doubao-seed-1.6-flash-250828` | — | per_1m_input_tokens | $0.075 | — | — | — | — |
+| `bytedance/doubao-seed-1.6-flash-250828` | — | per_1m_output_tokens | $0.300 | — | — | — | — |
+| `bytedance/doubao-seed-1.8-251228` | — | per_1m_input_cache_read_tokens | $0.050 | — | — | — | — |
+| `bytedance/doubao-seed-1.8-251228` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `bytedance/doubao-seed-1.8-251228` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `bytedance/doubao-seed-2.0-code-preview-260215` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `bytedance/doubao-seed-2.0-code-preview-260215` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `bytedance/doubao-seed-2.0-code-preview-260215` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `bytedance/doubao-seed-2.0-lite-260428` | — | per_1m_input_cache_read_tokens | $0.050 | — | — | — | — |
+| `bytedance/doubao-seed-2.0-lite-260428` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `bytedance/doubao-seed-2.0-lite-260428` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `bytedance/doubao-seed-2.0-mini-260428` | — | per_1m_input_cache_read_tokens | $0.020 | — | — | — | — |
+| `bytedance/doubao-seed-2.0-mini-260428` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `bytedance/doubao-seed-2.0-mini-260428` | — | per_1m_output_tokens | $0.400 | — | — | — | — |
+| `bytedance/doubao-seed-2.0-pro-260215` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `bytedance/doubao-seed-2.0-pro-260215` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `bytedance/doubao-seed-2.0-pro-260215` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `bytedance/doubao-seed-2.1-pro-260628` | — | per_1m_input_cache_read_tokens | $0.180 | — | — | — | — |
+| `bytedance/doubao-seed-2.1-pro-260628` | — | per_1m_input_tokens | $0.900 | — | — | — | — |
+| `bytedance/doubao-seed-2.1-pro-260628` | — | per_1m_output_tokens | $4.500 | — | — | — | — |
+| `bytedance/doubao-seed-2.1-turbo-260628` | — | per_1m_input_cache_read_tokens | $0.090 | — | — | — | — |
+| `bytedance/doubao-seed-2.1-turbo-260628` | — | per_1m_input_tokens | $0.450 | — | — | — | — |
+| `bytedance/doubao-seed-2.1-turbo-260628` | — | per_1m_output_tokens | $2.250 | — | — | — | — |
+| `bytedance/doubao-seed-character-260628` | — | per_1m_input_cache_read_tokens | $0.040 | — | — | — | — |
+| `bytedance/doubao-seed-character-260628` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `bytedance/doubao-seed-character-260628` | — | per_1m_output_tokens | $0.800 | — | — | — | — |
+| `bytedance/doubao-seed-evolving` | — | per_1m_input_cache_read_tokens | $0.180 | — | — | — | — |
+| `bytedance/doubao-seed-evolving` | — | per_1m_input_tokens | $0.900 | — | — | — | — |
+| `bytedance/doubao-seed-evolving` | — | per_1m_output_tokens | $4.500 | — | — | — | — |
+| `deepseek-ai/DeepSeek-V3.2-Exp` | — | per_1m_input_cache_read_tokens | $0.130 | — | — | — | — |
+| `deepseek-ai/DeepSeek-V3.2-Exp` | — | per_1m_input_tokens | $0.260 | — | — | — | — |
+| `deepseek-ai/DeepSeek-V3.2-Exp` | — | per_1m_output_tokens | $0.380 | — | — | — | — |
+| `deepseek-ai/deepseek-ocr` | — | per_1m_input_cache_read_tokens | $0.040 | — | — | — | — |
+| `deepseek-ai/deepseek-ocr` | — | per_1m_input_tokens | $0.040 | — | — | — | — |
+| `deepseek-ai/deepseek-ocr` | — | per_1m_output_tokens | $0.080 | — | — | — | — |
+| `deepseek-ai/deepseek-v3.2` | — | per_1m_input_cache_read_tokens | $0.130 | — | — | — | — |
+| `deepseek-ai/deepseek-v3.2` | — | per_1m_input_tokens | $0.260 | — | — | — | — |
+| `deepseek-ai/deepseek-v3.2` | — | per_1m_output_tokens | $0.380 | — | — | — | — |
+| `deepseek-ai/deepseek-v4-flash` | — | per_1m_input_cache_read_tokens | $0.028 | — | — | — | — |
+| `deepseek-ai/deepseek-v4-flash` | — | per_1m_input_tokens | $0.140 | — | — | — | — |
+| `deepseek-ai/deepseek-v4-flash` | — | per_1m_output_tokens | $0.280 | — | — | — | — |
+| `deepseek-ai/deepseek-v4-flash-0731` | — | per_1m_input_cache_read_tokens | $0.028 | — | — | — | — |
+| `deepseek-ai/deepseek-v4-flash-0731` | — | per_1m_input_tokens | $0.440 | — | — | — | — |
+| `deepseek-ai/deepseek-v4-flash-0731` | — | per_1m_output_tokens | $1.320 | — | — | — | — |
+| `deepseek-ai/deepseek-v4-pro` | — | per_1m_input_cache_read_tokens | $0.130 | — | — | — | — |
+| `deepseek-ai/deepseek-v4-pro` | — | per_1m_input_tokens | $1.680 | — | — | — | — |
+| `deepseek-ai/deepseek-v4-pro` | — | per_1m_output_tokens | $3.380 | — | — | — | — |
+| `deepseek-ai/deepseek-v4-pro-0813` | — | per_1m_input_cache_read_tokens | $0.132 | — | — | — | — |
+| `deepseek-ai/deepseek-v4-pro-0813` | — | per_1m_input_tokens | $1.320 | — | — | — | — |
+| `deepseek-ai/deepseek-v4-pro-0813` | — | per_1m_output_tokens | $3.960 | — | — | — | — |
+| `deepseek-ai/deepseek-v4.1-flash` | — | per_1m_input_cache_read_tokens | $0.030 | — | — | — | — |
+| `deepseek-ai/deepseek-v4.1-flash` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `deepseek-ai/deepseek-v4.1-flash` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `deepseek-ai/deepseek-v4.1-flash-1017` | — | per_1m_input_cache_read_tokens | $0.0060 | — | — | — | — |
+| `deepseek-ai/deepseek-v4.1-flash-1017` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `deepseek-ai/deepseek-v4.1-flash-1017` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `google/gemini-2.5-flash` | — | per_1m_input_cache_read_tokens | $0.030 | — | — | — | — |
+| `google/gemini-2.5-flash` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `google/gemini-2.5-flash` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `google/gemini-2.5-flash-image` | — | per_1m_input_cache_read_tokens | $0.300 | — | — | — | — |
+| `google/gemini-2.5-flash-image` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `google/gemini-2.5-flash-image` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `google/gemini-2.5-flash-lite` | — | per_1m_input_cache_read_tokens | $0.010 | — | — | — | — |
+| `google/gemini-2.5-flash-lite` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `google/gemini-2.5-flash-lite` | — | per_1m_output_tokens | $0.400 | — | — | — | — |
+| `google/gemini-2.5-pro` | — | per_1m_input_cache_read_tokens | $0.125 | — | — | — | — |
+| `google/gemini-2.5-pro` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `google/gemini-2.5-pro` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `google/gemini-3-flash-preview` | — | per_1m_input_cache_read_tokens | $0.050 | — | — | — | — |
+| `google/gemini-3-flash-preview` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `google/gemini-3-flash-preview` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `google/gemini-3-flash-preview-developer` | — | per_1m_input_cache_read_tokens | $0.050 | — | — | — | — |
+| `google/gemini-3-flash-preview-developer` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `google/gemini-3-flash-preview-developer` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `google/gemini-3-pro-image` | — | per_1m_input_cache_read_tokens | $2.000 | — | — | — | — |
+| `google/gemini-3-pro-image` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `google/gemini-3-pro-image` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `google/gemini-3.1-flash-image` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `google/gemini-3.1-flash-image` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `google/gemini-3.1-flash-image` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `google/gemini-3.1-flash-lite` | — | per_1m_input_cache_read_tokens | $0.025 | — | — | — | — |
+| `google/gemini-3.1-flash-lite` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `google/gemini-3.1-flash-lite` | — | per_1m_output_tokens | $1.500 | — | — | — | — |
+| `google/gemini-3.1-pro-preview` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `google/gemini-3.1-pro-preview` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `google/gemini-3.1-pro-preview` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `google/gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_cache_read_tokens | $0.150 | — | — | — | — |
+| `google/gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_tokens | $1.500 | — | — | — | — |
+| `google/gemini-3.5-flash` | `gemini-3-flash` | per_1m_output_tokens | $9.000 | — | — | — | — |
+| `google/gemini-3.8-flash` | — | per_1m_input_cache_read_tokens | $0.075 | — | — | — | — |
+| `google/gemini-3.8-flash` | — | per_1m_input_tokens | $0.750 | — | — | — | — |
+| `google/gemini-3.8-flash` | — | per_1m_output_tokens | $3.750 | — | — | — | — |
+| `google/gemini-3.8-flash-developer` | — | per_1m_input_cache_read_tokens | $0.075 | — | — | — | — |
+| `google/gemini-3.8-flash-developer` | — | per_1m_input_tokens | $0.750 | — | — | — | — |
+| `google/gemini-3.8-flash-developer` | — | per_1m_output_tokens | $3.750 | — | — | — | — |
+| `google/gemini-4-argon` | — | per_1m_input_cache_read_tokens | $0.080 | — | — | — | — |
+| `google/gemini-4-argon` | — | per_1m_input_tokens | $1.600 | — | — | — | — |
+| `google/gemini-4-argon` | — | per_1m_output_tokens | $8.000 | — | — | — | — |
+| `google/gemini-4-argon-developer` | — | per_1m_input_cache_read_tokens | $0.060 | — | — | — | — |
+| `google/gemini-4-argon-developer` | — | per_1m_input_tokens | $1.200 | — | — | — | — |
+| `google/gemini-4-argon-developer` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `kwaipilot/kat-coder-air-v2.5` | — | per_1m_input_cache_read_tokens | $0.030 | — | — | — | — |
+| `kwaipilot/kat-coder-air-v2.5` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `kwaipilot/kat-coder-air-v2.5` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `meituan-longcat/longcat-2.0` | — | per_1m_input_cache_read_tokens | $0.015 | — | — | — | — |
+| `meituan-longcat/longcat-2.0` | — | per_1m_input_tokens | $0.750 | — | — | — | — |
+| `meituan-longcat/longcat-2.0` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `minimaxai/minimax-m2.5` | — | per_1m_input_cache_read_tokens | $0.060 | — | — | — | — |
+| `minimaxai/minimax-m2.5` | — | per_1m_input_tokens | $0.295 | — | — | — | — |
+| `minimaxai/minimax-m2.5` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `minimaxai/minimax-m2.7` | — | per_1m_input_cache_read_tokens | $0.060 | — | — | — | — |
+| `minimaxai/minimax-m2.7` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `minimaxai/minimax-m2.7` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `minimaxai/minimax-m3` | — | per_1m_input_cache_read_tokens | $0.060 | — | — | — | — |
+| `minimaxai/minimax-m3` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `minimaxai/minimax-m3` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `moonshotai/kimi-k2.5` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `moonshotai/kimi-k2.5` | — | per_1m_input_tokens | $0.490 | — | — | — | — |
+| `moonshotai/kimi-k2.5` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `moonshotai/kimi-k2.6` | — | per_1m_input_cache_read_tokens | $0.160 | — | — | — | — |
+| `moonshotai/kimi-k2.6` | — | per_1m_input_tokens | $0.950 | — | — | — | — |
+| `moonshotai/kimi-k2.6` | — | per_1m_output_tokens | $4.000 | — | — | — | — |
+| `moonshotai/kimi-k2.7-code` | — | per_1m_input_cache_read_tokens | $0.160 | — | — | — | — |
+| `moonshotai/kimi-k2.7-code` | — | per_1m_input_tokens | $0.950 | — | — | — | — |
+| `moonshotai/kimi-k2.7-code` | — | per_1m_output_tokens | $4.000 | — | — | — | — |
+| `moonshotai/kimi-k3` | — | per_1m_input_cache_read_tokens | $0.300 | — | — | — | — |
+| `moonshotai/kimi-k3` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `moonshotai/kimi-k3` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `openai/gpt-5.5` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `openai/gpt-5.5` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-5.5` | — | per_1m_output_tokens | $30.00 | — | — | — | — |
+| `openai/gpt-5.6-luna` | — | per_1m_input_cache_read_tokens | $0.020 | — | — | — | — |
+| `openai/gpt-5.6-luna` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `openai/gpt-5.6-luna` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `openai/gpt-5.6-luna-az` | — | per_1m_input_cache_read_tokens | $0.020 | — | — | — | — |
+| `openai/gpt-5.6-luna-az` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `openai/gpt-5.6-luna-az` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `openai/gpt-5.6-sol` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `openai/gpt-5.6-sol` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-5.6-sol` | — | per_1m_output_tokens | $30.00 | — | — | — | — |
+| `openai/gpt-5.6-sol-az` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `openai/gpt-5.6-sol-az` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-5.6-sol-az` | — | per_1m_output_tokens | $30.00 | — | — | — | — |
+| `openai/gpt-5.6-sol-codex` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `openai/gpt-5.6-sol-codex` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-5.6-sol-codex` | — | per_1m_output_tokens | $30.00 | — | — | — | — |
+| `openai/gpt-5.6-terra` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `openai/gpt-5.6-terra` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-5.6-terra` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `openai/gpt-5.6-terra-az` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `openai/gpt-5.6-terra-az` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-5.6-terra-az` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `openai/gpt-6-astra` | — | per_1m_input_cache_read_tokens | $1.000 | — | — | — | — |
+| `openai/gpt-6-astra` | — | per_1m_input_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-6-astra` | — | per_1m_output_tokens | $50.00 | — | — | — | — |
+| `openai/gpt-6-astra-codex` | — | per_1m_input_cache_read_tokens | $1.000 | — | — | — | — |
+| `openai/gpt-6-astra-codex` | — | per_1m_input_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-6-astra-codex` | — | per_1m_output_tokens | $50.00 | — | — | — | — |
+| `openai/gpt-6-luna` | — | per_1m_input_cache_read_tokens | $0.010 | — | — | — | — |
+| `openai/gpt-6-luna` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `openai/gpt-6-luna` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `openai/gpt-6-luna-codex` | — | per_1m_input_cache_read_tokens | $0.010 | — | — | — | — |
+| `openai/gpt-6-luna-codex` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `openai/gpt-6-luna-codex` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `openai/gpt-6-sol` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `openai/gpt-6-sol` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-6-sol` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-6-sol-codex` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `openai/gpt-6-sol-codex` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-6-sol-codex` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-6.1-sol` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `openai/gpt-6.1-sol` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-6.1-sol` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-6.1-sol-codex` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `openai/gpt-6.1-sol-codex` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-6.1-sol-codex` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-image-2` | — | per_1m_input_cache_read_tokens | $1.250 | — | — | — | — |
+| `openai/gpt-image-2` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `qwen/qwen3.5-122b-a10b` | — | per_1m_input_cache_read_tokens | $0.300 | — | — | — | — |
+| `qwen/qwen3.5-122b-a10b` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `qwen/qwen3.5-122b-a10b` | — | per_1m_output_tokens | $2.400 | — | — | — | — |
+| `qwen/qwen3.5-27b` | — | per_1m_input_cache_read_tokens | $0.270 | — | — | — | — |
+| `qwen/qwen3.5-27b` | — | per_1m_input_tokens | $0.270 | — | — | — | — |
+| `qwen/qwen3.5-27b` | — | per_1m_output_tokens | $2.160 | — | — | — | — |
+| `qwen/qwen3.5-35b-a3b` | — | per_1m_input_cache_read_tokens | $0.225 | — | — | — | — |
+| `qwen/qwen3.5-35b-a3b` | — | per_1m_input_tokens | $0.225 | — | — | — | — |
+| `qwen/qwen3.5-35b-a3b` | — | per_1m_output_tokens | $1.800 | — | — | — | — |
+| `qwen/qwen3.5-397b-a17b` | — | per_1m_input_cache_read_tokens | $0.550 | — | — | — | — |
+| `qwen/qwen3.5-397b-a17b` | — | per_1m_input_tokens | $0.550 | — | — | — | — |
+| `qwen/qwen3.5-397b-a17b` | — | per_1m_output_tokens | $3.500 | — | — | — | — |
+| `qwen/qwen3.5-flash` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `qwen/qwen3.5-flash` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `qwen/qwen3.5-flash` | — | per_1m_output_tokens | $0.400 | — | — | — | — |
+| `qwen/qwen3.5-plus` | — | per_1m_input_cache_read_tokens | $0.040 | — | — | — | — |
+| `qwen/qwen3.5-plus` | — | per_1m_input_tokens | $0.400 | — | — | — | — |
+| `qwen/qwen3.5-plus` | — | per_1m_output_tokens | $2.400 | — | — | — | — |
+| `qwen/qwen3.6-35b-a3b` | — | per_1m_input_cache_read_tokens | $0.186 | — | — | — | — |
+| `qwen/qwen3.6-35b-a3b` | — | per_1m_input_tokens | $0.186 | — | — | — | — |
+| `qwen/qwen3.6-35b-a3b` | — | per_1m_output_tokens | $1.114 | — | — | — | — |
+| `qwen/qwen3.6-plus` | — | per_1m_input_cache_read_tokens | $0.033 | — | — | — | — |
+| `qwen/qwen3.6-plus` | — | per_1m_input_tokens | $0.325 | — | — | — | — |
+| `qwen/qwen3.6-plus` | — | per_1m_output_tokens | $1.950 | — | — | — | — |
+| `qwen/qwen3.7-max` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `qwen/qwen3.7-max` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `qwen/qwen3.7-max` | — | per_1m_output_tokens | $7.500 | — | — | — | — |
+| `qwen/qwen3.7-plus` | — | per_1m_input_cache_read_tokens | $0.080 | — | — | — | — |
+| `qwen/qwen3.7-plus` | — | per_1m_input_tokens | $0.400 | — | — | — | — |
+| `qwen/qwen3.7-plus` | — | per_1m_output_tokens | $1.600 | — | — | — | — |
+| `qwen/qwen3.8-27b` | — | per_1m_input_cache_read_tokens | $0.050 | — | — | — | — |
+| `qwen/qwen3.8-27b` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `qwen/qwen3.8-27b` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `qwen/qwen3.8-max` | — | per_1m_input_cache_read_tokens | $0.250 | — | — | — | — |
+| `qwen/qwen3.8-max` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `qwen/qwen3.8-max` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `tencent/hy3` | — | per_1m_input_cache_read_tokens | $0.050 | — | — | — | — |
+| `tencent/hy3` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `tencent/hy3` | — | per_1m_output_tokens | $0.800 | — | — | — | — |
+| `xai/grok-4.3` | `grok-4.3` | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `xai/grok-4.3` | `grok-4.3` | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `xai/grok-4.3` | `grok-4.3` | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `xai/grok-4.5` | — | per_1m_input_cache_read_tokens | $0.300 | — | — | — | — |
+| `xai/grok-4.5` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `xai/grok-4.5` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `xai/grok-4.6` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `xai/grok-4.6` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `xai/grok-4.6` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `xai/grok-4.7` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `xai/grok-4.7` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `xai/grok-4.7` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `xai/grok-build-0.1` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `xai/grok-build-0.1` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `xai/grok-build-0.1` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `xiaomi/mimo-v2.5` | — | per_1m_input_cache_read_tokens | $0.0028 | — | — | — | — |
+| `xiaomi/mimo-v2.5` | — | per_1m_input_tokens | $0.140 | — | — | — | — |
+| `xiaomi/mimo-v2.5` | — | per_1m_output_tokens | $0.280 | — | — | — | — |
+| `xiaomi/mimo-v2.5-pro` | — | per_1m_input_cache_read_tokens | $0.0036 | — | — | — | — |
+| `xiaomi/mimo-v2.5-pro` | — | per_1m_input_tokens | $0.435 | — | — | — | — |
+| `xiaomi/mimo-v2.5-pro` | — | per_1m_output_tokens | $0.870 | — | — | — | — |
+| `zai-org/glm-5` | — | per_1m_input_cache_read_tokens | $0.190 | — | — | — | — |
+| `zai-org/glm-5` | — | per_1m_input_tokens | $0.950 | — | — | — | — |
+| `zai-org/glm-5` | — | per_1m_output_tokens | $3.150 | — | — | — | — |
+| `zai-org/glm-5.1` | — | per_1m_input_cache_read_tokens | $0.234 | — | — | — | — |
+| `zai-org/glm-5.1` | — | per_1m_input_tokens | $1.260 | — | — | — | — |
+| `zai-org/glm-5.1` | — | per_1m_output_tokens | $3.960 | — | — | — | — |
+| `zai-org/glm-5.2` | — | per_1m_input_cache_read_tokens | $0.260 | — | — | — | — |
+| `zai-org/glm-5.2` | — | per_1m_input_tokens | $1.400 | — | — | — | — |
+| `zai-org/glm-5.2` | — | per_1m_output_tokens | $4.400 | — | — | — | — |
+| `zai-org/glm-5.3` | — | per_1m_input_cache_read_tokens | $0.260 | — | — | — | — |
+| `zai-org/glm-5.3` | — | per_1m_input_tokens | $1.400 | — | — | — | — |
+| `zai-org/glm-5.3` | — | per_1m_output_tokens | $4.400 | — | — | — | — |
+| `zai-org/glm-5.3-flash` | — | per_1m_input_cache_read_tokens | $0.030 | — | — | — | — |
+| `zai-org/glm-5.3-flash` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `zai-org/glm-5.3-flash` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `zai-org/glm-5v-turbo` | — | per_1m_input_cache_read_tokens | $0.240 | — | — | — | — |
+| `zai-org/glm-5v-turbo` | — | per_1m_input_tokens | $1.200 | — | — | — | — |
+| `zai-org/glm-5v-turbo` | — | per_1m_output_tokens | $4.000 | — | — | — | — |
+
+## BetterToken — `bettertoken`
+
+Source: <https://bettertoken.ai/pricing> · Records: 32
+
+| Model | Canonical | Unit | Price (USD) | List (USD) | Group | Ratio | Effective (USD) |
+|---|---|---|---|---|---|---|---|
+| `MiniMax-M3.1-Flash` | — | per_1m_input_tokens | $0.087 | $0.150 | MiniMax | 0.58 | $0.087 |
+| `MiniMax-M3.1-Flash` | — | per_1m_output_tokens | $0.348 | $0.600 | MiniMax | 0.58 | $0.348 |
+| `claude-fable-5` | — | per_1m_input_tokens | $6.800 | $10.00 | Claude | 0.68 | $6.800 |
+| `claude-fable-5` | — | per_1m_output_tokens | $34.00 | $50.00 | Claude | 0.68 | $34.00 |
+| `claude-fable-5-1` | — | per_1m_input_tokens | $6.800 | $10.00 | Claude | 0.68 | $6.800 |
+| `claude-fable-5-1` | — | per_1m_output_tokens | $34.00 | $50.00 | Claude | 0.68 | $34.00 |
+| `claude-haiku-4-5-20251001` | — | per_1m_input_tokens | $0.680 | $1.000 | Claude | 0.68 | $0.680 |
+| `claude-haiku-4-5-20251001` | — | per_1m_output_tokens | $3.400 | $5.000 | Claude | 0.68 | $3.400 |
+| `claude-sonnet-5` | — | per_1m_input_tokens | $1.360 | $2.000 | Claude | 0.68 | $1.360 |
+| `claude-sonnet-5` | — | per_1m_output_tokens | $6.800 | $10.00 | Claude | 0.68 | $6.800 |
+| `claude-sonnet-5-5` | — | per_1m_input_tokens | $1.360 | $2.000 | Claude | 0.68 | $1.360 |
+| `claude-sonnet-5-5` | — | per_1m_output_tokens | $6.800 | $10.00 | Claude | 0.68 | $6.800 |
+| `deepseek-flash` | — | per_1m_input_tokens | $0.234 | $0.300 | DeepSeek | 0.78 | $0.234 |
+| `deepseek-flash` | — | per_1m_output_tokens | $0.936 | $1.200 | DeepSeek | 0.78 | $0.936 |
+| `deepseek-pro` | — | per_1m_input_tokens | $1.030 | $1.320 | DeepSeek | 0.78 | $1.030 |
+| `deepseek-pro` | — | per_1m_output_tokens | $3.089 | $3.960 | DeepSeek | 0.78 | $3.089 |
+| `deepseek-v4-pro-0813` | — | per_1m_input_tokens | $1.030 | $1.320 | DeepSeek | 0.78 | $1.030 |
+| `deepseek-v4-pro-0813` | — | per_1m_output_tokens | $3.089 | $3.960 | DeepSeek | 0.78 | $3.089 |
+| `deepseek-v4.1-flash-1017` | — | per_1m_input_tokens | $0.234 | $0.300 | DeepSeek | 0.78 | $0.234 |
+| `deepseek-v4.1-flash-1017` | — | per_1m_output_tokens | $0.936 | $1.200 | DeepSeek | 0.78 | $0.936 |
+| `gemini-3.8-flash` | — | per_1m_input_tokens | $0.510 | $0.750 | Gemini | 0.68 | $0.510 |
+| `gemini-3.8-flash` | — | per_1m_output_tokens | $2.550 | $3.750 | Gemini | 0.68 | $2.550 |
+| `gemini-4-argon` | — | per_1m_input_tokens | $1.360 | $2.000 | Gemini | 0.68 | $1.360 |
+| `gemini-4-argon` | — | per_1m_output_tokens | $6.800 | $10.00 | Gemini | 0.68 | $6.800 |
+| `glm-5.2` | — | per_1m_input_tokens | $1.050 | $1.400 | GLM | 0.75 | $1.050 |
+| `glm-5.2` | — | per_1m_output_tokens | $3.300 | $4.400 | GLM | 0.75 | $3.300 |
+| `glm-5.3` | — | per_1m_input_tokens | $1.050 | $1.400 | GLM | 0.75 | $1.050 |
+| `glm-5.3` | — | per_1m_output_tokens | $3.300 | $4.400 | GLM | 0.75 | $3.300 |
+| `glm-5.3-flash` | — | per_1m_input_tokens | $0.113 | $0.150 | GLM | 0.75 | $0.113 |
+| `glm-5.3-flash` | — | per_1m_output_tokens | $0.375 | $0.500 | GLM | 0.75 | $0.375 |
+| `qwen3.8-max` | — | per_1m_input_tokens | $1.440 | $2.000 | Qwen | 0.72 | $1.440 |
+| `qwen3.8-max` | — | per_1m_output_tokens | $4.320 | $6.000 | Qwen | 0.72 | $4.320 |
 
 ## 柏拉图 AI (bltcy) — `bltcy`
 
-Source: <https://api.bltcy.ai> · Records: 1469
+Source: <https://api.bltcy.ai> · Records: 1156
 
-| Model | Canonical | Unit | Price (USD) |
-|---|---|---|---|
-| `BAAI/bge-large-en-v1.5` | — | per_1m_input_tokens | $0.200 |
-| `BAAI/bge-large-en-v1.5` | — | per_1m_output_tokens | $0.200 |
-| `BAAI/bge-large-zh-v1.5` | — | per_1m_input_tokens | $0.200 |
-| `BAAI/bge-large-zh-v1.5` | — | per_1m_output_tokens | $0.200 |
-| `BAAI/bge-m3` | — | per_1m_input_tokens | $0.200 |
-| `BAAI/bge-m3` | — | per_1m_output_tokens | $0.200 |
-| `BAAI/bge-reranker-v2-m3` | — | per_1m_input_tokens | $0.200 |
-| `BAAI/bge-reranker-v2-m3` | — | per_1m_output_tokens | $0.200 |
-| `I2V-01` | — | per_second | $2.000 |
-| `I2V-01-Director` | — | per_second | $2.000 |
-| `I2V-01-live` | — | per_second | $2.000 |
-| `MiniMax-H3` | — | per_request | $1.000 |
-| `MiniMax-Hailuo-02` | — | per_request | $2.000 |
-| `MiniMax-Hailuo-2.3` | — | per_request | $2.000 |
-| `MiniMax-Hailuo-2.3-Fast` | — | per_request | $1.350 |
-| `MiniMax-M1` | — | per_1m_input_tokens | $13.00 |
-| `MiniMax-M1` | — | per_1m_output_tokens | $22.10 |
-| `MiniMax-M2` | — | per_1m_input_tokens | $2.100 |
-| `MiniMax-M2` | — | per_1m_output_tokens | $8.400 |
-| `MiniMax-M2.1` | — | per_1m_input_tokens | $2.100 |
-| `MiniMax-M2.1` | — | per_1m_output_tokens | $8.400 |
-| `MiniMax-M2.1-highspeed` | — | per_1m_input_tokens | $4.200 |
-| `MiniMax-M2.1-highspeed` | — | per_1m_output_tokens | $16.80 |
-| `MiniMax-M2.5` | — | per_1m_input_tokens | $2.100 |
-| `MiniMax-M2.5` | — | per_1m_output_tokens | $8.400 |
-| `MiniMax-M2.5-highspeed` | — | per_1m_input_tokens | $4.200 |
-| `MiniMax-M2.5-highspeed` | — | per_1m_output_tokens | $16.80 |
-| `MiniMax-M2.5-lightning` | — | per_1m_input_tokens | $2.100 |
-| `MiniMax-M2.5-lightning` | — | per_1m_output_tokens | $8.400 |
-| `MiniMax-M2.7` | — | per_1m_input_tokens | $2.100 |
-| `MiniMax-M2.7` | — | per_1m_output_tokens | $8.400 |
-| `MiniMax-M2.7-highspeed` | — | per_1m_input_tokens | $4.200 |
-| `MiniMax-M2.7-highspeed` | — | per_1m_output_tokens | $16.80 |
-| `Qwen/Qwen2.5-7B-Instruct` | — | per_1m_input_tokens | $75.00 |
-| `Qwen/Qwen2.5-7B-Instruct` | — | per_1m_output_tokens | $75.00 |
-| `S2V-01` | — | per_request | $1.600 |
-| `T2V-01` | — | per_second | $1.600 |
-| `T2V-01-Director` | — | per_second | $1.600 |
-| `advanced-voice` | — | per_request | $1.200 |
-| `agnes-2.0-flash` | — | per_1m_input_tokens | $75.00 |
-| `agnes-2.0-flash` | — | per_1m_output_tokens | $75.00 |
-| `animate-anyone-detect-gen2` | — | per_request | $0.0040 |
-| `animate-anyone-gen2` | — | per_request | $0.080 |
-| `animate-anyone-template-gen2` | — | per_request | $0.080 |
-| `avatar-feed` | — | per_1m_input_tokens | $75.00 |
-| `avatar-feed` | — | per_1m_output_tokens | $75.00 |
-| `avatar-generate` | — | per_request | $0.300 |
-| `avatar-voice` | — | per_request | $0.0010 |
-| `bge-m3` | — | per_1m_input_tokens | $0.400 |
-| `bge-m3` | — | per_1m_output_tokens | $0.400 |
-| `bind-image_sync-feed` | — | per_1m_input_tokens | $75.00 |
-| `bind-image_sync-feed` | — | per_1m_output_tokens | $75.00 |
-| `chat_fast_imagine` | — | per_request | $0.200 |
-| `chat_fast_video` | — | per_second | $1.500 |
-| `chat_relax_imagine` | — | per_request | $0.080 |
-| `chatgpt-4o-latest` | — | per_1m_input_tokens | $5.000 |
-| `chatgpt-4o-latest` | — | per_1m_output_tokens | $15.00 |
-| `claude-3-5-sonnet-20240620` | — | per_1m_input_tokens | $3.000 |
-| `claude-3-5-sonnet-20240620` | — | per_1m_output_tokens | $15.00 |
-| `claude-3-5-sonnet-20241022` | — | per_1m_input_tokens | $3.000 |
-| `claude-3-5-sonnet-20241022` | — | per_1m_output_tokens | $15.00 |
-| `claude-3-5-sonnet-all` | — | per_request | $0.080 |
-| `claude-3-7-sonnet-20250219` | — | per_1m_input_tokens | $3.000 |
-| `claude-3-7-sonnet-20250219` | — | per_1m_output_tokens | $15.00 |
-| `claude-3-7-sonnet-20250219-thinking` | — | per_1m_input_tokens | $3.000 |
-| `claude-3-7-sonnet-20250219-thinking` | — | per_1m_output_tokens | $15.00 |
-| `claude-fable-5` | — | per_1m_input_tokens | $10.00 |
-| `claude-fable-5` | — | per_1m_output_tokens | $50.00 |
-| `claude-fable-5-1` | — | per_1m_input_tokens | $10.00 |
-| `claude-fable-5-1` | — | per_1m_output_tokens | $50.00 |
-| `claude-fable-5-1-thinking` | — | per_1m_input_tokens | $10.00 |
-| `claude-fable-5-1-thinking` | — | per_1m_output_tokens | $50.00 |
-| `claude-fable-5-thinking` | — | per_1m_input_tokens | $10.00 |
-| `claude-fable-5-thinking` | — | per_1m_output_tokens | $50.00 |
-| `claude-haiku-4-5` | — | per_1m_input_tokens | $75.00 |
-| `claude-haiku-4-5` | — | per_1m_output_tokens | $375.00 |
-| `claude-haiku-4-5-20251001` | — | per_1m_input_tokens | $1.000 |
-| `claude-haiku-4-5-20251001` | — | per_1m_output_tokens | $5.000 |
-| `claude-haiku-4-5-20251001-thinking` | — | per_1m_input_tokens | $1.000 |
-| `claude-haiku-4-5-20251001-thinking` | — | per_1m_output_tokens | $5.000 |
-| `claude-opus-4-1-20250805` | — | per_1m_input_tokens | $15.00 |
-| `claude-opus-4-1-20250805` | — | per_1m_output_tokens | $75.00 |
-| `claude-opus-4-1-20250805-thinking` | — | per_1m_input_tokens | $15.00 |
-| `claude-opus-4-1-20250805-thinking` | — | per_1m_output_tokens | $75.00 |
-| `claude-opus-4-20250514` | — | per_1m_input_tokens | $15.00 |
-| `claude-opus-4-20250514` | — | per_1m_output_tokens | $75.00 |
-| `claude-opus-4-20250514-thinking` | — | per_1m_input_tokens | $15.00 |
-| `claude-opus-4-20250514-thinking` | — | per_1m_output_tokens | $75.00 |
-| `claude-opus-4-5-20251101` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-5-20251101` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4-5-20251101-thinking` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-5-20251101-thinking` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4-6` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-6` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4-6-thinking` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-6-thinking` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4-7` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-7` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4-7-thinking` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-7-thinking` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4-8` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-8` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4-8-thinking` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-8-thinking` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-5` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-5` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-5-5` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-5-5` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-5-5-thinking` | — | per_1m_input_tokens | $4.000 |
-| `claude-opus-5-5-thinking` | — | per_1m_output_tokens | $20.00 |
-| `claude-opus-5-thinking` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-5-thinking` | — | per_1m_output_tokens | $25.00 |
-| `claude-sonnet-4-20250514` | — | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4-20250514` | — | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-4-20250514-thinking` | — | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4-20250514-thinking` | — | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-4-5` | — | per_1m_input_tokens | $75.00 |
-| `claude-sonnet-4-5` | — | per_1m_output_tokens | $375.00 |
-| `claude-sonnet-4-5-20250929` | — | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4-5-20250929` | — | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-4-5-20250929-thinking` | — | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4-5-20250929-thinking` | — | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-4-6` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4-6` | `claude-sonnet-4.6` | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-4-6-thinking` | — | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4-6-thinking` | — | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-5` | — | per_1m_input_tokens | $2.000 |
-| `claude-sonnet-5` | — | per_1m_output_tokens | $10.00 |
-| `claude-sonnet-5-5` | — | per_1m_input_tokens | $2.000 |
-| `claude-sonnet-5-5` | — | per_1m_output_tokens | $10.00 |
-| `claude-sonnet-5-5-thinking` | — | per_1m_input_tokens | $2.000 |
-| `claude-sonnet-5-5-thinking` | — | per_1m_output_tokens | $10.00 |
-| `claude-sonnet-5-thinking` | — | per_1m_input_tokens | $2.000 |
-| `claude-sonnet-5-thinking` | — | per_1m_output_tokens | $10.00 |
-| `code-llama-13b` | — | per_request | $0.0060 |
-| `code-llama-34b` | — | per_request | $0.0060 |
-| `code-llama-7b` | — | per_request | $0.0060 |
-| `codeqwen1.5-7b-chat` | — | per_1m_input_tokens | $75.00 |
-| `codeqwen1.5-7b-chat` | — | per_1m_output_tokens | $75.00 |
-| `codex-auto-review` | — | per_1m_input_tokens | $2.500 |
-| `codex-auto-review` | — | per_1m_output_tokens | $15.00 |
-| `cogvideox` | — | per_1m_input_tokens | $75.00 |
-| `cogvideox` | — | per_1m_output_tokens | $75.00 |
-| `dall-e-3` | — | per_request | $0.040 |
-| `deepseek-chat` | `deepseek-v3` | per_1m_input_tokens | $2.000 |
-| `deepseek-chat` | `deepseek-v3` | per_1m_output_tokens | $2.000 |
-| `deepseek-r1` | `deepseek-r1` | per_1m_input_tokens | $4.000 |
-| `deepseek-r1` | `deepseek-r1` | per_1m_output_tokens | $16.00 |
-| `deepseek-reasoner` | `deepseek-r1` | per_1m_input_tokens | $4.000 |
-| `deepseek-reasoner` | `deepseek-r1` | per_1m_output_tokens | $16.00 |
-| `deepseek-v3` | `deepseek-v3` | per_1m_input_tokens | $2.000 |
-| `deepseek-v3` | `deepseek-v3` | per_1m_output_tokens | $2.000 |
-| `deepseek-v3.1` | — | per_1m_input_tokens | $4.000 |
-| `deepseek-v3.1` | — | per_1m_output_tokens | $12.00 |
-| `deepseek-v3.2` | — | per_1m_input_tokens | $2.000 |
-| `deepseek-v3.2` | — | per_1m_output_tokens | $3.000 |
-| `deepseek-v4-flash` | — | per_1m_input_tokens | $1.000 |
-| `deepseek-v4-flash` | — | per_1m_output_tokens | $2.000 |
-| `deepseek-v4-flash-vision-exp` | — | per_1m_input_tokens | $3.000 |
-| `deepseek-v4-flash-vision-exp` | — | per_1m_output_tokens | $9.000 |
-| `deepseek-v4-pro` | — | per_1m_input_tokens | $12.00 |
-| `deepseek-v4-pro` | — | per_1m_output_tokens | $24.00 |
-| `deepseek-v4.1-flash` | — | per_1m_input_tokens | $2.000 |
-| `deepseek-v4.1-flash` | — | per_1m_output_tokens | $8.000 |
-| `deepseek-v4.1-flash-0910` | — | per_1m_input_tokens | $2.000 |
-| `deepseek-v4.1-flash-0910` | — | per_1m_output_tokens | $8.000 |
-| `direct-generate-pptx` | — | per_request | $0.400 |
-| `docmee` | — | per_1m_input_tokens | $75.00 |
-| `docmee` | — | per_1m_output_tokens | $75.00 |
-| `docmee-ppt-generate` | — | per_request | $0.400 |
-| `docmee-ppt-proxy` | — | per_request | $0.010 |
-| `doubao-seed-1-6-nothinking-250615` | — | per_1m_input_tokens | $0.800 |
-| `doubao-seed-1-6-nothinking-250615` | — | per_1m_output_tokens | $8.000 |
-| `doubao-seed-1-6-nothinking-250715` | — | per_1m_input_tokens | $0.800 |
-| `doubao-seed-1-6-nothinking-250715` | — | per_1m_output_tokens | $8.000 |
-| `doubao-seed-1-8-251228` | — | per_1m_input_tokens | $0.800 |
-| `doubao-seed-1-8-251228` | — | per_1m_output_tokens | $8.000 |
-| `doubao-seed-2-0-code-preview-260215` | — | per_1m_input_tokens | $3.200 |
-| `doubao-seed-2-0-code-preview-260215` | — | per_1m_output_tokens | $16.00 |
-| `doubao-seed-2-0-lite-260215` | — | per_1m_input_tokens | $0.600 |
-| `doubao-seed-2-0-lite-260215` | — | per_1m_output_tokens | $3.600 |
-| `doubao-seed-2-0-mini-260215` | — | per_1m_input_tokens | $0.200 |
-| `doubao-seed-2-0-mini-260215` | — | per_1m_output_tokens | $2.000 |
-| `doubao-seed-2-0-pro-260215` | — | per_1m_input_tokens | $3.200 |
-| `doubao-seed-2-0-pro-260215` | — | per_1m_output_tokens | $16.00 |
-| `doubao-seedance-1-0-lite-i2v-250428` | — | per_second | $5.000 |
-| `doubao-seedance-1-0-lite-t2v-250428` | — | per_second | $5.000 |
-| `doubao-seedance-1-0-pro-250528` | — | per_second | $7.500 |
-| `doubao-seedance-1-0-pro-fast-251015` | — | per_second | $2.100 |
-| `doubao-seedance-1-5-pro-251215` | — | per_second | $8.000 |
-| `doubao-seedance-2-0-260128` | — | per_second | $1.100 |
-| `doubao-seedance-2-0-fast-260128` | — | per_second | $1.100 |
-| `doubao-seedance-2.0-mini` | — | per_second | $1.100 |
-| `doubao-seedance-2.5` | — | per_second | $1.000 |
-| `doubao-seededit-3-0-i2i-250628` | — | per_request | $0.150 |
-| `doubao-seedream-3-0-t2i-250415` | — | per_request | $0.100 |
-| `doubao-seedream-4-0-250828` | — | per_request | $0.140 |
-| `doubao-seedream-4-5-251128` | — | per_request | $0.150 |
-| `doubao-seedream-5-0-260128` | — | per_request | $0.150 |
-| `emo-detect-v1` | — | per_request | $0.0040 |
-| `emo-v1` | — | per_request | $0.160 |
-| `emoji-detect-v1` | — | per_request | $0.0040 |
-| `emoji-v1` | — | per_request | $0.080 |
-| `flux` | — | per_request | $0.010 |
-| `flux-2-dev` | — | per_1m_input_tokens | $0.072 |
-| `flux-2-dev` | — | per_1m_output_tokens | $0.072 |
-| `flux-2-flex` | — | per_1m_input_tokens | $0.360 |
-| `flux-2-flex` | — | per_1m_output_tokens | $0.360 |
-| `flux-2-max` | — | per_1m_input_tokens | $0.220 |
-| `flux-2-max` | — | per_1m_output_tokens | $0.220 |
-| `flux-dev` | — | per_request | $0.030 |
-| `flux-pro` | — | per_request | $0.050 |
-| `flux-pro-1.1-ultra` | — | per_request | $0.250 |
-| `flux-pro-max` | — | per_request | $0.100 |
-| `flux-schnell` | — | per_request | $0.010 |
-| `flux.1.1-pro` | — | per_request | $0.100 |
-| `gemini-2.0-flash-exp-image` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.0-flash-exp-image` | — | per_1m_output_tokens | $300.00 |
-| `gemini-2.0-flash-exp-image-generation` | — | per_image | $0.030 |
-| `gemini-2.5-flash` | — | per_1m_input_tokens | $0.300 |
-| `gemini-2.5-flash` | — | per_1m_output_tokens | $2.500 |
-| `gemini-2.5-flash-lite` | — | per_1m_input_tokens | $0.100 |
-| `gemini-2.5-flash-lite` | — | per_1m_output_tokens | $0.400 |
-| `gemini-2.5-flash-nothinking` | — | per_1m_input_tokens | $0.300 |
-| `gemini-2.5-flash-nothinking` | — | per_1m_output_tokens | $2.500 |
-| `gemini-2.5-pro` | — | per_1m_input_tokens | $1.250 |
-| `gemini-2.5-pro` | — | per_1m_output_tokens | $10.00 |
-| `gemini-3-flash` | `gemini-3-flash` | per_1m_input_tokens | $75.00 |
-| `gemini-3-flash` | `gemini-3-flash` | per_1m_output_tokens | $300.00 |
-| `gemini-3-flash-preview` | — | per_1m_input_tokens | $0.500 |
-| `gemini-3-flash-preview` | — | per_1m_output_tokens | $3.000 |
-| `gemini-3-pro-image` | — | per_image | $0.200 |
-| `gemini-3-pro-image-2k` | — | per_image | $0.200 |
-| `gemini-3-pro-image-4k` | — | per_image | $0.275 |
-| `gemini-3-pro-image-preview` | — | per_image | $0.200 |
-| `gemini-3-pro-image-preview-2k` | — | per_image | $0.200 |
-| `gemini-3-pro-image-preview-4k` | — | per_image | $0.275 |
-| `gemini-3-pro-preview` | — | per_1m_input_tokens | $2.000 |
-| `gemini-3-pro-preview` | — | per_1m_output_tokens | $12.00 |
-| `gemini-3.1-flash-image` | — | per_image | $0.100 |
-| `gemini-3.1-flash-image-2k` | — | per_image | $0.100 |
-| `gemini-3.1-flash-image-4k` | — | per_image | $0.137 |
-| `gemini-3.1-flash-image-preview` | — | per_image | $0.100 |
-| `gemini-3.1-flash-image-preview-2k` | — | per_image | $0.100 |
-| `gemini-3.1-flash-image-preview-4k` | — | per_image | $0.137 |
-| `gemini-3.1-flash-lite` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.1-flash-lite` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.1-flash-lite-preview` | — | per_1m_input_tokens | $0.250 |
-| `gemini-3.1-flash-lite-preview` | — | per_1m_output_tokens | $0.750 |
-| `gemini-3.1-pro-preview` | — | per_1m_input_tokens | $2.000 |
-| `gemini-3.1-pro-preview` | — | per_1m_output_tokens | $12.00 |
-| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_tokens | $1.500 |
-| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_output_tokens | $9.000 |
-| `gemini-3.5-flash-lite` | — | per_1m_input_tokens | $0.300 |
-| `gemini-3.5-flash-lite` | — | per_1m_output_tokens | $2.500 |
-| `gemini-3.6-flash` | — | per_1m_input_tokens | $1.500 |
-| `gemini-3.6-flash` | — | per_1m_output_tokens | $7.500 |
-| `gemini-3.7-flash` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.7-flash` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.8-flash` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.8-flash` | — | per_1m_output_tokens | $3.750 |
-| `gemini-4-argon` | — | per_1m_input_tokens | $2.000 |
-| `gemini-4-argon` | — | per_1m_output_tokens | $10.00 |
-| `gemini-nano-banana-2.1` | — | per_request | $0.100 |
-| `gemini-nano-banana-2.1-2k` | — | per_request | $0.100 |
-| `gemini-nano-banana-2.1-4k` | — | per_request | $0.100 |
-| `glm-3-turbo` | — | per_request | $0.0020 |
-| `glm-4` | — | per_1m_input_tokens | $75.00 |
-| `glm-4` | — | per_1m_output_tokens | $75.00 |
-| `glm-4-plus` | — | per_1m_input_tokens | $75.00 |
-| `glm-4-plus` | — | per_1m_output_tokens | $75.00 |
-| `glm-4.1v-9b-thinking` | — | per_1m_input_tokens | $75.00 |
-| `glm-4.1v-9b-thinking` | — | per_1m_output_tokens | $75.00 |
-| `glm-4.1v-thinking-flash` | — | per_1m_input_tokens | $75.00 |
-| `glm-4.1v-thinking-flash` | — | per_1m_output_tokens | $75.00 |
-| `glm-4.1v-thinking-flashx` | — | per_1m_input_tokens | $75.00 |
-| `glm-4.1v-thinking-flashx` | — | per_1m_output_tokens | $75.00 |
-| `glm-4.5` | — | per_1m_input_tokens | $3.000 |
-| `glm-4.5` | — | per_1m_output_tokens | $14.00 |
-| `glm-4.5-air` | — | per_1m_input_tokens | $0.800 |
-| `glm-4.5-air` | — | per_1m_output_tokens | $1.200 |
-| `glm-4.5-airx` | — | per_1m_input_tokens | $2.000 |
-| `glm-4.5-airx` | — | per_1m_output_tokens | $6.000 |
-| `glm-4.5-flash` | — | per_1m_input_tokens | $0.200 |
-| `glm-4.5-flash` | — | per_1m_output_tokens | $0.600 |
-| `glm-4.5-x` | — | per_1m_input_tokens | $4.000 |
-| `glm-4.5-x` | — | per_1m_output_tokens | $16.00 |
-| `glm-4.6` | — | per_1m_input_tokens | $3.000 |
-| `glm-4.6` | — | per_1m_output_tokens | $14.00 |
-| `glm-4.7` | — | per_1m_input_tokens | $3.000 |
-| `glm-4.7` | — | per_1m_output_tokens | $14.00 |
-| `glm-4v` | — | per_1m_input_tokens | $60.00 |
-| `glm-4v` | — | per_1m_output_tokens | $60.00 |
-| `glm-5` | — | per_1m_input_tokens | $6.000 |
-| `glm-5` | — | per_1m_output_tokens | $22.02 |
-| `glm-5-turbo` | — | per_1m_input_tokens | $7.000 |
-| `glm-5-turbo` | — | per_1m_output_tokens | $26.00 |
-| `glm-5.1` | — | per_1m_input_tokens | $6.000 |
-| `glm-5.1` | — | per_1m_output_tokens | $22.00 |
-| `glm-5.2` | — | per_1m_input_tokens | $8.000 |
-| `glm-5.2` | — | per_1m_output_tokens | $28.00 |
-| `glm-5.3` | — | per_1m_input_tokens | $8.000 |
-| `glm-5.3` | — | per_1m_output_tokens | $28.00 |
-| `glm-5.3-flash` | — | per_1m_input_tokens | $0.400 |
-| `glm-5.3-flash` | — | per_1m_output_tokens | $1.400 |
-| `glm-z1-air` | — | per_1m_input_tokens | $75.00 |
-| `glm-z1-air` | — | per_1m_output_tokens | $75.00 |
-| `glm-z1-airx` | — | per_1m_input_tokens | $75.00 |
-| `glm-z1-airx` | — | per_1m_output_tokens | $75.00 |
-| `glm-z1-flash` | — | per_1m_input_tokens | $75.00 |
-| `glm-z1-flash` | — | per_1m_output_tokens | $75.00 |
-| `google-palm` | — | per_request | $0.0060 |
-| `gpt-3.5-net` | — | per_1m_input_tokens | $75.00 |
-| `gpt-3.5-net` | — | per_1m_output_tokens | $150.00 |
-| `gpt-3.5-turbo` | — | per_1m_input_tokens | $0.500 |
-| `gpt-3.5-turbo` | — | per_1m_output_tokens | $1.000 |
-| `gpt-3.5-turbo-0125` | — | per_1m_input_tokens | $0.500 |
-| `gpt-3.5-turbo-0125` | — | per_1m_output_tokens | $1.000 |
-| `gpt-3.5-turbo-0301` | — | per_1m_input_tokens | $1.500 |
-| `gpt-3.5-turbo-0301` | — | per_1m_output_tokens | $3.000 |
-| `gpt-3.5-turbo-0613` | — | per_1m_input_tokens | $1.500 |
-| `gpt-3.5-turbo-0613` | — | per_1m_output_tokens | $3.000 |
-| `gpt-3.5-turbo-1106` | — | per_1m_input_tokens | $1.000 |
-| `gpt-3.5-turbo-1106` | — | per_1m_output_tokens | $2.000 |
-| `gpt-3.5-turbo-16k` | — | per_1m_input_tokens | $3.000 |
-| `gpt-3.5-turbo-16k` | — | per_1m_output_tokens | $6.000 |
-| `gpt-3.5-turbo-16k-0613` | — | per_1m_input_tokens | $3.000 |
-| `gpt-3.5-turbo-16k-0613` | — | per_1m_output_tokens | $6.000 |
-| `gpt-4` | — | per_1m_input_tokens | $30.00 |
-| `gpt-4` | — | per_1m_output_tokens | $60.00 |
-| `gpt-4-0125-preview` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-0125-preview` | — | per_1m_output_tokens | $20.00 |
-| `gpt-4-0314` | — | per_1m_input_tokens | $30.00 |
-| `gpt-4-0314` | — | per_1m_output_tokens | $60.00 |
-| `gpt-4-0613` | — | per_1m_input_tokens | $30.00 |
-| `gpt-4-0613` | — | per_1m_output_tokens | $60.00 |
-| `gpt-4-1106-preview` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-1106-preview` | — | per_1m_output_tokens | $20.00 |
-| `gpt-4-1106-vision-preview` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-1106-vision-preview` | — | per_1m_output_tokens | $20.00 |
-| `gpt-4-32k` | — | per_1m_input_tokens | $60.00 |
-| `gpt-4-32k` | — | per_1m_output_tokens | $120.00 |
-| `gpt-4-32k-0314` | — | per_1m_input_tokens | $60.00 |
-| `gpt-4-32k-0314` | — | per_1m_output_tokens | $120.00 |
-| `gpt-4-32k-0613` | — | per_1m_input_tokens | $60.00 |
-| `gpt-4-32k-0613` | — | per_1m_output_tokens | $120.00 |
-| `gpt-4-all` | — | per_request | $0.100 |
-| `gpt-4-dalle` | — | per_request | $0.100 |
-| `gpt-4-gizmo` | — | per_request | $0.100 |
-| `gpt-4-net` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4-net` | — | per_1m_output_tokens | $150.00 |
-| `gpt-4-turbo` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-turbo` | — | per_1m_output_tokens | $30.00 |
-| `gpt-4-turbo-2024-04-09` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-turbo-2024-04-09` | — | per_1m_output_tokens | $30.00 |
-| `gpt-4-turbo-preview` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-turbo-preview` | — | per_1m_output_tokens | $30.00 |
-| `gpt-4-v` | — | per_request | $0.100 |
-| `gpt-4-vision-preview` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-vision-preview` | — | per_1m_output_tokens | $20.00 |
-| `gpt-4.1` | — | per_1m_input_tokens | $2.000 |
-| `gpt-4.1` | — | per_1m_output_tokens | $4.000 |
-| `gpt-4.1-2025-04-14` | — | per_1m_input_tokens | $2.000 |
-| `gpt-4.1-2025-04-14` | — | per_1m_output_tokens | $4.000 |
-| `gpt-4.1-mini` | — | per_1m_input_tokens | $0.400 |
-| `gpt-4.1-mini` | — | per_1m_output_tokens | $0.800 |
-| `gpt-4.1-mini-2025-04-14` | — | per_1m_input_tokens | $0.400 |
-| `gpt-4.1-mini-2025-04-14` | — | per_1m_output_tokens | $0.800 |
-| `gpt-4.1-nano` | — | per_1m_input_tokens | $0.100 |
-| `gpt-4.1-nano` | — | per_1m_output_tokens | $0.200 |
-| `gpt-4.1-nano-2025-04-14` | — | per_1m_input_tokens | $0.100 |
-| `gpt-4.1-nano-2025-04-14` | — | per_1m_output_tokens | $0.200 |
-| `gpt-4o` | — | per_1m_input_tokens | $2.500 |
-| `gpt-4o` | — | per_1m_output_tokens | $10.00 |
-| `gpt-4o-2024-05-13` | — | per_request | $0.060 |
-| `gpt-4o-2024-08-06` | — | per_1m_input_tokens | $2.500 |
-| `gpt-4o-2024-08-06` | — | per_1m_output_tokens | $10.00 |
-| `gpt-4o-2024-11-20` | — | per_1m_input_tokens | $2.500 |
-| `gpt-4o-2024-11-20` | — | per_1m_output_tokens | $10.00 |
-| `gpt-4o-all` | — | per_request | $0.060 |
-| `gpt-4o-image` | — | per_image | $0.050 |
-| `gpt-4o-image-vip` | — | per_image | $0.100 |
-| `gpt-4o-mini` | — | per_1m_input_tokens | $0.150 |
-| `gpt-4o-mini` | — | per_1m_output_tokens | $0.600 |
-| `gpt-4o-mini-2024-07-18` | — | per_1m_input_tokens | $0.150 |
-| `gpt-4o-mini-2024-07-18` | — | per_1m_output_tokens | $0.600 |
-| `gpt-4o-study` | — | per_request | $0.050 |
-| `gpt-5` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-2025-08-07` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5-2025-08-07` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-chat` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5-chat` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-chat-2025-08-07` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5-chat-2025-08-07` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-chat-latest` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5-chat-latest` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-codex` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5-codex` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-codex-2025-09-15` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5-codex-2025-09-15` | — | per_1m_output_tokens | $600.00 |
-| `gpt-5-codex-high` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5-codex-high` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-codex-low` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5-codex-low` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-codex-medium` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5-codex-medium` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-codex-mini` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5-codex-mini` | — | per_1m_output_tokens | $600.00 |
-| `gpt-5-high` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5-high` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-low` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5-low` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-medium` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5-medium` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-mini` | — | per_1m_input_tokens | $0.250 |
-| `gpt-5-mini` | — | per_1m_output_tokens | $2.000 |
-| `gpt-5-mini-2025-08-07` | — | per_1m_input_tokens | $0.250 |
-| `gpt-5-mini-2025-08-07` | — | per_1m_output_tokens | $2.000 |
-| `gpt-5-minimal` | — | per_1m_input_tokens | $0.250 |
-| `gpt-5-minimal` | — | per_1m_output_tokens | $2.000 |
-| `gpt-5-nano` | — | per_1m_input_tokens | $0.050 |
-| `gpt-5-nano` | — | per_1m_output_tokens | $0.400 |
-| `gpt-5-nano-2025-08-07` | — | per_1m_input_tokens | $0.050 |
-| `gpt-5-nano-2025-08-07` | — | per_1m_output_tokens | $0.400 |
-| `gpt-5-pro` | — | per_1m_input_tokens | $15.00 |
-| `gpt-5-pro` | — | per_1m_output_tokens | $120.00 |
-| `gpt-5-pro-2025-10-06` | — | per_1m_input_tokens | $15.00 |
-| `gpt-5-pro-2025-10-06` | — | per_1m_output_tokens | $120.00 |
-| `gpt-5.1` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.1` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.1-2025-11-13` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.1-2025-11-13` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.1-all` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.1-all` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.1-chat-latest` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.1-chat-latest` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.1-codex` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.1-codex` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.1-codex-2025-11-13` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.1-codex-2025-11-13` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.1-codex-high` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.1-codex-high` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.1-codex-max` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.1-codex-max` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.1-codex-max-2025-12-04` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.1-codex-max-2025-12-04` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.1-codex-medium` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.1-codex-medium` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.1-codex-mini` | — | per_1m_input_tokens | $0.250 |
-| `gpt-5.1-codex-mini` | — | per_1m_output_tokens | $2.000 |
-| `gpt-5.1-codex-mini-2025-11-13` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.1-codex-mini-2025-11-13` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.1-high` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.1-high` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.1-low` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.1-low` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.1-medium` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.1-medium` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.1-thinking` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.1-thinking` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.1-thinking-all` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.1-thinking-all` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.2` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.2` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.2-2025-12-11` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.2-2025-12-11` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.2-all` | — | per_request | $0.050 |
-| `gpt-5.2-chat-latest` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.2-chat-latest` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.2-codex` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.2-codex` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.2-codex-2026-01-14` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.2-codex-2026-01-14` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.2-pro` | — | per_1m_input_tokens | $21.00 |
-| `gpt-5.2-pro` | — | per_1m_output_tokens | $168.00 |
-| `gpt-5.2-pro-2025-12-11` | — | per_1m_input_tokens | $21.00 |
-| `gpt-5.2-pro-2025-12-11` | — | per_1m_output_tokens | $168.00 |
-| `gpt-5.2-thinking` | — | per_request | $0.050 |
-| `gpt-5.3-chat-latest` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.3-chat-latest` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.3-codex` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.3-codex` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.3-codex-2026-02-24` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.3-codex-2026-02-24` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.3-codex-high` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.3-codex-high` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.3-codex-low` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.3-codex-low` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.3-codex-medium` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.3-codex-medium` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.3-codex-spark` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.3-codex-spark` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.4` | `gpt-5.4` | per_1m_input_tokens | $2.500 |
-| `gpt-5.4` | `gpt-5.4` | per_1m_output_tokens | $15.00 |
-| `gpt-5.4-2026-03-05` | — | per_1m_input_tokens | $2.500 |
-| `gpt-5.4-2026-03-05` | — | per_1m_output_tokens | $15.00 |
-| `gpt-5.4-mini` | — | per_1m_input_tokens | $0.750 |
-| `gpt-5.4-mini` | — | per_1m_output_tokens | $4.500 |
-| `gpt-5.4-mini-2026-03-17` | — | per_1m_input_tokens | $0.750 |
-| `gpt-5.4-mini-2026-03-17` | — | per_1m_output_tokens | $4.500 |
-| `gpt-5.4-nano` | — | per_1m_input_tokens | $0.200 |
-| `gpt-5.4-nano` | — | per_1m_output_tokens | $1.250 |
-| `gpt-5.4-nano-2026-03-17` | — | per_1m_input_tokens | $0.200 |
-| `gpt-5.4-nano-2026-03-17` | — | per_1m_output_tokens | $1.250 |
-| `gpt-5.4-pro` | — | per_1m_input_tokens | $30.00 |
-| `gpt-5.4-pro` | — | per_1m_output_tokens | $180.00 |
-| `gpt-5.4-pro-2026-03-05` | — | per_1m_input_tokens | $30.00 |
-| `gpt-5.4-pro-2026-03-05` | — | per_1m_output_tokens | $180.00 |
-| `gpt-5.5` | — | per_1m_input_tokens | $5.000 |
-| `gpt-5.5` | — | per_1m_output_tokens | $40.00 |
-| `gpt-5.5-2026-04-23` | — | per_1m_input_tokens | $5.000 |
-| `gpt-5.5-2026-04-23` | — | per_1m_output_tokens | $30.00 |
-| `gpt-5.5-2026-04-24` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.5-2026-04-24` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-luna` | — | per_1m_input_tokens | $0.200 |
-| `gpt-5.6-luna` | — | per_1m_output_tokens | $1.200 |
-| `gpt-5.6-luna-2026-07-09` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-luna-2026-07-09` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-sol` | — | per_1m_input_tokens | $5.000 |
-| `gpt-5.6-sol` | — | per_1m_output_tokens | $30.00 |
-| `gpt-5.6-sol-2026-07-09` | — | per_1m_input_tokens | $4.000 |
-| `gpt-5.6-sol-2026-07-09` | — | per_1m_output_tokens | $20.00 |
-| `gpt-5.6-terra` | — | per_1m_input_tokens | $2.500 |
-| `gpt-5.6-terra` | — | per_1m_output_tokens | $15.00 |
-| `gpt-5.6-terra-2026-07-09` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-terra-2026-07-09` | — | per_1m_output_tokens | $450.00 |
-| `gpt-6-astra` | — | per_1m_input_tokens | $10.00 |
-| `gpt-6-astra` | — | per_1m_output_tokens | $50.00 |
-| `gpt-6-luna` | — | per_1m_input_tokens | $0.100 |
-| `gpt-6-luna` | — | per_1m_output_tokens | $0.500 |
-| `gpt-6-sol` | — | per_1m_input_tokens | $10.00 |
-| `gpt-6-sol` | — | per_1m_output_tokens | $50.00 |
-| `gpt-6.1-sol` | — | per_1m_input_tokens | $2.000 |
-| `gpt-6.1-sol` | — | per_1m_output_tokens | $10.00 |
-| `gpt-audio` | — | per_1m_input_tokens | $2.500 |
-| `gpt-audio` | — | per_1m_output_tokens | $10.00 |
-| `gpt-audio-2025-08-28` | — | per_1m_input_tokens | $2.500 |
-| `gpt-audio-2025-08-28` | — | per_1m_output_tokens | $10.00 |
-| `gpt-chat-latest` | — | per_1m_input_tokens | $75.00 |
-| `gpt-chat-latest` | — | per_1m_output_tokens | $150.00 |
-| `gpt-image-1` | — | per_image | $0.060 |
-| `gpt-image-1-2025-04-15` | — | per_1m_input_tokens | $75.00 |
-| `gpt-image-1-2025-04-15` | — | per_1m_output_tokens | $150.00 |
-| `gpt-image-1-mini` | — | per_1m_input_tokens | $2.000 |
-| `gpt-image-1-mini` | — | per_1m_output_tokens | $8.000 |
-| `gpt-image-1-mini-2025-10-06` | — | per_1m_input_tokens | $75.00 |
-| `gpt-image-1-mini-2025-10-06` | — | per_1m_output_tokens | $150.00 |
-| `gpt-image-1.5` | — | per_1m_input_tokens | $5.000 |
-| `gpt-image-1.5` | — | per_1m_output_tokens | $32.00 |
-| `gpt-image-1.5-2025-12-16` | — | per_1m_input_tokens | $5.000 |
-| `gpt-image-1.5-2025-12-16` | — | per_1m_output_tokens | $10.00 |
-| `gpt-image-2` | — | per_image | $0.300 |
-| `gpt-image-2-2k` | — | per_1m_input_tokens | $5.000 |
-| `gpt-image-2-2k` | — | per_1m_output_tokens | $30.00 |
-| `gpt-image-2-4k` | — | per_1m_input_tokens | $5.000 |
-| `gpt-image-2-4k` | — | per_1m_output_tokens | $30.00 |
-| `gpt-image-2-all` | — | per_image | $0.040 |
-| `gpt-image-2-vip` | — | per_image | $0.100 |
-| `gpt-image-2.5-flare` | — | per_1m_input_tokens | $5.000 |
-| `gpt-image-2.5-flare` | — | per_1m_output_tokens | $30.00 |
-| `gpt-image-2.5-flare-2k` | — | per_1m_input_tokens | $5.000 |
-| `gpt-image-2.5-flare-2k` | — | per_1m_output_tokens | $30.00 |
-| `gpt-image-2.5-flare-4k` | — | per_image | $0.300 |
-| `gpt-image-2.5-sunburst` | — | per_image | $0.150 |
-| `gpt-image-2.5-sunburst-2k` | — | per_image | $0.150 |
-| `gpt-image-2.5-sunburst-4k` | — | per_1m_input_tokens | $5.000 |
-| `gpt-image-2.5-sunburst-4k` | — | per_1m_output_tokens | $30.00 |
-| `gpt-oss-120b` | — | per_1m_input_tokens | $0.400 |
-| `gpt-oss-120b` | — | per_1m_output_tokens | $1.600 |
-| `gpt-oss-20b` | — | per_1m_input_tokens | $0.200 |
-| `gpt-oss-20b` | — | per_1m_output_tokens | $0.800 |
-| `gpt-test` | — | per_1m_input_tokens | $75.00 |
-| `gpt-test` | — | per_1m_output_tokens | $150.00 |
-| `grok-1.5-video-10s` | — | per_second | $1.300 |
-| `grok-1.5-video-15s` | — | per_second | $1.300 |
-| `grok-1.5-video-6s` | — | per_second | $1.300 |
-| `grok-3` | — | per_request | $0.010 |
-| `grok-4` | — | per_1m_input_tokens | $6.000 |
-| `grok-4` | — | per_1m_output_tokens | $30.00 |
-| `grok-4-fast-reasoning` | — | per_1m_input_tokens | $0.200 |
-| `grok-4-fast-reasoning` | — | per_1m_output_tokens | $0.050 |
-| `grok-4.1-image` | — | per_image | $0.100 |
-| `grok-4.2` | — | per_1m_input_tokens | $3.000 |
-| `grok-4.2` | — | per_1m_output_tokens | $15.00 |
-| `grok-4.2-image` | — | per_image | $0.120 |
-| `grok-4.5` | — | per_1m_input_tokens | $2.000 |
-| `grok-4.5` | — | per_1m_output_tokens | $6.000 |
-| `grok-4.6` | — | per_1m_input_tokens | $2.000 |
-| `grok-4.6` | — | per_1m_output_tokens | $6.000 |
-| `grok-4.7` | — | per_1m_input_tokens | $2.000 |
-| `grok-4.7` | — | per_1m_output_tokens | $6.000 |
-| `grok-imagine-image-2.0` | — | per_image | $1.000 |
-| `grok-imagine-video-1.5` | `grok-imagine-video-1.5` | per_second | $1.000 |
-| `grok-imagine-video-1.5-preview` | `grok-imagine-video-1.5` | per_second | $1.300 |
-| `grok-video-3` | — | per_second | $0.500 |
-| `gui-plus` | — | per_1m_input_tokens | $75.00 |
-| `gui-plus` | — | per_1m_output_tokens | $75.00 |
-| `hailuo-feed` | — | per_1m_input_tokens | $75.00 |
-| `hailuo-feed` | — | per_1m_output_tokens | $75.00 |
-| `hailuo-video` | — | per_second | $0.800 |
-| `higgsfield-ads` | — | per_request | $2.100 |
-| `higgsfield-feed` | — | per_1m_input_tokens | $75.00 |
-| `higgsfield-feed` | — | per_1m_output_tokens | $75.00 |
-| `higgsfield-generate` | — | per_1m_input_tokens | $75.00 |
-| `higgsfield-generate` | — | per_1m_output_tokens | $75.00 |
-| `higgsfield-get_temp` | — | per_1m_input_tokens | $75.00 |
-| `higgsfield-get_temp` | — | per_1m_output_tokens | $75.00 |
-| `higgsfield-lite` | — | per_request | $0.800 |
-| `higgsfield-speech` | — | per_request | $8.000 |
-| `higgsfield-standard` | — | per_request | $1.600 |
-| `higgsfield-turbo` | — | per_request | $1.120 |
-| `hunyuan-t1` | — | per_1m_input_tokens | $2.000 |
-| `hunyuan-t1` | — | per_1m_output_tokens | $8.000 |
-| `jimeng-4.0` | — | per_1m_input_tokens | $75.00 |
-| `jimeng-4.0` | — | per_1m_output_tokens | $75.00 |
-| `jimeng-4.1` | — | per_1m_input_tokens | $75.00 |
-| `jimeng-4.1` | — | per_1m_output_tokens | $75.00 |
-| `jimeng-4.5` | — | per_1m_input_tokens | $75.00 |
-| `jimeng-4.5` | — | per_1m_output_tokens | $75.00 |
-| `jimeng-feed` | — | per_1m_input_tokens | $75.00 |
-| `jimeng-feed` | — | per_1m_output_tokens | $75.00 |
-| `jina-reranker-v2-base-multilingual` | — | per_1m_input_tokens | $0.200 |
-| `jina-reranker-v2-base-multilingual` | — | per_1m_output_tokens | $0.200 |
-| `kimi-k2-0711-preview` | — | per_1m_input_tokens | $4.000 |
-| `kimi-k2-0711-preview` | — | per_1m_output_tokens | $16.00 |
-| `kimi-k2-250905` | — | per_1m_input_tokens | $4.000 |
-| `kimi-k2-250905` | — | per_1m_output_tokens | $16.00 |
-| `kimi-k2-thinking` | — | per_1m_input_tokens | $4.000 |
-| `kimi-k2-thinking` | — | per_1m_output_tokens | $16.00 |
-| `kimi-k2.5` | — | per_1m_input_tokens | $4.000 |
-| `kimi-k2.5` | — | per_1m_output_tokens | $21.00 |
-| `kimi-k3` | — | per_1m_input_tokens | $20.00 |
-| `kimi-k3` | — | per_1m_output_tokens | $100.00 |
-| `kling-advanced-lip-sync` | — | per_request | $0.500 |
-| `kling-advanced-lip-sync-feed` | — | per_1m_input_tokens | $75.00 |
-| `kling-advanced-lip-sync-feed` | — | per_1m_output_tokens | $75.00 |
-| `kling-custom-elements` | — | per_request | $0.0010 |
-| `kling-custom-elements-list` | — | per_request | $0.0001 |
-| `kling-custom-voices` | — | per_request | $0.050 |
-| `kling-effects` | — | per_request | $1.000 |
-| `kling-feed` | — | per_1m_input_tokens | $75.00 |
-| `kling-feed` | — | per_1m_output_tokens | $75.00 |
-| `kling-get-custom-voices` | — | per_1m_input_tokens | $75.00 |
-| `kling-get-custom-voices` | — | per_1m_output_tokens | $75.00 |
-| `kling-identify-face` | — | per_request | $0.050 |
-| `kling-image` | — | per_image | $0.040 |
-| `kling-image-expend` | — | per_image | $0.200 |
-| `kling-image-expend-feed` | — | per_1m_input_tokens | $75.00 |
-| `kling-image-expend-feed` | — | per_1m_output_tokens | $75.00 |
-| `kling-image-v1` | — | per_image | $0.025 |
-| `kling-image-v1-5` | — | per_image | $0.100 |
-| `kling-image-v2` | — | per_image | $0.100 |
-| `kling-image-v2-1` | — | per_image | $0.100 |
-| `kling-image-v2-new` | — | per_image | $0.040 |
-| `kling-image-v3` | — | per_image | $0.040 |
-| `kling-image-v3-omni` | — | per_image | $0.040 |
-| `kling-kolors-virtual-try-on` | — | per_request | $0.600 |
-| `kling-lip-sync` | — | per_request | $0.500 |
-| `kling-meta-human` | — | per_request | $0.400 |
-| `kling-meta-human-check` | — | per_1m_input_tokens | $75.00 |
-| `kling-meta-human-check` | — | per_1m_output_tokens | $75.00 |
-| `kling-multi-image2image` | — | per_image | $0.400 |
-| `kling-omni-image` | — | per_1m_input_tokens | $75.00 |
-| `kling-omni-image` | — | per_1m_output_tokens | $75.00 |
-| `kling-presets-elements-list` | — | per_request | $0.0001 |
-| `kling-presets-voices-list` | — | per_request | $0.0001 |
-| `kling-text-to-audio` | — | per_request | $0.250 |
-| `kling-text-to-audio-feed` | — | per_1m_input_tokens | $75.00 |
-| `kling-text-to-audio-feed` | — | per_1m_output_tokens | $75.00 |
-| `kling-tts` | — | per_request | $0.050 |
-| `kling-video` | — | per_second | $1.000 |
-| `kling-video-extend` | — | per_second | $1.200 |
-| `kling-video-motion-control` | — | per_second | $0.800 |
-| `kling-video-motion-control-feed` | — | per_1m_input_tokens | $75.00 |
-| `kling-video-motion-control-feed` | — | per_1m_output_tokens | $75.00 |
-| `kling-video-multi-elements-add` | — | per_second | $0.0001 |
-| `kling-video-multi-elements-clear` | — | per_second | $0.0001 |
-| `kling-video-multi-elements-create` | — | per_second | $0.0001 |
-| `kling-video-multi-elements-create-feed` | — | per_1m_input_tokens | $75.00 |
-| `kling-video-multi-elements-create-feed` | — | per_1m_output_tokens | $75.00 |
-| `kling-video-multi-elements-delete` | — | per_second | $0.0001 |
-| `kling-video-multi-elements-init` | — | per_second | $0.0001 |
-| `kling-video-multi-elements-preview` | — | per_second | $0.0001 |
-| `kling-video-o1` | — | per_second | $0.800 |
-| `kling-video-to-audio` | — | per_second | $0.250 |
-| `kling-video-to-audio-feed` | — | per_1m_input_tokens | $75.00 |
-| `kling-video-to-audio-feed` | — | per_1m_output_tokens | $75.00 |
-| `kling-video-v1` | — | per_second | $1.000 |
-| `kling-video-v1-5` | — | per_second | $2.000 |
-| `kling-video-v1-6` | — | per_second | $2.000 |
-| `kling-video-v2-1` | — | per_second | $2.000 |
-| `kling-video-v2-1-master` | — | per_second | $10.00 |
-| `kling-video-v2-5-turbo` | — | per_second | $2.500 |
-| `kling-video-v2-6` | — | per_second | $2.500 |
-| `kling-video-v2-master` | — | per_second | $10.00 |
-| `kling-video-v3` | — | per_second | $1.000 |
-| `kling-video-v3-omni` | — | per_second | $1.000 |
-| `kling-voices-list` | — | per_request | $0.0001 |
-| `kolors-virtual-try-on-v1` | — | per_request | $0.600 |
-| `kolors-virtual-try-on-v1-5` | — | per_request | $0.600 |
-| `liveportrait` | — | per_request | $0.020 |
-| `liveportrait-detect` | — | per_request | $0.0040 |
-| `llama-2-13b` | — | per_request | $0.0060 |
-| `llama-2-70b` | — | per_request | $0.0060 |
-| `llama-2-7b` | — | per_request | $0.0060 |
-| `llama-3-70b` | — | per_request | $0.010 |
-| `llama-3-8b` | — | per_request | $0.010 |
-| `llama-3-8b-instruct` | — | per_1m_input_tokens | $0.020 |
-| `llama-3-8b-instruct` | — | per_1m_output_tokens | $0.030 |
-| `llama-3-sonar-large-32k-chat` | — | per_request | $0.0050 |
-| `llama-3-sonar-large-32k-online` | — | per_request | $0.0050 |
-| `llama-3-sonar-small-32k-chat` | — | per_request | $0.010 |
-| `llama-3-sonar-small-32k-online` | — | per_request | $0.010 |
-| `llama-3.1-405b` | — | per_request | $0.010 |
-| `llama-3.1-405b-instruct` | — | per_1m_input_tokens | $75.00 |
-| `llama-3.1-405b-instruct` | — | per_1m_output_tokens | $75.00 |
-| `llama-3.1-70b` | — | per_request | $0.050 |
-| `llama-3.1-8b` | — | per_request | $0.0050 |
-| `llama-3.1-8b-instruct` | — | per_1m_input_tokens | $0.100 |
-| `llama-3.1-8b-instruct` | — | per_1m_output_tokens | $0.150 |
-| `llama-3.2-11b-vision-instruct` | — | per_request | $0.010 |
-| `llama-3.2-1b-instruct` | — | per_request | $0.0050 |
-| `llama-3.2-3b-instruct` | — | per_1m_input_tokens | $0.100 |
-| `llama-3.2-3b-instruct` | — | per_1m_output_tokens | $0.100 |
-| `llama-3.2-90b-vision-instruct` | — | per_request | $0.020 |
-| `llama-3.3-70b-instruct-fp8-fast` | — | per_1m_input_tokens | $0.280 |
-| `llama-3.3-70b-instruct-fp8-fast` | — | per_1m_output_tokens | $2.173 |
-| `llama-4-maverick-17b-128e-instruct-fp8` | — | per_1m_input_tokens | $75.00 |
-| `llama-4-maverick-17b-128e-instruct-fp8` | — | per_1m_output_tokens | $75.00 |
-| `llama-4-scout` | — | per_1m_input_tokens | $0.300 |
-| `llama-4-scout` | — | per_1m_output_tokens | $0.945 |
-| `llama-4-scout-17b-16e-instruct` | — | per_1m_input_tokens | $0.300 |
-| `llama-4-scout-17b-16e-instruct` | — | per_1m_output_tokens | $0.945 |
-| `luma` | — | per_1m_input_tokens | $75.00 |
-| `luma` | — | per_1m_output_tokens | $75.00 |
-| `luma-proxy` | — | per_1m_input_tokens | $75.00 |
-| `luma-proxy` | — | per_1m_output_tokens | $75.00 |
-| `luma_video_api` | — | per_second | $2.000 |
-| `mimo-v2.6-flash` | — | per_1m_input_tokens | $0.880 |
-| `mimo-v2.6-flash` | — | per_1m_output_tokens | $1.760 |
-| `mimo-v2.6-pro` | — | per_1m_input_tokens | $2.640 |
-| `mimo-v2.6-pro` | — | per_1m_output_tokens | $5.280 |
-| `minimax-file_upload` | — | per_1m_input_tokens | $75.00 |
-| `minimax-file_upload` | — | per_1m_output_tokens | $75.00 |
-| `minimax-m1-80k` | — | per_1m_input_tokens | $4.000 |
-| `minimax-m1-80k` | — | per_1m_output_tokens | $16.00 |
-| `minimax-m2.1` | — | per_1m_input_tokens | $2.100 |
-| `minimax-m2.1` | — | per_1m_output_tokens | $8.400 |
-| `minimax-video` | — | per_1m_input_tokens | $75.00 |
-| `minimax-video` | — | per_1m_output_tokens | $75.00 |
-| `minimax-voice-clone` | — | per_request | $9.900 |
-| `minimax-voice-design` | — | per_request | $9.900 |
-| `minimax/speech-01-hd` | — | per_request | $3.500 |
-| `minimax/speech-01-turbo` | — | per_request | $2.000 |
-| `minimax/speech-02-hd` | — | per_request | $3.500 |
-| `minimax/speech-02-turbo` | — | per_request | $2.000 |
-| `minimax/speech-2.6-hd` | — | per_request | $3.500 |
-| `minimax/speech-2.6-turbo` | — | per_request | $3.500 |
-| `minimax/speech-2.8-hd` | — | per_request | $3.500 |
-| `minimax/speech-2.8-turbo` | — | per_request | $2.000 |
-| `mistral-medium` | — | per_request | $0.010 |
-| `mixtral-8x22b` | — | per_request | $0.010 |
-| `mixtral-8x7b` | — | per_request | $0.010 |
-| `mj-uploads` | — | per_1m_input_tokens | $75.00 |
-| `mj-uploads` | — | per_1m_output_tokens | $75.00 |
-| `mj_fast_describe` | — | per_request | $0.050 |
-| `mj_fast_edits` | — | per_request | $0.200 |
-| `mj_fast_high_variation` | — | per_request | $0.200 |
-| `mj_fast_imagine` | — | per_request | $0.200 |
-| `mj_fast_low_variation` | — | per_request | $0.200 |
-| `mj_fast_modal` | — | per_request | $0.200 |
-| `mj_fast_outpaint` | — | per_request | $0.200 |
-| `mj_fast_pan` | — | per_request | $0.200 |
-| `mj_fast_reroll` | — | per_request | $0.200 |
-| `mj_fast_ric_reader` | — | per_request | $0.200 |
-| `mj_fast_ricreader_retry` | — | per_request | $0.200 |
-| `mj_fast_upload` | — | per_request | $0.010 |
-| `mj_fast_upscale` | — | per_request | $0.050 |
-| `mj_fast_upscale_2x` | — | per_request | $0.200 |
-| `mj_fast_upscale_4x` | — | per_request | $0.200 |
-| `mj_fast_variation` | — | per_request | $0.200 |
-| `mj_fast_video` | — | per_second | $1.400 |
-| `mj_fast_zoom` | — | per_request | $0.200 |
-| `mj_relax_blend` | — | per_request | $0.080 |
-| `mj_relax_edits` | — | per_request | $0.080 |
-| `mj_relax_high_variation` | — | per_request | $0.080 |
-| `mj_relax_imagine` | — | per_request | $0.080 |
-| `mj_relax_low_variation` | — | per_request | $0.080 |
-| `mj_relax_modal` | — | per_request | $0.080 |
-| `mj_relax_outpaint` | — | per_request | $0.080 |
-| `mj_relax_pan` | — | per_request | $0.080 |
-| `mj_relax_reroll` | — | per_request | $0.080 |
-| `mj_relax_ric_reader` | — | per_request | $0.080 |
-| `mj_relax_ricreader_retry` | — | per_request | $0.080 |
-| `mj_relax_shorten` | — | per_request | $0.080 |
-| `mj_relax_upload` | — | per_request | $0.010 |
-| `mj_relax_upscale` | — | per_request | $0.050 |
-| `mj_relax_upscale_2x` | — | per_request | $0.080 |
-| `mj_relax_upscale_4x` | — | per_request | $0.080 |
-| `mj_relax_variation` | — | per_request | $0.080 |
-| `mj_relax_video` | — | per_second | $0.500 |
-| `mj_relax_zoom` | — | per_request | $0.080 |
-| `moonshot-v1-128k` | — | per_1m_input_tokens | $48.00 |
-| `moonshot-v1-128k` | — | per_1m_output_tokens | $48.00 |
-| `moonshot-v1-32k` | — | per_1m_input_tokens | $10.00 |
-| `moonshot-v1-32k` | — | per_1m_output_tokens | $10.00 |
-| `moonshot-v1-8k` | — | per_1m_input_tokens | $6.000 |
-| `moonshot-v1-8k` | — | per_1m_output_tokens | $6.000 |
-| `moonshotai/kimi-k2-instruct` | — | per_1m_input_tokens | $4.000 |
-| `moonshotai/kimi-k2-instruct` | — | per_1m_output_tokens | $16.00 |
-| `nano-banana-2` | — | per_request | $0.200 |
-| `nano-banana-2-2k` | — | per_request | $0.200 |
-| `nano-banana-2-4k` | — | per_request | $0.275 |
-| `nano-banana-pro` | — | per_request | $0.200 |
-| `nano-banana-pro-2k` | — | per_request | $0.200 |
-| `nano-banana-pro-4k` | — | per_request | $0.275 |
-| `net-gpt-3.5-turbo` | — | per_1m_input_tokens | $0.700 |
-| `net-gpt-3.5-turbo` | — | per_1m_output_tokens | $0.700 |
-| `net-gpt-3.5-turbo-0314` | — | per_1m_input_tokens | $75.00 |
-| `net-gpt-3.5-turbo-0314` | — | per_1m_output_tokens | $75.00 |
-| `net-gpt-3.5-turbo-0613` | — | per_1m_input_tokens | $0.700 |
-| `net-gpt-3.5-turbo-0613` | — | per_1m_output_tokens | $0.700 |
-| `net-gpt-3.5-turbo-16k` | — | per_1m_input_tokens | $0.700 |
-| `net-gpt-3.5-turbo-16k` | — | per_1m_output_tokens | $0.700 |
-| `net-gpt-3.5-turbo-16k-0314` | — | per_1m_input_tokens | $75.00 |
-| `net-gpt-3.5-turbo-16k-0314` | — | per_1m_output_tokens | $75.00 |
-| `net-gpt-3.5-turbo-16k-0613` | — | per_1m_input_tokens | $0.700 |
-| `net-gpt-3.5-turbo-16k-0613` | — | per_1m_output_tokens | $0.700 |
-| `net-gpt-4` | — | per_request | $0.100 |
-| `net-gpt-4-0125-preview` | — | per_request | $0.100 |
-| `net-gpt-4-0314` | — | per_request | $0.100 |
-| `net-gpt-4-0613` | — | per_request | $0.100 |
-| `net-gpt-4-1106-preview` | — | per_request | $0.100 |
-| `net-gpt-4-32k` | — | per_request | $0.100 |
-| `net-gpt-4-turbo` | — | per_request | $0.100 |
-| `net-gpt-4-turbo-preview` | — | per_request | $0.100 |
-| `net-gpt-4o` | — | per_request | $0.600 |
-| `netease-youdao/bce-reranker-base_v1` | — | per_1m_input_tokens | $0.200 |
-| `netease-youdao/bce-reranker-base_v1` | — | per_1m_output_tokens | $0.200 |
-| `o1` | — | per_1m_input_tokens | $15.00 |
-| `o1` | — | per_1m_output_tokens | $60.00 |
-| `o1-2024-12-17` | — | per_1m_input_tokens | $15.00 |
-| `o1-2024-12-17` | — | per_1m_output_tokens | $60.00 |
-| `o1-all` | — | per_request | $0.400 |
-| `o1-mini` | — | per_1m_input_tokens | $1.100 |
-| `o1-mini` | — | per_1m_output_tokens | $4.400 |
-| `o1-mini-2024-09-12` | — | per_1m_input_tokens | $1.100 |
-| `o1-mini-2024-09-12` | — | per_1m_output_tokens | $4.400 |
-| `o1-mini-all` | — | per_request | $0.100 |
-| `o1-preview` | — | per_1m_input_tokens | $15.00 |
-| `o1-preview` | — | per_1m_output_tokens | $60.00 |
-| `o1-preview-2024-09-12` | — | per_1m_input_tokens | $15.00 |
-| `o1-preview-2024-09-12` | — | per_1m_output_tokens | $60.00 |
-| `o1-preview-all` | — | per_request | $0.300 |
-| `o1-pro` | — | per_request | $0.700 |
-| `o1-pro-all` | — | per_request | $0.700 |
-| `o3` | — | per_1m_input_tokens | $2.000 |
-| `o3` | — | per_1m_output_tokens | $8.000 |
-| `o3-2025-04-16` | — | per_1m_input_tokens | $2.000 |
-| `o3-2025-04-16` | — | per_1m_output_tokens | $8.000 |
-| `o3-all` | — | per_request | $0.400 |
-| `o3-deep-research` | — | per_1m_input_tokens | $10.00 |
-| `o3-deep-research` | — | per_1m_output_tokens | $40.00 |
-| `o3-deep-research-2025-06-26` | — | per_1m_input_tokens | $10.00 |
-| `o3-deep-research-2025-06-26` | — | per_1m_output_tokens | $40.00 |
-| `o3-mini` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-2025-01-31` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-2025-01-31` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-2025-01-31-high` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-2025-01-31-high` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-2025-01-31-low` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-2025-01-31-low` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-2025-01-31-medium` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-2025-01-31-medium` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-all` | — | per_request | $0.030 |
-| `o3-mini-high` | — | per_request | $0.100 |
-| `o3-mini-high-all` | — | per_request | $0.100 |
-| `o3-mini-low` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-low` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-medium` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-medium` | — | per_1m_output_tokens | $4.400 |
-| `o3-pro` | — | per_1m_input_tokens | $20.00 |
-| `o3-pro` | — | per_1m_output_tokens | $80.00 |
-| `o3-pro-2025-06-10` | — | per_1m_input_tokens | $20.00 |
-| `o3-pro-2025-06-10` | — | per_1m_output_tokens | $80.00 |
-| `o4-mini` | — | per_1m_input_tokens | $1.100 |
-| `o4-mini` | — | per_1m_output_tokens | $4.400 |
-| `o4-mini-2025-04-16` | — | per_1m_input_tokens | $1.100 |
-| `o4-mini-2025-04-16` | — | per_1m_output_tokens | $4.400 |
-| `o4-mini-all` | — | per_request | $0.100 |
-| `o4-mini-dr` | — | per_request | $0.200 |
-| `o4-mini-high-all` | — | per_request | $0.150 |
-| `omni_flash-10s` | — | per_request | $1.000 |
-| `pika-feed` | — | per_1m_input_tokens | $75.00 |
-| `pika-feed` | — | per_1m_output_tokens | $75.00 |
-| `pika-generate` | — | per_request | $0.600 |
-| `pika-get_affects` | — | per_1m_input_tokens | $75.00 |
-| `pika-get_affects` | — | per_1m_output_tokens | $75.00 |
-| `pika_v1` | — | per_1m_input_tokens | $75.00 |
-| `pika_v1` | — | per_1m_output_tokens | $75.00 |
-| `pika_v1-feed` | — | per_1m_input_tokens | $75.00 |
-| `pika_v1-feed` | — | per_1m_output_tokens | $75.00 |
-| `pika_v1-generate` | — | per_1m_input_tokens | $75.00 |
-| `pika_v1-generate` | — | per_1m_output_tokens | $75.00 |
-| `pixverse-character` | — | per_request | $0.0010 |
-| `pixverse-feed` | — | per_1m_input_tokens | $75.00 |
-| `pixverse-feed` | — | per_1m_output_tokens | $75.00 |
-| `pixverse-video` | — | per_second | $0.800 |
-| `pixverse-video-v1` | — | per_second | $0.800 |
-| `pixverse_v1-character` | — | per_1m_input_tokens | $75.00 |
-| `pixverse_v1-character` | — | per_1m_output_tokens | $75.00 |
-| `pixverse_v1-feed` | — | per_1m_input_tokens | $75.00 |
-| `pixverse_v1-feed` | — | per_1m_output_tokens | $75.00 |
-| `pixverse_v1-feed-post` | — | per_1m_input_tokens | $75.00 |
-| `pixverse_v1-feed-post` | — | per_1m_output_tokens | $75.00 |
-| `pixverse_v1-video` | — | per_1m_input_tokens | $75.00 |
-| `pixverse_v1-video` | — | per_1m_output_tokens | $75.00 |
-| `playground-v2.5` | — | per_request | $0.010 |
-| `qvq-max` | — | per_1m_input_tokens | $8.000 |
-| `qvq-max` | — | per_1m_output_tokens | $32.00 |
-| `qvq-max-2025-03-25` | — | per_1m_input_tokens | $75.00 |
-| `qvq-max-2025-03-25` | — | per_1m_output_tokens | $75.00 |
-| `qvq-max-2025-05-15` | — | per_1m_input_tokens | $8.000 |
-| `qvq-max-2025-05-15` | — | per_1m_output_tokens | $32.00 |
-| `qvq-max-latest` | — | per_1m_input_tokens | $8.000 |
-| `qvq-max-latest` | — | per_1m_output_tokens | $32.00 |
-| `qvq-plus` | — | per_1m_input_tokens | $2.000 |
-| `qvq-plus` | — | per_1m_output_tokens | $5.000 |
-| `qvq-plus-2025-05-15` | — | per_1m_input_tokens | $2.000 |
-| `qvq-plus-2025-05-15` | — | per_1m_output_tokens | $5.000 |
-| `qvq-plus-latest` | — | per_1m_input_tokens | $2.000 |
-| `qvq-plus-latest` | — | per_1m_output_tokens | $5.000 |
-| `qwen-1.8b-chat` | — | per_1m_input_tokens | $75.00 |
-| `qwen-1.8b-chat` | — | per_1m_output_tokens | $75.00 |
-| `qwen-1.8b-longcontext-chat` | — | per_1m_input_tokens | $75.00 |
-| `qwen-1.8b-longcontext-chat` | — | per_1m_output_tokens | $75.00 |
-| `qwen-14b-chat` | — | per_1m_input_tokens | $75.00 |
-| `qwen-14b-chat` | — | per_1m_output_tokens | $75.00 |
-| `qwen-72b` | — | per_1m_input_tokens | $75.00 |
-| `qwen-72b` | — | per_1m_output_tokens | $75.00 |
-| `qwen-72b-chat` | — | per_1m_input_tokens | $75.00 |
-| `qwen-72b-chat` | — | per_1m_output_tokens | $75.00 |
-| `qwen-7b-chat` | — | per_1m_input_tokens | $75.00 |
-| `qwen-7b-chat` | — | per_1m_output_tokens | $75.00 |
-| `qwen-coder-plus` | — | per_1m_input_tokens | $3.500 |
-| `qwen-coder-plus` | — | per_1m_output_tokens | $7.000 |
-| `qwen-coder-plus-1106` | — | per_1m_input_tokens | $3.500 |
-| `qwen-coder-plus-1106` | — | per_1m_output_tokens | $7.000 |
-| `qwen-coder-plus-latest` | — | per_1m_input_tokens | $3.500 |
-| `qwen-coder-plus-latest` | — | per_1m_output_tokens | $7.000 |
-| `qwen-coder-turbo` | — | per_1m_input_tokens | $2.000 |
-| `qwen-coder-turbo` | — | per_1m_output_tokens | $6.000 |
-| `qwen-coder-turbo-0919` | — | per_1m_input_tokens | $2.000 |
-| `qwen-coder-turbo-0919` | — | per_1m_output_tokens | $6.000 |
-| `qwen-coder-turbo-latest` | — | per_1m_input_tokens | $2.000 |
-| `qwen-coder-turbo-latest` | — | per_1m_output_tokens | $6.000 |
-| `qwen-deep-search-planning` | — | per_1m_input_tokens | $75.00 |
-| `qwen-deep-search-planning` | — | per_1m_output_tokens | $75.00 |
-| `qwen-flash` | — | per_1m_input_tokens | $0.140 |
-| `qwen-flash` | — | per_1m_output_tokens | $1.500 |
-| `qwen-flash-character` | — | per_1m_input_tokens | $75.00 |
-| `qwen-flash-character` | — | per_1m_output_tokens | $75.00 |
-| `qwen-get-task` | — | per_1m_input_tokens | $75.00 |
-| `qwen-get-task` | — | per_1m_output_tokens | $75.00 |
-| `qwen-image` | — | per_image | $0.250 |
-| `qwen-image-2.0` | — | per_1m_input_tokens | $75.00 |
-| `qwen-image-2.0` | — | per_1m_output_tokens | $75.00 |
-| `qwen-image-2.0-2026-03-03` | — | per_1m_input_tokens | $75.00 |
-| `qwen-image-2.0-2026-03-03` | — | per_1m_output_tokens | $75.00 |
-| `qwen-image-2.0-pro` | — | per_1m_input_tokens | $75.00 |
-| `qwen-image-2.0-pro` | — | per_1m_output_tokens | $75.00 |
-| `qwen-image-2.0-pro-2026-03-03` | — | per_1m_input_tokens | $75.00 |
-| `qwen-image-2.0-pro-2026-03-03` | — | per_1m_output_tokens | $75.00 |
-| `qwen-image-edit` | — | per_image | $0.300 |
-| `qwen-image-edit-2509` | — | per_1m_input_tokens | $75.00 |
-| `qwen-image-edit-2509` | — | per_1m_output_tokens | $75.00 |
-| `qwen-image-edit-max` | — | per_image | $0.500 |
-| `qwen-image-edit-max-2026-01-16` | — | per_image | $0.500 |
-| `qwen-image-edit-plus` | — | per_image | $0.200 |
-| `qwen-image-edit-plus-2025-10-30` | — | per_image | $0.200 |
-| `qwen-image-edit-plus-2025-12-15` | — | per_image | $0.200 |
-| `qwen-image-max` | — | per_image | $0.500 |
-| `qwen-image-max-2025-12-30` | — | per_image | $0.500 |
-| `qwen-image-plus-2026-01-09` | — | per_image | $0.200 |
-| `qwen-long` | — | per_1m_input_tokens | $0.500 |
-| `qwen-long` | — | per_1m_output_tokens | $2.000 |
-| `qwen-long-latest` | — | per_1m_input_tokens | $0.500 |
-| `qwen-long-latest` | — | per_1m_output_tokens | $2.000 |
-| `qwen-math-plus` | — | per_1m_input_tokens | $4.000 |
-| `qwen-math-plus` | — | per_1m_output_tokens | $12.00 |
-| `qwen-math-plus-0919` | — | per_1m_input_tokens | $4.000 |
-| `qwen-math-plus-0919` | — | per_1m_output_tokens | $12.00 |
-| `qwen-math-plus-latest` | — | per_1m_input_tokens | $4.000 |
-| `qwen-math-plus-latest` | — | per_1m_output_tokens | $12.00 |
-| `qwen-math-turbo` | — | per_1m_input_tokens | $2.000 |
-| `qwen-math-turbo` | — | per_1m_output_tokens | $3.000 |
-| `qwen-math-turbo-0919` | — | per_1m_input_tokens | $2.000 |
-| `qwen-math-turbo-0919` | — | per_1m_output_tokens | $3.000 |
-| `qwen-math-turbo-latest` | — | per_1m_input_tokens | $2.000 |
-| `qwen-math-turbo-latest` | — | per_1m_output_tokens | $3.000 |
-| `qwen-max` | — | per_1m_input_tokens | $2.400 |
-| `qwen-max` | — | per_1m_output_tokens | $9.600 |
-| `qwen-max-01-23` | — | per_1m_input_tokens | $75.00 |
-| `qwen-max-01-23` | — | per_1m_output_tokens | $75.00 |
-| `qwen-max-0107` | — | per_1m_input_tokens | $75.00 |
-| `qwen-max-0107` | — | per_1m_output_tokens | $75.00 |
-| `qwen-max-0403` | — | per_1m_input_tokens | $75.00 |
-| `qwen-max-0403` | — | per_1m_output_tokens | $75.00 |
-| `qwen-max-0428` | — | per_1m_input_tokens | $40.00 |
-| `qwen-max-0428` | — | per_1m_output_tokens | $120.00 |
-| `qwen-max-0919` | — | per_1m_input_tokens | $20.00 |
-| `qwen-max-0919` | — | per_1m_output_tokens | $60.00 |
-| `qwen-max-1201` | — | per_1m_input_tokens | $75.00 |
-| `qwen-max-1201` | — | per_1m_output_tokens | $75.00 |
-| `qwen-max-2025-01-25` | — | per_1m_input_tokens | $2.400 |
-| `qwen-max-2025-01-25` | — | per_1m_output_tokens | $9.600 |
-| `qwen-max-latest` | — | per_1m_input_tokens | $2.400 |
-| `qwen-max-latest` | — | per_1m_output_tokens | $9.600 |
-| `qwen-max-longcontext` | — | per_1m_input_tokens | $75.00 |
-| `qwen-max-longcontext` | — | per_1m_output_tokens | $75.00 |
-| `qwen-mt-flash` | — | per_1m_input_tokens | $0.700 |
-| `qwen-mt-flash` | — | per_1m_output_tokens | $1.950 |
-| `qwen-mt-image` | — | per_image | $0.0030 |
-| `qwen-mt-lite` | — | per_1m_input_tokens | $0.600 |
-| `qwen-mt-lite` | — | per_1m_output_tokens | $1.600 |
-| `qwen-mt-plus` | — | per_1m_input_tokens | $1.800 |
-| `qwen-mt-plus` | — | per_1m_output_tokens | $5.400 |
-| `qwen-mt-turbo` | — | per_1m_input_tokens | $0.700 |
-| `qwen-mt-turbo` | — | per_1m_output_tokens | $1.950 |
-| `qwen-omni-turbo` | — | per_1m_input_tokens | $75.00 |
-| `qwen-omni-turbo` | — | per_1m_output_tokens | $75.00 |
-| `qwen-plus` | — | per_1m_input_tokens | $0.800 |
-| `qwen-plus` | — | per_1m_output_tokens | $2.000 |
-| `qwen-plus-0919` | — | per_1m_input_tokens | $0.800 |
-| `qwen-plus-0919` | — | per_1m_output_tokens | $2.000 |
-| `qwen-plus-2025-01-25` | — | per_1m_input_tokens | $0.800 |
-| `qwen-plus-2025-01-25` | — | per_1m_output_tokens | $2.000 |
-| `qwen-plus-2025-04-28` | — | per_1m_input_tokens | $0.800 |
-| `qwen-plus-2025-04-28` | — | per_1m_output_tokens | $2.000 |
-| `qwen-plus-2025-07-14` | — | per_1m_input_tokens | $0.800 |
-| `qwen-plus-2025-07-14` | — | per_1m_output_tokens | $2.000 |
-| `qwen-plus-2025-09-11` | — | per_1m_input_tokens | $0.800 |
-| `qwen-plus-2025-09-11` | — | per_1m_output_tokens | $2.000 |
-| `qwen-plus-2025-11-05` | — | per_1m_input_tokens | $0.800 |
-| `qwen-plus-2025-11-05` | — | per_1m_output_tokens | $2.000 |
-| `qwen-plus-2025-12-01` | — | per_1m_input_tokens | $0.800 |
-| `qwen-plus-2025-12-01` | — | per_1m_output_tokens | $2.000 |
-| `qwen-plus-latest` | — | per_1m_input_tokens | $0.800 |
-| `qwen-plus-latest` | — | per_1m_output_tokens | $2.000 |
-| `qwen-tts-2025-05-22` | — | per_1m_input_tokens | $75.00 |
-| `qwen-tts-2025-05-22` | — | per_1m_output_tokens | $75.00 |
-| `qwen-turbo` | — | per_1m_input_tokens | $0.300 |
-| `qwen-turbo` | — | per_1m_output_tokens | $0.600 |
-| `qwen-turbo-0919` | — | per_1m_input_tokens | $0.300 |
-| `qwen-turbo-0919` | — | per_1m_output_tokens | $0.600 |
-| `qwen-turbo-2024-11-01` | — | per_1m_input_tokens | $0.300 |
-| `qwen-turbo-2024-11-01` | — | per_1m_output_tokens | $0.600 |
-| `qwen-turbo-2025-04-28` | — | per_1m_input_tokens | $0.300 |
-| `qwen-turbo-2025-04-28` | — | per_1m_output_tokens | $0.600 |
-| `qwen-turbo-2025-07-15` | — | per_1m_input_tokens | $0.300 |
-| `qwen-turbo-2025-07-15` | — | per_1m_output_tokens | $0.600 |
-| `qwen-turbo-latest` | — | per_1m_input_tokens | $0.300 |
-| `qwen-turbo-latest` | — | per_1m_output_tokens | $0.600 |
-| `qwen-vl-chat-v1` | — | per_1m_input_tokens | $75.00 |
-| `qwen-vl-chat-v1` | — | per_1m_output_tokens | $75.00 |
-| `qwen-vl-max` | — | per_1m_input_tokens | $1.600 |
-| `qwen-vl-max` | — | per_1m_output_tokens | $4.000 |
-| `qwen-vl-max-2025-04-02` | — | per_1m_input_tokens | $3.000 |
-| `qwen-vl-max-2025-04-02` | — | per_1m_output_tokens | $9.000 |
-| `qwen-vl-max-2025-04-08` | — | per_1m_input_tokens | $3.000 |
-| `qwen-vl-max-2025-04-08` | — | per_1m_output_tokens | $9.000 |
-| `qwen-vl-max-latest` | — | per_1m_input_tokens | $1.600 |
-| `qwen-vl-max-latest` | — | per_1m_output_tokens | $4.000 |
-| `qwen-vl-ocr` | — | per_1m_input_tokens | $0.300 |
-| `qwen-vl-ocr` | — | per_1m_output_tokens | $0.500 |
-| `qwen-vl-ocr-2025-11-20` | — | per_1m_input_tokens | $0.300 |
-| `qwen-vl-ocr-2025-11-20` | — | per_1m_output_tokens | $0.500 |
-| `qwen-vl-ocr-latest` | — | per_1m_input_tokens | $0.300 |
-| `qwen-vl-ocr-latest` | — | per_1m_output_tokens | $0.500 |
-| `qwen-vl-plus` | — | per_1m_input_tokens | $0.800 |
-| `qwen-vl-plus` | — | per_1m_output_tokens | $2.000 |
-| `qwen-vl-plus-2025-01-25` | — | per_1m_input_tokens | $1.500 |
-| `qwen-vl-plus-2025-01-25` | — | per_1m_output_tokens | $4.500 |
-| `qwen-vl-plus-2025-05-07` | — | per_1m_input_tokens | $1.500 |
-| `qwen-vl-plus-2025-05-07` | — | per_1m_output_tokens | $4.500 |
-| `qwen-vl-plus-2025-08-15` | — | per_1m_input_tokens | $0.800 |
-| `qwen-vl-plus-2025-08-15` | — | per_1m_output_tokens | $2.000 |
-| `qwen-vl-plus-latest` | — | per_1m_input_tokens | $0.800 |
-| `qwen-vl-plus-latest` | — | per_1m_output_tokens | $2.000 |
-| `qwen-vl-v1` | — | per_1m_input_tokens | $75.00 |
-| `qwen-vl-v1` | — | per_1m_output_tokens | $75.00 |
-| `qwen1.5-0.5b-chat` | — | per_1m_input_tokens | $75.00 |
-| `qwen1.5-0.5b-chat` | — | per_1m_output_tokens | $75.00 |
-| `qwen1.5-1.8b-chat` | — | per_1m_input_tokens | $75.00 |
-| `qwen1.5-1.8b-chat` | — | per_1m_output_tokens | $75.00 |
-| `qwen1.5-110b-chat` | — | per_1m_input_tokens | $7.000 |
-| `qwen1.5-110b-chat` | — | per_1m_output_tokens | $14.00 |
-| `qwen1.5-14b-chat` | — | per_1m_input_tokens | $2.000 |
-| `qwen1.5-14b-chat` | — | per_1m_output_tokens | $4.000 |
-| `qwen1.5-32b-chat` | — | per_1m_input_tokens | $3.500 |
-| `qwen1.5-32b-chat` | — | per_1m_output_tokens | $7.000 |
-| `qwen1.5-72b-chat` | — | per_1m_input_tokens | $5.000 |
-| `qwen1.5-72b-chat` | — | per_1m_output_tokens | $10.00 |
-| `qwen1.5-7b-chat` | — | per_1m_input_tokens | $1.000 |
-| `qwen1.5-7b-chat` | — | per_1m_output_tokens | $1.000 |
-| `qwen2-0.5b-instruct` | — | per_1m_input_tokens | $75.00 |
-| `qwen2-0.5b-instruct` | — | per_1m_output_tokens | $75.00 |
-| `qwen2-1.5b-instruct` | — | per_1m_input_tokens | $0.400 |
-| `qwen2-1.5b-instruct` | — | per_1m_output_tokens | $0.400 |
-| `qwen2-57b-a14b-instruct` | — | per_1m_input_tokens | $3.500 |
-| `qwen2-57b-a14b-instruct` | — | per_1m_output_tokens | $7.000 |
-| `qwen2-72b-instruct` | — | per_1m_input_tokens | $4.000 |
-| `qwen2-72b-instruct` | — | per_1m_output_tokens | $12.00 |
-| `qwen2-7b-instruct` | — | per_1m_input_tokens | $1.000 |
-| `qwen2-7b-instruct` | — | per_1m_output_tokens | $2.000 |
-| `qwen2-vl-2b-instruct` | — | per_1m_input_tokens | $75.00 |
-| `qwen2-vl-2b-instruct` | — | per_1m_output_tokens | $75.00 |
-| `qwen2-vl-72b-instruct` | — | per_1m_input_tokens | $4.000 |
-| `qwen2-vl-72b-instruct` | — | per_1m_output_tokens | $4.000 |
-| `qwen2-vl-7b-instruct` | — | per_1m_input_tokens | $1.000 |
-| `qwen2-vl-7b-instruct` | — | per_1m_output_tokens | $5.000 |
-| `qwen2.5-0.5b-instruct` | — | per_1m_input_tokens | $75.00 |
-| `qwen2.5-0.5b-instruct` | — | per_1m_output_tokens | $75.00 |
-| `qwen2.5-1.5b-instruct` | — | per_1m_input_tokens | $75.00 |
-| `qwen2.5-1.5b-instruct` | — | per_1m_output_tokens | $75.00 |
-| `qwen2.5-14b-instruct` | — | per_1m_input_tokens | $1.000 |
-| `qwen2.5-14b-instruct` | — | per_1m_output_tokens | $3.000 |
-| `qwen2.5-14b-instruct-1m` | — | per_1m_input_tokens | $1.000 |
-| `qwen2.5-14b-instruct-1m` | — | per_1m_output_tokens | $3.000 |
-| `qwen2.5-32b-instruct` | — | per_1m_input_tokens | $2.000 |
-| `qwen2.5-32b-instruct` | — | per_1m_output_tokens | $6.000 |
-| `qwen2.5-3b-instruct` | — | per_1m_input_tokens | $0.300 |
-| `qwen2.5-3b-instruct` | — | per_1m_output_tokens | $0.900 |
-| `qwen2.5-72b-instruct` | — | per_1m_input_tokens | $4.000 |
-| `qwen2.5-72b-instruct` | — | per_1m_output_tokens | $12.00 |
-| `qwen2.5-7b-instruct` | — | per_1m_input_tokens | $0.500 |
-| `qwen2.5-7b-instruct` | — | per_1m_output_tokens | $1.000 |
-| `qwen2.5-7b-instruct-1m` | — | per_1m_input_tokens | $0.500 |
-| `qwen2.5-7b-instruct-1m` | — | per_1m_output_tokens | $1.000 |
-| `qwen2.5-coder-0.5b-instruct` | — | per_1m_input_tokens | $75.00 |
-| `qwen2.5-coder-0.5b-instruct` | — | per_1m_output_tokens | $75.00 |
-| `qwen2.5-coder-14b-instruct` | — | per_1m_input_tokens | $2.000 |
-| `qwen2.5-coder-14b-instruct` | — | per_1m_output_tokens | $6.000 |
-| `qwen2.5-coder-32b-instruct` | — | per_1m_input_tokens | $2.000 |
-| `qwen2.5-coder-32b-instruct` | — | per_1m_output_tokens | $6.000 |
-| `qwen2.5-coder-3b-instruct` | — | per_1m_input_tokens | $75.00 |
-| `qwen2.5-coder-3b-instruct` | — | per_1m_output_tokens | $75.00 |
-| `qwen2.5-coder-7b-instruct` | — | per_1m_input_tokens | $1.000 |
-| `qwen2.5-coder-7b-instruct` | — | per_1m_output_tokens | $2.000 |
-| `qwen2.5-math-1.5b-instruct` | — | per_1m_input_tokens | $75.00 |
-| `qwen2.5-math-1.5b-instruct` | — | per_1m_output_tokens | $75.00 |
-| `qwen2.5-math-72b-instruct` | — | per_1m_input_tokens | $4.000 |
-| `qwen2.5-math-72b-instruct` | — | per_1m_output_tokens | $12.00 |
-| `qwen2.5-math-7b-instruct` | — | per_1m_input_tokens | $1.000 |
-| `qwen2.5-math-7b-instruct` | — | per_1m_output_tokens | $2.000 |
-| `qwen2.5-vl-32b-instruct` | — | per_1m_input_tokens | $8.000 |
-| `qwen2.5-vl-32b-instruct` | — | per_1m_output_tokens | $24.00 |
-| `qwen2.5-vl-3b-instruct` | — | per_1m_input_tokens | $0.200 |
-| `qwen2.5-vl-3b-instruct` | — | per_1m_output_tokens | $0.600 |
-| `qwen2.5-vl-72b-instruct` | — | per_1m_input_tokens | $3.000 |
-| `qwen2.5-vl-72b-instruct` | — | per_1m_output_tokens | $12.00 |
-| `qwen2.5-vl-7b-instruct` | — | per_1m_input_tokens | $0.300 |
-| `qwen2.5-vl-7b-instruct` | — | per_1m_output_tokens | $1.200 |
-| `qwen3-0.6b` | — | per_1m_input_tokens | $0.300 |
-| `qwen3-0.6b` | — | per_1m_output_tokens | $1.200 |
-| `qwen3-1.7b` | — | per_1m_input_tokens | $0.300 |
-| `qwen3-1.7b` | — | per_1m_output_tokens | $1.200 |
-| `qwen3-14b` | — | per_1m_input_tokens | $1.000 |
-| `qwen3-14b` | — | per_1m_output_tokens | $4.000 |
-| `qwen3-235b-a22b` | — | per_1m_input_tokens | $2.000 |
-| `qwen3-235b-a22b` | — | per_1m_output_tokens | $8.000 |
-| `qwen3-235b-a22b-instruct-2507` | — | per_1m_input_tokens | $2.000 |
-| `qwen3-235b-a22b-instruct-2507` | — | per_1m_output_tokens | $8.000 |
-| `qwen3-235b-a22b-thinking-2507` | — | per_1m_input_tokens | $2.000 |
-| `qwen3-235b-a22b-thinking-2507` | — | per_1m_output_tokens | $20.00 |
-| `qwen3-30b-a3b` | — | per_1m_input_tokens | $0.760 |
-| `qwen3-30b-a3b` | — | per_1m_output_tokens | $3.000 |
-| `qwen3-30b-a3b-instruct-2507` | — | per_1m_input_tokens | $0.760 |
-| `qwen3-30b-a3b-instruct-2507` | — | per_1m_output_tokens | $3.000 |
-| `qwen3-30b-a3b-thinking-2507` | — | per_1m_input_tokens | $0.760 |
-| `qwen3-30b-a3b-thinking-2507` | — | per_1m_output_tokens | $7.500 |
-| `qwen3-32b` | — | per_1m_input_tokens | $2.000 |
-| `qwen3-32b` | — | per_1m_output_tokens | $8.000 |
-| `qwen3-4b` | — | per_1m_input_tokens | $0.300 |
-| `qwen3-4b` | — | per_1m_output_tokens | $1.200 |
-| `qwen3-8b` | — | per_1m_input_tokens | $0.500 |
-| `qwen3-8b` | — | per_1m_output_tokens | $2.000 |
-| `qwen3-asr-flash-realtime` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-asr-flash-realtime` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-asr-flash-realtime-2025-10-27` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-asr-flash-realtime-2025-10-27` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-coder-480b-a35b-instruct` | — | per_1m_input_tokens | $6.000 |
-| `qwen3-coder-480b-a35b-instruct` | — | per_1m_output_tokens | $24.00 |
-| `qwen3-coder-flash` | — | per_1m_input_tokens | $1.000 |
-| `qwen3-coder-flash` | — | per_1m_output_tokens | $4.000 |
-| `qwen3-coder-plus` | — | per_1m_input_tokens | $4.000 |
-| `qwen3-coder-plus` | — | per_1m_output_tokens | $16.00 |
-| `qwen3-coder-plus-2025-07-22` | — | per_1m_input_tokens | $4.000 |
-| `qwen3-coder-plus-2025-07-22` | — | per_1m_output_tokens | $16.00 |
-| `qwen3-coder-plus-2025-09-23` | — | per_1m_input_tokens | $4.000 |
-| `qwen3-coder-plus-2025-09-23` | — | per_1m_output_tokens | $16.00 |
-| `qwen3-embedding-0.6b` | — | per_request | $0.0010 |
-| `qwen3-embedding-4b` | — | per_request | $0.0010 |
-| `qwen3-embedding-8b` | — | per_request | $0.0010 |
-| `qwen3-livetranslate-flash` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-livetranslate-flash` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-livetranslate-flash-2025-12-01` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-livetranslate-flash-2025-12-01` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-livetranslate-flash-realtime` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-livetranslate-flash-realtime` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-livetranslate-flash-realtime-2025-09-22` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-livetranslate-flash-realtime-2025-09-22` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-max` | — | per_1m_input_tokens | $2.500 |
-| `qwen3-max` | — | per_1m_output_tokens | $25.00 |
-| `qwen3-max-2025-09-23` | — | per_1m_input_tokens | $6.000 |
-| `qwen3-max-2025-09-23` | — | per_1m_output_tokens | $24.00 |
-| `qwen3-max-2025-10-30` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-max-2025-10-30` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-max-2026-01-23` | — | per_1m_input_tokens | $2.500 |
-| `qwen3-max-2026-01-23` | — | per_1m_output_tokens | $25.00 |
-| `qwen3-max-preview` | — | per_1m_input_tokens | $6.000 |
-| `qwen3-max-preview` | — | per_1m_output_tokens | $24.00 |
-| `qwen3-next-80b-a3b-instruct` | — | per_1m_input_tokens | $1.000 |
-| `qwen3-next-80b-a3b-instruct` | — | per_1m_output_tokens | $4.000 |
-| `qwen3-next-80b-a3b-thinking` | — | per_1m_input_tokens | $1.000 |
-| `qwen3-next-80b-a3b-thinking` | — | per_1m_output_tokens | $10.00 |
-| `qwen3-omni-flash` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-omni-flash` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-omni-flash-2025-09-15` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-omni-flash-2025-09-15` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-omni-flash-2025-12-01` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-omni-flash-2025-12-01` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-omni-flash-realtime` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-omni-flash-realtime` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-omni-flash-realtime-2025-09-15` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-omni-flash-realtime-2025-09-15` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-reranker-0.6b` | — | per_request | $0.0010 |
-| `qwen3-reranker-4b` | — | per_request | $0.0010 |
-| `qwen3-reranker-8b` | — | per_1m_input_tokens | $0.0022 |
-| `qwen3-reranker-8b` | — | per_1m_output_tokens | $0.0022 |
-| `qwen3-s2s-flash-realtime-2025-09-22` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-s2s-flash-realtime-2025-09-22` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-tts-flash` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-tts-flash` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-tts-flash-2025-09-18` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-tts-flash-2025-09-18` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-tts-flash-realtime` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-tts-flash-realtime` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-tts-flash-realtime-2025-09-18` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-tts-flash-realtime-2025-09-18` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-vl` | — | per_1m_input_tokens | $75.00 |
-| `qwen3-vl` | — | per_1m_output_tokens | $75.00 |
-| `qwen3-vl-235b-a22b` | — | per_1m_input_tokens | $1.000 |
-| `qwen3-vl-235b-a22b` | — | per_1m_output_tokens | $10.00 |
-| `qwen3-vl-235b-a22b-instruct` | — | per_1m_input_tokens | $2.000 |
-| `qwen3-vl-235b-a22b-instruct` | — | per_1m_output_tokens | $8.000 |
-| `qwen3-vl-235b-a22b-thinking` | — | per_1m_input_tokens | $2.000 |
-| `qwen3-vl-235b-a22b-thinking` | — | per_1m_output_tokens | $20.00 |
-| `qwen3-vl-30b-a3b-instruct` | — | per_1m_input_tokens | $0.760 |
-| `qwen3-vl-30b-a3b-instruct` | — | per_1m_output_tokens | $3.000 |
-| `qwen3-vl-30b-a3b-thinking` | — | per_1m_input_tokens | $0.760 |
-| `qwen3-vl-30b-a3b-thinking` | — | per_1m_output_tokens | $7.500 |
-| `qwen3-vl-32b-instruct` | — | per_1m_input_tokens | $2.000 |
-| `qwen3-vl-32b-instruct` | — | per_1m_output_tokens | $8.000 |
-| `qwen3-vl-32b-thinking` | — | per_1m_input_tokens | $2.000 |
-| `qwen3-vl-32b-thinking` | — | per_1m_output_tokens | $20.00 |
-| `qwen3-vl-8b-instruct` | — | per_1m_input_tokens | $0.500 |
-| `qwen3-vl-8b-instruct` | — | per_1m_output_tokens | $2.000 |
-| `qwen3-vl-8b-thinking` | — | per_1m_input_tokens | $0.500 |
-| `qwen3-vl-8b-thinking` | — | per_1m_output_tokens | $5.000 |
-| `qwen3-vl-flash` | — | per_1m_input_tokens | $0.140 |
-| `qwen3-vl-flash` | — | per_1m_output_tokens | $1.500 |
-| `qwen3-vl-flash-2025-10-15` | — | per_1m_input_tokens | $0.140 |
-| `qwen3-vl-flash-2025-10-15` | — | per_1m_output_tokens | $1.500 |
-| `qwen3-vl-flash-2026-01-22` | — | per_1m_input_tokens | $0.140 |
-| `qwen3-vl-flash-2026-01-22` | — | per_1m_output_tokens | $1.500 |
-| `qwen3-vl-plus` | — | per_1m_input_tokens | $1.000 |
-| `qwen3-vl-plus` | — | per_1m_output_tokens | $10.00 |
-| `qwen3-vl-plus-2025-09-23` | — | per_1m_input_tokens | $1.000 |
-| `qwen3-vl-plus-2025-09-23` | — | per_1m_output_tokens | $10.00 |
-| `qwen3-vl-plus-2025-12-19` | — | per_1m_input_tokens | $1.000 |
-| `qwen3-vl-plus-2025-12-19` | — | per_1m_output_tokens | $10.00 |
-| `qwen3.5-plus` | — | per_1m_input_tokens | $0.800 |
-| `qwen3.5-plus` | — | per_1m_output_tokens | $4.800 |
-| `qwen3.5-plus-2026-02-15` | — | per_1m_input_tokens | $0.800 |
-| `qwen3.5-plus-2026-02-15` | — | per_1m_output_tokens | $4.800 |
-| `qwen3.8-27b` | — | per_1m_input_tokens | $75.00 |
-| `qwen3.8-27b` | — | per_1m_output_tokens | $75.00 |
-| `qwen3.8-max` | — | per_1m_input_tokens | $12.00 |
-| `qwen3.8-max` | — | per_1m_output_tokens | $36.00 |
-| `qwq-32b` | — | per_1m_input_tokens | $2.000 |
-| `qwq-32b` | — | per_1m_output_tokens | $6.000 |
-| `qwq-32b-preview` | — | per_1m_input_tokens | $2.000 |
-| `qwq-32b-preview` | — | per_1m_output_tokens | $6.000 |
-| `qwq-plus` | — | per_1m_input_tokens | $1.600 |
-| `qwq-plus` | — | per_1m_output_tokens | $4.000 |
-| `qwq-plus-2025-03-05` | — | per_1m_input_tokens | $1.600 |
-| `qwq-plus-2025-03-05` | — | per_1m_output_tokens | $4.000 |
-| `qwq-plus-latest` | — | per_1m_input_tokens | $1.600 |
-| `qwq-plus-latest` | — | per_1m_output_tokens | $4.000 |
-| `recraft-generations` | — | per_1m_input_tokens | $75.00 |
-| `recraft-generations` | — | per_1m_output_tokens | $75.00 |
-| `recraftv3` | — | per_request | $0.120 |
-| `runway-act_one` | — | per_request | $0.600 |
-| `runway-act_two` | — | per_request | $0.600 |
-| `runway-aleph` | — | per_request | $1.500 |
-| `runway-generate` | — | per_request | $0.600 |
-| `runway-v1` | — | per_1m_input_tokens | $75.00 |
-| `runway-v1` | — | per_1m_output_tokens | $75.00 |
-| `runway-v1-feed` | — | per_1m_input_tokens | $75.00 |
-| `runway-v1-feed` | — | per_1m_output_tokens | $75.00 |
-| `runway-v1-proxy` | — | per_1m_input_tokens | $75.00 |
-| `runway-v1-proxy` | — | per_1m_output_tokens | $75.00 |
-| `runway-v1-uploads` | — | per_1m_input_tokens | $75.00 |
-| `runway-v1-uploads` | — | per_1m_output_tokens | $75.00 |
-| `runway-video2video` | — | per_second | $0.600 |
-| `runway_duomi` | — | per_1m_input_tokens | $75.00 |
-| `runway_duomi` | — | per_1m_output_tokens | $75.00 |
-| `runway_duomi-act_one` | — | per_1m_input_tokens | $75.00 |
-| `runway_duomi-act_one` | — | per_1m_output_tokens | $75.00 |
-| `runway_duomi-feed` | — | per_1m_input_tokens | $75.00 |
-| `runway_duomi-feed` | — | per_1m_output_tokens | $75.00 |
-| `runway_duomi-generate` | — | per_1m_input_tokens | $75.00 |
-| `runway_duomi-generate` | — | per_1m_output_tokens | $75.00 |
-| `runway_duomi-video2video` | — | per_1m_input_tokens | $75.00 |
-| `runway_duomi-video2video` | — | per_1m_output_tokens | $75.00 |
-| `runwayml-feed` | — | per_1m_input_tokens | $75.00 |
-| `runwayml-feed` | — | per_1m_output_tokens | $75.00 |
-| `runwayml-gen3a_turbo` | — | per_request | $0.800 |
-| `runwayml-gen4_turbo` | — | per_request | $0.800 |
-| `runwayml-generate` | — | per_1m_input_tokens | $75.00 |
-| `runwayml-generate` | — | per_1m_output_tokens | $75.00 |
-| `sdols-2.0` | — | per_request | $1.400 |
-| `sdols-2.0-fast` | — | per_request | $1.400 |
-| `search-gpts` | — | per_request | $0.0001 |
-| `search-gpts-chat` | — | per_request | $0.0001 |
-| `seedance-assets-create` | — | per_1m_input_tokens | $75.00 |
-| `seedance-assets-create` | — | per_1m_output_tokens | $75.00 |
-| `seedance-assets-query` | — | per_1m_input_tokens | $75.00 |
-| `seedance-assets-query` | — | per_1m_output_tokens | $75.00 |
-| `seededit` | — | per_request | $0.100 |
-| `seedream-3.0` | — | per_request | $0.100 |
-| `seedream-v5-flash` | — | per_request | $0.800 |
-| `seedream-v5-flash/layer-decomposition` | — | per_request | $0.800 |
-| `seedream-v5-pro` | — | per_request | $0.900 |
-| `seedream-v5-pro/layer-decomposition` | — | per_request | $0.900 |
-| `sora_image` | — | per_image | $0.050 |
-| `sora_image-vip` | — | per_image | $0.100 |
-| `speech-01-hd` | — | per_1m_input_tokens | $350.00 |
-| `speech-01-hd` | — | per_1m_output_tokens | $350.00 |
-| `speech-01-turbo` | — | per_1m_input_tokens | $200.00 |
-| `speech-01-turbo` | — | per_1m_output_tokens | $200.00 |
-| `speech-02-hd` | — | per_1m_input_tokens | $350.00 |
-| `speech-02-hd` | — | per_1m_output_tokens | $350.00 |
-| `speech-02-turbo` | — | per_1m_input_tokens | $200.00 |
-| `speech-02-turbo` | — | per_1m_output_tokens | $200.00 |
-| `speech-2.6-hd` | — | per_1m_input_tokens | $350.00 |
-| `speech-2.6-hd` | — | per_1m_output_tokens | $350.00 |
-| `speech-2.6-turbo` | — | per_1m_input_tokens | $200.00 |
-| `speech-2.6-turbo` | — | per_1m_output_tokens | $200.00 |
-| `speech-2.8-hd` | — | per_1m_input_tokens | $350.00 |
-| `speech-2.8-hd` | — | per_1m_output_tokens | $350.00 |
-| `speech-2.8-turbo` | — | per_1m_input_tokens | $350.00 |
-| `speech-2.8-turbo` | — | per_1m_output_tokens | $350.00 |
-| `stable-diffusion` | — | per_request | $0.010 |
-| `stable-diffusion-3-2b` | — | per_request | $0.010 |
-| `suno` | — | per_1m_input_tokens | $75.00 |
-| `suno` | — | per_1m_output_tokens | $75.00 |
-| `suno-act-midi` | — | per_request | $0.020 |
-| `suno-act-mp4` | — | per_1m_input_tokens | $75.00 |
-| `suno-act-mp4` | — | per_1m_output_tokens | $75.00 |
-| `suno-act-stems` | — | per_1m_input_tokens | $75.00 |
-| `suno-act-stems` | — | per_1m_output_tokens | $75.00 |
-| `suno-act-tags` | — | per_request | $0.010 |
-| `suno-act-timing` | — | per_1m_input_tokens | $75.00 |
-| `suno-act-timing` | — | per_1m_output_tokens | $75.00 |
-| `suno-act-wav` | — | per_1m_input_tokens | $75.00 |
-| `suno-act-wav` | — | per_1m_output_tokens | $75.00 |
-| `suno-actions` | — | per_request | $0.010 |
-| `suno-feed-uploads` | — | per_1m_input_tokens | $75.00 |
-| `suno-feed-uploads` | — | per_1m_output_tokens | $75.00 |
-| `suno-persona` | — | per_1m_input_tokens | $75.00 |
-| `suno-persona` | — | per_1m_output_tokens | $75.00 |
-| `suno-uploads-audio` | — | per_1m_input_tokens | $75.00 |
-| `suno-uploads-audio` | — | per_1m_output_tokens | $75.00 |
-| `suno-uploads-finish` | — | per_1m_input_tokens | $75.00 |
-| `suno-uploads-finish` | — | per_1m_output_tokens | $75.00 |
-| `suno-uploads-init-clip` | — | per_1m_input_tokens | $75.00 |
-| `suno-uploads-init-clip` | — | per_1m_output_tokens | $75.00 |
-| `suno_act-stems` | — | per_request | $0.010 |
-| `suno_concat` | — | per_request | $0.010 |
-| `suno_lyrics` | — | per_request | $0.010 |
-| `suno_music` | — | per_request | $0.500 |
-| `suno_upload` | — | per_request | $0.010 |
-| `text-embedding-3-large` | — | per_1m_input_tokens | $0.130 |
-| `text-embedding-3-large` | — | per_1m_output_tokens | $0.130 |
-| `text-embedding-3-small` | — | per_1m_input_tokens | $0.020 |
-| `text-embedding-3-small` | — | per_1m_output_tokens | $0.020 |
-| `text-embedding-ada-002` | — | per_1m_input_tokens | $0.100 |
-| `text-embedding-ada-002` | — | per_1m_output_tokens | $0.100 |
-| `tongyi-xiaomi-analysis-flash` | — | per_1m_input_tokens | $75.00 |
-| `tongyi-xiaomi-analysis-flash` | — | per_1m_output_tokens | $75.00 |
-| `tongyi-xiaomi-analysis-pro` | — | per_1m_input_tokens | $75.00 |
-| `tongyi-xiaomi-analysis-pro` | — | per_1m_output_tokens | $75.00 |
-| `tts-1` | — | per_1m_input_tokens | $15.00 |
-| `tts-1` | — | per_1m_output_tokens | $15.00 |
-| `tts-1-1106` | — | per_1m_input_tokens | $15.00 |
-| `tts-1-1106` | — | per_1m_output_tokens | $15.00 |
-| `tts-1-hd` | — | per_1m_input_tokens | $30.00 |
-| `tts-1-hd` | — | per_1m_output_tokens | $30.00 |
-| `tts-1-hd-1106` | — | per_1m_input_tokens | $30.00 |
-| `tts-1-hd-1106` | — | per_1m_output_tokens | $30.00 |
-| `video-style-transform` | — | per_second | $0.500 |
-| `videoretalk` | — | per_second | $0.080 |
-| `vidu1.5` | — | per_request | $0.028 |
-| `vidu2.0` | — | per_request | $0.028 |
-| `viduq1` | — | per_request | $0.028 |
-| `viduq1-classic` | — | per_request | $0.028 |
-| `viduq2` | — | per_request | $0.028 |
-| `viduq2-pro` | — | per_request | $0.028 |
-| `viduq2-pro-fast` | — | per_request | $0.028 |
-| `viduq2-turbo` | — | per_request | $0.028 |
-| `viduq3` | — | per_request | $0.028 |
-| `viduq3-mix` | — | per_request | $0.028 |
-| `viduq3-pro` | — | per_request | $0.028 |
-| `viduq3-turbo` | — | per_request | $0.028 |
-| `viduq4-preview` | — | per_request | $0.028 |
-| `viggle` | — | per_1m_input_tokens | $75.00 |
-| `viggle` | — | per_1m_output_tokens | $75.00 |
-| `viggle-create` | — | per_request | $0.200 |
-| `viggle-pro` | — | per_1m_input_tokens | $75.00 |
-| `viggle-pro` | — | per_1m_output_tokens | $75.00 |
-| `viggle-pro-create` | — | per_request | $0.800 |
-| `viggle-pro-proxy` | — | per_request | $0.010 |
-| `viggle-proxy` | — | per_request | $0.010 |
-| `volcv-dalle` | — | per_request | $0.100 |
-| `volcv-v1` | — | per_request | $0.100 |
-| `wan2.2-animate-mix` | — | per_request | $0.600 |
-| `wan2.2-animate-move` | — | per_request | $0.400 |
-| `wan2.2-i2v-flash` | — | per_second | $1.000 |
-| `wan2.2-i2v-plus` | — | per_second | $3.500 |
-| `wan2.2-kf2v-flash` | — | per_request | $1.000 |
-| `wan2.2-s2v` | — | per_request | $0.500 |
-| `wan2.2-s2v-detect` | — | per_request | $0.0040 |
-| `wan2.2-t2v-plus` | — | per_second | $3.500 |
-| `wan2.5-i2v-preview` | — | per_second | $5.000 |
-| `wan2.5-t2v-preview` | — | per_second | $5.000 |
-| `wan2.6-i2v` | — | per_second | $5.000 |
-| `wan2.6-image` | — | per_1m_input_tokens | $75.00 |
-| `wan2.6-image` | — | per_1m_output_tokens | $75.00 |
-| `wan2.6-r2v` | — | per_second | $5.000 |
-| `wan2.6-t2v` | — | per_second | $5.000 |
-| `wan2.7-image` | — | per_1m_input_tokens | $75.00 |
-| `wan2.7-image` | — | per_1m_output_tokens | $75.00 |
-| `wan2.7-image-pro` | — | per_1m_input_tokens | $75.00 |
-| `wan2.7-image-pro` | — | per_1m_output_tokens | $75.00 |
-| `wan3.0-video` | — | per_second | $0.450 |
-| `wan3.0-video-prime` | — | per_second | $0.450 |
-| `wanx2.1-i2v-plus` | — | per_second | $3.500 |
-| `wanx2.1-i2v-turbo` | — | per_second | $1.200 |
-| `wanx2.1-kf2v-plus` | — | per_request | $3.500 |
-| `wanx2.1-t2v-plus` | — | per_second | $3.500 |
-| `wanx2.1-t2v-turbo` | — | per_second | $1.200 |
-| `wanx2.1-vace-plus` | — | per_request | $0.700 |
-| `whisper-1` | — | per_1m_input_tokens | $30.00 |
-| `whisper-1` | — | per_1m_output_tokens | $30.00 |
-| `z-image-turbo` | — | per_image | $0.100 |
+| Model | Canonical | Unit | Price (USD) | List (USD) | Group | Ratio | Effective (USD) |
+|---|---|---|---|---|---|---|---|
+| `BAAI/bge-large-en-v1.5` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `BAAI/bge-large-en-v1.5` | — | per_1m_output_tokens | $0.200 | $0.200 | default | 1 | — |
+| `BAAI/bge-large-zh-v1.5` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `BAAI/bge-large-zh-v1.5` | — | per_1m_output_tokens | $0.200 | $0.200 | default | 1 | — |
+| `BAAI/bge-m3` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `BAAI/bge-m3` | — | per_1m_output_tokens | $0.200 | $0.200 | default | 1 | — |
+| `BAAI/bge-reranker-v2-m3` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `BAAI/bge-reranker-v2-m3` | — | per_1m_output_tokens | $0.200 | $0.200 | default | 1 | — |
+| `I2V-01` | — | per_second | $2.000 | $2.000 | default | 1 | — |
+| `I2V-01-Director` | — | per_second | $2.000 | $2.000 | default | 1 | — |
+| `I2V-01-live` | — | per_second | $2.000 | $2.000 | default | 1 | — |
+| `MiniMax-H3` | — | per_request | $1.000 | $1.000 | default | 1 | — |
+| `MiniMax-Hailuo-02` | — | per_request | $2.000 | $2.000 | default | 1 | — |
+| `MiniMax-Hailuo-2.3` | — | per_request | $2.000 | $2.000 | default | 1 | — |
+| `MiniMax-Hailuo-2.3-Fast` | — | per_request | $1.350 | $1.350 | default | 1 | — |
+| `MiniMax-M1` | — | per_1m_input_tokens | $13.00 | $13.00 | default | 1 | — |
+| `MiniMax-M1` | — | per_1m_output_tokens | $22.10 | $22.10 | default | 1 | — |
+| `MiniMax-M2` | — | per_1m_input_tokens | $2.100 | $2.100 | default | 1 | — |
+| `MiniMax-M2` | — | per_1m_output_tokens | $8.400 | $8.400 | default | 1 | — |
+| `MiniMax-M2.1` | — | per_1m_input_tokens | $2.100 | $2.100 | default | 1 | — |
+| `MiniMax-M2.1` | — | per_1m_output_tokens | $8.400 | $8.400 | default | 1 | — |
+| `MiniMax-M2.1-highspeed` | — | per_1m_input_tokens | $4.200 | $4.200 | default | 1 | — |
+| `MiniMax-M2.1-highspeed` | — | per_1m_output_tokens | $16.80 | $16.80 | default | 1 | — |
+| `MiniMax-M2.5` | — | per_1m_input_tokens | $2.100 | $2.100 | default | 1 | — |
+| `MiniMax-M2.5` | — | per_1m_output_tokens | $8.400 | $8.400 | default | 1 | — |
+| `MiniMax-M2.5-highspeed` | — | per_1m_input_tokens | $4.200 | $4.200 | default | 1 | — |
+| `MiniMax-M2.5-highspeed` | — | per_1m_output_tokens | $16.80 | $16.80 | default | 1 | — |
+| `MiniMax-M2.5-lightning` | — | per_1m_input_tokens | $2.100 | $2.100 | default | 1 | — |
+| `MiniMax-M2.5-lightning` | — | per_1m_output_tokens | $8.400 | $8.400 | default | 1 | — |
+| `MiniMax-M2.7` | — | per_1m_input_tokens | $2.100 | $2.100 | default | 1 | — |
+| `MiniMax-M2.7` | — | per_1m_output_tokens | $8.400 | $8.400 | default | 1 | — |
+| `MiniMax-M2.7-highspeed` | — | per_1m_input_tokens | $4.200 | $4.200 | default | 1 | — |
+| `MiniMax-M2.7-highspeed` | — | per_1m_output_tokens | $16.80 | $16.80 | default | 1 | — |
+| `S2V-01` | — | per_request | $1.600 | $1.600 | default | 1 | — |
+| `T2V-01` | — | per_second | $1.600 | $1.600 | default | 1 | — |
+| `T2V-01-Director` | — | per_second | $1.600 | $1.600 | default | 1 | — |
+| `advanced-voice` | — | per_request | $1.200 | $1.200 | default | 1 | — |
+| `animate-anyone-detect-gen2` | — | per_request | $0.0040 | $0.0040 | default | 1 | — |
+| `animate-anyone-gen2` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `animate-anyone-template-gen2` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `avatar-generate` | — | per_request | $0.300 | $0.300 | default | 1 | — |
+| `avatar-voice` | — | per_request | $0.0010 | $0.0010 | default | 1 | — |
+| `bge-m3` | — | per_1m_input_tokens | $0.400 | $0.400 | default | 1 | — |
+| `bge-m3` | — | per_1m_output_tokens | $0.400 | $0.400 | default | 1 | — |
+| `chat_fast_imagine` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `chat_fast_video` | — | per_second | $1.500 | $1.500 | default | 1 | — |
+| `chat_relax_imagine` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `chatgpt-4o-latest` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `chatgpt-4o-latest` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-3-5-sonnet-20240620` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `claude-3-5-sonnet-20240620` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-3-5-sonnet-20241022` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `claude-3-5-sonnet-20241022` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-3-5-sonnet-all` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `claude-3-7-sonnet-20250219` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `claude-3-7-sonnet-20250219` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-3-7-sonnet-20250219-thinking` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `claude-3-7-sonnet-20250219-thinking` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-fable-5` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `claude-fable-5` | — | per_1m_output_tokens | $50.00 | $50.00 | default | 1 | — |
+| `claude-fable-5-1` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `claude-fable-5-1` | — | per_1m_output_tokens | $50.00 | $50.00 | default | 1 | — |
+| `claude-fable-5-1-thinking` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `claude-fable-5-1-thinking` | — | per_1m_output_tokens | $50.00 | $50.00 | default | 1 | — |
+| `claude-fable-5-thinking` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `claude-fable-5-thinking` | — | per_1m_output_tokens | $50.00 | $50.00 | default | 1 | — |
+| `claude-haiku-4-5-20251001` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `claude-haiku-4-5-20251001` | — | per_1m_output_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-haiku-4-5-20251001-thinking` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `claude-haiku-4-5-20251001-thinking` | — | per_1m_output_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-opus-4-1-20250805` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-opus-4-1-20250805` | — | per_1m_output_tokens | $75.00 | $75.00 | default | 1 | — |
+| `claude-opus-4-1-20250805-thinking` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-opus-4-1-20250805-thinking` | — | per_1m_output_tokens | $75.00 | $75.00 | default | 1 | — |
+| `claude-opus-4-20250514` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-opus-4-20250514` | — | per_1m_output_tokens | $75.00 | $75.00 | default | 1 | — |
+| `claude-opus-4-20250514-thinking` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-opus-4-20250514-thinking` | — | per_1m_output_tokens | $75.00 | $75.00 | default | 1 | — |
+| `claude-opus-4-5-20251101` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-opus-4-5-20251101` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `claude-opus-4-5-20251101-thinking` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-opus-4-5-20251101-thinking` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `claude-opus-4-6` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-opus-4-6` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `claude-opus-4-6-thinking` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-opus-4-6-thinking` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `claude-opus-4-7` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-opus-4-7` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `claude-opus-4-7-thinking` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-opus-4-7-thinking` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `claude-opus-4-8` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-opus-4-8` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `claude-opus-4-8-thinking` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-opus-4-8-thinking` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `claude-opus-5` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-opus-5` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `claude-opus-5-5` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-opus-5-5` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `claude-opus-5-5-thinking` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `claude-opus-5-5-thinking` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | — |
+| `claude-opus-5-thinking` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `claude-opus-5-thinking` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `claude-sonnet-4-20250514` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `claude-sonnet-4-20250514` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-sonnet-4-20250514-thinking` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `claude-sonnet-4-20250514-thinking` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-sonnet-4-5-20250929` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `claude-sonnet-4-5-20250929` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-sonnet-4-5-20250929-thinking` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `claude-sonnet-4-5-20250929-thinking` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-sonnet-4-6` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `claude-sonnet-4-6` | `claude-sonnet-4.6` | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-sonnet-4-6-thinking` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `claude-sonnet-4-6-thinking` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `claude-sonnet-5` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `claude-sonnet-5` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `claude-sonnet-5-5` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `claude-sonnet-5-5` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `claude-sonnet-5-5-thinking` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `claude-sonnet-5-5-thinking` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `claude-sonnet-5-thinking` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `claude-sonnet-5-thinking` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `code-llama-13b` | — | per_request | $0.0060 | $0.0060 | default | 1 | — |
+| `code-llama-34b` | — | per_request | $0.0060 | $0.0060 | default | 1 | — |
+| `code-llama-7b` | — | per_request | $0.0060 | $0.0060 | default | 1 | — |
+| `codex-auto-review` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | — |
+| `codex-auto-review` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `dall-e-3` | — | per_request | $0.040 | $0.040 | default | 1 | — |
+| `deepseek-chat` | `deepseek-v3` | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `deepseek-chat` | `deepseek-v3` | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `deepseek-r1` | `deepseek-r1` | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `deepseek-r1` | `deepseek-r1` | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `deepseek-reasoner` | `deepseek-r1` | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `deepseek-reasoner` | `deepseek-r1` | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `deepseek-v3` | `deepseek-v3` | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `deepseek-v3` | `deepseek-v3` | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `deepseek-v3.1` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `deepseek-v3.1` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | — |
+| `deepseek-v3.2` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `deepseek-v3.2` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | — |
+| `deepseek-v4-flash` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `deepseek-v4-flash` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `deepseek-v4-flash-vision-exp` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `deepseek-v4-flash-vision-exp` | — | per_1m_output_tokens | $9.000 | $9.000 | default | 1 | — |
+| `deepseek-v4-pro` | — | per_1m_input_tokens | $12.00 | $12.00 | default | 1 | — |
+| `deepseek-v4-pro` | — | per_1m_output_tokens | $24.00 | $24.00 | default | 1 | — |
+| `deepseek-v4.1-flash` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `deepseek-v4.1-flash` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `deepseek-v4.1-flash-0910` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `deepseek-v4.1-flash-0910` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `deepseek-v4.1-flash-1017` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `deepseek-v4.1-flash-1017` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `direct-generate-pptx` | — | per_request | $0.400 | $0.400 | default | 1 | — |
+| `docmee-ppt-generate` | — | per_request | $0.400 | $0.400 | default | 1 | — |
+| `docmee-ppt-proxy` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `doubao-seed-1-6-nothinking-250615` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `doubao-seed-1-6-nothinking-250615` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `doubao-seed-1-6-nothinking-250715` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `doubao-seed-1-6-nothinking-250715` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `doubao-seed-1-8-251228` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `doubao-seed-1-8-251228` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `doubao-seed-2-0-code-preview-260215` | — | per_1m_input_tokens | $3.200 | $3.200 | default | 1 | — |
+| `doubao-seed-2-0-code-preview-260215` | — | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `doubao-seed-2-0-lite-260215` | — | per_1m_input_tokens | $0.600 | $0.600 | default | 1 | — |
+| `doubao-seed-2-0-lite-260215` | — | per_1m_output_tokens | $3.600 | $3.600 | default | 1 | — |
+| `doubao-seed-2-0-mini-260215` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `doubao-seed-2-0-mini-260215` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `doubao-seed-2-0-pro-260215` | — | per_1m_input_tokens | $3.200 | $3.200 | default | 1 | — |
+| `doubao-seed-2-0-pro-260215` | — | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `doubao-seedance-1-0-lite-i2v-250428` | — | per_second | $5.000 | $5.000 | default | 1 | — |
+| `doubao-seedance-1-0-lite-t2v-250428` | — | per_second | $5.000 | $5.000 | default | 1 | — |
+| `doubao-seedance-1-0-pro-250528` | — | per_second | $7.500 | $7.500 | default | 1 | — |
+| `doubao-seedance-1-0-pro-fast-251015` | — | per_second | $2.100 | $2.100 | default | 1 | — |
+| `doubao-seedance-1-5-pro-251215` | — | per_second | $8.000 | $8.000 | default | 1 | — |
+| `doubao-seedance-2-0-260128` | — | per_second | $1.100 | $1.100 | default | 1 | — |
+| `doubao-seedance-2-0-fast-260128` | — | per_second | $1.100 | $1.100 | default | 1 | — |
+| `doubao-seedance-2.0-mini` | — | per_second | $1.100 | $1.100 | default | 1 | — |
+| `doubao-seedance-2.5` | — | per_second | $1.000 | $1.000 | default | 1 | — |
+| `doubao-seededit-3-0-i2i-250628` | — | per_request | $0.150 | $0.150 | default | 1 | — |
+| `doubao-seedream-3-0-t2i-250415` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `doubao-seedream-4-0-250828` | — | per_request | $0.140 | $0.140 | default | 1 | — |
+| `doubao-seedream-4-5-251128` | — | per_request | $0.150 | $0.150 | default | 1 | — |
+| `doubao-seedream-5-0-260128` | — | per_request | $0.150 | $0.150 | default | 1 | — |
+| `emo-detect-v1` | — | per_request | $0.0040 | $0.0040 | default | 1 | — |
+| `emo-v1` | — | per_request | $0.160 | $0.160 | default | 1 | — |
+| `emoji-detect-v1` | — | per_request | $0.0040 | $0.0040 | default | 1 | — |
+| `emoji-v1` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `flux` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `flux-2-dev` | — | per_1m_input_tokens | $0.072 | $0.072 | default | 1 | — |
+| `flux-2-dev` | — | per_1m_output_tokens | $0.072 | $0.072 | default | 1 | — |
+| `flux-2-flex` | — | per_1m_input_tokens | $0.360 | $0.360 | default | 1 | — |
+| `flux-2-flex` | — | per_1m_output_tokens | $0.360 | $0.360 | default | 1 | — |
+| `flux-2-max` | — | per_1m_input_tokens | $0.220 | $0.220 | default | 1 | — |
+| `flux-2-max` | — | per_1m_output_tokens | $0.220 | $0.220 | default | 1 | — |
+| `flux-dev` | — | per_request | $0.030 | $0.030 | default | 1 | — |
+| `flux-pro` | — | per_request | $0.050 | $0.050 | default | 1 | — |
+| `flux-pro-1.1-ultra` | — | per_request | $0.250 | $0.250 | default | 1 | — |
+| `flux-pro-max` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `flux-schnell` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `flux.1.1-pro` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `gemini-2.0-flash-exp-image-generation` | — | per_image | $0.030 | $0.030 | default | 1 | — |
+| `gemini-2.5-flash` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `gemini-2.5-flash` | — | per_1m_output_tokens | $2.500 | $2.500 | default | 1 | — |
+| `gemini-2.5-flash-lite` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | — |
+| `gemini-2.5-flash-lite` | — | per_1m_output_tokens | $0.400 | $0.400 | default | 1 | — |
+| `gemini-2.5-flash-nothinking` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `gemini-2.5-flash-nothinking` | — | per_1m_output_tokens | $2.500 | $2.500 | default | 1 | — |
+| `gemini-2.5-pro` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gemini-2.5-pro` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gemini-3-flash-preview` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | — |
+| `gemini-3-flash-preview` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | — |
+| `gemini-3-pro-image` | — | per_image | $0.200 | $0.200 | default | 1 | — |
+| `gemini-3-pro-image-2k` | — | per_image | $0.200 | $0.200 | default | 1 | — |
+| `gemini-3-pro-image-4k` | — | per_image | $0.275 | $0.275 | default | 1 | — |
+| `gemini-3-pro-image-preview` | — | per_image | $0.200 | $0.200 | default | 1 | — |
+| `gemini-3-pro-image-preview-2k` | — | per_image | $0.200 | $0.200 | default | 1 | — |
+| `gemini-3-pro-image-preview-4k` | — | per_image | $0.275 | $0.275 | default | 1 | — |
+| `gemini-3-pro-preview` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `gemini-3-pro-preview` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | — |
+| `gemini-3.1-flash-image` | — | per_image | $0.100 | $0.100 | default | 1 | — |
+| `gemini-3.1-flash-image-2k` | — | per_image | $0.100 | $0.100 | default | 1 | — |
+| `gemini-3.1-flash-image-4k` | — | per_image | $0.137 | $0.137 | default | 1 | — |
+| `gemini-3.1-flash-image-preview` | — | per_image | $0.100 | $0.100 | default | 1 | — |
+| `gemini-3.1-flash-image-preview-2k` | — | per_image | $0.100 | $0.100 | default | 1 | — |
+| `gemini-3.1-flash-image-preview-4k` | — | per_image | $0.137 | $0.137 | default | 1 | — |
+| `gemini-3.1-flash-lite-preview` | — | per_1m_input_tokens | $0.250 | $0.250 | default | 1 | — |
+| `gemini-3.1-flash-lite-preview` | — | per_1m_output_tokens | $0.750 | $0.750 | default | 1 | — |
+| `gemini-3.1-pro-preview` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `gemini-3.1-pro-preview` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | — |
+| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | — |
+| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_output_tokens | $9.000 | $9.000 | default | 1 | — |
+| `gemini-3.5-flash-lite` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `gemini-3.5-flash-lite` | — | per_1m_output_tokens | $2.500 | $2.500 | default | 1 | — |
+| `gemini-3.6-flash` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | — |
+| `gemini-3.6-flash` | — | per_1m_output_tokens | $7.500 | $7.500 | default | 1 | — |
+| `gemini-3.7-flash` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | — |
+| `gemini-3.7-flash` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | — |
+| `gemini-3.8-flash` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | — |
+| `gemini-3.8-flash` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | — |
+| `gemini-4-argon` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `gemini-4-argon` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gemini-nano-banana-2.1` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `gemini-nano-banana-2.1-2k` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `gemini-nano-banana-2.1-4k` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `glm-3-turbo` | — | per_request | $0.0020 | $0.0020 | default | 1 | — |
+| `glm-4.5` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `glm-4.5` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `glm-4.5-air` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `glm-4.5-air` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | — |
+| `glm-4.5-airx` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `glm-4.5-airx` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `glm-4.5-flash` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `glm-4.5-flash` | — | per_1m_output_tokens | $0.600 | $0.600 | default | 1 | — |
+| `glm-4.5-x` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `glm-4.5-x` | — | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `glm-4.6` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `glm-4.6` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `glm-4.7` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `glm-4.7` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `glm-4v` | — | per_1m_input_tokens | $60.00 | $60.00 | default | 1 | — |
+| `glm-4v` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | — |
+| `glm-5` | — | per_1m_input_tokens | $6.000 | $6.000 | default | 1 | — |
+| `glm-5` | — | per_1m_output_tokens | $22.02 | $22.02 | default | 1 | — |
+| `glm-5-turbo` | — | per_1m_input_tokens | $7.000 | $7.000 | default | 1 | — |
+| `glm-5-turbo` | — | per_1m_output_tokens | $26.00 | $26.00 | default | 1 | — |
+| `glm-5.1` | — | per_1m_input_tokens | $6.000 | $6.000 | default | 1 | — |
+| `glm-5.1` | — | per_1m_output_tokens | $22.00 | $22.00 | default | 1 | — |
+| `glm-5.2` | — | per_1m_input_tokens | $8.000 | $8.000 | default | 1 | — |
+| `glm-5.2` | — | per_1m_output_tokens | $28.00 | $28.00 | default | 1 | — |
+| `glm-5.3` | — | per_1m_input_tokens | $8.000 | $8.000 | default | 1 | — |
+| `glm-5.3` | — | per_1m_output_tokens | $28.00 | $28.00 | default | 1 | — |
+| `glm-5.3-flash` | — | per_1m_input_tokens | $0.400 | $0.400 | default | 1 | — |
+| `glm-5.3-flash` | — | per_1m_output_tokens | $1.400 | $1.400 | default | 1 | — |
+| `google-palm` | — | per_request | $0.0060 | $0.0060 | default | 1 | — |
+| `gpt-3.5-turbo` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | — |
+| `gpt-3.5-turbo` | — | per_1m_output_tokens | $1.000 | $1.000 | default | 1 | — |
+| `gpt-3.5-turbo-0125` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | — |
+| `gpt-3.5-turbo-0125` | — | per_1m_output_tokens | $1.000 | $1.000 | default | 1 | — |
+| `gpt-3.5-turbo-0301` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | — |
+| `gpt-3.5-turbo-0301` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | — |
+| `gpt-3.5-turbo-0613` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | — |
+| `gpt-3.5-turbo-0613` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | — |
+| `gpt-3.5-turbo-1106` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `gpt-3.5-turbo-1106` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `gpt-3.5-turbo-16k` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `gpt-3.5-turbo-16k` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `gpt-3.5-turbo-16k-0613` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `gpt-3.5-turbo-16k-0613` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `gpt-4` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-4` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | — |
+| `gpt-4-0125-preview` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-4-0125-preview` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | — |
+| `gpt-4-0314` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-4-0314` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | — |
+| `gpt-4-0613` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-4-0613` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | — |
+| `gpt-4-1106-preview` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-4-1106-preview` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | — |
+| `gpt-4-1106-vision-preview` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-4-1106-vision-preview` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | — |
+| `gpt-4-32k` | — | per_1m_input_tokens | $60.00 | $60.00 | default | 1 | — |
+| `gpt-4-32k` | — | per_1m_output_tokens | $120.00 | $120.00 | default | 1 | — |
+| `gpt-4-32k-0314` | — | per_1m_input_tokens | $60.00 | $60.00 | default | 1 | — |
+| `gpt-4-32k-0314` | — | per_1m_output_tokens | $120.00 | $120.00 | default | 1 | — |
+| `gpt-4-32k-0613` | — | per_1m_input_tokens | $60.00 | $60.00 | default | 1 | — |
+| `gpt-4-32k-0613` | — | per_1m_output_tokens | $120.00 | $120.00 | default | 1 | — |
+| `gpt-4-all` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-4-all` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | — |
+| `gpt-4-dalle` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `gpt-4-gizmo` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `gpt-4-turbo` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `gpt-4-turbo-2024-04-09` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-4-turbo-2024-04-09` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-4-turbo-preview` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-4-turbo-preview` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-4-v` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `gpt-4-vision-preview` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-4-vision-preview` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | — |
+| `gpt-4.1` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `gpt-4.1` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | — |
+| `gpt-4.1-2025-04-14` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `gpt-4.1-2025-04-14` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | — |
+| `gpt-4.1-mini` | — | per_1m_input_tokens | $0.400 | $0.400 | default | 1 | — |
+| `gpt-4.1-mini` | — | per_1m_output_tokens | $0.800 | $0.800 | default | 1 | — |
+| `gpt-4.1-mini-2025-04-14` | — | per_1m_input_tokens | $0.400 | $0.400 | default | 1 | — |
+| `gpt-4.1-mini-2025-04-14` | — | per_1m_output_tokens | $0.800 | $0.800 | default | 1 | — |
+| `gpt-4.1-nano` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | — |
+| `gpt-4.1-nano` | — | per_1m_output_tokens | $0.200 | $0.200 | default | 1 | — |
+| `gpt-4.1-nano-2025-04-14` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | — |
+| `gpt-4.1-nano-2025-04-14` | — | per_1m_output_tokens | $0.200 | $0.200 | default | 1 | — |
+| `gpt-4o` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | — |
+| `gpt-4o` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-4o-2024-05-13` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `gpt-4o-2024-05-13` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `gpt-4o-2024-08-06` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | — |
+| `gpt-4o-2024-08-06` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-4o-2024-11-20` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | — |
+| `gpt-4o-2024-11-20` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-4o-all` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-4o-all` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | — |
+| `gpt-4o-image` | — | per_image | $0.050 | $0.050 | default | 1 | — |
+| `gpt-4o-image-vip` | — | per_image | $0.100 | $0.100 | default | 1 | — |
+| `gpt-4o-mini` | — | per_1m_input_tokens | $0.150 | $0.150 | default | 1 | — |
+| `gpt-4o-mini` | — | per_1m_output_tokens | $0.600 | $0.600 | default | 1 | — |
+| `gpt-4o-mini-2024-07-18` | — | per_1m_input_tokens | $0.150 | $0.150 | default | 1 | — |
+| `gpt-4o-mini-2024-07-18` | — | per_1m_output_tokens | $0.600 | $0.600 | default | 1 | — |
+| `gpt-4o-study` | — | per_request | $0.050 | $0.050 | default | 1 | — |
+| `gpt-5` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5-2025-08-07` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5-2025-08-07` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5-chat` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5-chat` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5-chat-2025-08-07` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5-chat-2025-08-07` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5-chat-latest` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5-chat-latest` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5-codex` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5-codex` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5-codex-high` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5-codex-high` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5-codex-low` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5-codex-low` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5-codex-medium` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5-codex-medium` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5-high` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5-high` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5-low` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5-low` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5-medium` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5-medium` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5-mini` | — | per_1m_input_tokens | $0.250 | $0.250 | default | 1 | — |
+| `gpt-5-mini` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `gpt-5-mini-2025-08-07` | — | per_1m_input_tokens | $0.250 | $0.250 | default | 1 | — |
+| `gpt-5-mini-2025-08-07` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `gpt-5-minimal` | — | per_1m_input_tokens | $0.250 | $0.250 | default | 1 | — |
+| `gpt-5-minimal` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `gpt-5-nano` | — | per_1m_input_tokens | $0.050 | $0.050 | default | 1 | — |
+| `gpt-5-nano` | — | per_1m_output_tokens | $0.400 | $0.400 | default | 1 | — |
+| `gpt-5-nano-2025-08-07` | — | per_1m_input_tokens | $0.050 | $0.050 | default | 1 | — |
+| `gpt-5-nano-2025-08-07` | — | per_1m_output_tokens | $0.400 | $0.400 | default | 1 | — |
+| `gpt-5-pro` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | — |
+| `gpt-5-pro` | — | per_1m_output_tokens | $120.00 | $120.00 | default | 1 | — |
+| `gpt-5-pro-2025-10-06` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | — |
+| `gpt-5-pro-2025-10-06` | — | per_1m_output_tokens | $120.00 | $120.00 | default | 1 | — |
+| `gpt-5.1` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.1` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5.1-2025-11-13` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.1-2025-11-13` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5.1-all` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.1-all` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5.1-chat-latest` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.1-chat-latest` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5.1-codex` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.1-codex` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5.1-codex-high` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | — |
+| `gpt-5.1-codex-high` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `gpt-5.1-codex-max` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | — |
+| `gpt-5.1-codex-max` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `gpt-5.1-codex-medium` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | — |
+| `gpt-5.1-codex-medium` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `gpt-5.1-codex-mini` | — | per_1m_input_tokens | $0.250 | $0.250 | default | 1 | — |
+| `gpt-5.1-codex-mini` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `gpt-5.1-high` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.1-high` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5.1-low` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.1-low` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5.1-medium` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.1-medium` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5.1-thinking` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.1-thinking` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5.1-thinking-all` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.1-thinking-all` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5.2` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | — |
+| `gpt-5.2` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `gpt-5.2-2025-12-11` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | — |
+| `gpt-5.2-2025-12-11` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `gpt-5.2-all` | — | per_request | $0.050 | $0.050 | default | 1 | — |
+| `gpt-5.2-chat-latest` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | — |
+| `gpt-5.2-chat-latest` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `gpt-5.2-codex` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.2-codex` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-5.2-pro` | — | per_1m_input_tokens | $21.00 | $21.00 | default | 1 | — |
+| `gpt-5.2-pro` | — | per_1m_output_tokens | $168.00 | $168.00 | default | 1 | — |
+| `gpt-5.2-pro-2025-12-11` | — | per_1m_input_tokens | $21.00 | $21.00 | default | 1 | — |
+| `gpt-5.2-pro-2025-12-11` | — | per_1m_output_tokens | $168.00 | $168.00 | default | 1 | — |
+| `gpt-5.2-thinking` | — | per_request | $0.050 | $0.050 | default | 1 | — |
+| `gpt-5.3-chat-latest` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | — |
+| `gpt-5.3-chat-latest` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `gpt-5.3-codex` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | — |
+| `gpt-5.3-codex` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `gpt-5.3-codex-high` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | — |
+| `gpt-5.3-codex-high` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `gpt-5.3-codex-low` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | — |
+| `gpt-5.3-codex-low` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `gpt-5.3-codex-medium` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | — |
+| `gpt-5.3-codex-medium` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `gpt-5.4` | `gpt-5.4` | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | — |
+| `gpt-5.4` | `gpt-5.4` | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `gpt-5.4-2026-03-05` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | — |
+| `gpt-5.4-2026-03-05` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `gpt-5.4-mini` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | — |
+| `gpt-5.4-mini` | — | per_1m_output_tokens | $4.500 | $4.500 | default | 1 | — |
+| `gpt-5.4-mini-2026-03-17` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | — |
+| `gpt-5.4-mini-2026-03-17` | — | per_1m_output_tokens | $4.500 | $4.500 | default | 1 | — |
+| `gpt-5.4-nano` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `gpt-5.4-nano` | — | per_1m_output_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.4-nano-2026-03-17` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `gpt-5.4-nano-2026-03-17` | — | per_1m_output_tokens | $1.250 | $1.250 | default | 1 | — |
+| `gpt-5.4-pro` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-5.4-pro` | — | per_1m_output_tokens | $180.00 | $180.00 | default | 1 | — |
+| `gpt-5.4-pro-2026-03-05` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-5.4-pro-2026-03-05` | — | per_1m_output_tokens | $180.00 | $180.00 | default | 1 | — |
+| `gpt-5.5` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `gpt-5.5` | — | per_1m_output_tokens | $40.00 | $40.00 | default | 1 | — |
+| `gpt-5.5-2026-04-23` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `gpt-5.5-2026-04-23` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-5.6-luna` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `gpt-5.6-luna` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | — |
+| `gpt-5.6-sol` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `gpt-5.6-sol` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-5.6-sol-2026-07-09` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `gpt-5.6-sol-2026-07-09` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | — |
+| `gpt-5.6-terra` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | — |
+| `gpt-5.6-terra` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `gpt-6-astra` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-6-astra` | — | per_1m_output_tokens | $50.00 | $50.00 | default | 1 | — |
+| `gpt-6-luna` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | — |
+| `gpt-6-luna` | — | per_1m_output_tokens | $0.500 | $0.500 | default | 1 | — |
+| `gpt-6-sol` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-6-sol` | — | per_1m_output_tokens | $50.00 | $50.00 | default | 1 | — |
+| `gpt-6.1-sol` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `gpt-6.1-sol` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-audio` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | — |
+| `gpt-audio` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-audio-2025-08-28` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | — |
+| `gpt-audio-2025-08-28` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-image-1` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `gpt-image-1` | — | per_1m_output_tokens | $40.00 | $40.00 | default | 1 | — |
+| `gpt-image-1-mini` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `gpt-image-1-mini` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `gpt-image-1.5` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `gpt-image-1.5` | — | per_1m_output_tokens | $32.00 | $32.00 | default | 1 | — |
+| `gpt-image-1.5-2025-12-16` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `gpt-image-1.5-2025-12-16` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `gpt-image-2` | — | per_image | $0.060 | $0.060 | default | 1 | — |
+| `gpt-image-2-2k` | — | per_image | $0.060 | $0.060 | default | 1 | — |
+| `gpt-image-2-4k` | — | per_image | $0.040 | $0.040 | default | 1 | — |
+| `gpt-image-2-all` | — | per_image | $0.040 | $0.040 | default | 1 | — |
+| `gpt-image-2-vip` | — | per_image | $0.100 | $0.100 | default | 1 | — |
+| `gpt-image-2.5-flare` | — | per_image | $0.300 | $0.300 | default | 1 | — |
+| `gpt-image-2.5-flare-2k` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `gpt-image-2.5-flare-2k` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-image-2.5-flare-4k` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `gpt-image-2.5-flare-4k` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-image-2.5-sunburst` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `gpt-image-2.5-sunburst` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-image-2.5-sunburst-2k` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `gpt-image-2.5-sunburst-2k` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | — |
+| `gpt-image-2.5-sunburst-4k` | — | per_image | $0.150 | $0.150 | default | 1 | — |
+| `gpt-oss-120b` | — | per_1m_input_tokens | $0.400 | $0.400 | default | 1 | — |
+| `gpt-oss-120b` | — | per_1m_output_tokens | $1.600 | $1.600 | default | 1 | — |
+| `gpt-oss-20b` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `gpt-oss-20b` | — | per_1m_output_tokens | $0.800 | $0.800 | default | 1 | — |
+| `grok-1.5-video-10s` | — | per_second | $1.300 | $1.300 | default | 1 | — |
+| `grok-1.5-video-15s` | — | per_second | $1.300 | $1.300 | default | 1 | — |
+| `grok-1.5-video-6s` | — | per_second | $1.300 | $1.300 | default | 1 | — |
+| `grok-3` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `grok-4` | — | per_request | $0.020 | $0.020 | default | 1 | — |
+| `grok-4-fast-reasoning` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `grok-4-fast-reasoning` | — | per_1m_output_tokens | $0.050 | $0.050 | default | 1 | — |
+| `grok-4.1-image` | — | per_image | $0.100 | $0.100 | default | 1 | — |
+| `grok-4.2` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `grok-4.2` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `grok-4.2-image` | — | per_image | $0.120 | $0.120 | default | 1 | — |
+| `grok-4.5` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `grok-4.5` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `grok-4.6` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `grok-4.6` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `grok-4.7` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `grok-4.7` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `grok-imagine-image-2.0` | — | per_image | $0.060 | $0.060 | default | 1 | — |
+| `grok-imagine-video-1.5` | `grok-imagine-video-1.5` | per_second | $0.600 | $0.600 | default | 1 | — |
+| `grok-imagine-video-1.5-preview` | `grok-imagine-video-1.5` | per_second | $1.300 | $1.300 | default | 1 | — |
+| `grok-video-3` | — | per_second | $0.500 | $0.500 | default | 1 | — |
+| `hailuo-video` | — | per_second | $0.800 | $0.800 | default | 1 | — |
+| `higgsfield-ads` | — | per_request | $2.100 | $2.100 | default | 1 | — |
+| `higgsfield-lite` | — | per_request | $0.800 | $0.800 | default | 1 | — |
+| `higgsfield-speech` | — | per_request | $8.000 | $8.000 | default | 1 | — |
+| `higgsfield-standard` | — | per_request | $1.600 | $1.600 | default | 1 | — |
+| `higgsfield-turbo` | — | per_request | $1.120 | $1.120 | default | 1 | — |
+| `hunyuan-t1` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `hunyuan-t1` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `jina-reranker-v2-base-multilingual` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `jina-reranker-v2-base-multilingual` | — | per_1m_output_tokens | $0.200 | $0.200 | default | 1 | — |
+| `kimi-k2-0711-preview` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `kimi-k2-0711-preview` | — | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `kimi-k2-250905` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `kimi-k2-250905` | — | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `kimi-k2-thinking` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `kimi-k2-thinking` | — | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `kimi-k2.5` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `kimi-k2.5` | — | per_1m_output_tokens | $21.00 | $21.00 | default | 1 | — |
+| `kimi-k3` | — | per_1m_input_tokens | $20.00 | $20.00 | default | 1 | — |
+| `kimi-k3` | — | per_1m_output_tokens | $100.00 | $100.00 | default | 1 | — |
+| `kling-advanced-lip-sync` | — | per_request | $0.500 | $0.500 | default | 1 | — |
+| `kling-custom-elements` | — | per_request | $0.0010 | $0.0010 | default | 1 | — |
+| `kling-custom-elements-list` | — | per_request | $0.0001 | $0.0001 | default | 1 | — |
+| `kling-custom-voices` | — | per_request | $0.050 | $0.050 | default | 1 | — |
+| `kling-effects` | — | per_request | $1.000 | $1.000 | default | 1 | — |
+| `kling-identify-face` | — | per_request | $0.050 | $0.050 | default | 1 | — |
+| `kling-image` | — | per_image | $0.040 | $0.040 | default | 1 | — |
+| `kling-image-expend` | — | per_image | $0.200 | $0.200 | default | 1 | — |
+| `kling-image-v1` | — | per_image | $0.025 | $0.025 | default | 1 | — |
+| `kling-image-v1-5` | — | per_image | $0.100 | $0.100 | default | 1 | — |
+| `kling-image-v2` | — | per_image | $0.100 | $0.100 | default | 1 | — |
+| `kling-image-v2-1` | — | per_image | $0.100 | $0.100 | default | 1 | — |
+| `kling-image-v2-new` | — | per_image | $0.040 | $0.040 | default | 1 | — |
+| `kling-image-v3` | — | per_image | $0.040 | $0.040 | default | 1 | — |
+| `kling-image-v3-omni` | — | per_image | $0.040 | $0.040 | default | 1 | — |
+| `kling-kolors-virtual-try-on` | — | per_request | $0.600 | $0.600 | default | 1 | — |
+| `kling-lip-sync` | — | per_request | $0.500 | $0.500 | default | 1 | — |
+| `kling-meta-human` | — | per_request | $0.400 | $0.400 | default | 1 | — |
+| `kling-multi-image2image` | — | per_image | $0.400 | $0.400 | default | 1 | — |
+| `kling-presets-elements-list` | — | per_request | $0.0001 | $0.0001 | default | 1 | — |
+| `kling-presets-voices-list` | — | per_request | $0.0001 | $0.0001 | default | 1 | — |
+| `kling-text-to-audio` | — | per_request | $0.250 | $0.250 | default | 1 | — |
+| `kling-tts` | — | per_request | $0.050 | $0.050 | default | 1 | — |
+| `kling-video` | — | per_second | $1.000 | $1.000 | default | 1 | — |
+| `kling-video-extend` | — | per_second | $1.200 | $1.200 | default | 1 | — |
+| `kling-video-motion-control` | — | per_second | $0.800 | $0.800 | default | 1 | — |
+| `kling-video-multi-elements-add` | — | per_second | $0.0001 | $0.0001 | default | 1 | — |
+| `kling-video-multi-elements-clear` | — | per_second | $0.0001 | $0.0001 | default | 1 | — |
+| `kling-video-multi-elements-create` | — | per_second | $0.0001 | $0.0001 | default | 1 | — |
+| `kling-video-multi-elements-delete` | — | per_second | $0.0001 | $0.0001 | default | 1 | — |
+| `kling-video-multi-elements-init` | — | per_second | $0.0001 | $0.0001 | default | 1 | — |
+| `kling-video-multi-elements-preview` | — | per_second | $0.0001 | $0.0001 | default | 1 | — |
+| `kling-video-o1` | — | per_second | $0.800 | $0.800 | default | 1 | — |
+| `kling-video-to-audio` | — | per_second | $0.250 | $0.250 | default | 1 | — |
+| `kling-video-v1` | — | per_second | $1.000 | $1.000 | default | 1 | — |
+| `kling-video-v1-5` | — | per_second | $2.000 | $2.000 | default | 1 | — |
+| `kling-video-v1-6` | — | per_second | $2.000 | $2.000 | default | 1 | — |
+| `kling-video-v2-1` | — | per_second | $2.000 | $2.000 | default | 1 | — |
+| `kling-video-v2-1-master` | — | per_second | $10.00 | $10.00 | default | 1 | — |
+| `kling-video-v2-5-turbo` | — | per_second | $2.500 | $2.500 | default | 1 | — |
+| `kling-video-v2-6` | — | per_second | $2.500 | $2.500 | default | 1 | — |
+| `kling-video-v2-master` | — | per_second | $10.00 | $10.00 | default | 1 | — |
+| `kling-video-v3` | — | per_second | $1.000 | $1.000 | default | 1 | — |
+| `kling-video-v3-omni` | — | per_second | $1.000 | $1.000 | default | 1 | — |
+| `kling-voices-list` | — | per_request | $0.0001 | $0.0001 | default | 1 | — |
+| `kolors-virtual-try-on-v1` | — | per_request | $0.600 | $0.600 | default | 1 | — |
+| `kolors-virtual-try-on-v1-5` | — | per_request | $0.600 | $0.600 | default | 1 | — |
+| `liveportrait` | — | per_request | $0.020 | $0.020 | default | 1 | — |
+| `liveportrait-detect` | — | per_request | $0.0040 | $0.0040 | default | 1 | — |
+| `llama-2-13b` | — | per_request | $0.0060 | $0.0060 | default | 1 | — |
+| `llama-2-70b` | — | per_request | $0.0060 | $0.0060 | default | 1 | — |
+| `llama-2-7b` | — | per_request | $0.0060 | $0.0060 | default | 1 | — |
+| `llama-3-70b` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `llama-3-8b` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `llama-3-8b-instruct` | — | per_1m_input_tokens | $0.020 | $0.020 | default | 1 | — |
+| `llama-3-8b-instruct` | — | per_1m_output_tokens | $0.030 | $0.030 | default | 1 | — |
+| `llama-3-sonar-large-32k-chat` | — | per_request | $0.0050 | $0.0050 | default | 1 | — |
+| `llama-3-sonar-large-32k-online` | — | per_request | $0.0050 | $0.0050 | default | 1 | — |
+| `llama-3-sonar-small-32k-chat` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `llama-3-sonar-small-32k-online` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `llama-3.1-405b` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `llama-3.1-70b` | — | per_request | $0.050 | $0.050 | default | 1 | — |
+| `llama-3.1-8b` | — | per_request | $0.0050 | $0.0050 | default | 1 | — |
+| `llama-3.1-8b-instruct` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | — |
+| `llama-3.1-8b-instruct` | — | per_1m_output_tokens | $0.150 | $0.150 | default | 1 | — |
+| `llama-3.2-11b-vision-instruct` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `llama-3.2-1b-instruct` | — | per_request | $0.0050 | $0.0050 | default | 1 | — |
+| `llama-3.2-3b-instruct` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | — |
+| `llama-3.2-3b-instruct` | — | per_1m_output_tokens | $0.100 | $0.100 | default | 1 | — |
+| `llama-3.2-90b-vision-instruct` | — | per_request | $0.020 | $0.020 | default | 1 | — |
+| `llama-3.3-70b-instruct-fp8-fast` | — | per_1m_input_tokens | $0.280 | $0.280 | default | 1 | — |
+| `llama-3.3-70b-instruct-fp8-fast` | — | per_1m_output_tokens | $2.173 | $2.173 | default | 1 | — |
+| `llama-4-scout` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `llama-4-scout` | — | per_1m_output_tokens | $0.945 | $0.945 | default | 1 | — |
+| `llama-4-scout-17b-16e-instruct` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `llama-4-scout-17b-16e-instruct` | — | per_1m_output_tokens | $0.945 | $0.945 | default | 1 | — |
+| `luma_video_api` | — | per_second | $2.000 | $2.000 | default | 1 | — |
+| `mimo-v2.6-flash` | — | per_1m_input_tokens | $0.880 | $0.880 | default | 1 | — |
+| `mimo-v2.6-flash` | — | per_1m_output_tokens | $1.760 | $1.760 | default | 1 | — |
+| `mimo-v2.6-pro` | — | per_1m_input_tokens | $2.640 | $2.640 | default | 1 | — |
+| `mimo-v2.6-pro` | — | per_1m_output_tokens | $5.280 | $5.280 | default | 1 | — |
+| `minimax-m1-80k` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `minimax-m1-80k` | — | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `minimax-m2.1` | — | per_1m_input_tokens | $2.100 | $2.100 | default | 1 | — |
+| `minimax-m2.1` | — | per_1m_output_tokens | $8.400 | $8.400 | default | 1 | — |
+| `minimax-voice-clone` | — | per_request | $9.900 | $9.900 | default | 1 | — |
+| `minimax-voice-design` | — | per_request | $9.900 | $9.900 | default | 1 | — |
+| `minimax/speech-01-hd` | — | per_request | $3.500 | $3.500 | default | 1 | — |
+| `minimax/speech-01-turbo` | — | per_request | $2.000 | $2.000 | default | 1 | — |
+| `minimax/speech-02-hd` | — | per_request | $3.500 | $3.500 | default | 1 | — |
+| `minimax/speech-02-turbo` | — | per_request | $2.000 | $2.000 | default | 1 | — |
+| `minimax/speech-2.6-hd` | — | per_request | $3.500 | $3.500 | default | 1 | — |
+| `minimax/speech-2.6-turbo` | — | per_request | $3.500 | $3.500 | default | 1 | — |
+| `minimax/speech-2.8-hd` | — | per_request | $3.500 | $3.500 | default | 1 | — |
+| `minimax/speech-2.8-turbo` | — | per_request | $2.000 | $2.000 | default | 1 | — |
+| `mistral-medium` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `mixtral-8x22b` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `mixtral-8x7b` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `mj_fast_describe` | — | per_request | $0.050 | $0.050 | default | 1 | — |
+| `mj_fast_edits` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_high_variation` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_imagine` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_low_variation` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_modal` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_outpaint` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_pan` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_reroll` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_ric_reader` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_ricreader_retry` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_upload` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `mj_fast_upscale` | — | per_request | $0.050 | $0.050 | default | 1 | — |
+| `mj_fast_upscale_2x` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_upscale_4x` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_variation` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_fast_video` | — | per_second | $1.400 | $1.400 | default | 1 | — |
+| `mj_fast_zoom` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `mj_relax_blend` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_edits` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_high_variation` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_imagine` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_low_variation` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_modal` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_outpaint` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_pan` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_reroll` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_ric_reader` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_ricreader_retry` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_shorten` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_upload` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `mj_relax_upscale` | — | per_request | $0.050 | $0.050 | default | 1 | — |
+| `mj_relax_upscale_2x` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_upscale_4x` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_variation` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `mj_relax_video` | — | per_second | $0.500 | $0.500 | default | 1 | — |
+| `mj_relax_zoom` | — | per_request | $0.080 | $0.080 | default | 1 | — |
+| `moonshot-v1-128k` | — | per_1m_input_tokens | $48.00 | $48.00 | default | 1 | — |
+| `moonshot-v1-128k` | — | per_1m_output_tokens | $48.00 | $48.00 | default | 1 | — |
+| `moonshot-v1-32k` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `moonshot-v1-32k` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `moonshot-v1-8k` | — | per_1m_input_tokens | $6.000 | $6.000 | default | 1 | — |
+| `moonshot-v1-8k` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `moonshotai/kimi-k2-instruct` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `moonshotai/kimi-k2-instruct` | — | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `muse-wonder-1.0` | — | per_1m_input_tokens | $28.00 | $28.00 | default | 1 | — |
+| `muse-wonder-1.0` | — | per_1m_output_tokens | $140.00 | $140.00 | default | 1 | — |
+| `nano-banana-2` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `nano-banana-2-2k` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `nano-banana-2-4k` | — | per_request | $0.275 | $0.275 | default | 1 | — |
+| `nano-banana-pro` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `nano-banana-pro-2k` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `nano-banana-pro-4k` | — | per_request | $0.275 | $0.275 | default | 1 | — |
+| `net-gpt-3.5-turbo` | — | per_1m_input_tokens | $0.700 | $0.700 | default | 1 | — |
+| `net-gpt-3.5-turbo` | — | per_1m_output_tokens | $0.700 | $0.700 | default | 1 | — |
+| `net-gpt-3.5-turbo-0613` | — | per_1m_input_tokens | $0.700 | $0.700 | default | 1 | — |
+| `net-gpt-3.5-turbo-0613` | — | per_1m_output_tokens | $0.700 | $0.700 | default | 1 | — |
+| `net-gpt-3.5-turbo-16k` | — | per_1m_input_tokens | $0.700 | $0.700 | default | 1 | — |
+| `net-gpt-3.5-turbo-16k` | — | per_1m_output_tokens | $0.700 | $0.700 | default | 1 | — |
+| `net-gpt-3.5-turbo-16k-0613` | — | per_1m_input_tokens | $0.700 | $0.700 | default | 1 | — |
+| `net-gpt-3.5-turbo-16k-0613` | — | per_1m_output_tokens | $0.700 | $0.700 | default | 1 | — |
+| `net-gpt-4` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `net-gpt-4-0125-preview` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `net-gpt-4-0314` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `net-gpt-4-0613` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `net-gpt-4-1106-preview` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `net-gpt-4-32k` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `net-gpt-4-turbo` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `net-gpt-4-turbo-preview` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `net-gpt-4o` | — | per_request | $0.060 | $0.060 | default | 1 | — |
+| `netease-youdao/bce-reranker-base_v1` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `netease-youdao/bce-reranker-base_v1` | — | per_1m_output_tokens | $0.200 | $0.200 | default | 1 | — |
+| `o1` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | — |
+| `o1` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | — |
+| `o1-2024-12-17` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | — |
+| `o1-2024-12-17` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | — |
+| `o1-all` | — | per_request | $0.400 | $0.400 | default | 1 | — |
+| `o1-mini` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `o1-mini-2024-09-12` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `o1-mini-all` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `o1-preview` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | — |
+| `o1-preview` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | — |
+| `o1-preview-2024-09-12` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | — |
+| `o1-preview-2024-09-12` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | — |
+| `o1-preview-all` | — | per_request | $0.300 | $0.300 | default | 1 | — |
+| `o1-pro` | — | per_request | $0.700 | $0.700 | default | 1 | — |
+| `o1-pro-all` | — | per_request | $0.700 | $0.700 | default | 1 | — |
+| `o3` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `o3` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `o3-2025-04-16` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `o3-2025-04-16` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `o3-all` | — | per_request | $0.400 | $0.400 | default | 1 | — |
+| `o3-deep-research` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `o3-deep-research` | — | per_1m_output_tokens | $40.00 | $40.00 | default | 1 | — |
+| `o3-deep-research-2025-06-26` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | — |
+| `o3-deep-research-2025-06-26` | — | per_1m_output_tokens | $40.00 | $40.00 | default | 1 | — |
+| `o3-mini` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | — |
+| `o3-mini` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | — |
+| `o3-mini-2025-01-31` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | — |
+| `o3-mini-2025-01-31` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | — |
+| `o3-mini-2025-01-31-high` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | — |
+| `o3-mini-2025-01-31-high` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | — |
+| `o3-mini-2025-01-31-low` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | — |
+| `o3-mini-2025-01-31-low` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | — |
+| `o3-mini-2025-01-31-medium` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | — |
+| `o3-mini-2025-01-31-medium` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | — |
+| `o3-mini-all` | — | per_request | $0.030 | $0.030 | default | 1 | — |
+| `o3-mini-high` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `o3-mini-high-all` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `o3-mini-low` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | — |
+| `o3-mini-low` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | — |
+| `o3-mini-medium` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | — |
+| `o3-mini-medium` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | — |
+| `o3-pro` | — | per_1m_input_tokens | $20.00 | $20.00 | default | 1 | — |
+| `o3-pro` | — | per_1m_output_tokens | $80.00 | $80.00 | default | 1 | — |
+| `o3-pro-2025-06-10` | — | per_1m_input_tokens | $20.00 | $20.00 | default | 1 | — |
+| `o3-pro-2025-06-10` | — | per_1m_output_tokens | $80.00 | $80.00 | default | 1 | — |
+| `o4-mini` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | — |
+| `o4-mini` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | — |
+| `o4-mini-2025-04-16` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | — |
+| `o4-mini-2025-04-16` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | — |
+| `o4-mini-all` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `o4-mini-dr` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `o4-mini-high-all` | — | per_request | $0.150 | $0.150 | default | 1 | — |
+| `omni_flash-10s` | — | per_request | $1.000 | $1.000 | default | 1 | — |
+| `pika-generate` | — | per_request | $0.600 | $0.600 | default | 1 | — |
+| `pixverse-character` | — | per_request | $0.0010 | $0.0010 | default | 1 | — |
+| `pixverse-video` | — | per_second | $0.800 | $0.800 | default | 1 | — |
+| `pixverse-video-v1` | — | per_second | $0.800 | $0.800 | default | 1 | — |
+| `playground-v2.5` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `qvq-max` | — | per_1m_input_tokens | $8.000 | $8.000 | default | 1 | — |
+| `qvq-max` | — | per_1m_output_tokens | $32.00 | $32.00 | default | 1 | — |
+| `qvq-max-2025-05-15` | — | per_1m_input_tokens | $8.000 | $8.000 | default | 1 | — |
+| `qvq-max-2025-05-15` | — | per_1m_output_tokens | $32.00 | $32.00 | default | 1 | — |
+| `qvq-max-latest` | — | per_1m_input_tokens | $8.000 | $8.000 | default | 1 | — |
+| `qvq-max-latest` | — | per_1m_output_tokens | $32.00 | $32.00 | default | 1 | — |
+| `qvq-plus` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qvq-plus` | — | per_1m_output_tokens | $5.000 | $5.000 | default | 1 | — |
+| `qvq-plus-2025-05-15` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qvq-plus-2025-05-15` | — | per_1m_output_tokens | $5.000 | $5.000 | default | 1 | — |
+| `qvq-plus-latest` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qvq-plus-latest` | — | per_1m_output_tokens | $5.000 | $5.000 | default | 1 | — |
+| `qwen-coder-plus` | — | per_1m_input_tokens | $3.500 | $3.500 | default | 1 | — |
+| `qwen-coder-plus` | — | per_1m_output_tokens | $7.000 | $7.000 | default | 1 | — |
+| `qwen-coder-plus-1106` | — | per_1m_input_tokens | $3.500 | $3.500 | default | 1 | — |
+| `qwen-coder-plus-1106` | — | per_1m_output_tokens | $7.000 | $7.000 | default | 1 | — |
+| `qwen-coder-plus-latest` | — | per_1m_input_tokens | $3.500 | $3.500 | default | 1 | — |
+| `qwen-coder-plus-latest` | — | per_1m_output_tokens | $7.000 | $7.000 | default | 1 | — |
+| `qwen-coder-turbo` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-coder-turbo` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `qwen-coder-turbo-0919` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-coder-turbo-0919` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `qwen-coder-turbo-latest` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-coder-turbo-latest` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `qwen-flash` | — | per_1m_input_tokens | $0.140 | $0.140 | default | 1 | — |
+| `qwen-flash` | — | per_1m_output_tokens | $1.500 | $1.500 | default | 1 | — |
+| `qwen-image` | — | per_image | $0.250 | $0.250 | default | 1 | — |
+| `qwen-image-edit` | — | per_image | $0.300 | $0.300 | default | 1 | — |
+| `qwen-image-edit-max` | — | per_image | $0.500 | $0.500 | default | 1 | — |
+| `qwen-image-edit-max-2026-01-16` | — | per_image | $0.500 | $0.500 | default | 1 | — |
+| `qwen-image-edit-plus` | — | per_image | $0.200 | $0.200 | default | 1 | — |
+| `qwen-image-edit-plus-2025-10-30` | — | per_image | $0.200 | $0.200 | default | 1 | — |
+| `qwen-image-edit-plus-2025-12-15` | — | per_image | $0.200 | $0.200 | default | 1 | — |
+| `qwen-image-max` | — | per_image | $0.500 | $0.500 | default | 1 | — |
+| `qwen-image-max-2025-12-30` | — | per_image | $0.500 | $0.500 | default | 1 | — |
+| `qwen-image-plus-2026-01-09` | — | per_image | $0.200 | $0.200 | default | 1 | — |
+| `qwen-long` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | — |
+| `qwen-long` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-long-latest` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | — |
+| `qwen-long-latest` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-math-plus` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen-math-plus` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | — |
+| `qwen-math-plus-0919` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen-math-plus-0919` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | — |
+| `qwen-math-plus-latest` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen-math-plus-latest` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | — |
+| `qwen-math-turbo` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-math-turbo` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | — |
+| `qwen-math-turbo-0919` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-math-turbo-0919` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | — |
+| `qwen-math-turbo-latest` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-math-turbo-latest` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | — |
+| `qwen-max` | — | per_1m_input_tokens | $2.400 | $2.400 | default | 1 | — |
+| `qwen-max` | — | per_1m_output_tokens | $9.600 | $9.600 | default | 1 | — |
+| `qwen-max-0428` | — | per_1m_input_tokens | $40.00 | $40.00 | default | 1 | — |
+| `qwen-max-0428` | — | per_1m_output_tokens | $120.00 | $120.00 | default | 1 | — |
+| `qwen-max-0919` | — | per_1m_input_tokens | $20.00 | $20.00 | default | 1 | — |
+| `qwen-max-0919` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | — |
+| `qwen-max-2025-01-25` | — | per_1m_input_tokens | $2.400 | $2.400 | default | 1 | — |
+| `qwen-max-2025-01-25` | — | per_1m_output_tokens | $9.600 | $9.600 | default | 1 | — |
+| `qwen-max-latest` | — | per_1m_input_tokens | $2.400 | $2.400 | default | 1 | — |
+| `qwen-max-latest` | — | per_1m_output_tokens | $9.600 | $9.600 | default | 1 | — |
+| `qwen-mt-flash` | — | per_1m_input_tokens | $0.700 | $0.700 | default | 1 | — |
+| `qwen-mt-flash` | — | per_1m_output_tokens | $1.950 | $1.950 | default | 1 | — |
+| `qwen-mt-image` | — | per_image | $0.0030 | $0.0030 | default | 1 | — |
+| `qwen-mt-lite` | — | per_1m_input_tokens | $0.600 | $0.600 | default | 1 | — |
+| `qwen-mt-lite` | — | per_1m_output_tokens | $1.600 | $1.600 | default | 1 | — |
+| `qwen-mt-plus` | — | per_1m_input_tokens | $1.800 | $1.800 | default | 1 | — |
+| `qwen-mt-plus` | — | per_1m_output_tokens | $5.400 | $5.400 | default | 1 | — |
+| `qwen-mt-turbo` | — | per_1m_input_tokens | $0.700 | $0.700 | default | 1 | — |
+| `qwen-mt-turbo` | — | per_1m_output_tokens | $1.950 | $1.950 | default | 1 | — |
+| `qwen-plus` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen-plus` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-plus-0919` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen-plus-0919` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-plus-2025-01-25` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen-plus-2025-01-25` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-plus-2025-04-28` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen-plus-2025-04-28` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-plus-2025-07-14` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen-plus-2025-07-14` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-plus-2025-09-11` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen-plus-2025-09-11` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-plus-2025-11-05` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen-plus-2025-11-05` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-plus-2025-12-01` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen-plus-2025-12-01` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-plus-latest` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen-plus-latest` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-turbo` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen-turbo` | — | per_1m_output_tokens | $0.600 | $0.600 | default | 1 | — |
+| `qwen-turbo-0919` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen-turbo-0919` | — | per_1m_output_tokens | $0.600 | $0.600 | default | 1 | — |
+| `qwen-turbo-2024-11-01` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen-turbo-2024-11-01` | — | per_1m_output_tokens | $0.600 | $0.600 | default | 1 | — |
+| `qwen-turbo-2025-04-28` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen-turbo-2025-04-28` | — | per_1m_output_tokens | $0.600 | $0.600 | default | 1 | — |
+| `qwen-turbo-2025-07-15` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen-turbo-2025-07-15` | — | per_1m_output_tokens | $0.600 | $0.600 | default | 1 | — |
+| `qwen-turbo-latest` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen-turbo-latest` | — | per_1m_output_tokens | $0.600 | $0.600 | default | 1 | — |
+| `qwen-vl-max` | — | per_1m_input_tokens | $1.600 | $1.600 | default | 1 | — |
+| `qwen-vl-max` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen-vl-max-2025-04-02` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `qwen-vl-max-2025-04-02` | — | per_1m_output_tokens | $9.000 | $9.000 | default | 1 | — |
+| `qwen-vl-max-2025-04-08` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `qwen-vl-max-2025-04-08` | — | per_1m_output_tokens | $9.000 | $9.000 | default | 1 | — |
+| `qwen-vl-max-latest` | — | per_1m_input_tokens | $1.600 | $1.600 | default | 1 | — |
+| `qwen-vl-max-latest` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen-vl-ocr` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen-vl-ocr` | — | per_1m_output_tokens | $0.500 | $0.500 | default | 1 | — |
+| `qwen-vl-ocr-2025-11-20` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen-vl-ocr-2025-11-20` | — | per_1m_output_tokens | $0.500 | $0.500 | default | 1 | — |
+| `qwen-vl-ocr-latest` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen-vl-ocr-latest` | — | per_1m_output_tokens | $0.500 | $0.500 | default | 1 | — |
+| `qwen-vl-plus` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen-vl-plus` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-vl-plus-2025-01-25` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | — |
+| `qwen-vl-plus-2025-01-25` | — | per_1m_output_tokens | $4.500 | $4.500 | default | 1 | — |
+| `qwen-vl-plus-2025-05-07` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | — |
+| `qwen-vl-plus-2025-05-07` | — | per_1m_output_tokens | $4.500 | $4.500 | default | 1 | — |
+| `qwen-vl-plus-2025-08-15` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen-vl-plus-2025-08-15` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen-vl-plus-latest` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen-vl-plus-latest` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen1.5-110b-chat` | — | per_1m_input_tokens | $7.000 | $7.000 | default | 1 | — |
+| `qwen1.5-110b-chat` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | — |
+| `qwen1.5-14b-chat` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen1.5-14b-chat` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen1.5-32b-chat` | — | per_1m_input_tokens | $3.500 | $3.500 | default | 1 | — |
+| `qwen1.5-32b-chat` | — | per_1m_output_tokens | $7.000 | $7.000 | default | 1 | — |
+| `qwen1.5-72b-chat` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | — |
+| `qwen1.5-72b-chat` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `qwen1.5-7b-chat` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen1.5-7b-chat` | — | per_1m_output_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen2-1.5b-instruct` | — | per_1m_input_tokens | $0.400 | $0.400 | default | 1 | — |
+| `qwen2-1.5b-instruct` | — | per_1m_output_tokens | $0.400 | $0.400 | default | 1 | — |
+| `qwen2-57b-a14b-instruct` | — | per_1m_input_tokens | $3.500 | $3.500 | default | 1 | — |
+| `qwen2-57b-a14b-instruct` | — | per_1m_output_tokens | $7.000 | $7.000 | default | 1 | — |
+| `qwen2-72b-instruct` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen2-72b-instruct` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | — |
+| `qwen2-7b-instruct` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen2-7b-instruct` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen2-vl-72b-instruct` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen2-vl-72b-instruct` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen2-vl-7b-instruct` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen2-vl-7b-instruct` | — | per_1m_output_tokens | $5.000 | $5.000 | default | 1 | — |
+| `qwen2.5-14b-instruct` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen2.5-14b-instruct` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | — |
+| `qwen2.5-14b-instruct-1m` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen2.5-14b-instruct-1m` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | — |
+| `qwen2.5-32b-instruct` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen2.5-32b-instruct` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `qwen2.5-3b-instruct` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen2.5-3b-instruct` | — | per_1m_output_tokens | $0.900 | $0.900 | default | 1 | — |
+| `qwen2.5-72b-instruct` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen2.5-72b-instruct` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | — |
+| `qwen2.5-7b-instruct` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | — |
+| `qwen2.5-7b-instruct` | — | per_1m_output_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen2.5-7b-instruct-1m` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | — |
+| `qwen2.5-7b-instruct-1m` | — | per_1m_output_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen2.5-coder-14b-instruct` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen2.5-coder-14b-instruct` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `qwen2.5-coder-32b-instruct` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen2.5-coder-32b-instruct` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `qwen2.5-coder-7b-instruct` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen2.5-coder-7b-instruct` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen2.5-math-72b-instruct` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen2.5-math-72b-instruct` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | — |
+| `qwen2.5-math-7b-instruct` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen2.5-math-7b-instruct` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen2.5-vl-32b-instruct` | — | per_1m_input_tokens | $8.000 | $8.000 | default | 1 | — |
+| `qwen2.5-vl-32b-instruct` | — | per_1m_output_tokens | $24.00 | $24.00 | default | 1 | — |
+| `qwen2.5-vl-3b-instruct` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | — |
+| `qwen2.5-vl-3b-instruct` | — | per_1m_output_tokens | $0.600 | $0.600 | default | 1 | — |
+| `qwen2.5-vl-72b-instruct` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | — |
+| `qwen2.5-vl-72b-instruct` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | — |
+| `qwen2.5-vl-7b-instruct` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen2.5-vl-7b-instruct` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | — |
+| `qwen3-0.6b` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen3-0.6b` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | — |
+| `qwen3-1.7b` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen3-1.7b` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | — |
+| `qwen3-14b` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen3-14b` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen3-235b-a22b` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen3-235b-a22b` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `qwen3-235b-a22b-instruct-2507` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen3-235b-a22b-instruct-2507` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `qwen3-235b-a22b-thinking-2507` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen3-235b-a22b-thinking-2507` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | — |
+| `qwen3-30b-a3b` | — | per_1m_input_tokens | $0.760 | $0.760 | default | 1 | — |
+| `qwen3-30b-a3b` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | — |
+| `qwen3-30b-a3b-instruct-2507` | — | per_1m_input_tokens | $0.760 | $0.760 | default | 1 | — |
+| `qwen3-30b-a3b-instruct-2507` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | — |
+| `qwen3-30b-a3b-thinking-2507` | — | per_1m_input_tokens | $0.760 | $0.760 | default | 1 | — |
+| `qwen3-30b-a3b-thinking-2507` | — | per_1m_output_tokens | $7.500 | $7.500 | default | 1 | — |
+| `qwen3-32b` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen3-32b` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `qwen3-4b` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | — |
+| `qwen3-4b` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | — |
+| `qwen3-8b` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | — |
+| `qwen3-8b` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen3-coder-480b-a35b-instruct` | — | per_1m_input_tokens | $6.000 | $6.000 | default | 1 | — |
+| `qwen3-coder-480b-a35b-instruct` | — | per_1m_output_tokens | $24.00 | $24.00 | default | 1 | — |
+| `qwen3-coder-flash` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen3-coder-flash` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen3-coder-plus` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen3-coder-plus` | — | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `qwen3-coder-plus-2025-07-22` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen3-coder-plus-2025-07-22` | — | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `qwen3-coder-plus-2025-09-23` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen3-coder-plus-2025-09-23` | — | per_1m_output_tokens | $16.00 | $16.00 | default | 1 | — |
+| `qwen3-embedding-0.6b` | — | per_request | $0.0010 | $0.0010 | default | 1 | — |
+| `qwen3-embedding-4b` | — | per_request | $0.0010 | $0.0010 | default | 1 | — |
+| `qwen3-embedding-8b` | — | per_request | $0.0010 | $0.0010 | default | 1 | — |
+| `qwen3-max` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | — |
+| `qwen3-max` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `qwen3-max-2025-09-23` | — | per_1m_input_tokens | $6.000 | $6.000 | default | 1 | — |
+| `qwen3-max-2025-09-23` | — | per_1m_output_tokens | $24.00 | $24.00 | default | 1 | — |
+| `qwen3-max-2026-01-23` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | — |
+| `qwen3-max-2026-01-23` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | — |
+| `qwen3-max-preview` | — | per_1m_input_tokens | $6.000 | $6.000 | default | 1 | — |
+| `qwen3-max-preview` | — | per_1m_output_tokens | $24.00 | $24.00 | default | 1 | — |
+| `qwen3-next-80b-a3b-instruct` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen3-next-80b-a3b-instruct` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwen3-next-80b-a3b-thinking` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen3-next-80b-a3b-thinking` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `qwen3-reranker-0.6b` | — | per_request | $0.0010 | $0.0010 | default | 1 | — |
+| `qwen3-reranker-4b` | — | per_request | $0.0010 | $0.0010 | default | 1 | — |
+| `qwen3-reranker-8b` | — | per_1m_input_tokens | $0.0022 | $0.0022 | default | 1 | — |
+| `qwen3-reranker-8b` | — | per_1m_output_tokens | $0.0022 | $0.0022 | default | 1 | — |
+| `qwen3-vl-235b-a22b` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen3-vl-235b-a22b` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `qwen3-vl-235b-a22b-instruct` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen3-vl-235b-a22b-instruct` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `qwen3-vl-235b-a22b-thinking` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen3-vl-235b-a22b-thinking` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | — |
+| `qwen3-vl-30b-a3b-instruct` | — | per_1m_input_tokens | $0.760 | $0.760 | default | 1 | — |
+| `qwen3-vl-30b-a3b-instruct` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | — |
+| `qwen3-vl-30b-a3b-thinking` | — | per_1m_input_tokens | $0.760 | $0.760 | default | 1 | — |
+| `qwen3-vl-30b-a3b-thinking` | — | per_1m_output_tokens | $7.500 | $7.500 | default | 1 | — |
+| `qwen3-vl-32b-instruct` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen3-vl-32b-instruct` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | — |
+| `qwen3-vl-32b-thinking` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen3-vl-32b-thinking` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | — |
+| `qwen3-vl-8b-instruct` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | — |
+| `qwen3-vl-8b-instruct` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwen3-vl-8b-thinking` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | — |
+| `qwen3-vl-8b-thinking` | — | per_1m_output_tokens | $5.000 | $5.000 | default | 1 | — |
+| `qwen3-vl-flash` | — | per_1m_input_tokens | $0.140 | $0.140 | default | 1 | — |
+| `qwen3-vl-flash` | — | per_1m_output_tokens | $1.500 | $1.500 | default | 1 | — |
+| `qwen3-vl-flash-2025-10-15` | — | per_1m_input_tokens | $0.140 | $0.140 | default | 1 | — |
+| `qwen3-vl-flash-2025-10-15` | — | per_1m_output_tokens | $1.500 | $1.500 | default | 1 | — |
+| `qwen3-vl-flash-2026-01-22` | — | per_1m_input_tokens | $0.140 | $0.140 | default | 1 | — |
+| `qwen3-vl-flash-2026-01-22` | — | per_1m_output_tokens | $1.500 | $1.500 | default | 1 | — |
+| `qwen3-vl-plus` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen3-vl-plus` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `qwen3-vl-plus-2025-09-23` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen3-vl-plus-2025-09-23` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `qwen3-vl-plus-2025-12-19` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | — |
+| `qwen3-vl-plus-2025-12-19` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | — |
+| `qwen3.5-plus` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen3.5-plus` | — | per_1m_output_tokens | $4.800 | $4.800 | default | 1 | — |
+| `qwen3.5-plus-2026-02-15` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | — |
+| `qwen3.5-plus-2026-02-15` | — | per_1m_output_tokens | $4.800 | $4.800 | default | 1 | — |
+| `qwen3.8-max` | — | per_1m_input_tokens | $12.00 | $12.00 | default | 1 | — |
+| `qwen3.8-max` | — | per_1m_output_tokens | $36.00 | $36.00 | default | 1 | — |
+| `qwq-32b` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwq-32b` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `qwq-32b-preview` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | — |
+| `qwq-32b-preview` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | — |
+| `qwq-plus` | — | per_1m_input_tokens | $1.600 | $1.600 | default | 1 | — |
+| `qwq-plus` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwq-plus-2025-03-05` | — | per_1m_input_tokens | $1.600 | $1.600 | default | 1 | — |
+| `qwq-plus-2025-03-05` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | — |
+| `qwq-plus-latest` | — | per_1m_input_tokens | $1.600 | $1.600 | default | 1 | — |
+| `qwq-plus-latest` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | — |
+| `recraftv3` | — | per_request | $0.120 | $0.120 | default | 1 | — |
+| `runway-act_one` | — | per_request | $0.600 | $0.600 | default | 1 | — |
+| `runway-act_two` | — | per_request | $0.600 | $0.600 | default | 1 | — |
+| `runway-aleph` | — | per_request | $1.500 | $1.500 | default | 1 | — |
+| `runway-generate` | — | per_request | $0.600 | $0.600 | default | 1 | — |
+| `runway-video2video` | — | per_second | $0.600 | $0.600 | default | 1 | — |
+| `runwayml-gen3a_turbo` | — | per_request | $0.800 | $0.800 | default | 1 | — |
+| `runwayml-gen4_turbo` | — | per_request | $0.800 | $0.800 | default | 1 | — |
+| `sdols-2.0` | — | per_request | $1.400 | $1.400 | default | 1 | — |
+| `sdols-2.0-fast` | — | per_request | $1.400 | $1.400 | default | 1 | — |
+| `search-gpts` | — | per_request | $0.0001 | $0.0001 | default | 1 | — |
+| `search-gpts-chat` | — | per_request | $0.0001 | $0.0001 | default | 1 | — |
+| `seededit` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `seedream-3.0` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `seedream-v5-flash` | — | per_request | $0.800 | $0.800 | default | 1 | — |
+| `seedream-v5-flash/layer-decomposition` | — | per_request | $0.800 | $0.800 | default | 1 | — |
+| `seedream-v5-pro` | — | per_request | $0.900 | $0.900 | default | 1 | — |
+| `seedream-v5-pro/layer-decomposition` | — | per_request | $0.900 | $0.900 | default | 1 | — |
+| `sora_image` | — | per_image | $0.050 | $0.050 | default | 1 | — |
+| `sora_image-vip` | — | per_image | $0.100 | $0.100 | default | 1 | — |
+| `speech-01-hd` | — | per_1m_input_tokens | $350.00 | $350.00 | default | 1 | — |
+| `speech-01-hd` | — | per_1m_output_tokens | $350.00 | $350.00 | default | 1 | — |
+| `speech-01-turbo` | — | per_1m_input_tokens | $200.00 | $200.00 | default | 1 | — |
+| `speech-01-turbo` | — | per_1m_output_tokens | $200.00 | $200.00 | default | 1 | — |
+| `speech-02-hd` | — | per_1m_input_tokens | $350.00 | $350.00 | default | 1 | — |
+| `speech-02-hd` | — | per_1m_output_tokens | $350.00 | $350.00 | default | 1 | — |
+| `speech-02-turbo` | — | per_1m_input_tokens | $200.00 | $200.00 | default | 1 | — |
+| `speech-02-turbo` | — | per_1m_output_tokens | $200.00 | $200.00 | default | 1 | — |
+| `speech-2.6-hd` | — | per_1m_input_tokens | $350.00 | $350.00 | default | 1 | — |
+| `speech-2.6-hd` | — | per_1m_output_tokens | $350.00 | $350.00 | default | 1 | — |
+| `speech-2.6-turbo` | — | per_1m_input_tokens | $200.00 | $200.00 | default | 1 | — |
+| `speech-2.6-turbo` | — | per_1m_output_tokens | $200.00 | $200.00 | default | 1 | — |
+| `speech-2.8-hd` | — | per_1m_input_tokens | $350.00 | $350.00 | default | 1 | — |
+| `speech-2.8-hd` | — | per_1m_output_tokens | $350.00 | $350.00 | default | 1 | — |
+| `speech-2.8-turbo` | — | per_1m_input_tokens | $350.00 | $350.00 | default | 1 | — |
+| `speech-2.8-turbo` | — | per_1m_output_tokens | $350.00 | $350.00 | default | 1 | — |
+| `stable-diffusion` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `stable-diffusion-3-2b` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `suno-act-midi` | — | per_request | $0.020 | $0.020 | default | 1 | — |
+| `suno-act-tags` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `suno-actions` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `suno_act-stems` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `suno_concat` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `suno_lyrics` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `suno_music` | — | per_request | $0.500 | $0.500 | default | 1 | — |
+| `suno_upload` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `text-embedding-3-large` | — | per_1m_input_tokens | $0.130 | $0.130 | default | 1 | — |
+| `text-embedding-3-large` | — | per_1m_output_tokens | $0.130 | $0.130 | default | 1 | — |
+| `text-embedding-3-small` | — | per_1m_input_tokens | $0.020 | $0.020 | default | 1 | — |
+| `text-embedding-3-small` | — | per_1m_output_tokens | $0.020 | $0.020 | default | 1 | — |
+| `text-embedding-ada-002` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | — |
+| `text-embedding-ada-002` | — | per_1m_output_tokens | $0.100 | $0.100 | default | 1 | — |
+| `tts-1` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | — |
+| `tts-1` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `tts-1-1106` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | — |
+| `tts-1-1106` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | — |
+| `tts-1-hd` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | — |
+| `tts-1-hd` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | — |
+| `tts-1-hd-1106` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | — |
+| `tts-1-hd-1106` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | — |
+| `video-style-transform` | — | per_second | $0.500 | $0.500 | default | 1 | — |
+| `videoretalk` | — | per_second | $0.080 | $0.080 | default | 1 | — |
+| `vidu1.5` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `vidu2.0` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `viduq1` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `viduq1-classic` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `viduq2` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `viduq2-pro` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `viduq2-pro-fast` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `viduq2-turbo` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `viduq3` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `viduq3-mix` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `viduq3-pro` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `viduq3-turbo` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `viduq4-preview` | — | per_request | $0.028 | $0.028 | default | 1 | — |
+| `viggle-create` | — | per_request | $0.200 | $0.200 | default | 1 | — |
+| `viggle-pro-create` | — | per_request | $0.800 | $0.800 | default | 1 | — |
+| `viggle-pro-proxy` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `viggle-proxy` | — | per_request | $0.010 | $0.010 | default | 1 | — |
+| `volcv-dalle` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `volcv-v1` | — | per_request | $0.100 | $0.100 | default | 1 | — |
+| `wan2.2-animate-mix` | — | per_request | $0.600 | $0.600 | default | 1 | — |
+| `wan2.2-animate-move` | — | per_request | $0.400 | $0.400 | default | 1 | — |
+| `wan2.2-i2v-flash` | — | per_second | $1.000 | $1.000 | default | 1 | — |
+| `wan2.2-i2v-plus` | — | per_second | $3.500 | $3.500 | default | 1 | — |
+| `wan2.2-kf2v-flash` | — | per_request | $1.000 | $1.000 | default | 1 | — |
+| `wan2.2-s2v` | — | per_request | $0.500 | $0.500 | default | 1 | — |
+| `wan2.2-s2v-detect` | — | per_request | $0.0040 | $0.0040 | default | 1 | — |
+| `wan2.2-t2v-plus` | — | per_second | $3.500 | $3.500 | default | 1 | — |
+| `wan2.5-i2v-preview` | — | per_second | $5.000 | $5.000 | default | 1 | — |
+| `wan2.5-t2v-preview` | — | per_second | $5.000 | $5.000 | default | 1 | — |
+| `wan2.6-i2v` | — | per_second | $5.000 | $5.000 | default | 1 | — |
+| `wan2.6-r2v` | — | per_second | $5.000 | $5.000 | default | 1 | — |
+| `wan2.6-t2v` | — | per_second | $5.000 | $5.000 | default | 1 | — |
+| `wan3.0-video` | — | per_second | $0.450 | $0.450 | default | 1 | — |
+| `wan3.0-video-prime` | — | per_second | $0.450 | $0.450 | default | 1 | — |
+| `wanx2.1-i2v-plus` | — | per_second | $3.500 | $3.500 | default | 1 | — |
+| `wanx2.1-i2v-turbo` | — | per_second | $1.200 | $1.200 | default | 1 | — |
+| `wanx2.1-kf2v-plus` | — | per_request | $3.500 | $3.500 | default | 1 | — |
+| `wanx2.1-t2v-plus` | — | per_second | $3.500 | $3.500 | default | 1 | — |
+| `wanx2.1-t2v-turbo` | — | per_second | $1.200 | $1.200 | default | 1 | — |
+| `wanx2.1-vace-plus` | — | per_request | $0.700 | $0.700 | default | 1 | — |
+| `whisper-1` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | — |
+| `whisper-1` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | — |
+| `z-image-turbo` | — | per_image | $0.100 | $0.100 | default | 1 | — |
 
 ## OpenRouter — `openrouter`
 
-Source: <https://openrouter.ai/api/v1/models> · Records: 907
+Source: <https://openrouter.ai/api/v1/models> · Records: 911
 
-| Model | Canonical | Unit | Price (USD) |
-|---|---|---|---|
-| `aion-labs/aion-2.0` | — | per_1m_input_tokens | $0.800 |
-| `aion-labs/aion-2.0` | — | per_1m_output_tokens | $1.600 |
-| `aion-labs/aion-3.0` | — | per_1m_input_tokens | $3.000 |
-| `aion-labs/aion-3.0` | — | per_1m_output_tokens | $6.000 |
-| `aion-labs/aion-3.0-mini` | — | per_1m_input_tokens | $0.700 |
-| `aion-labs/aion-3.0-mini` | — | per_1m_output_tokens | $1.400 |
-| `aion-labs/aion-3.5` | — | per_1m_input_tokens | $3.000 |
-| `aion-labs/aion-3.5` | — | per_1m_output_tokens | $6.000 |
-| `aion-labs/aion-3.5-mini` | — | per_1m_input_tokens | $0.700 |
-| `aion-labs/aion-3.5-mini` | — | per_1m_output_tokens | $1.400 |
-| `aion-labs/aion-rp-llama-3.1-8b` | — | per_1m_input_tokens | $0.800 |
-| `aion-labs/aion-rp-llama-3.1-8b` | — | per_1m_output_tokens | $1.600 |
-| `amazon/nova-2-lite-v1` | — | per_1m_input_tokens | $0.300 |
-| `amazon/nova-2-lite-v1` | — | per_1m_output_tokens | $2.500 |
-| `amazon/nova-lite-v1` | — | per_1m_input_tokens | $0.060 |
-| `amazon/nova-lite-v1` | — | per_1m_output_tokens | $0.240 |
-| `amazon/nova-micro-v1` | — | per_1m_input_tokens | $0.035 |
-| `amazon/nova-micro-v1` | — | per_1m_output_tokens | $0.140 |
-| `amazon/nova-premier-v1` | — | per_1m_input_tokens | $2.500 |
-| `amazon/nova-premier-v1` | — | per_1m_output_tokens | $12.50 |
-| `amazon/nova-pro-v1` | — | per_1m_input_tokens | $0.800 |
-| `amazon/nova-pro-v1` | — | per_1m_output_tokens | $3.200 |
-| `anthracite-org/magnum-v4-72b` | — | per_1m_input_tokens | $2.500 |
-| `anthracite-org/magnum-v4-72b` | — | per_1m_output_tokens | $5.000 |
-| `anthropic/claude-fable-5` | — | per_1m_input_tokens | $10.00 |
-| `anthropic/claude-fable-5` | — | per_1m_output_tokens | $50.00 |
-| `anthropic/claude-fable-5.1` | — | per_1m_input_tokens | $10.00 |
-| `anthropic/claude-fable-5.1` | — | per_1m_output_tokens | $50.00 |
-| `anthropic/claude-fable-5.1:batch` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-fable-5.1:batch` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-fable-5:batch` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-fable-5:batch` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-haiku-4.5` | — | per_1m_input_tokens | $1.000 |
-| `anthropic/claude-haiku-4.5` | — | per_1m_output_tokens | $5.000 |
-| `anthropic/claude-haiku-4.5:batch` | — | per_1m_input_tokens | $0.500 |
-| `anthropic/claude-haiku-4.5:batch` | — | per_1m_output_tokens | $2.500 |
-| `anthropic/claude-haiku-5.5` | — | per_1m_input_tokens | $0.100 |
-| `anthropic/claude-haiku-5.5` | — | per_1m_output_tokens | $0.500 |
-| `anthropic/claude-haiku-5.5:batch` | — | per_1m_input_tokens | $0.050 |
-| `anthropic/claude-haiku-5.5:batch` | — | per_1m_output_tokens | $0.250 |
-| `anthropic/claude-opus-4.1` | — | per_1m_input_tokens | $15.00 |
-| `anthropic/claude-opus-4.1` | — | per_1m_output_tokens | $75.00 |
-| `anthropic/claude-opus-4.1:batch` | — | per_1m_input_tokens | $7.500 |
-| `anthropic/claude-opus-4.1:batch` | — | per_1m_output_tokens | $37.50 |
-| `anthropic/claude-opus-4.5` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.5` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.5:batch` | — | per_1m_input_tokens | $2.500 |
-| `anthropic/claude-opus-4.5:batch` | — | per_1m_output_tokens | $12.50 |
-| `anthropic/claude-opus-4.6` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.6` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.6:batch` | — | per_1m_input_tokens | $2.500 |
-| `anthropic/claude-opus-4.6:batch` | — | per_1m_output_tokens | $12.50 |
-| `anthropic/claude-opus-4.7` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.7` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.7:batch` | — | per_1m_input_tokens | $2.500 |
-| `anthropic/claude-opus-4.7:batch` | — | per_1m_output_tokens | $12.50 |
-| `anthropic/claude-opus-4.8` | `claude-opus-4.8` | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-4.8` | `claude-opus-4.8` | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-4.8:batch` | `claude-opus-4.8` | per_1m_input_tokens | $2.500 |
-| `anthropic/claude-opus-4.8:batch` | `claude-opus-4.8` | per_1m_output_tokens | $12.50 |
-| `anthropic/claude-opus-5` | — | per_1m_input_tokens | $5.000 |
-| `anthropic/claude-opus-5` | — | per_1m_output_tokens | $25.00 |
-| `anthropic/claude-opus-5.5` | — | per_1m_input_tokens | $4.000 |
-| `anthropic/claude-opus-5.5` | — | per_1m_output_tokens | $20.00 |
-| `anthropic/claude-opus-5.5:batch` | — | per_1m_input_tokens | $2.000 |
-| `anthropic/claude-opus-5.5:batch` | — | per_1m_output_tokens | $10.00 |
-| `anthropic/claude-opus-5:batch` | — | per_1m_input_tokens | $2.500 |
-| `anthropic/claude-opus-5:batch` | — | per_1m_output_tokens | $12.50 |
-| `anthropic/claude-sonnet-4.5` | — | per_1m_input_tokens | $3.000 |
-| `anthropic/claude-sonnet-4.5` | — | per_1m_output_tokens | $15.00 |
-| `anthropic/claude-sonnet-4.5:batch` | — | per_1m_input_tokens | $1.500 |
-| `anthropic/claude-sonnet-4.5:batch` | — | per_1m_output_tokens | $7.500 |
-| `anthropic/claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.000 |
-| `anthropic/claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_output_tokens | $15.00 |
-| `anthropic/claude-sonnet-4.6:batch` | `claude-sonnet-4.6` | per_1m_input_tokens | $1.500 |
-| `anthropic/claude-sonnet-4.6:batch` | `claude-sonnet-4.6` | per_1m_output_tokens | $7.500 |
-| `anthropic/claude-sonnet-5` | — | per_1m_input_tokens | $2.000 |
-| `anthropic/claude-sonnet-5` | — | per_1m_output_tokens | $10.00 |
-| `anthropic/claude-sonnet-5.5` | — | per_1m_input_tokens | $2.000 |
-| `anthropic/claude-sonnet-5.5` | — | per_1m_output_tokens | $10.00 |
-| `anthropic/claude-sonnet-5.5:batch` | — | per_1m_input_tokens | $1.000 |
-| `anthropic/claude-sonnet-5.5:batch` | — | per_1m_output_tokens | $5.000 |
-| `anthropic/claude-sonnet-5:batch` | — | per_1m_input_tokens | $1.000 |
-| `anthropic/claude-sonnet-5:batch` | — | per_1m_output_tokens | $5.000 |
-| `arcee-ai/trinity-large-thinking` | — | per_1m_input_tokens | $0.250 |
-| `arcee-ai/trinity-large-thinking` | — | per_1m_output_tokens | $0.800 |
-| `bytedance-seed/seed-1.6` | — | per_1m_input_tokens | $0.250 |
-| `bytedance-seed/seed-1.6` | — | per_1m_output_tokens | $2.000 |
-| `bytedance-seed/seed-1.6-flash` | — | per_1m_input_tokens | $0.075 |
-| `bytedance-seed/seed-1.6-flash` | — | per_1m_output_tokens | $0.300 |
-| `bytedance-seed/seed-2-1-turbo` | — | per_1m_input_tokens | $0.500 |
-| `bytedance-seed/seed-2-1-turbo` | — | per_1m_output_tokens | $2.500 |
-| `bytedance-seed/seed-2.0-code` | — | per_1m_input_tokens | $0.500 |
-| `bytedance-seed/seed-2.0-code` | — | per_1m_output_tokens | $3.000 |
-| `bytedance-seed/seed-2.0-lite` | — | per_1m_input_tokens | $0.250 |
-| `bytedance-seed/seed-2.0-lite` | — | per_1m_output_tokens | $2.000 |
-| `bytedance-seed/seed-2.0-mini` | — | per_1m_input_tokens | $0.100 |
-| `bytedance-seed/seed-2.0-mini` | — | per_1m_output_tokens | $0.400 |
-| `bytedance/ui-tars-1.5-7b` | — | per_1m_input_tokens | $0.100 |
-| `bytedance/ui-tars-1.5-7b` | — | per_1m_output_tokens | $0.200 |
-| `cognitivecomputations/dolphin-mistral-24b-venice-edition` | — | per_1m_input_tokens | $0.200 |
-| `cognitivecomputations/dolphin-mistral-24b-venice-edition` | — | per_1m_output_tokens | $0.900 |
-| `cohere/command-a` | — | per_1m_input_tokens | $2.500 |
-| `cohere/command-a` | — | per_1m_output_tokens | $10.00 |
-| `cohere/command-a-plus` | — | per_1m_input_tokens | $0.300 |
-| `cohere/command-a-plus` | — | per_1m_output_tokens | $1.500 |
-| `cohere/command-r-08-2024` | — | per_1m_input_tokens | $0.150 |
-| `cohere/command-r-08-2024` | — | per_1m_output_tokens | $0.600 |
-| `cohere/command-r-plus-08-2024` | — | per_1m_input_tokens | $2.500 |
-| `cohere/command-r-plus-08-2024` | — | per_1m_output_tokens | $10.00 |
-| `cohere/command-r7b-12-2024` | — | per_1m_input_tokens | $0.037 |
-| `cohere/command-r7b-12-2024` | — | per_1m_output_tokens | $0.150 |
-| `deepseek/deepseek-chat` | `deepseek-v3` | per_1m_input_tokens | $0.257 |
-| `deepseek/deepseek-chat` | `deepseek-v3` | per_1m_output_tokens | $1.029 |
-| `deepseek/deepseek-chat-v3-0324` | — | per_1m_input_tokens | $0.290 |
-| `deepseek/deepseek-chat-v3-0324` | — | per_1m_output_tokens | $1.140 |
-| `deepseek/deepseek-chat-v3.1` | — | per_1m_input_tokens | $0.250 |
-| `deepseek/deepseek-chat-v3.1` | — | per_1m_output_tokens | $0.950 |
-| `deepseek/deepseek-r1-0528` | — | per_1m_input_tokens | $0.500 |
-| `deepseek/deepseek-r1-0528` | — | per_1m_output_tokens | $2.150 |
-| `deepseek/deepseek-v3.1-terminus` | — | per_1m_input_tokens | $0.270 |
-| `deepseek/deepseek-v3.1-terminus` | — | per_1m_output_tokens | $1.000 |
-| `deepseek/deepseek-v3.2` | — | per_1m_input_tokens | $0.280 |
-| `deepseek/deepseek-v3.2` | — | per_1m_output_tokens | $0.420 |
-| `deepseek/deepseek-v3.2-exp` | — | per_1m_input_tokens | $0.270 |
-| `deepseek/deepseek-v3.2-exp` | — | per_1m_output_tokens | $0.410 |
-| `deepseek/deepseek-v4-flash` | — | per_1m_input_tokens | $0.091 |
-| `deepseek/deepseek-v4-flash` | — | per_1m_output_tokens | $0.182 |
-| `deepseek/deepseek-v4-flash-0731` | — | per_1m_input_tokens | $0.440 |
-| `deepseek/deepseek-v4-flash-0731` | — | per_1m_output_tokens | $1.320 |
-| `deepseek/deepseek-v4-flash-vision-exp` | — | per_1m_input_tokens | $0.216 |
-| `deepseek/deepseek-v4-flash-vision-exp` | — | per_1m_output_tokens | $0.647 |
-| `deepseek/deepseek-v4-pro` | — | per_1m_input_tokens | $0.955 |
-| `deepseek/deepseek-v4-pro` | — | per_1m_output_tokens | $1.911 |
-| `deepseek/deepseek-v4-pro-0813` | — | per_1m_input_tokens | $1.320 |
-| `deepseek/deepseek-v4-pro-0813` | — | per_1m_output_tokens | $3.960 |
-| `deepseek/deepseek-v4.1-flash` | — | per_1m_input_tokens | $0.300 |
-| `deepseek/deepseek-v4.1-flash` | — | per_1m_output_tokens | $1.200 |
-| `deepseek/deepseek-v4.1-flash-1017` | — | per_1m_input_tokens | $0.300 |
-| `deepseek/deepseek-v4.1-flash-1017` | — | per_1m_output_tokens | $1.200 |
-| `deepseek/deepseek-v4.1-flash:batch` | — | per_1m_input_tokens | $0.050 |
-| `deepseek/deepseek-v4.1-flash:batch` | — | per_1m_output_tokens | $0.150 |
-| `elorian/glimpse` | — | per_1m_input_tokens | $0.600 |
-| `elorian/glimpse` | — | per_1m_output_tokens | $3.000 |
-| `fireworks/ember-1` | — | per_1m_input_tokens | $3.000 |
-| `fireworks/ember-1` | — | per_1m_output_tokens | $15.00 |
-| `google/gemini-2.5-flash` | — | per_1m_input_tokens | $0.300 |
-| `google/gemini-2.5-flash` | — | per_1m_output_tokens | $2.500 |
-| `google/gemini-2.5-flash` | — | per_image | $0.0000 |
-| `google/gemini-2.5-flash-image` | — | per_1m_input_tokens | $0.300 |
-| `google/gemini-2.5-flash-image` | — | per_1m_output_tokens | $2.500 |
-| `google/gemini-2.5-flash-image` | — | per_image | $0.0000 |
-| `google/gemini-2.5-flash-lite` | — | per_1m_input_tokens | $0.100 |
-| `google/gemini-2.5-flash-lite` | — | per_1m_output_tokens | $0.400 |
-| `google/gemini-2.5-flash-lite` | — | per_image | $0.0000 |
-| `google/gemini-2.5-pro` | — | per_1m_input_tokens | $1.250 |
-| `google/gemini-2.5-pro` | — | per_1m_output_tokens | $10.00 |
-| `google/gemini-2.5-pro` | — | per_image | $0.0000 |
-| `google/gemini-2.5-pro-preview` | — | per_1m_input_tokens | $1.250 |
-| `google/gemini-2.5-pro-preview` | — | per_1m_output_tokens | $10.00 |
-| `google/gemini-2.5-pro-preview` | — | per_image | $0.0000 |
-| `google/gemini-3-flash-preview` | — | per_1m_input_tokens | $0.500 |
-| `google/gemini-3-flash-preview` | — | per_1m_output_tokens | $3.000 |
-| `google/gemini-3-flash-preview` | — | per_image | $0.0000 |
-| `google/gemini-3-flash-preview:batch` | — | per_1m_input_tokens | $0.250 |
-| `google/gemini-3-flash-preview:batch` | — | per_1m_output_tokens | $1.500 |
-| `google/gemini-3-flash-preview:batch` | — | per_image | $0.0000 |
-| `google/gemini-3-pro-image` | — | per_1m_input_tokens | $2.000 |
-| `google/gemini-3-pro-image` | — | per_1m_output_tokens | $12.00 |
-| `google/gemini-3-pro-image` | — | per_image | $0.0000 |
-| `google/gemini-3-pro-image-preview` | — | per_1m_input_tokens | $2.000 |
-| `google/gemini-3-pro-image-preview` | — | per_1m_output_tokens | $12.00 |
-| `google/gemini-3-pro-image-preview` | — | per_image | $0.0000 |
-| `google/gemini-3.1-flash-image` | — | per_1m_input_tokens | $0.500 |
-| `google/gemini-3.1-flash-image` | — | per_1m_output_tokens | $3.000 |
-| `google/gemini-3.1-flash-image-preview` | — | per_1m_input_tokens | $0.500 |
-| `google/gemini-3.1-flash-image-preview` | — | per_1m_output_tokens | $3.000 |
-| `google/gemini-3.1-flash-lite` | — | per_1m_input_tokens | $0.250 |
-| `google/gemini-3.1-flash-lite` | — | per_1m_output_tokens | $1.500 |
-| `google/gemini-3.1-flash-lite` | — | per_image | $0.0000 |
-| `google/gemini-3.1-flash-lite-image` | — | per_1m_input_tokens | $0.250 |
-| `google/gemini-3.1-flash-lite-image` | — | per_1m_output_tokens | $1.500 |
-| `google/gemini-3.1-flash-lite-preview` | — | per_1m_input_tokens | $0.250 |
-| `google/gemini-3.1-flash-lite-preview` | — | per_1m_output_tokens | $1.500 |
-| `google/gemini-3.1-flash-lite-preview` | — | per_image | $0.0000 |
-| `google/gemini-3.1-flash-lite:batch` | — | per_1m_input_tokens | $0.125 |
-| `google/gemini-3.1-flash-lite:batch` | — | per_1m_output_tokens | $0.750 |
-| `google/gemini-3.1-flash-lite:batch` | — | per_image | $0.0000 |
-| `google/gemini-3.1-pro-preview` | — | per_1m_input_tokens | $2.000 |
-| `google/gemini-3.1-pro-preview` | — | per_1m_output_tokens | $12.00 |
-| `google/gemini-3.1-pro-preview` | — | per_image | $0.0000 |
-| `google/gemini-3.1-pro-preview-customtools` | — | per_1m_input_tokens | $2.000 |
-| `google/gemini-3.1-pro-preview-customtools` | — | per_1m_output_tokens | $12.00 |
-| `google/gemini-3.1-pro-preview-customtools` | — | per_image | $0.0000 |
-| `google/gemini-3.1-pro-preview:batch` | — | per_1m_input_tokens | $1.000 |
-| `google/gemini-3.1-pro-preview:batch` | — | per_1m_output_tokens | $6.000 |
-| `google/gemini-3.1-pro-preview:batch` | — | per_image | $0.0000 |
-| `google/gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_tokens | $1.500 |
-| `google/gemini-3.5-flash` | `gemini-3-flash` | per_1m_output_tokens | $9.000 |
-| `google/gemini-3.5-flash` | `gemini-3-flash` | per_image | $0.0000 |
-| `google/gemini-3.5-flash-lite` | — | per_1m_input_tokens | $0.300 |
-| `google/gemini-3.5-flash-lite` | — | per_1m_output_tokens | $2.500 |
-| `google/gemini-3.5-flash-lite` | — | per_image | $0.0000 |
-| `google/gemini-3.5-flash-lite:batch` | — | per_1m_input_tokens | $0.150 |
-| `google/gemini-3.5-flash-lite:batch` | — | per_1m_output_tokens | $1.250 |
-| `google/gemini-3.5-flash-lite:batch` | — | per_image | $0.0000 |
-| `google/gemini-3.5-flash:batch` | `gemini-3-flash` | per_1m_input_tokens | $0.750 |
-| `google/gemini-3.5-flash:batch` | `gemini-3-flash` | per_1m_output_tokens | $4.500 |
-| `google/gemini-3.5-flash:batch` | `gemini-3-flash` | per_image | $0.0000 |
-| `google/gemini-3.6-flash` | — | per_1m_input_tokens | $0.750 |
-| `google/gemini-3.6-flash` | — | per_1m_output_tokens | $3.750 |
-| `google/gemini-3.6-flash` | — | per_image | $0.0000 |
-| `google/gemini-3.6-flash:batch` | — | per_1m_input_tokens | $0.375 |
-| `google/gemini-3.6-flash:batch` | — | per_1m_output_tokens | $1.875 |
-| `google/gemini-3.6-flash:batch` | — | per_image | $0.0000 |
-| `google/gemini-3.7-flash` | — | per_1m_input_tokens | $0.750 |
-| `google/gemini-3.7-flash` | — | per_1m_output_tokens | $3.750 |
-| `google/gemini-3.7-flash` | — | per_image | $0.0000 |
-| `google/gemini-3.7-flash:batch` | — | per_1m_input_tokens | $0.375 |
-| `google/gemini-3.7-flash:batch` | — | per_1m_output_tokens | $1.875 |
-| `google/gemini-3.7-flash:batch` | — | per_image | $0.0000 |
-| `google/gemini-3.8-flash` | — | per_1m_input_tokens | $0.825 |
-| `google/gemini-3.8-flash` | — | per_1m_output_tokens | $4.125 |
-| `google/gemini-3.8-flash` | — | per_image | $0.0000 |
-| `google/gemini-3.8-flash:batch` | — | per_1m_input_tokens | $0.375 |
-| `google/gemini-3.8-flash:batch` | — | per_1m_output_tokens | $1.875 |
-| `google/gemini-3.8-flash:batch` | — | per_image | $0.0000 |
-| `google/gemini-4-argon` | — | per_1m_input_tokens | $2.000 |
-| `google/gemini-4-argon` | — | per_1m_output_tokens | $10.00 |
-| `google/gemini-4-argon` | — | per_image | $0.0000 |
-| `google/gemini-4-argon:batch` | — | per_1m_input_tokens | $1.000 |
-| `google/gemini-4-argon:batch` | — | per_1m_output_tokens | $5.000 |
-| `google/gemini-4-argon:batch` | — | per_image | $0.0000 |
-| `google/gemini-nano-banana-2.1` | — | per_1m_input_tokens | $1.500 |
-| `google/gemini-nano-banana-2.1` | — | per_1m_output_tokens | $7.500 |
-| `google/gemma-2-27b-it` | — | per_1m_input_tokens | $0.650 |
-| `google/gemma-2-27b-it` | — | per_1m_output_tokens | $0.650 |
-| `google/gemma-3-12b-it` | — | per_1m_input_tokens | $0.050 |
-| `google/gemma-3-12b-it` | — | per_1m_output_tokens | $0.150 |
-| `google/gemma-3-27b-it` | — | per_1m_input_tokens | $0.080 |
-| `google/gemma-3-27b-it` | — | per_1m_output_tokens | $0.350 |
-| `google/gemma-3-4b-it` | — | per_1m_input_tokens | $0.040 |
-| `google/gemma-3-4b-it` | — | per_1m_output_tokens | $0.050 |
-| `google/gemma-4-26b-a4b-it` | — | per_1m_input_tokens | $0.090 |
-| `google/gemma-4-26b-a4b-it` | — | per_1m_output_tokens | $0.300 |
-| `google/gemma-4-31b-it` | — | per_1m_input_tokens | $0.200 |
-| `google/gemma-4-31b-it` | — | per_1m_output_tokens | $0.400 |
-| `gryphe/mythomax-l2-13b` | — | per_1m_input_tokens | $0.080 |
-| `gryphe/mythomax-l2-13b` | — | per_1m_output_tokens | $0.110 |
-| `ibm-granite/granite-4.0-h-micro` | — | per_1m_input_tokens | $0.017 |
-| `ibm-granite/granite-4.0-h-micro` | — | per_1m_output_tokens | $0.112 |
-| `ibm-granite/granite-4.2-8b` | — | per_1m_input_tokens | $0.060 |
-| `ibm-granite/granite-4.2-8b` | — | per_1m_output_tokens | $0.250 |
-| `inception/mercury-2` | — | per_1m_input_tokens | $0.250 |
-| `inception/mercury-2` | — | per_1m_output_tokens | $0.750 |
-| `inception/mercury-2.5` | — | per_1m_input_tokens | $0.040 |
-| `inception/mercury-2.5` | — | per_1m_output_tokens | $0.150 |
-| `inception/mercury-3` | — | per_1m_input_tokens | $0.100 |
-| `inception/mercury-3` | — | per_1m_output_tokens | $0.350 |
-| `inclusionai/ling-3.0-flash` | — | per_1m_input_tokens | $0.021 |
-| `inclusionai/ling-3.0-flash` | — | per_1m_output_tokens | $0.063 |
-| `inclusionai/ling-3.0-flash-vl` | — | per_1m_input_tokens | $0.060 |
-| `inclusionai/ling-3.0-flash-vl` | — | per_1m_output_tokens | $0.180 |
-| `inclusionai/ling-3.1-flash` | — | per_1m_input_tokens | $0.075 |
-| `inclusionai/ling-3.1-flash` | — | per_1m_output_tokens | $0.225 |
-| `inference-net/schematron-v2-small` | — | per_1m_input_tokens | $0.050 |
-| `inference-net/schematron-v2-small` | — | per_1m_output_tokens | $0.230 |
-| `inference-net/schematron-v2-turbo` | — | per_1m_input_tokens | $0.030 |
-| `inference-net/schematron-v2-turbo` | — | per_1m_output_tokens | $0.150 |
-| `liquid/lfm-2.5-24b-a2b` | — | per_1m_input_tokens | $0.050 |
-| `liquid/lfm-2.5-24b-a2b` | — | per_1m_output_tokens | $0.700 |
-| `mancer/weaver` | — | per_1m_input_tokens | $0.400 |
-| `mancer/weaver` | — | per_1m_output_tokens | $0.750 |
-| `meituan/longcat-2.0` | — | per_1m_input_tokens | $0.300 |
-| `meituan/longcat-2.0` | — | per_1m_output_tokens | $1.200 |
-| `meta-llama/llama-3.1-70b-instruct` | — | per_1m_input_tokens | $0.400 |
-| `meta-llama/llama-3.1-70b-instruct` | — | per_1m_output_tokens | $0.400 |
-| `meta-llama/llama-3.1-8b-instruct` | — | per_1m_input_tokens | $0.050 |
-| `meta-llama/llama-3.1-8b-instruct` | — | per_1m_output_tokens | $0.080 |
-| `meta-llama/llama-3.2-1b-instruct` | — | per_1m_input_tokens | $0.027 |
-| `meta-llama/llama-3.2-1b-instruct` | — | per_1m_output_tokens | $0.201 |
-| `meta-llama/llama-3.2-3b-instruct` | — | per_1m_input_tokens | $0.051 |
-| `meta-llama/llama-3.2-3b-instruct` | — | per_1m_output_tokens | $0.335 |
-| `meta-llama/llama-3.3-70b-instruct` | — | per_1m_input_tokens | $0.100 |
-| `meta-llama/llama-3.3-70b-instruct` | — | per_1m_output_tokens | $0.320 |
-| `meta-llama/llama-4-maverick` | — | per_1m_input_tokens | $0.188 |
-| `meta-llama/llama-4-maverick` | — | per_1m_output_tokens | $0.652 |
-| `meta-llama/llama-4-scout` | — | per_1m_input_tokens | $0.100 |
-| `meta-llama/llama-4-scout` | — | per_1m_output_tokens | $0.300 |
-| `meta-llama/llama-guard-4-12b` | — | per_1m_input_tokens | $0.180 |
-| `meta-llama/llama-guard-4-12b` | — | per_1m_output_tokens | $0.180 |
-| `meta/muse-glimmer-30b` | — | per_1m_input_tokens | $0.300 |
-| `meta/muse-glimmer-30b` | — | per_1m_output_tokens | $1.200 |
-| `meta/muse-spark-1.1` | — | per_1m_input_tokens | $1.250 |
-| `meta/muse-spark-1.1` | — | per_1m_output_tokens | $4.250 |
-| `meta/muse-spark-1.2` | — | per_1m_input_tokens | $1.250 |
-| `meta/muse-spark-1.2` | — | per_1m_output_tokens | $4.250 |
-| `meta/muse-spark-1.2-contributor` | — | per_1m_input_tokens | $0.100 |
-| `meta/muse-spark-1.2-contributor` | — | per_1m_output_tokens | $0.200 |
-| `meta/muse-spark-1.3` | — | per_1m_input_tokens | $1.250 |
-| `meta/muse-spark-1.3` | — | per_1m_output_tokens | $4.250 |
-| `meta/muse-spark-1.3-contributor` | — | per_1m_input_tokens | $0.100 |
-| `meta/muse-spark-1.3-contributor` | — | per_1m_output_tokens | $0.200 |
-| `meta/muse-spark-open` | — | per_1m_input_tokens | $1.250 |
-| `meta/muse-spark-open` | — | per_1m_output_tokens | $4.250 |
-| `meta/muse-wonder` | — | per_1m_input_tokens | $4.000 |
-| `meta/muse-wonder` | — | per_1m_output_tokens | $20.00 |
-| `microsoft/phi-4` | — | per_1m_input_tokens | $0.070 |
-| `microsoft/phi-4` | — | per_1m_output_tokens | $0.140 |
-| `minimax/minimax-01` | — | per_1m_input_tokens | $0.200 |
-| `minimax/minimax-01` | — | per_1m_output_tokens | $1.100 |
-| `minimax/minimax-m1` | — | per_1m_input_tokens | $0.550 |
-| `minimax/minimax-m1` | — | per_1m_output_tokens | $2.200 |
-| `minimax/minimax-m2` | — | per_1m_input_tokens | $0.255 |
-| `minimax/minimax-m2` | — | per_1m_output_tokens | $1.020 |
-| `minimax/minimax-m2-her` | — | per_1m_input_tokens | $0.300 |
-| `minimax/minimax-m2-her` | — | per_1m_output_tokens | $1.200 |
-| `minimax/minimax-m2.1` | — | per_1m_input_tokens | $0.300 |
-| `minimax/minimax-m2.1` | — | per_1m_output_tokens | $1.200 |
-| `minimax/minimax-m2.5` | — | per_1m_input_tokens | $0.270 |
-| `minimax/minimax-m2.5` | — | per_1m_output_tokens | $0.950 |
-| `minimax/minimax-m2.7` | — | per_1m_input_tokens | $0.300 |
-| `minimax/minimax-m2.7` | — | per_1m_output_tokens | $1.200 |
-| `minimax/minimax-m3` | — | per_1m_input_tokens | $0.300 |
-| `minimax/minimax-m3` | — | per_1m_output_tokens | $1.200 |
-| `mistralai/codestral-2508` | — | per_1m_input_tokens | $0.300 |
-| `mistralai/codestral-2508` | — | per_1m_output_tokens | $0.900 |
-| `mistralai/codestral-2508:batch` | — | per_1m_input_tokens | $0.150 |
-| `mistralai/codestral-2508:batch` | — | per_1m_output_tokens | $0.450 |
-| `mistralai/devstral-2512` | — | per_1m_input_tokens | $0.400 |
-| `mistralai/devstral-2512` | — | per_1m_output_tokens | $2.000 |
-| `mistralai/ministral-14b-2512` | — | per_1m_input_tokens | $0.200 |
-| `mistralai/ministral-14b-2512` | — | per_1m_output_tokens | $0.200 |
-| `mistralai/ministral-3b-2512` | — | per_1m_input_tokens | $0.100 |
-| `mistralai/ministral-3b-2512` | — | per_1m_output_tokens | $0.100 |
-| `mistralai/ministral-8b-2512` | — | per_1m_input_tokens | $0.150 |
-| `mistralai/ministral-8b-2512` | — | per_1m_output_tokens | $0.150 |
-| `mistralai/ministral-8b-2512:batch` | — | per_1m_input_tokens | $0.075 |
-| `mistralai/ministral-8b-2512:batch` | — | per_1m_output_tokens | $0.075 |
-| `mistralai/mistral-large` | — | per_1m_input_tokens | $2.000 |
-| `mistralai/mistral-large` | — | per_1m_output_tokens | $6.000 |
-| `mistralai/mistral-large-2407` | — | per_1m_input_tokens | $2.000 |
-| `mistralai/mistral-large-2407` | — | per_1m_output_tokens | $6.000 |
-| `mistralai/mistral-large-2512` | — | per_1m_input_tokens | $0.500 |
-| `mistralai/mistral-large-2512` | — | per_1m_output_tokens | $1.500 |
-| `mistralai/mistral-large-2512:batch` | — | per_1m_input_tokens | $0.250 |
-| `mistralai/mistral-large-2512:batch` | — | per_1m_output_tokens | $0.750 |
-| `mistralai/mistral-large-4-0` | — | per_1m_input_tokens | $1.360 |
-| `mistralai/mistral-large-4-0` | — | per_1m_output_tokens | $4.180 |
-| `mistralai/mistral-medium-3` | — | per_1m_input_tokens | $0.400 |
-| `mistralai/mistral-medium-3` | — | per_1m_output_tokens | $2.000 |
-| `mistralai/mistral-medium-3-5` | — | per_1m_input_tokens | $1.500 |
-| `mistralai/mistral-medium-3-5` | — | per_1m_output_tokens | $7.500 |
-| `mistralai/mistral-medium-3-5:batch` | — | per_1m_input_tokens | $0.750 |
-| `mistralai/mistral-medium-3-5:batch` | — | per_1m_output_tokens | $3.750 |
-| `mistralai/mistral-medium-3.1` | — | per_1m_input_tokens | $0.400 |
-| `mistralai/mistral-medium-3.1` | — | per_1m_output_tokens | $2.000 |
-| `mistralai/mistral-medium-3.1:batch` | — | per_1m_input_tokens | $0.200 |
-| `mistralai/mistral-medium-3.1:batch` | — | per_1m_output_tokens | $1.000 |
-| `mistralai/mistral-nemo` | — | per_1m_input_tokens | $0.029 |
-| `mistralai/mistral-nemo` | — | per_1m_output_tokens | $0.030 |
-| `mistralai/mistral-saba` | — | per_1m_input_tokens | $0.200 |
-| `mistralai/mistral-saba` | — | per_1m_output_tokens | $0.600 |
-| `mistralai/mistral-small-24b-instruct-2501` | — | per_1m_input_tokens | $0.050 |
-| `mistralai/mistral-small-24b-instruct-2501` | — | per_1m_output_tokens | $0.080 |
-| `mistralai/mistral-small-2603` | — | per_1m_input_tokens | $0.150 |
-| `mistralai/mistral-small-2603` | — | per_1m_output_tokens | $0.600 |
-| `mistralai/mistral-small-2603:batch` | — | per_1m_input_tokens | $0.075 |
-| `mistralai/mistral-small-2603:batch` | — | per_1m_output_tokens | $0.300 |
-| `mistralai/mistral-small-3.1-24b-instruct` | — | per_1m_input_tokens | $0.351 |
-| `mistralai/mistral-small-3.1-24b-instruct` | — | per_1m_output_tokens | $0.555 |
-| `mistralai/mistral-small-3.2-24b-instruct` | — | per_1m_input_tokens | $0.094 |
-| `mistralai/mistral-small-3.2-24b-instruct` | — | per_1m_output_tokens | $0.250 |
-| `mistralai/mixtral-8x22b-instruct` | — | per_1m_input_tokens | $2.000 |
-| `mistralai/mixtral-8x22b-instruct` | — | per_1m_output_tokens | $6.000 |
-| `mistralai/voxtral-small-24b-2507` | — | per_1m_input_tokens | $0.100 |
-| `mistralai/voxtral-small-24b-2507` | — | per_1m_output_tokens | $0.300 |
-| `moondream/moondream3-preview` | — | per_1m_input_tokens | $0.300 |
-| `moondream/moondream3-preview` | — | per_1m_output_tokens | $2.500 |
-| `moondream/moondream3.1-9b-a2b` | — | per_1m_input_tokens | $0.300 |
-| `moondream/moondream3.1-9b-a2b` | — | per_1m_output_tokens | $2.500 |
-| `moonshotai/kimi-k2` | — | per_1m_input_tokens | $0.570 |
-| `moonshotai/kimi-k2` | — | per_1m_output_tokens | $2.300 |
-| `moonshotai/kimi-k2-0905` | — | per_1m_input_tokens | $0.600 |
-| `moonshotai/kimi-k2-0905` | — | per_1m_output_tokens | $2.500 |
-| `moonshotai/kimi-k2-thinking` | — | per_1m_input_tokens | $0.600 |
-| `moonshotai/kimi-k2-thinking` | — | per_1m_output_tokens | $2.500 |
-| `moonshotai/kimi-k2.5` | — | per_1m_input_tokens | $0.500 |
-| `moonshotai/kimi-k2.5` | — | per_1m_output_tokens | $2.500 |
-| `moonshotai/kimi-k2.6` | — | per_1m_input_tokens | $0.650 |
-| `moonshotai/kimi-k2.6` | — | per_1m_output_tokens | $3.410 |
-| `moonshotai/kimi-k2.7-code` | — | per_1m_input_tokens | $0.671 |
-| `moonshotai/kimi-k2.7-code` | — | per_1m_output_tokens | $3.350 |
-| `moonshotai/kimi-k3` | — | per_1m_input_tokens | $0.239 |
-| `moonshotai/kimi-k3` | — | per_1m_output_tokens | $11.94 |
-| `moonshotai/kimi-k3:batch` | — | per_1m_input_tokens | $2.280 |
-| `moonshotai/kimi-k3:batch` | — | per_1m_output_tokens | $11.40 |
-| `morph/morph-v3-fast` | — | per_1m_input_tokens | $0.800 |
-| `morph/morph-v3-fast` | — | per_1m_output_tokens | $1.200 |
-| `morph/morph-v3-large` | — | per_1m_input_tokens | $0.900 |
-| `morph/morph-v3-large` | — | per_1m_output_tokens | $1.900 |
-| `nex-agi/nex-n2.5-mini` | — | per_1m_input_tokens | $0.025 |
-| `nex-agi/nex-n2.5-mini` | — | per_1m_output_tokens | $0.100 |
-| `nex-agi/nex-n2.5-pro` | — | per_1m_input_tokens | $0.075 |
-| `nex-agi/nex-n2.5-pro` | — | per_1m_output_tokens | $0.250 |
-| `nousresearch/hermes-3-llama-3.1-405b` | — | per_1m_input_tokens | $1.000 |
-| `nousresearch/hermes-3-llama-3.1-405b` | — | per_1m_output_tokens | $1.000 |
-| `nousresearch/hermes-3-llama-3.1-70b` | — | per_1m_input_tokens | $0.700 |
-| `nousresearch/hermes-3-llama-3.1-70b` | — | per_1m_output_tokens | $0.700 |
-| `nousresearch/hermes-4-405b` | — | per_1m_input_tokens | $1.000 |
-| `nousresearch/hermes-4-405b` | — | per_1m_output_tokens | $3.000 |
-| `nvidia/nemotron-3-nano-30b-a3b` | — | per_1m_input_tokens | $0.060 |
-| `nvidia/nemotron-3-nano-30b-a3b` | — | per_1m_output_tokens | $0.240 |
-| `nvidia/nemotron-3-super-120b-a12b` | — | per_1m_input_tokens | $0.300 |
-| `nvidia/nemotron-3-super-120b-a12b` | — | per_1m_output_tokens | $2.400 |
-| `nvidia/nemotron-3-ultra-550b-a55b` | — | per_1m_input_tokens | $0.600 |
-| `nvidia/nemotron-3-ultra-550b-a55b` | — | per_1m_output_tokens | $2.400 |
-| `nvidia/nemotron-3.5-content-safety` | — | per_1m_input_tokens | $0.200 |
-| `nvidia/nemotron-3.5-content-safety` | — | per_1m_output_tokens | $0.200 |
-| `nvidia/nemotron-3.5-lightning` | — | per_1m_input_tokens | $0.070 |
-| `nvidia/nemotron-3.5-lightning` | — | per_1m_output_tokens | $0.200 |
-| `nvidia/nemotron-3.5-super-vl` | — | per_1m_input_tokens | $0.150 |
-| `nvidia/nemotron-3.5-super-vl` | — | per_1m_output_tokens | $0.500 |
-| `openai/gpt-3.5-turbo` | — | per_1m_input_tokens | $0.500 |
-| `openai/gpt-3.5-turbo` | — | per_1m_output_tokens | $1.500 |
-| `openai/gpt-3.5-turbo-0613` | — | per_1m_input_tokens | $1.000 |
-| `openai/gpt-3.5-turbo-0613` | — | per_1m_output_tokens | $2.000 |
-| `openai/gpt-3.5-turbo-16k` | — | per_1m_input_tokens | $3.000 |
-| `openai/gpt-3.5-turbo-16k` | — | per_1m_output_tokens | $4.000 |
-| `openai/gpt-3.5-turbo-instruct` | — | per_1m_input_tokens | $1.500 |
-| `openai/gpt-3.5-turbo-instruct` | — | per_1m_output_tokens | $2.000 |
-| `openai/gpt-3.5-turbo:batch` | — | per_1m_input_tokens | $0.250 |
-| `openai/gpt-3.5-turbo:batch` | — | per_1m_output_tokens | $0.750 |
-| `openai/gpt-4` | — | per_1m_input_tokens | $30.00 |
-| `openai/gpt-4` | — | per_1m_output_tokens | $60.00 |
-| `openai/gpt-4-turbo` | — | per_1m_input_tokens | $10.00 |
-| `openai/gpt-4-turbo` | — | per_1m_output_tokens | $30.00 |
-| `openai/gpt-4-turbo:batch` | — | per_1m_input_tokens | $5.000 |
-| `openai/gpt-4-turbo:batch` | — | per_1m_output_tokens | $15.00 |
-| `openai/gpt-4.1` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-4.1` | — | per_1m_output_tokens | $8.000 |
-| `openai/gpt-4.1-mini` | — | per_1m_input_tokens | $0.400 |
-| `openai/gpt-4.1-mini` | — | per_1m_output_tokens | $1.600 |
-| `openai/gpt-4.1-mini:batch` | — | per_1m_input_tokens | $0.200 |
-| `openai/gpt-4.1-mini:batch` | — | per_1m_output_tokens | $0.800 |
-| `openai/gpt-4.1-nano` | — | per_1m_input_tokens | $0.100 |
-| `openai/gpt-4.1-nano` | — | per_1m_output_tokens | $0.400 |
-| `openai/gpt-4.1-nano:batch` | — | per_1m_input_tokens | $0.050 |
-| `openai/gpt-4.1-nano:batch` | — | per_1m_output_tokens | $0.200 |
-| `openai/gpt-4.1:batch` | — | per_1m_input_tokens | $1.000 |
-| `openai/gpt-4.1:batch` | — | per_1m_output_tokens | $4.000 |
-| `openai/gpt-4o` | — | per_1m_input_tokens | $2.500 |
-| `openai/gpt-4o` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-4o-2024-05-13` | — | per_1m_input_tokens | $5.000 |
-| `openai/gpt-4o-2024-05-13` | — | per_1m_output_tokens | $15.00 |
-| `openai/gpt-4o-2024-08-06` | — | per_1m_input_tokens | $2.500 |
-| `openai/gpt-4o-2024-08-06` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-4o-2024-11-20` | — | per_1m_input_tokens | $2.500 |
-| `openai/gpt-4o-2024-11-20` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-4o-mini` | — | per_1m_input_tokens | $0.150 |
-| `openai/gpt-4o-mini` | — | per_1m_output_tokens | $0.600 |
-| `openai/gpt-4o-mini-2024-07-18` | — | per_1m_input_tokens | $0.150 |
-| `openai/gpt-4o-mini-2024-07-18` | — | per_1m_output_tokens | $0.600 |
-| `openai/gpt-4o-mini:batch` | — | per_1m_input_tokens | $0.075 |
-| `openai/gpt-4o-mini:batch` | — | per_1m_output_tokens | $0.300 |
-| `openai/gpt-4o:batch` | — | per_1m_input_tokens | $1.250 |
-| `openai/gpt-4o:batch` | — | per_1m_output_tokens | $5.000 |
-| `openai/gpt-5` | — | per_1m_input_tokens | $1.250 |
-| `openai/gpt-5` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-5-image` | — | per_1m_input_tokens | $10.00 |
-| `openai/gpt-5-image` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-5-image-mini` | — | per_1m_input_tokens | $2.500 |
-| `openai/gpt-5-image-mini` | — | per_1m_output_tokens | $2.000 |
-| `openai/gpt-5-mini` | — | per_1m_input_tokens | $0.250 |
-| `openai/gpt-5-mini` | — | per_1m_output_tokens | $2.000 |
-| `openai/gpt-5-mini:batch` | — | per_1m_input_tokens | $0.125 |
-| `openai/gpt-5-mini:batch` | — | per_1m_output_tokens | $1.000 |
-| `openai/gpt-5-nano` | — | per_1m_input_tokens | $0.050 |
-| `openai/gpt-5-nano` | — | per_1m_output_tokens | $0.400 |
-| `openai/gpt-5-nano:batch` | — | per_1m_input_tokens | $0.025 |
-| `openai/gpt-5-nano:batch` | — | per_1m_output_tokens | $0.200 |
-| `openai/gpt-5-pro` | — | per_1m_input_tokens | $15.00 |
-| `openai/gpt-5-pro` | — | per_1m_output_tokens | $120.00 |
-| `openai/gpt-5-pro:batch` | — | per_1m_input_tokens | $7.500 |
-| `openai/gpt-5-pro:batch` | — | per_1m_output_tokens | $60.00 |
-| `openai/gpt-5.1` | — | per_1m_input_tokens | $1.250 |
-| `openai/gpt-5.1` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-5.1-codex` | — | per_1m_input_tokens | $1.250 |
-| `openai/gpt-5.1-codex` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-5.1-codex-max` | — | per_1m_input_tokens | $1.250 |
-| `openai/gpt-5.1-codex-max` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-5.1-codex-mini` | — | per_1m_input_tokens | $0.250 |
-| `openai/gpt-5.1-codex-mini` | — | per_1m_output_tokens | $2.000 |
-| `openai/gpt-5.1:batch` | — | per_1m_input_tokens | $0.625 |
-| `openai/gpt-5.1:batch` | — | per_1m_output_tokens | $5.000 |
-| `openai/gpt-5.2` | — | per_1m_input_tokens | $1.750 |
-| `openai/gpt-5.2` | — | per_1m_output_tokens | $14.00 |
-| `openai/gpt-5.2-chat` | — | per_1m_input_tokens | $1.750 |
-| `openai/gpt-5.2-chat` | — | per_1m_output_tokens | $14.00 |
-| `openai/gpt-5.2-codex` | — | per_1m_input_tokens | $1.750 |
-| `openai/gpt-5.2-codex` | — | per_1m_output_tokens | $14.00 |
-| `openai/gpt-5.2-pro` | — | per_1m_input_tokens | $21.00 |
-| `openai/gpt-5.2-pro` | — | per_1m_output_tokens | $168.00 |
-| `openai/gpt-5.2-pro:batch` | — | per_1m_input_tokens | $10.50 |
-| `openai/gpt-5.2-pro:batch` | — | per_1m_output_tokens | $84.00 |
-| `openai/gpt-5.2:batch` | — | per_1m_input_tokens | $0.875 |
-| `openai/gpt-5.2:batch` | — | per_1m_output_tokens | $7.000 |
-| `openai/gpt-5.3-codex` | — | per_1m_input_tokens | $1.750 |
-| `openai/gpt-5.3-codex` | — | per_1m_output_tokens | $14.00 |
-| `openai/gpt-5.4` | `gpt-5.4` | per_1m_input_tokens | $2.500 |
-| `openai/gpt-5.4` | `gpt-5.4` | per_1m_output_tokens | $15.00 |
-| `openai/gpt-5.4-image-2` | — | per_1m_input_tokens | $8.000 |
-| `openai/gpt-5.4-image-2` | — | per_1m_output_tokens | $15.00 |
-| `openai/gpt-5.4-mini` | — | per_1m_input_tokens | $0.750 |
-| `openai/gpt-5.4-mini` | — | per_1m_output_tokens | $4.500 |
-| `openai/gpt-5.4-mini:batch` | — | per_1m_input_tokens | $0.375 |
-| `openai/gpt-5.4-mini:batch` | — | per_1m_output_tokens | $2.250 |
-| `openai/gpt-5.4-nano` | — | per_1m_input_tokens | $0.200 |
-| `openai/gpt-5.4-nano` | — | per_1m_output_tokens | $1.250 |
-| `openai/gpt-5.4-nano:batch` | — | per_1m_input_tokens | $0.100 |
-| `openai/gpt-5.4-nano:batch` | — | per_1m_output_tokens | $0.625 |
-| `openai/gpt-5.4-pro` | — | per_1m_input_tokens | $30.00 |
-| `openai/gpt-5.4-pro` | — | per_1m_output_tokens | $180.00 |
-| `openai/gpt-5.4-pro:batch` | — | per_1m_input_tokens | $15.00 |
-| `openai/gpt-5.4-pro:batch` | — | per_1m_output_tokens | $90.00 |
-| `openai/gpt-5.4:batch` | `gpt-5.4` | per_1m_input_tokens | $1.250 |
-| `openai/gpt-5.4:batch` | `gpt-5.4` | per_1m_output_tokens | $7.500 |
-| `openai/gpt-5.5` | — | per_1m_input_tokens | $5.000 |
-| `openai/gpt-5.5` | — | per_1m_output_tokens | $30.00 |
-| `openai/gpt-5.5-pro` | `gpt-5.5-pro` | per_1m_input_tokens | $30.00 |
-| `openai/gpt-5.5-pro` | `gpt-5.5-pro` | per_1m_output_tokens | $180.00 |
-| `openai/gpt-5.5-pro:batch` | `gpt-5.5-pro` | per_1m_input_tokens | $15.00 |
-| `openai/gpt-5.5-pro:batch` | `gpt-5.5-pro` | per_1m_output_tokens | $90.00 |
-| `openai/gpt-5.5:batch` | — | per_1m_input_tokens | $2.500 |
-| `openai/gpt-5.5:batch` | — | per_1m_output_tokens | $15.00 |
-| `openai/gpt-5.6-luna` | — | per_1m_input_tokens | $0.200 |
-| `openai/gpt-5.6-luna` | — | per_1m_output_tokens | $1.200 |
-| `openai/gpt-5.6-luna-pro` | — | per_1m_input_tokens | $0.200 |
-| `openai/gpt-5.6-luna-pro` | — | per_1m_output_tokens | $1.200 |
-| `openai/gpt-5.6-luna-pro:batch` | — | per_1m_input_tokens | $0.100 |
-| `openai/gpt-5.6-luna-pro:batch` | — | per_1m_output_tokens | $0.600 |
-| `openai/gpt-5.6-luna:batch` | — | per_1m_input_tokens | $0.100 |
-| `openai/gpt-5.6-luna:batch` | — | per_1m_output_tokens | $0.600 |
-| `openai/gpt-5.6-sol` | — | per_1m_input_tokens | $4.000 |
-| `openai/gpt-5.6-sol` | — | per_1m_output_tokens | $20.00 |
-| `openai/gpt-5.6-sol-pro` | — | per_1m_input_tokens | $4.000 |
-| `openai/gpt-5.6-sol-pro` | — | per_1m_output_tokens | $20.00 |
-| `openai/gpt-5.6-sol-pro:batch` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-5.6-sol-pro:batch` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-5.6-sol:batch` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-5.6-sol:batch` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-5.6-terra` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-5.6-terra` | — | per_1m_output_tokens | $12.00 |
-| `openai/gpt-5.6-terra-pro` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-5.6-terra-pro` | — | per_1m_output_tokens | $12.00 |
-| `openai/gpt-5.6-terra-pro:batch` | — | per_1m_input_tokens | $1.000 |
-| `openai/gpt-5.6-terra-pro:batch` | — | per_1m_output_tokens | $6.000 |
-| `openai/gpt-5.6-terra:batch` | — | per_1m_input_tokens | $1.000 |
-| `openai/gpt-5.6-terra:batch` | — | per_1m_output_tokens | $6.000 |
-| `openai/gpt-5:batch` | — | per_1m_input_tokens | $0.625 |
-| `openai/gpt-5:batch` | — | per_1m_output_tokens | $5.000 |
-| `openai/gpt-6-astra` | — | per_1m_input_tokens | $10.00 |
-| `openai/gpt-6-astra` | — | per_1m_output_tokens | $50.00 |
-| `openai/gpt-6-astra-pro` | — | per_1m_input_tokens | $10.00 |
-| `openai/gpt-6-astra-pro` | — | per_1m_output_tokens | $50.00 |
-| `openai/gpt-6-astra-pro:batch` | — | per_1m_input_tokens | $5.000 |
-| `openai/gpt-6-astra-pro:batch` | — | per_1m_output_tokens | $25.00 |
-| `openai/gpt-6-astra:batch` | — | per_1m_input_tokens | $5.000 |
-| `openai/gpt-6-astra:batch` | — | per_1m_output_tokens | $25.00 |
-| `openai/gpt-6-luna` | — | per_1m_input_tokens | $0.100 |
-| `openai/gpt-6-luna` | — | per_1m_output_tokens | $0.500 |
-| `openai/gpt-6-luna-pro` | — | per_1m_input_tokens | $0.100 |
-| `openai/gpt-6-luna-pro` | — | per_1m_output_tokens | $0.500 |
-| `openai/gpt-6-luna-pro:batch` | — | per_1m_input_tokens | $0.050 |
-| `openai/gpt-6-luna-pro:batch` | — | per_1m_output_tokens | $0.250 |
-| `openai/gpt-6-luna:batch` | — | per_1m_input_tokens | $0.050 |
-| `openai/gpt-6-luna:batch` | — | per_1m_output_tokens | $0.250 |
-| `openai/gpt-6-sol` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-6-sol` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-6-sol-pro` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-6-sol-pro` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-6-sol-pro:batch` | — | per_1m_input_tokens | $1.000 |
-| `openai/gpt-6-sol-pro:batch` | — | per_1m_output_tokens | $5.000 |
-| `openai/gpt-6-sol:batch` | — | per_1m_input_tokens | $1.000 |
-| `openai/gpt-6-sol:batch` | — | per_1m_output_tokens | $5.000 |
-| `openai/gpt-6.1-sol` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-6.1-sol` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-6.1-sol-pro` | — | per_1m_input_tokens | $2.000 |
-| `openai/gpt-6.1-sol-pro` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-6.1-sol-pro:batch` | — | per_1m_input_tokens | $1.000 |
-| `openai/gpt-6.1-sol-pro:batch` | — | per_1m_output_tokens | $5.000 |
-| `openai/gpt-6.1-sol:batch` | — | per_1m_input_tokens | $1.000 |
-| `openai/gpt-6.1-sol:batch` | — | per_1m_output_tokens | $5.000 |
-| `openai/gpt-audio` | — | per_1m_input_tokens | $2.500 |
-| `openai/gpt-audio` | — | per_1m_output_tokens | $10.00 |
-| `openai/gpt-audio-mini` | — | per_1m_input_tokens | $0.600 |
-| `openai/gpt-audio-mini` | — | per_1m_output_tokens | $2.400 |
-| `openai/gpt-chat-latest` | — | per_1m_input_tokens | $5.000 |
-| `openai/gpt-chat-latest` | — | per_1m_output_tokens | $30.00 |
-| `openai/gpt-oss-120b` | — | per_1m_input_tokens | $0.150 |
-| `openai/gpt-oss-120b` | — | per_1m_output_tokens | $0.600 |
-| `openai/gpt-oss-120b:batch` | — | per_1m_input_tokens | $0.030 |
-| `openai/gpt-oss-120b:batch` | — | per_1m_output_tokens | $0.136 |
-| `openai/gpt-oss-20b` | — | per_1m_input_tokens | $0.018 |
-| `openai/gpt-oss-20b` | — | per_1m_output_tokens | $0.090 |
-| `openai/gpt-oss-20b:batch` | — | per_1m_input_tokens | $0.024 |
-| `openai/gpt-oss-20b:batch` | — | per_1m_output_tokens | $0.112 |
-| `openai/gpt-oss-safeguard-20b` | — | per_1m_input_tokens | $0.075 |
-| `openai/gpt-oss-safeguard-20b` | — | per_1m_output_tokens | $0.300 |
-| `openai/o1` | — | per_1m_input_tokens | $15.00 |
-| `openai/o1` | — | per_1m_output_tokens | $60.00 |
-| `openai/o1-pro` | — | per_1m_input_tokens | $150.00 |
-| `openai/o1-pro` | — | per_1m_output_tokens | $600.00 |
-| `openai/o3` | — | per_1m_input_tokens | $2.000 |
-| `openai/o3` | — | per_1m_output_tokens | $8.000 |
-| `openai/o3-mini` | — | per_1m_input_tokens | $1.100 |
-| `openai/o3-mini` | — | per_1m_output_tokens | $4.400 |
-| `openai/o3-mini-high` | — | per_1m_input_tokens | $1.100 |
-| `openai/o3-mini-high` | — | per_1m_output_tokens | $4.400 |
-| `openai/o3-mini:batch` | — | per_1m_input_tokens | $0.550 |
-| `openai/o3-mini:batch` | — | per_1m_output_tokens | $2.200 |
-| `openai/o3-pro` | — | per_1m_input_tokens | $20.00 |
-| `openai/o3-pro` | — | per_1m_output_tokens | $80.00 |
-| `openai/o3:batch` | — | per_1m_input_tokens | $1.000 |
-| `openai/o3:batch` | — | per_1m_output_tokens | $4.000 |
-| `openai/o4-mini` | — | per_1m_input_tokens | $1.100 |
-| `openai/o4-mini` | — | per_1m_output_tokens | $4.400 |
-| `openai/o4-mini-high` | — | per_1m_input_tokens | $1.100 |
-| `openai/o4-mini-high` | — | per_1m_output_tokens | $4.400 |
-| `openai/o4-mini:batch` | — | per_1m_input_tokens | $0.550 |
-| `openai/o4-mini:batch` | — | per_1m_output_tokens | $2.200 |
-| `perceptron/perceptron-mk1` | — | per_1m_input_tokens | $0.150 |
-| `perceptron/perceptron-mk1` | — | per_1m_output_tokens | $1.500 |
-| `perceptron/perceptron-mk1.5` | — | per_1m_input_tokens | $0.150 |
-| `perceptron/perceptron-mk1.5` | — | per_1m_output_tokens | $1.500 |
-| `perplexity/sonar` | — | per_1m_input_tokens | $1.000 |
-| `perplexity/sonar` | — | per_1m_output_tokens | $1.000 |
-| `perplexity/sonar-deep-research` | — | per_1m_input_tokens | $2.000 |
-| `perplexity/sonar-deep-research` | — | per_1m_output_tokens | $8.000 |
-| `perplexity/sonar-pro` | — | per_1m_input_tokens | $3.000 |
-| `perplexity/sonar-pro` | — | per_1m_output_tokens | $15.00 |
-| `perplexity/sonar-pro-search` | — | per_1m_input_tokens | $3.000 |
-| `perplexity/sonar-pro-search` | — | per_1m_output_tokens | $15.00 |
-| `perplexity/sonar-reasoning-pro` | — | per_1m_input_tokens | $2.000 |
-| `perplexity/sonar-reasoning-pro` | — | per_1m_output_tokens | $8.000 |
-| `poolside/laguna-s-2.1` | — | per_1m_input_tokens | $0.090 |
-| `poolside/laguna-s-2.1` | — | per_1m_output_tokens | $0.180 |
-| `poolside/laguna-xs-2.1` | — | per_1m_input_tokens | $0.060 |
-| `poolside/laguna-xs-2.1` | — | per_1m_output_tokens | $0.120 |
-| `prism-ml/ternary-bonsai-2-27b` | — | per_1m_input_tokens | $0.075 |
-| `prism-ml/ternary-bonsai-2-27b` | — | per_1m_output_tokens | $0.500 |
-| `qwen/qwen-2.5-72b-instruct` | — | per_1m_input_tokens | $0.360 |
-| `qwen/qwen-2.5-72b-instruct` | — | per_1m_output_tokens | $0.400 |
-| `qwen/qwen-2.5-7b-instruct` | — | per_1m_input_tokens | $0.100 |
-| `qwen/qwen-2.5-7b-instruct` | — | per_1m_output_tokens | $0.200 |
-| `qwen/qwen-2.5-coder-32b-instruct` | — | per_1m_input_tokens | $0.660 |
-| `qwen/qwen-2.5-coder-32b-instruct` | — | per_1m_output_tokens | $1.000 |
-| `qwen/qwen-plus` | — | per_1m_input_tokens | $0.260 |
-| `qwen/qwen-plus` | — | per_1m_output_tokens | $0.780 |
-| `qwen/qwen2.5-vl-72b-instruct` | — | per_1m_input_tokens | $0.800 |
-| `qwen/qwen2.5-vl-72b-instruct` | — | per_1m_output_tokens | $1.000 |
-| `qwen/qwen3-14b` | — | per_1m_input_tokens | $0.120 |
-| `qwen/qwen3-14b` | — | per_1m_output_tokens | $0.240 |
-| `qwen/qwen3-235b-a22b-2507` | — | per_1m_input_tokens | $0.090 |
-| `qwen/qwen3-235b-a22b-2507` | — | per_1m_output_tokens | $0.550 |
-| `qwen/qwen3-235b-a22b-thinking-2507` | — | per_1m_input_tokens | $0.450 |
-| `qwen/qwen3-235b-a22b-thinking-2507` | — | per_1m_output_tokens | $3.500 |
-| `qwen/qwen3-30b-a3b` | — | per_1m_input_tokens | $0.120 |
-| `qwen/qwen3-30b-a3b` | — | per_1m_output_tokens | $0.500 |
-| `qwen/qwen3-30b-a3b-instruct-2507` | — | per_1m_input_tokens | $0.090 |
-| `qwen/qwen3-30b-a3b-instruct-2507` | — | per_1m_output_tokens | $0.300 |
-| `qwen/qwen3-32b` | — | per_1m_input_tokens | $0.080 |
-| `qwen/qwen3-32b` | — | per_1m_output_tokens | $0.280 |
-| `qwen/qwen3-coder` | — | per_1m_input_tokens | $0.300 |
-| `qwen/qwen3-coder` | — | per_1m_output_tokens | $1.000 |
-| `qwen/qwen3-coder-30b-a3b-instruct` | — | per_1m_input_tokens | $0.070 |
-| `qwen/qwen3-coder-30b-a3b-instruct` | — | per_1m_output_tokens | $0.280 |
-| `qwen/qwen3-coder-flash` | — | per_1m_input_tokens | $0.195 |
-| `qwen/qwen3-coder-flash` | — | per_1m_output_tokens | $0.975 |
-| `qwen/qwen3-coder-next` | — | per_1m_input_tokens | $0.120 |
-| `qwen/qwen3-coder-next` | — | per_1m_output_tokens | $0.800 |
-| `qwen/qwen3-next-80b-a3b-instruct` | — | per_1m_input_tokens | $0.090 |
-| `qwen/qwen3-next-80b-a3b-instruct` | — | per_1m_output_tokens | $1.100 |
-| `qwen/qwen3-next-80b-a3b-thinking` | — | per_1m_input_tokens | $0.150 |
-| `qwen/qwen3-next-80b-a3b-thinking` | — | per_1m_output_tokens | $1.200 |
-| `qwen/qwen3-vl-235b-a22b-instruct` | — | per_1m_input_tokens | $0.210 |
-| `qwen/qwen3-vl-235b-a22b-instruct` | — | per_1m_output_tokens | $1.900 |
-| `qwen/qwen3-vl-30b-a3b-instruct` | — | per_1m_input_tokens | $0.150 |
-| `qwen/qwen3-vl-30b-a3b-instruct` | — | per_1m_output_tokens | $0.600 |
-| `qwen/qwen3-vl-30b-a3b-thinking` | — | per_1m_input_tokens | $0.290 |
-| `qwen/qwen3-vl-30b-a3b-thinking` | — | per_1m_output_tokens | $1.000 |
-| `qwen/qwen3-vl-8b-instruct` | — | per_1m_input_tokens | $0.250 |
-| `qwen/qwen3-vl-8b-instruct` | — | per_1m_output_tokens | $0.750 |
-| `qwen/qwen3.5-122b-a10b` | — | per_1m_input_tokens | $0.400 |
-| `qwen/qwen3.5-122b-a10b` | — | per_1m_output_tokens | $3.200 |
-| `qwen/qwen3.5-27b` | — | per_1m_input_tokens | $0.270 |
-| `qwen/qwen3.5-27b` | — | per_1m_output_tokens | $2.160 |
-| `qwen/qwen3.5-35b-a3b` | — | per_1m_input_tokens | $0.140 |
-| `qwen/qwen3.5-35b-a3b` | — | per_1m_output_tokens | $1.000 |
-| `qwen/qwen3.5-397b-a17b` | — | per_1m_input_tokens | $0.500 |
-| `qwen/qwen3.5-397b-a17b` | — | per_1m_output_tokens | $3.600 |
-| `qwen/qwen3.5-9b` | — | per_1m_input_tokens | $0.080 |
-| `qwen/qwen3.5-9b` | — | per_1m_output_tokens | $0.130 |
-| `qwen/qwen3.5-flash-02-23` | — | per_1m_input_tokens | $0.065 |
-| `qwen/qwen3.5-flash-02-23` | — | per_1m_output_tokens | $0.260 |
-| `qwen/qwen3.5-plus-02-15` | — | per_1m_input_tokens | $0.260 |
-| `qwen/qwen3.5-plus-02-15` | — | per_1m_output_tokens | $1.560 |
-| `qwen/qwen3.5-plus-20260420` | — | per_1m_input_tokens | $0.300 |
-| `qwen/qwen3.5-plus-20260420` | — | per_1m_output_tokens | $1.800 |
-| `qwen/qwen3.6-27b` | — | per_1m_input_tokens | $0.250 |
-| `qwen/qwen3.6-27b` | — | per_1m_output_tokens | $2.000 |
-| `qwen/qwen3.6-35b-a3b` | — | per_1m_input_tokens | $0.100 |
-| `qwen/qwen3.6-35b-a3b` | — | per_1m_output_tokens | $0.950 |
-| `qwen/qwen3.6-flash` | — | per_1m_input_tokens | $0.188 |
-| `qwen/qwen3.6-flash` | — | per_1m_output_tokens | $1.125 |
-| `qwen/qwen3.6-plus` | — | per_1m_input_tokens | $0.325 |
-| `qwen/qwen3.6-plus` | — | per_1m_output_tokens | $1.950 |
-| `qwen/qwen3.7-flash` | — | per_1m_input_tokens | $0.030 |
-| `qwen/qwen3.7-flash` | — | per_1m_output_tokens | $0.130 |
-| `qwen/qwen3.7-max` | — | per_1m_input_tokens | $1.475 |
-| `qwen/qwen3.7-max` | — | per_1m_output_tokens | $4.425 |
-| `qwen/qwen3.7-plus` | — | per_1m_input_tokens | $0.320 |
-| `qwen/qwen3.7-plus` | — | per_1m_output_tokens | $1.280 |
-| `qwen/qwen3.7-plus:batch` | — | per_1m_input_tokens | $0.230 |
-| `qwen/qwen3.7-plus:batch` | — | per_1m_output_tokens | $0.920 |
-| `qwen/qwen3.8-2.4t-a95b` | — | per_1m_input_tokens | $2.000 |
-| `qwen/qwen3.8-2.4t-a95b` | — | per_1m_output_tokens | $6.000 |
-| `qwen/qwen3.8-27b` | — | per_1m_input_tokens | $0.040 |
-| `qwen/qwen3.8-27b` | — | per_1m_output_tokens | $1.350 |
-| `qwen/qwen3.8-flash` | — | per_1m_input_tokens | $0.150 |
-| `qwen/qwen3.8-flash` | — | per_1m_output_tokens | $0.470 |
-| `qwen/qwen3.8-max-0902` | — | per_1m_input_tokens | $2.000 |
-| `qwen/qwen3.8-max-0902` | — | per_1m_output_tokens | $6.000 |
-| `qwen/qwen3.8-max-prime` | — | per_1m_input_tokens | $4.000 |
-| `qwen/qwen3.8-max-prime` | — | per_1m_output_tokens | $12.00 |
-| `qwen/qwen3.8-omni-flash` | — | per_1m_input_tokens | $0.150 |
-| `qwen/qwen3.8-omni-flash` | — | per_1m_output_tokens | $0.470 |
-| `reflection/beam-1.0-501b-a23b` | — | per_1m_input_tokens | $0.300 |
-| `reflection/beam-1.0-501b-a23b` | — | per_1m_output_tokens | $1.000 |
-| `rekaai/reka-edge` | — | per_1m_input_tokens | $0.100 |
-| `rekaai/reka-edge` | — | per_1m_output_tokens | $0.100 |
-| `rekaai/reka-flash-3` | — | per_1m_input_tokens | $0.100 |
-| `rekaai/reka-flash-3` | — | per_1m_output_tokens | $0.200 |
-| `relace/relace-apply-3` | — | per_1m_input_tokens | $0.850 |
-| `relace/relace-apply-3` | — | per_1m_output_tokens | $1.250 |
-| `relace/relace-search` | — | per_1m_input_tokens | $1.000 |
-| `relace/relace-search` | — | per_1m_output_tokens | $3.000 |
-| `sakana/fugu-max` | — | per_1m_input_tokens | $2.000 |
-| `sakana/fugu-max` | — | per_1m_output_tokens | $6.000 |
-| `sakana/fugu-ultra` | — | per_1m_input_tokens | $5.000 |
-| `sakana/fugu-ultra` | — | per_1m_output_tokens | $30.00 |
-| `sakana/fugu-ultra-v2` | — | per_1m_input_tokens | $5.000 |
-| `sakana/fugu-ultra-v2` | — | per_1m_output_tokens | $30.00 |
-| `sakana/sakana-namazu` | — | per_1m_input_tokens | $0.950 |
-| `sakana/sakana-namazu` | — | per_1m_output_tokens | $4.000 |
-| `sao10k/l3-lunaris-8b` | — | per_1m_input_tokens | $0.040 |
-| `sao10k/l3-lunaris-8b` | — | per_1m_output_tokens | $0.050 |
-| `sao10k/l3.1-euryale-70b` | — | per_1m_input_tokens | $0.850 |
-| `sao10k/l3.1-euryale-70b` | — | per_1m_output_tokens | $0.850 |
-| `scaledown/extract` | — | per_1m_input_tokens | $0.040 |
-| `scaledown/summarize` | — | per_1m_input_tokens | $0.040 |
-| `stepfun/step-3.5-flash` | — | per_1m_input_tokens | $0.100 |
-| `stepfun/step-3.5-flash` | — | per_1m_output_tokens | $0.300 |
-| `stepfun/step-3.7-flash` | — | per_1m_input_tokens | $0.200 |
-| `stepfun/step-3.7-flash` | — | per_1m_output_tokens | $1.150 |
-| `stepfun/step-5-preview` | — | per_1m_input_tokens | $1.000 |
-| `stepfun/step-5-preview` | — | per_1m_output_tokens | $2.700 |
-| `tencent/hunyuan-a13b-instruct` | — | per_1m_input_tokens | $0.140 |
-| `tencent/hunyuan-a13b-instruct` | — | per_1m_output_tokens | $0.570 |
-| `tencent/hy-mt2-1.8b` | — | per_1m_input_tokens | $0.044 |
-| `tencent/hy-mt2-1.8b` | — | per_1m_output_tokens | $0.177 |
-| `tencent/hy-mt2-30b-a3b` | — | per_1m_input_tokens | $0.074 |
-| `tencent/hy-mt2-30b-a3b` | — | per_1m_output_tokens | $0.295 |
-| `tencent/hy-mt2-7b` | — | per_1m_input_tokens | $0.074 |
-| `tencent/hy-mt2-7b` | — | per_1m_output_tokens | $0.295 |
-| `tencent/hy3` | — | per_1m_input_tokens | $0.132 |
-| `tencent/hy3` | — | per_1m_output_tokens | $0.528 |
-| `tencent/hy3-preview` | — | per_1m_input_tokens | $0.180 |
-| `tencent/hy3-preview` | — | per_1m_output_tokens | $0.600 |
-| `tencent/hy4-preview` | — | per_1m_input_tokens | $0.834 |
-| `tencent/hy4-preview` | — | per_1m_output_tokens | $2.501 |
-| `thedrummer/cydonia-24b-v4.1` | — | per_1m_input_tokens | $0.300 |
-| `thedrummer/cydonia-24b-v4.1` | — | per_1m_output_tokens | $0.500 |
-| `thedrummer/skyfall-36b-v2` | — | per_1m_input_tokens | $0.550 |
-| `thedrummer/skyfall-36b-v2` | — | per_1m_output_tokens | $0.800 |
-| `thedrummer/unslopnemo-12b` | — | per_1m_input_tokens | $0.400 |
-| `thedrummer/unslopnemo-12b` | — | per_1m_output_tokens | $0.400 |
-| `thinkingmachines/inkling` | — | per_1m_input_tokens | $1.000 |
-| `thinkingmachines/inkling` | — | per_1m_output_tokens | $4.050 |
-| `thinkingmachines/inkling-small` | — | per_1m_input_tokens | $0.450 |
-| `thinkingmachines/inkling-small` | — | per_1m_output_tokens | $1.200 |
-| `unbiased/pareto-26.10` | — | per_1m_input_tokens | $0.800 |
-| `unbiased/pareto-26.10` | — | per_1m_output_tokens | $3.200 |
-| `unbiased/pareto-26.9` | — | per_1m_input_tokens | $2.500 |
-| `unbiased/pareto-26.9` | — | per_1m_output_tokens | $7.500 |
-| `undi95/remm-slerp-l2-13b` | — | per_1m_input_tokens | $0.350 |
-| `undi95/remm-slerp-l2-13b` | — | per_1m_output_tokens | $0.650 |
-| `upstage/solar-mini4` | — | per_1m_input_tokens | $0.050 |
-| `upstage/solar-mini4` | — | per_1m_output_tokens | $0.200 |
-| `upstage/solar-pro-3` | — | per_1m_input_tokens | $0.150 |
-| `upstage/solar-pro-3` | — | per_1m_output_tokens | $0.600 |
-| `upstage/solar-pro4` | — | per_1m_input_tokens | $0.150 |
-| `upstage/solar-pro4` | — | per_1m_output_tokens | $0.600 |
-| `writer/palmyra-x5` | — | per_1m_input_tokens | $0.600 |
-| `writer/palmyra-x5` | — | per_1m_output_tokens | $6.000 |
-| `x-ai/grok-4.20` | — | per_1m_input_tokens | $1.250 |
-| `x-ai/grok-4.20` | — | per_1m_output_tokens | $2.500 |
-| `x-ai/grok-4.20-multi-agent` | — | per_1m_input_tokens | $1.250 |
-| `x-ai/grok-4.20-multi-agent` | — | per_1m_output_tokens | $2.500 |
-| `x-ai/grok-4.3` | `grok-4.3` | per_1m_input_tokens | $1.250 |
-| `x-ai/grok-4.3` | `grok-4.3` | per_1m_output_tokens | $2.500 |
-| `x-ai/grok-4.3:batch` | `grok-4.3` | per_1m_input_tokens | $1.000 |
-| `x-ai/grok-4.3:batch` | `grok-4.3` | per_1m_output_tokens | $2.000 |
-| `x-ai/grok-4.5` | — | per_1m_input_tokens | $2.000 |
-| `x-ai/grok-4.5` | — | per_1m_output_tokens | $6.000 |
-| `x-ai/grok-4.6` | — | per_1m_input_tokens | $2.000 |
-| `x-ai/grok-4.6` | — | per_1m_output_tokens | $6.000 |
-| `x-ai/grok-4.7` | — | per_1m_input_tokens | $2.000 |
-| `x-ai/grok-4.7` | — | per_1m_output_tokens | $6.000 |
-| `x-ai/grok-build-0.1` | — | per_1m_input_tokens | $1.000 |
-| `x-ai/grok-build-0.1` | — | per_1m_output_tokens | $2.000 |
-| `xiaomi/mimo-v2.5` | — | per_1m_input_tokens | $0.119 |
-| `xiaomi/mimo-v2.5` | — | per_1m_output_tokens | $0.238 |
-| `xiaomi/mimo-v2.5-pro` | — | per_1m_input_tokens | $0.304 |
-| `xiaomi/mimo-v2.5-pro` | — | per_1m_output_tokens | $0.609 |
-| `xiaomi/mimo-v2.6-flash` | — | per_1m_input_tokens | $0.140 |
-| `xiaomi/mimo-v2.6-flash` | — | per_1m_output_tokens | $0.280 |
-| `xiaomi/mimo-v2.6-pro` | — | per_1m_input_tokens | $0.435 |
-| `xiaomi/mimo-v2.6-pro` | — | per_1m_output_tokens | $0.870 |
-| `xiaomi/mimo-v2.6-pro-ultraspeed` | — | per_1m_input_tokens | $4.350 |
-| `xiaomi/mimo-v2.6-pro-ultraspeed` | — | per_1m_output_tokens | $8.700 |
-| `z-ai/glm-4.5` | — | per_1m_input_tokens | $0.600 |
-| `z-ai/glm-4.5` | — | per_1m_output_tokens | $2.200 |
-| `z-ai/glm-4.5-air` | — | per_1m_input_tokens | $0.130 |
-| `z-ai/glm-4.5-air` | — | per_1m_output_tokens | $0.850 |
-| `z-ai/glm-4.5v` | — | per_1m_input_tokens | $0.600 |
-| `z-ai/glm-4.5v` | — | per_1m_output_tokens | $1.800 |
-| `z-ai/glm-4.6` | — | per_1m_input_tokens | $0.550 |
-| `z-ai/glm-4.6` | — | per_1m_output_tokens | $2.200 |
-| `z-ai/glm-4.6v` | — | per_1m_input_tokens | $0.300 |
-| `z-ai/glm-4.6v` | — | per_1m_output_tokens | $0.900 |
-| `z-ai/glm-4.7` | — | per_1m_input_tokens | $0.540 |
-| `z-ai/glm-4.7` | — | per_1m_output_tokens | $1.980 |
-| `z-ai/glm-4.7-flash` | — | per_1m_input_tokens | $0.061 |
-| `z-ai/glm-4.7-flash` | — | per_1m_output_tokens | $0.400 |
-| `z-ai/glm-5` | — | per_1m_input_tokens | $1.000 |
-| `z-ai/glm-5` | — | per_1m_output_tokens | $3.200 |
-| `z-ai/glm-5-turbo` | — | per_1m_input_tokens | $1.200 |
-| `z-ai/glm-5-turbo` | — | per_1m_output_tokens | $4.000 |
-| `z-ai/glm-5.1` | — | per_1m_input_tokens | $1.400 |
-| `z-ai/glm-5.1` | — | per_1m_output_tokens | $4.400 |
-| `z-ai/glm-5.2` | — | per_1m_input_tokens | $0.034 |
-| `z-ai/glm-5.2` | — | per_1m_output_tokens | $7.000 |
-| `z-ai/glm-5.3` | — | per_1m_input_tokens | $0.079 |
-| `z-ai/glm-5.3` | — | per_1m_output_tokens | $1.400 |
-| `z-ai/glm-5.3-flash` | — | per_1m_input_tokens | $0.0067 |
-| `z-ai/glm-5.3-flash` | — | per_1m_output_tokens | $0.188 |
-| `z-ai/glm-5.3-flash:batch` | — | per_1m_input_tokens | $0.050 |
-| `z-ai/glm-5.3-flash:batch` | — | per_1m_output_tokens | $0.180 |
-| `z-ai/glm-5.3-flashx` | — | per_1m_input_tokens | $0.370 |
-| `z-ai/glm-5.3-flashx` | — | per_1m_output_tokens | $1.250 |
-| `z-ai/glm-5.3-prime` | — | per_1m_input_tokens | $2.800 |
-| `z-ai/glm-5.3-prime` | — | per_1m_output_tokens | $8.800 |
-| `z-ai/glm-5.3:batch` | — | per_1m_input_tokens | $0.450 |
-| `z-ai/glm-5.3:batch` | — | per_1m_output_tokens | $2.000 |
-| `z-ai/glm-5v-turbo` | — | per_1m_input_tokens | $1.200 |
-| `z-ai/glm-5v-turbo` | — | per_1m_output_tokens | $4.000 |
-| `~anthropic/claude-fable-latest` | — | per_1m_input_tokens | $10.00 |
-| `~anthropic/claude-fable-latest` | — | per_1m_output_tokens | $50.00 |
-| `~anthropic/claude-haiku-latest` | — | per_1m_input_tokens | $0.100 |
-| `~anthropic/claude-haiku-latest` | — | per_1m_output_tokens | $0.500 |
-| `~anthropic/claude-opus-latest` | — | per_1m_input_tokens | $4.000 |
-| `~anthropic/claude-opus-latest` | — | per_1m_output_tokens | $20.00 |
-| `~anthropic/claude-sonnet-latest` | — | per_1m_input_tokens | $2.000 |
-| `~anthropic/claude-sonnet-latest` | — | per_1m_output_tokens | $10.00 |
-| `~deepseek/deepseek-flash-latest` | — | per_1m_input_tokens | $0.070 |
-| `~deepseek/deepseek-flash-latest` | — | per_1m_output_tokens | $0.500 |
-| `~deepseek/deepseek-pro-latest` | — | per_1m_input_tokens | $0.224 |
-| `~deepseek/deepseek-pro-latest` | — | per_1m_output_tokens | $8.000 |
-| `~deepseek/deepseek-v4-flash-latest` | — | per_1m_input_tokens | $0.048 |
-| `~deepseek/deepseek-v4-flash-latest` | — | per_1m_output_tokens | $0.157 |
-| `~google/gemini-flash-latest` | — | per_1m_input_tokens | $0.750 |
-| `~google/gemini-flash-latest` | — | per_1m_output_tokens | $3.750 |
-| `~google/gemini-flash-latest` | — | per_image | $0.0000 |
-| `~google/gemini-pro-latest` | — | per_1m_input_tokens | $2.000 |
-| `~google/gemini-pro-latest` | — | per_1m_output_tokens | $10.00 |
-| `~google/gemini-pro-latest` | — | per_image | $0.0000 |
-| `~moonshotai/kimi-latest` | — | per_1m_input_tokens | $0.238 |
-| `~moonshotai/kimi-latest` | — | per_1m_output_tokens | $16.00 |
-| `~openai/gpt-astra-latest` | — | per_1m_input_tokens | $10.00 |
-| `~openai/gpt-astra-latest` | — | per_1m_output_tokens | $50.00 |
-| `~openai/gpt-luna-latest` | — | per_1m_input_tokens | $0.100 |
-| `~openai/gpt-luna-latest` | — | per_1m_output_tokens | $0.500 |
-| `~openai/gpt-mini-latest` | — | per_1m_input_tokens | $0.750 |
-| `~openai/gpt-mini-latest` | — | per_1m_output_tokens | $4.500 |
-| `~openai/gpt-sol-latest` | — | per_1m_input_tokens | $2.000 |
-| `~openai/gpt-sol-latest` | — | per_1m_output_tokens | $10.00 |
-| `~openai/gpt-terra-latest` | — | per_1m_input_tokens | $2.000 |
-| `~openai/gpt-terra-latest` | — | per_1m_output_tokens | $12.00 |
-| `~unbiased/pareto-latest` | — | per_1m_input_tokens | $0.800 |
-| `~unbiased/pareto-latest` | — | per_1m_output_tokens | $3.200 |
-| `~x-ai/grok-latest` | — | per_1m_input_tokens | $2.000 |
-| `~x-ai/grok-latest` | — | per_1m_output_tokens | $6.000 |
-| `~z-ai/glm-flash-latest` | — | per_1m_input_tokens | $0.0067 |
-| `~z-ai/glm-flash-latest` | — | per_1m_output_tokens | $0.188 |
-| `~z-ai/glm-latest` | — | per_1m_input_tokens | $0.079 |
-| `~z-ai/glm-latest` | — | per_1m_output_tokens | $1.400 |
+| Model | Canonical | Unit | Price (USD) | List (USD) | Group | Ratio | Effective (USD) |
+|---|---|---|---|---|---|---|---|
+| `aion-labs/aion-2.0` | — | per_1m_input_tokens | $0.800 | — | — | — | — |
+| `aion-labs/aion-2.0` | — | per_1m_output_tokens | $1.600 | — | — | — | — |
+| `aion-labs/aion-3.0` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `aion-labs/aion-3.0` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `aion-labs/aion-3.0-mini` | — | per_1m_input_tokens | $0.700 | — | — | — | — |
+| `aion-labs/aion-3.0-mini` | — | per_1m_output_tokens | $1.400 | — | — | — | — |
+| `aion-labs/aion-3.5` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `aion-labs/aion-3.5` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `aion-labs/aion-3.5-mini` | — | per_1m_input_tokens | $0.700 | — | — | — | — |
+| `aion-labs/aion-3.5-mini` | — | per_1m_output_tokens | $1.400 | — | — | — | — |
+| `aion-labs/aion-rp-llama-3.1-8b` | — | per_1m_input_tokens | $0.800 | — | — | — | — |
+| `aion-labs/aion-rp-llama-3.1-8b` | — | per_1m_output_tokens | $1.600 | — | — | — | — |
+| `amazon/nova-2-lite-v1` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `amazon/nova-2-lite-v1` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `amazon/nova-lite-v1` | — | per_1m_input_tokens | $0.060 | — | — | — | — |
+| `amazon/nova-lite-v1` | — | per_1m_output_tokens | $0.240 | — | — | — | — |
+| `amazon/nova-micro-v1` | — | per_1m_input_tokens | $0.035 | — | — | — | — |
+| `amazon/nova-micro-v1` | — | per_1m_output_tokens | $0.140 | — | — | — | — |
+| `amazon/nova-premier-v1` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `amazon/nova-premier-v1` | — | per_1m_output_tokens | $12.50 | — | — | — | — |
+| `amazon/nova-pro-v1` | — | per_1m_input_tokens | $0.800 | — | — | — | — |
+| `amazon/nova-pro-v1` | — | per_1m_output_tokens | $3.200 | — | — | — | — |
+| `anthracite-org/magnum-v4-72b` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `anthracite-org/magnum-v4-72b` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-fable-5` | — | per_1m_input_tokens | $10.00 | — | — | — | — |
+| `anthropic/claude-fable-5` | — | per_1m_output_tokens | $50.00 | — | — | — | — |
+| `anthropic/claude-fable-5.1` | — | per_1m_input_tokens | $10.00 | — | — | — | — |
+| `anthropic/claude-fable-5.1` | — | per_1m_output_tokens | $50.00 | — | — | — | — |
+| `anthropic/claude-fable-5.1:batch` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-fable-5.1:batch` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-fable-5:batch` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-fable-5:batch` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-haiku-4.5` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `anthropic/claude-haiku-4.5` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-haiku-4.5:batch` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-haiku-4.5:batch` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `anthropic/claude-haiku-5.5` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `anthropic/claude-haiku-5.5` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `anthropic/claude-haiku-5.5:batch` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `anthropic/claude-haiku-5.5:batch` | — | per_1m_output_tokens | $0.250 | — | — | — | — |
+| `anthropic/claude-opus-4.1` | — | per_1m_input_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-opus-4.1` | — | per_1m_output_tokens | $75.00 | — | — | — | — |
+| `anthropic/claude-opus-4.1:batch` | — | per_1m_input_tokens | $7.500 | — | — | — | — |
+| `anthropic/claude-opus-4.1:batch` | — | per_1m_output_tokens | $37.50 | — | — | — | — |
+| `anthropic/claude-opus-4.5` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.5` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.5:batch` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `anthropic/claude-opus-4.5:batch` | — | per_1m_output_tokens | $12.50 | — | — | — | — |
+| `anthropic/claude-opus-4.6` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.6` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.6:batch` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `anthropic/claude-opus-4.6:batch` | — | per_1m_output_tokens | $12.50 | — | — | — | — |
+| `anthropic/claude-opus-4.7` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.7` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.7:batch` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `anthropic/claude-opus-4.7:batch` | — | per_1m_output_tokens | $12.50 | — | — | — | — |
+| `anthropic/claude-opus-4.8` | `claude-opus-4.8` | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-4.8` | `claude-opus-4.8` | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-4.8:batch` | `claude-opus-4.8` | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `anthropic/claude-opus-4.8:batch` | `claude-opus-4.8` | per_1m_output_tokens | $12.50 | — | — | — | — |
+| `anthropic/claude-opus-5` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-opus-5` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `anthropic/claude-opus-5.5` | — | per_1m_input_tokens | $4.000 | — | — | — | — |
+| `anthropic/claude-opus-5.5` | — | per_1m_output_tokens | $20.00 | — | — | — | — |
+| `anthropic/claude-opus-5.5:batch` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `anthropic/claude-opus-5.5:batch` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `anthropic/claude-opus-5:batch` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `anthropic/claude-opus-5:batch` | — | per_1m_output_tokens | $12.50 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5:batch` | — | per_1m_input_tokens | $1.500 | — | — | — | — |
+| `anthropic/claude-sonnet-4.5:batch` | — | per_1m_output_tokens | $7.500 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6:batch` | `claude-sonnet-4.6` | per_1m_input_tokens | $1.500 | — | — | — | — |
+| `anthropic/claude-sonnet-4.6:batch` | `claude-sonnet-4.6` | per_1m_output_tokens | $7.500 | — | — | — | — |
+| `anthropic/claude-sonnet-5` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `anthropic/claude-sonnet-5` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `anthropic/claude-sonnet-5.5` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `anthropic/claude-sonnet-5.5` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `anthropic/claude-sonnet-5.5:batch` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `anthropic/claude-sonnet-5.5:batch` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `anthropic/claude-sonnet-5:batch` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `anthropic/claude-sonnet-5:batch` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `arcee-ai/trinity-large-thinking` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `arcee-ai/trinity-large-thinking` | — | per_1m_output_tokens | $0.800 | — | — | — | — |
+| `bytedance-seed/seed-1.6` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `bytedance-seed/seed-1.6` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `bytedance-seed/seed-1.6-flash` | — | per_1m_input_tokens | $0.075 | — | — | — | — |
+| `bytedance-seed/seed-1.6-flash` | — | per_1m_output_tokens | $0.300 | — | — | — | — |
+| `bytedance-seed/seed-2-1-turbo` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `bytedance-seed/seed-2-1-turbo` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `bytedance-seed/seed-2.0-code` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `bytedance-seed/seed-2.0-code` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `bytedance-seed/seed-2.0-lite` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `bytedance-seed/seed-2.0-lite` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `bytedance-seed/seed-2.0-mini` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `bytedance-seed/seed-2.0-mini` | — | per_1m_output_tokens | $0.400 | — | — | — | — |
+| `bytedance/ui-tars-1.5-7b` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `bytedance/ui-tars-1.5-7b` | — | per_1m_output_tokens | $0.200 | — | — | — | — |
+| `cognitivecomputations/dolphin-mistral-24b-venice-edition` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `cognitivecomputations/dolphin-mistral-24b-venice-edition` | — | per_1m_output_tokens | $0.900 | — | — | — | — |
+| `cohere/command-a` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `cohere/command-a` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `cohere/command-a-plus` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `cohere/command-a-plus` | — | per_1m_output_tokens | $1.500 | — | — | — | — |
+| `cohere/command-r-08-2024` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `cohere/command-r-08-2024` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `cohere/command-r-plus-08-2024` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `cohere/command-r-plus-08-2024` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `cohere/command-r7b-12-2024` | — | per_1m_input_tokens | $0.037 | — | — | — | — |
+| `cohere/command-r7b-12-2024` | — | per_1m_output_tokens | $0.150 | — | — | — | — |
+| `deepseek/deepseek-chat` | `deepseek-v3` | per_1m_input_tokens | $0.257 | — | — | — | — |
+| `deepseek/deepseek-chat` | `deepseek-v3` | per_1m_output_tokens | $1.029 | — | — | — | — |
+| `deepseek/deepseek-chat-v3-0324` | — | per_1m_input_tokens | $0.290 | — | — | — | — |
+| `deepseek/deepseek-chat-v3-0324` | — | per_1m_output_tokens | $1.140 | — | — | — | — |
+| `deepseek/deepseek-chat-v3.1` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `deepseek/deepseek-chat-v3.1` | — | per_1m_output_tokens | $0.950 | — | — | — | — |
+| `deepseek/deepseek-r1-0528` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `deepseek/deepseek-r1-0528` | — | per_1m_output_tokens | $2.150 | — | — | — | — |
+| `deepseek/deepseek-v3.1-terminus` | — | per_1m_input_tokens | $0.270 | — | — | — | — |
+| `deepseek/deepseek-v3.1-terminus` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `deepseek/deepseek-v3.2` | — | per_1m_input_tokens | $0.280 | — | — | — | — |
+| `deepseek/deepseek-v3.2` | — | per_1m_output_tokens | $0.420 | — | — | — | — |
+| `deepseek/deepseek-v3.2-exp` | — | per_1m_input_tokens | $0.270 | — | — | — | — |
+| `deepseek/deepseek-v3.2-exp` | — | per_1m_output_tokens | $0.410 | — | — | — | — |
+| `deepseek/deepseek-v4-flash` | — | per_1m_input_tokens | $0.091 | — | — | — | — |
+| `deepseek/deepseek-v4-flash` | — | per_1m_output_tokens | $0.182 | — | — | — | — |
+| `deepseek/deepseek-v4-flash-0731` | — | per_1m_input_tokens | $0.044 | — | — | — | — |
+| `deepseek/deepseek-v4-flash-0731` | — | per_1m_output_tokens | $0.133 | — | — | — | — |
+| `deepseek/deepseek-v4-flash-vision-exp` | — | per_1m_input_tokens | $0.216 | — | — | — | — |
+| `deepseek/deepseek-v4-flash-vision-exp` | — | per_1m_output_tokens | $0.647 | — | — | — | — |
+| `deepseek/deepseek-v4-pro` | — | per_1m_input_tokens | $0.591 | — | — | — | — |
+| `deepseek/deepseek-v4-pro` | — | per_1m_output_tokens | $1.183 | — | — | — | — |
+| `deepseek/deepseek-v4-pro-0813` | — | per_1m_input_tokens | $0.660 | — | — | — | — |
+| `deepseek/deepseek-v4-pro-0813` | — | per_1m_output_tokens | $1.980 | — | — | — | — |
+| `deepseek/deepseek-v4.1-flash` | — | per_1m_input_tokens | $0.020 | — | — | — | — |
+| `deepseek/deepseek-v4.1-flash` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `deepseek/deepseek-v4.1-flash-1017` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `deepseek/deepseek-v4.1-flash-1017` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `deepseek/deepseek-v4.1-flash:batch` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `deepseek/deepseek-v4.1-flash:batch` | — | per_1m_output_tokens | $0.150 | — | — | — | — |
+| `elorian/glimpse` | — | per_1m_input_tokens | $0.600 | — | — | — | — |
+| `elorian/glimpse` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `fireworks/ember-1` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `fireworks/ember-1` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `google/gemini-2.5-flash` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `google/gemini-2.5-flash` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `google/gemini-2.5-flash` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-2.5-flash-image` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `google/gemini-2.5-flash-image` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `google/gemini-2.5-flash-image` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-2.5-flash-lite` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `google/gemini-2.5-flash-lite` | — | per_1m_output_tokens | $0.400 | — | — | — | — |
+| `google/gemini-2.5-flash-lite` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-2.5-pro` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `google/gemini-2.5-pro` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `google/gemini-2.5-pro` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-2.5-pro-preview` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `google/gemini-2.5-pro-preview` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `google/gemini-2.5-pro-preview` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3-flash-preview` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `google/gemini-3-flash-preview` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `google/gemini-3-flash-preview` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3-flash-preview:batch` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `google/gemini-3-flash-preview:batch` | — | per_1m_output_tokens | $1.500 | — | — | — | — |
+| `google/gemini-3-flash-preview:batch` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3-pro-image` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `google/gemini-3-pro-image` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `google/gemini-3-pro-image` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3-pro-image-preview` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `google/gemini-3-pro-image-preview` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `google/gemini-3-pro-image-preview` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.1-flash-image` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `google/gemini-3.1-flash-image` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `google/gemini-3.1-flash-image-preview` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `google/gemini-3.1-flash-image-preview` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `google/gemini-3.1-flash-lite` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `google/gemini-3.1-flash-lite` | — | per_1m_output_tokens | $1.500 | — | — | — | — |
+| `google/gemini-3.1-flash-lite` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.1-flash-lite-image` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `google/gemini-3.1-flash-lite-image` | — | per_1m_output_tokens | $1.500 | — | — | — | — |
+| `google/gemini-3.1-flash-lite-preview` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `google/gemini-3.1-flash-lite-preview` | — | per_1m_output_tokens | $1.500 | — | — | — | — |
+| `google/gemini-3.1-flash-lite-preview` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.1-flash-lite:batch` | — | per_1m_input_tokens | $0.125 | — | — | — | — |
+| `google/gemini-3.1-flash-lite:batch` | — | per_1m_output_tokens | $0.750 | — | — | — | — |
+| `google/gemini-3.1-flash-lite:batch` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.1-pro-preview` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `google/gemini-3.1-pro-preview` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `google/gemini-3.1-pro-preview` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.1-pro-preview-customtools` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `google/gemini-3.1-pro-preview-customtools` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `google/gemini-3.1-pro-preview-customtools` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.1-pro-preview:batch` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `google/gemini-3.1-pro-preview:batch` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `google/gemini-3.1-pro-preview:batch` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_tokens | $1.500 | — | — | — | — |
+| `google/gemini-3.5-flash` | `gemini-3-flash` | per_1m_output_tokens | $9.000 | — | — | — | — |
+| `google/gemini-3.5-flash` | `gemini-3-flash` | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.5-flash-lite` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `google/gemini-3.5-flash-lite` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `google/gemini-3.5-flash-lite` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.5-flash-lite:batch` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `google/gemini-3.5-flash-lite:batch` | — | per_1m_output_tokens | $1.250 | — | — | — | — |
+| `google/gemini-3.5-flash-lite:batch` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.5-flash:batch` | `gemini-3-flash` | per_1m_input_tokens | $0.750 | — | — | — | — |
+| `google/gemini-3.5-flash:batch` | `gemini-3-flash` | per_1m_output_tokens | $4.500 | — | — | — | — |
+| `google/gemini-3.5-flash:batch` | `gemini-3-flash` | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.6-flash` | — | per_1m_input_tokens | $0.750 | — | — | — | — |
+| `google/gemini-3.6-flash` | — | per_1m_output_tokens | $3.750 | — | — | — | — |
+| `google/gemini-3.6-flash` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.6-flash:batch` | — | per_1m_input_tokens | $0.375 | — | — | — | — |
+| `google/gemini-3.6-flash:batch` | — | per_1m_output_tokens | $1.875 | — | — | — | — |
+| `google/gemini-3.6-flash:batch` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.7-flash` | — | per_1m_input_tokens | $0.750 | — | — | — | — |
+| `google/gemini-3.7-flash` | — | per_1m_output_tokens | $3.750 | — | — | — | — |
+| `google/gemini-3.7-flash` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.7-flash:batch` | — | per_1m_input_tokens | $0.375 | — | — | — | — |
+| `google/gemini-3.7-flash:batch` | — | per_1m_output_tokens | $1.875 | — | — | — | — |
+| `google/gemini-3.7-flash:batch` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.8-flash` | — | per_1m_input_tokens | $0.825 | — | — | — | — |
+| `google/gemini-3.8-flash` | — | per_1m_output_tokens | $4.125 | — | — | — | — |
+| `google/gemini-3.8-flash` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-3.8-flash:batch` | — | per_1m_input_tokens | $0.375 | — | — | — | — |
+| `google/gemini-3.8-flash:batch` | — | per_1m_output_tokens | $1.875 | — | — | — | — |
+| `google/gemini-3.8-flash:batch` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-4-argon` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `google/gemini-4-argon` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `google/gemini-4-argon` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-4-argon:batch` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `google/gemini-4-argon:batch` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `google/gemini-4-argon:batch` | — | per_image | $0.0000 | — | — | — | — |
+| `google/gemini-nano-banana-2.1` | — | per_1m_input_tokens | $1.500 | — | — | — | — |
+| `google/gemini-nano-banana-2.1` | — | per_1m_output_tokens | $7.500 | — | — | — | — |
+| `google/gemma-2-27b-it` | — | per_1m_input_tokens | $0.650 | — | — | — | — |
+| `google/gemma-2-27b-it` | — | per_1m_output_tokens | $0.650 | — | — | — | — |
+| `google/gemma-3-12b-it` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `google/gemma-3-12b-it` | — | per_1m_output_tokens | $0.150 | — | — | — | — |
+| `google/gemma-3-27b-it` | — | per_1m_input_tokens | $0.080 | — | — | — | — |
+| `google/gemma-3-27b-it` | — | per_1m_output_tokens | $0.350 | — | — | — | — |
+| `google/gemma-3-4b-it` | — | per_1m_input_tokens | $0.040 | — | — | — | — |
+| `google/gemma-3-4b-it` | — | per_1m_output_tokens | $0.050 | — | — | — | — |
+| `google/gemma-4-26b-a4b-it` | — | per_1m_input_tokens | $0.068 | — | — | — | — |
+| `google/gemma-4-26b-a4b-it` | — | per_1m_output_tokens | $0.225 | — | — | — | — |
+| `google/gemma-4-31b-it` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `google/gemma-4-31b-it` | — | per_1m_output_tokens | $0.400 | — | — | — | — |
+| `gryphe/mythomax-l2-13b` | — | per_1m_input_tokens | $0.080 | — | — | — | — |
+| `gryphe/mythomax-l2-13b` | — | per_1m_output_tokens | $0.110 | — | — | — | — |
+| `ibm-granite/granite-4.0-h-micro` | — | per_1m_input_tokens | $0.017 | — | — | — | — |
+| `ibm-granite/granite-4.0-h-micro` | — | per_1m_output_tokens | $0.112 | — | — | — | — |
+| `ibm-granite/granite-4.2-8b` | — | per_1m_input_tokens | $0.060 | — | — | — | — |
+| `ibm-granite/granite-4.2-8b` | — | per_1m_output_tokens | $0.250 | — | — | — | — |
+| `inception/mercury-2` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `inception/mercury-2` | — | per_1m_output_tokens | $0.750 | — | — | — | — |
+| `inception/mercury-2.5` | — | per_1m_input_tokens | $0.040 | — | — | — | — |
+| `inception/mercury-2.5` | — | per_1m_output_tokens | $0.150 | — | — | — | — |
+| `inception/mercury-3` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `inception/mercury-3` | — | per_1m_output_tokens | $0.350 | — | — | — | — |
+| `inclusionai/ling-3.0-flash` | — | per_1m_input_tokens | $0.021 | — | — | — | — |
+| `inclusionai/ling-3.0-flash` | — | per_1m_output_tokens | $0.063 | — | — | — | — |
+| `inclusionai/ling-3.0-flash-vl` | — | per_1m_input_tokens | $0.060 | — | — | — | — |
+| `inclusionai/ling-3.0-flash-vl` | — | per_1m_output_tokens | $0.180 | — | — | — | — |
+| `inclusionai/ling-3.1-flash` | — | per_1m_input_tokens | $0.075 | — | — | — | — |
+| `inclusionai/ling-3.1-flash` | — | per_1m_output_tokens | $0.225 | — | — | — | — |
+| `inference-net/schematron-v2-small` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `inference-net/schematron-v2-small` | — | per_1m_output_tokens | $0.230 | — | — | — | — |
+| `inference-net/schematron-v2-turbo` | — | per_1m_input_tokens | $0.030 | — | — | — | — |
+| `inference-net/schematron-v2-turbo` | — | per_1m_output_tokens | $0.150 | — | — | — | — |
+| `liquid/lfm-2.5-24b-a2b` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `liquid/lfm-2.5-24b-a2b` | — | per_1m_output_tokens | $0.700 | — | — | — | — |
+| `mancer/weaver` | — | per_1m_input_tokens | $0.400 | — | — | — | — |
+| `mancer/weaver` | — | per_1m_output_tokens | $0.750 | — | — | — | — |
+| `meituan/longcat-2.0` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `meituan/longcat-2.0` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `meta-llama/llama-3.1-70b-instruct` | — | per_1m_input_tokens | $0.400 | — | — | — | — |
+| `meta-llama/llama-3.1-70b-instruct` | — | per_1m_output_tokens | $0.400 | — | — | — | — |
+| `meta-llama/llama-3.1-8b-instruct` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `meta-llama/llama-3.1-8b-instruct` | — | per_1m_output_tokens | $0.080 | — | — | — | — |
+| `meta-llama/llama-3.2-1b-instruct` | — | per_1m_input_tokens | $0.027 | — | — | — | — |
+| `meta-llama/llama-3.2-1b-instruct` | — | per_1m_output_tokens | $0.201 | — | — | — | — |
+| `meta-llama/llama-3.2-3b-instruct` | — | per_1m_input_tokens | $0.051 | — | — | — | — |
+| `meta-llama/llama-3.2-3b-instruct` | — | per_1m_output_tokens | $0.335 | — | — | — | — |
+| `meta-llama/llama-3.3-70b-instruct` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `meta-llama/llama-3.3-70b-instruct` | — | per_1m_output_tokens | $0.320 | — | — | — | — |
+| `meta-llama/llama-4-maverick` | — | per_1m_input_tokens | $0.188 | — | — | — | — |
+| `meta-llama/llama-4-maverick` | — | per_1m_output_tokens | $0.652 | — | — | — | — |
+| `meta-llama/llama-4-scout` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `meta-llama/llama-4-scout` | — | per_1m_output_tokens | $0.300 | — | — | — | — |
+| `meta-llama/llama-guard-4-12b` | — | per_1m_input_tokens | $0.180 | — | — | — | — |
+| `meta-llama/llama-guard-4-12b` | — | per_1m_output_tokens | $0.180 | — | — | — | — |
+| `meta/muse-glimmer-30b` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `meta/muse-glimmer-30b` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `meta/muse-spark-1.1` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `meta/muse-spark-1.1` | — | per_1m_output_tokens | $4.250 | — | — | — | — |
+| `meta/muse-spark-1.2` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `meta/muse-spark-1.2` | — | per_1m_output_tokens | $4.250 | — | — | — | — |
+| `meta/muse-spark-1.2-contributor` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `meta/muse-spark-1.2-contributor` | — | per_1m_output_tokens | $0.200 | — | — | — | — |
+| `meta/muse-spark-1.3` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `meta/muse-spark-1.3` | — | per_1m_output_tokens | $4.250 | — | — | — | — |
+| `meta/muse-spark-1.3-contributor` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `meta/muse-spark-1.3-contributor` | — | per_1m_output_tokens | $0.200 | — | — | — | — |
+| `meta/muse-spark-open` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `meta/muse-spark-open` | — | per_1m_output_tokens | $4.250 | — | — | — | — |
+| `meta/muse-wonder` | — | per_1m_input_tokens | $4.000 | — | — | — | — |
+| `meta/muse-wonder` | — | per_1m_output_tokens | $20.00 | — | — | — | — |
+| `microsoft/phi-4` | — | per_1m_input_tokens | $0.070 | — | — | — | — |
+| `microsoft/phi-4` | — | per_1m_output_tokens | $0.140 | — | — | — | — |
+| `minimax/minimax-01` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `minimax/minimax-01` | — | per_1m_output_tokens | $1.100 | — | — | — | — |
+| `minimax/minimax-m1` | — | per_1m_input_tokens | $0.550 | — | — | — | — |
+| `minimax/minimax-m1` | — | per_1m_output_tokens | $2.200 | — | — | — | — |
+| `minimax/minimax-m2` | — | per_1m_input_tokens | $0.255 | — | — | — | — |
+| `minimax/minimax-m2` | — | per_1m_output_tokens | $1.020 | — | — | — | — |
+| `minimax/minimax-m2-her` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `minimax/minimax-m2-her` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `minimax/minimax-m2.1` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `minimax/minimax-m2.1` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `minimax/minimax-m2.5` | — | per_1m_input_tokens | $0.270 | — | — | — | — |
+| `minimax/minimax-m2.5` | — | per_1m_output_tokens | $0.950 | — | — | — | — |
+| `minimax/minimax-m2.7` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `minimax/minimax-m2.7` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `minimax/minimax-m3` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `minimax/minimax-m3` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `minimax/minimax-m3.1-flash` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `minimax/minimax-m3.1-flash` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `mistralai/codestral-2508` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `mistralai/codestral-2508` | — | per_1m_output_tokens | $0.900 | — | — | — | — |
+| `mistralai/codestral-2508:batch` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `mistralai/codestral-2508:batch` | — | per_1m_output_tokens | $0.450 | — | — | — | — |
+| `mistralai/devstral-2512` | — | per_1m_input_tokens | $0.400 | — | — | — | — |
+| `mistralai/devstral-2512` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `mistralai/ministral-14b-2512` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `mistralai/ministral-14b-2512` | — | per_1m_output_tokens | $0.200 | — | — | — | — |
+| `mistralai/ministral-3b-2512` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `mistralai/ministral-3b-2512` | — | per_1m_output_tokens | $0.100 | — | — | — | — |
+| `mistralai/ministral-8b-2512` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `mistralai/ministral-8b-2512` | — | per_1m_output_tokens | $0.150 | — | — | — | — |
+| `mistralai/ministral-8b-2512:batch` | — | per_1m_input_tokens | $0.075 | — | — | — | — |
+| `mistralai/ministral-8b-2512:batch` | — | per_1m_output_tokens | $0.075 | — | — | — | — |
+| `mistralai/mistral-large` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `mistralai/mistral-large` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `mistralai/mistral-large-2407` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `mistralai/mistral-large-2407` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `mistralai/mistral-large-2512` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `mistralai/mistral-large-2512` | — | per_1m_output_tokens | $1.500 | — | — | — | — |
+| `mistralai/mistral-large-2512:batch` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `mistralai/mistral-large-2512:batch` | — | per_1m_output_tokens | $0.750 | — | — | — | — |
+| `mistralai/mistral-large-4-0` | — | per_1m_input_tokens | $1.360 | — | — | — | — |
+| `mistralai/mistral-large-4-0` | — | per_1m_output_tokens | $4.180 | — | — | — | — |
+| `mistralai/mistral-medium-3` | — | per_1m_input_tokens | $0.400 | — | — | — | — |
+| `mistralai/mistral-medium-3` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `mistralai/mistral-medium-3-5` | — | per_1m_input_tokens | $1.500 | — | — | — | — |
+| `mistralai/mistral-medium-3-5` | — | per_1m_output_tokens | $7.500 | — | — | — | — |
+| `mistralai/mistral-medium-3-5:batch` | — | per_1m_input_tokens | $0.750 | — | — | — | — |
+| `mistralai/mistral-medium-3-5:batch` | — | per_1m_output_tokens | $3.750 | — | — | — | — |
+| `mistralai/mistral-medium-3.1` | — | per_1m_input_tokens | $0.400 | — | — | — | — |
+| `mistralai/mistral-medium-3.1` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `mistralai/mistral-medium-3.1:batch` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `mistralai/mistral-medium-3.1:batch` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `mistralai/mistral-nemo` | — | per_1m_input_tokens | $0.029 | — | — | — | — |
+| `mistralai/mistral-nemo` | — | per_1m_output_tokens | $0.030 | — | — | — | — |
+| `mistralai/mistral-saba` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `mistralai/mistral-saba` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `mistralai/mistral-small-24b-instruct-2501` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `mistralai/mistral-small-24b-instruct-2501` | — | per_1m_output_tokens | $0.080 | — | — | — | — |
+| `mistralai/mistral-small-2603` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `mistralai/mistral-small-2603` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `mistralai/mistral-small-2603:batch` | — | per_1m_input_tokens | $0.075 | — | — | — | — |
+| `mistralai/mistral-small-2603:batch` | — | per_1m_output_tokens | $0.300 | — | — | — | — |
+| `mistralai/mistral-small-3.1-24b-instruct` | — | per_1m_input_tokens | $0.351 | — | — | — | — |
+| `mistralai/mistral-small-3.1-24b-instruct` | — | per_1m_output_tokens | $0.555 | — | — | — | — |
+| `mistralai/mistral-small-3.2-24b-instruct` | — | per_1m_input_tokens | $0.075 | — | — | — | — |
+| `mistralai/mistral-small-3.2-24b-instruct` | — | per_1m_output_tokens | $0.200 | — | — | — | — |
+| `mistralai/mixtral-8x22b-instruct` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `mistralai/mixtral-8x22b-instruct` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `mistralai/voxtral-small-24b-2507` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `mistralai/voxtral-small-24b-2507` | — | per_1m_output_tokens | $0.300 | — | — | — | — |
+| `moondream/moondream3-preview` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `moondream/moondream3-preview` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `moondream/moondream3.1-9b-a2b` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `moondream/moondream3.1-9b-a2b` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `moonshotai/kimi-k2` | — | per_1m_input_tokens | $0.570 | — | — | — | — |
+| `moonshotai/kimi-k2` | — | per_1m_output_tokens | $2.300 | — | — | — | — |
+| `moonshotai/kimi-k2-0905` | — | per_1m_input_tokens | $0.600 | — | — | — | — |
+| `moonshotai/kimi-k2-0905` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `moonshotai/kimi-k2-thinking` | — | per_1m_input_tokens | $0.600 | — | — | — | — |
+| `moonshotai/kimi-k2-thinking` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `moonshotai/kimi-k2.5` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `moonshotai/kimi-k2.5` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `moonshotai/kimi-k2.6` | — | per_1m_input_tokens | $0.650 | — | — | — | — |
+| `moonshotai/kimi-k2.6` | — | per_1m_output_tokens | $3.410 | — | — | — | — |
+| `moonshotai/kimi-k2.7-code` | — | per_1m_input_tokens | $0.671 | — | — | — | — |
+| `moonshotai/kimi-k2.7-code` | — | per_1m_output_tokens | $3.350 | — | — | — | — |
+| `moonshotai/kimi-k3` | — | per_1m_input_tokens | $0.239 | — | — | — | — |
+| `moonshotai/kimi-k3` | — | per_1m_output_tokens | $10.80 | — | — | — | — |
+| `moonshotai/kimi-k3.1-pro` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `moonshotai/kimi-k3.1-pro` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `moonshotai/kimi-k3:batch` | — | per_1m_input_tokens | $2.280 | — | — | — | — |
+| `moonshotai/kimi-k3:batch` | — | per_1m_output_tokens | $11.40 | — | — | — | — |
+| `morph/morph-v3-fast` | — | per_1m_input_tokens | $0.800 | — | — | — | — |
+| `morph/morph-v3-fast` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `morph/morph-v3-large` | — | per_1m_input_tokens | $0.900 | — | — | — | — |
+| `morph/morph-v3-large` | — | per_1m_output_tokens | $1.900 | — | — | — | — |
+| `nex-agi/nex-n2.5-mini` | — | per_1m_input_tokens | $0.025 | — | — | — | — |
+| `nex-agi/nex-n2.5-mini` | — | per_1m_output_tokens | $0.100 | — | — | — | — |
+| `nex-agi/nex-n2.5-pro` | — | per_1m_input_tokens | $0.075 | — | — | — | — |
+| `nex-agi/nex-n2.5-pro` | — | per_1m_output_tokens | $0.250 | — | — | — | — |
+| `nousresearch/hermes-3-llama-3.1-405b` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `nousresearch/hermes-3-llama-3.1-405b` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `nousresearch/hermes-3-llama-3.1-70b` | — | per_1m_input_tokens | $0.700 | — | — | — | — |
+| `nousresearch/hermes-3-llama-3.1-70b` | — | per_1m_output_tokens | $0.700 | — | — | — | — |
+| `nousresearch/hermes-4-405b` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `nousresearch/hermes-4-405b` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `nvidia/nemotron-3-nano-30b-a3b` | — | per_1m_input_tokens | $0.060 | — | — | — | — |
+| `nvidia/nemotron-3-nano-30b-a3b` | — | per_1m_output_tokens | $0.240 | — | — | — | — |
+| `nvidia/nemotron-3-super-120b-a12b` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `nvidia/nemotron-3-super-120b-a12b` | — | per_1m_output_tokens | $2.400 | — | — | — | — |
+| `nvidia/nemotron-3-ultra-550b-a55b` | — | per_1m_input_tokens | $0.600 | — | — | — | — |
+| `nvidia/nemotron-3-ultra-550b-a55b` | — | per_1m_output_tokens | $2.400 | — | — | — | — |
+| `nvidia/nemotron-3.5-content-safety` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `nvidia/nemotron-3.5-content-safety` | — | per_1m_output_tokens | $0.200 | — | — | — | — |
+| `nvidia/nemotron-3.5-lightning` | — | per_1m_input_tokens | $0.070 | — | — | — | — |
+| `nvidia/nemotron-3.5-lightning` | — | per_1m_output_tokens | $0.200 | — | — | — | — |
+| `nvidia/nemotron-3.5-super-vl` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `nvidia/nemotron-3.5-super-vl` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `openai/gpt-3.5-turbo` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `openai/gpt-3.5-turbo` | — | per_1m_output_tokens | $1.500 | — | — | — | — |
+| `openai/gpt-3.5-turbo-0613` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `openai/gpt-3.5-turbo-0613` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-3.5-turbo-16k` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `openai/gpt-3.5-turbo-16k` | — | per_1m_output_tokens | $4.000 | — | — | — | — |
+| `openai/gpt-3.5-turbo-instruct` | — | per_1m_input_tokens | $1.500 | — | — | — | — |
+| `openai/gpt-3.5-turbo-instruct` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-3.5-turbo:batch` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `openai/gpt-3.5-turbo:batch` | — | per_1m_output_tokens | $0.750 | — | — | — | — |
+| `openai/gpt-4` | — | per_1m_input_tokens | $30.00 | — | — | — | — |
+| `openai/gpt-4` | — | per_1m_output_tokens | $60.00 | — | — | — | — |
+| `openai/gpt-4-turbo` | — | per_1m_input_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-4-turbo` | — | per_1m_output_tokens | $30.00 | — | — | — | — |
+| `openai/gpt-4-turbo:batch` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-4-turbo:batch` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `openai/gpt-4.1` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-4.1` | — | per_1m_output_tokens | $8.000 | — | — | — | — |
+| `openai/gpt-4.1-mini` | — | per_1m_input_tokens | $0.400 | — | — | — | — |
+| `openai/gpt-4.1-mini` | — | per_1m_output_tokens | $1.600 | — | — | — | — |
+| `openai/gpt-4.1-mini:batch` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `openai/gpt-4.1-mini:batch` | — | per_1m_output_tokens | $0.800 | — | — | — | — |
+| `openai/gpt-4.1-nano` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `openai/gpt-4.1-nano` | — | per_1m_output_tokens | $0.400 | — | — | — | — |
+| `openai/gpt-4.1-nano:batch` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `openai/gpt-4.1-nano:batch` | — | per_1m_output_tokens | $0.200 | — | — | — | — |
+| `openai/gpt-4.1:batch` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `openai/gpt-4.1:batch` | — | per_1m_output_tokens | $4.000 | — | — | — | — |
+| `openai/gpt-4o` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `openai/gpt-4o` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-4o-2024-05-13` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-4o-2024-05-13` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `openai/gpt-4o-2024-08-06` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `openai/gpt-4o-2024-08-06` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-4o-2024-11-20` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `openai/gpt-4o-2024-11-20` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-4o-mini` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `openai/gpt-4o-mini` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `openai/gpt-4o-mini-2024-07-18` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `openai/gpt-4o-mini-2024-07-18` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `openai/gpt-4o-mini:batch` | — | per_1m_input_tokens | $0.075 | — | — | — | — |
+| `openai/gpt-4o-mini:batch` | — | per_1m_output_tokens | $0.300 | — | — | — | — |
+| `openai/gpt-4o:batch` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `openai/gpt-4o:batch` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-5` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `openai/gpt-5` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-5-image` | — | per_1m_input_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-5-image` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-5-image-mini` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `openai/gpt-5-image-mini` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-5-mini` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `openai/gpt-5-mini` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-5-mini:batch` | — | per_1m_input_tokens | $0.125 | — | — | — | — |
+| `openai/gpt-5-mini:batch` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `openai/gpt-5-nano` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `openai/gpt-5-nano` | — | per_1m_output_tokens | $0.400 | — | — | — | — |
+| `openai/gpt-5-nano:batch` | — | per_1m_input_tokens | $0.025 | — | — | — | — |
+| `openai/gpt-5-nano:batch` | — | per_1m_output_tokens | $0.200 | — | — | — | — |
+| `openai/gpt-5-pro` | — | per_1m_input_tokens | $15.00 | — | — | — | — |
+| `openai/gpt-5-pro` | — | per_1m_output_tokens | $120.00 | — | — | — | — |
+| `openai/gpt-5-pro:batch` | — | per_1m_input_tokens | $7.500 | — | — | — | — |
+| `openai/gpt-5-pro:batch` | — | per_1m_output_tokens | $60.00 | — | — | — | — |
+| `openai/gpt-5.1` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `openai/gpt-5.1` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-5.1-codex` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `openai/gpt-5.1-codex` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-5.1-codex-max` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `openai/gpt-5.1-codex-max` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-5.1-codex-mini` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `openai/gpt-5.1-codex-mini` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-5.1:batch` | — | per_1m_input_tokens | $0.625 | — | — | — | — |
+| `openai/gpt-5.1:batch` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-5.2` | — | per_1m_input_tokens | $1.750 | — | — | — | — |
+| `openai/gpt-5.2` | — | per_1m_output_tokens | $14.00 | — | — | — | — |
+| `openai/gpt-5.2-chat` | — | per_1m_input_tokens | $1.750 | — | — | — | — |
+| `openai/gpt-5.2-chat` | — | per_1m_output_tokens | $14.00 | — | — | — | — |
+| `openai/gpt-5.2-codex` | — | per_1m_input_tokens | $1.750 | — | — | — | — |
+| `openai/gpt-5.2-codex` | — | per_1m_output_tokens | $14.00 | — | — | — | — |
+| `openai/gpt-5.2-pro` | — | per_1m_input_tokens | $21.00 | — | — | — | — |
+| `openai/gpt-5.2-pro` | — | per_1m_output_tokens | $168.00 | — | — | — | — |
+| `openai/gpt-5.2-pro:batch` | — | per_1m_input_tokens | $10.50 | — | — | — | — |
+| `openai/gpt-5.2-pro:batch` | — | per_1m_output_tokens | $84.00 | — | — | — | — |
+| `openai/gpt-5.2:batch` | — | per_1m_input_tokens | $0.875 | — | — | — | — |
+| `openai/gpt-5.2:batch` | — | per_1m_output_tokens | $7.000 | — | — | — | — |
+| `openai/gpt-5.3-codex` | — | per_1m_input_tokens | $1.750 | — | — | — | — |
+| `openai/gpt-5.3-codex` | — | per_1m_output_tokens | $14.00 | — | — | — | — |
+| `openai/gpt-5.4` | `gpt-5.4` | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `openai/gpt-5.4` | `gpt-5.4` | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `openai/gpt-5.4-image-2` | — | per_1m_input_tokens | $8.000 | — | — | — | — |
+| `openai/gpt-5.4-image-2` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `openai/gpt-5.4-mini` | — | per_1m_input_tokens | $0.750 | — | — | — | — |
+| `openai/gpt-5.4-mini` | — | per_1m_output_tokens | $4.500 | — | — | — | — |
+| `openai/gpt-5.4-mini:batch` | — | per_1m_input_tokens | $0.375 | — | — | — | — |
+| `openai/gpt-5.4-mini:batch` | — | per_1m_output_tokens | $2.250 | — | — | — | — |
+| `openai/gpt-5.4-nano` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `openai/gpt-5.4-nano` | — | per_1m_output_tokens | $1.250 | — | — | — | — |
+| `openai/gpt-5.4-nano:batch` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `openai/gpt-5.4-nano:batch` | — | per_1m_output_tokens | $0.625 | — | — | — | — |
+| `openai/gpt-5.4-pro` | — | per_1m_input_tokens | $30.00 | — | — | — | — |
+| `openai/gpt-5.4-pro` | — | per_1m_output_tokens | $180.00 | — | — | — | — |
+| `openai/gpt-5.4-pro:batch` | — | per_1m_input_tokens | $15.00 | — | — | — | — |
+| `openai/gpt-5.4-pro:batch` | — | per_1m_output_tokens | $90.00 | — | — | — | — |
+| `openai/gpt-5.4:batch` | `gpt-5.4` | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `openai/gpt-5.4:batch` | `gpt-5.4` | per_1m_output_tokens | $7.500 | — | — | — | — |
+| `openai/gpt-5.5` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-5.5` | — | per_1m_output_tokens | $30.00 | — | — | — | — |
+| `openai/gpt-5.5-pro` | `gpt-5.5-pro` | per_1m_input_tokens | $30.00 | — | — | — | — |
+| `openai/gpt-5.5-pro` | `gpt-5.5-pro` | per_1m_output_tokens | $180.00 | — | — | — | — |
+| `openai/gpt-5.5-pro:batch` | `gpt-5.5-pro` | per_1m_input_tokens | $15.00 | — | — | — | — |
+| `openai/gpt-5.5-pro:batch` | `gpt-5.5-pro` | per_1m_output_tokens | $90.00 | — | — | — | — |
+| `openai/gpt-5.5:batch` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `openai/gpt-5.5:batch` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `openai/gpt-5.6-luna` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `openai/gpt-5.6-luna` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `openai/gpt-5.6-luna-pro` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `openai/gpt-5.6-luna-pro` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `openai/gpt-5.6-luna-pro:batch` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `openai/gpt-5.6-luna-pro:batch` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `openai/gpt-5.6-luna:batch` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `openai/gpt-5.6-luna:batch` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `openai/gpt-5.6-sol` | — | per_1m_input_tokens | $4.000 | — | — | — | — |
+| `openai/gpt-5.6-sol` | — | per_1m_output_tokens | $20.00 | — | — | — | — |
+| `openai/gpt-5.6-sol-pro` | — | per_1m_input_tokens | $4.000 | — | — | — | — |
+| `openai/gpt-5.6-sol-pro` | — | per_1m_output_tokens | $20.00 | — | — | — | — |
+| `openai/gpt-5.6-sol-pro:batch` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-5.6-sol-pro:batch` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-5.6-sol:batch` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-5.6-sol:batch` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-5.6-terra` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-5.6-terra` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `openai/gpt-5.6-terra-pro` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-5.6-terra-pro` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `openai/gpt-5.6-terra-pro:batch` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `openai/gpt-5.6-terra-pro:batch` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `openai/gpt-5.6-terra:batch` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `openai/gpt-5.6-terra:batch` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `openai/gpt-5:batch` | — | per_1m_input_tokens | $0.625 | — | — | — | — |
+| `openai/gpt-5:batch` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-6-astra` | — | per_1m_input_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-6-astra` | — | per_1m_output_tokens | $50.00 | — | — | — | — |
+| `openai/gpt-6-astra-pro` | — | per_1m_input_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-6-astra-pro` | — | per_1m_output_tokens | $50.00 | — | — | — | — |
+| `openai/gpt-6-astra-pro:batch` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-6-astra-pro:batch` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `openai/gpt-6-astra:batch` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-6-astra:batch` | — | per_1m_output_tokens | $25.00 | — | — | — | — |
+| `openai/gpt-6-luna` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `openai/gpt-6-luna` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `openai/gpt-6-luna-pro` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `openai/gpt-6-luna-pro` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `openai/gpt-6-luna-pro:batch` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `openai/gpt-6-luna-pro:batch` | — | per_1m_output_tokens | $0.250 | — | — | — | — |
+| `openai/gpt-6-luna:batch` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `openai/gpt-6-luna:batch` | — | per_1m_output_tokens | $0.250 | — | — | — | — |
+| `openai/gpt-6-sol` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-6-sol` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-6-sol-pro` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-6-sol-pro` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-6-sol-pro:batch` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `openai/gpt-6-sol-pro:batch` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-6-sol:batch` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `openai/gpt-6-sol:batch` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-6.1-sol` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-6.1-sol` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-6.1-sol-pro` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/gpt-6.1-sol-pro` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-6.1-sol-pro:batch` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `openai/gpt-6.1-sol-pro:batch` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-6.1-sol:batch` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `openai/gpt-6.1-sol:batch` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-audio` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `openai/gpt-audio` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `openai/gpt-audio-mini` | — | per_1m_input_tokens | $0.600 | — | — | — | — |
+| `openai/gpt-audio-mini` | — | per_1m_output_tokens | $2.400 | — | — | — | — |
+| `openai/gpt-chat-latest` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `openai/gpt-chat-latest` | — | per_1m_output_tokens | $30.00 | — | — | — | — |
+| `openai/gpt-oss-120b` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `openai/gpt-oss-120b` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `openai/gpt-oss-120b:batch` | — | per_1m_input_tokens | $0.030 | — | — | — | — |
+| `openai/gpt-oss-120b:batch` | — | per_1m_output_tokens | $0.136 | — | — | — | — |
+| `openai/gpt-oss-20b` | — | per_1m_input_tokens | $0.018 | — | — | — | — |
+| `openai/gpt-oss-20b` | — | per_1m_output_tokens | $0.090 | — | — | — | — |
+| `openai/gpt-oss-20b:batch` | — | per_1m_input_tokens | $0.024 | — | — | — | — |
+| `openai/gpt-oss-20b:batch` | — | per_1m_output_tokens | $0.112 | — | — | — | — |
+| `openai/gpt-oss-safeguard-20b` | — | per_1m_input_tokens | $0.075 | — | — | — | — |
+| `openai/gpt-oss-safeguard-20b` | — | per_1m_output_tokens | $0.300 | — | — | — | — |
+| `openai/o1` | — | per_1m_input_tokens | $15.00 | — | — | — | — |
+| `openai/o1` | — | per_1m_output_tokens | $60.00 | — | — | — | — |
+| `openai/o1-pro` | — | per_1m_input_tokens | $150.00 | — | — | — | — |
+| `openai/o1-pro` | — | per_1m_output_tokens | $600.00 | — | — | — | — |
+| `openai/o3` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `openai/o3` | — | per_1m_output_tokens | $8.000 | — | — | — | — |
+| `openai/o3-mini` | — | per_1m_input_tokens | $1.100 | — | — | — | — |
+| `openai/o3-mini` | — | per_1m_output_tokens | $4.400 | — | — | — | — |
+| `openai/o3-mini-high` | — | per_1m_input_tokens | $1.100 | — | — | — | — |
+| `openai/o3-mini-high` | — | per_1m_output_tokens | $4.400 | — | — | — | — |
+| `openai/o3-mini:batch` | — | per_1m_input_tokens | $0.550 | — | — | — | — |
+| `openai/o3-mini:batch` | — | per_1m_output_tokens | $2.200 | — | — | — | — |
+| `openai/o3-pro` | — | per_1m_input_tokens | $20.00 | — | — | — | — |
+| `openai/o3-pro` | — | per_1m_output_tokens | $80.00 | — | — | — | — |
+| `openai/o3:batch` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `openai/o3:batch` | — | per_1m_output_tokens | $4.000 | — | — | — | — |
+| `openai/o4-mini` | — | per_1m_input_tokens | $1.100 | — | — | — | — |
+| `openai/o4-mini` | — | per_1m_output_tokens | $4.400 | — | — | — | — |
+| `openai/o4-mini-high` | — | per_1m_input_tokens | $1.100 | — | — | — | — |
+| `openai/o4-mini-high` | — | per_1m_output_tokens | $4.400 | — | — | — | — |
+| `openai/o4-mini:batch` | — | per_1m_input_tokens | $0.550 | — | — | — | — |
+| `openai/o4-mini:batch` | — | per_1m_output_tokens | $2.200 | — | — | — | — |
+| `perceptron/perceptron-mk1` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `perceptron/perceptron-mk1` | — | per_1m_output_tokens | $1.500 | — | — | — | — |
+| `perceptron/perceptron-mk1.5` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `perceptron/perceptron-mk1.5` | — | per_1m_output_tokens | $1.500 | — | — | — | — |
+| `perplexity/sonar` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `perplexity/sonar` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `perplexity/sonar-deep-research` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `perplexity/sonar-deep-research` | — | per_1m_output_tokens | $8.000 | — | — | — | — |
+| `perplexity/sonar-pro` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `perplexity/sonar-pro` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `perplexity/sonar-pro-search` | — | per_1m_input_tokens | $3.000 | — | — | — | — |
+| `perplexity/sonar-pro-search` | — | per_1m_output_tokens | $15.00 | — | — | — | — |
+| `perplexity/sonar-reasoning-pro` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `perplexity/sonar-reasoning-pro` | — | per_1m_output_tokens | $8.000 | — | — | — | — |
+| `poolside/laguna-s-2.1` | — | per_1m_input_tokens | $0.090 | — | — | — | — |
+| `poolside/laguna-s-2.1` | — | per_1m_output_tokens | $0.180 | — | — | — | — |
+| `poolside/laguna-xs-2.1` | — | per_1m_input_tokens | $0.060 | — | — | — | — |
+| `poolside/laguna-xs-2.1` | — | per_1m_output_tokens | $0.120 | — | — | — | — |
+| `prism-ml/ternary-bonsai-2-27b` | — | per_1m_input_tokens | $0.075 | — | — | — | — |
+| `prism-ml/ternary-bonsai-2-27b` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `qwen/qwen-2.5-72b-instruct` | — | per_1m_input_tokens | $0.360 | — | — | — | — |
+| `qwen/qwen-2.5-72b-instruct` | — | per_1m_output_tokens | $0.400 | — | — | — | — |
+| `qwen/qwen-2.5-7b-instruct` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `qwen/qwen-2.5-7b-instruct` | — | per_1m_output_tokens | $0.200 | — | — | — | — |
+| `qwen/qwen-2.5-coder-32b-instruct` | — | per_1m_input_tokens | $0.660 | — | — | — | — |
+| `qwen/qwen-2.5-coder-32b-instruct` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `qwen/qwen-plus` | — | per_1m_input_tokens | $0.260 | — | — | — | — |
+| `qwen/qwen-plus` | — | per_1m_output_tokens | $0.780 | — | — | — | — |
+| `qwen/qwen2.5-vl-72b-instruct` | — | per_1m_input_tokens | $0.800 | — | — | — | — |
+| `qwen/qwen2.5-vl-72b-instruct` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `qwen/qwen3-14b` | — | per_1m_input_tokens | $0.120 | — | — | — | — |
+| `qwen/qwen3-14b` | — | per_1m_output_tokens | $0.240 | — | — | — | — |
+| `qwen/qwen3-235b-a22b-2507` | — | per_1m_input_tokens | $0.090 | — | — | — | — |
+| `qwen/qwen3-235b-a22b-2507` | — | per_1m_output_tokens | $0.550 | — | — | — | — |
+| `qwen/qwen3-235b-a22b-thinking-2507` | — | per_1m_input_tokens | $0.450 | — | — | — | — |
+| `qwen/qwen3-235b-a22b-thinking-2507` | — | per_1m_output_tokens | $3.500 | — | — | — | — |
+| `qwen/qwen3-30b-a3b` | — | per_1m_input_tokens | $0.120 | — | — | — | — |
+| `qwen/qwen3-30b-a3b` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `qwen/qwen3-30b-a3b-instruct-2507` | — | per_1m_input_tokens | $0.090 | — | — | — | — |
+| `qwen/qwen3-30b-a3b-instruct-2507` | — | per_1m_output_tokens | $0.300 | — | — | — | — |
+| `qwen/qwen3-32b` | — | per_1m_input_tokens | $0.080 | — | — | — | — |
+| `qwen/qwen3-32b` | — | per_1m_output_tokens | $0.280 | — | — | — | — |
+| `qwen/qwen3-coder` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `qwen/qwen3-coder` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `qwen/qwen3-coder-30b-a3b-instruct` | — | per_1m_input_tokens | $0.070 | — | — | — | — |
+| `qwen/qwen3-coder-30b-a3b-instruct` | — | per_1m_output_tokens | $0.280 | — | — | — | — |
+| `qwen/qwen3-coder-flash` | — | per_1m_input_tokens | $0.195 | — | — | — | — |
+| `qwen/qwen3-coder-flash` | — | per_1m_output_tokens | $0.975 | — | — | — | — |
+| `qwen/qwen3-coder-next` | — | per_1m_input_tokens | $0.120 | — | — | — | — |
+| `qwen/qwen3-coder-next` | — | per_1m_output_tokens | $0.800 | — | — | — | — |
+| `qwen/qwen3-next-80b-a3b-instruct` | — | per_1m_input_tokens | $0.090 | — | — | — | — |
+| `qwen/qwen3-next-80b-a3b-instruct` | — | per_1m_output_tokens | $1.100 | — | — | — | — |
+| `qwen/qwen3-next-80b-a3b-thinking` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `qwen/qwen3-next-80b-a3b-thinking` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `qwen/qwen3-vl-235b-a22b-instruct` | — | per_1m_input_tokens | $0.210 | — | — | — | — |
+| `qwen/qwen3-vl-235b-a22b-instruct` | — | per_1m_output_tokens | $1.900 | — | — | — | — |
+| `qwen/qwen3-vl-30b-a3b-instruct` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `qwen/qwen3-vl-30b-a3b-instruct` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `qwen/qwen3-vl-30b-a3b-thinking` | — | per_1m_input_tokens | $0.290 | — | — | — | — |
+| `qwen/qwen3-vl-30b-a3b-thinking` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `qwen/qwen3-vl-8b-instruct` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `qwen/qwen3-vl-8b-instruct` | — | per_1m_output_tokens | $0.750 | — | — | — | — |
+| `qwen/qwen3.5-122b-a10b` | — | per_1m_input_tokens | $0.400 | — | — | — | — |
+| `qwen/qwen3.5-122b-a10b` | — | per_1m_output_tokens | $3.200 | — | — | — | — |
+| `qwen/qwen3.5-27b` | — | per_1m_input_tokens | $0.270 | — | — | — | — |
+| `qwen/qwen3.5-27b` | — | per_1m_output_tokens | $2.160 | — | — | — | — |
+| `qwen/qwen3.5-35b-a3b` | — | per_1m_input_tokens | $0.140 | — | — | — | — |
+| `qwen/qwen3.5-35b-a3b` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `qwen/qwen3.5-397b-a17b` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `qwen/qwen3.5-397b-a17b` | — | per_1m_output_tokens | $3.600 | — | — | — | — |
+| `qwen/qwen3.5-9b` | — | per_1m_input_tokens | $0.170 | — | — | — | — |
+| `qwen/qwen3.5-9b` | — | per_1m_output_tokens | $0.250 | — | — | — | — |
+| `qwen/qwen3.5-flash-02-23` | — | per_1m_input_tokens | $0.065 | — | — | — | — |
+| `qwen/qwen3.5-flash-02-23` | — | per_1m_output_tokens | $0.260 | — | — | — | — |
+| `qwen/qwen3.5-plus-02-15` | — | per_1m_input_tokens | $0.260 | — | — | — | — |
+| `qwen/qwen3.5-plus-02-15` | — | per_1m_output_tokens | $1.560 | — | — | — | — |
+| `qwen/qwen3.5-plus-20260420` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `qwen/qwen3.5-plus-20260420` | — | per_1m_output_tokens | $1.800 | — | — | — | — |
+| `qwen/qwen3.6-27b` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `qwen/qwen3.6-27b` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `qwen/qwen3.6-35b-a3b` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `qwen/qwen3.6-35b-a3b` | — | per_1m_output_tokens | $0.950 | — | — | — | — |
+| `qwen/qwen3.6-flash` | — | per_1m_input_tokens | $0.188 | — | — | — | — |
+| `qwen/qwen3.6-flash` | — | per_1m_output_tokens | $1.125 | — | — | — | — |
+| `qwen/qwen3.6-plus` | — | per_1m_input_tokens | $0.325 | — | — | — | — |
+| `qwen/qwen3.6-plus` | — | per_1m_output_tokens | $1.950 | — | — | — | — |
+| `qwen/qwen3.7-flash` | — | per_1m_input_tokens | $0.030 | — | — | — | — |
+| `qwen/qwen3.7-flash` | — | per_1m_output_tokens | $0.130 | — | — | — | — |
+| `qwen/qwen3.7-max` | — | per_1m_input_tokens | $1.475 | — | — | — | — |
+| `qwen/qwen3.7-max` | — | per_1m_output_tokens | $4.425 | — | — | — | — |
+| `qwen/qwen3.7-plus` | — | per_1m_input_tokens | $0.320 | — | — | — | — |
+| `qwen/qwen3.7-plus` | — | per_1m_output_tokens | $1.280 | — | — | — | — |
+| `qwen/qwen3.7-plus:batch` | — | per_1m_input_tokens | $0.230 | — | — | — | — |
+| `qwen/qwen3.7-plus:batch` | — | per_1m_output_tokens | $0.920 | — | — | — | — |
+| `qwen/qwen3.8-2.4t-a95b` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `qwen/qwen3.8-2.4t-a95b` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `qwen/qwen3.8-27b` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `qwen/qwen3.8-27b` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `qwen/qwen3.8-flash` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `qwen/qwen3.8-flash` | — | per_1m_output_tokens | $0.470 | — | — | — | — |
+| `qwen/qwen3.8-max-0902` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `qwen/qwen3.8-max-0902` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `qwen/qwen3.8-max-prime` | — | per_1m_input_tokens | $4.000 | — | — | — | — |
+| `qwen/qwen3.8-max-prime` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `qwen/qwen3.8-omni-flash` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `qwen/qwen3.8-omni-flash` | — | per_1m_output_tokens | $0.470 | — | — | — | — |
+| `reflection/beam-1.0-501b-a23b` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `reflection/beam-1.0-501b-a23b` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `rekaai/reka-edge` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `rekaai/reka-edge` | — | per_1m_output_tokens | $0.100 | — | — | — | — |
+| `rekaai/reka-flash-3` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `rekaai/reka-flash-3` | — | per_1m_output_tokens | $0.200 | — | — | — | — |
+| `relace/relace-apply-3` | — | per_1m_input_tokens | $0.850 | — | — | — | — |
+| `relace/relace-apply-3` | — | per_1m_output_tokens | $1.250 | — | — | — | — |
+| `relace/relace-search` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `relace/relace-search` | — | per_1m_output_tokens | $3.000 | — | — | — | — |
+| `sakana/fugu-max` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `sakana/fugu-max` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `sakana/fugu-ultra` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `sakana/fugu-ultra` | — | per_1m_output_tokens | $30.00 | — | — | — | — |
+| `sakana/fugu-ultra-v2` | — | per_1m_input_tokens | $5.000 | — | — | — | — |
+| `sakana/fugu-ultra-v2` | — | per_1m_output_tokens | $30.00 | — | — | — | — |
+| `sakana/sakana-namazu` | — | per_1m_input_tokens | $0.950 | — | — | — | — |
+| `sakana/sakana-namazu` | — | per_1m_output_tokens | $4.000 | — | — | — | — |
+| `sao10k/l3-lunaris-8b` | — | per_1m_input_tokens | $0.040 | — | — | — | — |
+| `sao10k/l3-lunaris-8b` | — | per_1m_output_tokens | $0.050 | — | — | — | — |
+| `sao10k/l3.1-euryale-70b` | — | per_1m_input_tokens | $0.850 | — | — | — | — |
+| `sao10k/l3.1-euryale-70b` | — | per_1m_output_tokens | $0.850 | — | — | — | — |
+| `scaledown/extract` | — | per_1m_input_tokens | $0.040 | — | — | — | — |
+| `scaledown/summarize` | — | per_1m_input_tokens | $0.040 | — | — | — | — |
+| `stepfun/step-3.5-flash` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `stepfun/step-3.5-flash` | — | per_1m_output_tokens | $0.300 | — | — | — | — |
+| `stepfun/step-3.7-flash` | — | per_1m_input_tokens | $0.200 | — | — | — | — |
+| `stepfun/step-3.7-flash` | — | per_1m_output_tokens | $1.150 | — | — | — | — |
+| `stepfun/step-5-preview` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `stepfun/step-5-preview` | — | per_1m_output_tokens | $2.700 | — | — | — | — |
+| `tencent/hunyuan-a13b-instruct` | — | per_1m_input_tokens | $0.140 | — | — | — | — |
+| `tencent/hunyuan-a13b-instruct` | — | per_1m_output_tokens | $0.570 | — | — | — | — |
+| `tencent/hy-mt2-1.8b` | — | per_1m_input_tokens | $0.044 | — | — | — | — |
+| `tencent/hy-mt2-1.8b` | — | per_1m_output_tokens | $0.177 | — | — | — | — |
+| `tencent/hy-mt2-30b-a3b` | — | per_1m_input_tokens | $0.074 | — | — | — | — |
+| `tencent/hy-mt2-30b-a3b` | — | per_1m_output_tokens | $0.295 | — | — | — | — |
+| `tencent/hy-mt2-7b` | — | per_1m_input_tokens | $0.074 | — | — | — | — |
+| `tencent/hy-mt2-7b` | — | per_1m_output_tokens | $0.295 | — | — | — | — |
+| `tencent/hy3` | — | per_1m_input_tokens | $0.132 | — | — | — | — |
+| `tencent/hy3` | — | per_1m_output_tokens | $0.528 | — | — | — | — |
+| `tencent/hy3-preview` | — | per_1m_input_tokens | $0.180 | — | — | — | — |
+| `tencent/hy3-preview` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `tencent/hy4-preview` | — | per_1m_input_tokens | $0.834 | — | — | — | — |
+| `tencent/hy4-preview` | — | per_1m_output_tokens | $2.501 | — | — | — | — |
+| `thedrummer/cydonia-24b-v4.1` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `thedrummer/cydonia-24b-v4.1` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `thedrummer/skyfall-36b-v2` | — | per_1m_input_tokens | $0.550 | — | — | — | — |
+| `thedrummer/skyfall-36b-v2` | — | per_1m_output_tokens | $0.800 | — | — | — | — |
+| `thedrummer/unslopnemo-12b` | — | per_1m_input_tokens | $0.400 | — | — | — | — |
+| `thedrummer/unslopnemo-12b` | — | per_1m_output_tokens | $0.400 | — | — | — | — |
+| `thinkingmachines/inkling` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `thinkingmachines/inkling` | — | per_1m_output_tokens | $4.050 | — | — | — | — |
+| `thinkingmachines/inkling-small` | — | per_1m_input_tokens | $0.450 | — | — | — | — |
+| `thinkingmachines/inkling-small` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `unbiased/pareto-26.10` | — | per_1m_input_tokens | $0.800 | — | — | — | — |
+| `unbiased/pareto-26.10` | — | per_1m_output_tokens | $3.200 | — | — | — | — |
+| `unbiased/pareto-26.9` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `unbiased/pareto-26.9` | — | per_1m_output_tokens | $7.500 | — | — | — | — |
+| `undi95/remm-slerp-l2-13b` | — | per_1m_input_tokens | $0.350 | — | — | — | — |
+| `undi95/remm-slerp-l2-13b` | — | per_1m_output_tokens | $0.650 | — | — | — | — |
+| `upstage/solar-mini4` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `upstage/solar-mini4` | — | per_1m_output_tokens | $0.200 | — | — | — | — |
+| `upstage/solar-pro-3` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `upstage/solar-pro-3` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `upstage/solar-pro4` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `upstage/solar-pro4` | — | per_1m_output_tokens | $0.600 | — | — | — | — |
+| `writer/palmyra-x5` | — | per_1m_input_tokens | $0.600 | — | — | — | — |
+| `writer/palmyra-x5` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `x-ai/grok-4.20` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `x-ai/grok-4.20` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `x-ai/grok-4.20-multi-agent` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `x-ai/grok-4.20-multi-agent` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `x-ai/grok-4.3` | `grok-4.3` | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `x-ai/grok-4.3` | `grok-4.3` | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `x-ai/grok-4.3:batch` | `grok-4.3` | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `x-ai/grok-4.3:batch` | `grok-4.3` | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `x-ai/grok-4.5` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `x-ai/grok-4.5` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `x-ai/grok-4.6` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `x-ai/grok-4.6` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `x-ai/grok-4.7` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `x-ai/grok-4.7` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `x-ai/grok-build-0.1` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `x-ai/grok-build-0.1` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `xiaomi/mimo-v2.5` | — | per_1m_input_tokens | $0.119 | — | — | — | — |
+| `xiaomi/mimo-v2.5` | — | per_1m_output_tokens | $0.238 | — | — | — | — |
+| `xiaomi/mimo-v2.5-pro` | — | per_1m_input_tokens | $0.304 | — | — | — | — |
+| `xiaomi/mimo-v2.5-pro` | — | per_1m_output_tokens | $0.609 | — | — | — | — |
+| `xiaomi/mimo-v2.6-flash` | — | per_1m_input_tokens | $0.140 | — | — | — | — |
+| `xiaomi/mimo-v2.6-flash` | — | per_1m_output_tokens | $0.280 | — | — | — | — |
+| `xiaomi/mimo-v2.6-pro` | — | per_1m_input_tokens | $0.435 | — | — | — | — |
+| `xiaomi/mimo-v2.6-pro` | — | per_1m_output_tokens | $0.870 | — | — | — | — |
+| `xiaomi/mimo-v2.6-pro-ultraspeed` | — | per_1m_input_tokens | $4.350 | — | — | — | — |
+| `xiaomi/mimo-v2.6-pro-ultraspeed` | — | per_1m_output_tokens | $8.700 | — | — | — | — |
+| `z-ai/glm-4.5` | — | per_1m_input_tokens | $0.600 | — | — | — | — |
+| `z-ai/glm-4.5` | — | per_1m_output_tokens | $2.200 | — | — | — | — |
+| `z-ai/glm-4.5-air` | — | per_1m_input_tokens | $0.130 | — | — | — | — |
+| `z-ai/glm-4.5-air` | — | per_1m_output_tokens | $0.850 | — | — | — | — |
+| `z-ai/glm-4.5v` | — | per_1m_input_tokens | $0.600 | — | — | — | — |
+| `z-ai/glm-4.5v` | — | per_1m_output_tokens | $1.800 | — | — | — | — |
+| `z-ai/glm-4.6` | — | per_1m_input_tokens | $0.550 | — | — | — | — |
+| `z-ai/glm-4.6` | — | per_1m_output_tokens | $2.200 | — | — | — | — |
+| `z-ai/glm-4.6v` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `z-ai/glm-4.6v` | — | per_1m_output_tokens | $0.900 | — | — | — | — |
+| `z-ai/glm-4.7` | — | per_1m_input_tokens | $0.540 | — | — | — | — |
+| `z-ai/glm-4.7` | — | per_1m_output_tokens | $1.980 | — | — | — | — |
+| `z-ai/glm-4.7-flash` | — | per_1m_input_tokens | $0.061 | — | — | — | — |
+| `z-ai/glm-4.7-flash` | — | per_1m_output_tokens | $0.400 | — | — | — | — |
+| `z-ai/glm-5` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `z-ai/glm-5` | — | per_1m_output_tokens | $3.200 | — | — | — | — |
+| `z-ai/glm-5-turbo` | — | per_1m_input_tokens | $1.200 | — | — | — | — |
+| `z-ai/glm-5-turbo` | — | per_1m_output_tokens | $4.000 | — | — | — | — |
+| `z-ai/glm-5.1` | — | per_1m_input_tokens | $1.400 | — | — | — | — |
+| `z-ai/glm-5.1` | — | per_1m_output_tokens | $4.400 | — | — | — | — |
+| `z-ai/glm-5.2` | — | per_1m_input_tokens | $0.034 | — | — | — | — |
+| `z-ai/glm-5.2` | — | per_1m_output_tokens | $7.000 | — | — | — | — |
+| `z-ai/glm-5.3` | — | per_1m_input_tokens | $0.079 | — | — | — | — |
+| `z-ai/glm-5.3` | — | per_1m_output_tokens | $1.400 | — | — | — | — |
+| `z-ai/glm-5.3-flash` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `z-ai/glm-5.3-flash` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `z-ai/glm-5.3-flash:batch` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `z-ai/glm-5.3-flash:batch` | — | per_1m_output_tokens | $0.180 | — | — | — | — |
+| `z-ai/glm-5.3-flashx` | — | per_1m_input_tokens | $0.370 | — | — | — | — |
+| `z-ai/glm-5.3-flashx` | — | per_1m_output_tokens | $1.250 | — | — | — | — |
+| `z-ai/glm-5.3-prime` | — | per_1m_input_tokens | $2.800 | — | — | — | — |
+| `z-ai/glm-5.3-prime` | — | per_1m_output_tokens | $8.800 | — | — | — | — |
+| `z-ai/glm-5.3:batch` | — | per_1m_input_tokens | $0.450 | — | — | — | — |
+| `z-ai/glm-5.3:batch` | — | per_1m_output_tokens | $2.000 | — | — | — | — |
+| `z-ai/glm-5v-turbo` | — | per_1m_input_tokens | $1.200 | — | — | — | — |
+| `z-ai/glm-5v-turbo` | — | per_1m_output_tokens | $4.000 | — | — | — | — |
+| `~anthropic/claude-fable-latest` | — | per_1m_input_tokens | $10.00 | — | — | — | — |
+| `~anthropic/claude-fable-latest` | — | per_1m_output_tokens | $50.00 | — | — | — | — |
+| `~anthropic/claude-haiku-latest` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `~anthropic/claude-haiku-latest` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `~anthropic/claude-opus-latest` | — | per_1m_input_tokens | $4.000 | — | — | — | — |
+| `~anthropic/claude-opus-latest` | — | per_1m_output_tokens | $20.00 | — | — | — | — |
+| `~anthropic/claude-sonnet-latest` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `~anthropic/claude-sonnet-latest` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `~deepseek/deepseek-flash-latest` | — | per_1m_input_tokens | $0.020 | — | — | — | — |
+| `~deepseek/deepseek-flash-latest` | — | per_1m_output_tokens | $1.000 | — | — | — | — |
+| `~deepseek/deepseek-pro-latest` | — | per_1m_input_tokens | $0.119 | — | — | — | — |
+| `~deepseek/deepseek-pro-latest` | — | per_1m_output_tokens | $8.000 | — | — | — | — |
+| `~deepseek/deepseek-v4-flash-latest` | — | per_1m_input_tokens | $0.042 | — | — | — | — |
+| `~deepseek/deepseek-v4-flash-latest` | — | per_1m_output_tokens | $0.169 | — | — | — | — |
+| `~google/gemini-flash-latest` | — | per_1m_input_tokens | $0.750 | — | — | — | — |
+| `~google/gemini-flash-latest` | — | per_1m_output_tokens | $3.750 | — | — | — | — |
+| `~google/gemini-flash-latest` | — | per_image | $0.0000 | — | — | — | — |
+| `~google/gemini-pro-latest` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `~google/gemini-pro-latest` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `~google/gemini-pro-latest` | — | per_image | $0.0000 | — | — | — | — |
+| `~moonshotai/kimi-latest` | — | per_1m_input_tokens | $0.238 | — | — | — | — |
+| `~moonshotai/kimi-latest` | — | per_1m_output_tokens | $16.00 | — | — | — | — |
+| `~openai/gpt-astra-latest` | — | per_1m_input_tokens | $10.00 | — | — | — | — |
+| `~openai/gpt-astra-latest` | — | per_1m_output_tokens | $50.00 | — | — | — | — |
+| `~openai/gpt-luna-latest` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `~openai/gpt-luna-latest` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `~openai/gpt-mini-latest` | — | per_1m_input_tokens | $0.750 | — | — | — | — |
+| `~openai/gpt-mini-latest` | — | per_1m_output_tokens | $4.500 | — | — | — | — |
+| `~openai/gpt-sol-latest` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `~openai/gpt-sol-latest` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `~openai/gpt-terra-latest` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `~openai/gpt-terra-latest` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `~unbiased/pareto-latest` | — | per_1m_input_tokens | $0.800 | — | — | — | — |
+| `~unbiased/pareto-latest` | — | per_1m_output_tokens | $3.200 | — | — | — | — |
+| `~x-ai/grok-latest` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `~x-ai/grok-latest` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `~z-ai/glm-flash-latest` | — | per_1m_input_tokens | $0.030 | — | — | — | — |
+| `~z-ai/glm-flash-latest` | — | per_1m_output_tokens | $0.085 | — | — | — | — |
+| `~z-ai/glm-latest` | — | per_1m_input_tokens | $0.079 | — | — | — | — |
+| `~z-ai/glm-latest` | — | per_1m_output_tokens | $1.400 | — | — | — | — |
 
 ## QuickSilver Pro — `quicksilverpro`
 
-Source: <https://quicksilverpro.io> · Records: 200
+Source: <https://quicksilverpro.io> · Records: 206
 
-| Model | Canonical | Unit | Price (USD) |
-|---|---|---|---|
-| `bria-fibo-1.5` | — | per_image | $0.055 |
-| `claude-fable-5` | — | per_1m_input_tokens | $2.500 |
-| `claude-fable-5` | — | per_1m_output_tokens | $12.50 |
-| `claude-fable-5-1` | — | per_1m_input_cache_read_tokens | $0.062 |
-| `claude-fable-5-1` | — | per_1m_input_tokens | $2.500 |
-| `claude-fable-5-1` | — | per_1m_output_tokens | $12.50 |
-| `claude-haiku-4-5` | — | per_1m_input_tokens | $0.250 |
-| `claude-haiku-4-5` | — | per_1m_output_tokens | $1.250 |
-| `claude-haiku-5-5` | — | per_1m_input_cache_read_tokens | $0.0025 |
-| `claude-haiku-5-5` | — | per_1m_input_tokens | $0.025 |
-| `claude-haiku-5-5` | — | per_1m_output_tokens | $0.125 |
-| `claude-opus-4-8` | — | per_1m_input_tokens | $1.250 |
-| `claude-opus-4-8` | — | per_1m_output_tokens | $6.250 |
-| `claude-opus-5` | — | per_1m_input_tokens | $1.250 |
-| `claude-opus-5` | — | per_1m_output_tokens | $6.250 |
-| `claude-opus-5-5` | — | per_1m_input_cache_read_tokens | $0.050 |
-| `claude-opus-5-5` | — | per_1m_input_tokens | $1.000 |
-| `claude-opus-5-5` | — | per_1m_output_tokens | $5.000 |
-| `claude-sonnet-5` | — | per_1m_input_tokens | $0.500 |
-| `claude-sonnet-5` | — | per_1m_output_tokens | $2.500 |
-| `claude-sonnet-5-5` | — | per_1m_input_cache_read_tokens | $0.050 |
-| `claude-sonnet-5-5` | — | per_1m_input_tokens | $0.500 |
-| `claude-sonnet-5-5` | — | per_1m_output_tokens | $2.500 |
-| `deepseek-v4-flash` | — | per_1m_input_cache_read_tokens | $0.015 |
-| `deepseek-v4-flash` | — | per_1m_input_tokens | $0.060 |
-| `deepseek-v4-flash` | — | per_1m_output_tokens | $0.180 |
-| `deepseek-v4-pro` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `deepseek-v4-pro` | — | per_1m_input_tokens | $0.700 |
-| `deepseek-v4-pro` | — | per_1m_output_tokens | $2.100 |
-| `deepseek-v4.1-flash` | — | per_1m_input_cache_read_tokens | $0.013 |
-| `deepseek-v4.1-flash` | — | per_1m_input_tokens | $0.125 |
-| `deepseek-v4.1-flash` | — | per_1m_output_tokens | $0.550 |
-| `deepseek-v4.1-flash-1017` | — | per_1m_input_cache_read_tokens | $0.0029 |
-| `deepseek-v4.1-flash-1017` | — | per_1m_input_tokens | $0.098 |
-| `deepseek-v4.1-flash-1017` | — | per_1m_output_tokens | $0.294 |
-| `flux.1-schnell` | — | per_image | $0.0030 |
-| `flux.2-klein` | — | per_image | $0.020 |
-| `flux.2-pro` | — | per_image | $0.027 |
-| `gemini-3-flash-preview` | — | per_1m_input_tokens | $0.425 |
-| `gemini-3-flash-preview` | — | per_1m_output_tokens | $2.550 |
-| `gemini-3-pro-image` | — | per_image | $0.114 |
-| `gemini-3.1-flash-lite` | — | per_1m_input_tokens | $0.212 |
-| `gemini-3.1-flash-lite` | — | per_1m_output_tokens | $1.275 |
-| `gemini-3.1-pro-preview` | — | per_1m_input_tokens | $1.700 |
-| `gemini-3.1-pro-preview` | — | per_1m_output_tokens | $10.20 |
-| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_tokens | $1.275 |
-| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_output_tokens | $7.650 |
-| `gemini-3.5-flash-lite` | — | per_1m_input_tokens | $0.255 |
-| `gemini-3.5-flash-lite` | — | per_1m_output_tokens | $2.125 |
-| `gemini-3.6-flash` | — | per_1m_input_tokens | $0.637 |
-| `gemini-3.6-flash` | — | per_1m_output_tokens | $3.188 |
-| `gemini-3.7-flash` | — | per_1m_input_cache_read_tokens | $0.064 |
-| `gemini-3.7-flash` | — | per_1m_input_tokens | $0.637 |
-| `gemini-3.7-flash` | — | per_1m_output_tokens | $3.188 |
-| `gemini-3.8-flash` | — | per_1m_input_cache_read_tokens | $0.064 |
-| `gemini-3.8-flash` | — | per_1m_input_tokens | $0.637 |
-| `gemini-3.8-flash` | — | per_1m_output_tokens | $3.188 |
-| `gemini-4-argon` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `gemini-4-argon` | — | per_1m_input_tokens | $2.000 |
-| `gemini-4-argon` | — | per_1m_output_tokens | $10.00 |
-| `gemini-nano-banana-2.1` | — | per_image | $0.036 |
-| `glm-5.2` | — | per_1m_input_cache_read_tokens | $0.105 |
-| `glm-5.2` | — | per_1m_input_tokens | $0.700 |
-| `glm-5.2` | — | per_1m_output_tokens | $2.200 |
-| `glm-5.3` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `glm-5.3` | — | per_1m_input_tokens | $0.600 |
-| `glm-5.3` | — | per_1m_output_tokens | $2.200 |
-| `glm-5.3-flash` | — | per_1m_input_cache_read_tokens | $0.030 |
-| `glm-5.3-flash` | — | per_1m_input_tokens | $0.070 |
-| `glm-5.3-flash` | — | per_1m_output_tokens | $0.050 |
-| `glm-5.3-prime` | — | per_1m_input_cache_read_tokens | $0.448 |
-| `glm-5.3-prime` | — | per_1m_input_tokens | $2.240 |
-| `glm-5.3-prime` | — | per_1m_output_tokens | $7.040 |
-| `gpt-5.6-luna` | — | per_1m_input_cache_read_tokens | $0.016 |
-| `gpt-5.6-luna` | — | per_1m_input_tokens | $0.160 |
-| `gpt-5.6-luna` | — | per_1m_output_tokens | $0.960 |
-| `gpt-5.6-sol` | — | per_1m_input_cache_read_tokens | $0.160 |
-| `gpt-5.6-sol` | — | per_1m_input_tokens | $1.600 |
-| `gpt-5.6-sol` | — | per_1m_output_tokens | $8.000 |
-| `gpt-5.6-terra` | — | per_1m_input_cache_read_tokens | $0.160 |
-| `gpt-5.6-terra` | — | per_1m_input_tokens | $1.600 |
-| `gpt-5.6-terra` | — | per_1m_output_tokens | $9.600 |
-| `gpt-6-astra` | — | per_1m_input_cache_read_tokens | $1.000 |
-| `gpt-6-astra` | — | per_1m_input_tokens | $10.00 |
-| `gpt-6-astra` | — | per_1m_output_tokens | $50.00 |
-| `gpt-6-luna` | — | per_1m_input_cache_read_tokens | $0.010 |
-| `gpt-6-luna` | — | per_1m_input_tokens | $0.100 |
-| `gpt-6-luna` | — | per_1m_output_tokens | $0.500 |
-| `gpt-6-sol` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `gpt-6-sol` | — | per_1m_input_tokens | $2.000 |
-| `gpt-6-sol` | — | per_1m_output_tokens | $10.00 |
-| `gpt-6.1-sol` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `gpt-6.1-sol` | — | per_1m_input_tokens | $2.000 |
-| `gpt-6.1-sol` | — | per_1m_output_tokens | $10.00 |
-| `gpt-image-2` | — | per_image | $0.010 |
-| `gpt-image-2.5-flare` | — | per_image | $0.018 |
-| `gpt-image-2.5-sunburst` | — | per_image | $0.018 |
-| `gpt-oss-120b` | — | per_1m_input_cache_read_tokens | $0.030 |
-| `gpt-oss-120b` | — | per_1m_input_tokens | $0.030 |
-| `gpt-oss-120b` | — | per_1m_output_tokens | $0.150 |
-| `grok-4.5` | — | per_1m_input_cache_read_tokens | $0.400 |
-| `grok-4.5` | — | per_1m_input_tokens | $1.600 |
-| `grok-4.5` | — | per_1m_output_tokens | $4.800 |
-| `grok-4.6` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `grok-4.6` | — | per_1m_input_tokens | $2.000 |
-| `grok-4.6` | — | per_1m_output_tokens | $6.000 |
-| `grok-4.7` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `grok-4.7` | — | per_1m_input_tokens | $2.000 |
-| `grok-4.7` | — | per_1m_output_tokens | $6.000 |
-| `hy3` | — | per_1m_input_cache_read_tokens | $0.023 |
-| `hy3` | — | per_1m_input_tokens | $0.091 |
-| `hy3` | — | per_1m_output_tokens | $0.363 |
-| `hy4-preview` | — | per_1m_input_cache_read_tokens | $0.034 |
-| `hy4-preview` | — | per_1m_input_tokens | $0.667 |
-| `hy4-preview` | — | per_1m_output_tokens | $2.001 |
-| `jev-1.13` | — | per_1m_input_tokens | $0.042 |
-| `kimi-k2.6` | — | per_1m_input_cache_read_tokens | $0.045 |
-| `kimi-k2.6` | — | per_1m_input_tokens | $0.450 |
-| `kimi-k2.6` | — | per_1m_output_tokens | $1.950 |
-| `kimi-k2.7-code` | — | per_1m_input_cache_read_tokens | $0.180 |
-| `kimi-k2.7-code` | — | per_1m_input_tokens | $0.671 |
-| `kimi-k2.7-code` | — | per_1m_output_tokens | $3.350 |
-| `kimi-k3` | — | per_1m_input_cache_read_tokens | $0.255 |
-| `kimi-k3` | — | per_1m_input_tokens | $2.550 |
-| `kimi-k3` | — | per_1m_output_tokens | $12.75 |
-| `mimo-v2.5` | — | per_1m_input_cache_read_tokens | $0.0022 |
-| `mimo-v2.5` | — | per_1m_input_tokens | $0.112 |
-| `mimo-v2.5` | — | per_1m_output_tokens | $0.224 |
-| `mimo-v2.6-flash` | — | per_1m_input_cache_read_tokens | $0.0022 |
-| `mimo-v2.6-flash` | — | per_1m_input_tokens | $0.112 |
-| `mimo-v2.6-flash` | — | per_1m_output_tokens | $0.224 |
-| `mimo-v2.6-pro` | — | per_1m_input_cache_read_tokens | $0.0029 |
-| `mimo-v2.6-pro` | — | per_1m_input_tokens | $0.348 |
-| `mimo-v2.6-pro` | — | per_1m_output_tokens | $0.696 |
-| `minimax-m3` | — | per_1m_input_cache_read_tokens | $0.048 |
-| `minimax-m3` | — | per_1m_input_tokens | $0.240 |
-| `minimax-m3` | — | per_1m_output_tokens | $0.960 |
-| `mistral-large-4` | — | per_1m_input_cache_read_tokens | $0.070 |
-| `mistral-large-4` | — | per_1m_input_tokens | $0.680 |
-| `mistral-large-4` | — | per_1m_output_tokens | $2.090 |
-| `muse-glimmer-30b` | — | per_1m_input_cache_read_tokens | $0.040 |
-| `muse-glimmer-30b` | — | per_1m_input_tokens | $0.300 |
-| `muse-glimmer-30b` | — | per_1m_output_tokens | $1.200 |
-| `muse-spark-1.2` | — | per_1m_input_cache_read_tokens | $0.120 |
-| `muse-spark-1.2` | — | per_1m_input_tokens | $1.000 |
-| `muse-spark-1.2` | — | per_1m_output_tokens | $3.400 |
-| `muse-spark-1.3` | — | per_1m_input_cache_read_tokens | $0.120 |
-| `muse-spark-1.3` | — | per_1m_input_tokens | $1.000 |
-| `muse-spark-1.3` | — | per_1m_output_tokens | $3.400 |
-| `muse-spark-open` | — | per_1m_input_cache_read_tokens | $0.150 |
-| `muse-spark-open` | — | per_1m_input_tokens | $1.250 |
-| `muse-spark-open` | — | per_1m_output_tokens | $4.250 |
-| `muse-wonder` | — | per_1m_input_cache_read_tokens | $0.200 |
-| `muse-wonder` | — | per_1m_input_tokens | $4.000 |
-| `muse-wonder` | — | per_1m_output_tokens | $20.00 |
-| `nemotron-3-ultra` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `nemotron-3-ultra` | — | per_1m_input_tokens | $0.500 |
-| `nemotron-3-ultra` | — | per_1m_output_tokens | $2.200 |
-| `nemotron-3.5-lightning` | — | per_1m_input_cache_read_tokens | $0.033 |
-| `nemotron-3.5-lightning` | — | per_1m_input_tokens | $0.066 |
-| `nemotron-3.5-lightning` | — | per_1m_output_tokens | $0.176 |
-| `qwen-image-3.0` | — | per_image | $0.040 |
-| `qwen3.6-35b` | — | per_1m_input_cache_read_tokens | $0.025 |
-| `qwen3.6-35b` | — | per_1m_input_tokens | $0.050 |
-| `qwen3.6-35b` | — | per_1m_output_tokens | $0.700 |
-| `qwen3.6-plus` | — | per_1m_input_tokens | $0.260 |
-| `qwen3.6-plus` | — | per_1m_output_tokens | $1.560 |
-| `qwen3.7-flash` | — | per_1m_input_cache_read_tokens | $0.0048 |
-| `qwen3.7-flash` | — | per_1m_input_tokens | $0.024 |
-| `qwen3.7-flash` | — | per_1m_output_tokens | $0.104 |
-| `qwen3.7-max` | — | per_1m_input_cache_read_tokens | $0.250 |
-| `qwen3.7-max` | — | per_1m_input_tokens | $1.250 |
-| `qwen3.7-max` | — | per_1m_output_tokens | $3.750 |
-| `qwen3.7-plus` | — | per_1m_input_cache_read_tokens | $0.051 |
-| `qwen3.7-plus` | — | per_1m_input_tokens | $0.256 |
-| `qwen3.7-plus` | — | per_1m_output_tokens | $1.024 |
-| `qwen3.8-27b` | — | per_1m_input_cache_read_tokens | $0.068 |
-| `qwen3.8-27b` | — | per_1m_input_tokens | $0.340 |
-| `qwen3.8-27b` | — | per_1m_output_tokens | $2.040 |
-| `qwen3.8-27b-decentered` | — | per_1m_input_tokens | $0.238 |
-| `qwen3.8-27b-decentered` | — | per_1m_output_tokens | $1.428 |
-| `qwen3.8-flash-next` | — | per_1m_input_cache_read_tokens | $0.013 |
-| `qwen3.8-flash-next` | — | per_1m_input_tokens | $0.120 |
-| `qwen3.8-flash-next` | — | per_1m_output_tokens | $0.376 |
-| `qwen3.8-max` | — | per_1m_input_cache_read_tokens | $0.250 |
-| `qwen3.8-max` | — | per_1m_input_tokens | $2.000 |
-| `qwen3.8-max` | — | per_1m_output_tokens | $6.000 |
-| `qwen3.8-max-prime` | — | per_1m_input_cache_read_tokens | $0.500 |
-| `qwen3.8-max-prime` | — | per_1m_input_tokens | $4.000 |
-| `qwen3.8-max-prime` | — | per_1m_output_tokens | $12.00 |
-| `qwen3.8-omni-flash` | — | per_1m_input_cache_read_tokens | $0.016 |
-| `qwen3.8-omni-flash` | — | per_1m_input_tokens | $0.150 |
-| `qwen3.8-omni-flash` | — | per_1m_output_tokens | $0.470 |
-| `sdxl-turbo` | — | per_image | $0.0030 |
-| `seedream-4` | — | per_image | $0.055 |
-| `seedream-5.0-pro` | — | per_image | $0.070 |
-| `step-5-preview` | — | per_1m_input_cache_read_tokens | $0.100 |
-| `step-5-preview` | — | per_1m_input_tokens | $1.000 |
-| `step-5-preview` | — | per_1m_output_tokens | $2.700 |
-| `trio-spark-v1.3` | — | per_1m_input_tokens | $0.042 |
+| Model | Canonical | Unit | Price (USD) | List (USD) | Group | Ratio | Effective (USD) |
+|---|---|---|---|---|---|---|---|
+| `bria-fibo-1.5` | — | per_image | $0.055 | — | — | — | — |
+| `claude-fable-5` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `claude-fable-5` | — | per_1m_output_tokens | $12.50 | — | — | — | — |
+| `claude-fable-5-1` | — | per_1m_input_cache_read_tokens | $0.062 | — | — | — | — |
+| `claude-fable-5-1` | — | per_1m_input_tokens | $2.500 | — | — | — | — |
+| `claude-fable-5-1` | — | per_1m_output_tokens | $12.50 | — | — | — | — |
+| `claude-haiku-4-5` | — | per_1m_input_tokens | $0.250 | — | — | — | — |
+| `claude-haiku-4-5` | — | per_1m_output_tokens | $1.250 | — | — | — | — |
+| `claude-haiku-5-5` | — | per_1m_input_cache_read_tokens | $0.0025 | — | — | — | — |
+| `claude-haiku-5-5` | — | per_1m_input_tokens | $0.025 | — | — | — | — |
+| `claude-haiku-5-5` | — | per_1m_output_tokens | $0.125 | — | — | — | — |
+| `claude-opus-4-8` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `claude-opus-4-8` | — | per_1m_output_tokens | $6.250 | — | — | — | — |
+| `claude-opus-5` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `claude-opus-5` | — | per_1m_output_tokens | $6.250 | — | — | — | — |
+| `claude-opus-5-5` | — | per_1m_input_cache_read_tokens | $0.050 | — | — | — | — |
+| `claude-opus-5-5` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `claude-opus-5-5` | — | per_1m_output_tokens | $5.000 | — | — | — | — |
+| `claude-sonnet-5` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `claude-sonnet-5` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `claude-sonnet-5-5` | — | per_1m_input_cache_read_tokens | $0.050 | — | — | — | — |
+| `claude-sonnet-5-5` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `claude-sonnet-5-5` | — | per_1m_output_tokens | $2.500 | — | — | — | — |
+| `deepseek-v4-flash` | — | per_1m_input_cache_read_tokens | $0.015 | — | — | — | — |
+| `deepseek-v4-flash` | — | per_1m_input_tokens | $0.060 | — | — | — | — |
+| `deepseek-v4-flash` | — | per_1m_output_tokens | $0.180 | — | — | — | — |
+| `deepseek-v4-pro` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `deepseek-v4-pro` | — | per_1m_input_tokens | $0.700 | — | — | — | — |
+| `deepseek-v4-pro` | — | per_1m_output_tokens | $2.100 | — | — | — | — |
+| `deepseek-v4.1-flash` | — | per_1m_input_cache_read_tokens | $0.013 | — | — | — | — |
+| `deepseek-v4.1-flash` | — | per_1m_input_tokens | $0.125 | — | — | — | — |
+| `deepseek-v4.1-flash` | — | per_1m_output_tokens | $0.550 | — | — | — | — |
+| `deepseek-v4.1-flash-1017` | — | per_1m_input_cache_read_tokens | $0.0029 | — | — | — | — |
+| `deepseek-v4.1-flash-1017` | — | per_1m_input_tokens | $0.098 | — | — | — | — |
+| `deepseek-v4.1-flash-1017` | — | per_1m_output_tokens | $0.294 | — | — | — | — |
+| `flux.1-schnell` | — | per_image | $0.0030 | — | — | — | — |
+| `flux.2-klein` | — | per_image | $0.020 | — | — | — | — |
+| `flux.2-pro` | — | per_image | $0.027 | — | — | — | — |
+| `gemini-3-flash-preview` | — | per_1m_input_tokens | $0.425 | — | — | — | — |
+| `gemini-3-flash-preview` | — | per_1m_output_tokens | $2.550 | — | — | — | — |
+| `gemini-3-pro-image` | — | per_image | $0.114 | — | — | — | — |
+| `gemini-3.1-flash-lite` | — | per_1m_input_tokens | $0.212 | — | — | — | — |
+| `gemini-3.1-flash-lite` | — | per_1m_output_tokens | $1.275 | — | — | — | — |
+| `gemini-3.1-pro-preview` | — | per_1m_input_tokens | $1.700 | — | — | — | — |
+| `gemini-3.1-pro-preview` | — | per_1m_output_tokens | $10.20 | — | — | — | — |
+| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_tokens | $1.275 | — | — | — | — |
+| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_output_tokens | $7.650 | — | — | — | — |
+| `gemini-3.5-flash-lite` | — | per_1m_input_tokens | $0.255 | — | — | — | — |
+| `gemini-3.5-flash-lite` | — | per_1m_output_tokens | $2.125 | — | — | — | — |
+| `gemini-3.6-flash` | — | per_1m_input_tokens | $0.637 | — | — | — | — |
+| `gemini-3.6-flash` | — | per_1m_output_tokens | $3.188 | — | — | — | — |
+| `gemini-3.7-flash` | — | per_1m_input_cache_read_tokens | $0.064 | — | — | — | — |
+| `gemini-3.7-flash` | — | per_1m_input_tokens | $0.637 | — | — | — | — |
+| `gemini-3.7-flash` | — | per_1m_output_tokens | $3.188 | — | — | — | — |
+| `gemini-3.8-flash` | — | per_1m_input_cache_read_tokens | $0.064 | — | — | — | — |
+| `gemini-3.8-flash` | — | per_1m_input_tokens | $0.637 | — | — | — | — |
+| `gemini-3.8-flash` | — | per_1m_output_tokens | $3.188 | — | — | — | — |
+| `gemini-4-argon` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `gemini-4-argon` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `gemini-4-argon` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `gemini-nano-banana-2.1` | — | per_image | $0.036 | — | — | — | — |
+| `glm-5.2` | — | per_1m_input_cache_read_tokens | $0.105 | — | — | — | — |
+| `glm-5.2` | — | per_1m_input_tokens | $0.700 | — | — | — | — |
+| `glm-5.2` | — | per_1m_output_tokens | $2.200 | — | — | — | — |
+| `glm-5.3` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `glm-5.3` | — | per_1m_input_tokens | $0.600 | — | — | — | — |
+| `glm-5.3` | — | per_1m_output_tokens | $2.200 | — | — | — | — |
+| `glm-5.3-flash` | — | per_1m_input_cache_read_tokens | $0.030 | — | — | — | — |
+| `glm-5.3-flash` | — | per_1m_input_tokens | $0.070 | — | — | — | — |
+| `glm-5.3-flash` | — | per_1m_output_tokens | $0.050 | — | — | — | — |
+| `glm-5.3-prime` | — | per_1m_input_cache_read_tokens | $0.448 | — | — | — | — |
+| `glm-5.3-prime` | — | per_1m_input_tokens | $2.240 | — | — | — | — |
+| `glm-5.3-prime` | — | per_1m_output_tokens | $7.040 | — | — | — | — |
+| `gpt-5.6-luna` | — | per_1m_input_cache_read_tokens | $0.016 | — | — | — | — |
+| `gpt-5.6-luna` | — | per_1m_input_tokens | $0.160 | — | — | — | — |
+| `gpt-5.6-luna` | — | per_1m_output_tokens | $0.960 | — | — | — | — |
+| `gpt-5.6-sol` | — | per_1m_input_cache_read_tokens | $0.160 | — | — | — | — |
+| `gpt-5.6-sol` | — | per_1m_input_tokens | $1.600 | — | — | — | — |
+| `gpt-5.6-sol` | — | per_1m_output_tokens | $8.000 | — | — | — | — |
+| `gpt-5.6-terra` | — | per_1m_input_cache_read_tokens | $0.160 | — | — | — | — |
+| `gpt-5.6-terra` | — | per_1m_input_tokens | $1.600 | — | — | — | — |
+| `gpt-5.6-terra` | — | per_1m_output_tokens | $9.600 | — | — | — | — |
+| `gpt-6-astra` | — | per_1m_input_cache_read_tokens | $1.000 | — | — | — | — |
+| `gpt-6-astra` | — | per_1m_input_tokens | $10.00 | — | — | — | — |
+| `gpt-6-astra` | — | per_1m_output_tokens | $50.00 | — | — | — | — |
+| `gpt-6-luna` | — | per_1m_input_cache_read_tokens | $0.010 | — | — | — | — |
+| `gpt-6-luna` | — | per_1m_input_tokens | $0.100 | — | — | — | — |
+| `gpt-6-luna` | — | per_1m_output_tokens | $0.500 | — | — | — | — |
+| `gpt-6-sol` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `gpt-6-sol` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `gpt-6-sol` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `gpt-6.1-sol` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `gpt-6.1-sol` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `gpt-6.1-sol` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `gpt-image-2` | — | per_image | $0.010 | — | — | — | — |
+| `gpt-image-2.5-flare` | — | per_image | $0.018 | — | — | — | — |
+| `gpt-image-2.5-sunburst` | — | per_image | $0.018 | — | — | — | — |
+| `gpt-oss-120b` | — | per_1m_input_cache_read_tokens | $0.030 | — | — | — | — |
+| `gpt-oss-120b` | — | per_1m_input_tokens | $0.030 | — | — | — | — |
+| `gpt-oss-120b` | — | per_1m_output_tokens | $0.150 | — | — | — | — |
+| `grok-4.5` | — | per_1m_input_cache_read_tokens | $0.400 | — | — | — | — |
+| `grok-4.5` | — | per_1m_input_tokens | $1.600 | — | — | — | — |
+| `grok-4.5` | — | per_1m_output_tokens | $4.800 | — | — | — | — |
+| `grok-4.6` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `grok-4.6` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `grok-4.6` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `grok-4.7` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `grok-4.7` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `grok-4.7` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `hy3` | — | per_1m_input_cache_read_tokens | $0.023 | — | — | — | — |
+| `hy3` | — | per_1m_input_tokens | $0.091 | — | — | — | — |
+| `hy3` | — | per_1m_output_tokens | $0.363 | — | — | — | — |
+| `hy4-preview` | — | per_1m_input_cache_read_tokens | $0.034 | — | — | — | — |
+| `hy4-preview` | — | per_1m_input_tokens | $0.667 | — | — | — | — |
+| `hy4-preview` | — | per_1m_output_tokens | $2.001 | — | — | — | — |
+| `jev-1.13` | — | per_1m_input_tokens | $0.042 | — | — | — | — |
+| `kimi-k2.6` | — | per_1m_input_cache_read_tokens | $0.045 | — | — | — | — |
+| `kimi-k2.6` | — | per_1m_input_tokens | $0.450 | — | — | — | — |
+| `kimi-k2.6` | — | per_1m_output_tokens | $1.950 | — | — | — | — |
+| `kimi-k2.7-code` | — | per_1m_input_cache_read_tokens | $0.180 | — | — | — | — |
+| `kimi-k2.7-code` | — | per_1m_input_tokens | $0.671 | — | — | — | — |
+| `kimi-k2.7-code` | — | per_1m_output_tokens | $3.350 | — | — | — | — |
+| `kimi-k3` | — | per_1m_input_cache_read_tokens | $0.255 | — | — | — | — |
+| `kimi-k3` | — | per_1m_input_tokens | $2.550 | — | — | — | — |
+| `kimi-k3` | — | per_1m_output_tokens | $12.75 | — | — | — | — |
+| `kimi-k3.1-pro` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `kimi-k3.1-pro` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `kimi-k3.1-pro` | — | per_1m_output_tokens | $10.00 | — | — | — | — |
+| `kimi-k3.1-pro-highspeed` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `kimi-k3.1-pro-highspeed` | — | per_1m_input_tokens | $4.000 | — | — | — | — |
+| `kimi-k3.1-pro-highspeed` | — | per_1m_output_tokens | $20.00 | — | — | — | — |
+| `mimo-v2.5` | — | per_1m_input_cache_read_tokens | $0.0022 | — | — | — | — |
+| `mimo-v2.5` | — | per_1m_input_tokens | $0.112 | — | — | — | — |
+| `mimo-v2.5` | — | per_1m_output_tokens | $0.224 | — | — | — | — |
+| `mimo-v2.6-flash` | — | per_1m_input_cache_read_tokens | $0.0022 | — | — | — | — |
+| `mimo-v2.6-flash` | — | per_1m_input_tokens | $0.112 | — | — | — | — |
+| `mimo-v2.6-flash` | — | per_1m_output_tokens | $0.224 | — | — | — | — |
+| `mimo-v2.6-pro` | — | per_1m_input_cache_read_tokens | $0.0029 | — | — | — | — |
+| `mimo-v2.6-pro` | — | per_1m_input_tokens | $0.348 | — | — | — | — |
+| `mimo-v2.6-pro` | — | per_1m_output_tokens | $0.696 | — | — | — | — |
+| `minimax-m3` | — | per_1m_input_cache_read_tokens | $0.048 | — | — | — | — |
+| `minimax-m3` | — | per_1m_input_tokens | $0.240 | — | — | — | — |
+| `minimax-m3` | — | per_1m_output_tokens | $0.960 | — | — | — | — |
+| `mistral-large-4` | — | per_1m_input_cache_read_tokens | $0.070 | — | — | — | — |
+| `mistral-large-4` | — | per_1m_input_tokens | $0.680 | — | — | — | — |
+| `mistral-large-4` | — | per_1m_output_tokens | $2.090 | — | — | — | — |
+| `muse-glimmer-30b` | — | per_1m_input_cache_read_tokens | $0.040 | — | — | — | — |
+| `muse-glimmer-30b` | — | per_1m_input_tokens | $0.300 | — | — | — | — |
+| `muse-glimmer-30b` | — | per_1m_output_tokens | $1.200 | — | — | — | — |
+| `muse-spark-1.2` | — | per_1m_input_cache_read_tokens | $0.120 | — | — | — | — |
+| `muse-spark-1.2` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `muse-spark-1.2` | — | per_1m_output_tokens | $3.400 | — | — | — | — |
+| `muse-spark-1.3` | — | per_1m_input_cache_read_tokens | $0.120 | — | — | — | — |
+| `muse-spark-1.3` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `muse-spark-1.3` | — | per_1m_output_tokens | $3.400 | — | — | — | — |
+| `muse-spark-open` | — | per_1m_input_cache_read_tokens | $0.150 | — | — | — | — |
+| `muse-spark-open` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `muse-spark-open` | — | per_1m_output_tokens | $4.250 | — | — | — | — |
+| `muse-wonder` | — | per_1m_input_cache_read_tokens | $0.200 | — | — | — | — |
+| `muse-wonder` | — | per_1m_input_tokens | $4.000 | — | — | — | — |
+| `muse-wonder` | — | per_1m_output_tokens | $20.00 | — | — | — | — |
+| `nemotron-3-ultra` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `nemotron-3-ultra` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `nemotron-3-ultra` | — | per_1m_output_tokens | $2.200 | — | — | — | — |
+| `nemotron-3.5-lightning` | — | per_1m_input_cache_read_tokens | $0.033 | — | — | — | — |
+| `nemotron-3.5-lightning` | — | per_1m_input_tokens | $0.066 | — | — | — | — |
+| `nemotron-3.5-lightning` | — | per_1m_output_tokens | $0.176 | — | — | — | — |
+| `qwen-image-3.0` | — | per_image | $0.040 | — | — | — | — |
+| `qwen3.6-35b` | — | per_1m_input_cache_read_tokens | $0.025 | — | — | — | — |
+| `qwen3.6-35b` | — | per_1m_input_tokens | $0.050 | — | — | — | — |
+| `qwen3.6-35b` | — | per_1m_output_tokens | $0.700 | — | — | — | — |
+| `qwen3.6-plus` | — | per_1m_input_tokens | $0.260 | — | — | — | — |
+| `qwen3.6-plus` | — | per_1m_output_tokens | $1.560 | — | — | — | — |
+| `qwen3.7-flash` | — | per_1m_input_cache_read_tokens | $0.0048 | — | — | — | — |
+| `qwen3.7-flash` | — | per_1m_input_tokens | $0.024 | — | — | — | — |
+| `qwen3.7-flash` | — | per_1m_output_tokens | $0.104 | — | — | — | — |
+| `qwen3.7-max` | — | per_1m_input_cache_read_tokens | $0.250 | — | — | — | — |
+| `qwen3.7-max` | — | per_1m_input_tokens | $1.250 | — | — | — | — |
+| `qwen3.7-max` | — | per_1m_output_tokens | $3.750 | — | — | — | — |
+| `qwen3.7-plus` | — | per_1m_input_cache_read_tokens | $0.051 | — | — | — | — |
+| `qwen3.7-plus` | — | per_1m_input_tokens | $0.256 | — | — | — | — |
+| `qwen3.7-plus` | — | per_1m_output_tokens | $1.024 | — | — | — | — |
+| `qwen3.8-27b` | — | per_1m_input_cache_read_tokens | $0.068 | — | — | — | — |
+| `qwen3.8-27b` | — | per_1m_input_tokens | $0.340 | — | — | — | — |
+| `qwen3.8-27b` | — | per_1m_output_tokens | $2.040 | — | — | — | — |
+| `qwen3.8-27b-decentered` | — | per_1m_input_tokens | $0.238 | — | — | — | — |
+| `qwen3.8-27b-decentered` | — | per_1m_output_tokens | $1.428 | — | — | — | — |
+| `qwen3.8-flash-next` | — | per_1m_input_cache_read_tokens | $0.013 | — | — | — | — |
+| `qwen3.8-flash-next` | — | per_1m_input_tokens | $0.120 | — | — | — | — |
+| `qwen3.8-flash-next` | — | per_1m_output_tokens | $0.376 | — | — | — | — |
+| `qwen3.8-max` | — | per_1m_input_cache_read_tokens | $0.250 | — | — | — | — |
+| `qwen3.8-max` | — | per_1m_input_tokens | $2.000 | — | — | — | — |
+| `qwen3.8-max` | — | per_1m_output_tokens | $6.000 | — | — | — | — |
+| `qwen3.8-max-prime` | — | per_1m_input_cache_read_tokens | $0.500 | — | — | — | — |
+| `qwen3.8-max-prime` | — | per_1m_input_tokens | $4.000 | — | — | — | — |
+| `qwen3.8-max-prime` | — | per_1m_output_tokens | $12.00 | — | — | — | — |
+| `qwen3.8-omni-flash` | — | per_1m_input_cache_read_tokens | $0.016 | — | — | — | — |
+| `qwen3.8-omni-flash` | — | per_1m_input_tokens | $0.150 | — | — | — | — |
+| `qwen3.8-omni-flash` | — | per_1m_output_tokens | $0.470 | — | — | — | — |
+| `sdxl-turbo` | — | per_image | $0.0030 | — | — | — | — |
+| `seedream-4` | — | per_image | $0.055 | — | — | — | — |
+| `seedream-5.0-pro` | — | per_image | $0.070 | — | — | — | — |
+| `step-5-preview` | — | per_1m_input_cache_read_tokens | $0.100 | — | — | — | — |
+| `step-5-preview` | — | per_1m_input_tokens | $1.000 | — | — | — | — |
+| `step-5-preview` | — | per_1m_output_tokens | $2.700 | — | — | — | — |
+| `trio-spark-v1.3` | — | per_1m_input_tokens | $0.042 | — | — | — | — |
 
 ## Relaydance — `relaydance`
 
 Source: <https://relaydance.com/pricing> · Records: 78
 
-| Model | Canonical | Unit | Price (USD) |
-|---|---|---|---|
-| `claude-fable-5` | — | per_1m_input_tokens | $12.50 |
-| `claude-fable-5` | — | per_1m_output_tokens | $62.50 |
-| `claude-haiku-4-5` | — | per_1m_input_tokens | $1.250 |
-| `claude-haiku-4-5` | — | per_1m_output_tokens | $6.250 |
-| `claude-opus-4-6` | — | per_1m_input_tokens | $6.250 |
-| `claude-opus-4-6` | — | per_1m_output_tokens | $31.25 |
-| `claude-opus-4-7` | — | per_1m_input_tokens | $6.250 |
-| `claude-opus-4-7` | — | per_1m_output_tokens | $31.25 |
-| `claude-opus-4-8` | — | per_1m_input_tokens | $6.250 |
-| `claude-opus-4-8` | — | per_1m_output_tokens | $31.25 |
-| `claude-opus-5` | — | per_1m_input_tokens | $6.250 |
-| `claude-opus-5` | — | per_1m_output_tokens | $31.25 |
-| `claude-sonnet-4-6` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.750 |
-| `claude-sonnet-4-6` | `claude-sonnet-4.6` | per_1m_output_tokens | $18.75 |
-| `doubao-seedance-2-0-1080p` | — | per_1m_input_tokens | $9.625 |
-| `doubao-seedance-2-0-1080p` | — | per_1m_output_tokens | $9.625 |
-| `doubao-seedance-2-0-480p` | — | per_1m_input_tokens | $8.750 |
-| `doubao-seedance-2-0-480p` | — | per_1m_output_tokens | $8.750 |
-| `doubao-seedance-2-0-4k` | — | per_1m_input_tokens | $5.000 |
-| `doubao-seedance-2-0-4k` | — | per_1m_output_tokens | $5.000 |
-| `doubao-seedance-2-0-720p` | — | per_1m_input_tokens | $8.750 |
-| `doubao-seedance-2-0-720p` | — | per_1m_output_tokens | $8.750 |
-| `doubao-seedance-2-0-fast-260128` | — | per_1m_input_tokens | $7.000 |
-| `doubao-seedance-2-0-fast-260128` | — | per_1m_output_tokens | $7.000 |
-| `doubao-seedance-2-0-mini-480p` | — | per_1m_input_tokens | $4.375 |
-| `doubao-seedance-2-0-mini-480p` | — | per_1m_output_tokens | $4.375 |
-| `doubao-seedance-2-0-mini-720p` | — | per_1m_input_tokens | $4.375 |
-| `doubao-seedance-2-0-mini-720p` | — | per_1m_output_tokens | $4.375 |
-| `doubao-seedance-2-5-1080p` | — | per_1m_input_tokens | $14.62 |
-| `doubao-seedance-2-5-1080p` | — | per_1m_output_tokens | $14.62 |
-| `doubao-seedance-2-5-480p` | — | per_1m_input_tokens | $13.38 |
-| `doubao-seedance-2-5-480p` | — | per_1m_output_tokens | $13.38 |
-| `doubao-seedance-2-5-720p` | — | per_1m_input_tokens | $13.38 |
-| `doubao-seedance-2-5-720p` | — | per_1m_output_tokens | $13.38 |
-| `gpt-image-2` | — | per_1m_input_tokens | $7.500 |
-| `gpt-image-2` | — | per_1m_output_tokens | $28.12 |
-| `grok-4.5` | — | per_1m_input_tokens | $2.500 |
-| `grok-4.5` | — | per_1m_output_tokens | $7.500 |
-| `grok-image-video` | — | per_second | $0.018 |
-| `grok-video-1.5` | — | per_second | $0.037 |
-| `happyhorse-1.0-i2v` | — | per_second | $0.139 |
-| `happyhorse-1.0-r2v` | — | per_second | $0.139 |
-| `happyhorse-1.0-t2v` | — | per_second | $0.139 |
-| `happyhorse-1.0-video-edit` | — | per_second | $0.139 |
-| `kling-v2-6` | — | per_request | $0.052 |
-| `kling-v2-6-pro` | — | per_request | $0.087 |
-| `kling-v3` | — | per_request | $0.105 |
-| `kling-v3-omni` | — | per_request | $0.105 |
-| `kling-v3-omni-pro` | — | per_request | $0.140 |
-| `kling-v3-pro` | — | per_request | $0.140 |
-| `minimax-h3-2k` | — | per_1m_input_tokens | $7.523 |
-| `minimax-h3-2k` | — | per_1m_output_tokens | $7.523 |
-| `minimax-h3-768p` | — | per_1m_input_tokens | $4.630 |
-| `minimax-h3-768p` | — | per_1m_output_tokens | $4.630 |
-| `seedance-1-5-pro-no-audio` | — | per_1m_input_tokens | $1.500 |
-| `seedance-1-5-pro-no-audio` | — | per_1m_output_tokens | $1.500 |
-| `seedance-1-5-pro-with-audio` | — | per_1m_input_tokens | $3.000 |
-| `seedance-1-5-pro-with-audio` | — | per_1m_output_tokens | $3.000 |
-| `seedance-2-5-nsfw` | — | per_1m_input_tokens | $13.38 |
-| `seedance-2-5-nsfw` | — | per_1m_output_tokens | $13.38 |
-| `seedance-2-5-nsfw-1080p` | — | per_1m_input_tokens | $14.62 |
-| `seedance-2-5-nsfw-1080p` | — | per_1m_output_tokens | $14.62 |
-| `seedance-fast-nsfw` | — | per_1m_input_tokens | $7.000 |
-| `seedance-fast-nsfw` | — | per_1m_output_tokens | $7.000 |
-| `seedance-mini-nsfw` | — | per_1m_input_tokens | $4.375 |
-| `seedance-mini-nsfw` | — | per_1m_output_tokens | $4.375 |
-| `seedance-nsfw` | — | per_1m_input_tokens | $8.750 |
-| `seedance-nsfw` | — | per_1m_output_tokens | $8.750 |
-| `seedance-nsfw-1080p` | — | per_1m_input_tokens | $9.625 |
-| `seedance-nsfw-1080p` | — | per_1m_output_tokens | $9.625 |
-| `seedance-nsfw-4k` | — | per_1m_input_tokens | $5.000 |
-| `seedance-nsfw-4k` | — | per_1m_output_tokens | $5.000 |
-| `seedance-nsfw-720p` | — | per_1m_input_tokens | $8.750 |
-| `seedance-nsfw-720p` | — | per_1m_output_tokens | $8.750 |
-| `seedance-upscale-1080p` | — | per_second | $0.0086 |
-| `seedance-upscale-2k` | — | per_second | $0.017 |
-| `seedance-upscale-4k` | — | per_second | $0.034 |
-| `seedance-upscale-720p` | — | per_second | $0.0043 |
+| Model | Canonical | Unit | Price (USD) | List (USD) | Group | Ratio | Effective (USD) |
+|---|---|---|---|---|---|---|---|
+| `claude-fable-5` | — | per_1m_input_tokens | $12.50 | $12.50 | default | 1 | $12.50 |
+| `claude-fable-5` | — | per_1m_output_tokens | $62.50 | $62.50 | default | 1 | $62.50 |
+| `claude-haiku-4-5` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | $1.250 |
+| `claude-haiku-4-5` | — | per_1m_output_tokens | $6.250 | $6.250 | default | 1 | $6.250 |
+| `claude-opus-4-6` | — | per_1m_input_tokens | $6.250 | $6.250 | default | 1 | $6.250 |
+| `claude-opus-4-6` | — | per_1m_output_tokens | $31.25 | $31.25 | default | 1 | $31.25 |
+| `claude-opus-4-7` | — | per_1m_input_tokens | $6.250 | $6.250 | default | 1 | $6.250 |
+| `claude-opus-4-7` | — | per_1m_output_tokens | $31.25 | $31.25 | default | 1 | $31.25 |
+| `claude-opus-4-8` | — | per_1m_input_tokens | $6.250 | $6.250 | default | 1 | $6.250 |
+| `claude-opus-4-8` | — | per_1m_output_tokens | $31.25 | $31.25 | default | 1 | $31.25 |
+| `claude-opus-5` | — | per_1m_input_tokens | $6.250 | $6.250 | default | 1 | $6.250 |
+| `claude-opus-5` | — | per_1m_output_tokens | $31.25 | $31.25 | default | 1 | $31.25 |
+| `claude-sonnet-4-6` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.750 | $3.750 | default | 1 | $3.750 |
+| `claude-sonnet-4-6` | `claude-sonnet-4.6` | per_1m_output_tokens | $18.75 | $18.75 | default | 1 | $18.75 |
+| `doubao-seedance-2-0-1080p` | — | per_1m_input_tokens | $9.625 | $9.625 | default | 1 | $9.625 |
+| `doubao-seedance-2-0-1080p` | — | per_1m_output_tokens | $9.625 | $9.625 | default | 1 | $9.625 |
+| `doubao-seedance-2-0-480p` | — | per_1m_input_tokens | $8.750 | $8.750 | default | 1 | $8.750 |
+| `doubao-seedance-2-0-480p` | — | per_1m_output_tokens | $8.750 | $8.750 | default | 1 | $8.750 |
+| `doubao-seedance-2-0-4k` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $5.000 |
+| `doubao-seedance-2-0-4k` | — | per_1m_output_tokens | $5.000 | $5.000 | default | 1 | $5.000 |
+| `doubao-seedance-2-0-720p` | — | per_1m_input_tokens | $8.750 | $8.750 | default | 1 | $8.750 |
+| `doubao-seedance-2-0-720p` | — | per_1m_output_tokens | $8.750 | $8.750 | default | 1 | $8.750 |
+| `doubao-seedance-2-0-fast-260128` | — | per_1m_input_tokens | $7.000 | $7.000 | default | 1 | $7.000 |
+| `doubao-seedance-2-0-fast-260128` | — | per_1m_output_tokens | $7.000 | $7.000 | default | 1 | $7.000 |
+| `doubao-seedance-2-0-mini-480p` | — | per_1m_input_tokens | $4.375 | $4.375 | default | 1 | $4.375 |
+| `doubao-seedance-2-0-mini-480p` | — | per_1m_output_tokens | $4.375 | $4.375 | default | 1 | $4.375 |
+| `doubao-seedance-2-0-mini-720p` | — | per_1m_input_tokens | $4.375 | $4.375 | default | 1 | $4.375 |
+| `doubao-seedance-2-0-mini-720p` | — | per_1m_output_tokens | $4.375 | $4.375 | default | 1 | $4.375 |
+| `doubao-seedance-2-5-1080p` | — | per_1m_input_tokens | $14.62 | $14.62 | default | 1 | $14.62 |
+| `doubao-seedance-2-5-1080p` | — | per_1m_output_tokens | $14.62 | $14.62 | default | 1 | $14.62 |
+| `doubao-seedance-2-5-480p` | — | per_1m_input_tokens | $13.38 | $13.38 | default | 1 | $13.38 |
+| `doubao-seedance-2-5-480p` | — | per_1m_output_tokens | $13.38 | $13.38 | default | 1 | $13.38 |
+| `doubao-seedance-2-5-720p` | — | per_1m_input_tokens | $13.38 | $13.38 | default | 1 | $13.38 |
+| `doubao-seedance-2-5-720p` | — | per_1m_output_tokens | $13.38 | $13.38 | default | 1 | $13.38 |
+| `gpt-image-2` | — | per_1m_input_tokens | $7.500 | $7.500 | default | 1 | $7.500 |
+| `gpt-image-2` | — | per_1m_output_tokens | $28.12 | $28.12 | default | 1 | $28.12 |
+| `grok-4.5` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | $2.500 |
+| `grok-4.5` | — | per_1m_output_tokens | $7.500 | $7.500 | default | 1 | $7.500 |
+| `grok-image-video` | — | per_second | $0.018 | $0.018 | default | 1 | $0.018 |
+| `grok-video-1.5` | — | per_second | $0.037 | $0.037 | default | 1 | $0.037 |
+| `happyhorse-1.0-i2v` | — | per_second | $0.139 | $0.139 | default | 1 | $0.139 |
+| `happyhorse-1.0-r2v` | — | per_second | $0.139 | $0.139 | default | 1 | $0.139 |
+| `happyhorse-1.0-t2v` | — | per_second | $0.139 | $0.139 | default | 1 | $0.139 |
+| `happyhorse-1.0-video-edit` | — | per_second | $0.139 | $0.139 | default | 1 | $0.139 |
+| `kling-v2-6` | — | per_request | $0.052 | $0.052 | default | 1 | $0.052 |
+| `kling-v2-6-pro` | — | per_request | $0.087 | $0.087 | default | 1 | $0.087 |
+| `kling-v3` | — | per_request | $0.105 | $0.105 | default | 1 | $0.105 |
+| `kling-v3-omni` | — | per_request | $0.105 | $0.105 | default | 1 | $0.105 |
+| `kling-v3-omni-pro` | — | per_request | $0.140 | $0.140 | default | 1 | $0.140 |
+| `kling-v3-pro` | — | per_request | $0.140 | $0.140 | default | 1 | $0.140 |
+| `minimax-h3-2k` | — | per_1m_input_tokens | $7.523 | $7.523 | default | 1 | $7.523 |
+| `minimax-h3-2k` | — | per_1m_output_tokens | $7.523 | $7.523 | default | 1 | $7.523 |
+| `minimax-h3-768p` | — | per_1m_input_tokens | $4.630 | $4.630 | default | 1 | $4.630 |
+| `minimax-h3-768p` | — | per_1m_output_tokens | $4.630 | $4.630 | default | 1 | $4.630 |
+| `seedance-1-5-pro-no-audio` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | $1.500 |
+| `seedance-1-5-pro-no-audio` | — | per_1m_output_tokens | $1.500 | $1.500 | default | 1 | $1.500 |
+| `seedance-1-5-pro-with-audio` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | $3.000 |
+| `seedance-1-5-pro-with-audio` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | $3.000 |
+| `seedance-2-5-nsfw` | — | per_1m_input_tokens | $13.38 | $13.38 | default | 1 | $13.38 |
+| `seedance-2-5-nsfw` | — | per_1m_output_tokens | $13.38 | $13.38 | default | 1 | $13.38 |
+| `seedance-2-5-nsfw-1080p` | — | per_1m_input_tokens | $14.62 | $14.62 | default | 1 | $14.62 |
+| `seedance-2-5-nsfw-1080p` | — | per_1m_output_tokens | $14.62 | $14.62 | default | 1 | $14.62 |
+| `seedance-fast-nsfw` | — | per_1m_input_tokens | $7.000 | $7.000 | default | 1 | $7.000 |
+| `seedance-fast-nsfw` | — | per_1m_output_tokens | $7.000 | $7.000 | default | 1 | $7.000 |
+| `seedance-mini-nsfw` | — | per_1m_input_tokens | $4.375 | $4.375 | default | 1 | $4.375 |
+| `seedance-mini-nsfw` | — | per_1m_output_tokens | $4.375 | $4.375 | default | 1 | $4.375 |
+| `seedance-nsfw` | — | per_1m_input_tokens | $8.750 | $8.750 | default | 1 | $8.750 |
+| `seedance-nsfw` | — | per_1m_output_tokens | $8.750 | $8.750 | default | 1 | $8.750 |
+| `seedance-nsfw-1080p` | — | per_1m_input_tokens | $9.625 | $9.625 | default | 1 | $9.625 |
+| `seedance-nsfw-1080p` | — | per_1m_output_tokens | $9.625 | $9.625 | default | 1 | $9.625 |
+| `seedance-nsfw-4k` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $5.000 |
+| `seedance-nsfw-4k` | — | per_1m_output_tokens | $5.000 | $5.000 | default | 1 | $5.000 |
+| `seedance-nsfw-720p` | — | per_1m_input_tokens | $8.750 | $8.750 | default | 1 | $8.750 |
+| `seedance-nsfw-720p` | — | per_1m_output_tokens | $8.750 | $8.750 | default | 1 | $8.750 |
+| `seedance-upscale-1080p` | — | per_second | $0.0086 | $0.0086 | default | 1 | $0.0086 |
+| `seedance-upscale-2k` | — | per_second | $0.017 | $0.017 | default | 1 | $0.017 |
+| `seedance-upscale-4k` | — | per_second | $0.034 | $0.034 | default | 1 | $0.034 |
+| `seedance-upscale-720p` | — | per_second | $0.0043 | $0.0043 | default | 1 | $0.0043 |
 
 ## TeamoRouter — `teamorouter`
 
 Source: <https://teamorouter.com/pricing> · Records: 12
 
-| Model | Canonical | Unit | Price (USD) |
-|---|---|---|---|
-| `Claude Fable 5` | — | per_1m_input_tokens | $2.420 |
-| `Claude Fable 5` | — | per_1m_output_tokens | $12.10 |
-| `Claude Opus 4.8` | `claude-opus-4.8` | per_1m_input_tokens | $1.330 |
-| `Claude Opus 4.8` | `claude-opus-4.8` | per_1m_output_tokens | $6.650 |
-| `Claude Sonnet 5` | — | per_1m_input_tokens | $0.500 |
-| `Claude Sonnet 5` | — | per_1m_output_tokens | $2.520 |
-| `GPT-5.5` | — | per_1m_input_tokens | $0.550 |
-| `GPT-5.5` | — | per_1m_output_tokens | $3.300 |
-| `GPT-5.6 Sol` | — | per_1m_input_tokens | $0.530 |
-| `GPT-5.6 Sol` | — | per_1m_output_tokens | $3.180 |
-| `Gemini 3.1 Pro (Preview)` | — | per_1m_input_tokens | $0.290 |
-| `Gemini 3.1 Pro (Preview)` | — | per_1m_output_tokens | $1.730 |
+| Model | Canonical | Unit | Price (USD) | List (USD) | Group | Ratio | Effective (USD) |
+|---|---|---|---|---|---|---|---|
+| `Claude Fable 5` | — | per_1m_input_tokens | $2.420 | — | — | — | — |
+| `Claude Fable 5` | — | per_1m_output_tokens | $12.10 | — | — | — | — |
+| `Claude Opus 4.8` | `claude-opus-4.8` | per_1m_input_tokens | $1.330 | — | — | — | — |
+| `Claude Opus 4.8` | `claude-opus-4.8` | per_1m_output_tokens | $6.650 | — | — | — | — |
+| `Claude Sonnet 5` | — | per_1m_input_tokens | $0.500 | — | — | — | — |
+| `Claude Sonnet 5` | — | per_1m_output_tokens | $2.520 | — | — | — | — |
+| `GPT-5.5` | — | per_1m_input_tokens | $0.550 | — | — | — | — |
+| `GPT-5.5` | — | per_1m_output_tokens | $3.300 | — | — | — | — |
+| `GPT-5.6 Sol` | — | per_1m_input_tokens | $0.530 | — | — | — | — |
+| `GPT-5.6 Sol` | — | per_1m_output_tokens | $3.180 | — | — | — | — |
+| `Gemini 3.1 Pro (Preview)` | — | per_1m_input_tokens | $0.290 | — | — | — | — |
+| `Gemini 3.1 Pro (Preview)` | — | per_1m_output_tokens | $1.730 | — | — | — | — |
 
 ## UiUiAPI — `uiuiapi`
 
-Source: <https://uiuiapi.com> · Records: 666
+Source: <https://uiuiapi.com> · Records: 425
 
-| Model | Canonical | Unit | Price (USD) |
-|---|---|---|---|
-| `babbage-002` | — | per_1m_input_tokens | $75.00 |
-| `babbage-002` | — | per_1m_output_tokens | $75.00 |
-| `claude-3-5-haiku-20241022` | — | per_1m_input_tokens | $1.000 |
-| `claude-3-5-haiku-20241022` | — | per_1m_output_tokens | $5.000 |
-| `claude-3-5-sonnet-20240620` | — | per_1m_input_tokens | $3.000 |
-| `claude-3-5-sonnet-20240620` | — | per_1m_output_tokens | $15.00 |
-| `claude-3-5-sonnet-20241022` | — | per_1m_input_tokens | $3.000 |
-| `claude-3-5-sonnet-20241022` | — | per_1m_output_tokens | $15.00 |
-| `claude-fable-5` | — | per_1m_input_tokens | $10.00 |
-| `claude-fable-5` | — | per_1m_output_tokens | $50.00 |
-| `claude-fable-5-1` | — | per_1m_input_tokens | $10.00 |
-| `claude-fable-5-1` | — | per_1m_output_tokens | $50.00 |
-| `claude-fable-5-1-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-fable-5-1-thinking` | — | per_1m_output_tokens | $75.00 |
-| `claude-fable-5-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-fable-5-thinking` | — | per_1m_output_tokens | $75.00 |
-| `claude-haiku-4-5-20251001` | — | per_1m_input_tokens | $1.000 |
-| `claude-haiku-4-5-20251001` | — | per_1m_output_tokens | $5.000 |
-| `claude-haiku-4-5-20251001-thinking` | — | per_1m_input_tokens | $0.800 |
-| `claude-haiku-4-5-20251001-thinking` | — | per_1m_output_tokens | $4.000 |
-| `claude-opus-4-1-20250805` | — | per_1m_input_tokens | $15.00 |
-| `claude-opus-4-1-20250805` | — | per_1m_output_tokens | $75.00 |
-| `claude-opus-4-1-20250805-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-4-1-20250805-thinking` | — | per_1m_output_tokens | $375.00 |
-| `claude-opus-4-20250514` | — | per_1m_input_tokens | $15.00 |
-| `claude-opus-4-20250514` | — | per_1m_output_tokens | $75.00 |
-| `claude-opus-4-20250514-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-4-20250514-thinking` | — | per_1m_output_tokens | $375.00 |
-| `claude-opus-4-5-20251101` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-5-20251101` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4-5-20251101-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-4-5-20251101-thinking` | — | per_1m_output_tokens | $375.00 |
-| `claude-opus-4-6` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-4-6` | — | per_1m_output_tokens | $375.00 |
-| `claude-opus-4-6-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-4-6-thinking` | — | per_1m_output_tokens | $375.00 |
-| `claude-opus-4-7` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-4-7` | — | per_1m_output_tokens | $375.00 |
-| `claude-opus-4-7-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-4-7-thinking` | — | per_1m_output_tokens | $375.00 |
-| `claude-opus-4-8` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-4-8` | — | per_1m_output_tokens | $375.00 |
-| `claude-opus-4-8-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-4-8-thinking` | — | per_1m_output_tokens | $375.00 |
-| `claude-opus-5` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-5` | — | per_1m_output_tokens | $75.00 |
-| `claude-opus-5-5` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-5-5` | — | per_1m_output_tokens | $75.00 |
-| `claude-opus-5-5-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-5-5-thinking` | — | per_1m_output_tokens | $75.00 |
-| `claude-opus-5-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-opus-5-thinking` | — | per_1m_output_tokens | $75.00 |
-| `claude-sonnet-4-20250514` | — | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4-20250514` | — | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-4-20250514-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-sonnet-4-20250514-thinking` | — | per_1m_output_tokens | $375.00 |
-| `claude-sonnet-4-5` | — | per_1m_input_tokens | $75.00 |
-| `claude-sonnet-4-5` | — | per_1m_output_tokens | $375.00 |
-| `claude-sonnet-4-5-20250929` | — | per_1m_input_tokens | $75.00 |
-| `claude-sonnet-4-5-20250929` | — | per_1m_output_tokens | $375.00 |
-| `claude-sonnet-4-5-20250929-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-sonnet-4-5-20250929-thinking` | — | per_1m_output_tokens | $375.00 |
-| `claude-sonnet-4-6` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4-6` | `claude-sonnet-4.6` | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-4-6-thinking` | — | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4-6-thinking` | — | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-5` | — | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-5` | — | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-5-5` | — | per_1m_input_tokens | $75.00 |
-| `claude-sonnet-5-5` | — | per_1m_output_tokens | $75.00 |
-| `claude-sonnet-5-thinking` | — | per_1m_input_tokens | $75.00 |
-| `claude-sonnet-5-thinking` | — | per_1m_output_tokens | $75.00 |
-| `codex-auto-review` | — | per_1m_input_tokens | $2.500 |
-| `codex-auto-review` | — | per_1m_output_tokens | $15.00 |
-| `davinci-002` | — | per_1m_input_tokens | $75.00 |
-| `davinci-002` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1-5-pro-256k-250115` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1-5-pro-256k-250115` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1-5-pro-32k-250115` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1-5-pro-32k-250115` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1-5-thinking-pro-250415` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1-5-thinking-pro-250415` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1-5-thinking-pro-vision` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1-5-thinking-pro-vision` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1-5-thinking-pro-vision-250415` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1-5-thinking-pro-vision-250415` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1-5-thinking-vision-pro-250428` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1-5-thinking-vision-pro-250428` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1-5-ui-tars-250428` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1-5-ui-tars-250428` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1-5-vision-pro-32k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1-5-vision-pro-32k` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1-5-vision-pro-32k-250115` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1-5-vision-pro-32k-250115` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1.5-lite-32k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1.5-lite-32k` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1.5-pro-256k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1.5-pro-256k` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1.5-pro-32k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1.5-pro-32k` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1.5-search` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1.5-search` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1.5-vision-pro-250328` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1.5-vision-pro-250328` | — | per_1m_output_tokens | $75.00 |
-| `doubao-1.5-vision-pro-32k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-1.5-vision-pro-32k` | — | per_1m_output_tokens | $75.00 |
-| `doubao-lite-128k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-lite-128k` | — | per_1m_output_tokens | $75.00 |
-| `doubao-lite-32k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-lite-32k` | — | per_1m_output_tokens | $75.00 |
-| `doubao-lite-4k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-lite-4k` | — | per_1m_output_tokens | $75.00 |
-| `doubao-pro-128k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-pro-128k` | — | per_1m_output_tokens | $75.00 |
-| `doubao-pro-256k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-pro-256k` | — | per_1m_output_tokens | $75.00 |
-| `doubao-pro-32k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-pro-32k` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-1-6-06-15` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-1-6-06-15` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-1-6-250615` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-1-6-250615` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-1-6-251015` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-1-6-251015` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-1-6-flash-250615` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-1-6-flash-250615` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-1-6-flash-250828` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-1-6-flash-250828` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-1-6-lite-251015` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-1-6-lite-251015` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-1-6-thinking-250615` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-1-6-thinking-250615` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-1-6-thinking-250715` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-1-6-thinking-250715` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-1-6-vision-250815` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-1-6-vision-250815` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-1-8-251215` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-1-8-251215` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-1-8-251228` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-1-8-251228` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-1-8-251228-thinking` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-1-8-251228-thinking` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-2-0-code-preview-260215` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-2-0-code-preview-260215` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-2-0-lite-260215` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-2-0-lite-260215` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-2-0-lite-260428` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-2-0-lite-260428` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-2-0-mini-260215` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-2-0-mini-260215` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-2-0-mini-260428` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-2-0-mini-260428` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-2-0-pro-260215` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-2-0-pro-260215` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-2-1-pro-260628` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-2-1-pro-260628` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-2-1-turbo-260628` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-2-1-turbo-260628` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-code-preview-251028` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-code-preview-251028` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-code-preview-latest` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-code-preview-latest` | — | per_1m_output_tokens | $75.00 |
-| `doubao-seed-evolving` | — | per_1m_input_tokens | $75.00 |
-| `doubao-seed-evolving` | — | per_1m_output_tokens | $75.00 |
-| `doubao-vision-lite-32k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-vision-lite-32k` | — | per_1m_output_tokens | $75.00 |
-| `doubao-vision-pro-32k` | — | per_1m_input_tokens | $75.00 |
-| `doubao-vision-pro-32k` | — | per_1m_output_tokens | $75.00 |
-| `gemini-2.5-flash` | — | per_1m_input_tokens | $0.300 |
-| `gemini-2.5-flash` | — | per_1m_output_tokens | $2.500 |
-| `gemini-2.5-flash-image` | — | per_image | $0.040 |
-| `gemini-2.5-flash-lite` | — | per_1m_input_tokens | $0.100 |
-| `gemini-2.5-flash-lite` | — | per_1m_output_tokens | $0.400 |
-| `gemini-2.5-flash-lite-nothinking` | — | per_1m_input_tokens | $0.100 |
-| `gemini-2.5-flash-lite-nothinking` | — | per_1m_output_tokens | $0.400 |
-| `gemini-2.5-flash-lite-thinking` | — | per_1m_input_tokens | $0.100 |
-| `gemini-2.5-flash-lite-thinking` | — | per_1m_output_tokens | $0.400 |
-| `gemini-2.5-flash-lite-thinking-1024` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-lite-thinking-1024` | — | per_1m_output_tokens | $300.00 |
-| `gemini-2.5-flash-lite-thinking-128` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-lite-thinking-128` | — | per_1m_output_tokens | $300.00 |
-| `gemini-2.5-flash-lite-thinking-16384` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-lite-thinking-16384` | — | per_1m_output_tokens | $300.00 |
-| `gemini-2.5-flash-lite-thinking-2048` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-lite-thinking-2048` | — | per_1m_output_tokens | $300.00 |
-| `gemini-2.5-flash-lite-thinking-32768` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-lite-thinking-32768` | — | per_1m_output_tokens | $300.00 |
-| `gemini-2.5-flash-lite-thinking-4096` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-lite-thinking-4096` | — | per_1m_output_tokens | $300.00 |
-| `gemini-2.5-flash-lite-thinking-512` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-lite-thinking-512` | — | per_1m_output_tokens | $300.00 |
-| `gemini-2.5-flash-lite-thinking-8192` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-lite-thinking-8192` | — | per_1m_output_tokens | $300.00 |
-| `gemini-2.5-flash-nothinking` | — | per_1m_input_tokens | $0.300 |
-| `gemini-2.5-flash-nothinking` | — | per_1m_output_tokens | $2.500 |
-| `gemini-2.5-flash-thinking` | — | per_1m_input_tokens | $0.300 |
-| `gemini-2.5-flash-thinking` | — | per_1m_output_tokens | $2.500 |
-| `gemini-2.5-flash-thinking-1024` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-thinking-1024` | — | per_1m_output_tokens | $625.00 |
-| `gemini-2.5-flash-thinking-128` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-thinking-128` | — | per_1m_output_tokens | $625.00 |
-| `gemini-2.5-flash-thinking-16384` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-thinking-16384` | — | per_1m_output_tokens | $625.00 |
-| `gemini-2.5-flash-thinking-2048` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-thinking-2048` | — | per_1m_output_tokens | $625.00 |
-| `gemini-2.5-flash-thinking-32768` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-thinking-32768` | — | per_1m_output_tokens | $625.00 |
-| `gemini-2.5-flash-thinking-4096` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-thinking-4096` | — | per_1m_output_tokens | $625.00 |
-| `gemini-2.5-flash-thinking-512` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-thinking-512` | — | per_1m_output_tokens | $625.00 |
-| `gemini-2.5-flash-thinking-8192` | — | per_1m_input_tokens | $75.00 |
-| `gemini-2.5-flash-thinking-8192` | — | per_1m_output_tokens | $625.00 |
-| `gemini-3-flash-preview` | — | per_1m_input_tokens | $0.500 |
-| `gemini-3-flash-preview` | — | per_1m_output_tokens | $3.000 |
-| `gemini-3-flash-preview-nothinking` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3-flash-preview-nothinking` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3-flash-preview-thinking` | — | per_1m_input_tokens | $0.500 |
-| `gemini-3-flash-preview-thinking` | — | per_1m_output_tokens | $3.000 |
-| `gemini-3-flash-preview-thinking-128` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3-flash-preview-thinking-128` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3-pro-image-preview` | — | per_image | $0.240 |
-| `gemini-3-pro-image-preview-2k` | — | per_image | $0.240 |
-| `gemini-3-pro-image-preview-4k` | — | per_image | $0.240 |
-| `gemini-3-pro-image-preview-c` | — | per_image | $0.240 |
-| `gemini-3-pro-preview` | — | per_1m_input_tokens | $2.000 |
-| `gemini-3-pro-preview` | — | per_1m_output_tokens | $12.00 |
-| `gemini-3-pro-preview-nothinking` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3-pro-preview-nothinking` | — | per_1m_output_tokens | $450.00 |
-| `gemini-3-pro-preview-thinking` | — | per_1m_input_tokens | $2.000 |
-| `gemini-3-pro-preview-thinking` | — | per_1m_output_tokens | $12.00 |
-| `gemini-3.1-flash-image-preview` | — | per_image | $0.151 |
-| `gemini-3.1-flash-image-preview-c` | — | per_image | $0.151 |
-| `gemini-3.1-flash-lite` | — | per_1m_input_tokens | $0.250 |
-| `gemini-3.1-flash-lite` | — | per_1m_output_tokens | $1.500 |
-| `gemini-3.1-flash-lite-nothinking` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.1-flash-lite-nothinking` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.1-flash-lite-preview` | — | per_1m_input_tokens | $0.250 |
-| `gemini-3.1-flash-lite-preview` | — | per_1m_output_tokens | $1.500 |
-| `gemini-3.1-flash-lite-thinking` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.1-flash-lite-thinking` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.1-pro-preview` | — | per_1m_input_tokens | $2.000 |
-| `gemini-3.1-pro-preview` | — | per_1m_output_tokens | $12.00 |
-| `gemini-3.1-pro-preview-high` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.1-pro-preview-high` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.1-pro-preview-low` | — | per_1m_input_tokens | $2.000 |
-| `gemini-3.1-pro-preview-low` | — | per_1m_output_tokens | $12.00 |
-| `gemini-3.1-pro-preview-low-nothinking` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.1-pro-preview-low-nothinking` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.1-pro-preview-low-thinking` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.1-pro-preview-low-thinking` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.1-pro-preview-nothinking` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.1-pro-preview-nothinking` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.1-pro-preview-thinking` | — | per_1m_input_tokens | $2.000 |
-| `gemini-3.1-pro-preview-thinking` | — | per_1m_output_tokens | $12.00 |
-| `gemini-3.1-pro-preview-thinking-128` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.1-pro-preview-thinking-128` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_tokens | $1.500 |
-| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_output_tokens | $9.000 |
-| `gemini-3.5-flash-high` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.5-flash-high` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.5-flash-lite` | — | per_1m_input_tokens | $0.300 |
-| `gemini-3.5-flash-lite` | — | per_1m_output_tokens | $2.500 |
-| `gemini-3.5-flash-lite-nothinking` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.5-flash-lite-nothinking` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.5-flash-lite-thinking` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.5-flash-lite-thinking` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.5-flash-low` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.5-flash-low` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.5-flash-nothinking` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.5-flash-nothinking` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.5-flash-thinking` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.5-flash-thinking` | — | per_1m_output_tokens | $300.00 |
-| `gemini-3.6-flash` | — | per_1m_input_tokens | $1.500 |
-| `gemini-3.6-flash` | — | per_1m_output_tokens | $7.500 |
-| `gemini-3.6-flash-high` | — | per_1m_input_tokens | $1.500 |
-| `gemini-3.6-flash-high` | — | per_1m_output_tokens | $7.500 |
-| `gemini-3.6-flash-low` | — | per_1m_input_tokens | $1.500 |
-| `gemini-3.6-flash-low` | — | per_1m_output_tokens | $7.500 |
-| `gemini-3.6-flash-maxthinking` | — | per_1m_input_tokens | $1.500 |
-| `gemini-3.6-flash-maxthinking` | — | per_1m_output_tokens | $4.500 |
-| `gemini-3.6-flash-medium` | — | per_1m_input_tokens | $1.500 |
-| `gemini-3.6-flash-medium` | — | per_1m_output_tokens | $7.500 |
-| `gemini-3.6-flash-nothinking` | — | per_1m_input_tokens | $1.500 |
-| `gemini-3.6-flash-nothinking` | — | per_1m_output_tokens | $4.500 |
-| `gemini-3.6-flash-thinking` | — | per_1m_input_tokens | $1.500 |
-| `gemini-3.6-flash-thinking` | — | per_1m_output_tokens | $4.500 |
-| `gemini-3.7-flash` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.7-flash` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.7-flash-high` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.7-flash-high` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.7-flash-low` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.7-flash-low` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.7-flash-maxthinking` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.7-flash-maxthinking` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.7-flash-medium` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.7-flash-medium` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.7-flash-nothinking` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.7-flash-nothinking` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.7-flash-thinking` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.7-flash-thinking` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.8-flash` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.8-flash` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.8-flash-high` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.8-flash-high` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.8-flash-low` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.8-flash-low` | — | per_1m_output_tokens | $225.00 |
-| `gemini-3.8-flash-maxthinking` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.8-flash-maxthinking` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.8-flash-medium` | — | per_1m_input_tokens | $75.00 |
-| `gemini-3.8-flash-medium` | — | per_1m_output_tokens | $225.00 |
-| `gemini-3.8-flash-nothinking` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.8-flash-nothinking` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.8-flash-thinking` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.8-flash-thinking` | — | per_1m_output_tokens | $3.750 |
-| `gemini-nano-banana-2.1` | — | per_1m_input_tokens | $75.00 |
-| `gemini-nano-banana-2.1` | — | per_1m_output_tokens | $300.00 |
-| `gemini-nano-banana-2.1-preview` | — | per_1m_input_tokens | $75.00 |
-| `gemini-nano-banana-2.1-preview` | — | per_1m_output_tokens | $300.00 |
-| `gpt-3.5-turbo` | — | per_1m_input_tokens | $0.500 |
-| `gpt-3.5-turbo` | — | per_1m_output_tokens | $1.000 |
-| `gpt-3.5-turbo-0125` | — | per_1m_input_tokens | $0.500 |
-| `gpt-3.5-turbo-0125` | — | per_1m_output_tokens | $1.000 |
-| `gpt-3.5-turbo-0301` | — | per_1m_input_tokens | $75.00 |
-| `gpt-3.5-turbo-0301` | — | per_1m_output_tokens | $150.00 |
-| `gpt-3.5-turbo-instruct` | — | per_1m_input_tokens | $1.500 |
-| `gpt-3.5-turbo-instruct` | — | per_1m_output_tokens | $3.000 |
-| `gpt-3.5-turbo-instruct-0914` | — | per_1m_input_tokens | $75.00 |
-| `gpt-3.5-turbo-instruct-0914` | — | per_1m_output_tokens | $150.00 |
-| `gpt-4` | — | per_1m_input_tokens | $30.00 |
-| `gpt-4` | — | per_1m_output_tokens | $60.00 |
-| `gpt-4-0125-preview` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-0125-preview` | — | per_1m_output_tokens | $20.00 |
-| `gpt-4-0314` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4-0314` | — | per_1m_output_tokens | $150.00 |
-| `gpt-4-0613` | — | per_1m_input_tokens | $30.00 |
-| `gpt-4-0613` | — | per_1m_output_tokens | $60.00 |
-| `gpt-4-1106-preview` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-1106-preview` | — | per_1m_output_tokens | $20.00 |
-| `gpt-4-32k` | — | per_1m_input_tokens | $60.00 |
-| `gpt-4-32k` | — | per_1m_output_tokens | $120.00 |
-| `gpt-4-32k-0314` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4-32k-0314` | — | per_1m_output_tokens | $150.00 |
-| `gpt-4-32k-0613` | — | per_1m_input_tokens | $60.00 |
-| `gpt-4-32k-0613` | — | per_1m_output_tokens | $120.00 |
-| `gpt-4-dalle` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4-dalle` | — | per_1m_output_tokens | $150.00 |
-| `gpt-4-turbo` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-turbo` | — | per_1m_output_tokens | $30.00 |
-| `gpt-4-turbo-2024-04-09` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-turbo-2024-04-09` | — | per_1m_output_tokens | $30.00 |
-| `gpt-4-turbo-preview` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-turbo-preview` | — | per_1m_output_tokens | $30.00 |
-| `gpt-4-vision-preview` | — | per_1m_input_tokens | $10.00 |
-| `gpt-4-vision-preview` | — | per_1m_output_tokens | $20.00 |
-| `gpt-4.1` | — | per_1m_input_tokens | $2.000 |
-| `gpt-4.1` | — | per_1m_output_tokens | $8.000 |
-| `gpt-4.1-2025-04-14` | — | per_1m_input_tokens | $2.000 |
-| `gpt-4.1-2025-04-14` | — | per_1m_output_tokens | $8.000 |
-| `gpt-4.1-mini` | — | per_1m_input_tokens | $0.400 |
-| `gpt-4.1-mini` | — | per_1m_output_tokens | $1.600 |
-| `gpt-4.1-mini-2025-04-14` | — | per_1m_input_tokens | $0.400 |
-| `gpt-4.1-mini-2025-04-14` | — | per_1m_output_tokens | $1.600 |
-| `gpt-4.1-nano` | — | per_1m_input_tokens | $0.100 |
-| `gpt-4.1-nano` | — | per_1m_output_tokens | $0.400 |
-| `gpt-4.1-nano-2025-04-14` | — | per_1m_input_tokens | $0.100 |
-| `gpt-4.1-nano-2025-04-14` | — | per_1m_output_tokens | $0.400 |
-| `gpt-4.5-preview` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4.5-preview` | — | per_1m_output_tokens | $150.00 |
-| `gpt-4.5-preview-2025-02-27` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4.5-preview-2025-02-27` | — | per_1m_output_tokens | $150.00 |
-| `gpt-4o` | — | per_1m_input_tokens | $2.500 |
-| `gpt-4o` | — | per_1m_output_tokens | $10.00 |
-| `gpt-4o-2024-05-13` | — | per_1m_input_tokens | $5.000 |
-| `gpt-4o-2024-05-13` | — | per_1m_output_tokens | $15.00 |
-| `gpt-4o-2024-08-06` | — | per_1m_input_tokens | $2.500 |
-| `gpt-4o-2024-08-06` | — | per_1m_output_tokens | $10.00 |
-| `gpt-4o-2024-11-20` | — | per_1m_input_tokens | $2.500 |
-| `gpt-4o-2024-11-20` | — | per_1m_output_tokens | $10.00 |
-| `gpt-4o-audio-preview` | — | per_1m_input_tokens | $2.500 |
-| `gpt-4o-audio-preview` | — | per_1m_output_tokens | $10.00 |
-| `gpt-4o-audio-preview-2024-12-17` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4o-audio-preview-2024-12-17` | — | per_1m_output_tokens | $300.00 |
-| `gpt-4o-audio-preview-2025-06-03` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4o-audio-preview-2025-06-03` | — | per_1m_output_tokens | $300.00 |
-| `gpt-4o-dalle` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4o-dalle` | — | per_1m_output_tokens | $300.00 |
-| `gpt-4o-image` | — | per_image | $0.050 |
-| `gpt-4o-image-vip` | — | per_image | $0.110 |
-| `gpt-4o-mini` | — | per_1m_input_tokens | $0.150 |
-| `gpt-4o-mini` | — | per_1m_output_tokens | $0.600 |
-| `gpt-4o-mini-2024-07-18` | — | per_1m_input_tokens | $0.150 |
-| `gpt-4o-mini-2024-07-18` | — | per_1m_output_tokens | $0.600 |
-| `gpt-4o-mini-audio-preview` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4o-mini-audio-preview` | — | per_1m_output_tokens | $300.00 |
-| `gpt-4o-mini-realtime-preview` | — | per_1m_input_tokens | $0.600 |
-| `gpt-4o-mini-realtime-preview` | — | per_1m_output_tokens | $2.400 |
-| `gpt-4o-mini-search-preview` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4o-mini-search-preview` | — | per_1m_output_tokens | $300.00 |
-| `gpt-4o-mini-search-preview-2025-03-11` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4o-mini-search-preview-2025-03-11` | — | per_1m_output_tokens | $300.00 |
-| `gpt-4o-mini-transcribe` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4o-mini-transcribe` | — | per_1m_output_tokens | $300.00 |
-| `gpt-4o-mini-tts` | — | per_request | $0.300 |
-| `gpt-4o-realtime-preview` | — | per_1m_input_tokens | $5.000 |
-| `gpt-4o-realtime-preview` | — | per_1m_output_tokens | $20.00 |
-| `gpt-4o-realtime-preview-2024-12-17` | — | per_1m_input_tokens | $5.000 |
-| `gpt-4o-realtime-preview-2024-12-17` | — | per_1m_output_tokens | $20.00 |
-| `gpt-4o-search-preview` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4o-search-preview` | — | per_1m_output_tokens | $300.00 |
-| `gpt-4o-search-preview-2025-03-11` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4o-search-preview-2025-03-11` | — | per_1m_output_tokens | $300.00 |
-| `gpt-4o-transcribe` | — | per_1m_input_tokens | $75.00 |
-| `gpt-4o-transcribe` | — | per_1m_output_tokens | $300.00 |
-| `gpt-5` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-2025-08-07` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5-2025-08-07` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5-high` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5-high` | — | per_1m_output_tokens | $600.00 |
-| `gpt-5-low` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5-low` | — | per_1m_output_tokens | $600.00 |
-| `gpt-5-medium` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5-medium` | — | per_1m_output_tokens | $600.00 |
-| `gpt-5-mini` | — | per_1m_input_tokens | $0.250 |
-| `gpt-5-mini` | — | per_1m_output_tokens | $2.000 |
-| `gpt-5-mini-2025-08-07` | — | per_1m_input_tokens | $0.250 |
-| `gpt-5-mini-2025-08-07` | — | per_1m_output_tokens | $2.000 |
-| `gpt-5-minimal` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5-minimal` | — | per_1m_output_tokens | $600.00 |
-| `gpt-5-nano` | — | per_1m_input_tokens | $0.050 |
-| `gpt-5-nano` | — | per_1m_output_tokens | $0.400 |
-| `gpt-5-nano-2025-08-07` | — | per_1m_input_tokens | $0.050 |
-| `gpt-5-nano-2025-08-07` | — | per_1m_output_tokens | $0.400 |
-| `gpt-5-pro` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5-pro` | — | per_1m_output_tokens | $600.00 |
-| `gpt-5-pro-2025-10-06` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5-pro-2025-10-06` | — | per_1m_output_tokens | $600.00 |
-| `gpt-5.1` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.1` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.1-2025-11-13` | — | per_1m_input_tokens | $1.250 |
-| `gpt-5.1-2025-11-13` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.2` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.2` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.2-2025-12-11` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.2-2025-12-11` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.2-codex` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.2-codex` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.2-codex-xhigh` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.2-codex-xhigh` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.2-xhigh` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.2-xhigh` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.3-codex` | — | per_1m_input_tokens | $1.750 |
-| `gpt-5.3-codex` | — | per_1m_output_tokens | $14.00 |
-| `gpt-5.3-codex-xhigh` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.3-codex-xhigh` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.4` | `gpt-5.4` | per_1m_input_tokens | $75.00 |
-| `gpt-5.4` | `gpt-5.4` | per_1m_output_tokens | $450.00 |
-| `gpt-5.4-2026-03-05` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.4-2026-03-05` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.4-mini` | — | per_1m_input_tokens | $0.750 |
-| `gpt-5.4-mini` | — | per_1m_output_tokens | $4.500 |
-| `gpt-5.4-mini-2026-03-17` | — | per_1m_input_tokens | $0.750 |
-| `gpt-5.4-mini-2026-03-17` | — | per_1m_output_tokens | $4.500 |
-| `gpt-5.4-nano` | — | per_1m_input_tokens | $0.200 |
-| `gpt-5.4-nano` | — | per_1m_output_tokens | $1.250 |
-| `gpt-5.4-nano-2026-03-17` | — | per_1m_input_tokens | $0.200 |
-| `gpt-5.4-nano-2026-03-17` | — | per_1m_output_tokens | $1.250 |
-| `gpt-5.4-pro` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.4-pro` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.4-pro-2026-03-05` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.4-pro-2026-03-05` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.5` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.5` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.5-instant` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.5-instant` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-luna` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-luna` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-luna-2026-07-09` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-luna-2026-07-09` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-luna-high` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-luna-high` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-luna-low` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-luna-low` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-luna-max` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-luna-max` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-luna-medium` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-luna-medium` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-luna-xhigh` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-luna-xhigh` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-sol` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-sol` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-sol-high` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-sol-high` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-sol-low` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-sol-low` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-sol-max` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-sol-max` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-sol-medium` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-sol-medium` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-sol-xhigh` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-sol-xhigh` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-terra` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-terra` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-terra-2026-07-09` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-terra-2026-07-09` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-terra-high` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-terra-high` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-terra-low` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-terra-low` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-terra-max` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-terra-max` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-terra-medium` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-terra-medium` | — | per_1m_output_tokens | $450.00 |
-| `gpt-5.6-terra-xhigh` | — | per_1m_input_tokens | $75.00 |
-| `gpt-5.6-terra-xhigh` | — | per_1m_output_tokens | $450.00 |
-| `gpt-6-astra` | — | per_1m_input_tokens | $75.00 |
-| `gpt-6-astra` | — | per_1m_output_tokens | $150.00 |
-| `gpt-6-astra-2026-09-03` | — | per_1m_input_tokens | $75.00 |
-| `gpt-6-astra-2026-09-03` | — | per_1m_output_tokens | $150.00 |
-| `gpt-6-luna` | — | per_1m_input_tokens | $75.00 |
-| `gpt-6-luna` | — | per_1m_output_tokens | $150.00 |
-| `gpt-6-sol` | — | per_1m_input_tokens | $75.00 |
-| `gpt-6-sol` | — | per_1m_output_tokens | $150.00 |
-| `gpt-6.1-sol` | — | per_1m_input_tokens | $75.00 |
-| `gpt-6.1-sol` | — | per_1m_output_tokens | $150.00 |
-| `gpt-image-1` | — | per_1m_input_tokens | $5.000 |
-| `gpt-image-1` | — | per_1m_output_tokens | $40.00 |
-| `gpt-image-1-vip` | — | per_image | $0.110 |
-| `gpt-image-1.5` | — | per_1m_input_tokens | $5.000 |
-| `gpt-image-1.5` | — | per_1m_output_tokens | $32.00 |
-| `gpt-image-2` | — | per_1m_input_tokens | $75.00 |
-| `gpt-image-2` | — | per_1m_output_tokens | $150.00 |
-| `gpt-image-2-pro` | — | per_image | $0.110 |
-| `gpt-image-2-vip` | — | per_image | $0.110 |
-| `gpt-image-2.5-flare` | — | per_1m_input_tokens | $75.00 |
-| `gpt-image-2.5-flare` | — | per_1m_output_tokens | $150.00 |
-| `gpt-image-2.5-sunburst` | — | per_1m_input_tokens | $75.00 |
-| `gpt-image-2.5-sunburst` | — | per_1m_output_tokens | $150.00 |
-| `gpt-oss-120b` | — | per_1m_input_tokens | $75.00 |
-| `gpt-oss-120b` | — | per_1m_output_tokens | $150.00 |
-| `gpt-oss-20b` | — | per_1m_input_tokens | $75.00 |
-| `gpt-oss-20b` | — | per_1m_output_tokens | $150.00 |
-| `gpt-vision-image-2` | — | per_image | $0.050 |
-| `grok-4.20-beta` | — | per_1m_input_tokens | $75.00 |
-| `grok-4.20-beta` | — | per_1m_output_tokens | $75.00 |
-| `grok-4.20-multi-agent` | — | per_1m_input_tokens | $75.00 |
-| `grok-4.20-multi-agent` | — | per_1m_output_tokens | $75.00 |
-| `grok-4.3-beta` | — | per_1m_input_tokens | $75.00 |
-| `grok-4.3-beta` | — | per_1m_output_tokens | $75.00 |
-| `grok-4.5` | — | per_1m_input_tokens | $2.000 |
-| `grok-4.5` | — | per_1m_output_tokens | $6.000 |
-| `grok-4.5-nsfw` | — | per_1m_input_tokens | $75.00 |
-| `grok-4.5-nsfw` | — | per_1m_output_tokens | $75.00 |
-| `grok-4.6` | — | per_1m_input_tokens | $2.000 |
-| `grok-4.6` | — | per_1m_output_tokens | $6.000 |
-| `grok-4.7` | — | per_1m_input_tokens | $75.00 |
-| `grok-4.7` | — | per_1m_output_tokens | $75.00 |
-| `grok-beta` | — | per_1m_input_tokens | $5.000 |
-| `grok-beta` | — | per_1m_output_tokens | $5.000 |
-| `nano-banana` | — | per_1m_input_tokens | $75.00 |
-| `nano-banana` | — | per_1m_output_tokens | $75.00 |
-| `nano-banana-2-lite` | — | per_1m_input_tokens | $75.00 |
-| `nano-banana-2-lite` | — | per_1m_output_tokens | $75.00 |
-| `nano-banana-2.1` | — | per_1m_input_tokens | $75.00 |
-| `nano-banana-2.1` | — | per_1m_output_tokens | $75.00 |
-| `o1` | — | per_1m_input_tokens | $15.00 |
-| `o1` | — | per_1m_output_tokens | $60.00 |
-| `o1-2024-12-17` | — | per_1m_input_tokens | $15.00 |
-| `o1-2024-12-17` | — | per_1m_output_tokens | $60.00 |
-| `o1-mini` | — | per_1m_input_tokens | $1.100 |
-| `o1-mini` | — | per_1m_output_tokens | $4.400 |
-| `o1-mini-2024-09-12` | — | per_1m_input_tokens | $1.100 |
-| `o1-mini-2024-09-12` | — | per_1m_output_tokens | $4.400 |
-| `o1-preview` | — | per_1m_input_tokens | $15.00 |
-| `o1-preview` | — | per_1m_output_tokens | $60.00 |
-| `o1-preview-2024-09-12` | — | per_1m_input_tokens | $15.00 |
-| `o1-preview-2024-09-12` | — | per_1m_output_tokens | $60.00 |
-| `o1-pro` | — | per_1m_input_tokens | $150.00 |
-| `o1-pro` | — | per_1m_output_tokens | $600.00 |
-| `o3` | — | per_1m_input_tokens | $2.000 |
-| `o3` | — | per_1m_output_tokens | $8.000 |
-| `o3-2025-04-16` | — | per_1m_input_tokens | $2.000 |
-| `o3-2025-04-16` | — | per_1m_output_tokens | $8.000 |
-| `o3-2025-04-16-high` | — | per_1m_input_tokens | $75.00 |
-| `o3-2025-04-16-high` | — | per_1m_output_tokens | $300.00 |
-| `o3-2025-04-16-low` | — | per_1m_input_tokens | $75.00 |
-| `o3-2025-04-16-low` | — | per_1m_output_tokens | $300.00 |
-| `o3-2025-04-16-medium` | — | per_1m_input_tokens | $75.00 |
-| `o3-2025-04-16-medium` | — | per_1m_output_tokens | $300.00 |
-| `o3-deep-research` | — | per_1m_input_tokens | $10.00 |
-| `o3-deep-research` | — | per_1m_output_tokens | $40.00 |
-| `o3-deep-research-2025-06-26` | — | per_1m_input_tokens | $10.00 |
-| `o3-deep-research-2025-06-26` | — | per_1m_output_tokens | $40.00 |
-| `o3-high` | — | per_1m_input_tokens | $75.00 |
-| `o3-high` | — | per_1m_output_tokens | $300.00 |
-| `o3-low` | — | per_1m_input_tokens | $75.00 |
-| `o3-low` | — | per_1m_output_tokens | $300.00 |
-| `o3-medium` | — | per_1m_input_tokens | $75.00 |
-| `o3-medium` | — | per_1m_output_tokens | $300.00 |
-| `o3-mini` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-2025-01-31` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-2025-01-31` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-2025-01-31-high` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-2025-01-31-high` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-2025-01-31-low` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-2025-01-31-low` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-2025-01-31-medium` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-2025-01-31-medium` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-high` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-high` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-low` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-low` | — | per_1m_output_tokens | $4.400 |
-| `o3-mini-medium` | — | per_1m_input_tokens | $1.100 |
-| `o3-mini-medium` | — | per_1m_output_tokens | $4.400 |
-| `o3-pro` | — | per_1m_input_tokens | $20.00 |
-| `o3-pro` | — | per_1m_output_tokens | $80.00 |
-| `o3-pro-2025-06-10` | — | per_1m_input_tokens | $20.00 |
-| `o3-pro-2025-06-10` | — | per_1m_output_tokens | $80.00 |
-| `o4-mini` | — | per_1m_input_tokens | $1.100 |
-| `o4-mini` | — | per_1m_output_tokens | $4.400 |
-| `o4-mini-2025-04-16` | — | per_1m_input_tokens | $1.100 |
-| `o4-mini-2025-04-16` | — | per_1m_output_tokens | $4.400 |
-| `o4-mini-2025-04-16-high` | — | per_1m_input_tokens | $75.00 |
-| `o4-mini-2025-04-16-high` | — | per_1m_output_tokens | $75.00 |
-| `o4-mini-2025-04-16-low` | — | per_1m_input_tokens | $75.00 |
-| `o4-mini-2025-04-16-low` | — | per_1m_output_tokens | $75.00 |
-| `o4-mini-2025-04-16-medium` | — | per_1m_input_tokens | $75.00 |
-| `o4-mini-2025-04-16-medium` | — | per_1m_output_tokens | $75.00 |
-| `o4-mini-deep-research` | — | per_1m_input_tokens | $2.000 |
-| `o4-mini-deep-research` | — | per_1m_output_tokens | $2.000 |
-| `o4-mini-deep-research-2025-06-26` | — | per_1m_input_tokens | $2.000 |
-| `o4-mini-deep-research-2025-06-26` | — | per_1m_output_tokens | $2.000 |
-| `o4-mini-high` | — | per_1m_input_tokens | $75.00 |
-| `o4-mini-high` | — | per_1m_output_tokens | $75.00 |
-| `o4-mini-low` | — | per_1m_input_tokens | $75.00 |
-| `o4-mini-low` | — | per_1m_output_tokens | $75.00 |
-| `o4-mini-medium` | — | per_1m_input_tokens | $75.00 |
-| `o4-mini-medium` | — | per_1m_output_tokens | $75.00 |
-| `omni-moderation-latest` | — | per_1m_input_tokens | $75.00 |
-| `omni-moderation-latest` | — | per_1m_output_tokens | $75.00 |
-| `seedream-5.0-pro` | — | per_1m_input_tokens | $75.00 |
-| `seedream-5.0-pro` | — | per_1m_output_tokens | $75.00 |
-| `sora-2` | — | per_request | $0.200 |
-| `text-embedding-3-large` | — | per_1m_input_tokens | $0.130 |
-| `text-embedding-3-large` | — | per_1m_output_tokens | $0.130 |
-| `text-embedding-3-small` | — | per_1m_input_tokens | $0.020 |
-| `text-embedding-3-small` | — | per_1m_output_tokens | $0.020 |
-| `text-embedding-ada-002` | — | per_1m_input_tokens | $0.100 |
-| `text-embedding-ada-002` | — | per_1m_output_tokens | $0.100 |
-| `text-moderation-latest` | — | per_1m_input_tokens | $0.200 |
-| `text-moderation-latest` | — | per_1m_output_tokens | $0.200 |
-| `tts-1` | — | per_1m_input_tokens | $15.00 |
-| `tts-1` | — | per_1m_output_tokens | $15.00 |
-| `tts-1-1106` | — | per_1m_input_tokens | $15.00 |
-| `tts-1-1106` | — | per_1m_output_tokens | $15.00 |
-| `tts-1-hd` | — | per_1m_input_tokens | $30.00 |
-| `tts-1-hd` | — | per_1m_output_tokens | $30.00 |
-| `tts-1-hd-1106` | — | per_1m_input_tokens | $30.00 |
-| `tts-1-hd-1106` | — | per_1m_output_tokens | $30.00 |
-| `whisper-1` | — | per_1m_input_tokens | $30.00 |
-| `whisper-1` | — | per_1m_output_tokens | $30.00 |
-| `z-image-turbo` | — | per_image | $0.050 |
+| Model | Canonical | Unit | Price (USD) | List (USD) | Group | Ratio | Effective (USD) |
+|---|---|---|---|---|---|---|---|
+| `claude-3-5-haiku-20241022` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | $0.496 |
+| `claude-3-5-haiku-20241022` | — | per_1m_output_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `claude-3-5-sonnet-20240620` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | $1.489 |
+| `claude-3-5-sonnet-20240620` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `claude-3-5-sonnet-20241022` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | $1.489 |
+| `claude-3-5-sonnet-20241022` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `claude-fable-5` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `claude-fable-5` | — | per_1m_output_tokens | $50.00 | $50.00 | default | 1 | $24.82 |
+| `claude-fable-5-1` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `claude-fable-5-1` | — | per_1m_output_tokens | $50.00 | $50.00 | default | 1 | $24.82 |
+| `claude-haiku-4-5-20251001` | — | per_1m_input_tokens | $1.000 | $1.000 | default | 1 | $0.496 |
+| `claude-haiku-4-5-20251001` | — | per_1m_output_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `claude-haiku-4-5-20251001-thinking` | — | per_1m_input_tokens | $0.800 | $0.800 | default | 1 | $0.397 |
+| `claude-haiku-4-5-20251001-thinking` | — | per_1m_output_tokens | $4.000 | $4.000 | default | 1 | $1.985 |
+| `claude-opus-4-1-20250805` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `claude-opus-4-1-20250805` | — | per_1m_output_tokens | $75.00 | $75.00 | default | 1 | $37.22 |
+| `claude-opus-4-20250514` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `claude-opus-4-20250514` | — | per_1m_output_tokens | $75.00 | $75.00 | default | 1 | $37.22 |
+| `claude-opus-4-5-20251101` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `claude-opus-4-5-20251101` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | $12.41 |
+| `claude-opus-4-6` | — | per_1m_input_cache_read_tokens | $0.500 | $0.500 | default | 1 | $0.248 |
+| `claude-opus-4-6` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `claude-opus-4-6` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | $12.41 |
+| `claude-opus-4-6-thinking` | — | per_1m_input_cache_read_tokens | $0.500 | $0.500 | default | 1 | $0.248 |
+| `claude-opus-4-6-thinking` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `claude-opus-4-6-thinking` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | $12.41 |
+| `claude-opus-4-7` | — | per_1m_input_cache_read_tokens | $0.500 | $0.500 | default | 1 | $0.248 |
+| `claude-opus-4-7` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `claude-opus-4-7` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | $12.41 |
+| `claude-opus-4-8` | — | per_1m_input_cache_read_tokens | $0.500 | $0.500 | default | 1 | $0.248 |
+| `claude-opus-4-8` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `claude-opus-4-8` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | $12.41 |
+| `claude-opus-5` | — | per_1m_input_cache_read_tokens | $0.500 | $0.500 | default | 1 | $0.248 |
+| `claude-opus-5` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `claude-opus-5` | — | per_1m_output_tokens | $25.00 | $25.00 | default | 1 | $12.41 |
+| `claude-opus-5-5` | — | per_1m_input_cache_read_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `claude-opus-5-5` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | $1.985 |
+| `claude-opus-5-5` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `claude-opus-5-5-thinking` | — | per_1m_input_cache_read_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `claude-opus-5-5-thinking` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | $1.985 |
+| `claude-opus-5-5-thinking` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `claude-sonnet-4-20250514` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | $1.489 |
+| `claude-sonnet-4-20250514` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `claude-sonnet-4-5-20250929` | — | per_1m_input_cache_read_tokens | $0.300 | $0.300 | default | 1 | $0.149 |
+| `claude-sonnet-4-5-20250929` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | $1.489 |
+| `claude-sonnet-4-5-20250929` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `claude-sonnet-4-5-20250929-thinking` | — | per_1m_input_cache_read_tokens | $0.300 | $0.300 | default | 1 | $0.149 |
+| `claude-sonnet-4-5-20250929-thinking` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | $1.489 |
+| `claude-sonnet-4-5-20250929-thinking` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `claude-sonnet-4-6` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | $1.489 |
+| `claude-sonnet-4-6` | `claude-sonnet-4.6` | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `claude-sonnet-4-6-thinking` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | $1.489 |
+| `claude-sonnet-4-6-thinking` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `claude-sonnet-5` | — | per_1m_input_tokens | $3.000 | $3.000 | default | 1 | $1.489 |
+| `claude-sonnet-5` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `claude-sonnet-5-5` | — | per_1m_input_cache_read_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `claude-sonnet-5-5` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `claude-sonnet-5-5` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `codex-auto-review` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `codex-auto-review` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `gemini-2.5-flash` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | $0.149 |
+| `gemini-2.5-flash` | — | per_1m_output_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `gemini-2.5-flash-image` | — | per_image | $0.040 | $0.040 | default | 1 | $0.020 |
+| `gemini-2.5-flash-lite` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | $0.050 |
+| `gemini-2.5-flash-lite` | — | per_1m_output_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gemini-2.5-flash-lite-nothinking` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | $0.050 |
+| `gemini-2.5-flash-lite-nothinking` | — | per_1m_output_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gemini-2.5-flash-lite-thinking` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | $0.050 |
+| `gemini-2.5-flash-lite-thinking` | — | per_1m_output_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gemini-2.5-flash-nothinking` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | $0.149 |
+| `gemini-2.5-flash-nothinking` | — | per_1m_output_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `gemini-2.5-flash-thinking` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | $0.149 |
+| `gemini-2.5-flash-thinking` | — | per_1m_output_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `gemini-3-flash-preview` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | $0.248 |
+| `gemini-3-flash-preview` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | $1.489 |
+| `gemini-3-flash-preview-thinking` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | $0.248 |
+| `gemini-3-flash-preview-thinking` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | $1.489 |
+| `gemini-3-pro-image-preview` | — | per_image | $0.240 | $0.240 | default | 1 | $0.119 |
+| `gemini-3-pro-image-preview-2k` | — | per_image | $0.240 | $0.240 | default | 1 | $0.119 |
+| `gemini-3-pro-image-preview-4k` | — | per_image | $0.240 | $0.240 | default | 1 | $0.119 |
+| `gemini-3-pro-image-preview-c` | — | per_image | $0.240 | $0.240 | default | 1 | $0.119 |
+| `gemini-3-pro-preview` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gemini-3-pro-preview` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | $5.956 |
+| `gemini-3-pro-preview-thinking` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gemini-3-pro-preview-thinking` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | $5.956 |
+| `gemini-3.1-flash-image-preview` | — | per_image | $0.151 | $0.151 | default | 1 | $0.075 |
+| `gemini-3.1-flash-image-preview-c` | — | per_image | $0.151 | $0.151 | default | 1 | $0.075 |
+| `gemini-3.1-flash-lite` | — | per_1m_input_tokens | $0.250 | $0.250 | default | 1 | $0.124 |
+| `gemini-3.1-flash-lite` | — | per_1m_output_tokens | $1.500 | $1.500 | default | 1 | $0.744 |
+| `gemini-3.1-flash-lite-preview` | — | per_1m_input_tokens | $0.250 | $0.250 | default | 1 | $0.124 |
+| `gemini-3.1-flash-lite-preview` | — | per_1m_output_tokens | $1.500 | $1.500 | default | 1 | $0.744 |
+| `gemini-3.1-pro-preview` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gemini-3.1-pro-preview` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | $5.956 |
+| `gemini-3.1-pro-preview-low` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gemini-3.1-pro-preview-low` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | $5.956 |
+| `gemini-3.1-pro-preview-thinking` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gemini-3.1-pro-preview-thinking` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | $5.956 |
+| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | $0.744 |
+| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_output_tokens | $9.000 | $9.000 | default | 1 | $4.467 |
+| `gemini-3.5-flash-lite` | — | per_1m_input_tokens | $0.300 | $0.300 | default | 1 | $0.149 |
+| `gemini-3.5-flash-lite` | — | per_1m_output_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `gemini-3.6-flash` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | $0.744 |
+| `gemini-3.6-flash` | — | per_1m_output_tokens | $7.500 | $7.500 | default | 1 | $3.722 |
+| `gemini-3.6-flash-high` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | $0.744 |
+| `gemini-3.6-flash-high` | — | per_1m_output_tokens | $7.500 | $7.500 | default | 1 | $3.722 |
+| `gemini-3.6-flash-low` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | $0.744 |
+| `gemini-3.6-flash-low` | — | per_1m_output_tokens | $7.500 | $7.500 | default | 1 | $3.722 |
+| `gemini-3.6-flash-maxthinking` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | $0.744 |
+| `gemini-3.6-flash-maxthinking` | — | per_1m_output_tokens | $4.500 | $4.500 | default | 1 | $2.233 |
+| `gemini-3.6-flash-medium` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | $0.744 |
+| `gemini-3.6-flash-medium` | — | per_1m_output_tokens | $7.500 | $7.500 | default | 1 | $3.722 |
+| `gemini-3.6-flash-nothinking` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | $0.744 |
+| `gemini-3.6-flash-nothinking` | — | per_1m_output_tokens | $4.500 | $4.500 | default | 1 | $2.233 |
+| `gemini-3.6-flash-thinking` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | $0.744 |
+| `gemini-3.6-flash-thinking` | — | per_1m_output_tokens | $4.500 | $4.500 | default | 1 | $2.233 |
+| `gemini-3.7-flash` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gemini-3.7-flash` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | $1.861 |
+| `gemini-3.7-flash-high` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gemini-3.7-flash-high` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | $1.861 |
+| `gemini-3.7-flash-low` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gemini-3.7-flash-low` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | $1.861 |
+| `gemini-3.7-flash-maxthinking` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gemini-3.7-flash-maxthinking` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | $1.861 |
+| `gemini-3.7-flash-medium` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gemini-3.7-flash-medium` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | $1.861 |
+| `gemini-3.7-flash-nothinking` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gemini-3.7-flash-nothinking` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | $1.861 |
+| `gemini-3.7-flash-thinking` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gemini-3.7-flash-thinking` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | $1.861 |
+| `gemini-3.8-flash` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gemini-3.8-flash` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | $1.861 |
+| `gemini-3.8-flash-high` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gemini-3.8-flash-high` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | $1.861 |
+| `gemini-3.8-flash-maxthinking` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gemini-3.8-flash-maxthinking` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | $1.861 |
+| `gemini-3.8-flash-nothinking` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gemini-3.8-flash-nothinking` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | $1.861 |
+| `gemini-3.8-flash-thinking` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gemini-3.8-flash-thinking` | — | per_1m_output_tokens | $3.750 | $3.750 | default | 1 | $1.861 |
+| `gemini-nano-banana-2.1` | — | per_request | $0.050 | $0.050 | default | 1 | $0.025 |
+| `gpt-3.5-turbo` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | $0.248 |
+| `gpt-3.5-turbo` | — | per_1m_output_tokens | $1.000 | $1.000 | default | 1 | $0.496 |
+| `gpt-3.5-turbo-0125` | — | per_1m_input_tokens | $0.500 | $0.500 | default | 1 | $0.248 |
+| `gpt-3.5-turbo-0125` | — | per_1m_output_tokens | $1.000 | $1.000 | default | 1 | $0.496 |
+| `gpt-3.5-turbo-instruct` | — | per_1m_input_tokens | $1.500 | $1.500 | default | 1 | $0.744 |
+| `gpt-3.5-turbo-instruct` | — | per_1m_output_tokens | $3.000 | $3.000 | default | 1 | $1.489 |
+| `gpt-4` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `gpt-4` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | $29.78 |
+| `gpt-4-0125-preview` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-4-0125-preview` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `gpt-4-0613` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `gpt-4-0613` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | $29.78 |
+| `gpt-4-1106-preview` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-4-1106-preview` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `gpt-4-32k` | — | per_1m_input_tokens | $60.00 | $60.00 | default | 1 | $29.78 |
+| `gpt-4-32k` | — | per_1m_output_tokens | $120.00 | $120.00 | default | 1 | $59.56 |
+| `gpt-4-32k-0613` | — | per_1m_input_tokens | $60.00 | $60.00 | default | 1 | $29.78 |
+| `gpt-4-32k-0613` | — | per_1m_output_tokens | $120.00 | $120.00 | default | 1 | $59.56 |
+| `gpt-4-turbo` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-4-turbo` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `gpt-4-turbo-2024-04-09` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-4-turbo-2024-04-09` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `gpt-4-turbo-preview` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-4-turbo-preview` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `gpt-4-vision-preview` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-4-vision-preview` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `gpt-4.1` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-4.1` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | $3.971 |
+| `gpt-4.1-2025-04-14` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-4.1-2025-04-14` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | $3.971 |
+| `gpt-4.1-mini` | — | per_1m_input_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-4.1-mini` | — | per_1m_output_tokens | $1.600 | $1.600 | default | 1 | $0.794 |
+| `gpt-4.1-mini-2025-04-14` | — | per_1m_input_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-4.1-mini-2025-04-14` | — | per_1m_output_tokens | $1.600 | $1.600 | default | 1 | $0.794 |
+| `gpt-4.1-nano` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | $0.050 |
+| `gpt-4.1-nano` | — | per_1m_output_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-4.1-nano-2025-04-14` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | $0.050 |
+| `gpt-4.1-nano-2025-04-14` | — | per_1m_output_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-4o` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `gpt-4o` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-4o-2024-05-13` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `gpt-4o-2024-05-13` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `gpt-4o-2024-08-06` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `gpt-4o-2024-08-06` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-4o-2024-11-20` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `gpt-4o-2024-11-20` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-4o-audio-preview` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `gpt-4o-audio-preview` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-4o-image` | — | per_image | $0.050 | $0.050 | default | 1 | $0.025 |
+| `gpt-4o-image-vip` | — | per_image | $0.110 | $0.110 | default | 1 | $0.055 |
+| `gpt-4o-mini` | — | per_1m_input_tokens | $0.150 | $0.150 | default | 1 | $0.074 |
+| `gpt-4o-mini` | — | per_1m_output_tokens | $0.600 | $0.600 | default | 1 | $0.298 |
+| `gpt-4o-mini-2024-07-18` | — | per_1m_input_tokens | $0.150 | $0.150 | default | 1 | $0.074 |
+| `gpt-4o-mini-2024-07-18` | — | per_1m_output_tokens | $0.600 | $0.600 | default | 1 | $0.298 |
+| `gpt-4o-mini-realtime-preview` | — | per_1m_input_tokens | $0.600 | $0.600 | default | 1 | $0.298 |
+| `gpt-4o-mini-realtime-preview` | — | per_1m_output_tokens | $2.400 | $2.400 | default | 1 | $1.191 |
+| `gpt-4o-mini-tts` | — | per_request | $0.300 | $0.300 | default | 1 | $0.149 |
+| `gpt-4o-realtime-preview` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `gpt-4o-realtime-preview` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `gpt-4o-realtime-preview-2024-12-17` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `gpt-4o-realtime-preview-2024-12-17` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `gpt-5` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | $0.620 |
+| `gpt-5` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-5-2025-08-07` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | $0.620 |
+| `gpt-5-2025-08-07` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-5-mini` | — | per_1m_input_tokens | $0.250 | $0.250 | default | 1 | $0.124 |
+| `gpt-5-mini` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-5-mini-2025-08-07` | — | per_1m_input_tokens | $0.250 | $0.250 | default | 1 | $0.124 |
+| `gpt-5-mini-2025-08-07` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-5-nano` | — | per_1m_input_tokens | $0.050 | $0.050 | default | 1 | $0.025 |
+| `gpt-5-nano` | — | per_1m_output_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-5-nano-2025-08-07` | — | per_1m_input_tokens | $0.050 | $0.050 | default | 1 | $0.025 |
+| `gpt-5-nano-2025-08-07` | — | per_1m_output_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-5.1` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | $0.620 |
+| `gpt-5.1` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-5.1-2025-11-13` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | $0.620 |
+| `gpt-5.1-2025-11-13` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-5.2` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | $0.869 |
+| `gpt-5.2` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | $6.948 |
+| `gpt-5.2-2025-12-11` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | $0.869 |
+| `gpt-5.2-2025-12-11` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | $6.948 |
+| `gpt-5.2-codex` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | $0.869 |
+| `gpt-5.2-codex` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | $6.948 |
+| `gpt-5.3-codex` | — | per_1m_input_tokens | $1.750 | $1.750 | default | 1 | $0.869 |
+| `gpt-5.3-codex` | — | per_1m_output_tokens | $14.00 | $14.00 | default | 1 | $6.948 |
+| `gpt-5.4` | `gpt-5.4` | per_1m_input_cache_read_tokens | $0.250 | $0.250 | default | 1 | $0.124 |
+| `gpt-5.4` | `gpt-5.4` | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `gpt-5.4` | `gpt-5.4` | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `gpt-5.4-2026-03-05` | — | per_1m_input_cache_read_tokens | $0.250 | $0.250 | default | 1 | $0.124 |
+| `gpt-5.4-2026-03-05` | — | per_1m_input_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `gpt-5.4-2026-03-05` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `gpt-5.4-mini` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gpt-5.4-mini` | — | per_1m_output_tokens | $4.500 | $4.500 | default | 1 | $2.233 |
+| `gpt-5.4-mini-2026-03-17` | — | per_1m_input_tokens | $0.750 | $0.750 | default | 1 | $0.372 |
+| `gpt-5.4-mini-2026-03-17` | — | per_1m_output_tokens | $4.500 | $4.500 | default | 1 | $2.233 |
+| `gpt-5.4-nano` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.4-nano` | — | per_1m_output_tokens | $1.250 | $1.250 | default | 1 | $0.620 |
+| `gpt-5.4-nano-2026-03-17` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.4-nano-2026-03-17` | — | per_1m_output_tokens | $1.250 | $1.250 | default | 1 | $0.620 |
+| `gpt-5.4-pro` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `gpt-5.4-pro` | — | per_1m_output_tokens | $180.00 | $180.00 | default | 1 | $89.34 |
+| `gpt-5.4-pro-2026-03-05` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `gpt-5.4-pro-2026-03-05` | — | per_1m_output_tokens | $180.00 | $180.00 | default | 1 | $89.34 |
+| `gpt-5.5` | — | per_1m_input_cache_read_tokens | $0.500 | $0.500 | default | 1 | $0.248 |
+| `gpt-5.5` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `gpt-5.5` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `gpt-5.5-instant` | — | per_1m_input_cache_read_tokens | $0.500 | $0.500 | default | 1 | $0.248 |
+| `gpt-5.5-instant` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `gpt-5.5-instant` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `gpt-5.6` | — | per_1m_input_cache_read_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-5.6` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | $1.985 |
+| `gpt-5.6` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `gpt-5.6-luna` | — | per_1m_input_cache_read_tokens | $0.020 | $0.020 | default | 1 | $0.0099 |
+| `gpt-5.6-luna` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-luna` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | $0.596 |
+| `gpt-5.6-luna-2026-07-09` | — | per_1m_input_cache_read_tokens | $0.020 | $0.020 | default | 1 | $0.0099 |
+| `gpt-5.6-luna-2026-07-09` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-luna-2026-07-09` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | $0.596 |
+| `gpt-5.6-luna-high` | — | per_1m_input_cache_read_tokens | $0.020 | $0.020 | default | 1 | $0.0099 |
+| `gpt-5.6-luna-high` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-luna-high` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | $0.596 |
+| `gpt-5.6-luna-low` | — | per_1m_input_cache_read_tokens | $0.020 | $0.020 | default | 1 | $0.0099 |
+| `gpt-5.6-luna-low` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-luna-low` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | $0.596 |
+| `gpt-5.6-luna-max` | — | per_1m_input_cache_read_tokens | $0.020 | $0.020 | default | 1 | $0.0099 |
+| `gpt-5.6-luna-max` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-luna-max` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | $0.596 |
+| `gpt-5.6-luna-medium` | — | per_1m_input_cache_read_tokens | $0.020 | $0.020 | default | 1 | $0.0099 |
+| `gpt-5.6-luna-medium` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-luna-medium` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | $0.596 |
+| `gpt-5.6-luna-xhigh` | — | per_1m_input_cache_read_tokens | $0.020 | $0.020 | default | 1 | $0.0099 |
+| `gpt-5.6-luna-xhigh` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-luna-xhigh` | — | per_1m_output_tokens | $1.200 | $1.200 | default | 1 | $0.596 |
+| `gpt-5.6-sol` | — | per_1m_input_cache_read_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-5.6-sol` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | $1.985 |
+| `gpt-5.6-sol` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `gpt-5.6-sol-high` | — | per_1m_input_cache_read_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-5.6-sol-high` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | $1.985 |
+| `gpt-5.6-sol-high` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `gpt-5.6-sol-low` | — | per_1m_input_cache_read_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-5.6-sol-low` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | $1.985 |
+| `gpt-5.6-sol-low` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `gpt-5.6-sol-max` | — | per_1m_input_cache_read_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-5.6-sol-max` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | $1.985 |
+| `gpt-5.6-sol-max` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `gpt-5.6-sol-medium` | — | per_1m_input_cache_read_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-5.6-sol-medium` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | $1.985 |
+| `gpt-5.6-sol-medium` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `gpt-5.6-sol-xhigh` | — | per_1m_input_cache_read_tokens | $0.400 | $0.400 | default | 1 | $0.199 |
+| `gpt-5.6-sol-xhigh` | — | per_1m_input_tokens | $4.000 | $4.000 | default | 1 | $1.985 |
+| `gpt-5.6-sol-xhigh` | — | per_1m_output_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `gpt-5.6-terra` | — | per_1m_input_cache_read_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-terra` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-5.6-terra` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | $5.956 |
+| `gpt-5.6-terra-2026-07-09` | — | per_1m_input_cache_read_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-terra-2026-07-09` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-5.6-terra-2026-07-09` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | $5.956 |
+| `gpt-5.6-terra-high` | — | per_1m_input_cache_read_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-terra-high` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-5.6-terra-high` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | $5.956 |
+| `gpt-5.6-terra-low` | — | per_1m_input_cache_read_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-terra-low` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-5.6-terra-low` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | $5.956 |
+| `gpt-5.6-terra-max` | — | per_1m_input_cache_read_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-terra-max` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-5.6-terra-max` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | $5.956 |
+| `gpt-5.6-terra-medium` | — | per_1m_input_cache_read_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-terra-medium` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-5.6-terra-medium` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | $5.956 |
+| `gpt-5.6-terra-xhigh` | — | per_1m_input_cache_read_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-5.6-terra-xhigh` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-5.6-terra-xhigh` | — | per_1m_output_tokens | $12.00 | $12.00 | default | 1 | $5.956 |
+| `gpt-6-astra` | — | per_1m_input_cache_read_tokens | $1.000 | $1.000 | default | 1 | $0.496 |
+| `gpt-6-astra` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-6-astra` | — | per_1m_output_tokens | $50.00 | $50.00 | default | 1 | $24.82 |
+| `gpt-6-astra-2026-09-03` | — | per_1m_input_cache_read_tokens | $1.000 | $1.000 | default | 1 | $0.496 |
+| `gpt-6-astra-2026-09-03` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-6-astra-2026-09-03` | — | per_1m_output_tokens | $50.00 | $50.00 | default | 1 | $24.82 |
+| `gpt-6-luna` | — | per_1m_input_cache_read_tokens | $0.010 | $0.010 | default | 1 | $0.0050 |
+| `gpt-6-luna` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | $0.050 |
+| `gpt-6-luna` | — | per_1m_output_tokens | $0.500 | $0.500 | default | 1 | $0.248 |
+| `gpt-6-sol` | — | per_1m_input_cache_read_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `gpt-6-sol` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-6-sol` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-6.1-sol` | — | per_1m_input_cache_read_tokens | $0.100 | $0.100 | default | 1 | $0.050 |
+| `gpt-6.1-sol` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `gpt-6.1-sol` | — | per_1m_output_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `gpt-image-1` | — | per_image | $0.050 | $0.050 | default | 1 | $0.025 |
+| `gpt-image-1-vip` | — | per_image | $0.110 | $0.110 | default | 1 | $0.055 |
+| `gpt-image-1.5` | — | per_image | $0.050 | $0.050 | default | 1 | $0.025 |
+| `gpt-image-2` | — | per_image | $0.060 | $0.060 | default | 1 | $0.030 |
+| `gpt-image-2-pro` | — | per_image | $0.110 | $0.110 | default | 1 | $0.055 |
+| `gpt-image-2-vip` | — | per_image | $0.110 | $0.110 | default | 1 | $0.055 |
+| `gpt-image-2.5-flare` | — | per_image | $0.060 | $0.060 | default | 1 | $0.030 |
+| `gpt-image-2.5-sunburst` | — | per_image | $0.060 | $0.060 | default | 1 | $0.030 |
+| `gpt-vision-image-2` | — | per_image | $0.050 | $0.050 | default | 1 | $0.025 |
+| `grok-4.20-beta` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | $0.620 |
+| `grok-4.20-beta` | — | per_1m_output_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `grok-4.20-multi-agent` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | $0.620 |
+| `grok-4.20-multi-agent` | — | per_1m_output_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `grok-4.3-beta` | — | per_1m_input_tokens | $1.250 | $1.250 | default | 1 | $0.620 |
+| `grok-4.3-beta` | — | per_1m_output_tokens | $2.500 | $2.500 | default | 1 | $1.241 |
+| `grok-4.5` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `grok-4.5` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | $2.978 |
+| `grok-4.5-nsfw` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `grok-4.5-nsfw` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | $2.978 |
+| `grok-4.6` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `grok-4.6` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | $2.978 |
+| `grok-4.7` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `grok-4.7` | — | per_1m_output_tokens | $6.000 | $6.000 | default | 1 | $2.978 |
+| `grok-beta` | — | per_1m_input_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `grok-beta` | — | per_1m_output_tokens | $5.000 | $5.000 | default | 1 | $2.482 |
+| `nano-banana-2-lite` | — | per_request | $0.030 | $0.030 | default | 1 | $0.015 |
+| `nano-banana-2.1` | — | per_request | $0.050 | $0.050 | default | 1 | $0.025 |
+| `o1` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `o1` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | $29.78 |
+| `o1-2024-12-17` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `o1-2024-12-17` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | $29.78 |
+| `o1-mini` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | $0.546 |
+| `o1-mini` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | $2.184 |
+| `o1-mini-2024-09-12` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | $0.546 |
+| `o1-mini-2024-09-12` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | $2.184 |
+| `o1-preview` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `o1-preview` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | $29.78 |
+| `o1-preview-2024-09-12` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `o1-preview-2024-09-12` | — | per_1m_output_tokens | $60.00 | $60.00 | default | 1 | $29.78 |
+| `o1-pro` | — | per_1m_input_tokens | $150.00 | $150.00 | default | 1 | $74.45 |
+| `o1-pro` | — | per_1m_output_tokens | $600.00 | $600.00 | default | 1 | $297.79 |
+| `o3` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `o3` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | $3.971 |
+| `o3-2025-04-16` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `o3-2025-04-16` | — | per_1m_output_tokens | $8.000 | $8.000 | default | 1 | $3.971 |
+| `o3-deep-research` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `o3-deep-research` | — | per_1m_output_tokens | $40.00 | $40.00 | default | 1 | $19.85 |
+| `o3-deep-research-2025-06-26` | — | per_1m_input_tokens | $10.00 | $10.00 | default | 1 | $4.963 |
+| `o3-deep-research-2025-06-26` | — | per_1m_output_tokens | $40.00 | $40.00 | default | 1 | $19.85 |
+| `o3-mini` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | $0.546 |
+| `o3-mini` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | $2.184 |
+| `o3-mini-2025-01-31` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | $0.546 |
+| `o3-mini-2025-01-31` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | $2.184 |
+| `o3-mini-2025-01-31-high` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | $0.546 |
+| `o3-mini-2025-01-31-high` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | $2.184 |
+| `o3-mini-2025-01-31-low` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | $0.546 |
+| `o3-mini-2025-01-31-low` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | $2.184 |
+| `o3-mini-2025-01-31-medium` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | $0.546 |
+| `o3-mini-2025-01-31-medium` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | $2.184 |
+| `o3-mini-high` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | $0.546 |
+| `o3-mini-high` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | $2.184 |
+| `o3-mini-low` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | $0.546 |
+| `o3-mini-low` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | $2.184 |
+| `o3-mini-medium` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | $0.546 |
+| `o3-mini-medium` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | $2.184 |
+| `o3-pro` | — | per_1m_input_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `o3-pro` | — | per_1m_output_tokens | $80.00 | $80.00 | default | 1 | $39.71 |
+| `o3-pro-2025-06-10` | — | per_1m_input_tokens | $20.00 | $20.00 | default | 1 | $9.926 |
+| `o3-pro-2025-06-10` | — | per_1m_output_tokens | $80.00 | $80.00 | default | 1 | $39.71 |
+| `o4-mini` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | $0.546 |
+| `o4-mini` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | $2.184 |
+| `o4-mini-2025-04-16` | — | per_1m_input_tokens | $1.100 | $1.100 | default | 1 | $0.546 |
+| `o4-mini-2025-04-16` | — | per_1m_output_tokens | $4.400 | $4.400 | default | 1 | $2.184 |
+| `o4-mini-deep-research` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `o4-mini-deep-research` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `o4-mini-deep-research-2025-06-26` | — | per_1m_input_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `o4-mini-deep-research-2025-06-26` | — | per_1m_output_tokens | $2.000 | $2.000 | default | 1 | $0.993 |
+| `seedream-5.0-pro` | — | per_request | $0.050 | $0.050 | default | 1 | $0.025 |
+| `sora-2` | — | per_request | $0.200 | $0.200 | default | 1 | $0.099 |
+| `text-embedding-3-large` | — | per_1m_input_tokens | $0.130 | $0.130 | default | 1 | $0.065 |
+| `text-embedding-3-large` | — | per_1m_output_tokens | $0.130 | $0.130 | default | 1 | $0.065 |
+| `text-embedding-3-small` | — | per_1m_input_tokens | $0.020 | $0.020 | default | 1 | $0.0099 |
+| `text-embedding-3-small` | — | per_1m_output_tokens | $0.020 | $0.020 | default | 1 | $0.0099 |
+| `text-embedding-ada-002` | — | per_1m_input_tokens | $0.100 | $0.100 | default | 1 | $0.050 |
+| `text-embedding-ada-002` | — | per_1m_output_tokens | $0.100 | $0.100 | default | 1 | $0.050 |
+| `text-moderation-latest` | — | per_1m_input_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `text-moderation-latest` | — | per_1m_output_tokens | $0.200 | $0.200 | default | 1 | $0.099 |
+| `tts-1` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `tts-1` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `tts-1-1106` | — | per_1m_input_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `tts-1-1106` | — | per_1m_output_tokens | $15.00 | $15.00 | default | 1 | $7.445 |
+| `tts-1-hd` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `tts-1-hd` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `tts-1-hd-1106` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `tts-1-hd-1106` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `whisper-1` | — | per_1m_input_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `whisper-1` | — | per_1m_output_tokens | $30.00 | $30.00 | default | 1 | $14.89 |
+| `z-image-turbo` | — | per_image | $0.050 | $0.050 | default | 1 | $0.025 |
 
 ## UnoRouter — `unorouter`
 
-Source: <https://unorouter.ai/models> · Records: 238
+Source: <https://unorouter.ai/models> · Records: 241
 
-| Model | Canonical | Unit | Price (USD) |
-|---|---|---|---|
-| `anything-xl` | — | per_request | $0.020 |
-| `autismmix-sdxl` | — | per_request | $0.020 |
-| `claude-fable-5` | — | per_1m_input_tokens | $10.00 |
-| `claude-fable-5` | — | per_1m_output_tokens | $50.00 |
-| `claude-fable-5.1` | — | per_1m_input_tokens | $10.00 |
-| `claude-fable-5.1` | — | per_1m_output_tokens | $50.00 |
-| `claude-haiku-4-5-20251001` | — | per_1m_input_tokens | $1.000 |
-| `claude-haiku-4-5-20251001` | — | per_1m_output_tokens | $5.000 |
-| `claude-haiku-5-5` | — | per_1m_input_tokens | $0.100 |
-| `claude-haiku-5-5` | — | per_1m_output_tokens | $0.500 |
-| `claude-opus-4-5` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-5` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4-5-thinking` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-5-thinking` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4-6-thinking` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-6-thinking` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4-7-thinking` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-7-thinking` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4-8-thinking` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4-8-thinking` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4.6` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4.6` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4.7` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-4.7` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-4.8` | `claude-opus-4.8` | per_1m_input_tokens | $5.000 |
-| `claude-opus-4.8` | `claude-opus-4.8` | per_1m_output_tokens | $25.00 |
-| `claude-opus-5` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-5` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-5-thinking` | — | per_1m_input_tokens | $5.000 |
-| `claude-opus-5-thinking` | — | per_1m_output_tokens | $25.00 |
-| `claude-opus-5.5` | — | per_1m_input_tokens | $4.000 |
-| `claude-opus-5.5` | — | per_1m_output_tokens | $20.00 |
-| `claude-sonnet-4-5-thinking` | — | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4-5-thinking` | — | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-4-6-thinking` | — | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4-6-thinking` | — | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-4.5` | — | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4.5` | — | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_input_tokens | $3.000 |
-| `claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_output_tokens | $15.00 |
-| `claude-sonnet-5` | — | per_1m_input_tokens | $2.000 |
-| `claude-sonnet-5` | — | per_1m_output_tokens | $10.00 |
-| `claude-sonnet-5-5` | — | per_1m_input_tokens | $2.000 |
-| `claude-sonnet-5-5` | — | per_1m_output_tokens | $10.00 |
-| `claude-sonnet-5-thinking` | — | per_1m_input_tokens | $2.000 |
-| `claude-sonnet-5-thinking` | — | per_1m_output_tokens | $10.00 |
-| `custom-civitai` | — | per_request | $0.020 |
-| `cyberrealistic-pony` | — | per_request | $0.020 |
-| `deepseek-r1` | `deepseek-r1` | per_1m_input_tokens | $0.700 |
-| `deepseek-r1` | `deepseek-r1` | per_1m_output_tokens | $2.400 |
-| `deepseek-r1-0528` | — | per_1m_input_tokens | $0.500 |
-| `deepseek-r1-0528` | — | per_1m_output_tokens | $2.150 |
-| `deepseek-v3` | `deepseek-v3` | per_1m_input_tokens | $1.140 |
-| `deepseek-v3` | `deepseek-v3` | per_1m_output_tokens | $4.560 |
-| `deepseek-v3-0324` | — | per_1m_input_tokens | $0.240 |
-| `deepseek-v3-0324` | — | per_1m_output_tokens | $0.900 |
-| `deepseek-v3.1` | — | per_1m_input_tokens | $0.250 |
-| `deepseek-v3.1` | — | per_1m_output_tokens | $0.950 |
-| `deepseek-v3.1-terminus` | — | per_1m_input_tokens | $0.270 |
-| `deepseek-v3.1-terminus` | — | per_1m_output_tokens | $1.000 |
-| `deepseek-v3.2` | — | per_1m_input_tokens | $0.280 |
-| `deepseek-v3.2` | — | per_1m_output_tokens | $0.420 |
-| `deepseek-v3.2-exp` | — | per_1m_input_tokens | $0.280 |
-| `deepseek-v3.2-exp` | — | per_1m_output_tokens | $0.420 |
-| `deepseek-v4-flash` | — | per_1m_input_tokens | $0.140 |
-| `deepseek-v4-flash` | — | per_1m_output_tokens | $0.280 |
-| `deepseek-v4-flash-0731` | — | per_1m_input_tokens | $0.140 |
-| `deepseek-v4-flash-0731` | — | per_1m_output_tokens | $0.280 |
-| `deepseek-v4-pro` | — | per_1m_input_tokens | $1.740 |
-| `deepseek-v4-pro` | — | per_1m_output_tokens | $3.480 |
-| `deepseek-v4-pro-0813` | — | per_1m_input_tokens | $1.320 |
-| `deepseek-v4-pro-0813` | — | per_1m_output_tokens | $3.960 |
-| `deepseek-v4.1-flash` | — | per_1m_input_tokens | $0.225 |
-| `deepseek-v4.1-flash` | — | per_1m_output_tokens | $0.900 |
-| `deepseek-v4.1-flash-1017` | — | per_1m_input_tokens | $0.220 |
-| `deepseek-v4.1-flash-1017` | — | per_1m_output_tokens | $0.600 |
-| `dreamshaper-v8` | — | per_request | $0.020 |
-| `dreamshaper-xl` | — | per_request | $0.020 |
-| `epicrealism` | — | per_request | $0.020 |
-| `flux-1-dev-runware` | — | per_request | $0.020 |
-| `flux.2-dev` | — | per_request | $0.045 |
-| `flux.2-flex` | — | per_request | $0.120 |
-| `flux.2-klein-4b` | — | per_request | $0.0030 |
-| `flux.2-klein-9b` | — | per_request | $0.0085 |
-| `flux.2-max` | — | per_request | $0.140 |
-| `flux.2-pro` | — | per_request | $0.060 |
-| `gemini-2.5-flash` | — | per_1m_input_tokens | $0.300 |
-| `gemini-2.5-flash` | — | per_1m_output_tokens | $2.500 |
-| `gemini-2.5-pro` | — | per_1m_input_tokens | $1.250 |
-| `gemini-2.5-pro` | — | per_1m_output_tokens | $10.00 |
-| `gemini-2.5-pro-thinking` | — | per_1m_input_tokens | $1.250 |
-| `gemini-2.5-pro-thinking` | — | per_1m_output_tokens | $10.00 |
-| `gemini-2.5-pro-tts` | — | per_1m_input_tokens | $1.000 |
-| `gemini-2.5-pro-tts` | — | per_1m_output_tokens | $20.00 |
-| `gemini-3-flash` | `gemini-3-flash` | per_1m_input_tokens | $0.500 |
-| `gemini-3-flash` | `gemini-3-flash` | per_1m_output_tokens | $3.000 |
-| `gemini-3-pro` | — | per_1m_input_tokens | $2.000 |
-| `gemini-3-pro` | — | per_1m_output_tokens | $12.00 |
-| `gemini-3.1-flash-image` | — | per_image | $0.550 |
-| `gemini-3.1-flash-lite` | — | per_1m_input_tokens | $0.250 |
-| `gemini-3.1-flash-lite` | — | per_1m_output_tokens | $1.500 |
-| `gemini-3.1-pro` | — | per_1m_input_tokens | $2.000 |
-| `gemini-3.1-pro` | — | per_1m_output_tokens | $12.00 |
-| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_tokens | $1.500 |
-| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_output_tokens | $9.000 |
-| `gemini-3.5-flash-lite` | — | per_1m_input_tokens | $0.300 |
-| `gemini-3.5-flash-lite` | — | per_1m_output_tokens | $2.500 |
-| `gemini-3.7-flash` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.7-flash` | — | per_1m_output_tokens | $3.750 |
-| `gemini-3.8-flash` | — | per_1m_input_tokens | $0.750 |
-| `gemini-3.8-flash` | — | per_1m_output_tokens | $3.750 |
-| `gemini-4-argon` | — | per_1m_input_tokens | $2.000 |
-| `gemini-4-argon` | — | per_1m_output_tokens | $10.00 |
-| `gemini-nano-banana-2.1` | — | per_request | $0.080 |
-| `glm-4.6` | — | per_1m_input_tokens | $0.600 |
-| `glm-4.6` | — | per_1m_output_tokens | $2.200 |
-| `glm-4.7` | — | per_1m_input_tokens | $0.600 |
-| `glm-4.7` | — | per_1m_output_tokens | $2.200 |
-| `glm-4.7-thinking` | — | per_1m_input_tokens | $0.600 |
-| `glm-4.7-thinking` | — | per_1m_output_tokens | $2.200 |
-| `glm-5.1` | — | per_1m_input_tokens | $1.400 |
-| `glm-5.1` | — | per_1m_output_tokens | $4.400 |
-| `glm-5.2` | — | per_1m_input_tokens | $1.400 |
-| `glm-5.2` | — | per_1m_output_tokens | $4.400 |
-| `glm-5.3` | — | per_1m_input_tokens | $1.120 |
-| `glm-5.3` | — | per_1m_output_tokens | $4.400 |
-| `glm-5.3-flash` | — | per_1m_input_tokens | $0.150 |
-| `glm-5.3-flash` | — | per_1m_output_tokens | $0.500 |
-| `gpt-4o-image` | — | per_1m_input_tokens | $2.500 |
-| `gpt-4o-image` | — | per_1m_output_tokens | $10.00 |
-| `gpt-5.5` | — | per_1m_input_tokens | $5.000 |
-| `gpt-5.5` | — | per_1m_output_tokens | $30.00 |
-| `gpt-5.6-luna` | — | per_1m_input_tokens | $0.200 |
-| `gpt-5.6-luna` | — | per_1m_output_tokens | $1.200 |
-| `gpt-5.6-sol` | — | per_1m_input_tokens | $4.000 |
-| `gpt-5.6-sol` | — | per_1m_output_tokens | $20.00 |
-| `gpt-5.6-terra` | — | per_1m_input_tokens | $2.000 |
-| `gpt-5.6-terra` | — | per_1m_output_tokens | $12.00 |
-| `gpt-5.6-terra-y` | — | per_1m_input_tokens | $2.000 |
-| `gpt-5.6-terra-y` | — | per_1m_output_tokens | $12.00 |
-| `gpt-6-astra` | — | per_1m_input_tokens | $10.00 |
-| `gpt-6-astra` | — | per_1m_output_tokens | $50.00 |
-| `gpt-6-luna` | — | per_1m_input_tokens | $0.100 |
-| `gpt-6-luna` | — | per_1m_output_tokens | $0.500 |
-| `gpt-6-sol` | — | per_1m_input_tokens | $2.000 |
-| `gpt-6-sol` | — | per_1m_output_tokens | $10.00 |
-| `gpt-6.1-sol` | — | per_1m_input_tokens | $2.000 |
-| `gpt-6.1-sol` | — | per_1m_output_tokens | $10.00 |
-| `gpt-image-2` | — | per_image | $0.060 |
-| `gpt-image-2.5` | — | per_image | $0.040 |
-| `gpt-image-2.5-flare` | — | per_1m_input_tokens | $5.000 |
-| `gpt-image-2.5-flare` | — | per_1m_output_tokens | $5.000 |
-| `gpt-image-2.5-flare:flat` | — | per_image | $0.040 |
-| `gpt-image-2.5-sunburst` | — | per_image | $0.050 |
-| `gpt-image-2.5-sunburst:flat` | — | per_image | $0.050 |
-| `grok-4.1-fast` | — | per_1m_input_tokens | $0.200 |
-| `grok-4.1-fast` | — | per_1m_output_tokens | $0.500 |
-| `grok-4.20-non-reasoning` | — | per_1m_input_tokens | $1.250 |
-| `grok-4.20-non-reasoning` | — | per_1m_output_tokens | $2.500 |
-| `grok-4.20-reasoning` | — | per_1m_input_tokens | $1.250 |
-| `grok-4.20-reasoning` | — | per_1m_output_tokens | $2.500 |
-| `grok-4.3` | `grok-4.3` | per_1m_input_tokens | $1.250 |
-| `grok-4.3` | `grok-4.3` | per_1m_output_tokens | $2.500 |
-| `grok-4.5` | — | per_1m_input_tokens | $2.000 |
-| `grok-4.5` | — | per_1m_output_tokens | $6.000 |
-| `grok-4.6` | — | per_1m_input_tokens | $2.000 |
-| `grok-4.6` | — | per_1m_output_tokens | $6.000 |
-| `grok-4.7` | — | per_1m_input_tokens | $2.000 |
-| `grok-4.7` | — | per_1m_output_tokens | $6.000 |
-| `hassaku-xl-illustrious` | — | per_request | $0.020 |
-| `hy3` | — | per_1m_input_tokens | $0.140 |
-| `hy3` | — | per_1m_output_tokens | $0.580 |
-| `hy4-preview` | — | per_1m_input_tokens | $0.834 |
-| `hy4-preview` | — | per_1m_output_tokens | $2.501 |
-| `jev-1.13` | — | per_1m_input_tokens | $0.089 |
-| `jev-1.14` | — | per_1m_input_tokens | $0.089 |
-| `juggernaut-xl` | — | per_request | $0.020 |
-| `kimi-k2.5` | — | per_1m_input_tokens | $0.600 |
-| `kimi-k2.5` | — | per_1m_output_tokens | $3.000 |
-| `kimi-k2.6` | — | per_1m_input_tokens | $0.950 |
-| `kimi-k2.6` | — | per_1m_output_tokens | $4.000 |
-| `kimi-k2.7-code` | — | per_1m_input_tokens | $0.950 |
-| `kimi-k2.7-code` | — | per_1m_output_tokens | $4.000 |
-| `kimi-k3` | — | per_1m_input_tokens | $3.000 |
-| `kimi-k3` | — | per_1m_output_tokens | $15.00 |
-| `longcat-2.0` | — | per_1m_input_tokens | $0.775 |
-| `longcat-2.0` | — | per_1m_output_tokens | $3.098 |
-| `majicmix-realistic` | — | per_request | $0.020 |
-| `mimo-v2.5` | — | per_1m_input_tokens | $0.168 |
-| `mimo-v2.5` | — | per_1m_output_tokens | $0.336 |
-| `mimo-v2.5-pro` | — | per_1m_input_tokens | $0.442 |
-| `mimo-v2.5-pro` | — | per_1m_output_tokens | $0.884 |
-| `mimo-v2.6-flash` | — | per_1m_input_tokens | $0.140 |
-| `mimo-v2.6-flash` | — | per_1m_output_tokens | $0.280 |
-| `mimo-v2.6-pro` | — | per_1m_input_tokens | $0.435 |
-| `mimo-v2.6-pro` | — | per_1m_output_tokens | $0.870 |
-| `minimax-m2-her` | — | per_1m_input_tokens | $0.300 |
-| `minimax-m2-her` | — | per_1m_output_tokens | $1.200 |
-| `minimax-m2.5` | — | per_1m_input_tokens | $0.300 |
-| `minimax-m2.5` | — | per_1m_output_tokens | $1.200 |
-| `minimax-m2.7` | — | per_1m_input_tokens | $0.300 |
-| `minimax-m2.7` | — | per_1m_output_tokens | $1.200 |
-| `minimax-m3` | — | per_1m_input_tokens | $0.300 |
-| `minimax-m3` | — | per_1m_output_tokens | $1.200 |
-| `mistral-large-3` | — | per_1m_input_tokens | $0.500 |
-| `mistral-large-3` | — | per_1m_output_tokens | $1.500 |
-| `mistral-large-4` | — | per_1m_input_tokens | $0.680 |
-| `mistral-large-4` | — | per_1m_output_tokens | $2.040 |
-| `mistral-small` | — | per_1m_input_tokens | $0.100 |
-| `mistral-small` | — | per_1m_output_tokens | $0.300 |
-| `muse-spark-1.2-contributor` | — | per_1m_input_tokens | $0.100 |
-| `muse-spark-1.2-contributor` | — | per_1m_output_tokens | $0.200 |
-| `muse-spark-1.3-contributor` | — | per_1m_input_tokens | $0.100 |
-| `muse-spark-1.3-contributor` | — | per_1m_output_tokens | $0.200 |
-| `muse-wonder` | — | per_1m_input_tokens | $4.000 |
-| `muse-wonder` | — | per_1m_output_tokens | $20.00 |
-| `nova-furry-xl` | — | per_request | $0.020 |
-| `or-glm-5.3` | — | per_1m_input_tokens | $0.980 |
-| `or-glm-5.3` | — | per_1m_output_tokens | $3.080 |
-| `or-kimi-k3` | — | per_1m_input_tokens | $3.000 |
-| `or-kimi-k3` | — | per_1m_output_tokens | $15.00 |
-| `pony-diffusion-v6-xl` | — | per_request | $0.020 |
-| `pony-realism` | — | per_request | $0.020 |
-| `qwen3.7-max` | — | per_1m_input_tokens | $2.500 |
-| `qwen3.7-max` | — | per_1m_output_tokens | $7.500 |
-| `qwen3.8-flash` | — | per_1m_input_tokens | $0.150 |
-| `qwen3.8-flash` | — | per_1m_output_tokens | $0.470 |
-| `qwen3.8-max` | — | per_1m_input_tokens | $2.000 |
-| `qwen3.8-max` | — | per_1m_output_tokens | $6.000 |
-| `qwen3.8-omni-flash` | — | per_1m_input_tokens | $0.150 |
-| `qwen3.8-omni-flash` | — | per_1m_output_tokens | $0.470 |
-| `realistic-vision-v6` | — | per_request | $0.020 |
-| `rev-animated` | — | per_request | $0.020 |
-| `step-5-preview` | — | per_1m_input_tokens | $1.000 |
-| `step-5-preview` | — | per_1m_output_tokens | $2.700 |
-| `text-embedding-3-large` | — | per_1m_input_tokens | $0.130 |
-| `text-embedding-3-large` | — | per_1m_output_tokens | $0.130 |
-| `wai-nsfw-illustrious-sdxl` | — | per_request | $0.020 |
+| Model | Canonical | Unit | Price (USD) | List (USD) | Group | Ratio | Effective (USD) |
+|---|---|---|---|---|---|---|---|
+| `anything-xl` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `autismmix-sdxl` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `claude-fable-5` | — | per_1m_input_tokens | $2.235 | $10.00 | claude-gg-claude-fable-5 | 0.2235 | $2.235 |
+| `claude-fable-5` | — | per_1m_output_tokens | $11.18 | $50.00 | claude-gg-claude-fable-5 | 0.2235 | $11.18 |
+| `claude-fable-5.1` | — | per_1m_input_tokens | $2.235 | $10.00 | claude-gg-claude-fable-5.1 | 0.2235 | $2.235 |
+| `claude-fable-5.1` | — | per_1m_output_tokens | $11.18 | $50.00 | claude-gg-claude-fable-5.1 | 0.2235 | $11.18 |
+| `claude-haiku-4-5-20251001` | — | per_1m_input_tokens | $0.169 | $1.000 | default-no1-claude-haiku-4-5-20251001 | 0.169 | $0.169 |
+| `claude-haiku-4-5-20251001` | — | per_1m_output_tokens | $0.845 | $5.000 | default-no1-claude-haiku-4-5-20251001 | 0.169 | $0.845 |
+| `claude-haiku-5-5` | — | per_1m_input_tokens | $0.036 | $0.100 | a7-6489-claude-haiku-5-5 | 0.3564 | $0.036 |
+| `claude-haiku-5-5` | — | per_1m_output_tokens | $0.178 | $0.500 | a7-6489-claude-haiku-5-5 | 0.3564 | $0.178 |
+| `claude-opus-4-5` | — | per_1m_input_tokens | $1.117 | $5.000 | claude-gg-claude-opus-4-5 | 0.2235 | $1.117 |
+| `claude-opus-4-5` | — | per_1m_output_tokens | $5.588 | $25.00 | claude-gg-claude-opus-4-5 | 0.2235 | $5.588 |
+| `claude-opus-4-5-thinking` | — | per_1m_input_tokens | $3.150 | $5.000 | CC-pol-claude-opus-4-5-thinking | 0.63 | $3.150 |
+| `claude-opus-4-5-thinking` | — | per_1m_output_tokens | $15.75 | $25.00 | CC-pol-claude-opus-4-5-thinking | 0.63 | $15.75 |
+| `claude-opus-4-6-thinking` | — | per_1m_input_tokens | $2.235 | $5.000 | a-1-gg-claude-opus-4-6-thinking | 0.447 | $2.235 |
+| `claude-opus-4-6-thinking` | — | per_1m_output_tokens | $11.18 | $25.00 | a-1-gg-claude-opus-4-6-thinking | 0.447 | $11.18 |
+| `claude-opus-4-7-thinking` | — | per_1m_input_tokens | $0.782 | $5.000 | a-1-gg-claude-opus-4-7-thinking | 0.1565 | $0.782 |
+| `claude-opus-4-7-thinking` | — | per_1m_output_tokens | $3.913 | $25.00 | a-1-gg-claude-opus-4-7-thinking | 0.1565 | $3.913 |
+| `claude-opus-4-8-thinking` | — | per_1m_input_tokens | $2.400 | $5.000 | claude_supplier-fish-claude-opus-4-8-thinking | 0.48 | $2.400 |
+| `claude-opus-4-8-thinking` | — | per_1m_output_tokens | $12.00 | $25.00 | claude_supplier-fish-claude-opus-4-8-thinking | 0.48 | $12.00 |
+| `claude-opus-4.6` | — | per_1m_input_tokens | $1.250 | $5.000 | a7-6465-claude-opus-4.6 | 0.25 | $1.250 |
+| `claude-opus-4.6` | — | per_1m_output_tokens | $6.250 | $25.00 | a7-6465-claude-opus-4.6 | 0.25 | $6.250 |
+| `claude-opus-4.7` | — | per_1m_input_tokens | $1.117 | $5.000 | claude-gg-claude-opus-4.7 | 0.2235 | $1.117 |
+| `claude-opus-4.7` | — | per_1m_output_tokens | $5.588 | $25.00 | claude-gg-claude-opus-4.7 | 0.2235 | $5.588 |
+| `claude-opus-4.8` | `claude-opus-4.8` | per_1m_input_tokens | $1.117 | $5.000 | claude-gg-claude-opus-4.8 | 0.2235 | $1.117 |
+| `claude-opus-4.8` | `claude-opus-4.8` | per_1m_output_tokens | $5.588 | $25.00 | claude-gg-claude-opus-4.8 | 0.2235 | $5.588 |
+| `claude-opus-5` | — | per_1m_input_tokens | $1.250 | $5.000 | a7-6465-claude-opus-5 | 0.25 | $1.250 |
+| `claude-opus-5` | — | per_1m_output_tokens | $6.250 | $25.00 | a7-6465-claude-opus-5 | 0.25 | $6.250 |
+| `claude-opus-5-thinking` | — | per_1m_input_tokens | $3.150 | $5.000 | CC-pol-3-claude-opus-5-thinking | 0.63 | $3.150 |
+| `claude-opus-5-thinking` | — | per_1m_output_tokens | $15.75 | $25.00 | CC-pol-3-claude-opus-5-thinking | 0.63 | $15.75 |
+| `claude-opus-5.5` | — | per_1m_input_tokens | $0.894 | $4.000 | claude-gg-claude-opus-5.5 | 0.2235 | $0.894 |
+| `claude-opus-5.5` | — | per_1m_output_tokens | $4.470 | $20.00 | claude-gg-claude-opus-5.5 | 0.2235 | $4.470 |
+| `claude-sonnet-4-5-thinking` | — | per_1m_input_tokens | $2.100 | $3.000 | key-pol-claude-sonnet-4-5-thinking | 0.7 | $2.100 |
+| `claude-sonnet-4-5-thinking` | — | per_1m_output_tokens | $10.50 | $15.00 | key-pol-claude-sonnet-4-5-thinking | 0.7 | $10.50 |
+| `claude-sonnet-4-6-thinking` | — | per_1m_input_tokens | $1.341 | $3.000 | a-1-gg-claude-sonnet-4-6-thinking | 0.447 | $1.341 |
+| `claude-sonnet-4-6-thinking` | — | per_1m_output_tokens | $6.705 | $15.00 | a-1-gg-claude-sonnet-4-6-thinking | 0.447 | $6.705 |
+| `claude-sonnet-4.5` | — | per_1m_input_tokens | $0.670 | $3.000 | claude-gg-claude-sonnet-4-5 | 0.2235 | $0.670 |
+| `claude-sonnet-4.5` | — | per_1m_output_tokens | $3.353 | $15.00 | claude-gg-claude-sonnet-4-5 | 0.2235 | $3.353 |
+| `claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_input_tokens | $0.670 | $3.000 | claude-gg-claude-sonnet-4.6 | 0.2235 | $0.670 |
+| `claude-sonnet-4.6` | `claude-sonnet-4.6` | per_1m_output_tokens | $3.353 | $15.00 | claude-gg-claude-sonnet-4.6 | 0.2235 | $3.353 |
+| `claude-sonnet-5` | — | per_1m_input_tokens | $0.447 | $2.000 | claude-gg-claude-sonnet-5 | 0.2235 | $0.447 |
+| `claude-sonnet-5` | — | per_1m_output_tokens | $2.235 | $10.00 | claude-gg-claude-sonnet-5 | 0.2235 | $2.235 |
+| `claude-sonnet-5-5` | — | per_1m_input_tokens | $0.500 | $2.000 | a7-6489-claude-sonnet-5-5 | 0.25 | $0.500 |
+| `claude-sonnet-5-5` | — | per_1m_output_tokens | $2.500 | $10.00 | a7-6489-claude-sonnet-5-5 | 0.25 | $2.500 |
+| `claude-sonnet-5-thinking` | — | per_1m_input_tokens | $0.960 | $2.000 | claude_supplier-fish-claude-sonnet-5-thinking | 0.48 | $0.960 |
+| `claude-sonnet-5-thinking` | — | per_1m_output_tokens | $4.800 | $10.00 | claude_supplier-fish-claude-sonnet-5-thinking | 0.48 | $4.800 |
+| `custom-civitai` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `cyberrealistic-pony` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `deepseek-r1` | `deepseek-r1` | per_1m_input_tokens | $1.120 | $0.700 | Deepseek-pol-deepseek-r1 | 1.6 | $1.120 |
+| `deepseek-r1` | `deepseek-r1` | per_1m_output_tokens | $3.840 | $2.400 | Deepseek-pol-deepseek-r1 | 1.6 | $3.840 |
+| `deepseek-r1-0528` | — | per_1m_input_tokens | $1.120 | $0.500 | Deepseek-pol-deepseek-r1-0528 | 2.24 | $1.120 |
+| `deepseek-r1-0528` | — | per_1m_output_tokens | $4.816 | $2.150 | Deepseek-pol-deepseek-r1-0528 | 2.24 | $4.816 |
+| `deepseek-v3` | `deepseek-v3` | per_1m_input_tokens | $0.560 | $1.140 | Deepseek-pol-deepseek-v3 | 0.4912 | $0.560 |
+| `deepseek-v3` | `deepseek-v3` | per_1m_output_tokens | $2.240 | $4.560 | Deepseek-pol-deepseek-v3 | 0.4912 | $2.240 |
+| `deepseek-v3-0324` | — | per_1m_input_tokens | $0.504 | $0.240 | open1-siliconflow-fp8-deepseek-v3-0324 | 2.1014 | $0.504 |
+| `deepseek-v3-0324` | — | per_1m_output_tokens | $1.891 | $0.900 | open1-siliconflow-fp8-deepseek-v3-0324 | 2.1014 | $1.891 |
+| `deepseek-v3.1` | — | per_1m_input_tokens | $0.017 | $0.250 | si-deepseek-v3.1 | 0.0693 | $0.017 |
+| `deepseek-v3.1` | — | per_1m_output_tokens | $0.066 | $0.950 | si-deepseek-v3.1 | 0.0693 | $0.066 |
+| `deepseek-v3.1-terminus` | — | per_1m_input_tokens | $0.597 | $0.270 | open1-siliconflow-fp8-deepseek-v3.1-terminus | 2.2094 | $0.597 |
+| `deepseek-v3.1-terminus` | — | per_1m_output_tokens | $2.209 | $1.000 | open1-siliconflow-fp8-deepseek-v3.1-terminus | 2.2094 | $2.209 |
+| `deepseek-v3.2` | — | per_1m_input_tokens | $0.560 | $0.280 | Deepseek-pol-deepseek-v3.2 | 2 | $0.560 |
+| `deepseek-v3.2` | — | per_1m_output_tokens | $0.840 | $0.420 | Deepseek-pol-deepseek-v3.2 | 2 | $0.840 |
+| `deepseek-v3.2-exp` | — | per_1m_input_tokens | $0.560 | $0.280 | Deepseek-pol-deepseek-v3.2 | 2 | $0.560 |
+| `deepseek-v3.2-exp` | — | per_1m_output_tokens | $0.840 | $0.420 | Deepseek-pol-deepseek-v3.2 | 2 | $0.840 |
+| `deepseek-v4-flash` | — | per_1m_input_tokens | $0.0072 | $0.140 | a7-bbgt-2846-deepseek-v4-flash | 0.0514 | $0.0072 |
+| `deepseek-v4-flash` | — | per_1m_output_tokens | $0.014 | $0.280 | a7-bbgt-2846-deepseek-v4-flash | 0.0514 | $0.014 |
+| `deepseek-v4-flash-0731` | — | per_1m_input_tokens | $0.0072 | $0.140 | a7-vercelap-6563-deepseek-v4-flash-0731 | 0.0511 | $0.0072 |
+| `deepseek-v4-flash-0731` | — | per_1m_output_tokens | $0.014 | $0.280 | a7-vercelap-6563-deepseek-v4-flash-0731 | 0.0511 | $0.014 |
+| `deepseek-v4-pro` | — | per_1m_input_tokens | $0.011 | $1.740 | a7-vercelap-6563-deepseek-v4-pro | 0.0066 | $0.011 |
+| `deepseek-v4-pro` | — | per_1m_output_tokens | $0.023 | $3.480 | a7-vercelap-6563-deepseek-v4-pro | 0.0066 | $0.023 |
+| `deepseek-v4-pro-0813` | — | per_1m_input_tokens | $0.012 | $1.088 | a7-bbgt-2846-deepseek-v4-pro-0813 | 0.011 | $0.012 |
+| `deepseek-v4-pro-0813` | — | per_1m_output_tokens | $0.036 | $3.263 | a7-bbgt-2846-deepseek-v4-pro-0813 | 0.011 | $0.036 |
+| `deepseek-v4.1-flash` | — | per_1m_input_tokens | $0.0072 | $0.190 | a7-bbgt-2846-deepseek-v4.1-flash | 0.0379 | $0.0072 |
+| `deepseek-v4.1-flash` | — | per_1m_output_tokens | $0.028 | $0.750 | a7-bbgt-2846-deepseek-v4.1-flash | 0.0379 | $0.028 |
+| `deepseek-v4.1-flash-1017` | — | per_1m_input_tokens | $0.0011 | $0.195 | ih-ali-deepseek-v4.1-flash-1017 | 0.0054 | $0.0011 |
+| `deepseek-v4.1-flash-1017` | — | per_1m_output_tokens | $0.0042 | $0.780 | ih-ali-deepseek-v4.1-flash-1017 | 0.0054 | $0.0042 |
+| `dreamshaper-v8` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `dreamshaper-xl` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `epicrealism` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `flux-1-dev-runware` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `flux.2-dev` | — | per_request | $0.045 | $0.045 | rw1-runware-image | 1 | $0.045 |
+| `flux.2-flex` | — | per_request | $0.120 | $0.120 | rw1-runware-image | 1 | $0.120 |
+| `flux.2-klein-4b` | — | per_request | $0.0030 | $0.0030 | rw1-runware-image | 1 | $0.0030 |
+| `flux.2-klein-9b` | — | per_request | $0.0085 | $0.0085 | rw1-runware-image | 1 | $0.0085 |
+| `flux.2-max` | — | per_request | $0.140 | $0.140 | rw1-runware-image | 1 | $0.140 |
+| `flux.2-pro` | — | per_request | $0.060 | $0.060 | rw1-runware-image | 1 | $0.060 |
+| `gemini-2.5-flash` | — | per_1m_input_tokens | $0.268 | $0.300 | gemini-gg-2-gemini-2.5-flash | 0.894 | $0.268 |
+| `gemini-2.5-flash` | — | per_1m_output_tokens | $2.235 | $2.500 | gemini-gg-2-gemini-2.5-flash | 0.894 | $2.235 |
+| `gemini-2.5-pro` | — | per_1m_input_tokens | $0.048 | $1.250 | a7-vercelap-6563-gemini-2.5-pro | 0.0384 | $0.048 |
+| `gemini-2.5-pro` | — | per_1m_output_tokens | $0.384 | $10.00 | a7-vercelap-6563-gemini-2.5-pro | 0.0384 | $0.384 |
+| `gemini-2.5-pro-thinking` | — | per_1m_input_tokens | $0.880 | $1.250 | default-no1-gemini-2.5-pro-thinking | 0.704 | $0.880 |
+| `gemini-2.5-pro-thinking` | — | per_1m_output_tokens | $7.040 | $10.00 | default-no1-gemini-2.5-pro-thinking | 0.704 | $7.040 |
+| `gemini-2.5-pro-tts` | — | per_1m_input_tokens | $1.500 | $1.000 | default-no1-gemini-2.5-pro-preview-tts | 1.5 | $1.500 |
+| `gemini-2.5-pro-tts` | — | per_1m_output_tokens | $30.00 | $20.00 | default-no1-gemini-2.5-pro-preview-tts | 1.5 | $30.00 |
+| `gemini-3-flash` | `gemini-3-flash` | per_1m_input_tokens | $0.035 | $0.500 | si-gemini-3-flash | 0.07 | $0.035 |
+| `gemini-3-flash` | `gemini-3-flash` | per_1m_output_tokens | $0.210 | $3.000 | si-gemini-3-flash | 0.07 | $0.210 |
+| `gemini-3-pro` | — | per_1m_input_tokens | $0.560 | $2.000 | pol-2-gemini-3-pro-preview | 0.28 | $0.560 |
+| `gemini-3-pro` | — | per_1m_output_tokens | $3.360 | $12.00 | pol-2-gemini-3-pro-preview | 0.28 | $3.360 |
+| `gemini-3.1-flash-lite` | — | per_1m_input_tokens | $0.037 | $0.250 | gemini-gg-gemini-3.1-flash-lite | 0.149 | $0.037 |
+| `gemini-3.1-flash-lite` | — | per_1m_output_tokens | $0.224 | $1.500 | gemini-gg-gemini-3.1-flash-lite | 0.149 | $0.224 |
+| `gemini-3.1-pro` | — | per_1m_input_tokens | $0.298 | $2.000 | gemini-gg-gemini-3.1-pro-preview | 0.149 | $0.298 |
+| `gemini-3.1-pro` | — | per_1m_output_tokens | $1.788 | $12.00 | gemini-gg-gemini-3.1-pro-preview | 0.149 | $1.788 |
+| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_input_tokens | $0.012 | $1.500 | a7-vercelap-6563-gemini-3.5-flash | 0.008 | $0.012 |
+| `gemini-3.5-flash` | `gemini-3-flash` | per_1m_output_tokens | $0.072 | $9.000 | a7-vercelap-6563-gemini-3.5-flash | 0.008 | $0.072 |
+| `gemini-3.5-flash-lite` | — | per_1m_input_tokens | $0.143 | $0.300 | GeminiVertex-lnk1-gemini-3.5-flash-lite | 0.4768 | $0.143 |
+| `gemini-3.5-flash-lite` | — | per_1m_output_tokens | $1.192 | $2.500 | GeminiVertex-lnk1-gemini-3.5-flash-lite | 0.4768 | $1.192 |
+| `gemini-3.7-flash` | — | per_1m_input_tokens | $0.112 | $0.750 | gemini-gg-gemini-3.7-flash | 0.149 | $0.112 |
+| `gemini-3.7-flash` | — | per_1m_output_tokens | $0.559 | $3.750 | gemini-gg-gemini-3.7-flash | 0.149 | $0.559 |
+| `gemini-3.8-flash` | — | per_1m_input_tokens | $0.073 | $0.750 | ih-ag-gemini-3.8-flash | 0.098 | $0.073 |
+| `gemini-3.8-flash` | — | per_1m_output_tokens | $0.367 | $3.750 | ih-ag-gemini-3.8-flash | 0.098 | $0.367 |
+| `gemini-4-argon` | — | per_1m_input_tokens | $0.450 | $2.000 | gemini-gg-gemini-4-argon | 0.225 | $0.450 |
+| `gemini-4-argon` | — | per_1m_output_tokens | $2.250 | $10.00 | gemini-gg-gemini-4-argon | 0.225 | $2.250 |
+| `gemini-nano-banana-2.1` | — | per_request | $0.024 | $0.080 | gpt-4k-gg-2-gemini-nano-banana-2.1 | 0.298 | $0.024 |
+| `glm-4.5` | — | per_1m_input_tokens | $0.041 | $0.600 | si-glm-4.5 | 0.0686 | $0.041 |
+| `glm-4.5` | — | per_1m_output_tokens | $0.151 | $2.200 | si-glm-4.5 | 0.0686 | $0.151 |
+| `glm-4.6` | — | per_1m_input_tokens | $1.100 | $0.600 | open1-novita-bf16-glm-4.6 | 1.8333 | $1.100 |
+| `glm-4.6` | — | per_1m_output_tokens | $4.033 | $2.200 | open1-novita-bf16-glm-4.6 | 1.8333 | $4.033 |
+| `glm-4.7` | — | per_1m_input_tokens | $0.955 | $0.600 | open1-deepinfra-fp4-glm-4.7 | 1.5909 | $0.955 |
+| `glm-4.7` | — | per_1m_output_tokens | $3.500 | $2.200 | open1-deepinfra-fp4-glm-4.7 | 1.5909 | $3.500 |
+| `glm-4.7-thinking` | — | per_1m_input_tokens | $0.955 | $0.600 | open1-deepinfra-fp4-glm-4.7 | 1.5909 | $0.955 |
+| `glm-4.7-thinking` | — | per_1m_output_tokens | $3.500 | $2.200 | open1-deepinfra-fp4-glm-4.7 | 1.5909 | $3.500 |
+| `glm-5.1` | — | per_1m_input_tokens | $1.929 | $1.400 | open1-baidu-fp8-glm-5.1 | 1.378 | $1.929 |
+| `glm-5.1` | — | per_1m_output_tokens | $6.063 | $4.400 | open1-baidu-fp8-glm-5.1 | 1.378 | $6.063 |
+| `glm-5.2` | — | per_1m_input_tokens | $0.0014 | $1.400 | si-glm-5.2 | 0.001 | $0.0014 |
+| `glm-5.2` | — | per_1m_output_tokens | $0.0044 | $4.400 | si-glm-5.2 | 0.001 | $0.0044 |
+| `glm-5.3` | — | per_1m_input_tokens | $0.023 | $1.120 | a7-vercelap-6563-glm-5.3 | 0.0206 | $0.023 |
+| `glm-5.3` | — | per_1m_output_tokens | $0.091 | $4.400 | a7-vercelap-6563-glm-5.3 | 0.0206 | $0.091 |
+| `glm-5.3-flash` | — | per_1m_input_tokens | $0.013 | $0.150 | a7-ds-5766-glm-5.3-flash | 0.088 | $0.013 |
+| `glm-5.3-flash` | — | per_1m_output_tokens | $0.044 | $0.500 | a7-ds-5766-glm-5.3-flash | 0.088 | $0.044 |
+| `gpt-4o-image` | — | per_1m_input_tokens | $26.25 | $2.500 | AIGC-pol-gpt-4o-image | 10.5 | $26.25 |
+| `gpt-4o-image` | — | per_1m_output_tokens | $105.00 | $10.00 | AIGC-pol-gpt-4o-image | 10.5 | $105.00 |
+| `gpt-5.5` | — | per_1m_input_tokens | $0.450 | $5.000 | CX_sub_june-fish-gpt-5.5 | 0.09 | $0.450 |
+| `gpt-5.5` | — | per_1m_output_tokens | $2.700 | $30.00 | CX_sub_june-fish-gpt-5.5 | 0.09 | $2.700 |
+| `gpt-5.6-luna` | — | per_1m_input_tokens | $0.036 | $0.200 | CX-Sale-duck-gpt-5.6-luna | 0.18 | $0.036 |
+| `gpt-5.6-luna` | — | per_1m_output_tokens | $0.216 | $1.200 | CX-Sale-duck-gpt-5.6-luna | 0.18 | $0.216 |
+| `gpt-5.6-sol` | — | per_1m_input_tokens | $0.036 | $4.000 | a7-bby1-5151-gpt-5.6-sol | 0.0089 | $0.036 |
+| `gpt-5.6-sol` | — | per_1m_output_tokens | $0.178 | $20.00 | a7-bby1-5151-gpt-5.6-sol | 0.0089 | $0.178 |
+| `gpt-5.6-terra` | — | per_1m_input_tokens | $0.360 | $2.000 | CX-Sale-duck-gpt-5.6-terra | 0.18 | $0.360 |
+| `gpt-5.6-terra` | — | per_1m_output_tokens | $2.160 | $12.00 | CX-Sale-duck-gpt-5.6-terra | 0.18 | $2.160 |
+| `gpt-5.6-terra-y` | — | per_1m_input_tokens | $1.120 | $2.000 | CX-gpt-pol-gpt-5.6-terra-y | 0.56 | $1.120 |
+| `gpt-5.6-terra-y` | — | per_1m_output_tokens | $6.720 | $12.00 | CX-gpt-pol-gpt-5.6-terra-y | 0.56 | $6.720 |
+| `gpt-6-astra` | — | per_1m_input_tokens | $1.500 | $10.00 | a7-3016-gpt-6-astra | 0.15 | $1.500 |
+| `gpt-6-astra` | — | per_1m_output_tokens | $7.500 | $50.00 | a7-3016-gpt-6-astra | 0.15 | $7.500 |
+| `gpt-6-luna` | — | per_1m_input_tokens | $0.021 | $0.100 | CX-Sale-duck-gpt-6-luna | 0.21 | $0.021 |
+| `gpt-6-luna` | — | per_1m_output_tokens | $0.105 | $0.500 | CX-Sale-duck-gpt-6-luna | 0.21 | $0.105 |
+| `gpt-6-sol` | — | per_1m_input_tokens | $0.300 | $2.000 | a7-6489-gpt-6-sol | 0.15 | $0.300 |
+| `gpt-6-sol` | — | per_1m_output_tokens | $1.500 | $10.00 | a7-6489-gpt-6-sol | 0.15 | $1.500 |
+| `gpt-6.1-sol` | — | per_1m_input_tokens | $0.300 | $2.000 | a7-6489-gpt-6.1-sol | 0.15 | $0.300 |
+| `gpt-6.1-sol` | — | per_1m_output_tokens | $1.500 | $10.00 | a7-6489-gpt-6.1-sol | 0.15 | $1.500 |
+| `gpt-image-2` | — | per_image | $0.032 | $0.060 | az-pol-gpt-image-2 | 0.525 | $0.032 |
+| `gpt-image-2.5` | — | per_image | $0.018 | $0.040 | gpt-4k-gg-gpt-image-2.5 | 0.447 | $0.018 |
+| `gpt-image-2.5-flare` | — | per_1m_input_tokens | $1.750 | $5.000 | pol-4-gpt-image-2.5-flare | 0.35 | $1.750 |
+| `gpt-image-2.5-flare` | — | per_1m_output_tokens | $1.750 | $5.000 | pol-4-gpt-image-2.5-flare | 0.35 | $1.750 |
+| `gpt-image-2.5-flare:flat` | — | per_image | $0.018 | $0.040 | gpt-4k-gg-gpt-image-2.5-flare-flat | 0.447 | $0.018 |
+| `gpt-image-2.5-sunburst` | — | per_image | $0.026 | $0.050 | az-pol-gpt-image-2.5-sunburst | 0.525 | $0.026 |
+| `gpt-image-2.5-sunburst:flat` | — | per_image | $0.022 | $0.050 | gpt-4k-gg-gpt-image-2.5-sunburst-flat | 0.447 | $0.022 |
+| `grok-4.1-fast` | — | per_1m_input_tokens | $0.089 | $0.200 | a-1-gg-grok-4.1-fast | 0.447 | $0.089 |
+| `grok-4.1-fast` | — | per_1m_output_tokens | $0.224 | $0.500 | a-1-gg-grok-4.1-fast | 0.447 | $0.224 |
+| `grok-4.20-non-reasoning` | — | per_1m_input_tokens | $1.969 | $1.250 | grokkey-pol-grok-4.20-non-reasoning | 1.575 | $1.969 |
+| `grok-4.20-non-reasoning` | — | per_1m_output_tokens | $3.938 | $2.500 | grokkey-pol-grok-4.20-non-reasoning | 1.575 | $3.938 |
+| `grok-4.20-reasoning` | — | per_1m_input_tokens | $1.969 | $1.250 | grokkey-pol-grok-4.20-reasoning | 1.575 | $1.969 |
+| `grok-4.20-reasoning` | — | per_1m_output_tokens | $3.938 | $2.500 | grokkey-pol-grok-4.20-reasoning | 1.575 | $3.938 |
+| `grok-4.3` | `grok-4.3` | per_1m_input_tokens | $0.875 | $1.250 | grok-pol-grok-4.3 | 0.7 | $0.875 |
+| `grok-4.3` | `grok-4.3` | per_1m_output_tokens | $1.750 | $2.500 | grok-pol-grok-4.3 | 0.7 | $1.750 |
+| `grok-4.5` | — | per_1m_input_tokens | $0.100 | $2.000 | Grok-Build-duck-grok-4.5 | 0.05 | $0.100 |
+| `grok-4.5` | — | per_1m_output_tokens | $0.300 | $6.000 | Grok-Build-duck-grok-4.5 | 0.05 | $0.300 |
+| `grok-4.6` | — | per_1m_input_tokens | $0.100 | $2.000 | Grok-Build-duck-grok-4.6 | 0.05 | $0.100 |
+| `grok-4.6` | — | per_1m_output_tokens | $0.300 | $6.000 | Grok-Build-duck-grok-4.6 | 0.05 | $0.300 |
+| `grok-4.7` | — | per_1m_input_tokens | $0.100 | $2.000 | Grok-Build-duck-grok-4.7 | 0.05 | $0.100 |
+| `grok-4.7` | — | per_1m_output_tokens | $0.300 | $6.000 | Grok-Build-duck-grok-4.7 | 0.05 | $0.300 |
+| `hassaku-xl-illustrious` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `hy3` | — | per_1m_input_tokens | $0.100 | $0.140 | kdy1-hy3 | 0.7143 | $0.100 |
+| `hy3` | — | per_1m_output_tokens | $0.414 | $0.580 | kdy1-hy3 | 0.7143 | $0.414 |
+| `hy4-preview` | — | per_1m_input_tokens | $0.180 | $0.834 | kdy1-2-hy4-preview | 0.2158 | $0.180 |
+| `hy4-preview` | — | per_1m_output_tokens | $0.540 | $2.501 | kdy1-2-hy4-preview | 0.2158 | $0.540 |
+| `jev-1.13` | — | per_1m_input_tokens | $0.089 | $0.089 | jev1 | 1 | $0.089 |
+| `jev-1.14` | — | per_1m_input_tokens | $0.089 | $0.089 | jev1 | 1 | $0.089 |
+| `juggernaut-xl` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `kimi-k2.5` | — | per_1m_input_tokens | $0.040 | $0.600 | a7-bbgt-2846-kimi-k2.5 | 0.066 | $0.040 |
+| `kimi-k2.5` | — | per_1m_output_tokens | $0.198 | $3.000 | a7-bbgt-2846-kimi-k2.5 | 0.066 | $0.198 |
+| `kimi-k2.6` | — | per_1m_input_tokens | $0.040 | $0.950 | a7-bbgt-2846-kimi-k2.6 | 0.0417 | $0.040 |
+| `kimi-k2.6` | — | per_1m_output_tokens | $0.167 | $4.000 | a7-bbgt-2846-kimi-k2.6 | 0.0417 | $0.167 |
+| `kimi-k2.7-code` | — | per_1m_input_tokens | $0.029 | $0.950 | a7-vercelap-6563-kimi-k2.7-code | 0.0303 | $0.029 |
+| `kimi-k2.7-code` | — | per_1m_output_tokens | $0.121 | $4.000 | a7-vercelap-6563-kimi-k2.7-code | 0.0303 | $0.121 |
+| `kimi-k3` | — | per_1m_input_tokens | $0.102 | $3.000 | a7-chanjiong-6462-kimi-k3 | 0.034 | $0.102 |
+| `kimi-k3` | — | per_1m_output_tokens | $0.510 | $15.00 | a7-chanjiong-6462-kimi-k3 | 0.034 | $0.510 |
+| `longcat-2.0` | — | per_1m_input_tokens | $0.600 | $0.775 | open1-atlas-cloud-fp8-longcat-2.0 | 0.7746 | $0.600 |
+| `longcat-2.0` | — | per_1m_output_tokens | $2.400 | $3.098 | open1-atlas-cloud-fp8-longcat-2.0 | 0.7746 | $2.400 |
+| `majicmix-realistic` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `mimo-v2.5` | — | per_1m_input_tokens | $0.100 | $0.140 | kdy1-mimo-v2.5 | 0.7142 | $0.100 |
+| `mimo-v2.5` | — | per_1m_output_tokens | $0.200 | $0.280 | kdy1-mimo-v2.5 | 0.7142 | $0.200 |
+| `mimo-v2.5-pro` | — | per_1m_input_tokens | $0.870 | $0.442 | open1-atlas-cloud-fp8-mimo-v2.5-pro | 1.9692 | $0.870 |
+| `mimo-v2.5-pro` | — | per_1m_output_tokens | $1.740 | $0.884 | open1-atlas-cloud-fp8-mimo-v2.5-pro | 1.9692 | $1.740 |
+| `mimo-v2.6-flash` | — | per_1m_input_tokens | $0.029 | $0.140 | a7-5313-mimo-v2.6-flash | 0.2057 | $0.029 |
+| `mimo-v2.6-flash` | — | per_1m_output_tokens | $0.058 | $0.280 | a7-5313-mimo-v2.6-flash | 0.2057 | $0.058 |
+| `mimo-v2.6-pro` | — | per_1m_input_tokens | $0.870 | $0.435 | open1-deepinfra-fp8-mimo-v2.6-pro | 2 | $0.870 |
+| `mimo-v2.6-pro` | — | per_1m_output_tokens | $1.740 | $0.870 | open1-deepinfra-fp8-mimo-v2.6-pro | 2 | $1.740 |
+| `minimax-m2-her` | — | per_1m_input_tokens | $0.600 | $0.300 | open1-minimax-minimax-m2-her | 2 | $0.600 |
+| `minimax-m2-her` | — | per_1m_output_tokens | $2.400 | $1.200 | open1-minimax-minimax-m2-her | 2 | $2.400 |
+| `minimax-m2.5` | — | per_1m_input_tokens | $0.096 | $0.300 | a7-vercelap-6563-minimax-m2.5 | 0.32 | $0.096 |
+| `minimax-m2.5` | — | per_1m_output_tokens | $0.384 | $1.200 | a7-vercelap-6563-minimax-m2.5 | 0.32 | $0.384 |
+| `minimax-m2.7` | — | per_1m_input_tokens | $0.210 | $0.300 | kdy1-minimax-m2.7 | 0.7 | $0.210 |
+| `minimax-m2.7` | — | per_1m_output_tokens | $0.840 | $1.200 | kdy1-minimax-m2.7 | 0.7 | $0.840 |
+| `minimax-m3` | — | per_1m_input_tokens | $0.065 | $0.300 | a7-ipeenk-5439-minimax-m3 | 0.216 | $0.065 |
+| `minimax-m3` | — | per_1m_output_tokens | $0.259 | $1.200 | a7-ipeenk-5439-minimax-m3 | 0.216 | $0.259 |
+| `mistral-large-3` | — | per_1m_input_tokens | $0.175 | $0.500 | si-mistral-large-3 | 0.35 | $0.175 |
+| `mistral-large-3` | — | per_1m_output_tokens | $0.525 | $1.500 | si-mistral-large-3 | 0.35 | $0.525 |
+| `mistral-large-4` | — | per_1m_input_tokens | $1.360 | $0.680 | open1-mistral-mistral-large-4 | 2 | $1.360 |
+| `mistral-large-4` | — | per_1m_output_tokens | $4.080 | $2.040 | open1-mistral-mistral-large-4 | 2 | $4.080 |
+| `mistral-small` | — | per_1m_input_tokens | $0.300 | $0.100 | open1-mistral-mistral-small | 3 | $0.300 |
+| `mistral-small` | — | per_1m_output_tokens | $0.900 | $0.300 | open1-mistral-mistral-small | 3 | $0.900 |
+| `muse-spark-1.2-contributor` | — | per_1m_input_tokens | $0.200 | $0.100 | open1-meta-muse-spark-1.2-contributor | 2 | $0.200 |
+| `muse-spark-1.2-contributor` | — | per_1m_output_tokens | $0.400 | $0.200 | open1-meta-muse-spark-1.2-contributor | 2 | $0.400 |
+| `muse-spark-1.3-contributor` | — | per_1m_input_tokens | $0.200 | $0.100 | open1-meta-muse-spark-1.3-contributor | 2 | $0.200 |
+| `muse-spark-1.3-contributor` | — | per_1m_output_tokens | $0.400 | $0.200 | open1-meta-muse-spark-1.3-contributor | 2 | $0.400 |
+| `muse-wonder` | — | per_1m_input_tokens | $8.000 | $4.000 | open1-meta-muse-wonder | 2 | $8.000 |
+| `muse-wonder` | — | per_1m_output_tokens | $40.00 | $20.00 | open1-meta-muse-wonder | 2 | $40.00 |
+| `nova-furry-xl` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `or-glm-5.3` | — | per_1m_input_tokens | $1.400 | $0.980 | open1-novita-fp8-or-glm-5.3 | 1.4286 | $1.400 |
+| `or-glm-5.3` | — | per_1m_output_tokens | $4.400 | $3.080 | open1-novita-fp8-or-glm-5.3 | 1.4286 | $4.400 |
+| `or-kimi-k3` | — | per_1m_input_tokens | $4.860 | $3.000 | open1-decart-mxfp4-or-kimi-k3 | 1.62 | $4.860 |
+| `or-kimi-k3` | — | per_1m_output_tokens | $24.30 | $15.00 | open1-decart-mxfp4-or-kimi-k3 | 1.62 | $24.30 |
+| `or-kimi-k3.1-pro` | — | per_1m_input_tokens | $5.333 | $2.000 | open1-moonshotai-mxfp4-or-kimi-k3.1-pro | 2.6667 | $5.333 |
+| `or-kimi-k3.1-pro` | — | per_1m_output_tokens | $26.67 | $10.00 | open1-moonshotai-mxfp4-or-kimi-k3.1-pro | 2.6667 | $26.67 |
+| `pony-diffusion-v6-xl` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `pony-realism` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `qwen3.7-max` | — | per_1m_input_tokens | $0.510 | $2.500 | kdy1-2-qwen3.7-max | 0.204 | $0.510 |
+| `qwen3.7-max` | — | per_1m_output_tokens | $1.530 | $7.500 | kdy1-2-qwen3.7-max | 0.204 | $1.530 |
+| `qwen3.8-flash` | — | per_1m_input_tokens | $0.0095 | $0.150 | a7-3831-qwen3.8-flash | 0.0633 | $0.0095 |
+| `qwen3.8-flash` | — | per_1m_output_tokens | $0.030 | $0.470 | a7-3831-qwen3.8-flash | 0.0633 | $0.030 |
+| `qwen3.8-max` | — | per_1m_input_tokens | $0.420 | $2.000 | kdy1-2-qwen3.8-max | 0.21 | $0.420 |
+| `qwen3.8-max` | — | per_1m_output_tokens | $1.260 | $6.000 | kdy1-2-qwen3.8-max | 0.21 | $1.260 |
+| `qwen3.8-omni-flash` | — | per_1m_input_tokens | $0.300 | $0.150 | open1-alibaba-qwen3.8-omni-flash | 2 | $0.300 |
+| `qwen3.8-omni-flash` | — | per_1m_output_tokens | $0.940 | $0.470 | open1-alibaba-qwen3.8-omni-flash | 2 | $0.940 |
+| `realistic-vision-v6` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `rev-animated` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
+| `step-5-preview` | — | per_1m_input_tokens | $2.000 | $1.000 | open1-stepfun-fp8-step-5-preview | 2 | $2.000 |
+| `step-5-preview` | — | per_1m_output_tokens | $5.400 | $2.700 | open1-stepfun-fp8-step-5-preview | 2 | $5.400 |
+| `text-embedding-3-large` | — | per_1m_input_tokens | $0.036 | $0.130 | pol-2-text-embedding-3-large | 0.28 | $0.036 |
+| `text-embedding-3-large` | — | per_1m_output_tokens | $0.036 | $0.130 | pol-2-text-embedding-3-large | 0.28 | $0.036 |
+| `wai-nsfw-illustrious-sdxl` | — | per_request | $0.020 | $0.020 | rw1-runware-image | 1 | $0.020 |
 
 ## Wappkit API — `wappkit`
 
 Source: <https://api.wappkit.com> · Records: 12
 
-| Model | Canonical | Unit | Price (USD) |
-|---|---|---|---|
-| `gpt-5.4` | `gpt-5.4` | per_1m_input_tokens | $0.110 |
-| `gpt-5.4` | `gpt-5.4` | per_1m_output_tokens | $0.662 |
-| `gpt-5.4-mini` | — | per_1m_input_tokens | $0.040 |
-| `gpt-5.4-mini` | — | per_1m_output_tokens | $0.238 |
-| `gpt-5.5` | — | per_1m_input_tokens | $0.221 |
-| `gpt-5.5` | — | per_1m_output_tokens | $1.323 |
-| `gpt-5.6-luna` | — | per_1m_input_tokens | $0.048 |
-| `gpt-5.6-luna` | — | per_1m_output_tokens | $0.348 |
-| `gpt-5.6-sol` | — | per_1m_input_tokens | $0.240 |
-| `gpt-5.6-sol` | — | per_1m_output_tokens | $1.500 |
-| `gpt-5.6-terra` | — | per_1m_input_tokens | $0.120 |
-| `gpt-5.6-terra` | — | per_1m_output_tokens | $0.750 |
+| Model | Canonical | Unit | Price (USD) | List (USD) | Group | Ratio | Effective (USD) |
+|---|---|---|---|---|---|---|---|
+| `gpt-5.4` | `gpt-5.4` | per_1m_input_tokens | $0.110 | $0.368 | Codex-Pro(救急) | 0.3 | $0.110 |
+| `gpt-5.4` | `gpt-5.4` | per_1m_output_tokens | $0.662 | $2.206 | Codex-Pro(救急) | 0.3 | $0.662 |
+| `gpt-5.4-mini` | — | per_1m_input_tokens | $0.040 | $0.132 | Codex-Pro(救急) | 0.3 | $0.040 |
+| `gpt-5.4-mini` | — | per_1m_output_tokens | $0.238 | $0.792 | Codex-Pro(救急) | 0.3 | $0.238 |
+| `gpt-5.5` | — | per_1m_input_tokens | $0.221 | $0.735 | Codex-Pro(救急) | 0.3 | $0.221 |
+| `gpt-5.5` | — | per_1m_output_tokens | $1.323 | $4.410 | Codex-Pro(救急) | 0.3 | $1.323 |
+| `gpt-5.6-luna` | — | per_1m_input_tokens | $0.048 | $0.160 | Codex-Pro(救急) | 0.3 | $0.048 |
+| `gpt-5.6-luna` | — | per_1m_output_tokens | $0.348 | $1.160 | Codex-Pro(救急) | 0.3 | $0.348 |
+| `gpt-5.6-sol` | — | per_1m_input_tokens | $0.240 | $0.800 | Codex-Pro(救急) | 0.3 | $0.240 |
+| `gpt-5.6-sol` | — | per_1m_output_tokens | $1.500 | $5.000 | Codex-Pro(救急) | 0.3 | $1.500 |
+| `gpt-5.6-terra` | — | per_1m_input_tokens | $0.120 | $0.400 | Codex-Pro(救急) | 0.3 | $0.120 |
+| `gpt-5.6-terra` | — | per_1m_output_tokens | $0.750 | $2.500 | Codex-Pro(救急) | 0.3 | $0.750 |
 

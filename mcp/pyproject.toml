@@ -24,8 +24,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/howardpen9/awesome-ai-api-proxy"
+Homepage = "https://howardpen9.github.io/awesome-ai-api-proxy/"
 Repository = "https://github.com/howardpen9/awesome-ai-api-proxy"
+Documentation = "https://github.com/howardpen9/awesome-ai-api-proxy/blob/main/mcp/README.md"
 Issues = "https://github.com/howardpen9/awesome-ai-api-proxy/issues"
 
 [project.scripts]

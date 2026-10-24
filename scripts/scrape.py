@@ -23,20 +23,37 @@ from ._paths import PROVIDERS_YAML, SNAPSHOTS_DIR
 console = Console()
 
 
+def include_in_scrape(entry: dict) -> bool:
+    """True when this provider should be fetched on a price refresh.
+
+    Inactive (shut down / ran away) providers keep their catalog entry and
+    historical snapshots, but their pricing endpoints can keep answering
+    after service ends. Those prices are not purchasable. bltcy's status
+    change itself is PR #157; this is the shared skip.
+    """
+    pricing = entry.get("pricing") or {}
+    if not pricing.get("fetcher"):
+        return False
+    return entry.get("status") != "inactive"
+
+
 def discover_fetchers() -> dict[str, str]:
     """Walk providers.yaml and return {fetcher_id: provider_name}."""
     raw = yaml.safe_load(PROVIDERS_YAML.read_text(encoding="utf-8"))
     found: dict[str, str] = {}
-    for section, entries in raw.items():
+    for _section, entries in raw.items():
         if not isinstance(entries, list):
             continue
         for entry in entries:
             if not isinstance(entry, dict):
                 continue
-            pricing = entry.get("pricing") or {}
-            fetcher = pricing.get("fetcher")
-            if fetcher:
-                found[fetcher] = entry.get("name", fetcher)
+            if not include_in_scrape(entry):
+                fetcher = (entry.get("pricing") or {}).get("fetcher")
+                if fetcher and entry.get("status") == "inactive":
+                    console.print(f"[dim]skip {fetcher}: status inactive[/dim]")
+                continue
+            fetcher = entry["pricing"]["fetcher"]
+            found[fetcher] = entry.get("name", fetcher)
     return found
 
 

@@ -56,7 +56,39 @@ weekly via the `price-refresh` workflow.
 | `fetcher` | conditionally | Fetcher ID — must match `fetchers/<id>.py`'s `PROVIDER_ID`. Required unless `submitted_prices` is the only price source. |
 | `pricing_currency` | yes | ISO 4217. We normalize to `USD` in `data/prices.latest.json`. |
 | `last_priced` | no | `YYYY-MM-DD` of the most recent successful scrape. Written by `scripts/build_prices.py`. |
+| `topup_rate` | no | What the relay charges for $1 of quota, plus the site FX used to turn that into effective USD. See below. Omit when unknown — do not guess. |
 | `submitted_prices` | no | List of community-submitted price records, manually verified by the maintainer. See below. |
+
+## `topup_rate` (optional)
+
+Many new-api relays display prices in quota-USD and sell that quota for a local-currency amount. The public `/api/status` fields are `price` (local currency charged per $1 of quota) and `usd_exchange_rate` (how many of those currency units the site treats as $1). Copy both from that response. Do not look up a market FX rate.
+
+```yaml
+topup_rate:
+  amount: 3.37          # status.price
+  currency: CNY         # ISO 4217. CNY only when payment is CNY and the FX magnitude is a CNY-per-USD quote.
+  fx_per_usd: 6.79      # status.usd_exchange_rate. Omit to leave effective USD null.
+  source_url: https://api1.uiuiapi.com/api/status
+  checked: "2026-10-24" # quote the date; YAML would otherwise load a date object
+```
+
+`effective_price_usd = price_usd × amount / fx_per_usd`, rounded to 6 decimals, and only when both numbers are present and positive. A 1:1 USD site (`amount: 1`, `currency: USD`, `fx_per_usd: 1`) is recorded when the status payload says so. Unknown relays stay without the block.
+
+## Published price records (additive)
+
+`data/prices.latest.json` keeps `schema_version: 1` and the original required keys. New keys are omitted when they do not apply:
+
+| Key | Meaning |
+|---|---|
+| `list_price_usd` | Quota USD at group ratio 1, before the public-group multiplier. |
+| `group_ratio` | Multiplier applied to produce `price_usd`. |
+| `pricing_group` | Group whose ratio was used (`default`, a sole enable-group, or the cheapest positive group). |
+| `group_ratio_max` | Highest positive enabled-group ratio, when it differs from `group_ratio`. |
+| `billing_expr` / `price_tier` | new-api expression used instead of the legacy `model_ratio`. The recorded price is the first tier (short context). |
+| `effective_price_usd` | Cash USD from `topup_rate`. Absent when no rate is on file. |
+| `price_placeholder` | Present and `true` only in raw snapshots. The build drops these rows. |
+
+Group selection, the 37.5 placeholder, and top-up math: [`docs/methodology.md`](../docs/methodology.md).
 
 ## `submitted_prices` (schema v4)
 

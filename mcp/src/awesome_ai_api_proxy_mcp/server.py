@@ -139,6 +139,10 @@ def get_price(
         unit: optional filter, e.g. "per_1m_input_tokens" / "per_1m_output_tokens"
 
     Each record carries source_url + captured_at + method — the citation envelope.
+    price_usd is quota USD after the public group ratio. effective_price_usd is
+    cash USD when a checked top-up rate exists; the key is absent otherwise.
+    Comparisons use price_usd so a relay with no rate is not ranked as if its
+    cash price were zero. See docs/methodology.md.
     """
     doc = _fetch_prices()
     out = []

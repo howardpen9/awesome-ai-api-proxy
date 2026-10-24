@@ -40,12 +40,26 @@ class PriceRecord(BaseModel):
     tier: int | None = None
     channel_type: ChannelType = "unknown"
     unit: Unit
+    # Quota USD after the chosen public group ratio. See docs/methodology.md.
     price_usd: float
     source_url: str
     captured_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     confidence: Confidence = "high"
     method: Method
     notes: str | None = None
+    # Additive (schema stays compatible when these are absent):
+    # list price at group_ratio 1, before the public-group multiplier.
+    list_price_usd: float | None = None
+    group_ratio: float | None = None
+    pricing_group: str | None = None
+    # Highest positive enabled-group ratio, when it differs from group_ratio.
+    group_ratio_max: float | None = None
+    # new-api legacy default (model_ratio 37.5) with no billing expression.
+    price_placeholder: bool = False
+    billing_expr: str | None = None
+    price_tier: str | None = None
+    # Filled by build_prices from providers.yaml topup_rate. Not set by fetchers.
+    effective_price_usd: float | None = None
 
 
 class FetchResult(BaseModel):
@@ -53,6 +67,8 @@ class FetchResult(BaseModel):
     captured_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     records: list[PriceRecord]
     raw_model_count: int  # total models seen on the source, even ones we couldn't price
+    # Public new-api group_ratio map. Omitted from the snapshot when empty.
+    group_ratios: dict[str, float] | None = None
 
 
 def http_client(*, timeout: float = 20.0) -> httpx.Client:
@@ -75,6 +91,38 @@ def per_token_to_per_1m(price_per_token: float | str) -> float:
     return float(price_per_token) * 1_000_000
 
 
+# Absent means "not applicable". False/empty placeholders are not written so
+# older snapshots and non-new-api fetchers keep their previous shape.
+_OMIT_RECORD_KEYS_IF_EMPTY = (
+    "list_price_usd",
+    "group_ratio",
+    "pricing_group",
+    "group_ratio_max",
+    "price_placeholder",
+    "billing_expr",
+    "price_tier",
+    "effective_price_usd",
+)
+
+
+def strip_adjustment_fields(record: dict) -> dict:
+    """Drop unset additive price fields. Keeps price_placeholder when True."""
+    for key in _OMIT_RECORD_KEYS_IF_EMPTY:
+        value = record.get(key)
+        if value is None or value is False or value == "":
+            record.pop(key, None)
+    return record
+
+
+def dump_fetch_result(result: FetchResult) -> dict:
+    payload = result.model_dump()
+    if not payload.get("group_ratios"):
+        payload.pop("group_ratios", None)
+    for rec in payload.get("records", []):
+        strip_adjustment_fields(rec)
+    return payload
+
+
 def write_snapshot(result: FetchResult, snapshots_dir: Path) -> Path:
     """Write one fetcher's normalized output to data/snapshots/<date>/<provider>.json."""
     date_str = result.captured_at[:10]
@@ -82,7 +130,7 @@ def write_snapshot(result: FetchResult, snapshots_dir: Path) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"{result.provider_id}.json"
     out_path.write_text(
-        json.dumps(result.model_dump(), indent=2, ensure_ascii=False) + "\n",
+        json.dumps(dump_fetch_result(result), indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
     return out_path

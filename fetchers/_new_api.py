@@ -371,6 +371,10 @@ def _rec(
     ratio_max = choice.ratio_max
     if ratio_max is not None and abs(ratio_max - choice.ratio) < 1e-9:
         ratio_max = None
+    # Ratio products are binary floats (0.05 * 6 == 0.30000000000000004).
+    # Six decimal places is the same precision as effective_price_usd.
+    price = round(float(price), 6)
+    list_price = round(float(list_price), 6)
     return PriceRecord(
         provider_id=provider_id,
         provider_name=provider_name,

@@ -713,6 +713,31 @@ global_gateways:
     notes:
       en: "OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto."
 
+  # Landed from operator submission (PR). Public pricing JSON at /api/pricing
+  # is auto-refreshed weekly via fetchers/paidyun.py.
+  - name: Paidyun AI
+    url: https://paidyun.xyz
+    type: aggregator
+    status: unverified
+    payment: [alipay, card]
+    models: [openai, anthropic, gemini, grok, deepseek]
+    model_count: 61
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    pricing:
+      pricing_url: https://paidyun.xyz/pricing
+      api_url: https://paidyun.xyz/api/pricing
+      fetcher: paidyun
+      pricing_currency: USD
+    notes:
+      en: "Operator-submitted new-api fork gateway: 61 models across OpenAI, Anthropic, Gemini, Grok and Chinese open-weight vendors, split into 13 access groups; prepaid pay-as-you-go with card/Alipay top-up from $1; public pricing JSON at /api/pricing."
+      zh-TW: "營運者自建的 new-api fork 閘道：61 個模型，涵蓋 OpenAI、Anthropic、Gemini、Grok 及中國開源權重廠商，分為 13 個存取群組；銀行卡／支付寶預付充值，最低 $1；公開 `/api/pricing` JSON。"
+      zh-CN: "运营方自建的 new-api fork 网关：61 个模型，涵盖 OpenAI、Anthropic、Gemini、Grok 及中国开源权重厂商，分为 13 个访问分组；银行卡/支付宝预付充值，最低 $1；公开 `/api/pricing` JSON。"
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

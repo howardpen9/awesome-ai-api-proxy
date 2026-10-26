@@ -1,0 +1,10 @@
+{
+ "url": "https://api.ornnai.com/api/model-frontier",
+ "fetched_at_utc": "2026-10-23T10:27:19Z",
+ "fetched_at_utc8": "2026-10-23T18:27:19+08:00",
+ "http_status": 401,
+ "body": {
+  "error": "Unauthorized",
+  "message": "API key required. Use Authorization: Bearer YOUR_API_KEY"
+ }
+}

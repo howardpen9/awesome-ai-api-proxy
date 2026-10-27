@@ -427,36 +427,6 @@ china_relays:
     notes:
       en: "Claude Code and Codex CLI relay with WeChat top-up; the public pricing page lists those lines at about 0.15x and 0.1x official list price (operator-submitted, not canary-tested)."
 
-  # Landed from issue #129 (fumorn). HTML is an anti-bot shell; /v1/models is new-api.
-  - name: FM API
-    url: https://aiapi.fumor.top
-    type: aggregator
-    status: unverified
-    models: [openai, anthropic, gemini, deepseek, qwen, zhipu, minimax, moonshot, xai]
-    last_verified: null
-    verified_by: community
-    entity_registered: false
-    supports_stream: unknown
-    supports_tools: unknown
-    risk_flags: [operator_submitted, no_entity]
-    notes:
-      en: "Operator-submitted host where unauthenticated GET /v1/models returns a new-api invalid-token error, while the HTML fetched on 2026-10-24 was only an anti-bot script and not a readable pricing page."
-
-  # Landed from issue #131 (Felix198902). /api/pricing 404; catalog HTML had no prices.
-  - name: Xinghuo AI Gateway (星火AI)
-    url: https://ai.wfpromax.xyz
-    type: aggregator
-    status: unverified
-    models: [openai, anthropic]
-    last_verified: null
-    verified_by: community
-    entity_registered: unknown
-    supports_stream: unknown
-    supports_tools: unknown
-    risk_flags: [operator_submitted]
-    notes:
-      en: "Operator-submitted OpenAI-compatible host where unauthenticated GET /v1/models returns API_KEY_REQUIRED, and the static model-catalog HTML fetched on 2026-10-24 contained no price table."
-
   # Landed from issue #134 (1MoreTiaoTiaowa). Groups are not a flat default.
   - name: Midalo (米搭中转站)
     url: https://model.midalo.ai

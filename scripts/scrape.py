@@ -38,7 +38,10 @@ def include_in_scrape(entry: dict) -> bool:
 
 
 def discover_fetchers() -> dict[str, str]:
-    """Walk providers.yaml and return {fetcher_id: provider_name}."""
+    """Walk providers.yaml and return {fetcher_id: provider_name}.
+
+    Providers with `status: inactive` are skipped.
+    """
     raw = yaml.safe_load(PROVIDERS_YAML.read_text(encoding="utf-8"))
     found: dict[str, str] = {}
     for _section, entries in raw.items():

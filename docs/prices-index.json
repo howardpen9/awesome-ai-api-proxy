@@ -2,8 +2,8 @@
   "name": "awesome-ai-api-proxy",
   "description": "Weekly AI API relay and LLM gateway price observatory.",
   "snapshot_date": "2026-10-24",
-  "record_count": 3429,
-  "excluded_placeholder_count": 588,
+  "record_count": 2273,
+  "excluded_placeholder_count": 272,
   "prices": {
     "github_raw": "https://raw.githubusercontent.com/howardpen9/awesome-ai-api-proxy/main/data/prices.latest.json",
     "github_blob": "https://github.com/howardpen9/awesome-ai-api-proxy/blob/main/data/prices.latest.json"

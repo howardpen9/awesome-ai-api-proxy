@@ -97,7 +97,7 @@ market, not a workaround niche.
 | Station | Type | Payment | Trust | Notes |
 |---|---|---|---|---|
 | 🟢 [云雾 API (YUNWU)](https://yunwu.ai) | mixed | Alipay/WeChat | active · 2026-05-26 | Marketed on speed/stability; widely cited as a top-tier station. |
-| 🟢 [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | Alipay/WeChat | active · 2026-06-07 | Azure-backed channel; positions as lowest-price. new-api fork with 1000+ models across 25+ access groups; public /api/pricing exposes default-group ratios. |
+| 🔴 [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | Alipay/WeChat | inactive | Inactive (2026-10-23): own announcement (api.bltcy.ai/api/status, published 2026-04-24T16:00Z) stopped sign-ups and top-ups and ended all API service 2026-05-01; refunds via account, after-sales until 2026-12-31. Was an Azure-backed new-api fork with 1000+ models. |
 | 🟢 [No.1-API](https://api.rcouyi.com) | aggregator | Alipay/WeChat | active · 2026-05-26 | One-stop aggregation + relay platform. |
 | 🟢 [UiUiAPI](https://uiuiapi.com) | official-relay | Alipay/WeChat | active · 2026-06-07 | Claims official channels + official multipliers; rare quantified discount. Public new-api /api/pricing on api1 subdomain. |
 | 🟡 [DMXAPI](https://dmxapi.cn) | mixed | Alipay/WeChat | unverified · ⚠ no-entity | Listed in community sources; homepage not independently verified. |
@@ -254,9 +254,9 @@ from operators — one factual sentence in `notes`, no superlatives.
 > Machine-readable source: [`data/prices.latest.json`](data/prices.latest.json).
 
 <!-- prices:start -->
-_Snapshot date: **2026-10-24**. 3429 price records across 9 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. Figures are quota USD after the public group ratio (default group, else the cheapest positive group — see [methodology](docs/methodology.md)). ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting. Top-up effective USD (`effective_price_usd` = quota USD × multiplier): Relaydance ×1.000 (6.8 CNY per $1 quota, site FX 6.8, checked 2026-10-24); UiUiAPI ×0.496 (3.37 CNY per $1 quota, site FX 6.79, checked 2026-10-24); UnoRouter ×1.000 (1 USD per $1 quota, site FX 1, checked 2026-10-24); Wappkit API ×1.000 (6.8 CNY per $1 quota, site FX 6.8, checked 2026-10-24). Excluded 588 unset placeholder prices (new-api model_ratio 37.5 with no billing expression)._
+_Snapshot date: **2026-10-24**. 2273 price records across 8 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. Figures are quota USD after the public group ratio (default group, else the cheapest positive group — see [methodology](docs/methodology.md)). ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting. Top-up effective USD (`effective_price_usd` = quota USD × multiplier): Relaydance ×1.000 (6.8 CNY per $1 quota, site FX 6.8, checked 2026-10-24); UiUiAPI ×0.496 (3.37 CNY per $1 quota, site FX 6.79, checked 2026-10-24); UnoRouter ×1.000 (1 USD per $1 quota, site FX 1, checked 2026-10-24); Wappkit API ×1.000 (6.8 CNY per $1 quota, site FX 6.8, checked 2026-10-24). Excluded 272 unset placeholder prices (new-api model_ratio 37.5 with no billing expression)._
 
-#### Six indicator models, 9 providers, one snapshot
+#### Six indicator models, 8 providers, one snapshot
 
 **Absolute prices — tier ladder (input)** · ▼ marks the cheapest provider per model
 
@@ -274,32 +274,26 @@ _Output-token equivalents and the full-matrix heatmap: [`assets/charts/`](assets
 
 ### Tier 1 — cheapest viable (routine, batch summaries) — USD per 1M input tokens
 
-| Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy | QuickSilver Pro | TeamoRouter | UnoRouter | Wappkit API |
-|---|---|---|---|---|---|---|---|---|---|
-| `deepseek-v3` | $0.257 | — | — | — | $2.000 | — | — | $0.560 | — |
-| `deepseek-r1` | — | — | — | — | $4.000 | — | — | $1.120 | — |
+| Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | QuickSilver Pro | TeamoRouter | UnoRouter | Wappkit API |
+|---|---|---|---|---|---|---|---|---|
+| `deepseek-v3` | $0.257 | — | — | — | — | — | $0.560 | — |
+| `deepseek-r1` | — | — | — | — | — | — | $1.120 | — |
 
 ### Tier 2 — daily driver (agent, coding) — USD per 1M input tokens
 
-| Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy | QuickSilver Pro | TeamoRouter | UnoRouter | Wappkit API |
-|---|---|---|---|---|---|---|---|---|---|
-| `gemini-3-flash` | $1.500 | $1.500 | — | $1.500 | $1.500 | $1.275 | — | $0.035 ⚠ | — |
-| `gpt-5.4` | $2.500 | — | — | $2.500 | $2.500 | — | — | — | $0.110 ⚠ |
-| `claude-sonnet-4.6` | $3.000 | $3.000 | $3.750 | $3.000 | $3.000 | — | — | $0.670 ⚠ | — |
+| Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | QuickSilver Pro | TeamoRouter | UnoRouter | Wappkit API |
+|---|---|---|---|---|---|---|---|---|
+| `gemini-3-flash` | $1.500 | $1.500 | — | $1.500 | $1.275 | — | $0.035 ⚠ | — |
+| `gpt-5.4` | $2.500 | — | — | $2.500 | — | — | — | $0.110 ⚠ |
+| `claude-sonnet-4.6` | $3.000 | $3.000 | $3.750 | $3.000 | — | — | $0.670 ⚠ | — |
 
 ### Tier 3 — top frontier (hardest problems) — USD per 1M input tokens
 
-| Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy | QuickSilver Pro | TeamoRouter | UnoRouter | Wappkit API |
-|---|---|---|---|---|---|---|---|---|---|
-| `grok-4.3` | $1.250 | $1.250 | — | — | — | — | — | $0.875 | — |
-| `claude-opus-4.8` | $5.000 | $5.000 | — | — | — | — | $1.330 ⚠ | $1.117 ⚠ | — |
-| `gpt-5.5-pro` | $30.00 | — | — | — | — | — | — | — | — |
-
-### Tier 4 — multimodal (different units, can't compare to text)
-
-| Model | Unit | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy | QuickSilver Pro | TeamoRouter | UnoRouter | Wappkit API |
-|---|---|---|---|---|---|---|---|---|---|---|
-| `grok-imagine-video-1.5` | USD per second | — | — | — | — | $0.600 | — | — | — | — |
+| Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | QuickSilver Pro | TeamoRouter | UnoRouter | Wappkit API |
+|---|---|---|---|---|---|---|---|---|
+| `grok-4.3` | $1.250 | $1.250 | — | — | — | — | $0.875 | — |
+| `claude-opus-4.8` | $5.000 | $5.000 | — | — | — | $1.330 ⚠ | $1.117 ⚠ | — |
+| `gpt-5.5-pro` | $30.00 | — | — | — | — | — | — | — |
 
 _Full per-model breakdown (including non-canonical models): [`docs/prices.md`](docs/prices.md). Raw snapshots: [`data/snapshots/`](data/snapshots/). Machine-readable: [`data/prices.latest.json`](data/prices.latest.json)._
 

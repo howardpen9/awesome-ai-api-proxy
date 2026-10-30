@@ -107,7 +107,9 @@
 
     <section class="agent-hero" aria-label="For AI agents">
       <h2>🤖 For AI agents</h2>
-      <p class="tagline">One URL = every relay's prices, full provenance, refreshed weekly.</p>
+      <p class="tagline">One URL = every relay's prices, full provenance, refreshed weekly.
+        Agents: <a href="llms.txt">llms.txt</a> ·
+        <a href="prices-index.json">prices index</a>.</p>
 
       <div class="copy-row">
         <code id="raw-url">https://raw.githubusercontent.com/howardpen9/awesome-ai-api-proxy/main/data/prices.latest.json</code>
@@ -180,6 +182,7 @@
             <th>Tier</th>
             <th>Unit</th>
             <th class="num">Price (USD)</th>
+            <th class="num">Effective (USD)</th>
             <th>Source</th>
           </tr>
         </thead>
@@ -196,8 +199,10 @@
         Maintained by <a href="https://github.com/howardpen9">@howardpen9</a>
       </p>
       <p>
-        For LLM agents: see <a href="https://github.com/howardpen9/awesome-ai-api-proxy/blob/main/docs/agent-integration.md">agent-integration.md</a>
-        for MCP / LangChain / OpenAI tool examples.
+        For LLM agents: <a href="llms.txt">llms.txt</a> ·
+        <a href="prices-index.json">prices-index.json</a> ·
+        <a href="https://github.com/howardpen9/awesome-ai-api-proxy/blob/main/docs/agent-integration.md">agent-integration.md</a>
+        · <a href="https://github.com/howardpen9/awesome-ai-api-proxy/blob/main/docs/methodology.md">methodology</a>.
       </p>
     </footer>
   </main>
@@ -225,7 +230,7 @@
       document.getElementById("meta").innerHTML = `<span class="warn">Failed to load: ${e.message}</span>`;
       return;
     }
-    STATE.records = data.records || [];
+    STATE.records = (data.records || []).filter(r => !r.price_placeholder);
     STATE.snapshotDate = data.snapshot_date || "";
     document.getElementById("meta").innerHTML =
       `Snapshot <code>${STATE.snapshotDate}</code> · <code>${STATE.records.length}</code> records · generated <code>${data.generated_at || ""}</code>`;
@@ -343,6 +348,7 @@
           <td>${r.tier ?? "—"}</td>
           <td>${r.unit || ""}</td>
           <td class="num">${formatPrice(r.price_usd)}</td>
+          <td class="num">${formatPrice(r.effective_price_usd)}</td>
           <td>${r.source_url ? `<a href="${r.source_url}" target="_blank" rel="noopener">link</a>` : ""}</td>
         </tr>
       `).join("");

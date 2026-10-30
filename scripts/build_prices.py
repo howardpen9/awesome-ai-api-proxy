@@ -22,15 +22,23 @@ from pathlib import Path
 import yaml
 from rich.console import Console
 
+from fetchers._common import strip_adjustment_fields
+
 from ._paths import (
     CANONICAL_YAML,
+    DOCS_LLMS_TXT,
+    LLMS_TXT,
     PRICES_DOC,
     PRICES_HISTORY,
+    PRICES_INDEX,
     PRICES_LATEST,
     PROVIDERS_YAML,
     READMES,
     SNAPSHOTS_DIR,
 )
+
+PAGES_ORIGIN = "https://howardpen9.github.io/awesome-ai-api-proxy"
+GITHUB_RAW = "https://raw.githubusercontent.com/howardpen9/awesome-ai-api-proxy/main"
 
 console = Console()
 
@@ -144,6 +152,117 @@ def _slug(name: str) -> str:
     return "".join(c.lower() if c.isalnum() else "-" for c in name).strip("-")
 
 
+def _iter_provider_entries(doc: dict):
+    for _section, entries in doc.items():
+        if not isinstance(entries, list):
+            continue
+        for entry in entries:
+            if isinstance(entry, dict):
+                yield entry
+
+
+def inactive_fetcher_ids(doc: dict | None = None) -> set[str]:
+    """Fetcher ids whose provider status is inactive.
+
+    Current tables and prices.latest drop these even when the newest snapshot
+    still contains rows. Historical snapshot files are left in place.
+    """
+    if doc is None:
+        doc = yaml.safe_load(PROVIDERS_YAML.read_text(encoding="utf-8"))
+    out: set[str] = set()
+    for entry in _iter_provider_entries(doc):
+        if entry.get("status") != "inactive":
+            continue
+        fetcher = (entry.get("pricing") or {}).get("fetcher")
+        if fetcher:
+            out.add(fetcher)
+    return out
+
+
+def load_topup_rates(doc: dict | None = None) -> dict[str, dict]:
+    """Map fetcher id → pricing.topup_rate, when that block is present."""
+    if doc is None:
+        doc = yaml.safe_load(PROVIDERS_YAML.read_text(encoding="utf-8"))
+    out: dict[str, dict] = {}
+    for entry in _iter_provider_entries(doc):
+        pricing = entry.get("pricing") or {}
+        fetcher = pricing.get("fetcher")
+        rate = pricing.get("topup_rate")
+        if fetcher and isinstance(rate, dict):
+            checked = rate.get("checked")
+            normalized = dict(rate)
+            if checked is not None:
+                normalized["checked"] = str(checked)
+            out[fetcher] = normalized
+    return out
+
+
+def topup_multiplier(rate: dict | None) -> float | None:
+    """payment-currency-per-quota-USD / site FX. None when either number is missing."""
+    if not rate:
+        return None
+    amount = rate.get("amount")
+    fx = rate.get("fx_per_usd")
+    if not isinstance(amount, (int, float)) or not isinstance(fx, (int, float)):
+        return None
+    if amount <= 0 or fx <= 0:
+        return None
+    return float(amount) / float(fx)
+
+
+def effective_price_usd(price_usd: float, rate: dict | None) -> float | None:
+    """Cash USD of a quota-USD price. None when no checked top-up rate can convert it."""
+    multiplier = topup_multiplier(rate)
+    if multiplier is None:
+        return None
+    return round(float(price_usd) * multiplier, 6)
+
+
+def records_for_current_build(
+    records: list[dict],
+    inactive_ids: set[str],
+) -> tuple[list[dict], int]:
+    """Drop inactive providers and unset-placeholder rows from the published build.
+
+    Returns (kept records, excluded placeholder count).
+    """
+    kept: list[dict] = []
+    excluded = 0
+    for rec in records:
+        if rec.get("provider_id") in inactive_ids:
+            continue
+        if rec.get("price_placeholder"):
+            excluded += 1
+            continue
+        kept.append(rec)
+    return kept, excluded
+
+
+def annotate_effective(records: list[dict], rates: dict[str, dict]) -> None:
+    for rec in records:
+        eff = effective_price_usd(rec.get("price_usd") or 0, rates.get(rec.get("provider_id")))
+        if eff is not None:
+            rec["effective_price_usd"] = eff
+        strip_adjustment_fields(rec)
+
+
+def _topup_summary(rates: dict[str, dict]) -> dict[str, dict]:
+    summary: dict[str, dict] = {}
+    for pid, rate in sorted(rates.items()):
+        multiplier = topup_multiplier(rate)
+        if multiplier is None:
+            continue
+        summary[pid] = {
+            "amount": rate.get("amount"),
+            "currency": rate.get("currency"),
+            "fx_per_usd": rate.get("fx_per_usd"),
+            "multiplier": round(multiplier, 6),
+            "source_url": rate.get("source_url"),
+            "checked": rate.get("checked"),
+        }
+    return summary
+
+
 def _resolve_canonical(records: list[dict], alias_index: dict[str, dict]) -> list[dict]:
     """Mutate each record with canonical_model / model_family / tier when alias matches."""
     for rec in records:
@@ -160,7 +279,13 @@ def _resolve_canonical(records: list[dict], alias_index: dict[str, dict]) -> lis
     return records
 
 
-def _write_prices_latest(records: list[dict], snapshot_date: str) -> None:
+def _write_prices_latest(
+    records: list[dict],
+    snapshot_date: str,
+    *,
+    excluded_placeholder_count: int,
+    topup_rates: dict[str, dict],
+) -> None:
     PRICES_LATEST.write_text(
         json.dumps(
             {
@@ -168,6 +293,8 @@ def _write_prices_latest(records: list[dict], snapshot_date: str) -> None:
                 "snapshot_date": snapshot_date,
                 "generated_at": datetime.now(timezone.utc).isoformat(),
                 "record_count": len(records),
+                "excluded_placeholder_count": excluded_placeholder_count,
+                "topup_rates": topup_rates,
                 "records": records,
             },
             indent=2,
@@ -235,7 +362,12 @@ def _format_price(price: float) -> str:
 
 
 def _build_tier_tables(
-    records: list[dict], canonical_doc: dict, snapshot_date: str
+    records: list[dict],
+    canonical_doc: dict,
+    snapshot_date: str,
+    *,
+    excluded_placeholder_count: int,
+    topup_rates: dict[str, dict],
 ) -> str:
     """Render markdown tables grouped by tier, sorted cheapest-by-OpenRouter first."""
     canonical_models = canonical_doc.get("canonical_models", [])
@@ -370,12 +502,36 @@ def _build_tier_tables(
         " † = community-submitted, verified by maintainer (see issue template)."
         if has_manual else ""
     )
+    topup_bits = []
+    for pid, rate in topup_rates.items():
+        if pid not in providers_in_use:
+            continue
+        label = provider_names.get(pid, pid)
+        topup_bits.append(
+            f"{label} ×{rate['multiplier']:.3f} "
+            f"({rate['amount']} {rate['currency']} per $1 quota, "
+            f"site FX {rate['fx_per_usd']}, checked {rate['checked']})"
+        )
+    topup_note = (
+        " Top-up effective USD (`effective_price_usd` = quota USD × multiplier): "
+        + "; ".join(topup_bits) + "."
+        if topup_bits else ""
+    )
+    placeholder_note = (
+        f" Excluded {excluded_placeholder_count} unset placeholder prices "
+        f"(new-api model_ratio 37.5 with no billing expression)."
+        if excluded_placeholder_count else ""
+    )
     intro = (
         f"_Snapshot date: **{snapshot_date}**. {snapshot_count} price records across "
         f"{len(providers_in_use)} providers. **Reference column** is OpenRouter "
         f"(officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. "
+        f"Figures are quota USD after the public group ratio "
+        f"(default group, else the cheapest positive group — see "
+        f"[methodology](docs/methodology.md)). "
         f"⚠ = relay quotes <50% of OpenRouter — verify with "
-        f"[canary prompts](docs/canary-prompts.md) before trusting.{manual_note}_\n\n"
+        f"[canary prompts](docs/canary-prompts.md) before trusting."
+        f"{topup_note}{placeholder_note}{manual_note}_\n\n"
         f"#### Six indicator models, {len(providers_in_use)} providers, one snapshot\n\n"
         f"**Absolute prices — tier ladder (input)** · ▼ marks the cheapest provider per model\n\n"
         f"![Tier-ladder input pricing](assets/charts/tier-ladder-input.svg)\n\n"
@@ -413,8 +569,20 @@ def _update_readme(readme_path: Path, body: str) -> bool:
     return True
 
 
-def _build_full_doc(records: list[dict], snapshot_date: str) -> str:
-    """docs/prices.md — every model, sorted by provider then model."""
+def _cell_money(value: object) -> str:
+    if not isinstance(value, (int, float)):
+        return "—"
+    return _format_price(float(value))
+
+
+def _build_full_doc(
+    records: list[dict],
+    snapshot_date: str,
+    *,
+    excluded_placeholder_count: int,
+    topup_rates: dict[str, dict],
+) -> str:
+    """docs/prices.md — every published model, sorted by provider then model."""
     by_provider: dict[str, list[dict]] = defaultdict(list)
     for rec in records:
         by_provider[rec["provider_id"]].append(rec)
@@ -425,9 +593,26 @@ def _build_full_doc(records: list[dict], snapshot_date: str) -> str:
         f"_Generated from `data/snapshots/{snapshot_date}/` by `scripts/build_prices.py`._  ",
         f"_Snapshot date: **{snapshot_date}**. Machine-readable source: [`data/prices.latest.json`](../data/prices.latest.json)._",
         "",
-        "For the curated tier-ladder comparison, see the README. This page is the full dump — every model surface, no curation.",
+        "For the curated tier-ladder comparison, see the README. This page is the full dump of published prices. "
+        "Unset placeholder rows (new-api `model_ratio` 37.5 with no billing expression) are excluded. "
+        "How group ratios, billing expressions, and top-up rates are applied: "
+        "[`methodology.md`](methodology.md).",
         "",
     ]
+    if excluded_placeholder_count:
+        lines.append(f"Excluded placeholder prices: **{excluded_placeholder_count}**.")
+        lines.append("")
+    if topup_rates:
+        lines.append("Top-up multipliers (quota USD → effective USD), from `providers.yaml` `topup_rate`:")
+        lines.append("")
+        for pid, rate in topup_rates.items():
+            lines.append(
+                f"- `{pid}`: ×{rate['multiplier']:.3f} "
+                f"({rate['amount']} {rate['currency']} per $1 of quota, "
+                f"site FX {rate['fx_per_usd']}, checked {rate['checked']}, "
+                f"<{rate['source_url']}>)"
+            )
+        lines.append("")
     for pid in sorted(by_provider):
         recs = by_provider[pid]
         provider_name = recs[0]["provider_name"]
@@ -436,19 +621,62 @@ def _build_full_doc(records: list[dict], snapshot_date: str) -> str:
         lines.append("")
         lines.append(f"Source: <{source}> · Records: {len(recs)}")
         lines.append("")
-        lines.append("| Model | Canonical | Unit | Price (USD) |")
-        lines.append("|---|---|---|---|")
+        lines.append(
+            "| Model | Canonical | Unit | Price (USD) | List (USD) | Group | Ratio | Effective (USD) |"
+        )
+        lines.append("|---|---|---|---|---|---|---|---|")
         for rec in sorted(recs, key=lambda r: (r["raw_model_name"], r["unit"])):
+            ratio = rec.get("group_ratio")
+            ratio_cell = f"{ratio:g}" if isinstance(ratio, (int, float)) else "—"
+            group = rec.get("pricing_group") or "—"
             lines.append(
-                "| `{model}` | {canon} | {unit} | {price} |".format(
+                "| `{model}` | {canon} | {unit} | {price} | {list_price} | {group} | {ratio} | {effective} |".format(
                     model=rec["raw_model_name"],
                     canon=f"`{rec['canonical_model']}`" if rec.get("canonical_model") else "—",
                     unit=rec["unit"],
                     price=_format_price(rec["price_usd"]),
+                    list_price=_cell_money(rec.get("list_price_usd")),
+                    group=group.replace("|", "\\|"),
+                    ratio=ratio_cell,
+                    effective=_cell_money(rec.get("effective_price_usd")),
                 )
             )
         lines.append("")
     return "\n".join(lines)
+
+
+def _publish_pages_index(
+    records: list[dict],
+    snapshot_date: str,
+    *,
+    excluded_placeholder_count: int,
+) -> None:
+    """GitHub Pages serves docs/. Root llms.txt is not on that host."""
+    if LLMS_TXT.exists():
+        DOCS_LLMS_TXT.write_text(LLMS_TXT.read_text(encoding="utf-8"), encoding="utf-8")
+    index = {
+        "name": "awesome-ai-api-proxy",
+        "description": "Weekly AI API relay and LLM gateway price observatory.",
+        "snapshot_date": snapshot_date,
+        "record_count": len(records),
+        "excluded_placeholder_count": excluded_placeholder_count,
+        "prices": {
+            "github_raw": f"{GITHUB_RAW}/data/prices.latest.json",
+            "github_blob": "https://github.com/howardpen9/awesome-ai-api-proxy/blob/main/data/prices.latest.json",
+        },
+        "llms_txt": f"{PAGES_ORIGIN}/llms.txt",
+        "methodology": f"{GITHUB_RAW}/docs/methodology.md",
+        "providers": f"{GITHUB_RAW}/data/providers.yaml",
+        "mcp": {
+            "package": "awesome-ai-api-proxy-mcp",
+            "registry_name": "io.github.howardpen9/awesome-ai-api-proxy",
+            "server_json": f"{GITHUB_RAW}/mcp/server.json",
+        },
+    }
+    PRICES_INDEX.write_text(
+        json.dumps(index, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
 
 
 def main() -> int:
@@ -475,10 +703,24 @@ def main() -> int:
             sp["model_family"] = entry.get("family")
             sp["tier"] = entry.get("tier")
     records = records + submitted
+    inactive_ids = inactive_fetcher_ids()
+    records, excluded_placeholders = records_for_current_build(records, inactive_ids)
+    if inactive_ids:
+        console.print(f"inactive fetchers omitted from current prices: {sorted(inactive_ids)}")
+    if excluded_placeholders:
+        console.print(f"excluded placeholder prices: {excluded_placeholders}")
+    rates = load_topup_rates()
+    annotate_effective(records, rates)
+    topup_rates = _topup_summary(rates)
     matched = sum(1 for r in records if r.get("canonical_model"))
     console.print(f"records resolved to a canonical model: {matched}/{len(records)}")
 
-    _write_prices_latest(records, snapshot_date)
+    _write_prices_latest(
+        records,
+        snapshot_date,
+        excluded_placeholder_count=excluded_placeholders,
+        topup_rates=topup_rates,
+    )
     console.print(f"[green]wrote[/green] {PRICES_LATEST.relative_to(SNAPSHOTS_DIR.parent.parent)}")
 
     tabular = _write_tabular_exports(records, snapshot_date)
@@ -490,7 +732,13 @@ def main() -> int:
     _append_history(records, snapshot_date)
     console.print(f"[green]appended[/green] {PRICES_HISTORY.relative_to(SNAPSHOTS_DIR.parent.parent)}")
 
-    table_md = _build_tier_tables(records, canonical_doc, snapshot_date)
+    table_md = _build_tier_tables(
+        records,
+        canonical_doc,
+        snapshot_date,
+        excluded_placeholder_count=excluded_placeholders,
+        topup_rates=topup_rates,
+    )
     updated = []
     for readme in READMES:
         if _update_readme(readme, table_md):
@@ -498,8 +746,24 @@ def main() -> int:
     console.print(f"[green]updated[/green] READMEs with markers: {updated or '(none — add markers first)'}")
 
     PRICES_DOC.parent.mkdir(parents=True, exist_ok=True)
-    PRICES_DOC.write_text(_build_full_doc(records, snapshot_date) + "\n", encoding="utf-8")
+    PRICES_DOC.write_text(
+        _build_full_doc(
+            records,
+            snapshot_date,
+            excluded_placeholder_count=excluded_placeholders,
+            topup_rates=topup_rates,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
     console.print(f"[green]wrote[/green] {PRICES_DOC.relative_to(SNAPSHOTS_DIR.parent.parent)}")
+    _publish_pages_index(
+        records,
+        snapshot_date,
+        excluded_placeholder_count=excluded_placeholders,
+    )
+    console.print(f"[green]wrote[/green] {DOCS_LLMS_TXT.relative_to(SNAPSHOTS_DIR.parent.parent)}")
+    console.print(f"[green]wrote[/green] {PRICES_INDEX.relative_to(SNAPSHOTS_DIR.parent.parent)}")
 
     console.rule()
     console.print("[bold green]Done.[/bold green]")

@@ -230,6 +230,29 @@ def _check_type_notes_consistency(problems: list[str], section: str, entry: dict
             return
 
 
+def _validate_topup_rate(problems: list[str], section: str, name: str, rate: object) -> None:
+    """Optional pricing.topup_rate. Absent means unknown — do not invent one."""
+    if rate is None:
+        return
+    label = f"{section}: '{name}' pricing.topup_rate"
+    if not isinstance(rate, dict):
+        _problem(problems, f"{label} must be a mapping")
+        return
+    amount = rate.get("amount")
+    if not isinstance(amount, (int, float)) or isinstance(amount, bool) or amount <= 0:
+        _problem(problems, f"{label}.amount must be a positive number (got {amount!r})")
+    currency = rate.get("currency")
+    if not isinstance(currency, str) or not re.fullmatch(r"[A-Z]{3}", currency):
+        _problem(problems, f"{label}.currency must be an ISO 4217 code (got {currency!r})")
+    fx = rate.get("fx_per_usd")
+    if fx is not None and (not isinstance(fx, (int, float)) or isinstance(fx, bool) or fx <= 0):
+        _problem(problems, f"{label}.fx_per_usd must be a positive number when set (got {fx!r})")
+    checked = rate.get("checked")
+    if not isinstance(checked, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", checked):
+        _problem(problems, f"{label}.checked must be YYYY-MM-DD (got {checked!r})")
+    _check_url(problems, f"{label}.source_url", rate.get("source_url"))
+
+
 def _validate_submitted_prices(problems: list[str], section: str, entry: dict, submitted: list) -> None:
     name = entry.get("name", "?")
     for i, sp in enumerate(submitted):
@@ -322,6 +345,7 @@ def validate_providers(problems: list[str]) -> None:
                     _check_url(problems, f"{section}: '{name}' pricing.pricing_url", pricing["pricing_url"])
                 if pricing.get("api_url"):
                     _check_url(problems, f"{section}: '{name}' pricing.api_url", pricing["api_url"])
+                _validate_topup_rate(problems, section, name, pricing.get("topup_rate"))
                 _validate_submitted_prices(problems, section, entry, pricing.get("submitted_prices") or [])
 
             _check_notes(problems, section, name, entry.get("notes"))
@@ -365,6 +389,19 @@ def validate_prices(problems: list[str]) -> None:
             _problem(
                 problems,
                 f"record[{i}] suspicious price_usd: {price} "
+                f"({rec.get('provider_name')} / {rec.get('raw_model_name')})",
+            )
+        if rec.get("price_placeholder"):
+            _problem(
+                problems,
+                f"record[{i}] is a placeholder price and must not be in the published build "
+                f"({rec.get('provider_name')} / {rec.get('raw_model_name')})",
+            )
+        effective = rec.get("effective_price_usd")
+        if effective is not None and not (isinstance(effective, (int, float)) and 0 < effective < 5000):
+            _problem(
+                problems,
+                f"record[{i}] suspicious effective_price_usd: {effective} "
                 f"({rec.get('provider_name')} / {rec.get('raw_model_name')})",
             )
 

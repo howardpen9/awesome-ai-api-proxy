@@ -95,7 +95,7 @@ Pick the correct section: `china_relays` | `global_gateways` |
 ```yaml
   - name: ExampleAPI
     url: https://example.com
-    type: mixed          # official-relay | mixed | reverse | aggregator | gateway-oss | observability | comparison | list
+    type: mixed          # official | official-relay | mixed | reverse | aggregator | gateway-oss | observability | comparison | list
     status: unverified   # NEVER active unless you are the maintainer
     payment: [alipay, wechat]   # optional
     models: [openai, anthropic, gemini]

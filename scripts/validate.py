@@ -27,6 +27,7 @@ console = Console()
 
 REQUIRED_PROVIDER_FIELDS = {"name", "url", "type", "status"}
 ALLOWED_TYPES = {
+    "official",
     "official-relay",
     "mixed",
     "reverse",

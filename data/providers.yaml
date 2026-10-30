@@ -388,6 +388,21 @@ global_gateways:
       zh-TW: "官方授權路由，加價約 5%；400+ 模型、60+ 供應商。ARR 據報約 $5M（2025-05）→ 約 $50M（2026 初）。公開 `/api/v1/models` JSON。"
       zh-CN: "官方授权路由，加价约 5%；400+ 模型、60+ 供应商。ARR 据报约 $5M（2025-05）→ 约 $50M（2026 初）。公开 `/api/v1/models` JSON。"
 
+  - name: MiniMax Open Platform
+    url: https://platform.minimax.io
+    type: official
+    status: active
+    models: [minimax]
+    last_verified: "2026-10-30"
+    verified_by: maintainer
+    entity_registered: true
+    supports_stream: unknown
+    supports_tools: unknown
+    notes:
+      en: "MiniMax's own first-party API platform, not a relay; OpenAI-compatible base https://api.minimax.io/v1 and Anthropic-compatible base https://api.minimax.io/anthropic; pricing: https://platform.minimax.io/docs/pricing/overview."
+      zh-TW: "MiniMax 自家官方 API 平台（first-party），非中轉站；OpenAI 相容 https://api.minimax.io/v1、Anthropic 相容 https://api.minimax.io/anthropic；價格見 https://platform.minimax.io/docs/pricing/overview。"
+      zh-CN: "MiniMax 自家官方 API 平台（first-party），非中转站；OpenAI 兼容 https://api.minimax.io/v1、Anthropic 兼容 https://api.minimax.io/anthropic；价格见 https://platform.minimax.io/docs/pricing/overview。"
+
   - name: Atlas Cloud
     url: https://www.atlascloud.ai
     type: aggregator

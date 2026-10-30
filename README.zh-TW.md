@@ -103,6 +103,17 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 | 🟡 [Wappkit API](https://api.wappkit.com) | mixed | — | unverified · ⚠ 自薦 | new-api OpenAI 相容閘道，公開 `/api/pricing`；分組為 Codex／Claude-Code 號池（無扁平 default 組）。 |
 | 🟡 [TokenDos](https://www.tokendos.com) | aggregator | — | unverified · ⚠ 自薦 | 連接供應節點與呼叫方的 Token 共享市場；提供 OpenAI /v1 與 Anthropic 端點，以及公開查價與可用率頁面。 |
 | 🟡 [DSH API](https://api.dshapi.icu) | mixed | 支付寶/微信 | unverified · ⚠ 自薦, 無主體 | OpenAI 與 Anthropic 雙協議相容閘道；QQ 信箱註冊、支付寶/微信支付、按量計費。 |
+| 🟡 [YCSG API](https://api.ycsgyuuu.study) | aggregator | — | unverified · ⚠ 自薦, 無主體 | new-api console whose public /api/pricing default group listed 13 DeepSeek, Qwen and GLM ids on 2026-10-24 (operator-submitted, not canary-tested). |
+| 🟡 [ChinaLLM](https://chinallmapi.com) | mixed | — | unverified · ⚠ 自薦, 逆向, 無主體 | Stock new-api console titled New API with public /api/pricing (41 models on 2026-10-24); published groups include Kiro, Pro and a distill group (operator-submitted, not canary-tested). |
+| 🟡 [YonShoreAPI](https://api.yonshore.com) | mixed | — | unverified · ⚠ 自薦, 無主體 | Personally operated new-api host with public /api/pricing (20 models on 2026-10-24, including 官转 and a limited-time group at ratio 0.07); operator-claimed WeChat, USDT and a mainland-China block were not in the static HTML. |
+| 🟡 [GPTZZZ](https://gptzzz.ai) | mixed | 支付寶 | unverified · ⚠ 自薦, 價過低, 無主體 | Personally operated OpenAI-compatible /v1 and Claude Messages relay; the public pricing page (2026-10-14) lists per-group rates including a 0.1x pool, Alipay top-up at 1 CNY = 1 USD balance, and states it does not issue invoices. |
+| 🟡 [LinkAGI](https://api.linktoagi.com) | mixed | — | unverified · ⚠ 自薦, 逆向 | new-api host with public /api/pricing (72 models on 2026-10-24), including groups whose names say they are reverse-engineered; payment rails were not visible in the unauthenticated HTML (operator-submitted, not canary-tested). |
+| 🟡 [eirouter.ai](https://eirouter.ai) | mixed | 支付寶/微信/卡/加密貨幣 | unverified · ⚠ 自薦 | Chinese-language console whose frontend lists Alipay, WeChat, card, USDT (TRC20) and USDC (Solana); the operator's 10-30% official-price claim was not present in the fetched bundle (operator-submitted, not canary-tested). |
+| 🟡 [VovoKey (启界API)](https://vovokey.com) | mixed | — | unverified · ⚠ 自薦 | Multi-model gateway with a public CNY per-1M-token feed at /api/provider/pricing (82 model ids on 2026-10-24, not a new-api payload); payment rails were not confirmed on the fetched page (operator-submitted). |
+| 🟡 [麦多 API (MadeMore API)](https://api.mddtech.cn) | mixed | 微信 | unverified · ⚠ 自薦, 價過低 | Claude Code and Codex CLI relay with WeChat top-up; the public pricing page lists those lines at about 0.15x and 0.1x official list price (operator-submitted, not canary-tested). |
+| 🟡 [Midalo (米搭中转站)](https://model.midalo.ai) | mixed | — | unverified · ⚠ 自薦, 逆向 | new-api host with public /api/pricing (65 models on 2026-10-24), including groups named as reverse channels and an enterprise official-key group; payment rails were not in the static HTML (operator-submitted). |
+| 🟡 [apimodels.app](https://apimodels.app) | aggregator | 支付寶/卡/加密貨幣 | unverified · ⚠ 自薦, 價過低 | OpenAI-compatible aggregator whose public /v1/models list returned 160 ids on 2026-10-24, with Alipay, card and USDT named on the pricing page and no new-api /api/pricing JSON (operator-submitted, not canary-tested). |
+| 🟡 [AICraft](https://aicraftapi.net) | aggregator | 卡/對公 | unverified · 已註冊 · ⚠ 自薦 | OpenAI-compatible aggregator operated by Hainan AICreatrix Technology Co., Ltd. (USCC 91460000MAKFXQ104N on the about page), with card and PayPal top-ups and an enterprise tier that offers invoice billing (operator-submitted, not canary-tested). |
 <!-- providers:china_relays:end -->
 
 > **收錄 ≠ 推薦。** 收錄是為了記錄市場。打款或傳資料前請先走
@@ -132,6 +143,11 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 | 🟡 [XiuRouter](https://router.xiu.ai) | aggregator | — | 託管的按量計費閘道，提供 OpenAI Chat Completions 與 Responses、Anthropic Messages 和 Gemini GenerateContent，並支援受限 API Key 及逐請求用量與費用記錄。 |
 | 🟡 [BetterToken](https://bettertoken.ai) | aggregator | 卡 | OpenAI- and Anthropic-compatible gateway (chat/completions, responses, messages) for Claude, GPT, Gemini, DeepSeek, Kimi, GLM, MiniMax and Qwen; prepaid pay-as-you-go; public pricing JSON at /api/pricing, with each model's access-group ratio applied. |
 | 🟡 [APIClaw](https://apiclaw.biz) | aggregator | 加密貨幣 | OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto. |
+| 🟡 [ModelRush](https://modelrush.ai) | aggregator | 卡 | Hosted multimodal API with OpenAI-compatible chat, a public model catalog, and Stripe credit packs of $10, $50 and $100 on the pricing page (operator-submitted, not canary-tested). |
+| 🟡 [onomeo](https://onomeo.com) | aggregator | — | OpenAI-compatible key for web chat and API; free models are call-metered with no credit card, paid models draw a USD balance, and the models page names PayPal via Ko-fi (operator-submitted one-person project, not canary-tested). |
+| 🟡 [AtmoRouter](https://atmorouter.dev) | aggregator | 加密貨幣 | OpenAI-compatible gateway that takes USDC on Solana or QRIS, with GET /v1/models returning 167 ids on 2026-10-24 and a homepage claim of up to 89% below official pricing (operator-submitted, not canary-tested). |
+| 🟡 [Zurelay](https://zurelay.com) | mixed | — | OpenAI-compatible and Anthropic Messages gateway with a public /prices.json feed (69 USD models on 2026-10-24, not new-api) that includes a per-model saving versus lab list (operator-submitted, not canary-tested). |
+| 🟡 [API Route](https://www.api-route.com) | mixed | — | OpenAI-compatible gateway with public new-api /api/pricing (49 models in per-vendor groups, not a single default price) and a pay-as-you-go balance (operator-submitted, not canary-tested). |
 <!-- providers:global_gateways:end -->
 
 ## 自架替代方案

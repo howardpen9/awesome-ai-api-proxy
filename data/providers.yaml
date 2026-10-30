@@ -23,7 +23,7 @@
 #   supports_tools      - true | false | unknown. Function calling / tools API compatibility.
 
 schema_version: 2
-last_reviewed: "2026-07-12"
+last_reviewed: "2026-10-24"
 
 # ---------------------------------------------------------------------------
 # China / Asia relay stations (中轉站)
@@ -289,6 +289,192 @@ china_relays:
       en: "OpenAI- and Anthropic-compatible gateway; QQ-mail registration, Alipay/WeChat payment, per-token billing."
       zh-TW: "OpenAI 與 Anthropic 雙協議相容閘道；QQ 信箱註冊、支付寶/微信支付、按量計費。"
       zh-CN: "OpenAI 与 Anthropic 双协议兼容网关；QQ 邮箱注册、支付宝/微信支付、按量计费。"
+
+  # Landed from issue #61 (l8078492-code). All published models sit in default.
+  - name: YCSG API
+    url: https://api.ycsgyuuu.study
+    type: aggregator
+    status: unverified
+    models: [deepseek, qwen, zhipu]
+    model_count: 13
+    last_verified: null
+    verified_by: community
+    entity_registered: false
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, no_entity]
+    pricing:
+      pricing_url: https://api.ycsgyuuu.study
+      api_url: https://api.ycsgyuuu.study/api/pricing
+      fetcher: ycsg
+      pricing_currency: USD
+    notes:
+      en: "new-api console whose public /api/pricing default group listed 13 DeepSeek, Qwen and GLM ids on 2026-10-24 (operator-submitted, not canary-tested)."
+
+  # Landed from issue #66 (Chinallmapi). Reclassified aggregator → mixed:
+  # published groups include Kiro and a distill group, not a single upstream.
+  - name: ChinaLLM
+    url: https://chinallmapi.com
+    type: mixed
+    status: unverified
+    models: [openai, anthropic, gemini, doubao, qwen, zhipu, moonshot, minimax]
+    model_count: 41
+    last_verified: null
+    verified_by: community
+    entity_registered: false
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, reverse_channel, no_entity]
+    notes:
+      en: "Stock new-api console titled New API with public /api/pricing (41 models on 2026-10-24); published groups include Kiro, Pro and a distill group (operator-submitted, not canary-tested)."
+
+  # Landed from issue #85 (jerrynullmmo). Type mixed: 官转 groups sit next to
+  # other pools. Payment rails were not in the static HTML.
+  - name: YonShoreAPI
+    url: https://api.yonshore.com
+    type: mixed
+    status: unverified
+    models: [openai, anthropic]
+    model_count: 20
+    last_verified: null
+    verified_by: community
+    entity_registered: false
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, no_entity]
+    notes:
+      en: "Personally operated new-api host with public /api/pricing (20 models on 2026-10-24, including 官转 and a limited-time group at ratio 0.07); operator-claimed WeChat, USDT and a mainland-China block were not in the static HTML."
+
+  # Landed from issue #90 (pbhhdf). Homepage leads with a 0.1x group.
+  - name: GPTZZZ
+    url: https://gptzzz.ai
+    type: mixed
+    status: unverified
+    payment: [alipay]
+    models: [openai, anthropic, gemini, deepseek, xai, qwen, xiaomi]
+    model_count: 27
+    last_verified: null
+    verified_by: community
+    entity_registered: false
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, prices_too_cheap, no_entity]
+    notes:
+      en: "Personally operated OpenAI-compatible /v1 and Claude Messages relay; the public pricing page (2026-10-14) lists per-group rates including a 0.1x pool, Alipay top-up at 1 CNY = 1 USD balance, and states it does not issue invoices."
+
+  # Landed from issue #93 (16871233). /api/pricing responds, but groups are
+  # not one flat default price, so no fetcher is registered.
+  - name: LinkAGI
+    url: https://api.linktoagi.com
+    type: mixed
+    status: unverified
+    models: [openai, anthropic, gemini, deepseek, grok, glm]
+    model_count: 72
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, reverse_channel]
+    notes:
+      en: "new-api host with public /api/pricing (72 models on 2026-10-24), including groups whose names say they are reverse-engineered; payment rails were not visible in the unauthenticated HTML (operator-submitted, not canary-tested)."
+
+  # Landed from issue #99 (eirouter366-ui). Discount claim was not in the bundle.
+  - name: eirouter.ai
+    url: https://eirouter.ai
+    type: mixed
+    status: unverified
+    payment: [alipay, wechat, card, crypto]
+    models: [openai, anthropic]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Chinese-language console whose frontend lists Alipay, WeChat, card, USDT (TRC20) and USDC (Solana); the operator's 10-30% official-price claim was not present in the fetched bundle (operator-submitted, not canary-tested)."
+
+  # Landed from issue #112 (zhang1911817869). CNY feed is not new-api shaped.
+  - name: VovoKey (启界API)
+    url: https://vovokey.com
+    type: mixed
+    status: unverified
+    models: [openai, anthropic, gemini, deepseek, grok, moonshot]
+    model_count: 82
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Multi-model gateway with a public CNY per-1M-token feed at /api/provider/pricing (82 model ids on 2026-10-24, not a new-api payload); payment rails were not confirmed on the fetched page (operator-submitted)."
+
+  # Landed from issue #123 (kanfangwang). Homepage leads with ~0.1x / ~0.15x.
+  - name: 麦多 API (MadeMore API)
+    url: https://api.mddtech.cn
+    type: mixed
+    status: unverified
+    payment: [wechat]
+    models: [openai, anthropic]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, prices_too_cheap]
+    notes:
+      en: "Claude Code and Codex CLI relay with WeChat top-up; the public pricing page lists those lines at about 0.15x and 0.1x official list price (operator-submitted, not canary-tested)."
+
+  # Landed from issue #134 (1MoreTiaoTiaowa). Groups are not a flat default.
+  - name: Midalo (米搭中转站)
+    url: https://model.midalo.ai
+    type: mixed
+    status: unverified
+    models: [openai, anthropic, gemini, deepseek, glm, moonshot, grok, minimax]
+    model_count: 65
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, reverse_channel]
+    notes:
+      en: "new-api host with public /api/pricing (65 models on 2026-10-24), including groups named as reverse channels and an enterprise official-key group; payment rails were not in the static HTML (operator-submitted)."
+
+  # Landed from issue #153 (stimQQ). /api/pricing is the HTML pricing page, not JSON.
+  - name: apimodels.app
+    url: https://apimodels.app
+    type: aggregator
+    status: unverified
+    payment: [alipay, card, crypto]
+    models: [openai, anthropic, gemini, deepseek, xai, qwen, zhipu, moonshot, minimax]
+    model_count: 160
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, prices_too_cheap]
+    notes:
+      en: "OpenAI-compatible aggregator whose public /v1/models list returned 160 ids on 2026-10-24, with Alipay, card and USDT named on the pricing page and no new-api /api/pricing JSON (operator-submitted, not canary-tested)."
+
+  # Landed from issues #155 and #132 (BX166). USCC is on the about page.
+  - name: AICraft
+    url: https://aicraftapi.net
+    type: aggregator
+    status: unverified
+    payment: [card, enterprise-invoice]
+    models: [openai, anthropic, gemini, deepseek, qwen, zhipu, xai, minimax, moonshot]
+    last_verified: null
+    verified_by: community
+    entity_registered: true
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible aggregator operated by Hainan AICreatrix Technology Co., Ltd. (USCC 91460000MAKFXQ104N on the about page), with card and PayPal top-ups and an enterprise tier that offers invoice billing (operator-submitted, not canary-tested)."
 
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
@@ -563,13 +749,14 @@ global_gateways:
       zh-CN: "OpenAI 兼容网关；单一密钥涵盖前沿与开源模型（Claude、GPT、Gemini、DeepSeek、Qwen、Kimi、GLM）。按量计费。公开 `/pricing.json`。运营方自称 MachineFi Labs。"
 
   # Landed from issues #47 / #44 (vvvvking). #47 aggregator is the honest type.
+  # Issue #147 (vvvvking): public GET /v1/models on 2026-10-24 returned 111 ids.
   - name: NovAI
     url: https://aiapi-pro.com
     type: aggregator
     status: unverified
     payment: [card, crypto]
     models: [deepseek, qwen, moonshot, zhipu, doubao, minimax, hunyuan, seedance]
-    model_count: 38
+    model_count: 111
     last_verified: null
     verified_by: community
     entity_registered: unknown
@@ -727,6 +914,88 @@ global_gateways:
     risk_flags: [operator_submitted]
     notes:
       en: "OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto."
+
+  # Landed from issue #72 (ShanHuangNet). No public /api/pricing JSON.
+  - name: ModelRush
+    url: https://modelrush.ai
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [qwen, deepseek, moonshot, minimax, glm, grok]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Hosted multimodal API with OpenAI-compatible chat, a public model catalog, and Stripe credit packs of $10, $50 and $100 on the pricing page (operator-submitted, not canary-tested)."
+
+  # Landed from issue #94 (Owaid0723666). PayPal via Ko-fi is not a schema rail.
+  - name: onomeo
+    url: https://onomeo.com
+    type: aggregator
+    status: unverified
+    models: [openai, anthropic, gemini, deepseek, qwen, zhipu, mistral, meta]
+    model_count: 34
+    last_verified: null
+    verified_by: community
+    entity_registered: false
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, no_entity]
+    notes:
+      en: "OpenAI-compatible key for web chat and API; free models are call-metered with no credit card, paid models draw a USD balance, and the models page names PayPal via Ko-fi (operator-submitted one-person project, not canary-tested)."
+
+  # Landed from issue #107 (Micolaabdi). /v1/models is not the shared new-api fetcher.
+  - name: AtmoRouter
+    url: https://atmorouter.dev
+    type: aggregator
+    status: unverified
+    payment: [crypto]
+    models: [openai, anthropic, gemini, zhipu, deepseek, qwen, moonshot]
+    model_count: 167
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, prices_too_cheap]
+    notes:
+      en: "OpenAI-compatible gateway that takes USDC on Solana or QRIS, with GET /v1/models returning 167 ids on 2026-10-24 and a homepage claim of up to 89% below official pricing (operator-submitted, not canary-tested)."
+
+  # Landed from issue #130 (zutrue). /prices.json is a custom feed, not new-api.
+  - name: Zurelay
+    url: https://zurelay.com
+    type: mixed
+    status: unverified
+    models: [anthropic, openai, gemini, xai, deepseek, qwen, zhipu, minimax, moonshot]
+    model_count: 69
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted, prices_too_cheap]
+    notes:
+      en: "OpenAI-compatible and Anthropic Messages gateway with a public /prices.json feed (69 USD models on 2026-10-24, not new-api) that includes a per-model saving versus lab list (operator-submitted, not canary-tested)."
+
+  # Landed from issue #150 (DennyHo0917). default group ratio is 1 and most
+  # models are priced in per-vendor groups, so no fetcher is registered.
+  - name: API Route
+    url: https://www.api-route.com
+    type: mixed
+    status: unverified
+    models: [openai, anthropic, gemini, deepseek, qwen, moonshot, xai]
+    model_count: 49
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible gateway with public new-api /api/pricing (49 models in per-vendor groups, not a single default price) and a pay-as-you-go balance (operator-submitted, not canary-tested)."
 
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)

@@ -114,6 +114,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中转站
 | 服务 | 类型 | 支付 | 备注 |
 |---|---|---|---|
 | 🟢 [OpenRouter](https://openrouter.ai) | aggregator | 卡/加密货币 | 官方授权路由，加价约 5%；400+ 模型、60+ 供应商。ARR 据报约 $5M（2025-05）→ 约 $50M（2026 初）。公开 `/api/v1/models` JSON。 |
+| 🟢 [MiniMax Open Platform](https://platform.minimax.io) | official | — | MiniMax 自家官方 API 平台（first-party），非中转站；OpenAI 兼容 https://api.minimax.io/v1、Anthropic 兼容 https://api.minimax.io/anthropic；价格见 https://platform.minimax.io/docs/pricing/overview。 |
 | 🟢 [Atlas Cloud](https://www.atlascloud.ai) | aggregator | 卡 | 多模态聚合平台；图像/视频模型多（Grok Imagine、Kling、ByteDance、Vidu）。公开 OpenAI 兼容 `/v1/models` 含 cache-read 计价。 |
 | 🟢 [Relaydance](https://relaydance.com) | mixed | 支付宝/微信/卡 | 基于 new-api 的中文界面海外站，主打 xAI Grok + 字节跳动 Doubao。`/api/pricing` 公开倍率计价（model_ratio × $2/1M tokens）。 |
 | 🟢 [LiteLLM](https://litellm.ai) | gateway-oss | — | 开源网关（100+ 供应商）+ 企业版。自托管，自带 Key。 |

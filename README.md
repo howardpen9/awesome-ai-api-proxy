@@ -121,6 +121,7 @@ market, not a workaround niche.
 | Service | Type | Payment | Notes |
 |---|---|---|---|
 | 🟢 [OpenRouter](https://openrouter.ai) | aggregator | Card/Crypto | Official-authorized routing, ~5% markup. ARR reportedly $5M (2025-05) to ~$50M (early 2026). Public JSON API at /api/v1/models with normalized per-token pricing. |
+| 🟢 [MiniMax Open Platform](https://platform.minimax.io) | official | — | MiniMax's own first-party API platform, not a relay; OpenAI-compatible base https://api.minimax.io/v1 and Anthropic-compatible base https://api.minimax.io/anthropic; pricing: https://platform.minimax.io/docs/pricing/overview. |
 | 🟢 [Atlas Cloud](https://www.atlascloud.ai) | aggregator | Card | Multi-modal aggregator; image/video heavy (Grok Imagine, Kling, ByteDance, Vidu). Public OpenAI-compatible /v1/models endpoint exposes per-token pricing including cache-read. |
 | 🟢 [Relaydance](https://relaydance.com) | mixed | Alipay/WeChat/Card | 新-API (Calcium-Ion fork) operator focused on xAI Grok + ByteDance Doubao. Public /api/pricing returns ratio-based pricing (model_ratio × $2 / 1M tokens). |
 | 🟢 [LiteLLM](https://litellm.ai) | gateway-oss | — | Open-source gateway + enterprise tier. Self-hosted; not retail. |

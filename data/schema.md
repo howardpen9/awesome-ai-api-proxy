@@ -7,7 +7,7 @@ Unverifiable claims must be marked with `(claimed)` or `status: unverified`.
 |---|---|---|
 | `name` | yes | Display name. Include the Chinese name in parentheses if it has one. |
 | `url` | yes | Official homepage. HTTPS only. |
-| `type` | yes | One of: `official-relay`, `mixed`, `reverse`, `aggregator`, `gateway-oss`, `observability`, `comparison`, `list`. |
+| `type` | yes | One of: `official`, `official-relay`, `mixed`, `reverse`, `aggregator`, `gateway-oss`, `observability`, `comparison`, `list`. |
 | `status` | yes | `active` (independently reachable), `unverified` (community-sourced, not confirmed), `inactive` (dead / ran away). |
 | `payment` | no | Array: `alipay`, `wechat`, `card`, `crypto`, `enterprise-invoice`. |
 | `models` | no | Array of upstream families: `openai`, `anthropic`, `gemini`, `deepseek`, etc. |
@@ -89,6 +89,7 @@ merges both into `data/prices.latest.json` but tags them differently
 
 ## `type` definitions
 
+- **official** — The model vendor's own first-party API platform (e.g. MiniMax Open Platform). Not a relay.
 - **official-relay** — Forwards requests using official vendor keys. Most trustworthy; output matches the real model.
 - **mixed** — Blends official keys with other channels (e.g. Azure, partner quotas).
 - **reverse** — Reverse-engineered from a vendor's web client. Cheapest, least stable, highest ToS risk.
@@ -103,6 +104,8 @@ merges both into `data/prices.latest.json` but tags them differently
 ```
 official-relay  >  mixed  >  aggregator  >  reverse
 ```
+
+`official` (vendor first-party) sits outside this ordering: it is the upstream the relays forward to.
 
 `gateway-oss` is orthogonal: you hold the keys, so trust depends on you, not the operator.
 

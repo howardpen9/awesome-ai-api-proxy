@@ -156,6 +156,7 @@ templates.
 | 🟢 [new-api](https://github.com/Calcium-Ion/new-api) | gateway-oss | Fork of One-API with extra channel types; same self-hosted model — you supply keys. |
 | 🟡 [A3M Router](https://github.com/Das-rebel/a3m-router) | gateway-oss | MIT TypeScript OpenAI-compatible multi-provider router (parallel ensemble); self-hosted — you supply keys. npm: adaptive-memory-multi-model-router. |
 | 🟡 [Bifrost](https://github.com/maximhq/bifrost) | gateway-oss | Go-based self-hosted AI gateway with an OpenAI-compatible API, multi-provider routing, fallbacks, load balancing, and observability; users supply their own provider keys. |
+| 🟡 [omni-route](https://github.com/attnstack/omni-route) | gateway-oss | MIT Go gateway, OpenAI-compatible `/v1` (SSE included): per-task cost-quality routing (adaptive λ + Thompson sampling), cascade execution — cheap model first, confidence-checked upgrades — with per-request `x-or-route-reason` headers, a savings dashboard and a deterministic 4-policy benchmark. |
 <!-- providers:self_hosted_alternatives:end -->
 
 > [LiteLLM](https://litellm.ai) (in the global table above) is also self-hosted (Python, 100+ providers, used by enterprises).

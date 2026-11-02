@@ -147,6 +147,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 | 🟢 [new-api](https://github.com/Calcium-Ion/new-api) | gateway-oss | One-API 的 fork，多了幾種通道類型；同樣自架、自帶 key。 |
 | 🟡 [A3M Router](https://github.com/Das-rebel/a3m-router) | gateway-oss | MIT TypeScript OpenAI-compatible multi-provider router (parallel ensemble); self-hosted — you supply keys. npm: adaptive-memory-multi-model-router. |
 | 🟡 [Bifrost](https://github.com/maximhq/bifrost) | gateway-oss | Go-based self-hosted AI gateway with an OpenAI-compatible API, multi-provider routing, fallbacks, load balancing, and observability; users supply their own provider keys. |
+| 🟡 [omni-route](https://github.com/attnstack/omni-route) | gateway-oss | MIT Go gateway, OpenAI-compatible /v1 (SSE included): per-task cost-quality routing (adaptive lambda + Thompson sampling), cascade execution with confidence-checked upgrades, per-request x-or-route-reason headers, an embedded savings dashboard and a deterministic 4-policy benchmark; users supply their own provider keys. |
 <!-- providers:self_hosted_alternatives:end -->
 
 > [LiteLLM](https://litellm.ai)（在上面海外閘道表格內）同樣是自架方案（Python 為主、100+ 供應商、企業常用）。

@@ -728,6 +728,25 @@ global_gateways:
     notes:
       en: "OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto."
 
+  # Landed from dolobster (Vectoree team). OpenAI-compatible gateway only —
+  # do not claim Anthropic Messages. Self-submission → unverified + operator_submitted.
+  - name: Vectoree
+    url: https://vectoree.ai
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [openai, anthropic, gemini, deepseek, xai]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible multi-provider gateway (one project key) plus auth, Postgres and storage for coding agents; CLI + agent skill; pay-as-you-go with $5 welcome credit."
+      zh-TW: "OpenAI 相容多供應商閘道（一把專案 Key），另含登入、Postgres 與物件儲存，面向 coding agents；CLI + skill；按量付費，登入關聯後送 $5 體驗額度。"
+      zh-CN: "OpenAI 兼容多供应商网关（一把项目 Key），另含登录、Postgres 与对象存储，面向 coding agents；CLI + skill；按量付费，登录关联后送 $5 体验额度。"
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

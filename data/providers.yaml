@@ -289,6 +289,24 @@ china_relays:
       en: "OpenAI- and Anthropic-compatible gateway; QQ-mail registration, Alipay/WeChat payment, per-token billing."
       zh-TW: "OpenAI 與 Anthropic 雙協議相容閘道；QQ 信箱註冊、支付寶/微信支付、按量計費。"
       zh-CN: "OpenAI 与 Anthropic 双协议兼容网关；QQ 邮箱注册、支付宝/微信支付、按量计费。"
+  - name: LONG AI
+    url: https://ai.dijinlong.com/
+    type: aggregator
+    status: unverified
+    payment: [wechat]
+    models: [openai, anthropic, gemini, deepseek, qwen]
+    model_count: 190
+    provider_count: 49
+    discount_vs_official: "up to 99% below official list price (claimed)"
+    last_verified: null
+    verified_by: community
+    entity_registered: true
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Multi-seller LLM API marketplace where sellers set their own prices for spare model quota; one OpenAI-compatible key reaches 190 listed models from 49 vendors, billed in CNY."
+      zh-CN: "多卖家大模型 API 交易平台，卖家为闲置额度自主定价；一个 OpenAI 兼容密钥可调用 49 家厂商的 190 个在架模型，人民币结算。"
 
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)

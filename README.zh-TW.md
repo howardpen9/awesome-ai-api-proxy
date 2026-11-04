@@ -132,6 +132,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 | 🟡 [XiuRouter](https://router.xiu.ai) | aggregator | — | 託管的按量計費閘道，提供 OpenAI Chat Completions 與 Responses、Anthropic Messages 和 Gemini GenerateContent，並支援受限 API Key 及逐請求用量與費用記錄。 |
 | 🟡 [BetterToken](https://bettertoken.ai) | aggregator | 卡 | OpenAI- and Anthropic-compatible gateway (chat/completions, responses, messages) for Claude, GPT, Gemini, DeepSeek, Kimi, GLM, MiniMax and Qwen; prepaid pay-as-you-go; public pricing JSON at /api/pricing, with each model's access-group ratio applied. |
 | 🟡 [APIClaw](https://apiclaw.biz) | aggregator | 加密貨幣 | OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto. |
+| 🟡 [AnyAPI.ai](https://anyapi.ai) | aggregator | 卡/加密貨幣 | 在 api.anyapi.ai/v1 提供 OpenAI 相容端點（無金鑰回 401），同一主機亦提供 Anthropic Messages 端點供 Claude Code 使用。按 pricing 頁面公布的 ₳nytokens 逐 token 計費；免費額度每日 100K tokens，不需信用卡。 |
 <!-- providers:global_gateways:end -->
 
 ## 自架替代方案

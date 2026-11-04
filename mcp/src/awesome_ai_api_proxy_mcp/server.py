@@ -84,7 +84,7 @@ mcp = FastMCP("awesome-ai-api-proxy")
 def list_providers() -> list[dict]:
     """List every relay station, gateway, and tool tracked in the registry.
 
-    Returns each provider's name, URL, type (official-relay / mixed / reverse /
+    Returns each provider's name, URL, type (official / official-relay / mixed / reverse /
     aggregator / gateway-oss / observability / comparison / list), status, and
     pricing page when available.
     """

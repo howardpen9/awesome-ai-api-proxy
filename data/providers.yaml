@@ -29,23 +29,23 @@ last_reviewed: "2026-07-12"
 # China / Asia relay stations (中轉站)
 # ---------------------------------------------------------------------------
 china_relays:
-    - name: ZeroShell
-  url: https://zeroshell.top
-  type: mixed
-  status: unverified
-  payment: [alipay]
-  models: [openai, anthropic, gemini]
-  model_count: 46
-  last_verified: null
+  - name: ZeroShell
+    url: https://zeroshell.top
+    type: mixed
+    status: unverified
+    payment: [alipay]
+    models: [openai, anthropic, gemini]
+      model_count: 46
+    last_verified: null
   verified_by: community
-  entity_registered: unknown
-  supports_stream: unknown
+    entity_registered: unknown
+        supports_stream: unknown
   supports_tools: unknown
   risk_flags: [operator_submitted]
-  notes:
-      en: "OpenAI-compatible relay at https://zeroshell.top/v1, plus Anthropic /v1/messages. 46 models in total; catalogues differ by group: 27 on a low-cost group key (no Claude), 22 on an official group key (full Claude line-up). Email sign-up in about 1 minute; new users get ¥1 free credit; Alipay top-up from $1 at ¥1 = $1 quota."
-      zh-TW: "OpenAI 相容中轉站（https://zeroshell.top/v1），另支援 Anthropic /v1/messages。合計 46 個模型，目錄按分組區分：低成本分組金鑰 27 個（不含 Claude），官方分組金鑰 22 個（含完整 Claude 陣容）。信箱註冊約 1 分鐘；新用戶獲 ¥1 免費額度；支付寶 $1 起充，¥1 = $1 額度。"
-      zh-CN: "OpenAI 兼容中转站（https://zeroshell.top/v1），另支持 Anthropic /v1/messages。合计 46 个模型，目录按分组区分：低成本分组密钥 27 个（不含 Claude），官方分组密钥 22 个（含完整 Claude 阵容）。邮箱注册约 1 分钟；新用户获 ¥1 免费额度；支付宝 $1 起充，¥1 = $1 额度。"
+    notes:
+        en: "OpenAI-compatible relay at https://zeroshell.top/v1, plus Anthropic /v1/messages. 46 models in total; catalogues differ by group: 27 on a low-cost group key (no Claude), 22 on an official group key (full Claude line-up). Email sign-up in about 1 minute; new users get ¥1 free credit; Alipay top-up from $1 at ¥1 = $1 quota."
+        zh-TW: "OpenAI 相容中轉站（https://zeroshell.top/v1），另支援 Anthropic /v1/messages。合計 46 個模型，目錄按分組區分：低成本分組金鑰 27 個（不含 Claude），官方分組金鑰 22 個（含完整 Claude 陣容）。信箱註冊約 1 分鐘；新用戶獲 ¥1 免費額度；支付寶 $1 起充，¥1 = $1 額度。"
+        zh-CN: "OpenAI 兼容中转站（https://zeroshell.top/v1），另支持 Anthropic /v1/messages。合计 46 个模型，目录按分组区分：低成本分组密钥 27 个（不含 Claude），官方分组密钥 22 个（含完整 Claude 阵容）。邮箱注册约 1 分钟；新用户获 ¥1 免费额度；支付宝 $1 起充，¥1 = $1 额度。"
       - name: 云雾 API (YUNWU)
     url: https://yunwu.ai
     type: mixed

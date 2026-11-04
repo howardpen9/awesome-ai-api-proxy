@@ -804,4 +804,4 @@ self_hosted_alternatives:
     supports_tools: true
     risk_flags: [operator_submitted]
     notes:
-      en: "MIT Go gateway, OpenAI-compatible /v1 (SSE included): per-task cost-quality routing (adaptive lambda + Thompson sampling), cascade execution with confidence-checked upgrades, per-request x-or-route-reason headers, an embedded savings dashboard and a deterministic 4-policy benchmark; users supply their own provider keys."
+      en: "MIT Go gateway, OpenAI-compatible /v1 (SSE included): per-task cost-quality routing (adaptive lambda + Thompson sampling), cascade execution with confidence-checked upgrades, a response cache for zero-temperature requests (exact-match, TTL + LRU), per-request x-or-route-reason headers, an embedded savings dashboard, Prometheus metrics and a deterministic 4-policy benchmark; users supply their own provider keys."

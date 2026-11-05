@@ -728,6 +728,25 @@ global_gateways:
     notes:
       en: "OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto."
 
+  # Operator self-submission (cheapaimodel team), Path D with operator flags.
+  - name: cheapaimodel
+    url: https://cheapaimodel.ai
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [deepseek, zhipu, xai, moonshot]
+    last_verified: null
+    verified_by: community
+    entity_registered: true
+    supports_stream: true
+    supports_tools: true
+    discount_vs_official: "~30% below the labs' list prices; Grok 4.7 ~90% (claimed)"
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible Chat Completions gateway at https://api.cheapaimodel.ai/v1 serving DeepSeek, GLM, Grok and Kimi models on one key; prepaid in USD by card from $5, billed per token; operated by LINKOVA PTE. LTD. (Singapore) and not offered in mainland China."
+      zh-TW: "OpenAI 相容的 Chat Completions 閘道（https://api.cheapaimodel.ai/v1），一組 Key 呼叫 DeepSeek、GLM、Grok 與 Kimi；以信用卡美元預付、5 美元起，依 token 計費；營運主體為新加坡 LINKOVA PTE. LTD.，不對中國大陸提供服務。"
+      zh-CN: "OpenAI 兼容的 Chat Completions 网关（https://api.cheapaimodel.ai/v1），一个 Key 调用 DeepSeek、GLM、Grok 与 Kimi；信用卡美元预付、5 美元起，按 token 计费；运营主体为新加坡 LINKOVA PTE. LTD.，不对中国大陆提供服务。"
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

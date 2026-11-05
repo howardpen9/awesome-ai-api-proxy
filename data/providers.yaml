@@ -791,3 +791,18 @@ self_hosted_alternatives:
     risk_flags: [operator_submitted]
     notes:
       en: "Go-based self-hosted AI gateway with an OpenAI-compatible API, multi-provider routing, fallbacks, load balancing, and observability; users supply their own provider keys."
+
+  # Submitted by the project operator (PR #187, @attnstack).
+  - name: omni-route
+    url: https://github.com/attnstack/omni-route
+    type: gateway-oss
+    status: unverified
+    models: [openai, anthropic]
+    last_verified: null
+    verified_by: community
+    entity_registered: false
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "MIT Go self-hosted gateway with OpenAI-compatible /v1 (streaming SSE and non-streaming); task-based cost-quality routing, cascade execution, optional response cache, routing headers, savings dashboard, and Prometheus metrics; users supply their own provider keys."

@@ -396,12 +396,12 @@ global_gateways:
     last_verified: "2026-10-30"
     verified_by: maintainer
     entity_registered: true
-    supports_stream: unknown
-    supports_tools: unknown
+    supports_stream: true
+    supports_tools: true
     notes:
-      en: "MiniMax's own first-party API platform, not a relay; OpenAI-compatible base https://api.minimax.io/v1 and Anthropic-compatible base https://api.minimax.io/anthropic; pricing: https://platform.minimax.io/docs/pricing/overview."
-      zh-TW: "MiniMax 自家官方 API 平台（first-party），非中轉站；OpenAI 相容 https://api.minimax.io/v1、Anthropic 相容 https://api.minimax.io/anthropic；價格見 https://platform.minimax.io/docs/pricing/overview。"
-      zh-CN: "MiniMax 自家官方 API 平台（first-party），非中转站；OpenAI 兼容 https://api.minimax.io/v1、Anthropic 兼容 https://api.minimax.io/anthropic；价格见 https://platform.minimax.io/docs/pricing/overview。"
+      en: "MiniMax first-party API platform (type official); OpenAI https://api.minimax.io/v1 and Anthropic https://api.minimax.io/anthropic bases; pricing https://platform.minimax.io/docs/pricing/overview; stream and tools documented https://platform.minimax.io/docs/api-reference/text-chat-openai and https://platform.minimax.io/docs/guides/text-m3-function-call."
+      zh-TW: "MiniMax 官方 first-party API（type official）；OpenAI https://api.minimax.io/v1、Anthropic https://api.minimax.io/anthropic；定價 https://platform.minimax.io/docs/pricing/overview；串流與 tools 見 https://platform.minimax.io/docs/api-reference/text-chat-openai 與 https://platform.minimax.io/docs/guides/text-m3-function-call。"
+      zh-CN: "MiniMax 官方 first-party API（type official）；OpenAI https://api.minimax.io/v1、Anthropic https://api.minimax.io/anthropic；定价 https://platform.minimax.io/docs/pricing/overview；流式与 tools 见 https://platform.minimax.io/docs/api-reference/text-chat-openai 与 https://platform.minimax.io/docs/guides/text-m3-function-call。"
 
   - name: Atlas Cloud
     url: https://www.atlascloud.ai

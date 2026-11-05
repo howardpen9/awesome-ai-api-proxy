@@ -11,6 +11,7 @@ on:
       - "data/**"
       - "fetchers/**"
       - "scripts/**"
+      - "tests/**"
       - "pyproject.toml"
       - "README.md"
       - "README.zh-TW.md"
@@ -39,6 +40,11 @@ jobs:
 
       - name: Validate schemas + editorial rules
         run: python -m scripts.validate
+
+      - name: Unit tests (validate)
+        run: |
+          pip install pytest
+          pytest -q
 
       - name: README provider-table hygiene
         env:

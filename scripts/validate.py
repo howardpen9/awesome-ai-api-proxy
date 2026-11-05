@@ -16,6 +16,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 import yaml
@@ -249,8 +250,9 @@ def _validate_submitted_prices(problems: list[str], section: str, entry: dict, s
             _check_url(problems, f"{section}: '{name}' submitted_prices[{i}].source_url", src)
 
 
-def validate_providers(problems: list[str]) -> None:
-    raw = yaml.safe_load(PROVIDERS_YAML.read_text(encoding="utf-8"))
+def validate_providers(problems: list[str], providers_path: Path | None = None) -> None:
+    path = providers_path or PROVIDERS_YAML
+    raw = yaml.safe_load(path.read_text(encoding="utf-8"))
     seen_names: dict[str, str] = {}
     seen_urls: dict[str, str] = {}
 

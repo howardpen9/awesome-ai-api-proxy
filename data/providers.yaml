@@ -728,6 +728,22 @@ global_gateways:
     notes:
       en: "OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto."
 
+  - name: API Stock
+    url: https://api-stock.com
+    type: aggregator
+    status: unverified
+    payment: [card, crypto, alipay, wechat]
+    models: [openai, anthropic, google, deepseek, qwen, moonshot, zhipu, minimax, xai, kling, bytedance]
+    model_count: 69
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Operator-submitted. One prepaid balance for chat (OpenAI- and Anthropic-compatible endpoints) plus video, image and music generation (Veo, Kling, Seedance, Suno); per-model prices on the public models page."
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

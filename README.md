@@ -139,6 +139,7 @@ market, not a workaround niche.
 | 🟡 [XiuRouter](https://router.xiu.ai) | aggregator | — | Hosted usage-based gateway exposing OpenAI Chat Completions and Responses, Anthropic Messages, and Gemini GenerateContent, with scoped API keys and per-request usage and cost records. |
 | 🟡 [BetterToken](https://bettertoken.ai) | aggregator | Card | OpenAI- and Anthropic-compatible gateway (chat/completions, responses, messages) for Claude, GPT, Gemini, DeepSeek, Kimi, GLM, MiniMax and Qwen; prepaid pay-as-you-go; public pricing JSON at /api/pricing, with each model's access-group ratio applied. |
 | 🟡 [APIClaw](https://apiclaw.biz) | aggregator | Crypto | OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto. |
+| 🟡 [AnyAPI.ai](https://anyapi.ai) | aggregator | Card/Crypto | OpenAI-compatible endpoint at api.anyapi.ai/v1 that answers 401 without a key, plus an Anthropic Messages endpoint on the same host for Claude Code. Billing is per token in ₳nytokens as published on the pricing page; free tier is 100K tokens/day without a card. |
 <!-- providers:global_gateways:end -->
 
 ## Self-hosted alternatives

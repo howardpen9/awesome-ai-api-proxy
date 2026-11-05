@@ -731,6 +731,22 @@ global_gateways:
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------
+  - name: AnyAPI.ai
+    url: https://anyapi.ai
+    type: aggregator
+    status: unverified
+    payment: [card, crypto]
+    models: [openai, anthropic, google, deepseek, xai, qwen, moonshot, mistral, meta]
+    model_count: 400
+    entity_registered: true
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible endpoint at api.anyapi.ai/v1 that answers 401 without a key, plus an Anthropic Messages endpoint on the same host for Claude Code. Billing is per token in ₳nytokens as published on the pricing page; free tier is 100K tokens/day without a card."
+      zh-TW: "在 api.anyapi.ai/v1 提供 OpenAI 相容端點（無金鑰回 401），同一主機亦提供 Anthropic Messages 端點供 Claude Code 使用。按 pricing 頁面公布的 ₳nytokens 逐 token 計費；免費額度每日 100K tokens，不需信用卡。"
+      zh-CN: "在 api.anyapi.ai/v1 提供 OpenAI 兼容端点（无密钥返回 401），同一主机亦提供 Anthropic Messages 端点供 Claude Code 使用。按 pricing 页面公布的 ₳nytokens 逐 token 计费；免费额度每日 100K tokens，不需信用卡。"
+
 self_hosted_alternatives:
   - name: One-API
     url: https://github.com/songquanpeng/one-api

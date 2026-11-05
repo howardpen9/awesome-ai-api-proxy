@@ -6,6 +6,50 @@ went stale; the goal here is to stay current.
 
 繁中 / 简中贡献者：可以用中文开 issue / PR，维护者会处理。
 
+## Single source of truth: edit YAML only / 只改 YAML
+
+**English:** All provider tables in [`README.md`](README.md),
+[`README.zh-TW.md`](README.zh-TW.md), and [`README.zh-CN.md`](README.zh-CN.md)
+are **generated** from [`data/providers.yaml`](data/providers.yaml) by
+[`scripts/build_provider_tables.py`](scripts/build_provider_tables.py). **Do not**
+hand-edit table rows between `<!-- providers:*:start -->` and
+`<!-- providers:*:end -->` — CI runs `--check-pr` and **rejects** README table
+diffs on provider PRs; your edits would be overwritten on the next build anyway.
+
+**繁中：** 三语 README 的站点表格皆由 `data/providers.yaml` 经脚本自动生成。**请勿**
+手改 README 内 `<!-- providers:*:start -->` … `<!-- providers:*:end -->`
+之间的表格；CI 会挡下手改。
+
+**简中：** 三语 README 的站点表格均由 `data/providers.yaml` 脚本生成。**不要**
+手改 README 表格区块；CI 会拒绝。
+
+**Local checks before you open a PR** (after `pip install -e .` from repo root):
+
+```bash
+python -m scripts.validate                    # scripts/validate.py
+python -m scripts.build_provider_tables --check-pr
+```
+
+After editing YAML only, regenerate the three READMEs locally with
+`python -m scripts.build_provider_tables`.
+
+Minimal new-entry shape (full copy-paste example:
+[`docs/agent-contribute.md`](docs/agent-contribute.md#minimal-yaml-example-copy-paste)):
+
+```yaml
+  - name: ExampleRelay
+    url: https://example-relay.example
+    type: aggregator
+    status: unverified
+    verified_by: community
+    last_verified: null
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    notes:
+      en: "One factual sentence; no marketing."
+```
+
 ## For AI agents (read this first)
 
 If you are Claude Code / Cursor / Codex / any coding agent opening a PR on

@@ -33,14 +33,20 @@ Want to fix a dead link / ran-away / typo?
 
 **Never:** edit generated README tables between
 `<!-- providers:*:start -->` … `<!-- providers:*:end -->`.
-CI rejects hand-edits. Tables are built by
-`python -m scripts.build_provider_tables`.
+CI rejects hand-edits. Tables are built from YAML by
+`scripts/build_provider_tables.py` into all three READMEs
+(`README.md`, `README.zh-TW.md`, `README.zh-CN.md`).
+
+**只改 `data/providers.yaml`（Path A 另加 fetcher 文件）。不要手改三语 README 表格。**
+**Do not hand-edit README provider tables — YAML only.**
 
 ---
 
 ## Hard rules (CI fails the PR)
 
-1. **Only edit** `data/providers.yaml` (and fetcher files if Path A).
+1. **Only edit** `data/providers.yaml` (and fetcher files if Path A). README
+   provider tables are script-generated; hand-edits fail
+   `build_provider_tables --check-pr`.
 2. **URL** must be plain `https://` — no `utm_*`, `ref=`, `campaignid`, affiliate params.
 3. **`status: active` is maintainer-only.** New entries use `status: unverified`.
 4. **Self / operator submissions** must include:
@@ -52,10 +58,13 @@ CI rejects hand-edits. Tables are built by
 5. **`notes`**: one factual sentence per language, ≤ 360 chars. No superlatives
    (`#1`, `the best`, 强烈推荐, 不降智, …).
 6. **No duplicate** `name` or same host+path URL already in the file.
-7. Run before opening the PR:
+7. Run before opening the PR (must exit 0; after `pip install -e .`):
    ```bash
-   python -m scripts.validate
+   python -m scripts.validate                    # scripts/validate.py
+   python -m scripts.build_provider_tables --check-pr
    ```
+   YAML-only PRs pass `--check-pr`; README table diffs without a matching yaml
+   change do not.
 
 ---
 
@@ -112,11 +121,12 @@ Pick the correct section: `china_relays` | `global_gateways` |
 ### 3. Validate
 
 ```bash
-python -m scripts.validate
-# exit 0 required
+python -m scripts.validate                    # scripts/validate.py
+python -m scripts.build_provider_tables --check-pr
+# both exit 0 required (matches CI pr-validate workflow)
 ```
 
-Optional local README regen (maintainer will also run this):
+Optional local README regen after yaml-only edits (maintainer / CI also run this):
 
 ```bash
 python -m scripts.build_provider_tables

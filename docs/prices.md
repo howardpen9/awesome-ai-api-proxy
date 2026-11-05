@@ -388,7 +388,7 @@ Source: <https://www.atlascloud.ai/models> · Records: 374
 
 ## 柏拉图 AI (bltcy) — `bltcy`
 
-Source: <https://api.bltcy.ai> · Records: 1469
+Source: `api.bltcy.ai` (inactive; homepage unreachable — service ended 2026-05-01 per operator notice) · Records: 1469
 
 | Model | Canonical | Unit | Price (USD) |
 |---|---|---|---|

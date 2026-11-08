@@ -293,6 +293,29 @@ china_relays:
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)
 # ---------------------------------------------------------------------------
+
+  # Operator self-submission (cozcc / AAPI). Path D; browser Issue form blocked.
+  - name: AAPI
+    url: https://aapi.ai
+    type: mixed
+    status: unverified
+    payment: [alipay]
+    models: [openai, anthropic, deepseek, qwen, moonshot, xai, zhipu]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    pricing:
+      pricing_url: https://aapi.ai/pricing
+      api_url: https://aapi.ai/api/pricing
+      pricing_currency: USD
+    notes:
+      en: "OpenAI-compatible Chat Completions at https://aapi.ai/v1; public official list prices at https://aapi.ai/pricing and GET https://aapi.ai/api/pricing; Alipay; docs/examples at https://github.com/cozcc/aapi."
+      zh-TW: "OpenAI 相容 Chat Completions：https://aapi.ai/v1；公開標價見 https://aapi.ai/pricing 與 GET https://aapi.ai/api/pricing；支付寶；文檔與示例 https://github.com/cozcc/aapi。"
+      zh-CN: "OpenAI 兼容 Chat Completions：https://aapi.ai/v1；公开标价见 https://aapi.ai/pricing 与 GET https://aapi.ai/api/pricing；支付宝；文档与示例 https://github.com/cozcc/aapi。"
+
 comparison_tools:
   - name: 中轉站競技場 (AI API PK)
     url: https://www.aiapipk.com

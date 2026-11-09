@@ -1,0 +1,1288 @@
+{
+ "meta": {
+  "title": "China/SEA relay prices vs OTPI per MTok — regional price discovery",
+  "built_at_utc": "2026-10-23T10:31:47+00:00",
+  "otpi": {
+   "endpoint": "https://api.ornnai.com/api/otpi",
+   "access": "public-3mo",
+   "settlement_date": "2026-10-21",
+   "fetched_at_utc": "2026-10-23T10:27:17Z",
+   "fetched_at_utc8": "2026-10-23T18:27:17+08:00",
+   "note": "Lab-level, volume-weighted blended USD/MTok; no input/output split on free tier"
+  },
+  "relay_snapshot": {
+   "repo": "howardpen9/awesome-ai-api-proxy",
+   "commit": "50bfda9cb4bbd4a9100049ca4ed5c612918059fa",
+   "snapshot_date": "2026-10-22",
+   "generated_at": "2026-10-22T08:57:59.445649+00:00"
+  },
+  "fx": {
+   "url": "https://open.er-api.com/v6/latest/USD",
+   "fetched_at_utc": "2026-10-23T10:28:29.341127Z",
+   "time_last_update_utc": "Fri, 23 Oct 2026 00:02:31 +0000",
+   "USD_CNY": 6.688225
+  },
+  "topup": {
+   "uiuiapi": {
+    "cny_per_usd_quota": 3.37,
+    "stripe_unit_price": 8,
+    "quota_display_type": "USD",
+    "status_file": "uiuiapi_status_20261023T102812Z.json"
+   },
+   "relaydance": {
+    "cny_per_usd_quota": 6.8,
+    "stripe_unit_price": 6.8,
+    "quota_display_type": "USD",
+    "status_file": "relaydance_status_20261023T102813Z.json"
+   },
+   "teamorouter": null,
+   "wappkit": {
+    "cny_per_usd_quota": 6.8,
+    "stripe_unit_price": 8,
+    "quota_display_type": "CNY",
+    "status_file": "wappkit_status_20261023T102814Z.json"
+   },
+   "unorouter": {
+    "cny_per_usd_quota": 1,
+    "stripe_unit_price": 0,
+    "quota_display_type": "USD",
+    "status_file": "unorouter_status_20261023T102828Z.json"
+   }
+  },
+  "relay_set": [
+   "uiuiapi",
+   "relaydance",
+   "teamorouter",
+   "wappkit",
+   "unorouter"
+  ],
+  "excluded_providers": {
+   "bltcy": "Announced shutdown in its own /api/status announcements (published 2026-04-24T16:00Z): new registrations and top-ups stopped, all API service ends 2026-05-01. Pricing endpoint still responds, but prices are not purchasable.",
+   "quicksilverpro": "Card-only gateway, operator claims MachineFi Labs; not a China/SEA new-api relay",
+   "atlascloud": "Card-only multimodal aggregator; not a China/SEA new-api relay",
+   "openrouter": "used as reference, not a relay"
+  },
+  "reference": "openrouter",
+  "excluded": [
+   {
+    "model": "claude-opus-5",
+    "relay": "uiuiapi",
+    "in": 75.0,
+    "out": 75.0,
+    "reason": "new-api placeholder model_ratio 37.5 ($75/M input) = unpriced model default"
+   },
+   {
+    "model": "gpt-5.6-sol",
+    "relay": "uiuiapi",
+    "in": 75.0,
+    "out": 450.0,
+    "reason": "new-api placeholder model_ratio 37.5 ($75/M input) = unpriced model default"
+   },
+   {
+    "model": "gpt-5.6-terra",
+    "relay": "uiuiapi",
+    "in": 75.0,
+    "out": 450.0,
+    "reason": "new-api placeholder model_ratio 37.5 ($75/M input) = unpriced model default"
+   },
+   {
+    "model": "gpt-5.6-luna",
+    "relay": "uiuiapi",
+    "in": 75.0,
+    "out": 450.0,
+    "reason": "new-api placeholder model_ratio 37.5 ($75/M input) = unpriced model default"
+   },
+   {
+    "model": "gpt-5.5",
+    "relay": "uiuiapi",
+    "in": 75.0,
+    "out": 450.0,
+    "reason": "new-api placeholder model_ratio 37.5 ($75/M input) = unpriced model default"
+   },
+   {
+    "model": "gpt-5.4",
+    "relay": "uiuiapi",
+    "in": 75.0,
+    "out": 450.0,
+    "reason": "new-api placeholder model_ratio 37.5 ($75/M input) = unpriced model default"
+   }
+  ]
+ },
+ "lab_level": [
+  {
+   "lab": "anthropic",
+   "otpi": 0.7972,
+   "otpi_date": "2026-10-21",
+   "otpi_computed_at": "2026-10-22T12:01:23.113Z",
+   "models": [
+    "claude-opus-5",
+    "claude-sonnet-5",
+    "claude-fable-5"
+   ],
+   "median_ratio_listed": 1.125,
+   "median_ratio_topup_adj": 1.0,
+   "implied_relay_index_listed": 0.8969,
+   "implied_relay_index_topup_adj": 0.7972,
+   "spread_vs_otpi_pct_listed": 12.5,
+   "spread_vs_otpi_pct_topup_adj": 0.0
+  },
+  {
+   "lab": "openai",
+   "otpi": 0.4392,
+   "otpi_date": "2026-10-21",
+   "otpi_computed_at": "2026-10-22T12:01:23.113Z",
+   "models": [
+    "gpt-5.6-sol",
+    "gpt-5.6-terra",
+    "gpt-5.6-luna",
+    "gpt-5.5",
+    "gpt-5.4"
+   ],
+   "median_ratio_listed": 0.53,
+   "median_ratio_topup_adj": 0.53,
+   "implied_relay_index_listed": 0.2328,
+   "implied_relay_index_topup_adj": 0.233,
+   "spread_vs_otpi_pct_listed": -47.0,
+   "spread_vs_otpi_pct_topup_adj": -47.0
+  },
+  {
+   "lab": "google",
+   "otpi": 0.6054,
+   "otpi_date": "2026-10-21",
+   "otpi_computed_at": "2026-10-22T12:01:23.113Z",
+   "models": [
+    "gemini-3.1-pro-preview",
+    "gemini-3.8-flash",
+    "gemini-3.5-flash"
+   ],
+   "median_ratio_listed": 1.0,
+   "median_ratio_topup_adj": 0.684,
+   "implied_relay_index_listed": 0.6054,
+   "implied_relay_index_topup_adj": 0.4139,
+   "spread_vs_otpi_pct_listed": 0.0,
+   "spread_vs_otpi_pct_topup_adj": -31.6
+  },
+  {
+   "lab": "deepseek",
+   "otpi": 0.043,
+   "otpi_date": "2026-10-21",
+   "otpi_computed_at": "2026-10-22T12:01:23.113Z",
+   "models": [
+    "deepseek-v4-pro",
+    "deepseek-v4-flash",
+    "deepseek-v3.2"
+   ],
+   "median_ratio_listed": 1.538,
+   "median_ratio_topup_adj": 1.538,
+   "implied_relay_index_listed": 0.0662,
+   "implied_relay_index_topup_adj": 0.0662,
+   "spread_vs_otpi_pct_listed": 53.8,
+   "spread_vs_otpi_pct_topup_adj": 53.8
+  }
+ ],
+ "models": [
+  {
+   "model": "claude-opus-5",
+   "provider": "anthropic",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.7972,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 5.0,
+   "ref_out": 25.0,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 5.0,
+   "relay_median_in": 5.625,
+   "relay_max_in": 6.25,
+   "relay_min_out": 25.0,
+   "relay_median_out": 28.125,
+   "relay_max_out": 31.25,
+   "relay_median_in_topup_adj": 5.6772,
+   "relay_median_out_topup_adj": 28.3861,
+   "relay_min_in_topup_adj": 5.0,
+   "relay_min_out_topup_adj": 25.0,
+   "n_relays": 2,
+   "relays": "relaydance;unorouter",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": 12.5,
+   "spread_out_pct": 12.5,
+   "spread_in_pct_topup_adj": 13.5,
+   "spread_out_pct_topup_adj": 13.5,
+   "caveat_flags": "new_api_group_ratio_1.0;new_api_group_ratio_default;provider_unverified;topup_assumed_usd;topup_cny6.8_per_usd_quota;unorouter_group_ratio_not_applied_live_range_0.25-1",
+   "per_relay": [
+    {
+     "relay": "relaydance",
+     "raw_model_name": [
+      "claude-opus-5"
+     ],
+     "in": 6.25,
+     "out": 31.25,
+     "in_adj": 6.354451293130838,
+     "out_adj": 31.772256465654188,
+     "topup_factor": 1.0167,
+     "group_ratio_range": "1-1 (1 groups)",
+     "flags": [
+      "new_api_group_ratio_default",
+      "topup_cny6.8_per_usd_quota"
+     ]
+    },
+    {
+     "relay": "unorouter",
+     "raw_model_name": [
+      "claude-opus-5"
+     ],
+     "in": 5.0,
+     "out": 25.0,
+     "in_adj": 5.0,
+     "out_adj": 25.0,
+     "topup_factor": 1.0,
+     "group_ratio_range": "0.25-1 (16 groups)",
+     "flags": [
+      "new_api_group_ratio_1.0",
+      "topup_assumed_usd",
+      "provider_unverified",
+      "unorouter_group_ratio_not_applied_live_range_0.25-1"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=anthropic (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "provider": "anthropic",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.7972,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 2.0,
+   "ref_out": 10.0,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 2.0,
+   "relay_median_in": 2.5,
+   "relay_max_in": 3.0,
+   "relay_min_out": 10.0,
+   "relay_median_out": 12.5,
+   "relay_max_out": 15.0,
+   "relay_median_in_topup_adj": 1.7558,
+   "relay_median_out_topup_adj": 8.779,
+   "relay_min_in_topup_adj": 1.5116,
+   "relay_min_out_topup_adj": 7.5581,
+   "n_relays": 2,
+   "relays": "uiuiapi;unorouter",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": 25.0,
+   "spread_out_pct": 25.0,
+   "spread_in_pct_topup_adj": -12.2,
+   "spread_out_pct_topup_adj": -12.2,
+   "caveat_flags": "new_api_group_ratio_1.0;new_api_group_ratio_default;provider_unverified;topup_assumed_usd;topup_cny3.37_per_usd_quota;unorouter_group_ratio_not_applied_live_range_0.2235-0.975;usd_label_billed_in_rmb_risk",
+   "per_relay": [
+    {
+     "relay": "uiuiapi",
+     "raw_model_name": [
+      "claude-sonnet-5"
+     ],
+     "in": 3.0,
+     "out": 15.0,
+     "in_adj": 1.5116118252600652,
+     "out_adj": 7.558059126300326,
+     "topup_factor": 0.5039,
+     "group_ratio_range": "1-3.75 (6 groups)",
+     "flags": [
+      "new_api_group_ratio_default",
+      "topup_cny3.37_per_usd_quota",
+      "usd_label_billed_in_rmb_risk"
+     ]
+    },
+    {
+     "relay": "unorouter",
+     "raw_model_name": [
+      "claude-sonnet-5"
+     ],
+     "in": 2.0,
+     "out": 10.0,
+     "in_adj": 2.0,
+     "out_adj": 10.0,
+     "topup_factor": 1.0,
+     "group_ratio_range": "0.2235-0.975 (16 groups)",
+     "flags": [
+      "new_api_group_ratio_1.0",
+      "topup_assumed_usd",
+      "provider_unverified",
+      "unorouter_group_ratio_not_applied_live_range_0.2235-0.975"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=anthropic (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "claude-fable-5",
+   "provider": "anthropic",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.7972,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 10.0,
+   "ref_out": 50.0,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 10.0,
+   "relay_median_in": 10.0,
+   "relay_max_in": 12.5,
+   "relay_min_out": 50.0,
+   "relay_median_out": 50.0,
+   "relay_max_out": 62.5,
+   "relay_median_in_topup_adj": 10.0,
+   "relay_median_out_topup_adj": 50.0,
+   "relay_min_in_topup_adj": 5.0387,
+   "relay_min_out_topup_adj": 25.1935,
+   "n_relays": 3,
+   "relays": "uiuiapi;relaydance;unorouter",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": 0.0,
+   "spread_out_pct": 0.0,
+   "spread_in_pct_topup_adj": 0.0,
+   "spread_out_pct_topup_adj": 0.0,
+   "caveat_flags": "new_api_group_ratio_1.0;new_api_group_ratio_default;provider_unverified;topup_assumed_usd;topup_cny3.37_per_usd_quota;topup_cny6.8_per_usd_quota;unorouter_group_ratio_not_applied_live_range_0.2235-1;usd_label_billed_in_rmb_risk",
+   "per_relay": [
+    {
+     "relay": "uiuiapi",
+     "raw_model_name": [
+      "claude-fable-5"
+     ],
+     "in": 10.0,
+     "out": 50.0,
+     "in_adj": 5.038706084200218,
+     "out_adj": 25.193530421001086,
+     "topup_factor": 0.5039,
+     "group_ratio_range": "1-3.75 (6 groups)",
+     "flags": [
+      "new_api_group_ratio_default",
+      "topup_cny3.37_per_usd_quota",
+      "usd_label_billed_in_rmb_risk"
+     ]
+    },
+    {
+     "relay": "relaydance",
+     "raw_model_name": [
+      "claude-fable-5"
+     ],
+     "in": 12.5,
+     "out": 62.5,
+     "in_adj": 12.708902586261676,
+     "out_adj": 63.544512931308375,
+     "topup_factor": 1.0167,
+     "group_ratio_range": "1-1 (1 groups)",
+     "flags": [
+      "new_api_group_ratio_default",
+      "topup_cny6.8_per_usd_quota"
+     ]
+    },
+    {
+     "relay": "unorouter",
+     "raw_model_name": [
+      "claude-fable-5"
+     ],
+     "in": 10.0,
+     "out": 50.0,
+     "in_adj": 10.0,
+     "out_adj": 50.0,
+     "topup_factor": 1.0,
+     "group_ratio_range": "0.2235-1 (20 groups)",
+     "flags": [
+      "new_api_group_ratio_1.0",
+      "topup_assumed_usd",
+      "provider_unverified",
+      "unorouter_group_ratio_not_applied_live_range_0.2235-1"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=anthropic (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "provider": "openai",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.4392,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 4.0,
+   "ref_out": 20.0,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 0.24,
+   "relay_median_in": 2.12,
+   "relay_max_in": 4.0,
+   "relay_min_out": 1.5,
+   "relay_median_out": 10.75,
+   "relay_max_out": 20.0,
+   "relay_median_in_topup_adj": 2.122,
+   "relay_median_out_topup_adj": 10.7625,
+   "relay_min_in_topup_adj": 0.244,
+   "relay_min_out_topup_adj": 1.5251,
+   "n_relays": 2,
+   "relays": "wappkit;unorouter",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": -47.0,
+   "spread_out_pct": -46.2,
+   "spread_in_pct_topup_adj": -46.9,
+   "spread_out_pct_topup_adj": -46.2,
+   "caveat_flags": "account_pool_group;new_api_group_ratio_1.0;new_api_group_ratio_codex_pool_0.3;provider_unverified;topup_assumed_usd;topup_cny6.8_per_usd_quota;unorouter_group_ratio_not_applied_live_range_0.0089-0.9688",
+   "per_relay": [
+    {
+     "relay": "wappkit",
+     "raw_model_name": [
+      "gpt-5.6-sol"
+     ],
+     "in": 0.24,
+     "out": 1.5,
+     "in_adj": 0.24401092965622415,
+     "out_adj": 1.5250683103514011,
+     "topup_factor": 1.0167,
+     "group_ratio_range": "0.3-0.3 (1 groups)",
+     "flags": [
+      "new_api_group_ratio_codex_pool_0.3",
+      "topup_cny6.8_per_usd_quota",
+      "account_pool_group",
+      "provider_unverified"
+     ]
+    },
+    {
+     "relay": "unorouter",
+     "raw_model_name": [
+      "gpt-5.6-sol"
+     ],
+     "in": 4.0,
+     "out": 20.0,
+     "in_adj": 4.0,
+     "out_adj": 20.0,
+     "topup_factor": 1.0,
+     "group_ratio_range": "0.0089-0.9688 (40 groups)",
+     "flags": [
+      "new_api_group_ratio_1.0",
+      "topup_assumed_usd",
+      "provider_unverified",
+      "unorouter_group_ratio_not_applied_live_range_0.0089-0.9688"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=openai (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "gpt-5.6-terra",
+   "provider": "openai",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.4392,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 2.0,
+   "ref_out": 12.0,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 0.12,
+   "relay_median_in": 1.06,
+   "relay_max_in": 2.0,
+   "relay_min_out": 0.75,
+   "relay_median_out": 6.375,
+   "relay_max_out": 12.0,
+   "relay_median_in_topup_adj": 1.061,
+   "relay_median_out_topup_adj": 6.3813,
+   "relay_min_in_topup_adj": 0.122,
+   "relay_min_out_topup_adj": 0.7625,
+   "n_relays": 2,
+   "relays": "wappkit;unorouter",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": -47.0,
+   "spread_out_pct": -46.9,
+   "spread_in_pct_topup_adj": -46.9,
+   "spread_out_pct_topup_adj": -46.8,
+   "caveat_flags": "account_pool_group;new_api_group_ratio_1.0;new_api_group_ratio_codex_pool_0.3;provider_unverified;topup_assumed_usd;topup_cny6.8_per_usd_quota;unorouter_group_ratio_not_applied_live_range_0.18-0.96",
+   "per_relay": [
+    {
+     "relay": "wappkit",
+     "raw_model_name": [
+      "gpt-5.6-terra"
+     ],
+     "in": 0.12,
+     "out": 0.75,
+     "in_adj": 0.12200546482811207,
+     "out_adj": 0.7625341551757006,
+     "topup_factor": 1.0167,
+     "group_ratio_range": "0.3-0.3 (1 groups)",
+     "flags": [
+      "new_api_group_ratio_codex_pool_0.3",
+      "topup_cny6.8_per_usd_quota",
+      "account_pool_group",
+      "provider_unverified"
+     ]
+    },
+    {
+     "relay": "unorouter",
+     "raw_model_name": [
+      "gpt-5.6-terra"
+     ],
+     "in": 2.0,
+     "out": 12.0,
+     "in_adj": 2.0,
+     "out_adj": 12.0,
+     "topup_factor": 1.0,
+     "group_ratio_range": "0.18-0.96 (18 groups)",
+     "flags": [
+      "new_api_group_ratio_1.0",
+      "topup_assumed_usd",
+      "provider_unverified",
+      "unorouter_group_ratio_not_applied_live_range_0.18-0.96"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=openai (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "gpt-5.6-luna",
+   "provider": "openai",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.4392,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 0.19999999999999998,
+   "ref_out": 1.2,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 0.048,
+   "relay_median_in": 0.124,
+   "relay_max_in": 0.2,
+   "relay_min_out": 0.348,
+   "relay_median_out": 0.774,
+   "relay_max_out": 1.2000000000000002,
+   "relay_median_in_topup_adj": 0.1244,
+   "relay_median_out_topup_adj": 0.7769,
+   "relay_min_in_topup_adj": 0.0488,
+   "relay_min_out_topup_adj": 0.3538,
+   "n_relays": 2,
+   "relays": "wappkit;unorouter",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": -38.0,
+   "spread_out_pct": -35.5,
+   "spread_in_pct_topup_adj": -37.8,
+   "spread_out_pct_topup_adj": -35.3,
+   "caveat_flags": "account_pool_group;new_api_group_ratio_1.0;new_api_group_ratio_codex_pool_0.3;provider_unverified;topup_assumed_usd;topup_cny6.8_per_usd_quota;unorouter_group_ratio_not_applied_live_range_0.18-0.96",
+   "per_relay": [
+    {
+     "relay": "wappkit",
+     "raw_model_name": [
+      "gpt-5.6-luna"
+     ],
+     "in": 0.048,
+     "out": 0.348,
+     "in_adj": 0.048802185931244836,
+     "out_adj": 0.353815848001525,
+     "topup_factor": 1.0167,
+     "group_ratio_range": "0.3-0.3 (1 groups)",
+     "flags": [
+      "new_api_group_ratio_codex_pool_0.3",
+      "topup_cny6.8_per_usd_quota",
+      "account_pool_group",
+      "provider_unverified"
+     ]
+    },
+    {
+     "relay": "unorouter",
+     "raw_model_name": [
+      "gpt-5.6-luna"
+     ],
+     "in": 0.2,
+     "out": 1.2000000000000002,
+     "in_adj": 0.2,
+     "out_adj": 1.2000000000000002,
+     "topup_factor": 1.0,
+     "group_ratio_range": "0.18-0.96 (5 groups)",
+     "flags": [
+      "new_api_group_ratio_1.0",
+      "topup_assumed_usd",
+      "provider_unverified",
+      "unorouter_group_ratio_not_applied_live_range_0.18-0.96"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=openai (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "gpt-5.5",
+   "provider": "openai",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.4392,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 5.0,
+   "ref_out": 30.0,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 0.2205,
+   "relay_median_in": 0.55,
+   "relay_max_in": 5.0,
+   "relay_min_out": 1.323,
+   "relay_median_out": 3.3,
+   "relay_max_out": 30.0,
+   "relay_median_in_topup_adj": 0.55,
+   "relay_median_out_topup_adj": 3.3,
+   "relay_min_in_topup_adj": 0.2242,
+   "relay_min_out_topup_adj": 1.3451,
+   "n_relays": 3,
+   "relays": "teamorouter;wappkit;unorouter",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": -89.0,
+   "spread_out_pct": -89.0,
+   "spread_in_pct_topup_adj": -89.0,
+   "spread_out_pct_topup_adj": -89.0,
+   "caveat_flags": "account_pool_group;new_api_group_ratio_1.0;new_api_group_ratio_codex_pool_0.3;provider_unverified;topup_assumed_usd;topup_cny6.8_per_usd_quota;topup_unknown;unorouter_group_ratio_not_applied_live_range_0.09-0.98",
+   "per_relay": [
+    {
+     "relay": "teamorouter",
+     "raw_model_name": [
+      "GPT-5.5"
+     ],
+     "in": 0.55,
+     "out": 3.3,
+     "in_adj": 0.55,
+     "out_adj": 3.3,
+     "topup_factor": 1.0,
+     "group_ratio_range": null,
+     "flags": [
+      "topup_unknown",
+      "provider_unverified"
+     ]
+    },
+    {
+     "relay": "wappkit",
+     "raw_model_name": [
+      "gpt-5.5"
+     ],
+     "in": 0.2205,
+     "out": 1.323,
+     "in_adj": 0.22418504162165595,
+     "out_adj": 1.3451102497299356,
+     "topup_factor": 1.0167,
+     "group_ratio_range": "0.3-0.3 (1 groups)",
+     "flags": [
+      "new_api_group_ratio_codex_pool_0.3",
+      "topup_cny6.8_per_usd_quota",
+      "account_pool_group",
+      "provider_unverified"
+     ]
+    },
+    {
+     "relay": "unorouter",
+     "raw_model_name": [
+      "gpt-5.5"
+     ],
+     "in": 5.0,
+     "out": 30.0,
+     "in_adj": 5.0,
+     "out_adj": 30.0,
+     "topup_factor": 1.0,
+     "group_ratio_range": "0.09-0.98 (23 groups)",
+     "flags": [
+      "new_api_group_ratio_1.0",
+      "topup_assumed_usd",
+      "provider_unverified",
+      "unorouter_group_ratio_not_applied_live_range_0.09-0.98"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=openai (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "gpt-5.4",
+   "provider": "openai",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.4392,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 2.5,
+   "ref_out": 15.0,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 0.11027999999999999,
+   "relay_median_in": 0.11027999999999999,
+   "relay_max_in": 0.11027999999999999,
+   "relay_min_out": 0.6616799999999999,
+   "relay_median_out": 0.6616799999999999,
+   "relay_max_out": 0.6616799999999999,
+   "relay_median_in_topup_adj": 0.1121,
+   "relay_median_out_topup_adj": 0.6727,
+   "relay_min_in_topup_adj": 0.1121,
+   "relay_min_out_topup_adj": 0.6727,
+   "n_relays": 1,
+   "relays": "wappkit",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": -95.6,
+   "spread_out_pct": -95.6,
+   "spread_in_pct_topup_adj": -95.5,
+   "spread_out_pct_topup_adj": -95.5,
+   "caveat_flags": "account_pool_group;new_api_group_ratio_codex_pool_0.3;provider_unverified;single_relay;topup_cny6.8_per_usd_quota",
+   "per_relay": [
+    {
+     "relay": "wappkit",
+     "raw_model_name": [
+      "gpt-5.4"
+     ],
+     "in": 0.11027999999999999,
+     "out": 0.6616799999999999,
+     "in_adj": 0.11212302217703499,
+     "out_adj": 0.67273813306221,
+     "topup_factor": 1.0167,
+     "group_ratio_range": "0.3-0.3 (1 groups)",
+     "flags": [
+      "new_api_group_ratio_codex_pool_0.3",
+      "topup_cny6.8_per_usd_quota",
+      "account_pool_group",
+      "provider_unverified"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=openai (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "provider": "google",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.6054,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 2.0,
+   "ref_out": 12.0,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 2.0,
+   "relay_median_in": 2.0,
+   "relay_max_in": 2.0,
+   "relay_min_out": 12.0,
+   "relay_median_out": 12.0,
+   "relay_max_out": 12.0,
+   "relay_median_in_topup_adj": 1.0077,
+   "relay_median_out_topup_adj": 6.0464,
+   "relay_min_in_topup_adj": 1.0077,
+   "relay_min_out_topup_adj": 6.0464,
+   "n_relays": 1,
+   "relays": "uiuiapi",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": 0.0,
+   "spread_out_pct": 0.0,
+   "spread_in_pct_topup_adj": -49.6,
+   "spread_out_pct_topup_adj": -49.6,
+   "caveat_flags": "new_api_group_ratio_default;single_relay;topup_cny3.37_per_usd_quota;usd_label_billed_in_rmb_risk",
+   "per_relay": [
+    {
+     "relay": "uiuiapi",
+     "raw_model_name": [
+      "gemini-3.1-pro-preview"
+     ],
+     "in": 2.0,
+     "out": 12.0,
+     "in_adj": 1.0077412168400435,
+     "out_adj": 6.046447301040261,
+     "topup_factor": 0.5039,
+     "group_ratio_range": "1-1 (1 groups)",
+     "flags": [
+      "new_api_group_ratio_default",
+      "topup_cny3.37_per_usd_quota",
+      "usd_label_billed_in_rmb_risk"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=google (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "provider": "google",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.6054,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 0.8250000000000001,
+   "ref_out": 4.125,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 0.75,
+   "relay_median_in": 0.75,
+   "relay_max_in": 0.75,
+   "relay_min_out": 3.75,
+   "relay_median_out": 3.75,
+   "relay_max_out": 3.75,
+   "relay_median_in_topup_adj": 0.564,
+   "relay_median_out_topup_adj": 2.8198,
+   "relay_min_in_topup_adj": 0.3779,
+   "relay_min_out_topup_adj": 1.8895,
+   "n_relays": 2,
+   "relays": "uiuiapi;unorouter",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": -9.1,
+   "spread_out_pct": -9.1,
+   "spread_in_pct_topup_adj": -31.6,
+   "spread_out_pct_topup_adj": -31.6,
+   "caveat_flags": "new_api_group_ratio_1.0;new_api_group_ratio_default;provider_unverified;topup_assumed_usd;topup_cny3.37_per_usd_quota;unorouter_group_ratio_not_applied_live_range_0.126-0.704;usd_label_billed_in_rmb_risk",
+   "per_relay": [
+    {
+     "relay": "uiuiapi",
+     "raw_model_name": [
+      "gemini-3.8-flash"
+     ],
+     "in": 0.75,
+     "out": 3.75,
+     "in_adj": 0.3779029563150163,
+     "out_adj": 1.8895147815750815,
+     "topup_factor": 0.5039,
+     "group_ratio_range": "1-1 (1 groups)",
+     "flags": [
+      "new_api_group_ratio_default",
+      "topup_cny3.37_per_usd_quota",
+      "usd_label_billed_in_rmb_risk"
+     ]
+    },
+    {
+     "relay": "unorouter",
+     "raw_model_name": [
+      "gemini-3.8-flash"
+     ],
+     "in": 0.75,
+     "out": 3.75,
+     "in_adj": 0.75,
+     "out_adj": 3.75,
+     "topup_factor": 1.0,
+     "group_ratio_range": "0.126-0.704 (12 groups)",
+     "flags": [
+      "new_api_group_ratio_1.0",
+      "topup_assumed_usd",
+      "provider_unverified",
+      "unorouter_group_ratio_not_applied_live_range_0.126-0.704"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=google (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "provider": "google",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.6054,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 1.5,
+   "ref_out": 9.0,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 1.5,
+   "relay_median_in": 1.5,
+   "relay_max_in": 1.5,
+   "relay_min_out": 9.0,
+   "relay_median_out": 9.0,
+   "relay_max_out": 9.0,
+   "relay_median_in_topup_adj": 1.1279,
+   "relay_median_out_topup_adj": 6.7674,
+   "relay_min_in_topup_adj": 0.7558,
+   "relay_min_out_topup_adj": 4.5348,
+   "n_relays": 2,
+   "relays": "uiuiapi;unorouter",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": 0.0,
+   "spread_out_pct": 0.0,
+   "spread_in_pct_topup_adj": -24.8,
+   "spread_out_pct_topup_adj": -24.8,
+   "caveat_flags": "new_api_group_ratio_1.0;new_api_group_ratio_default;provider_unverified;topup_assumed_usd;topup_cny3.37_per_usd_quota;unorouter_group_ratio_not_applied_live_range_0.07-0.704;usd_label_billed_in_rmb_risk",
+   "per_relay": [
+    {
+     "relay": "uiuiapi",
+     "raw_model_name": [
+      "gemini-3.5-flash"
+     ],
+     "in": 1.5,
+     "out": 9.0,
+     "in_adj": 0.7558059126300326,
+     "out_adj": 4.534835475780196,
+     "topup_factor": 0.5039,
+     "group_ratio_range": "1-1 (1 groups)",
+     "flags": [
+      "new_api_group_ratio_default",
+      "topup_cny3.37_per_usd_quota",
+      "usd_label_billed_in_rmb_risk"
+     ]
+    },
+    {
+     "relay": "unorouter",
+     "raw_model_name": [
+      "gemini-3.5-flash"
+     ],
+     "in": 1.5,
+     "out": 9.0,
+     "in_adj": 1.5,
+     "out_adj": 9.0,
+     "topup_factor": 1.0,
+     "group_ratio_range": "0.07-0.704 (14 groups)",
+     "flags": [
+      "new_api_group_ratio_1.0",
+      "topup_assumed_usd",
+      "provider_unverified",
+      "unorouter_group_ratio_not_applied_live_range_0.07-0.704"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=google (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "deepseek-v4-pro",
+   "provider": "deepseek",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.043,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 0.9552599999999999,
+   "ref_out": 1.9105199999999998,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 1.74,
+   "relay_median_in": 1.74,
+   "relay_max_in": 1.74,
+   "relay_min_out": 3.48,
+   "relay_median_out": 3.48,
+   "relay_max_out": 3.48,
+   "relay_median_in_topup_adj": 1.74,
+   "relay_median_out_topup_adj": 3.48,
+   "relay_min_in_topup_adj": 1.74,
+   "relay_min_out_topup_adj": 3.48,
+   "n_relays": 1,
+   "relays": "unorouter",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": 82.1,
+   "spread_out_pct": 82.1,
+   "spread_in_pct_topup_adj": 82.1,
+   "spread_out_pct_topup_adj": 82.1,
+   "caveat_flags": "new_api_group_ratio_1.0;provider_unverified;single_relay;topup_assumed_usd;unorouter_group_ratio_not_applied_live_range_0.0131-0.6207",
+   "per_relay": [
+    {
+     "relay": "unorouter",
+     "raw_model_name": [
+      "deepseek-v4-pro"
+     ],
+     "in": 1.74,
+     "out": 3.48,
+     "in_adj": 1.74,
+     "out_adj": 3.48,
+     "topup_factor": 1.0,
+     "group_ratio_range": "0.0131-0.6207 (11 groups)",
+     "flags": [
+      "new_api_group_ratio_1.0",
+      "topup_assumed_usd",
+      "provider_unverified",
+      "unorouter_group_ratio_not_applied_live_range_0.0131-0.6207"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=deepseek (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "deepseek-v4-flash",
+   "provider": "deepseek",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.043,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 0.091,
+   "ref_out": 0.182,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 0.14,
+   "relay_median_in": 0.14,
+   "relay_max_in": 0.14,
+   "relay_min_out": 0.28,
+   "relay_median_out": 0.28,
+   "relay_max_out": 0.28,
+   "relay_median_in_topup_adj": 0.14,
+   "relay_median_out_topup_adj": 0.28,
+   "relay_min_in_topup_adj": 0.14,
+   "relay_min_out_topup_adj": 0.28,
+   "n_relays": 1,
+   "relays": "unorouter",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": 53.8,
+   "spread_out_pct": 53.8,
+   "spread_in_pct_topup_adj": 53.8,
+   "spread_out_pct_topup_adj": 53.8,
+   "caveat_flags": "new_api_group_ratio_1.0;provider_unverified;single_relay;topup_assumed_usd;unorouter_group_ratio_not_applied_live_range_0.0514-0.6429",
+   "per_relay": [
+    {
+     "relay": "unorouter",
+     "raw_model_name": [
+      "deepseek-v4-flash"
+     ],
+     "in": 0.14,
+     "out": 0.28,
+     "in_adj": 0.14,
+     "out_adj": 0.28,
+     "topup_factor": 1.0,
+     "group_ratio_range": "0.0514-0.6429 (7 groups)",
+     "flags": [
+      "new_api_group_ratio_1.0",
+      "topup_assumed_usd",
+      "provider_unverified",
+      "unorouter_group_ratio_not_applied_live_range_0.0514-0.6429"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=deepseek (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  },
+  {
+   "model": "deepseek-v3.2",
+   "provider": "deepseek",
+   "otpi_in": null,
+   "otpi_out": null,
+   "otpi_lab_blended": 0.043,
+   "otpi_as_of": "2026-10-21",
+   "ref_in": 0.28,
+   "ref_out": 0.42,
+   "ref_source": "OpenRouter posted price (aap snapshot)",
+   "relay_min_in": 0.28,
+   "relay_median_in": 0.28,
+   "relay_max_in": 0.28,
+   "relay_min_out": 0.42000000000000004,
+   "relay_median_out": 0.42000000000000004,
+   "relay_max_out": 0.42000000000000004,
+   "relay_median_in_topup_adj": 0.28,
+   "relay_median_out_topup_adj": 0.42,
+   "relay_min_in_topup_adj": 0.28,
+   "relay_min_out_topup_adj": 0.42,
+   "n_relays": 1,
+   "relays": "unorouter",
+   "relay_snapshot_date": "2026-10-22",
+   "spread_basis": "relay median vs OpenRouter posted price for same model (OTPI free tier has no per-model input/output)",
+   "spread_in_pct": 0.0,
+   "spread_out_pct": 0.0,
+   "spread_in_pct_topup_adj": 0.0,
+   "spread_out_pct_topup_adj": 0.0,
+   "caveat_flags": "new_api_group_ratio_1.0;provider_unverified;single_relay;topup_assumed_usd;unorouter_group_ratio_not_applied_live_range_2-2",
+   "per_relay": [
+    {
+     "relay": "unorouter",
+     "raw_model_name": [
+      "deepseek-v3.2"
+     ],
+     "in": 0.28,
+     "out": 0.42000000000000004,
+     "in_adj": 0.28,
+     "out_adj": 0.42000000000000004,
+     "topup_factor": 1.0,
+     "group_ratio_range": "2-2 (1 groups)",
+     "flags": [
+      "new_api_group_ratio_1.0",
+      "topup_assumed_usd",
+      "provider_unverified",
+      "unorouter_group_ratio_not_applied_live_range_2-2"
+     ]
+    }
+   ],
+   "sources": "OTPI: https://api.ornnai.com/api/otpi?lab=deepseek (date 2026-10-21); relays+ref: awesome-ai-api-proxy@50bfda9 data/prices.latest.json; top-up: <relay>/api/status"
+  }
+ ],
+ "mapping": [
+  {
+   "model": "claude-opus-5",
+   "relay": "relaydance",
+   "raw_model_name": [
+    "claude-opus-5"
+   ],
+   "ref_raw": "anthropic/claude-opus-5"
+  },
+  {
+   "model": "claude-opus-5",
+   "relay": "unorouter",
+   "raw_model_name": [
+    "claude-opus-5"
+   ],
+   "ref_raw": "anthropic/claude-opus-5"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "relay": "uiuiapi",
+   "raw_model_name": [
+    "claude-sonnet-5"
+   ],
+   "ref_raw": "anthropic/claude-sonnet-5"
+  },
+  {
+   "model": "claude-sonnet-5",
+   "relay": "unorouter",
+   "raw_model_name": [
+    "claude-sonnet-5"
+   ],
+   "ref_raw": "anthropic/claude-sonnet-5"
+  },
+  {
+   "model": "claude-fable-5",
+   "relay": "uiuiapi",
+   "raw_model_name": [
+    "claude-fable-5"
+   ],
+   "ref_raw": "anthropic/claude-fable-5"
+  },
+  {
+   "model": "claude-fable-5",
+   "relay": "relaydance",
+   "raw_model_name": [
+    "claude-fable-5"
+   ],
+   "ref_raw": "anthropic/claude-fable-5"
+  },
+  {
+   "model": "claude-fable-5",
+   "relay": "unorouter",
+   "raw_model_name": [
+    "claude-fable-5"
+   ],
+   "ref_raw": "anthropic/claude-fable-5"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "relay": "wappkit",
+   "raw_model_name": [
+    "gpt-5.6-sol"
+   ],
+   "ref_raw": "openai/gpt-5.6-sol"
+  },
+  {
+   "model": "gpt-5.6-sol",
+   "relay": "unorouter",
+   "raw_model_name": [
+    "gpt-5.6-sol"
+   ],
+   "ref_raw": "openai/gpt-5.6-sol"
+  },
+  {
+   "model": "gpt-5.6-terra",
+   "relay": "wappkit",
+   "raw_model_name": [
+    "gpt-5.6-terra"
+   ],
+   "ref_raw": "openai/gpt-5.6-terra"
+  },
+  {
+   "model": "gpt-5.6-terra",
+   "relay": "unorouter",
+   "raw_model_name": [
+    "gpt-5.6-terra"
+   ],
+   "ref_raw": "openai/gpt-5.6-terra"
+  },
+  {
+   "model": "gpt-5.6-luna",
+   "relay": "wappkit",
+   "raw_model_name": [
+    "gpt-5.6-luna"
+   ],
+   "ref_raw": "openai/gpt-5.6-luna"
+  },
+  {
+   "model": "gpt-5.6-luna",
+   "relay": "unorouter",
+   "raw_model_name": [
+    "gpt-5.6-luna"
+   ],
+   "ref_raw": "openai/gpt-5.6-luna"
+  },
+  {
+   "model": "gpt-5.5",
+   "relay": "teamorouter",
+   "raw_model_name": [
+    "GPT-5.5"
+   ],
+   "ref_raw": "openai/gpt-5.5"
+  },
+  {
+   "model": "gpt-5.5",
+   "relay": "wappkit",
+   "raw_model_name": [
+    "gpt-5.5"
+   ],
+   "ref_raw": "openai/gpt-5.5"
+  },
+  {
+   "model": "gpt-5.5",
+   "relay": "unorouter",
+   "raw_model_name": [
+    "gpt-5.5"
+   ],
+   "ref_raw": "openai/gpt-5.5"
+  },
+  {
+   "model": "gpt-5.4",
+   "relay": "wappkit",
+   "raw_model_name": [
+    "gpt-5.4"
+   ],
+   "ref_raw": "openai/gpt-5.4"
+  },
+  {
+   "model": "gemini-3.1-pro-preview",
+   "relay": "uiuiapi",
+   "raw_model_name": [
+    "gemini-3.1-pro-preview"
+   ],
+   "ref_raw": "google/gemini-3.1-pro-preview"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "relay": "uiuiapi",
+   "raw_model_name": [
+    "gemini-3.8-flash"
+   ],
+   "ref_raw": "google/gemini-3.8-flash"
+  },
+  {
+   "model": "gemini-3.8-flash",
+   "relay": "unorouter",
+   "raw_model_name": [
+    "gemini-3.8-flash"
+   ],
+   "ref_raw": "google/gemini-3.8-flash"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "relay": "uiuiapi",
+   "raw_model_name": [
+    "gemini-3.5-flash"
+   ],
+   "ref_raw": "google/gemini-3.5-flash"
+  },
+  {
+   "model": "gemini-3.5-flash",
+   "relay": "unorouter",
+   "raw_model_name": [
+    "gemini-3.5-flash"
+   ],
+   "ref_raw": "google/gemini-3.5-flash"
+  },
+  {
+   "model": "deepseek-v4-pro",
+   "relay": "unorouter",
+   "raw_model_name": [
+    "deepseek-v4-pro"
+   ],
+   "ref_raw": "deepseek/deepseek-v4-pro"
+  },
+  {
+   "model": "deepseek-v4-flash",
+   "relay": "unorouter",
+   "raw_model_name": [
+    "deepseek-v4-flash"
+   ],
+   "ref_raw": "deepseek/deepseek-v4-flash"
+  },
+  {
+   "model": "deepseek-v3.2",
+   "relay": "unorouter",
+   "raw_model_name": [
+    "deepseek-v3.2"
+   ],
+   "ref_raw": "deepseek/deepseek-v3.2"
+  }
+ ]
+}

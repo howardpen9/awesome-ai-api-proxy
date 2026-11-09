@@ -1,0 +1,11 @@
+{
+ "url": "https://api.ornnai.com/api/otpi?lab=minimax",
+ "fetched_at_utc": "2026-10-23T10:27:18Z",
+ "fetched_at_utc8": "2026-10-23T18:27:18+08:00",
+ "http_status": 401,
+ "body": {
+  "success": false,
+  "error": "Unauthorized",
+  "message": "The minimax token index requires an API key. Public access is limited to: anthropic, openai, google, deepseek."
+ }
+}

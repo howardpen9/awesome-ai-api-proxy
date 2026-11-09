@@ -1,0 +1,55 @@
+{
+ "url": "https://api.ornnai.com/api/token-types",
+ "fetched_at_utc": "2026-10-23T10:27:19Z",
+ "fetched_at_utc8": "2026-10-23T18:27:19+08:00",
+ "http_status": 200,
+ "body": {
+  "success": true,
+  "data": [
+   {
+    "lab": "anthropic",
+    "label": "Anthropic"
+   },
+   {
+    "lab": "openai",
+    "label": "OpenAI"
+   },
+   {
+    "lab": "google",
+    "label": "Google"
+   },
+   {
+    "lab": "deepseek",
+    "label": "DeepSeek"
+   },
+   {
+    "lab": "minimax",
+    "label": "MiniMax"
+   },
+   {
+    "lab": "xiaomi",
+    "label": "Xiaomi"
+   },
+   {
+    "lab": "qwen",
+    "label": "Qwen"
+   },
+   {
+    "lab": "moonshotai",
+    "label": "Moonshot AI"
+   },
+   {
+    "lab": "z-ai",
+    "label": "Z.ai"
+   },
+   {
+    "lab": "mistralai",
+    "label": "Mistral AI"
+   },
+   {
+    "lab": "meta-llama",
+    "label": "Meta Llama"
+   }
+  ]
+ }
+}

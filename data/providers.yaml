@@ -728,6 +728,26 @@ global_gateways:
     notes:
       en: "OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto."
 
+- name: Qora API
+  url: https://qoraapi.com
+  type: aggregator
+  status: unverified
+  payment: [card]
+  models: [openai, anthropic, google, xai, deepseek, zhipuai, qwen]
+  model_count: 45
+  last_verified: null
+  verified_by: community
+  entity_registered: unknown
+  supports_stream: true
+  supports_tools: unknown
+  risk_flags: [operator_submitted]
+  pricing:
+    pricing_url: https://qoraapi.com/pricing
+    api_url: https://qoraapi.com/api/pricing
+    pricing_currency: USD
+  notes:
+    en: "Operator self-submission. new-api-based OpenAI-compatible relay (base URL https://qoraapi.com/v1) with an Anthropic-compatible endpoint (ANTHROPIC_BASE_URL=https://qoraapi.com); 45+ models including Claude, GPT, Gemini, Grok, DeepSeek, GLM and Qwen; ratio-based per-model pricing (model_ratio × $2 per 1M tokens × group_ratio), live pricing at /pricing and /api/pricing, public /api/status, docs at /docs; card payment with $50 minimum top-up; international users only (not mainland China); contact support@qoraapi.com / X @QoraAPI. Disclosure: I run Qora API."
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

@@ -29,6 +29,22 @@ last_reviewed: "2026-07-12"
 # China / Asia relay stations (中轉站)
 # ---------------------------------------------------------------------------
 china_relays:
+  - name: AIJX 開放平台 (鈞信聯科)
+    url: https://www.junxinlianke.cn
+    type: aggregator
+    status: unverified
+    payment: [alipay]
+    models: [openai, anthropic, gemini, deepseek, qwen, kimi, glm, doubao]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: unknown
+    notes:
+      en: "Chinese aggregator routing multiple upstream relays behind one OpenAI-compatible key; model catalog and prices require login."
+      zh-TW: "國內聚合站，以一個 OpenAI 相容 Key 路由多家上游；模型清單與價格需登入查看。"
+      zh-CN: "国内聚合站，以一个 OpenAI 兼容 Key 路由多家上游；模型清单与价格需登录查看。"
+
   - name: 云雾 API (YUNWU)
     url: https://yunwu.ai
     type: mixed

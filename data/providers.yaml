@@ -731,6 +731,22 @@ global_gateways:
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------
+
+  - name: Outer Labs
+    url: https://outerlabs.ai
+    type: aggregator
+    status: unverified
+    payment: [card]
+    models: [anthropic, openai]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible /v1 (Chat Completions, Responses) and Anthropic Messages endpoints for Anthropic and OpenAI models only; prepaid credit by card; the public rate card lists each model's per-token price beside the direct price, 40% below direct."
+
 self_hosted_alternatives:
   - name: One-API
     url: https://github.com/songquanpeng/one-api

@@ -12,6 +12,9 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  # workflow_dispatch of the PR checks below. GITHUB_TOKEN may start
+  # workflow_dispatch; it may not start pull_request workflows.
+  actions: write
 
 jobs:
   refresh:
@@ -67,18 +70,30 @@ jobs:
           else
             echo "failed=" >> "$GITHUB_OUTPUT"
           fi
+          {
+            echo "### Failed fetchers"
+            echo
+            if [ -n "${failed:-}" ]; then
+              echo "\`$failed\`"
+            else
+              echo "(none)"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
-      # Requires repo Settings → Actions → General → Workflow permissions:
-      #   - Read and write permissions
-      #   - Allow GitHub Actions to create and approve pull requests
-      # Without both, this step pushes a branch but fails to open the PR.
+      # The Open PR step does create/update the PR (see #59). What it does not
+      # do, when only GITHUB_TOKEN is available, is start the pull_request
+      # workflows. Those runs are recorded as conclusion=action_required with
+      # zero jobs (runs 36303060633 and 36303060516 on 2026-09-27), so required
+      # checks never report and the PR stays unmergeable.
       #
       # Optional secret PRICE_REFRESH_TOKEN (classic PAT with `repo` scope, or
-      # fine-grained PAT with contents+PRs write). When set, the opened PR is
-      # authored as that user so required `pull_request` checks actually run.
-      # Default GITHUB_TOKEN cannot trigger further workflows (GitHub recursion
-      # guard) — without the PAT, close+reopen the PR once or merge after
-      # reviewing the workflow-run validation above.
+      # fine-grained PAT with contents + pull requests + actions write). When
+      # set, the PR is authored as that user and pull_request workflows run.
+      # Without it, the next step dispatches the same workflows. workflow_dispatch
+      # is one of the two events GITHUB_TOKEN is allowed to start.
+      #
+      # Repo Settings → Actions → General → Workflow permissions must still be
+      # "Read and write permissions", or the branch push itself is rejected.
       - name: Open PR
         if: steps.diff.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
@@ -105,7 +120,25 @@ jobs:
             If any fetcher wrote a `*.error.json`, investigate (the underlying
             site likely changed their API shape) and fix that fetcher before merging.
 
-            > Note: if required PR checks never start, the PR was opened with
-            > `GITHUB_TOKEN` (cannot re-trigger workflows). Close+reopen once,
-            > or add repo secret `PRICE_REFRESH_TOKEN` so future runs open PRs
-            > as a real user.
+            > `pull_request` workflows do not run when this PR is opened with
+            > `GITHUB_TOKEN` (they conclude `action_required` with no jobs).
+            > This workflow dispatches Validate PR and Link check onto
+            > `chore/price-refresh` in that case. Set the `PRICE_REFRESH_TOKEN`
+            > secret if the PR author should be a real user instead of
+            > `github-actions[bot]`.
+
+      # See the comment above the Open PR step. Skipped when a PAT is
+      # configured, because that user's pull_request event already starts
+      # these workflows.
+      - name: Dispatch PR checks
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HAS_PAT: ${{ secrets.PRICE_REFRESH_TOKEN != '' }}
+        run: |
+          if [ "$HAS_PAT" = "true" ]; then
+            echo "PRICE_REFRESH_TOKEN is set; pull_request workflows run as that user."
+            exit 0
+          fi
+          gh workflow run pr-validate.yml --ref chore/price-refresh
+          gh workflow run link-check.yml --ref chore/price-refresh

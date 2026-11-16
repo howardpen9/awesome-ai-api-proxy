@@ -28,6 +28,33 @@ QUOTA_TYPE_PER_TOKEN = 0
 QUOTA_TYPE_PER_CALL = 1
 
 
+def _ratio_for_model(
+    model: dict,
+    group_ratios: dict,
+    *,
+    group: str | None,
+    per_enable_group: bool,
+    uniform_ratio: float,
+) -> float | None:
+    """Return the group_ratio to apply, or None to skip this model.
+
+    `per_enable_group` prices each model at its own access group. BetterToken
+    publishes one enable_group per model (Claude 0.68, MiniMax 0.58, Gemini 1,
+    …). A flat ratio of 1 records the undiscounted list price.
+    """
+    if not per_enable_group:
+        if group is not None:
+            enable_groups = model.get("enable_groups") or [group]
+            if group not in enable_groups:
+                return None
+        return uniform_ratio
+
+    enabled = [g for g in (model.get("enable_groups") or []) if g in group_ratios]
+    if len(enabled) == 1:
+        return float(group_ratios[enabled[0]])
+    return 1.0
+
+
 def fetch_new_api(
     provider_id: str,
     provider_name: str,
@@ -35,6 +62,7 @@ def fetch_new_api(
     public_pricing_url: str,
     channel_type: str = "mixed",
     group: str | None = "default",
+    per_enable_group: bool = False,
 ) -> FetchResult:
     """Fetch + normalize a new-api fork's /api/pricing response.
 
@@ -49,6 +77,9 @@ def fetch_new_api(
             don't expose a flat "default" group (e.g. per-model channel groups
             on UnoRouter) — group_ratio is treated as 1 and the enable_groups
             filter is skipped.
+        per_enable_group: when True, skip the single-group filter and multiply
+            each model by the ratio of its sole `enable_groups` entry. Models
+            in zero or several known groups keep ratio 1.
     """
     with http_client() as c:
         r = c.get(pricing_api_url)
@@ -59,20 +90,26 @@ def fetch_new_api(
         raise RuntimeError(f"{provider_id} API returned success=false: {payload}")
 
     models = payload.get("data", [])
-    if group is None:
-        group_ratio = 1.0
+    group_ratios = payload.get("group_ratio") or {}
+    if group is None or per_enable_group:
+        uniform_ratio = 1.0
     else:
-        group_ratio = float((payload.get("group_ratio") or {}).get(group, 1))
+        uniform_ratio = float(group_ratios.get(group, 1))
 
     records: list[PriceRecord] = []
     for m in models:
         name = m.get("model_name")
         if not name:
             continue
-        if group is not None:
-            enable_groups = m.get("enable_groups") or [group]
-            if group not in enable_groups:
-                continue
+        group_ratio = _ratio_for_model(
+            m,
+            group_ratios,
+            group=group,
+            per_enable_group=per_enable_group,
+            uniform_ratio=uniform_ratio,
+        )
+        if group_ratio is None:
+            continue
 
         quota_type = m.get("quota_type", QUOTA_TYPE_PER_TOKEN)
         if quota_type == QUOTA_TYPE_PER_TOKEN:

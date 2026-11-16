@@ -90,7 +90,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 | 中轉站 | 類型 | 支付 | 信任 | 備註 |
 |---|---|---|---|---|
 | 🟢 [云雾 API (YUNWU)](https://yunwu.ai) | mixed | 支付寶/微信 | active · 2026-05-26 | 主打高速穩定；社群常列為頭部站。 |
-| 🟢 [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | 支付寶/微信 | active · 2026-06-07 | Azure 通道；主打最低價。new-api fork，1000+ 模型橫跨 25+ 分組；`/api/pricing` 公開 default 分組倍率。 |
+| 🔴 [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | 支付寶/微信 | inactive | 已停止服務（2026-10-23 標記）：官方公告（api.bltcy.ai/api/status，2026-04-24T16:00Z 發布）停止註冊與充值，2026-05-01 起全部 API 停止服務；退款走帳戶內入口，售後保留至 2026-12-31。原為 Azure 通道 new-api fork，1000+ 模型。 |
 | 🟢 [No.1-API](https://api.rcouyi.com) | aggregator | 支付寶/微信 | active · 2026-05-26 | 一站式聚合 + 中轉平台。 |
 | 🟢 [UiUiAPI](https://uiuiapi.com) | official-relay | 支付寶/微信 | active · 2026-06-07 | 宣稱官方渠道 + 官方倍率；約便宜 49%（宣稱），311 模型。new-api `/api/pricing` 公開於 api1 子網域。 |
 | 🟡 [DMXAPI](https://dmxapi.cn) | mixed | 支付寶/微信 | unverified · ⚠ 無主體 | 社群收錄；官網未獨立核實。 |
@@ -98,9 +98,11 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 | 🟡 [GPTGOD](https://gptgod.online) | reverse | 支付寶 | unverified · ⚠ 逆向, 無主體 | 逆向；便宜，穩定性無保證。 |
 | 🟢 [CloseAI](https://www.closeai-asia.com) | official-relay | 支付寶/微信/對公 | active · 2026-05-26 · 已註冊 | 提供對公發票；自稱亞洲最大企業級中轉。 |
 | 🟡 [玄枢API (XuanShu API)](https://www.xuanshuapi.com) | mixed | 對公 | unverified · ⚠ 自薦 | 根路徑提供 Anthropic Messages 與 Gemini v1beta，/v1 下提供 OpenAI Responses 與 Chat Completions；模型可見性與價格依 Key 與分組在控制台設定。 |
-| 🟡 [TeamoRouter](https://teamorouter.com) | mixed | 支付寶/微信 | unverified · ⚠ 自薦 | 相容 OpenAI／Anthropic／Gemini 的閘道；支付寶與微信支付；運營方宣稱多上游路由，並有 Claude Code／Codex 設定教學。 |
+| 🟡 [TeamoRouter](https://teamorouter.com) | mixed | 支付寶/微信/卡/加密貨幣 | unverified · ⚠ 自薦 | 相容 OpenAI／Anthropic／Gemini 的閘道；支付寶、微信支付、信用卡與 USDT（BEP20／TRC20／ERC20）；同一個 key 可用 /v1/images/generations 呼叫 GPT Image 2／2.5 與 Gemini 生圖模型；運營方宣稱多上游路由，並有 Claude Code／Codex 設定教學與 gpt-6-astra 支援。 |
 | 🟡 [wawazz.xyz](https://wawazz.xyz) | mixed | 微信 | unverified · ⚠ 自薦, 價過低 | OpenAI 相容 `/v1`；微信支付；運營方宣稱 GPT 可低至官方價 0.07 倍。 |
 | 🟡 [Wappkit API](https://api.wappkit.com) | mixed | — | unverified · ⚠ 自薦 | new-api OpenAI 相容閘道，公開 `/api/pricing`；分組為 Codex／Claude-Code 號池（無扁平 default 組）。 |
+| 🟡 [TokenDos](https://www.tokendos.com) | aggregator | — | unverified · ⚠ 自薦 | 連接供應節點與呼叫方的 Token 共享市場；提供 OpenAI /v1 與 Anthropic 端點，以及公開查價與可用率頁面。 |
+| 🟡 [DSH API](https://api.dshapi.icu) | mixed | 支付寶/微信 | unverified · ⚠ 自薦, 無主體 | OpenAI 與 Anthropic 雙協議相容閘道；QQ 信箱註冊、支付寶/微信支付、按量計費。 |
 <!-- providers:china_relays:end -->
 
 > **收錄 ≠ 推薦。** 收錄是為了記錄市場。打款或傳資料前請先走
@@ -112,6 +114,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 | 服務 | 類型 | 支付 | 備註 |
 |---|---|---|---|
 | 🟢 [OpenRouter](https://openrouter.ai) | aggregator | 卡/加密貨幣 | 官方授權路由，加價約 5%；400+ 模型、60+ 供應商。ARR 據報約 $5M（2025-05）→ 約 $50M（2026 初）。公開 `/api/v1/models` JSON。 |
+| 🟢 [MiniMax Open Platform](https://platform.minimax.io) | official | — | MiniMax 官方 first-party API（type official）；OpenAI https://api.minimax.io/v1、Anthropic https://api.minimax.io/anthropic；定價 https://platform.minimax.io/docs/pricing/overview；串流與 tools 見 https://platform.minimax.io/docs/api-reference/text-chat-openai 與 https://platform.minimax.io/docs/guides/text-m3-function-call。 |
 | 🟢 [Atlas Cloud](https://www.atlascloud.ai) | aggregator | 卡 | 多模態聚合平台；影像/影片模型多（Grok Imagine、Kling、ByteDance、Vidu）。公開 OpenAI 相容 `/v1/models` 含 cache-read 計價。 |
 | 🟢 [Relaydance](https://relaydance.com) | mixed | 支付寶/微信/卡 | 基於 new-api 的中文介面海外站，主打 xAI Grok + 字節跳動 Doubao。`/api/pricing` 公開倍率計價（model_ratio × $2/1M tokens）。 |
 | 🟢 [LiteLLM](https://litellm.ai) | gateway-oss | — | 開源閘道（100+ 供應商）+ 企業版。自架，自帶 Key。 |
@@ -125,6 +128,10 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 | 🟡 [AllRouter](https://allrouter.ai) | aggregator | 支付寶/微信 | 相容 OpenAI 與 Anthropic 的聚合閘道；支援支付寶與微信支付；運營方宣稱 Kimi K3 為 Moonshot 官方牌價。 |
 | 🟡 [AI Router](https://ai-router.dev) | mixed | 卡/加密貨幣/支付寶/微信 | OpenAI 相容 ChatGPT API 中轉（`api.ai-router.dev/v1`）；控制台金鑰與用量追蹤、日／週套餐；英／中／俄／波斯語頁面。 |
 | 🟡 [Tokens Forge](https://tokens-forge.com) | aggregator | 卡/微信 | OpenAI 相容多模型 API 閘道；GPT／Claude／Gemini 類模型分官方額度與路由錢包餘額。 |
+| 🟡 [OurToken](https://ourtoken.ai) | aggregator | 卡 | OpenAI 相容閘道，統一聚合 OpenAI、Anthropic Claude、Gemini、DeepSeek、MiniMax、GLM、Kimi 與騰訊混元模型，單一 API key 與單一計費帳戶。 |
+| 🟡 [XiuRouter](https://router.xiu.ai) | aggregator | — | 託管的按量計費閘道，提供 OpenAI Chat Completions 與 Responses、Anthropic Messages 和 Gemini GenerateContent，並支援受限 API Key 及逐請求用量與費用記錄。 |
+| 🟡 [BetterToken](https://bettertoken.ai) | aggregator | 卡 | OpenAI- and Anthropic-compatible gateway (chat/completions, responses, messages) for Claude, GPT, Gemini, DeepSeek, Kimi, GLM, MiniMax and Qwen; prepaid pay-as-you-go; public pricing JSON at /api/pricing, with each model's access-group ratio applied. |
+| 🟡 [APIClaw](https://apiclaw.biz) | aggregator | 加密貨幣 | OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto. |
 <!-- providers:global_gateways:end -->
 
 ## 自架替代方案
@@ -139,6 +146,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 | 🟢 [One-API](https://github.com/songquanpeng/one-api) | gateway-oss | 流行的 Go 多廠商閘道；多數中轉站的底層 OSS 模板。 |
 | 🟢 [new-api](https://github.com/Calcium-Ion/new-api) | gateway-oss | One-API 的 fork，多了幾種通道類型；同樣自架、自帶 key。 |
 | 🟡 [A3M Router](https://github.com/Das-rebel/a3m-router) | gateway-oss | MIT TypeScript OpenAI-compatible multi-provider router (parallel ensemble); self-hosted — you supply keys. npm: adaptive-memory-multi-model-router. |
+| 🟡 [Bifrost](https://github.com/maximhq/bifrost) | gateway-oss | Go-based self-hosted AI gateway with an OpenAI-compatible API, multi-provider routing, fallbacks, load balancing, and observability; users supply their own provider keys. |
 <!-- providers:self_hosted_alternatives:end -->
 
 > [LiteLLM](https://litellm.ai)（在上面海外閘道表格內）同樣是自架方案（Python 為主、100+ 供應商、企業常用）。
@@ -154,6 +162,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中轉站
 | 🟢 [中轉站競技場 (AI API PK)](https://www.aiapipk.com) | 約 40 家站點的 OpenAI / 逆向 / Claude / DeepSeek 報價牆。 |
 | 🔴 [awesome-ai-proxy (mn-api, unmaintained)](https://github.com/mn-api/awesome-ai-proxy) | 最早的清單（約 31 家）。**2026 年起已停更** —— 本倉庫延續這項工作。 |
 | 🟡 [China AI Arbitrage](https://www.china-ai-arbitrage.xyz) | 60+ 中國 AI 平台的價格與額度比價、LLM API 中轉站排名、每日更新的免費額度追蹤。 |
+| 🟡 [gateway-price-check (CLI)](https://github.com/happy520ai/gateway-price-check) | 零依賴 CLI：對每個端點發一次免驗證的 GET /v1/models，五檔判定（YES/NO/AUTH/ERR/UNKNOWN）把「沒有公布價格」與「我讀不到」分開；CI 每日量 11 家並歸檔原始讀數。 |
 | 🟡 [CoderPlan](https://coderplan.ai) | 社群投稿；宣稱 50+ 模型，含 OpenAI/Anthropic/Google/DeepSeek/xAI。 |
 <!-- providers:comparison_tools:end -->
 
@@ -230,7 +239,7 @@ schema 見 [CONTRIBUTING.md](CONTRIBUTING.md)；
 > 機器可讀資料：[`data/prices.latest.json`](data/prices.latest.json)。
 
 <!-- prices:start -->
-_Snapshot date: **2026-08-16**. 3464 price records across 5 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting._
+_Snapshot date: **2026-10-22**. 3956 price records across 5 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting._
 
 #### Six indicator models, six providers, one snapshot
 
@@ -252,22 +261,22 @@ _Output-token equivalents and the full-matrix heatmap: [`assets/charts/`](assets
 
 | Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|
-| `deepseek-v3` | $0.257 | — | — | $2.000 | $2.000 |
-| `deepseek-r1` | $0.700 | — | — | $4.000 | $4.000 |
+| `deepseek-v3` | $0.257 | — | — | — | $2.000 |
+| `deepseek-r1` | — | — | — | — | $4.000 |
 
 ### Tier 2 — daily driver (agent, coding) — USD per 1M input tokens
 
 | Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|
-| `gemini-3-flash` | $1.500 | $1.500 | — | $1.500 | — |
-| `gpt-5.4` | $2.500 | $2.500 | — | — | $2.500 |
+| `gemini-3-flash` | $1.500 | $1.500 | — | $1.500 | $1.500 |
+| `gpt-5.4` | $2.500 | $2.500 | — | $75.00 | $2.500 |
 | `claude-sonnet-4.6` | $3.000 | $3.000 | $3.750 | $3.000 | $3.000 |
 
 ### Tier 3 — top frontier (hardest problems) — USD per 1M input tokens
 
 | Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|
-| `grok-4.3` | $1.250 | $1.250 | — | $1.250 | — |
+| `grok-4.3` | $1.250 | $1.250 | — | — | — |
 | `claude-opus-4.8` | $5.000 | $5.000 | — | — | — |
 | `gpt-5.5-pro` | $30.00 | — | — | — | — |
 
@@ -275,7 +284,7 @@ _Output-token equivalents and the full-matrix heatmap: [`assets/charts/`](assets
 
 | Model | Unit | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|---|
-| `grok-imagine-video-1.5` | USD per second | — | — | — | — | $1.300 |
+| `grok-imagine-video-1.5` | USD per second | — | — | — | — | $1.000 |
 
 _Full per-model breakdown (including non-canonical models): [`docs/prices.md`](docs/prices.md). Raw snapshots: [`data/snapshots/`](data/snapshots/). Machine-readable: [`data/prices.latest.json`](data/prices.latest.json)._
 
@@ -288,6 +297,7 @@ _Full per-model breakdown (including non-canonical models): [`docs/prices.md`](d
 - **[Terminal Bench](https://www.tbench.ai/)** —— 真實 terminal 驅動 agent 任務的完成率。最貼近 coding／agent 場景。
 - **[Kilo Code 排行榜](https://kilo.ai/leaderboard)** —— 真實開發者 token 用量排名 + cost-per-attempt × completion-% 散佈圖。已經幫你畫好 Pareto 前緣。
 - **[lmarena ELO](https://arena.ai/leaderboard)** —— 來自盲測雙模型偏好投票的 ELO 分數。一般 chat 場景最常被引用。
+- **[ModelBenchmark](https://modelbenchmark.io)** —— 由 16 個公開 benchmark 組成的 AI 模型獨立排名，附價格與上下文視窗。
 
 路由經驗法則：**在你品質預算內的模型，挑這份資料裡最便宜的 provider**。完整 benchmark 清單也在 [`data/canonical-models.yaml`](data/canonical-models.yaml#benchmark_references)，agent 可透過 MCP server 取用。
 

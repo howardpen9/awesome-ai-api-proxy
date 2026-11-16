@@ -3,14 +3,18 @@
 The /pricing page renders absolute per-1M-token prices server-side inside
 `article.pf-card` blocks (`.pf-now` = current price, `.pf-off` = list price).
 `/api/pricing` returns 404 and `/v1/models` requires an API key, so this
-fetcher parses the static HTML with selectolax (method: dom).
+fetcher parses the static HTML with selectolax's lexbor backend (method: dom).
+
+selectolax 1.0 removed the Modest engine. `selectolax.parser.HTMLParser`
+now raises ImportError; LexborHTMLParser is the supported replacement and
+has the same css / text API this fetcher uses.
 """
 
 from __future__ import annotations
 
 import re
 
-from selectolax.parser import HTMLParser
+from selectolax.lexbor import LexborHTMLParser
 
 from ._common import FetchResult, PriceRecord, http_client
 
@@ -36,7 +40,7 @@ def fetch() -> FetchResult:
         r = c.get(SOURCE_URL)
         r.raise_for_status()
 
-    tree = HTMLParser(r.text)
+    tree = LexborHTMLParser(r.text)
     cards = tree.css("article.pf-card")
 
     seen_names: set[str] = set()

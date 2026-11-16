@@ -97,7 +97,7 @@ market, not a workaround niche.
 | Station | Type | Payment | Trust | Notes |
 |---|---|---|---|---|
 | 🟢 [云雾 API (YUNWU)](https://yunwu.ai) | mixed | Alipay/WeChat | active · 2026-05-26 | Marketed on speed/stability; widely cited as a top-tier station. |
-| 🟢 [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | Alipay/WeChat | active · 2026-06-07 | Azure-backed channel; positions as lowest-price. new-api fork with 1000+ models across 25+ access groups; public /api/pricing exposes default-group ratios. |
+| 🔴 [柏拉图 AI (bltcy)](https://api.bltcy.ai) | mixed | Alipay/WeChat | inactive | Inactive (2026-10-23): own announcement (api.bltcy.ai/api/status, published 2026-04-24T16:00Z) stopped sign-ups and top-ups and ended all API service 2026-05-01; refunds via account, after-sales until 2026-12-31. Was an Azure-backed new-api fork with 1000+ models. |
 | 🟢 [No.1-API](https://api.rcouyi.com) | aggregator | Alipay/WeChat | active · 2026-05-26 | One-stop aggregation + relay platform. |
 | 🟢 [UiUiAPI](https://uiuiapi.com) | official-relay | Alipay/WeChat | active · 2026-06-07 | Claims official channels + official multipliers; rare quantified discount. Public new-api /api/pricing on api1 subdomain. |
 | 🟡 [DMXAPI](https://dmxapi.cn) | mixed | Alipay/WeChat | unverified · ⚠ no-entity | Listed in community sources; homepage not independently verified. |
@@ -105,9 +105,11 @@ market, not a workaround niche.
 | 🟡 [GPTGOD](https://gptgod.online) | reverse | Alipay | unverified · ⚠ reverse, no-entity | Reverse-engineered; among cheapest, stability not guaranteed. |
 | 🟢 [CloseAI](https://www.closeai-asia.com) | official-relay | Alipay/WeChat/Invoice | active · 2026-05-26 · registered | Issues enterprise invoices; self-describes as largest enterprise-grade relay in Asia. |
 | 🟡 [玄枢API (XuanShu API)](https://www.xuanshuapi.com) | mixed | Invoice | unverified · ⚠ operator-self | Serves Anthropic Messages and Gemini v1beta at the root host and OpenAI Responses and Chat Completions under /v1; model visibility and pricing are per-key and per-group, set in the console. |
-| 🟡 [TeamoRouter](https://teamorouter.com) | mixed | Alipay/WeChat | unverified · ⚠ operator-self | OpenAI / Anthropic / Gemini-compatible gateway; Alipay and WeChat; operator-claimed multi-upstream routing and Claude Code / Codex setup guides. |
+| 🟡 [TeamoRouter](https://teamorouter.com) | mixed | Alipay/WeChat/Card/Crypto | unverified · ⚠ operator-self | OpenAI / Anthropic / Gemini-compatible gateway; Alipay, WeChat, card and USDT (BEP20 / TRC20 / ERC20); image models on /v1/images/generations with the same key; operator-claimed multi-upstream routing with Claude Code / Codex setup guides and gpt-6-astra support. |
 | 🟡 [wawazz.xyz](https://wawazz.xyz) | mixed | WeChat | unverified · ⚠ operator-self, cheap-trap | OpenAI-compatible API at /v1; WeChat pay; operator-claimed GPT pricing as low as 0.07x official. |
 | 🟡 [Wappkit API](https://api.wappkit.com) | mixed | — | unverified · ⚠ operator-self | new-api OpenAI-compatible gateway with public /api/pricing; listed groups are Codex/Claude-Code pools (no flat default group). |
+| 🟡 [TokenDos](https://www.tokendos.com) | aggregator | — | unverified · ⚠ operator-self | Token-sharing marketplace routing across multiple supplier nodes; OpenAI /v1 and Anthropic endpoints with a public pricing and availability page. |
+| 🟡 [DSH API](https://api.dshapi.icu) | mixed | Alipay/WeChat | unverified · ⚠ operator-self, no-entity | OpenAI- and Anthropic-compatible gateway; QQ-mail registration, Alipay/WeChat payment, per-token billing. |
 <!-- providers:china_relays:end -->
 
 > **Inclusion ≠ endorsement.** Listing documents the market. Always run the
@@ -119,6 +121,7 @@ market, not a workaround niche.
 | Service | Type | Payment | Notes |
 |---|---|---|---|
 | 🟢 [OpenRouter](https://openrouter.ai) | aggregator | Card/Crypto | Official-authorized routing, ~5% markup. ARR reportedly $5M (2025-05) to ~$50M (early 2026). Public JSON API at /api/v1/models with normalized per-token pricing. |
+| 🟢 [MiniMax Open Platform](https://platform.minimax.io) | official | — | MiniMax first-party API platform (type official); OpenAI https://api.minimax.io/v1 and Anthropic https://api.minimax.io/anthropic bases; pricing https://platform.minimax.io/docs/pricing/overview; stream and tools documented https://platform.minimax.io/docs/api-reference/text-chat-openai and https://platform.minimax.io/docs/guides/text-m3-function-call. |
 | 🟢 [Atlas Cloud](https://www.atlascloud.ai) | aggregator | Card | Multi-modal aggregator; image/video heavy (Grok Imagine, Kling, ByteDance, Vidu). Public OpenAI-compatible /v1/models endpoint exposes per-token pricing including cache-read. |
 | 🟢 [Relaydance](https://relaydance.com) | mixed | Alipay/WeChat/Card | 新-API (Calcium-Ion fork) operator focused on xAI Grok + ByteDance Doubao. Public /api/pricing returns ratio-based pricing (model_ratio × $2 / 1M tokens). |
 | 🟢 [LiteLLM](https://litellm.ai) | gateway-oss | — | Open-source gateway + enterprise tier. Self-hosted; not retail. |
@@ -132,6 +135,10 @@ market, not a workaround niche.
 | 🟡 [AllRouter](https://allrouter.ai) | aggregator | Alipay/WeChat | OpenAI and Anthropic-compatible aggregator; Alipay and WeChat accepted; operator-claimed Kimi K3 at official Moonshot list price. |
 | 🟡 [AI Router](https://ai-router.dev) | mixed | Card/Crypto/Alipay/WeChat | OpenAI-compatible ChatGPT API relay at api.ai-router.dev/v1 with dashboard API keys, usage tracking, daily/weekly packages, and localized English/Chinese/Russian/Persian pages. |
 | 🟡 [Tokens Forge](https://tokens-forge.com) | aggregator | Card/WeChat | OpenAI-compatible multi-model API gateway with separate official credit and routed wallet balances for GPT, Claude, and Gemini-style models. |
+| 🟡 [OurToken](https://ourtoken.ai) | aggregator | Card | OpenAI-compatible gateway aggregating OpenAI, Anthropic Claude, Gemini, DeepSeek, MiniMax, GLM, Kimi and Tencent Hunyuan models behind a single API key and billing account. |
+| 🟡 [XiuRouter](https://router.xiu.ai) | aggregator | — | Hosted usage-based gateway exposing OpenAI Chat Completions and Responses, Anthropic Messages, and Gemini GenerateContent, with scoped API keys and per-request usage and cost records. |
+| 🟡 [BetterToken](https://bettertoken.ai) | aggregator | Card | OpenAI- and Anthropic-compatible gateway (chat/completions, responses, messages) for Claude, GPT, Gemini, DeepSeek, Kimi, GLM, MiniMax and Qwen; prepaid pay-as-you-go; public pricing JSON at /api/pricing, with each model's access-group ratio applied. |
+| 🟡 [APIClaw](https://apiclaw.biz) | aggregator | Crypto | OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto. |
 <!-- providers:global_gateways:end -->
 
 ## Self-hosted alternatives
@@ -148,6 +155,7 @@ templates.
 | 🟢 [One-API](https://github.com/songquanpeng/one-api) | gateway-oss | Popular Go-based self-hosted multi-vendor gateway; the de-facto OSS template behind many relay stations. |
 | 🟢 [new-api](https://github.com/Calcium-Ion/new-api) | gateway-oss | Fork of One-API with extra channel types; same self-hosted model — you supply keys. |
 | 🟡 [A3M Router](https://github.com/Das-rebel/a3m-router) | gateway-oss | MIT TypeScript OpenAI-compatible multi-provider router (parallel ensemble); self-hosted — you supply keys. npm: adaptive-memory-multi-model-router. |
+| 🟡 [Bifrost](https://github.com/maximhq/bifrost) | gateway-oss | Go-based self-hosted AI gateway with an OpenAI-compatible API, multi-provider routing, fallbacks, load balancing, and observability; users supply their own provider keys. |
 <!-- providers:self_hosted_alternatives:end -->
 
 > [LiteLLM](https://litellm.ai) (in the global table above) is also self-hosted (Python, 100+ providers, used by enterprises).
@@ -164,6 +172,7 @@ You give up the relay's Alipay/WeChat convenience and accept ops overhead.
 | 🟢 [中轉站競技場 (AI API PK)](https://www.aiapipk.com) | Price wall across OpenAI / Reverse / Claude / DeepSeek for ~40 stations. |
 | 🔴 [awesome-ai-proxy (mn-api, unmaintained)](https://github.com/mn-api/awesome-ai-proxy) | Original list (~31 stations); no longer maintained as of 2026. |
 | 🟡 [China AI Arbitrage](https://www.china-ai-arbitrage.xyz) | Price and quota comparison of 60+ Chinese AI platforms, ranked LLM API relays, and daily-updated free-tier tracking. |
+| 🟡 [gateway-price-check (CLI)](https://github.com/happy520ai/gateway-price-check) | Zero-dependency CLI: one unauthenticated GET /v1/models per endpoint, five-way verdict (YES/NO/AUTH/ERR/UNKNOWN) that keeps 'no prices published' separate from 'I could not read it'; CI re-runs it over 11 gateways daily and archives the raw readings. |
 | 🟡 [CoderPlan](https://coderplan.ai) | Community-submitted; claims 50+ models incl. OpenAI/Anthropic/Google/DeepSeek/xAI. |
 <!-- providers:comparison_tools:end -->
 
@@ -246,7 +255,7 @@ from operators — one factual sentence in `notes`, no superlatives.
 > Machine-readable source: [`data/prices.latest.json`](data/prices.latest.json).
 
 <!-- prices:start -->
-_Snapshot date: **2026-08-16**. 3464 price records across 5 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting._
+_Snapshot date: **2026-10-22**. 3956 price records across 5 providers. **Reference column** is OpenRouter (officially-authorized, ~5% markup). Rows sorted cheapest-by-OpenRouter first. ⚠ = relay quotes <50% of OpenRouter — verify with [canary prompts](docs/canary-prompts.md) before trusting._
 
 #### Six indicator models, six providers, one snapshot
 
@@ -268,22 +277,22 @@ _Output-token equivalents and the full-matrix heatmap: [`assets/charts/`](assets
 
 | Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|
-| `deepseek-v3` | $0.257 | — | — | $2.000 | $2.000 |
-| `deepseek-r1` | $0.700 | — | — | $4.000 | $4.000 |
+| `deepseek-v3` | $0.257 | — | — | — | $2.000 |
+| `deepseek-r1` | — | — | — | — | $4.000 |
 
 ### Tier 2 — daily driver (agent, coding) — USD per 1M input tokens
 
 | Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|
-| `gemini-3-flash` | $1.500 | $1.500 | — | $1.500 | — |
-| `gpt-5.4` | $2.500 | $2.500 | — | — | $2.500 |
+| `gemini-3-flash` | $1.500 | $1.500 | — | $1.500 | $1.500 |
+| `gpt-5.4` | $2.500 | $2.500 | — | $75.00 | $2.500 |
 | `claude-sonnet-4.6` | $3.000 | $3.000 | $3.750 | $3.000 | $3.000 |
 
 ### Tier 3 — top frontier (hardest problems) — USD per 1M input tokens
 
 | Model | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|
-| `grok-4.3` | $1.250 | $1.250 | — | $1.250 | — |
+| `grok-4.3` | $1.250 | $1.250 | — | — | — |
 | `claude-opus-4.8` | $5.000 | $5.000 | — | — | — |
 | `gpt-5.5-pro` | $30.00 | — | — | — | — |
 
@@ -291,7 +300,7 @@ _Output-token equivalents and the full-matrix heatmap: [`assets/charts/`](assets
 
 | Model | Unit | OpenRouter (ref) | Atlas Cloud | Relaydance | UiUiAPI | bltcy |
 |---|---|---|---|---|---|---|
-| `grok-imagine-video-1.5` | USD per second | — | — | — | — | $1.300 |
+| `grok-imagine-video-1.5` | USD per second | — | — | — | — | $1.000 |
 
 _Full per-model breakdown (including non-canonical models): [`docs/prices.md`](docs/prices.md). Raw snapshots: [`data/snapshots/`](data/snapshots/). Machine-readable: [`data/prices.latest.json`](data/prices.latest.json)._
 
@@ -304,6 +313,7 @@ This repo tracks **price** with full provenance. For **quality / intelligence**,
 - **[Terminal Bench](https://www.tbench.ai/)** — completion rate on real terminal-driven agent tasks. Most directly tied to coding / agent workloads.
 - **[Kilo Code Leaderboard](https://kilo.ai/leaderboard)** — real developer-token-usage ranking + a cost-per-attempt × completion-% scatter. Already plots the Pareto frontier you'd otherwise build yourself.
 - **[lmarena ELO](https://arena.ai/leaderboard)** — ELO from blind pairwise human preference votes. Best for chat workloads.
+- **[ModelBenchmark](https://modelbenchmark.io)** — Independent rankings of AI models from 16 public benchmarks, with prices and context windows.
 
 Routing rule of thumb: **pick the cheapest provider here for a model in your quality budget on those benchmarks**. The full benchmark list is also in [`data/canonical-models.yaml`](data/canonical-models.yaml#benchmark_references) so agents calling the MCP server can quote them.
 

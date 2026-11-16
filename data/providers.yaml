@@ -342,6 +342,18 @@ comparison_tools:
       zh-TW: "零依賴 CLI：對每個端點發一次免驗證的 GET /v1/models，五檔判定（YES/NO/AUTH/ERR/UNKNOWN）把「沒有公布價格」與「我讀不到」分開；CI 每日量 11 家並歸檔原始讀數。"
       zh-CN: "零依赖 CLI：对每个端点发一次免验证的 GET /v1/models，五档判定（YES/NO/AUTH/ERR/UNKNOWN）把「没有公布价格」与「我读不到」分开；CI 每日量 11 家并归档原始读数。"
 
+  - name: Folkbench
+    url: https://folkbench.com/arena
+    type: comparison
+    status: unverified
+    last_verified: null
+    verified_by: community
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Public relay snapshot with 24h availability, time-to-first-token, and listed price, plus a degradation-monitor page for identity-probe agreement, token stats, and model-fingerprint fields. Ordering follows the site's rules, including partner tier and editorial adjustments; some data are labeled display samples."
+      zh-TW: "公開中轉站快照，含近 24 小時可用率、首字延遲與標價；另有降智監控頁，展示身份探針一致率、Token 與模型指紋。排序沿用站內規則，含合作檔位與運營加分；部分數據為展示樣本，頁面上有標註。"
+      zh-CN: "公开中转站快照，含近 24 小时可用率、首字延迟与标价；另有降智监控页，展示身份探针一致率、Token 与模型指纹。排序沿用站内规则，含合作档位与运营加分；部分数据为展示样本，页面上有标注。"
+
 # ---------------------------------------------------------------------------
 # Global gateways / aggregators (海外對比方案)
 # ---------------------------------------------------------------------------

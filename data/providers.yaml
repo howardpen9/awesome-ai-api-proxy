@@ -289,6 +289,22 @@ china_relays:
       en: "OpenAI- and Anthropic-compatible gateway; QQ-mail registration, Alipay/WeChat payment, per-token billing."
       zh-TW: "OpenAI 與 Anthropic 雙協議相容閘道；QQ 信箱註冊、支付寶/微信支付、按量計費。"
       zh-CN: "OpenAI 与 Anthropic 双协议兼容网关；QQ 邮箱注册、支付宝/微信支付、按量计费。"
+  - name: NiceAI
+    url: https://niceai.dev
+    type: mixed
+    status: unverified
+    payment: [alipay, wechat]
+    models: [openai, anthropic]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI-compatible AI API gateway; one key, one endpoint, pay-as-you-go; supports /v1/chat/completions and Anthropic /v1/messages; API base https://api.niceai.dev (SDK base_url https://api.niceai.dev/v1)."
+      zh-TW: "OpenAI 相容 AI API 閘道；一個金鑰一個端點，按量計費；支援 /v1/chat/completions 與 Anthropic /v1/messages；API base https://api.niceai.dev（SDK base_url https://api.niceai.dev/v1）。"
+      zh-CN: "OpenAI 兼容 AI API 网关；一个密钥一个端点，按量计费；支持 /v1/chat/completions 与 Anthropic /v1/messages；API base https://api.niceai.dev（SDK base_url https://api.niceai.dev/v1）。"
 
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)

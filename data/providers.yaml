@@ -302,11 +302,9 @@ china_relays:
     supports_tools: unknown
     risk_flags: [operator_submitted]
     notes:
-       en: "OpenAI-compatible AI API gateway; one key, one endpoint, pay-as-you-go; supports /v1/chat/completions and Anthropic /v1/messages; API base https://api.niceai.dev (SDK base_url https://api.niceai.dev/v1)."
+      en: "OpenAI-compatible AI API gateway; one key, one endpoint, pay-as-you-go; supports /v1/chat/completions and Anthropic /v1/messages; API base https://api.niceai.dev (SDK base_url https://api.niceai.dev/v1)."
       zh-TW: "OpenAI 相容 AI API 閘道；一個金鑰一個端點，按量計費；支援 /v1/chat/completions 與 Anthropic /v1/messages；API base https://api.niceai.dev（SDK base_url https://api.niceai.dev/v1）。"
       zh-CN: "OpenAI 兼容 AI API 网关；一个密钥一个端点，按量计费；支持 /v1/chat/completions 与 Anthropic /v1/messages；API base https://api.niceai.dev（SDK base_url https://api.niceai.dev/v1）。"
-
-
 
 # ---------------------------------------------------------------------------
 # Comparison / monitoring tools (中轉站對比工具)

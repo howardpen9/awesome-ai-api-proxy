@@ -728,6 +728,24 @@ global_gateways:
     notes:
       en: "OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto."
 
+  # Self-submitted by the operator (Belousov Pavel, self-employed, RU). Not
+  # independently verified: status unverified, no snapshot prices yet.
+  - name: AstraPro
+    url: https://astrapro.shop
+    type: mixed
+    status: unverified
+    payment: [card]
+    models: [anthropic]
+    model_count: 11
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Russian-billed gateway serving only Anthropic Claude models (11 model IDs, /v1/messages and /v1/chat/completions); prepaid top-ups in RUB from 425 RUB; public new-api pricing JSON at /api/pricing."
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

@@ -1,0 +1,6 @@
+{
+  "provider_id": "wappkit",
+  "captured_at": "2026-11-22T09:09:50.687223+00:00",
+  "error_type": "HTTPStatusError",
+  "error_message": "Server error '502 Bad Gateway' for url 'https://api.wappkit.com/api/pricing'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502"
+}

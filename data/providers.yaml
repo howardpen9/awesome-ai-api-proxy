@@ -728,6 +728,24 @@ global_gateways:
     notes:
       en: "OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto."
 
+  - name: Kantro
+    url: https://kantro.dev
+    type: mixed
+    status: unverified
+    payment: [crypto]
+    models: [openai, anthropic]
+    model_count: 31
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI- and Anthropic-compatible gateway exposing /v1/chat/completions, /v1/responses, and /v1/messages; prepaid token billing with per-key spend limits and model allowlists."
+      zh-TW: "相容 OpenAI 與 Anthropic 協定的 API 閘道，提供 /v1/chat/completions、/v1/responses 與 /v1/messages 端點，支援預付按量計費、金鑰花費上限與模型白名單。"
+      zh-CN: "兼容 OpenAI 与 Anthropic 协议的 API 网关，提供 /v1/chat/completions、/v1/responses 与 /v1/messages 端点，支持预付按量计费、密钥花费上限与模型白名单。"
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

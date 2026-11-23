@@ -791,3 +791,18 @@ self_hosted_alternatives:
     risk_flags: [operator_submitted]
     notes:
       en: "Go-based self-hosted AI gateway with an OpenAI-compatible API, multi-provider routing, fallbacks, load balancing, and observability; users supply their own provider keys."
+  - name: llm-fallback-proxy
+    url: https://github.com/zhaoxinxin463169493-sketch/llm-fallback-proxy
+    type: gateway-oss
+    status: active
+    models: [openai, anthropic, google, deepseek]
+    last_verified: "2026-11-23"
+    verified_by: operator
+    entity_registered: false
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Zero-dependency Node proxy in front of any OpenAI-compatible API that retries a second provider on 429/5xx/timeout; self-hosted, you supply the keys."
+      zh-TW: "零依賴 Node 代理，放在任何 OpenAI 相容 API 前面，遇到 429/5xx/逾時自動改打第二家供應商；自行架設、自行帶 key。"
+      zh-CN: "零依赖 Node 代理，放在任何 OpenAI 兼容 API 前面，遇到 429/5xx/超时自动改打第二家供应商；自托管、自带 key。"

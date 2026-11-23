@@ -731,6 +731,27 @@ global_gateways:
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------
+
+  - name: CrowLLM
+    url: https://crowllm.com
+    type: aggregator
+    status: unverified
+    models: [openai, anthropic, gemini]
+    model_count: 175
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    pricing:
+      pricing_url: https://crowllm.com/pricing
+      api_url: https://crowllm.com/api/pricing
+      fetcher: crowllm
+      pricing_currency: USD
+    notes:
+      en: "Built on the new-api gateway. One key for models from several labs with OpenAI/Anthropic/Gemini-compatible formats; public /v1/models and /api/pricing plus a mostly zero-rated :free shelf."
+
 self_hosted_alternatives:
   - name: One-API
     url: https://github.com/songquanpeng/one-api

@@ -132,6 +132,7 @@ OpenAI、Anthropic、Google 等官方 API，而是把 `base_url` 改成中转站
 | 🟡 [XiuRouter](https://router.xiu.ai) | aggregator | — | 托管的按量计费网关，提供 OpenAI Chat Completions 与 Responses、Anthropic Messages 和 Gemini GenerateContent，并支持受限 API Key 及逐请求用量与费用记录。 |
 | 🟡 [BetterToken](https://bettertoken.ai) | aggregator | 卡 | OpenAI- and Anthropic-compatible gateway (chat/completions, responses, messages) for Claude, GPT, Gemini, DeepSeek, Kimi, GLM, MiniMax and Qwen; prepaid pay-as-you-go; public pricing JSON at /api/pricing, with each model's access-group ratio applied. |
 | 🟡 [APIClaw](https://apiclaw.biz) | aggregator | 加密货币 | OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto. |
+| 🟡 [CrowLLM](https://crowllm.com) | aggregator | — | Built on the new-api gateway. One key for models from several labs with OpenAI/Anthropic/Gemini-compatible formats; public /v1/models and /api/pricing plus a mostly zero-rated :free shelf. |
 <!-- providers:global_gateways:end -->
 
 ## 自托管替代方案

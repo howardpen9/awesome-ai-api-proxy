@@ -463,6 +463,20 @@ global_gateways:
       zh-TW: "開源閘道（100+ 供應商）+ 企業版。自架，自帶 Key。"
       zh-CN: "开源网关（100+ 供应商）+ 企业版。自托管，自带 Key。"
 
+  - name: LLMTR
+    url: https://llmtr.com
+    type: aggregator
+    status: unverified
+    payment: [card]
+    last_verified: null
+    verified_by: community
+    entity_registered: true
+    supports_stream: true
+    supports_tools: true
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Hosted OpenAI-compatible gateway at https://llmtr.com/v1 with a public unauthenticated /v1/models catalog; prepaid credits carry an 8% top-up margin, and some catalog models are free with a daily quota."
+
   - name: Helicone
     url: https://helicone.ai
     type: observability

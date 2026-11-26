@@ -728,6 +728,20 @@ global_gateways:
     notes:
       en: "OpenAI-compatible gateway routing Anthropic, OpenAI, Gemini, DeepSeek and other providers on one key; paid plans are billed monthly in crypto."
 
+  - name: Klinch
+    url: https://klinch.app/en/
+    type: aggregator
+    status: unverified
+    models: [anthropic, openai, gemini, deepseek, xai]
+    last_verified: null
+    verified_by: community
+    entity_registered: unknown
+    supports_stream: unknown
+    supports_tools: unknown
+    risk_flags: [operator_submitted]
+    notes:
+      en: "OpenAI- and Anthropic-compatible API (base https://api.klinch.cloud/v1) for Claude, GPT, Gemini, DeepSeek and Grok on one key; examples at https://klinch.app/en/examples/."
+
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
 # ---------------------------------------------------------------------------

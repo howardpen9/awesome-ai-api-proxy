@@ -329,6 +329,18 @@ comparison_tools:
       zh-TW: "60+ 中國 AI 平台的價格與額度比價、LLM API 中轉站排名、每日更新的免費額度追蹤。"
       zh-CN: "60+ 中国 AI 平台的价格与额度比价、LLM API 中转站排名、每日更新的免费额度追踪。"
 
+  - name: API Price Radar (API 比价雷达)
+    url: https://agentied.work/en/
+    type: comparison
+    status: unverified
+    last_verified: null
+    verified_by: community
+    risk_flags: [operator_submitted]
+    notes:
+      en: "Open-source daily AI API pricing & trust benchmark (github.com/Guoz7/relay_price) tracking 700+ relays with official models.dev/LiteLLM discount ratios, Anthropic/Responses protocol filters, 7:2:1 prompt-cache TCO, and Stage 0/1/2 grading."
+      zh-TW: "開源每日 AI API 定價與信譽評分雷達（github.com/Guoz7/relay_price）：追蹤 700+ 中轉站，提供對比官方 models.dev/LiteLLM 折扣比例、Anthropic/Responses 協議篩選、7:2:1 快取 TCO 試算與 Stage 0/1/2 分層評級。"
+      zh-CN: "开源每日 AI API 定价与信誉评分雷达（github.com/Guoz7/relay_price）：追踪 700+ 中转站，提供对比官方 models.dev/LiteLLM 折扣比例、Anthropic/Responses 协议筛选、7:2:1 缓存 TCO 试算与 Stage 0/1/2 分层评级。"
+
   # Landed from PR #140 (happy520ai). Operator of the CLI, not of a relay.
   - name: gateway-price-check (CLI)
     url: https://github.com/happy520ai/gateway-price-check

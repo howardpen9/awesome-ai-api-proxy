@@ -740,7 +740,7 @@ global_gateways:
     supports_tools: unknown
     risk_flags: [operator_submitted]
     notes:
-      en: "OpenAI- and Anthropic-compatible API (base https://api.klinch.cloud/v1) for Claude, GPT, Gemini, DeepSeek and Grok on one key; examples at https://klinch.app/en/examples/."
+      en: "OpenAI- and Anthropic-compatible API (base https://api.klinch.cloud/v1) for Claude, GPT, Gemini, DeepSeek and Grok on one key; examples at https://klinch.app/en/examples/; operator-submitted, not independently verified."
 
 # ---------------------------------------------------------------------------
 # Self-hosted alternatives (自架閘道，供參考對比 — 非「中轉站」)
